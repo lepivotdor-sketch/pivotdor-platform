@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Le Pivot d'Or t'aide à reprendre le contrôle avec plus de clarté, de structure et de discipline. Accède au programme et avance avec une méthode sobre, premium et concrète." />
+  <meta name="description" content="Le Pivot d'Or t'aide à reprendre le contrôle avec plus de clarté, de structure et de discipline. Accède au programme Pilotage financier 12 mois et avance avec une méthode sobre, premium et concrète." />
   <meta name="robots" content="index, follow" />
   <meta property="og:title" content="Le Pivot d'Or | Clarté, discipline et structure" />
   <meta property="og:description" content="Reprends le contrôle de ta vie avec plus de clarté, de structure et de discipline." />
@@ -484,6 +484,59 @@
       font-weight: 700;
     }
 
+    .offer-price {
+      display: inline-block;
+      margin-top: 8px;
+      font-size: clamp(2rem, 4vw, 3.3rem);
+      line-height: 1;
+      font-weight: 800;
+      color: var(--gold-soft);
+      letter-spacing: -0.04em;
+    }
+
+    .offer-label {
+      margin-top: 12px;
+      color: var(--text-soft);
+      font-size: 1rem;
+    }
+
+    .offer-highlight {
+      margin-top: 18px;
+      padding: 16px;
+      border-radius: 16px;
+      background: rgba(212, 175, 55, 0.08);
+      border: 1px solid rgba(212, 175, 55, 0.16);
+      color: var(--text-soft);
+    }
+
+    .payment-reassurance {
+      margin-top: 16px;
+      padding: 16px;
+      border-radius: 16px;
+      background: rgba(255, 255, 255, 0.035);
+      border: 1px solid rgba(212, 175, 55, 0.16);
+      color: var(--text-soft);
+      font-size: 0.94rem;
+    }
+
+    .payment-reassurance p + p {
+      margin-top: 8px;
+    }
+
+    .payment-reassurance strong {
+      color: var(--gold-soft);
+    }
+
+    .payment-reassurance a {
+      color: var(--gold-soft);
+      font-weight: 700;
+      text-decoration: none;
+    }
+
+    .payment-reassurance a:hover {
+      text-decoration: underline;
+    }
+
     .process-number {
       display: inline-flex;
       width: 36px;
@@ -618,6 +671,8 @@
 
       <nav class="header-nav">
         <a href="#temoignages">Témoignages</a>
+        <a href="#offre">Offre</a>
+        <a href="#garantie">Garantie</a>
         <a href="#faq">FAQ</a>
         <a href="page2.html">Page 2</a>
         <a href="https://buy.stripe.com/3cI3cn6aA1fhcaWgRecbC00" class="button-header">Accéder</a>
@@ -650,14 +705,16 @@
               <a href="https://buy.stripe.com/3cI3cn6aA1fhcaWgRecbC00" class="button-primary">
                 Accéder maintenant au programme
               </a>
-              <a href="page2.html" class="button-secondary">
-                Aller à la page 2
+              <a href="#offre" class="button-secondary">
+                Voir l’offre
               </a>
             </div>
 
-            <p class="hero-note">
-              Paiement sécurisé avec Stripe • Accès simple • Processus rapide • Lecture claire dès l’arrivée
-            </p>
+            <div class="payment-reassurance">
+              <p><strong>Paiement sécurisé par Stripe.</strong></p>
+              <p>Après ton paiement, tu recevras les prochaines étapes pour commencer ton accompagnement.</p>
+              <p>Question avant de commencer ? Écris-moi à : <a href="mailto:lepivotdor@gmail.com">lepivotdor@gmail.com</a></p>
+            </div>
 
             <div class="trust-chips">
               <div class="trust-chip">Clarté financière</div>
@@ -667,9 +724,9 @@
           </div>
 
           <div class="hero-visuals">
-           <div class="logo-card">
-  <img src="logo.png" alt="Logo officiel Le Pivot d'Or" />
-           </div>
+            <div class="logo-card">
+              <img src="logo.png" alt="Logo officiel Le Pivot d'Or" />
+            </div>
 
             <div class="visual-card">
               <h2 class="visual-title">Visuel premium intégré</h2>
@@ -728,29 +785,142 @@
       </div>
     </section>
 
-    <section class="section">
+    <section class="section" id="obtenir">
       <div class="panel section-inner">
         <div class="section-heading">
-          <h2 class="section-title">Ce que tu <span class="gold">obtiens</span></h2>
+          <h2 class="section-title">Ce que tu vas <span class="gold">obtenir</span></h2>
           <p class="section-text">
-            Une base plus claire pour reprendre ton élan, structurer tes décisions et avancer avec davantage de constance.
+            Une structure simple et concrète pour t’aider à reprendre le contrôle,
+            clarifier tes décisions et avancer avec plus de discipline.
           </p>
         </div>
 
         <div class="grid-three">
           <article class="info-card">
-            <h3 class="card-heading">Plus de clarté</h3>
-            <p class="card-copy">Tu comprends mieux où tu en es, ce qui bloque et ce que tu dois faire ensuite.</p>
+            <h3 class="card-heading">Clarté financière</h3>
+            <p class="card-copy">
+              Tu vois plus clairement où va ton argent, ce qui te ralentit et quelles décisions prioriser.
+            </p>
           </article>
 
           <article class="info-card">
-            <h3 class="card-heading">Plus de structure</h3>
-            <p class="card-copy">Tu avances avec une méthode plus simple, plus ordonnée et plus facile à suivre.</p>
+            <h3 class="card-heading">Meilleure organisation</h3>
+            <p class="card-copy">
+              Tu mets de l’ordre dans tes priorités, tes habitudes et ta façon de gérer ton quotidien financier.
+            </p>
           </article>
 
           <article class="info-card">
-            <h3 class="card-heading">Plus de discipline</h3>
-            <p class="card-copy">Tu renforces ta capacité à tenir une ligne claire au lieu de repartir dans le chaos.</p>
+            <h3 class="card-heading">Suivi structuré</h3>
+            <p class="card-copy">
+              Tu avances avec un cadre clair, au lieu de tout gérer dans ta tête ou dans l’urgence.
+            </p>
+          </article>
+
+          <article class="info-card">
+            <h3 class="card-heading">Plan d’action</h3>
+            <p class="card-copy">
+              Tu repars avec une direction concrète, des étapes simples et une meilleure vision de ce que tu dois faire.
+            </p>
+          </article>
+
+          <article class="info-card">
+            <h3 class="card-heading">Discipline</h3>
+            <p class="card-copy">
+              Tu renforces ta constance pour prendre de meilleures décisions et éviter de retomber dans le flou.
+            </p>
+          </article>
+
+          <article class="info-card">
+            <h3 class="card-heading">Recentrage</h3>
+            <p class="card-copy">
+              Tu reviens à l’essentiel : ta stabilité, ta clarté, tes choix et la construction d’une vie plus solide.
+            </p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="offre">
+      <div class="panel section-inner">
+        <div class="section-heading">
+          <h2 class="section-title">Offre disponible <span class="gold">pour le moment</span></h2>
+          <p class="section-text">
+            Une seule offre claire pour avancer avec une structure complète sur 12 mois.
+          </p>
+        </div>
+
+        <div class="grid-two">
+          <article class="info-card info-card--strong">
+            <h3 class="card-heading">Pilotage financier 12 mois</h3>
+
+            <p class="card-copy">
+              Un accompagnement structuré pour t’aider à bâtir plus de clarté financière,
+              plus de discipline et une meilleure organisation sur une période complète de 12 mois.
+            </p>
+
+            <ul class="bullet-list" style="margin-top: 18px;">
+              <li>Programme structuré sur 12 mois.</li>
+              <li>Clarté financière et meilleure organisation.</li>
+              <li>Suivi structuré pour garder une direction claire.</li>
+              <li>Plan d’action concret et plus facile à suivre.</li>
+              <li>Discipline, recentrage et constance.</li>
+            </ul>
+          </article>
+
+          <article class="info-card info-card--strong">
+            <h3 class="card-heading">Investissement</h3>
+
+            <div class="offer-price">3 600 $</div>
+
+            <p class="offer-label">
+              Pour le programme complet <strong>Pilotage financier 12 mois</strong>.
+            </p>
+
+            <div class="offer-highlight">
+              Offre claire, sobre et directe : un seul programme disponible pour le moment afin d’éviter la confusion.
+            </div>
+
+            <div class="hero-actions">
+              <a href="https://buy.stripe.com/3cI3cn6aA1fhcaWgRecbC00" class="button-primary">
+                Commencer le Pilotage financier
+              </a>
+            </div>
+
+            <div class="payment-reassurance">
+              <p><strong>Paiement sécurisé par Stripe.</strong></p>
+              <p>Après ton paiement, tu recevras les prochaines étapes pour commencer ton accompagnement.</p>
+              <p>Question avant de commencer ? Écris-moi à : <a href="mailto:lepivotdor@gmail.com">lepivotdor@gmail.com</a></p>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="garantie">
+      <div class="panel section-inner">
+        <div class="section-heading">
+          <h2 class="section-title">Garantie satisfaction <span class="gold">30 jours</span></h2>
+          <p class="section-text">
+            Tu peux avancer avec plus de confiance. Si le programme ne correspond pas à tes attentes,
+            tu peux demander un remboursement selon les conditions prévues.
+          </p>
+        </div>
+
+        <div class="grid-two">
+          <article class="info-card info-card--strong">
+            <h3 class="card-heading">Une décision plus rassurante</h3>
+            <p class="card-copy">
+              Le but est simple : réduire le risque perçu et te permettre de commencer avec plus de sécurité.
+            </p>
+          </article>
+
+          <article class="info-card info-card--strong">
+            <h3 class="card-heading">Conditions prévues</h3>
+            <p class="card-copy">
+              La garantie s’applique pendant 30 jours, selon les conditions communiquées et le cadre prévu
+              pour le programme.
+            </p>
           </article>
         </div>
       </div>
@@ -768,13 +938,13 @@
         <div class="process-grid">
           <div class="process-step">
             <div class="process-number">1</div>
-            <h3 class="card-heading">Tu accèdes</h3>
-            <p class="card-copy">Tu arrives sur une page claire et tu comprends rapidement l’offre.</p>
+            <h3 class="card-heading">Tu comprends</h3>
+            <p class="card-copy">Tu lis l’offre, les bénéfices, la garantie et le fonctionnement général.</p>
           </div>
 
           <div class="process-step">
             <div class="process-number">2</div>
-            <h3 class="card-heading">Tu choisis</h3>
+            <h3 class="card-heading">Tu décides</h3>
             <p class="card-copy">Tu vérifies si le programme correspond à ta situation et à ton niveau d’engagement.</p>
           </div>
 
@@ -866,8 +1036,44 @@
           </article>
 
           <article class="faq-item">
+            <h3 class="faq-question">Est-ce qu’il y a une garantie ?</h3>
+            <p class="faq-answer">
+              Oui. Le programme inclut une garantie satisfaction 30 jours. Si le programme ne correspond pas à tes attentes,
+              tu peux demander un remboursement selon les conditions prévues.
+            </p>
+          </article>
+
+          <article class="faq-item">
+            <h3 class="faq-question">Quelle offre est disponible pour le moment ?</h3>
+            <p class="faq-answer">
+              Pour le moment, seule l’offre Pilotage financier 12 mois est mise de l’avant au prix de 3 600 $.
+            </p>
+          </article>
+
+          <article class="faq-item">
+            <h3 class="faq-question">Est-ce que c’est du conseil financier personnalisé ?</h3>
+            <p class="faq-answer">
+              Non. Le Pivot d’Or offre un accompagnement de clarté, de structure et d’éducation générale. Il ne remplace pas un conseiller financier autorisé.
+            </p>
+          </article>
+
+          <article class="faq-item">
             <h3 class="faq-question">Est-ce que le processus est compliqué ?</h3>
             <p class="faq-answer">Non. La page, l’offre et le passage au paiement sont pensés pour rester simples et lisibles.</p>
+          </article>
+
+          <article class="faq-item">
+            <h3 class="faq-question">Que se passe-t-il après le paiement ?</h3>
+            <p class="faq-answer">
+              Après ton paiement, tu recevras les prochaines étapes pour commencer ton accompagnement.
+            </p>
+          </article>
+
+          <article class="faq-item">
+            <h3 class="faq-question">Puis-je poser une question avant de commencer ?</h3>
+            <p class="faq-answer">
+              Oui. Tu peux écrire à <a href="mailto:lepivotdor@gmail.com">lepivotdor@gmail.com</a> avant de prendre ta décision.
+            </p>
           </article>
 
           <article class="faq-item">
@@ -887,7 +1093,7 @@
 
         <div class="credibility-row">
           <div class="credibility-pill">Paiement sécurisé Stripe</div>
-          <div class="credibility-pill">Approche structurée et sobre</div>
+          <div class="credibility-pill">Garantie satisfaction 30 jours</div>
           <div class="credibility-pill">Clarté • Discipline • Constance</div>
         </div>
       </div>
@@ -914,29 +1120,31 @@
           </h2>
           <p class="cta-text">
             Si tu veux arrêter le flou, mieux structurer tes décisions et repartir sur une base plus solide,
-            tu peux accéder au programme maintenant.
+            tu peux accéder au programme Pilotage financier 12 mois maintenant.
           </p>
         </div>
 
         <div class="cta-bottom-actions">
           <a href="https://buy.stripe.com/3cI3cn6aA1fhcaWgRecbC00" class="button-primary">
-            Je veux accéder au programme
+            Je commence le Pilotage financier
           </a>
-         <a href="page2.html" class="button-secondary">
-           Aller à la page 2
-         </a>
+          <a href="page2.html" class="button-secondary">
+            Aller à la page 2
+          </a>
         </div>
 
-        <p class="footer-text">
-          Paiement sécurisé • Accès rapide • CTA répété de façon sobre pour faciliter le passage à l’action
-        </p>
+        <div class="payment-reassurance">
+          <p><strong>Paiement sécurisé par Stripe.</strong></p>
+          <p>Après ton paiement, tu recevras les prochaines étapes pour commencer ton accompagnement.</p>
+          <p>Question avant de commencer ? Écris-moi à : <a href="mailto:lepivotdor@gmail.com">lepivotdor@gmail.com</a></p>
+        </div>
 
         <div class="footer-links">
-          <span>Header premium ajouté</span>
+          <span>Le Pivot d'Or</span>
           <span>•</span>
-          <span>Deuxième témoignage ajouté</span>
+          <span>Vision. Clarté. Discipline. Structure. Constance.</span>
           <span>•</span>
-          <span>Navigation vers page 2 prête</span>
+          <span>logo.png doit être dans le même dossier que index.html</span>
         </div>
       </div>
     </section>
