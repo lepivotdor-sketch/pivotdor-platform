@@ -1,494 +1,609 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Le Pivot d'Or t'aide à bâtir une vie plus solide avec plus de clarté, de discipline, de structure et de constance.">
-    <title>Le Pivot d'Or | Clarté, discipline et structure</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta
+    name="description"
+    content="Le Pivot d'Or t'aide à bâtir une vie plus solide avec plus de clarté, de discipline, de structure et de constance."
+  />
+  <title>Le Pivot d'Or | Clarté, discipline et structure</title>
 
-    <style>
-        :root {
-            --bg-main: #050505;
-            --bg-soft: #101010;
-            --bg-card: rgba(255, 255, 255, 0.04);
-            --bg-card-strong: rgba(255, 255, 255, 0.06);
-            --gold: #d4af37;
-            --gold-light: #f4dd8a;
-            --text: #ffffff;
-            --text-soft: #d0d0d0;
-            --text-muted: #a7a7a7;
-            --border: rgba(212, 175, 55, 0.22);
-            --border-soft: rgba(255, 255, 255, 0.08);
-            --shadow: rgba(212, 175, 55, 0.16);
-        }
+  <style>
+    :root {
+      --bg: #050505;
+      --bg-soft: #111111;
+      --panel: rgba(255, 255, 255, 0.04);
+      --panel-strong: rgba(255, 255, 255, 0.06);
+      --gold: #d4af37;
+      --gold-soft: #f4dd8a;
+      --text: #ffffff;
+      --text-soft: #d6d6d6;
+      --text-muted: #a8a8a8;
+      --border-gold: rgba(212, 175, 55, 0.22);
+      --border-soft: rgba(255, 255, 255, 0.08);
+      --shadow-gold: rgba(212, 175, 55, 0.18);
+      --shadow-dark: rgba(0, 0, 0, 0.35);
+      --radius-xl: 28px;
+      --radius-lg: 20px;
+      --radius-md: 16px;
+      --max-width: 1140px;
+      --transition: 0.28s ease;
+    }
 
-        * {
-            box-sizing: border-box;
-            margin: 0;
-            padding: 0;
-        }
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
 
-        body {
-            font-family: Arial, sans-serif;
-            color: var(--text);
-            background:
-                radial-gradient(circle at top, rgba(212, 175, 55, 0.14), transparent 35%),
-                linear-gradient(180deg, #111111 0%, var(--bg-main) 55%, #000000 100%);
-            line-height: 1.6;
-        }
+    html {
+      scroll-behavior: smooth;
+    }
 
-        .page {
-            width: 100%;
-            max-width: 1140px;
-            margin: 0 auto;
-            padding: 40px 20px 80px;
-        }
+    body {
+      font-family: Arial, sans-serif;
+      color: var(--text);
+      background:
+        radial-gradient(circle at top, rgba(212, 175, 55, 0.14), transparent 34%),
+        linear-gradient(180deg, #111111 0%, var(--bg) 55%, #000000 100%);
+      line-height: 1.6;
+    }
 
-        .hero-card,
-        .panel {
-            background: linear-gradient(180deg, rgba(255,255,255,0.04), rgba(255,255,255,0.02));
-            border: 1px solid var(--border);
-            border-radius: 24px;
-            box-shadow: 0 24px 60px var(--shadow);
-            backdrop-filter: blur(6px);
-        }
+    .site {
+      width: 100%;
+      max-width: var(--max-width);
+      margin: 0 auto;
+      padding: 40px 20px 84px;
+    }
 
-        .hero-card {
-            padding: 60px 34px;
-            text-align: center;
-        }
+    .panel {
+      background: linear-gradient(180deg, rgba(255,255,255,0.04), rgba(255,255,255,0.02));
+      border: 1px solid var(--border-gold);
+      border-radius: var(--radius-xl);
+      box-shadow:
+        0 24px 60px var(--shadow-gold),
+        0 18px 40px var(--shadow-dark);
+      backdrop-filter: blur(6px);
+    }
 
-        .brand {
-            display: inline-block;
-            margin-bottom: 18px;
-            padding: 8px 16px;
-            border: 1px solid rgba(212, 175, 55, 0.30);
-            border-radius: 999px;
-            background: rgba(212, 175, 55, 0.08);
-            color: var(--gold-light);
-            font-size: 13px;
-            font-weight: bold;
-            letter-spacing: 1.4px;
-            text-transform: uppercase;
-        }
+    .hero {
+      text-align: center;
+      padding: 64px 36px;
+    }
 
-        h1 {
-            font-size: 54px;
-            line-height: 1.08;
-            margin-bottom: 18px;
-            letter-spacing: -0.5px;
-        }
+    .brand-badge {
+      display: inline-block;
+      margin-bottom: 18px;
+      padding: 8px 16px;
+      border: 1px solid rgba(212, 175, 55, 0.32);
+      border-radius: 999px;
+      background: rgba(212, 175, 55, 0.08);
+      color: var(--gold-soft);
+      font-size: 13px;
+      font-weight: bold;
+      letter-spacing: 1.4px;
+      text-transform: uppercase;
+    }
 
-        h1 .gold,
-        .gold {
-            color: var(--gold-light);
-        }
+    .hero-title {
+      font-size: 54px;
+      line-height: 1.08;
+      letter-spacing: -0.5px;
+      margin-bottom: 18px;
+    }
 
-        .subtitle {
-            max-width: 800px;
-            margin: 0 auto 18px;
-            font-size: 23px;
-            color: var(--text-soft);
-        }
+    .gold {
+      color: var(--gold-soft);
+    }
 
-        .value-line {
-            max-width: 780px;
-            margin: 0 auto 32px;
-            font-size: 18px;
-            color: var(--text);
-            font-weight: bold;
-        }
+    .hero-subtitle {
+      max-width: 820px;
+      margin: 0 auto 18px;
+      font-size: 23px;
+      color: var(--text-soft);
+    }
 
-        .cta {
-            display: inline-block;
-            margin-top: 8px;
-            padding: 18px 38px;
-            font-size: 19px;
-            font-weight: bold;
-            color: #111111;
-            background: linear-gradient(135deg, var(--gold-light), var(--gold));
-            border-radius: 14px;
-            text-decoration: none;
-            box-shadow: 0 12px 30px rgba(212, 175, 55, 0.26);
-            transition: transform 0.25s ease, box-shadow 0.25s ease;
-        }
+    .hero-value {
+      max-width: 780px;
+      margin: 0 auto 30px;
+      font-size: 18px;
+      font-weight: bold;
+      color: var(--text);
+    }
 
-        .cta:hover {
-            transform: translateY(-2px) scale(1.02);
-            box-shadow: 0 18px 38px rgba(212, 175, 55, 0.35);
-        }
+    .cta-primary,
+    .cta-secondary {
+      display: inline-block;
+      text-decoration: none;
+      font-weight: bold;
+      transition: transform var(--transition), box-shadow var(--transition), opacity var(--transition);
+    }
 
-        .reassurance {
-            margin-top: 16px;
-            font-size: 14px;
-            color: var(--text-muted);
-        }
+    .cta-primary {
+      padding: 18px 40px;
+      border-radius: 14px;
+      font-size: 19px;
+      color: #111111;
+      background: linear-gradient(135deg, #f8e7a6, var(--gold));
+      box-shadow:
+        0 14px 34px rgba(212, 175, 55, 0.30),
+        0 0 0 1px rgba(255, 235, 170, 0.28) inset;
+    }
 
-        .separator {
-            width: 120px;
-            height: 1px;
-            margin: 42px auto 0;
-            background: linear-gradient(90deg, transparent, rgba(244, 221, 138, 0.9), transparent);
-        }
+    .cta-primary:hover,
+    .cta-secondary:hover {
+      transform: translateY(-3px) scale(1.02);
+    }
 
-        .section {
-            margin-top: 42px;
-        }
+    .cta-primary:hover {
+      box-shadow:
+        0 18px 42px rgba(212, 175, 55, 0.38),
+        0 0 0 1px rgba(255, 235, 170, 0.38) inset;
+    }
 
-        .panel {
-            padding: 34px 26px;
-        }
+    .hero-note {
+      margin-top: 16px;
+      font-size: 14px;
+      color: var(--text-muted);
+    }
 
-        .section-title {
-            text-align: center;
-            font-size: 34px;
-            margin-bottom: 12px;
-        }
+    .divider {
+      width: 120px;
+      height: 1px;
+      margin: 40px auto 0;
+      background: linear-gradient(90deg, transparent, rgba(244, 221, 138, 0.92), transparent);
+    }
 
-        .section-intro {
-            text-align: center;
-            max-width: 760px;
-            margin: 0 auto 28px;
-            color: var(--text-soft);
-            font-size: 18px;
-        }
+    .section {
+      margin-top: 28px;
+    }
 
-        .grid {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 18px;
-        }
+    .section-box {
+      padding: 34px 26px;
+    }
 
-        .grid-2 {
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 18px;
-        }
+    .section-title {
+      text-align: center;
+      font-size: 34px;
+      margin-bottom: 12px;
+    }
 
-        .card {
-            background: var(--bg-card);
-            border: 1px solid var(--border-soft);
-            border-radius: 18px;
-            padding: 24px;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.25);
-        }
+    .section-intro {
+      text-align: center;
+      max-width: 760px;
+      margin: 0 auto 28px;
+      font-size: 18px;
+      color: var(--text-soft);
+    }
 
-        .card.strong {
-            background: var(--bg-card-strong);
-            border: 1px solid rgba(212, 175, 55, 0.18);
-        }
+    .grid-3,
+    .grid-2,
+    .credibility-grid {
+      display: grid;
+      gap: 18px;
+    }
 
-        .card h3 {
-            font-size: 20px;
-            margin-bottom: 10px;
-            color: var(--gold-light);
-        }
+    .grid-3 {
+      grid-template-columns: repeat(3, 1fr);
+    }
 
-        .card p,
-        .card li {
-            font-size: 16px;
-            color: var(--text-soft);
-        }
+    .grid-2 {
+      grid-template-columns: repeat(2, 1fr);
+    }
 
-        .list {
-            list-style: none;
-        }
+    .credibility-grid {
+      grid-template-columns: repeat(3, 1fr);
+    }
 
-        .list li {
-            margin-bottom: 12px;
-            padding-left: 22px;
-            position: relative;
-        }
+    .card {
+      background: var(--panel);
+      border: 1px solid var(--border-soft);
+      border-radius: var(--radius-lg);
+      padding: 24px;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.24);
+      transition: transform var(--transition), border-color var(--transition), box-shadow var(--transition);
+    }
 
-        .list li::before {
-            content: "•";
-            position: absolute;
-            left: 0;
-            color: var(--gold-light);
-            font-weight: bold;
-        }
+    .card:hover {
+      transform: translateY(-4px);
+      border-color: rgba(212, 175, 55, 0.22);
+      box-shadow:
+        0 14px 34px rgba(0, 0, 0, 0.28),
+        0 6px 20px rgba(212, 175, 55, 0.10);
+    }
 
-        .credibility-bar {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 14px;
-            margin-top: 18px;
-        }
+    .card-strong {
+      background: var(--panel-strong);
+      border: 1px solid rgba(212, 175, 55, 0.18);
+    }
 
-        .credibility-item {
-            background: rgba(212, 175, 55, 0.08);
-            border: 1px solid rgba(212, 175, 55, 0.18);
-            border-radius: 14px;
-            padding: 16px;
-            text-align: center;
-            color: var(--text);
-            font-weight: bold;
-        }
+    .card-title {
+      font-size: 20px;
+      margin-bottom: 10px;
+      color: var(--gold-soft);
+    }
 
-        @media (max-width: 900px) {
-            h1 {
-                font-size: 42px;
-            }
+    .card-text,
+    .bullet-list li {
+      font-size: 16px;
+      color: var(--text-soft);
+    }
 
-            .subtitle {
-                font-size: 20px;
-            }
+    .bullet-list {
+      list-style: none;
+    }
 
-            .grid,
-            .grid-2,
-            .credibility-bar {
-                grid-template-columns: 1fr;
-            }
-        }
+    .bullet-list li {
+      position: relative;
+      padding-left: 22px;
+      margin-bottom: 12px;
+    }
 
-        @media (max-width: 640px) {
-            .page {
-                padding: 24px 16px 50px;
-            }
+    .bullet-list li::before {
+      content: "•";
+      position: absolute;
+      left: 0;
+      color: var(--gold-soft);
+      font-weight: bold;
+    }
 
-            .hero-card,
-            .panel {
-                padding: 28px 18px;
-                border-radius: 18px;
-            }
+    .credibility-item {
+      background: rgba(212, 175, 55, 0.08);
+      border: 1px solid rgba(212, 175, 55, 0.18);
+      border-radius: var(--radius-md);
+      padding: 16px;
+      text-align: center;
+      color: var(--text);
+      font-weight: bold;
+      box-shadow: 0 10px 24px rgba(0, 0, 0, 0.18);
+      transition: transform var(--transition), border-color var(--transition);
+    }
 
-            h1 {
-                font-size: 34px;
-            }
+    .credibility-item:hover {
+      transform: translateY(-3px);
+      border-color: rgba(244, 221, 138, 0.34);
+    }
 
-            .subtitle {
-                font-size: 18px;
-            }
+    .cta-section {
+      text-align: center;
+      padding: 42px 28px;
+    }
 
-            .value-line {
-                font-size: 17px;
-            }
+    .cta-section-title {
+      font-size: 38px;
+      line-height: 1.15;
+      margin-bottom: 14px;
+    }
 
-            .section-title {
-                font-size: 28px;
-            }
+    .cta-section-text {
+      max-width: 760px;
+      margin: 0 auto 24px;
+      font-size: 18px;
+      color: var(--text-soft);
+    }
 
-            .section-intro {
-                font-size: 16px;
-            }
+    .cta-secondary {
+      padding: 18px 38px;
+      border-radius: 14px;
+      font-size: 18px;
+      color: #111111;
+      background: linear-gradient(135deg, #f8e7a6, var(--gold));
+      box-shadow:
+        0 14px 34px rgba(212, 175, 55, 0.28),
+        0 0 0 1px rgba(255, 235, 170, 0.26) inset;
+    }
 
-            .cta {
-                width: 100%;
-                max-width: 340px;
-                padding: 17px 20px;
-            }
-        }
-    </style>
+    .footer-note {
+      margin-top: 16px;
+      font-size: 14px;
+      color: var(--text-muted);
+    }
+
+    @media (max-width: 980px) {
+      .hero-title {
+        font-size: 42px;
+      }
+
+      .hero-subtitle {
+        font-size: 20px;
+      }
+
+      .grid-3,
+      .grid-2,
+      .credibility-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    @media (max-width: 640px) {
+      .site {
+        padding: 24px 16px 54px;
+      }
+
+      .hero,
+      .section-box,
+      .cta-section {
+        padding: 28px 18px;
+      }
+
+      .panel {
+        border-radius: 20px;
+      }
+
+      .hero-title {
+        font-size: 34px;
+      }
+
+      .hero-subtitle {
+        font-size: 18px;
+      }
+
+      .hero-value,
+      .cta-section-text {
+        font-size: 16px;
+      }
+
+      .section-title {
+        font-size: 28px;
+      }
+
+      .section-intro {
+        font-size: 16px;
+      }
+
+      .cta-primary,
+      .cta-secondary {
+        width: 100%;
+        max-width: 340px;
+        padding: 17px 20px;
+        font-size: 17px;
+      }
+    }
+  </style>
 </head>
 <body>
-    <main class="page">
+  <main class="site">
+    <section class="panel hero">
+      <div class="brand-badge">Le Pivot d'Or</div>
 
-        <section class="hero-card">
-            <div class="brand">Le Pivot d'Or</div>
+      <h1 class="hero-title">
+        Reprends le contrôle de ta vie avec plus de
+        <span class="gold">clarté</span>,
+        de structure et de discipline
+      </h1>
 
-            <h1>
-                Reprends le contrôle de ta vie avec plus de
-                <span class="gold">clarté</span>,
-                de structure et de discipline
-            </h1>
+      <p class="hero-subtitle">
+        Le Pivot d'Or t’aide à sortir du flou, à reprendre tes décisions en main
+        et à avancer avec une méthode plus simple, plus solide et plus constante.
+      </p>
 
-            <p class="subtitle">
-                Le Pivot d'Or t’aide à sortir du flou, à reprendre tes décisions en main
-                et à avancer avec une méthode plus simple, plus solide et plus constante.
-            </p>
+      <p class="hero-value">
+        Tu entres dans une approche conçue pour t’aider à bâtir une vie plus stable,
+        plus claire et plus maîtrisée.
+      </p>
 
-            <p class="value-line">
-                Tu entres dans une approche conçue pour t’aider à bâtir une vie plus stable,
-                plus claire et plus maîtrisée.
-            </p>
+      <a href="https://buy.stripe.com/3cI3cn6aA1fhcaWgRecbC00" class="cta-primary">
+        Accéder maintenant au programme
+      </a>
 
-            <a href="https://buy.stripe.com/3cI3cn6aA1fhcaWgRecbC00" class="cta">
-                Accéder maintenant au programme
-            </a>
+      <p class="hero-note">
+        Paiement sécurisé avec Stripe • Accès simple • Processus rapide • Environnement clair et structuré
+      </p>
 
-            <p class="reassurance">
-                Paiement sécurisé avec Stripe • Accès simple • Processus rapide • Environnement clair et structuré
-            </p>
+      <div class="divider"></div>
+    </section>
 
-            <div class="separator"></div>
-        </section>
+    <section class="section">
+      <div class="panel section-box">
+        <h2 class="section-title">Ce que tu <span class="gold">obtiens</span></h2>
+        <p class="section-intro">
+          Une base plus claire pour reprendre ton élan, mieux structurer tes finances
+          et avancer avec davantage de constance.
+        </p>
 
-        <section class="section panel">
-            <h2 class="section-title">Ce que tu <span class="gold">obtiens</span></h2>
-            <p class="section-intro">
-                Une base plus claire pour reprendre ton élan, mieux structurer tes finances
-                et avancer avec davantage de constance.
-            </p>
+        <div class="grid-3">
+          <article class="card">
+            <h3 class="card-title">Plus de clarté</h3>
+            <p class="card-text">Tu comprends mieux où tu en es, ce qui bloque et ce que tu dois faire ensuite.</p>
+          </article>
 
-            <div class="grid">
-                <article class="card">
-                    <h3>Plus de clarté</h3>
-                    <p>Tu comprends mieux où tu en es, ce qui bloque et ce que tu dois faire ensuite.</p>
-                </article>
+          <article class="card">
+            <h3 class="card-title">Plus de structure</h3>
+            <p class="card-text">Tu avances avec une méthode plus simple, plus ordonnée et plus facile à suivre.</p>
+          </article>
 
-                <article class="card">
-                    <h3>Plus de structure</h3>
-                    <p>Tu avances avec une méthode plus simple, plus ordonnée et plus facile à suivre.</p>
-                </article>
+          <article class="card">
+            <h3 class="card-title">Plus de discipline</h3>
+            <p class="card-text">Tu renforces ta capacité à tenir une ligne claire au lieu de repartir dans le chaos.</p>
+          </article>
+        </div>
+      </div>
+    </section>
 
-                <article class="card">
-                    <h3>Plus de discipline</h3>
-                    <p>Tu renforces ta capacité à tenir une ligne claire au lieu de repartir dans le chaos.</p>
-                </article>
-            </div>
-        </section>
+    <section class="section">
+      <div class="panel section-box">
+        <h2 class="section-title">Les bénéfices <span class="gold">concrets</span></h2>
+        <p class="section-intro">
+          Ce programme est pensé pour t’aider à obtenir des changements réels dans ton quotidien.
+        </p>
 
-        <section class="section panel">
-            <h2 class="section-title">Les bénéfices <span class="gold">concrets</span></h2>
-            <p class="section-intro">
-                Ce programme est pensé pour t’aider à obtenir des changements réels dans ton quotidien.
-            </p>
+        <div class="grid-3">
+          <article class="card">
+            <h3 class="card-title">Décisions plus simples</h3>
+            <p class="card-text">Tu sais mieux quoi prioriser, quoi couper et quoi renforcer.</p>
+          </article>
 
-            <div class="grid">
-                <article class="card">
-                    <h3>Décisions plus simples</h3>
-                    <p>Tu sais mieux quoi prioriser, quoi couper et quoi renforcer.</p>
-                </article>
+          <article class="card">
+            <h3 class="card-title">Finances plus lisibles</h3>
+            <p class="card-text">Tu avances avec plus de visibilité sur ton argent, tes choix et ta direction.</p>
+          </article>
 
-                <article class="card">
-                    <h3>Finances plus lisibles</h3>
-                    <p>Tu avances avec plus de visibilité sur ton argent, tes choix et ta direction.</p>
-                </article>
+          <article class="card">
+            <h3 class="card-title">Actions plus cohérentes</h3>
+            <p class="card-text">Tu réduis l’improvisation et tu passes plus facilement à l’action utile.</p>
+          </article>
+        </div>
+      </div>
+    </section>
 
-                <article class="card">
-                    <h3>Actions plus cohérentes</h3>
-                    <p>Tu réduis l’improvisation et tu passes plus facilement à l’action utile.</p>
-                </article>
-            </div>
-        </section>
+    <section class="section">
+      <div class="panel section-box">
+        <h2 class="section-title">La transformation <span class="gold">ressentie</span></h2>
+        <p class="section-intro">
+          Au-delà des outils, l’objectif est aussi de changer la manière dont tu te sens dans ta vie.
+        </p>
 
-        <section class="section panel">
-            <h2 class="section-title">La transformation <span class="gold">ressentie</span></h2>
-            <p class="section-intro">
-                Au-delà des outils, l’objectif est aussi de changer la manière dont tu te sens dans ta vie.
-            </p>
+        <div class="grid-3">
+          <article class="card">
+            <h3 class="card-title">Moins de flou</h3>
+            <p class="card-text">Tu te sens moins perdu et plus aligné avec ce que tu veux vraiment bâtir.</p>
+          </article>
 
-            <div class="grid">
-                <article class="card">
-                    <h3>Moins de flou</h3>
-                    <p>Tu te sens moins perdu et plus aligné avec ce que tu veux vraiment bâtir.</p>
-                </article>
+          <article class="card">
+            <h3 class="card-title">Moins de stress</h3>
+            <p class="card-text">Tu retrouves une sensation de contrôle, de calme et de stabilité intérieure.</p>
+          </article>
 
-                <article class="card">
-                    <h3>Moins de stress</h3>
-                    <p>Tu retrouves une sensation de contrôle, de calme et de stabilité intérieure.</p>
-                </article>
+          <article class="card">
+            <h3 class="card-title">Plus de confiance</h3>
+            <p class="card-text">Tu avances avec une posture plus solide, plus claire et plus constante.</p>
+          </article>
+        </div>
+      </div>
+    </section>
 
-                <article class="card">
-                    <h3>Plus de confiance</h3>
-                    <p>Tu avances avec une posture plus solide, plus claire et plus constante.</p>
-                </article>
-            </div>
-        </section>
+    <section class="section">
+      <div class="panel section-box">
+        <h2 class="section-title">Ce programme est <span class="gold">pour toi si…</span></h2>
+        <p class="section-intro">
+          Cette approche vise les personnes qui veulent réellement se recentrer et reprendre une direction plus solide.
+        </p>
 
-        <section class="section panel">
-            <h2 class="section-title">Ce programme est <span class="gold">pour toi si…</span></h2>
-            <p class="section-intro">
-                Cette approche vise les personnes qui veulent réellement se recentrer et reprendre une direction plus solide.
-            </p>
+        <div class="grid-2">
+          <article class="card card-strong">
+            <h3 class="card-title">Tu veux reprendre le contrôle</h3>
+            <ul class="bullet-list">
+              <li>Tu veux sortir du flou et retrouver une direction claire.</li>
+              <li>Tu veux mieux gérer tes priorités, ton énergie et tes décisions.</li>
+              <li>Tu veux une structure simple plutôt qu’un système compliqué.</li>
+            </ul>
+          </article>
 
-            <div class="grid-2">
-                <article class="card strong">
-                    <h3>Tu veux reprendre le contrôle</h3>
-                    <ul class="list">
-                        <li>Tu veux sortir du flou et retrouver une direction claire.</li>
-                        <li>Tu veux mieux gérer tes priorités, ton énergie et tes décisions.</li>
-                        <li>Tu veux une structure simple plutôt qu’un système compliqué.</li>
-                    </ul>
-                </article>
+          <article class="card card-strong">
+            <h3 class="card-title">Tu es prêt à agir</h3>
+            <ul class="bullet-list">
+              <li>Tu veux mettre en place plus de discipline et de constance.</li>
+              <li>Tu veux construire quelque chose de stable dans la vraie vie.</li>
+              <li>Tu veux arrêter de repartir toujours au même point.</li>
+            </ul>
+          </article>
+        </div>
+      </div>
+    </section>
 
-                <article class="card strong">
-                    <h3>Tu es prêt à agir</h3>
-                    <ul class="list">
-                        <li>Tu veux mettre en place plus de discipline et de constance.</li>
-                        <li>Tu veux construire quelque chose de stable dans la vraie vie.</li>
-                        <li>Tu veux arrêter de repartir toujours au même point.</li>
-                    </ul>
-                </article>
-            </div>
-        </section>
+    <section class="section">
+      <div class="panel section-box">
+        <h2 class="section-title">Ce programme n’est <span class="gold">pas pour toi si…</span></h2>
+        <p class="section-intro">
+          Mieux vaut être clair dès le départ pour attirer les bonnes personnes.
+        </p>
 
-        <section class="section panel">
-            <h2 class="section-title">Ce programme n’est <span class="gold">pas pour toi si…</span></h2>
-            <p class="section-intro">
-                Mieux vaut être clair dès le départ pour attirer les bonnes personnes.
-            </p>
+        <div class="grid-2">
+          <article class="card">
+            <h3 class="card-title">Tu veux une solution magique</h3>
+            <ul class="bullet-list">
+              <li>Tu cherches un raccourci sans implication personnelle.</li>
+              <li>Tu veux tout changer sans discipline ni régularité.</li>
+              <li>Tu refuses de regarder honnêtement ce qui bloque.</li>
+            </ul>
+          </article>
 
-            <div class="grid-2">
-                <article class="card">
-                    <h3>Tu veux une solution magique</h3>
-                    <ul class="list">
-                        <li>Tu cherches un raccourci sans implication personnelle.</li>
-                        <li>Tu veux tout changer sans discipline ni régularité.</li>
-                        <li>Tu refuses de regarder honnêtement ce qui bloque.</li>
-                    </ul>
-                </article>
+          <article class="card">
+            <h3 class="card-title">Tu ne veux pas te structurer</h3>
+            <ul class="bullet-list">
+              <li>Tu préfères rester dans l’improvisation permanente.</li>
+              <li>Tu n’es pas prêt à clarifier tes décisions et tes habitudes.</li>
+              <li>Tu veux seulement consommer du contenu sans passer à l’action.</li>
+            </ul>
+          </article>
+        </div>
+      </div>
+    </section>
 
-                <article class="card">
-                    <h3>Tu ne veux pas te structurer</h3>
-                    <ul class="list">
-                        <li>Tu préfères rester dans l’improvisation permanente.</li>
-                        <li>Tu n’es pas prêt à clarifier tes décisions et tes habitudes.</li>
-                        <li>Tu veux seulement consommer du contenu sans passer à l’action.</li>
-                    </ul>
-                </article>
-            </div>
-        </section>
+    <section class="section">
+      <div class="panel section-box">
+        <h2 class="section-title">Pourquoi cette approche <span class="gold">fonctionne</span></h2>
+        <p class="section-intro">
+          Elle ne repose pas sur le bruit. Elle repose sur la clarté, la structure et l’exécution.
+        </p>
 
-        <section class="section panel">
-            <h2 class="section-title">Pourquoi cette approche <span class="gold">fonctionne</span></h2>
-            <p class="section-intro">
-                Elle ne repose pas sur le bruit. Elle repose sur la clarté, la structure et l’exécution.
-            </p>
+        <div class="grid-3">
+          <article class="card card-strong">
+            <h3 class="card-title">Tu simplifies</h3>
+            <p class="card-text">Tu enlèves le flou pour voir clairement ce qui compte vraiment.</p>
+          </article>
 
-            <div class="grid">
-                <article class="card strong">
-                    <h3>Tu simplifies</h3>
-                    <p>Tu enlèves le flou pour voir clairement ce qui compte vraiment.</p>
-                </article>
+          <article class="card card-strong">
+            <h3 class="card-title">Tu structures</h3>
+            <p class="card-text">Tu mets de l’ordre dans tes décisions, tes finances et ton quotidien.</p>
+          </article>
 
-                <article class="card strong">
-                    <h3>Tu structures</h3>
-                    <p>Tu mets de l’ordre dans tes décisions, tes finances et ton quotidien.</p>
-                </article>
+          <article class="card card-strong">
+            <h3 class="card-title">Tu avances</h3>
+            <p class="card-text">Tu renforces une constance réelle au lieu de dépendre de la motivation du moment.</p>
+          </article>
+        </div>
+      </div>
+    </section>
 
-                <article class="card strong">
-                    <h3>Tu avances</h3>
-                    <p>Tu renforces une constance réelle au lieu de dépendre de la motivation du moment.</p>
-                </article>
-            </div>
-        </section>
+    <section class="section">
+      <div class="panel section-box">
+        <h2 class="section-title">Crédibilité et <span class="gold">réassurance</span></h2>
+        <p class="section-intro">
+          Tout est pensé pour te donner une expérience plus simple, plus claire et plus rassurante.
+        </p>
 
-        <section class="section panel">
-            <h2 class="section-title">Crédibilité et <span class="gold">réassurance</span></h2>
-            <p class="section-intro">
-                Tout est pensé pour te donner une expérience plus simple, plus claire et plus rassurante.
-            </p>
+        <div class="credibility-grid">
+          <div class="credibility-item">Paiement sécurisé Stripe</div>
+          <div class="credibility-item">Approche structurée et sobre</div>
+          <div class="credibility-item">Clarté • Discipline • Constance</div>
+        </div>
 
-            <div class="credibility-bar">
-                <div class="credibility-item">Paiement sécurisé Stripe</div>
-                <div class="credibility-item">Approche structurée et sobre</div>
-                <div class="credibility-item">Clarté • Discipline • Constance</div>
-            </div>
+        <div class="grid-2" style="margin-top: 18px;">
+          <article class="card">
+            <h3 class="card-title">Processus simple</h3>
+            <p class="card-text">Tu accèdes à une page claire, à une offre compréhensible et à un paiement sécurisé sans confusion inutile.</p>
+          </article>
 
-            <div class="grid-2" style="margin-top: 18px;">
-                <article class="card">
-                    <h3>Processus simple</h3>
-                    <p>Tu accèdes à une page claire, à une offre compréhensible et à un paiement sécurisé sans confusion inutile.</p>
-                </article>
+          <article class="card">
+            <h3 class="card-title">Positionnement solide</h3>
+            <p class="card-text">Le Pivot d’Or repose sur une logique de reconstruction concrète : plus de clarté, plus de structure, plus de maîtrise.</p>
+          </article>
+        </div>
+      </div>
+    </section>
 
-                <article class="card">
-                    <h3>Positionnement solide</h3>
-                    <p>Le Pivot d’Or repose sur une logique de reconstruction concrète : plus de clarté, plus de structure, plus de maîtrise.</p>
-                </article>
-            </div>
-        </section>
+    <section class="section">
+      <div class="panel cta-section">
+        <h2 class="cta-section-title">
+          Tu veux avancer avec plus de <span class="gold">clarté</span> dès maintenant ?
+        </h2>
 
-    </main>
+        <p class="cta-section-text">
+          Si tu veux arrêter le flou, mieux structurer tes décisions et repartir sur une base plus solide,
+          tu peux accéder au programme maintenant.
+        </p>
+
+        <a href="https://buy.stripe.com/3cI3cn6aA1fhcaWgRecbC00" class="cta-secondary">
+          Je veux accéder au programme
+        </a>
+
+        <p class="footer-note">
+          Paiement sécurisé • Accès rapide • Deuxième point d’entrée pour faciliter le passage à l’action
+        </p>
+      </div>
+    </section>
+  </main>
 </body>
 </html>
