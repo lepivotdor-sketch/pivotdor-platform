@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Page 2 du site Le Pivot d'Or." />
+  <title>Le Pivot d'Or | Page 2</title>
+
+  <style>
+    :root {
+      --bg: #060606;
+      --text: #ffffff;
+      --text-soft: #d7d7d7;
+      --gold: #d4af37;
+      --gold-soft: #f1d98a;
+      --border-gold: rgba(212, 175, 55, 0.22);
+      --shadow-dark: rgba(0, 0, 0, 0.35);
+      --shadow-gold: rgba(212, 175, 55, 0.12);
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      min-height: 100vh;
+      font-family: Arial, sans-serif;
+      color: var(--text);
+      background:
+        radial-gradient(circle at top, rgba(212, 175, 55, 0.12), transparent 32%),
+        linear-gradient(180deg, #101010 0%, var(--bg) 50%, #000000 100%);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 20px;
+    }
+
+    .page-box {
+      width: 100%;
+      max-width: 760px;
+      padding: 36px 24px;
+      text-align: center;
+      border-radius: 30px;
+      border: 1px solid var(--border-gold);
+      background: linear-gradient(180deg, rgba(255,255,255,0.04), rgba(255,255,255,0.025));
+      box-shadow:
+        0 24px 64px var(--shadow-dark),
+        0 10px 34px var(--shadow-gold);
+    }
+
+    .eyebrow {
+      display: inline-block;
+      padding: 8px 16px;
+      border-radius: 999px;
+      background: rgba(212, 175, 55, 0.08);
+      border: 1px solid rgba(212, 175, 55, 0.28);
+      color: var(--gold-soft);
+      font-size: 13px;
+      font-weight: 700;
+      letter-spacing: 1.2px;
+      text-transform: uppercase;
+      margin-bottom: 18px;
+    }
+
+    h1 {
+      font-size: clamp(2rem, 4vw, 3.4rem);
+      line-height: 1.08;
+    }
+
+    p {
+      margin-top: 16px;
+      color: var(--text-soft);
+      font-size: 1rem;
+    }
+
+    .button-back {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 54px;
+      margin-top: 28px;
+      padding: 14px 24px;
+      border-radius: 16px;
+      text-decoration: none;
+      font-weight: 700;
+      color: #111111;
+      background: linear-gradient(135deg, #f8e7a6, var(--gold));
+      box-shadow:
+        0 12px 30px rgba(212, 175, 55, 0.24),
+        0 0 0 1px rgba(255, 235, 170, 0.24) inset;
+      transition: transform 220ms ease, box-shadow 220ms ease;
+    }
+
+    .button-back:hover {
+      transform: translateY(-2px);
+      box-shadow:
+        0 16px 36px rgba(212, 175, 55, 0.3),
+        0 0 0 1px rgba(255, 235, 170, 0.34) inset;
+    }
+  </style>
+</head>
+<body>
+  <main class="page-box">
+    <div class="eyebrow">Le Pivot d'Or • Page 2</div>
+    <h1>Titre de la page 2</h1>
+    <p>Cette page est volontairement simple pour le moment. Tu pourras la développer plus tard.</p>
+    <a href="index.html" class="button-back">Revenir à la page 1</a>
+  </main>
+</body>
+</html>
