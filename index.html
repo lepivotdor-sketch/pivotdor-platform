@@ -3,19 +3,21 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Le Pivot d'Or t'aide à bâtir une vie plus solide avec plus de clarté, de discipline, de structure et de constance. Accède dès maintenant au programme.">
+    <meta name="description" content="Le Pivot d'Or t'aide à bâtir une vie plus solide avec plus de clarté, de discipline, de structure et de constance.">
     <title>Le Pivot d'Or | Clarté, discipline et structure</title>
 
     <style>
         :root {
             --bg-main: #050505;
-            --bg-secondary: #0d0d0d;
+            --bg-soft: #101010;
+            --bg-card: rgba(255, 255, 255, 0.04);
             --gold: #d4af37;
-            --gold-light: #f1d77a;
+            --gold-light: #f4dd8a;
             --text: #ffffff;
-            --text-soft: #cfcfcf;
-            --border: rgba(212, 175, 55, 0.28);
-            --shadow: rgba(212, 175, 55, 0.14);
+            --text-soft: #d0d0d0;
+            --text-muted: #a7a7a7;
+            --border: rgba(212, 175, 55, 0.22);
+            --shadow: rgba(212, 175, 55, 0.16);
         }
 
         * {
@@ -27,19 +29,17 @@
         body {
             font-family: Arial, sans-serif;
             color: var(--text);
-            min-height: 100vh;
             background:
-                radial-gradient(circle at top, rgba(212, 175, 55, 0.16), transparent 35%),
-                linear-gradient(180deg, #111111 0%, var(--bg-main) 60%, #000000 100%);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            padding: 40px 20px;
+                radial-gradient(circle at top, rgba(212, 175, 55, 0.14), transparent 35%),
+                linear-gradient(180deg, #111111 0%, var(--bg-main) 55%, #000000 100%);
+            line-height: 1.6;
         }
 
         .page {
             width: 100%;
-            max-width: 960px;
+            max-width: 1140px;
+            margin: 0 auto;
+            padding: 40px 20px 70px;
         }
 
         .hero-card {
@@ -47,7 +47,7 @@
             border: 1px solid var(--border);
             border-radius: 24px;
             box-shadow: 0 24px 60px var(--shadow);
-            padding: 56px 34px;
+            padding: 60px 34px;
             text-align: center;
             backdrop-filter: blur(6px);
         }
@@ -67,53 +67,124 @@
         }
 
         h1 {
-            font-size: 46px;
-            line-height: 1.1;
+            font-size: 54px;
+            line-height: 1.08;
             margin-bottom: 18px;
-            color: var(--text);
+            letter-spacing: -0.5px;
         }
 
         h1 .gold {
             color: var(--gold-light);
         }
 
-        h2 {
-            font-size: 22px;
-            line-height: 1.5;
-            font-weight: normal;
+        .subtitle {
+            max-width: 800px;
+            margin: 0 auto 18px;
+            font-size: 23px;
             color: var(--text-soft);
-            max-width: 760px;
-            margin: 0 auto 30px;
+        }
+
+        .value-line {
+            max-width: 780px;
+            margin: 0 auto 32px;
+            font-size: 18px;
+            color: var(--text);
+            font-weight: bold;
         }
 
         .cta {
             display: inline-block;
-            margin-top: 10px;
-            padding: 16px 34px;
-            font-size: 18px;
+            margin-top: 8px;
+            padding: 18px 38px;
+            font-size: 19px;
             font-weight: bold;
             color: #111111;
             background: linear-gradient(135deg, var(--gold-light), var(--gold));
-            border-radius: 12px;
+            border-radius: 14px;
             text-decoration: none;
-            box-shadow: 0 10px 30px rgba(212, 175, 55, 0.24);
+            box-shadow: 0 12px 30px rgba(212, 175, 55, 0.26);
             transition: transform 0.25s ease, box-shadow 0.25s ease;
         }
 
         .cta:hover {
             transform: translateY(-2px) scale(1.02);
-            box-shadow: 0 16px 36px rgba(212, 175, 55, 0.34);
+            box-shadow: 0 18px 38px rgba(212, 175, 55, 0.35);
         }
 
-        .note {
-            margin-top: 18px;
+        .reassurance {
+            margin-top: 16px;
             font-size: 14px;
-            color: #a7a7a7;
+            color: var(--text-muted);
         }
 
-        @media (max-width: 768px) {
+        .section {
+            margin-top: 42px;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 34px;
+            margin-bottom: 12px;
+        }
+
+        .section-title .gold {
+            color: var(--gold-light);
+        }
+
+        .section-intro {
+            text-align: center;
+            max-width: 760px;
+            margin: 0 auto 28px;
+            color: var(--text-soft);
+            font-size: 18px;
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 18px;
+        }
+
+        .card {
+            background: var(--bg-card);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            border-radius: 18px;
+            padding: 24px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.25);
+        }
+
+        .card h3 {
+            font-size: 20px;
+            margin-bottom: 10px;
+            color: var(--gold-light);
+        }
+
+        .card p {
+            font-size: 16px;
+            color: var(--text-soft);
+        }
+
+        @media (max-width: 900px) {
+            h1 {
+                font-size: 42px;
+            }
+
+            .subtitle {
+                font-size: 20px;
+            }
+
+            .grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media (max-width: 640px) {
+            .page {
+                padding: 24px 16px 50px;
+            }
+
             .hero-card {
-                padding: 42px 22px;
+                padding: 40px 22px;
                 border-radius: 18px;
             }
 
@@ -121,40 +192,152 @@
                 font-size: 34px;
             }
 
-            h2 {
+            .subtitle {
                 font-size: 18px;
+            }
+
+            .value-line {
+                font-size: 17px;
+            }
+
+            .section-title {
+                font-size: 28px;
+            }
+
+            .section-intro {
+                font-size: 16px;
             }
 
             .cta {
                 width: 100%;
                 max-width: 340px;
+                padding: 17px 20px;
             }
         }
     </style>
 </head>
 <body>
     <main class="page">
+
         <section class="hero-card">
             <div class="brand">Le Pivot d'Or</div>
 
             <h1>
-                Bâtir une vie solide avec plus de
-                <span class="gold">clarté</span>
+                Reprends le contrôle de ta vie avec plus de
+                <span class="gold">clarté</span>,
+                de structure et de discipline
             </h1>
 
-            <h2>
-                Découvre une approche plus structurée pour reprendre le contrôle,
-                avancer avec discipline et commencer ton accès au programme Le Pivot d'Or.
-            </h2>
+            <p class="subtitle">
+                Le Pivot d'Or t’aide à sortir du flou, à reprendre tes décisions en main
+                et à avancer avec une méthode plus simple, plus solide et plus constante.
+            </p>
+
+            <p class="value-line">
+                Tu n’achètes pas seulement un accès : tu entres dans une approche conçue pour t’aider
+                à bâtir une vie plus stable, plus claire et plus maîtrisée.
+            </p>
 
             <a href="https://buy.stripe.com/3cI3cn6aA1fhcaWgRecbC00" class="cta">
-                Payer maintenant
+                Accéder maintenant au programme
             </a>
 
-            <p class="note">
-                Paiement sécurisé avec Stripe
+            <p class="reassurance">
+                Paiement sécurisé avec Stripe • Accès simple • Processus rapide
             </p>
         </section>
+
+        <section class="section">
+            <h2 class="section-title">Ce que tu <span class="gold">obtiens</span></h2>
+            <p class="section-intro">
+                Une base plus claire pour reprendre ton élan, mieux structurer tes finances
+                et avancer avec davantage de constance.
+            </p>
+
+            <div class="grid">
+                <article class="card">
+                    <h3>Plus de clarté</h3>
+                    <p>
+                        Tu comprends mieux où tu en es, ce qui bloque et ce que tu dois faire ensuite.
+                    </p>
+                </article>
+
+                <article class="card">
+                    <h3>Plus de structure</h3>
+                    <p>
+                        Tu avances avec une méthode plus simple, plus ordonnée et plus facile à suivre.
+                    </p>
+                </article>
+
+                <article class="card">
+                    <h3>Plus de discipline</h3>
+                    <p>
+                        Tu renforces ta capacité à tenir une ligne claire au lieu de repartir dans le chaos.
+                    </p>
+                </article>
+            </div>
+        </section>
+
+        <section class="section">
+            <h2 class="section-title">Les bénéfices <span class="gold">concrets</span></h2>
+            <p class="section-intro">
+                Ce programme est pensé pour t’aider à obtenir des changements réels dans ton quotidien.
+            </p>
+
+            <div class="grid">
+                <article class="card">
+                    <h3>Décisions plus simples</h3>
+                    <p>
+                        Tu sais mieux quoi prioriser, quoi couper et quoi renforcer.
+                    </p>
+                </article>
+
+                <article class="card">
+                    <h3>Finances plus lisibles</h3>
+                    <p>
+                        Tu avances avec plus de visibilité sur ton argent, tes choix et ta direction.
+                    </p>
+                </article>
+
+                <article class="card">
+                    <h3>Actions plus cohérentes</h3>
+                    <p>
+                        Tu réduis l’improvisation et tu passes plus facilement à l’action utile.
+                    </p>
+                </article>
+            </div>
+        </section>
+
+        <section class="section">
+            <h2 class="section-title">La transformation <span class="gold">ressentie</span></h2>
+            <p class="section-intro">
+                Au-delà des outils, l’objectif est aussi de changer la manière dont tu te sens dans ta vie.
+            </p>
+
+            <div class="grid">
+                <article class="card">
+                    <h3>Moins de flou</h3>
+                    <p>
+                        Tu te sens moins perdu et plus aligné avec ce que tu veux vraiment bâtir.
+                    </p>
+                </article>
+
+                <article class="card">
+                    <h3>Moins de stress</h3>
+                    <p>
+                        Tu retrouves une sensation de contrôle, de calme et de stabilité intérieure.
+                    </p>
+                </article>
+
+                <article class="card">
+                    <h3>Plus de confiance</h3>
+                    <p>
+                        Tu avances avec une posture plus solide, plus claire et plus constante.
+                    </p>
+                </article>
+            </div>
+        </section>
+
     </main>
 </body>
 </html>
