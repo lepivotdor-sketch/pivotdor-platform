@@ -572,12 +572,76 @@
     }
 
     .credibility-pill {
-      padding: 16px;
-      text-align: center;
+      padding: 0;
       background: rgba(212, 175, 55, 0.08);
       border: 1px solid rgba(212, 175, 55, 0.16);
       color: var(--text);
+      overflow: hidden;
+      transition: transform var(--transition), border-color var(--transition), box-shadow var(--transition);
+    }
+
+    .credibility-pill:hover {
+      transform: translateY(-2px);
+      border-color: rgba(212, 175, 55, 0.28);
+      box-shadow:
+        0 14px 34px rgba(0, 0, 0, 0.26),
+        0 6px 18px rgba(212, 175, 55, 0.08);
+    }
+
+    .credibility-pill summary {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+      padding: 18px 18px;
+      list-style: none;
+      cursor: pointer;
       font-weight: 700;
+      color: var(--text);
+    }
+
+    .credibility-pill summary::-webkit-details-marker {
+      display: none;
+    }
+
+    .credibility-label {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .credibility-icon {
+      display: inline-flex;
+      width: 34px;
+      height: 34px;
+      align-items: center;
+      justify-content: center;
+      border-radius: 50%;
+      background: rgba(212, 175, 55, 0.14);
+      border: 1px solid rgba(212, 175, 55, 0.22);
+      color: var(--gold-soft);
+      font-size: 1rem;
+      flex-shrink: 0;
+    }
+
+    .dropdown-arrow {
+      color: var(--gold-soft);
+      font-size: 1.1rem;
+      transition: transform var(--transition);
+    }
+
+    .credibility-pill[open] .dropdown-arrow {
+      transform: rotate(180deg);
+    }
+
+    .credibility-details {
+      padding: 0 18px 18px 62px;
+      color: var(--text-soft);
+      font-size: 0.94rem;
+    }
+
+    .credibility-details strong {
+      color: var(--gold-soft);
     }
 
     .future-zone {
@@ -669,12 +733,14 @@
         </div>
       </div>
 
-      <nav class="header-nav">
-        <a href="#temoignages">Témoignages</a>
-        <a href="#offre">Offre</a>
-        <a href="#garantie">Garantie</a>
-        <a href="#faq">FAQ</a>
-        <a href="page2.html">Page 2</a>
+      <nav class="header-nav" aria-label="Navigation principale">
+        <a href="index.html">Accueil</a>
+        <a href="offre.html">Offre</a>
+        <a href="methode.html">Méthode</a>
+        <a href="faq.html">FAQ</a>
+        <a href="contact.html">Contact</a>
+        <a href="conditions.html">Conditions</a>
+        <a href="confidentialite.html">Confidentialité</a>
         <a href="https://buy.stripe.com/3cI3cn6aA1fhcaWgRecbC00" class="button-header">Accéder</a>
       </nav>
     </div>
@@ -705,8 +771,8 @@
               <a href="https://buy.stripe.com/3cI3cn6aA1fhcaWgRecbC00" class="button-primary">
                 Accéder maintenant au programme
               </a>
-              <a href="#offre" class="button-secondary">
-                Voir l’offre
+              <a href="offre.html" class="button-secondary">
+                Voir l’offre complète
               </a>
             </div>
 
@@ -1088,13 +1154,50 @@
       <div class="panel section-inner">
         <div class="section-heading">
           <h2 class="section-title">Crédibilité et <span class="gold">réassurance</span></h2>
-          <p class="section-text">Tout est pensé pour donner une expérience plus simple, plus claire et plus rassurante.</p>
+          <p class="section-text">
+            Clique sur chaque élément pour voir une brève explication avant de passer au paiement.
+          </p>
         </div>
 
         <div class="credibility-row">
-          <div class="credibility-pill">Paiement sécurisé Stripe</div>
-          <div class="credibility-pill">Garantie satisfaction 30 jours</div>
-          <div class="credibility-pill">Clarté • Discipline • Constance</div>
+          <details class="credibility-pill">
+            <summary>
+              <span class="credibility-label">
+                <span class="credibility-icon">🔒</span>
+                Paiement sécurisé Stripe
+              </span>
+              <span class="dropdown-arrow">⌄</span>
+            </summary>
+            <div class="credibility-details">
+              <strong>Ton paiement est traité par Stripe.</strong> Tu passes par une plateforme de paiement reconnue, sécurisée et utilisée par de nombreuses entreprises en ligne.
+            </div>
+          </details>
+
+          <details class="credibility-pill">
+            <summary>
+              <span class="credibility-label">
+                <span class="credibility-icon">✓</span>
+                Garantie satisfaction 30 jours
+              </span>
+              <span class="dropdown-arrow">⌄</span>
+            </summary>
+            <div class="credibility-details">
+              <strong>Tu peux commencer avec plus de confiance.</strong> Si le programme ne correspond pas à tes attentes, tu peux demander un remboursement selon les conditions prévues.
+            </div>
+          </details>
+
+          <details class="credibility-pill">
+            <summary>
+              <span class="credibility-label">
+                <span class="credibility-icon">◆</span>
+                Clarté • Discipline • Constance
+              </span>
+              <span class="dropdown-arrow">⌄</span>
+            </summary>
+            <div class="credibility-details">
+              <strong>La méthode reste simple et structurée.</strong> Le but est de t’aider à clarifier ta situation, installer une meilleure organisation et avancer avec plus de constance.
+            </div>
+          </details>
         </div>
       </div>
     </section>
@@ -1128,8 +1231,8 @@
           <a href="https://buy.stripe.com/3cI3cn6aA1fhcaWgRecbC00" class="button-primary">
             Je commence le Pilotage financier
           </a>
-          <a href="page2.html" class="button-secondary">
-            Aller à la page 2
+          <a href="methode.html" class="button-secondary">
+            Voir la méthode
           </a>
         </div>
 
@@ -1140,11 +1243,19 @@
         </div>
 
         <div class="footer-links">
-          <span>Le Pivot d'Or</span>
+          <a href="index.html">Accueil</a>
           <span>•</span>
-          <span>Vision. Clarté. Discipline. Structure. Constance.</span>
+          <a href="offre.html">Offre</a>
           <span>•</span>
-          <span>logo.png doit être dans le même dossier que index.html</span>
+          <a href="methode.html">Méthode</a>
+          <span>•</span>
+          <a href="faq.html">FAQ</a>
+          <span>•</span>
+          <a href="contact.html">Contact</a>
+          <span>•</span>
+          <a href="conditions.html">Conditions</a>
+          <span>•</span>
+          <a href="confidentialite.html">Confidentialité</a>
         </div>
       </div>
     </section>
