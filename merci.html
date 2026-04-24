@@ -1,1 +1,642 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Merci pour ta confiance. Ton paiement pour Le Pivot d'Or est confirmé. Découvre les prochaines étapes pour commencer ton accompagnement." />
+  <meta name="robots" content="noindex, follow" />
+  <meta property="og:title" content="Merci | Le Pivot d'Or" />
+  <meta property="og:description" content="Ton paiement est confirmé. Voici les prochaines étapes pour commencer ton accompagnement." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://lepivotdor.ca/merci.html" />
+  <meta property="og:image" content="https://lepivotdor.ca/og-offre.png" />
+  <link rel="canonical" href="https://lepivotdor.ca/merci.html" />
+  <link rel="icon" href="logo.png" type="image/png" />
+  <title>Merci | Le Pivot d'Or</title>
+
+  <style>
+    :root {
+      --bg: #060606;
+      --text: #ffffff;
+      --text-soft: #d7d7d7;
+      --text-muted: #a7a7a7;
+      --gold: #d4af37;
+      --gold-soft: #f1d98a;
+      --border-soft: rgba(255, 255, 255, 0.08);
+      --border-gold: rgba(212, 175, 55, 0.22);
+      --shadow-dark: rgba(0, 0, 0, 0.35);
+      --shadow-gold: rgba(212, 175, 55, 0.12);
+      --max-width: 1180px;
+      --radius-xl: 30px;
+      --radius-lg: 22px;
+      --transition: 220ms ease;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: Arial, sans-serif;
+      color: var(--text);
+      background:
+        radial-gradient(circle at top, rgba(212, 175, 55, 0.16), transparent 34%),
+        linear-gradient(180deg, #101010 0%, var(--bg) 48%, #000000 100%);
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+      text-rendering: optimizeLegibility;
+    }
+
+    a {
+      color: inherit;
+    }
+
+    a:focus {
+      outline: 2px solid var(--gold-soft);
+      outline-offset: 4px;
+    }
+
+    .page-shell {
+      width: 100%;
+      max-width: var(--max-width);
+      margin: 0 auto;
+      padding: 20px 20px 80px;
+    }
+
+    .site-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+      padding: 16px 22px;
+      margin-bottom: 18px;
+      border-radius: 22px;
+      background: rgba(255, 255, 255, 0.03);
+      border: 1px solid rgba(212, 175, 55, 0.16);
+      box-shadow: 0 12px 28px rgba(0, 0, 0, 0.22);
+    }
+
+    .brand-wrap {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+    }
+
+    .brand-mark {
+      width: 52px;
+      height: 52px;
+      border-radius: 14px;
+      background: linear-gradient(180deg, rgba(255,255,255,0.06), rgba(255,255,255,0.03));
+      border: 1px solid rgba(212, 175, 55, 0.18);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+      flex-shrink: 0;
+    }
+
+    .brand-mark img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .brand-name {
+      font-size: 1rem;
+      font-weight: 700;
+    }
+
+    .brand-tagline {
+      font-size: 0.86rem;
+      color: var(--text-muted);
+      margin-top: 3px;
+    }
+
+    .header-nav {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      flex-wrap: wrap;
+    }
+
+    .header-nav a {
+      text-decoration: none;
+      color: var(--text-soft);
+      font-size: 0.95rem;
+      transition: color var(--transition);
+    }
+
+    .header-nav a:hover {
+      color: var(--gold-soft);
+    }
+
+    .section {
+      margin-top: 28px;
+    }
+
+    .panel {
+      background: linear-gradient(180deg, rgba(255,255,255,0.04), rgba(255,255,255,0.025));
+      border: 1px solid var(--border-gold);
+      border-radius: var(--radius-xl);
+      box-shadow:
+        0 24px 64px var(--shadow-dark),
+        0 10px 34px var(--shadow-gold);
+      backdrop-filter: blur(8px);
+      overflow: hidden;
+    }
+
+    .section-inner {
+      padding: 42px 30px;
+    }
+
+    .hero-layout {
+      display: grid;
+      grid-template-columns: minmax(0, 1.08fr) minmax(320px, 0.92fr);
+      gap: 28px;
+      align-items: center;
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 8px 16px;
+      border: 1px solid rgba(212, 175, 55, 0.28);
+      border-radius: 999px;
+      background: rgba(212, 175, 55, 0.08);
+      color: var(--gold-soft);
+      font-size: 13px;
+      font-weight: 700;
+      letter-spacing: 1.2px;
+      text-transform: uppercase;
+    }
+
+    .hero-title {
+      margin-top: 18px;
+      font-size: clamp(2.2rem, 4.2vw, 4.2rem);
+      line-height: 1.06;
+      letter-spacing: -0.045em;
+    }
+
+    .gold {
+      color: var(--gold-soft);
+    }
+
+    .hero-subtitle {
+      max-width: 760px;
+      margin-top: 18px;
+      font-size: clamp(1.05rem, 1.8vw, 1.35rem);
+      color: var(--text-soft);
+    }
+
+    .button-primary,
+    .button-secondary {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 54px;
+      padding: 14px 22px;
+      border-radius: 16px;
+      text-decoration: none;
+      font-weight: 700;
+      transition:
+        transform var(--transition),
+        box-shadow var(--transition),
+        border-color var(--transition),
+        background-color var(--transition);
+    }
+
+    .button-primary {
+      color: #111111;
+      background: linear-gradient(135deg, #f8e7a6, var(--gold));
+      box-shadow:
+        0 12px 30px rgba(212, 175, 55, 0.24),
+        0 0 0 1px rgba(255, 235, 170, 0.24) inset;
+    }
+
+    .button-secondary {
+      color: var(--text);
+      border: 1px solid var(--border-soft);
+      background: rgba(255, 255, 255, 0.04);
+    }
+
+    .button-primary:hover,
+    .button-secondary:hover,
+    .step-card:hover,
+    .support-card:hover {
+      transform: translateY(-2px);
+    }
+
+    .button-primary:hover {
+      box-shadow:
+        0 16px 36px rgba(212, 175, 55, 0.3),
+        0 0 0 1px rgba(255, 235, 170, 0.34) inset;
+    }
+
+    .button-secondary:hover {
+      border-color: rgba(212, 175, 55, 0.24);
+      background: rgba(255, 255, 255, 0.06);
+    }
+
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 14px;
+      margin-top: 26px;
+    }
+
+    .confirmation-card {
+      padding: 28px;
+      border-radius: var(--radius-lg);
+      background:
+        radial-gradient(circle at top left, rgba(212, 175, 55, 0.12), transparent 34%),
+        rgba(255, 255, 255, 0.04);
+      border: 1px solid rgba(212, 175, 55, 0.22);
+      box-shadow: 0 14px 34px rgba(0, 0, 0, 0.26);
+    }
+
+    .checkmark {
+      width: 74px;
+      height: 74px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 18px;
+      border-radius: 50%;
+      color: #111111;
+      background: linear-gradient(135deg, #f8e7a6, var(--gold));
+      font-size: 2.2rem;
+      font-weight: 800;
+      box-shadow: 0 12px 30px rgba(212, 175, 55, 0.24);
+    }
+
+    .confirmation-title {
+      font-size: 1.5rem;
+      line-height: 1.2;
+      color: var(--gold-soft);
+      margin-bottom: 12px;
+    }
+
+    .confirmation-copy {
+      color: var(--text-soft);
+      font-size: 0.98rem;
+    }
+
+    .info-box {
+      margin-top: 18px;
+      padding: 16px;
+      border-radius: 16px;
+      background: rgba(255, 255, 255, 0.035);
+      border: 1px solid rgba(212, 175, 55, 0.16);
+      color: var(--text-soft);
+      font-size: 0.94rem;
+    }
+
+    .info-box strong,
+    .info-box a {
+      color: var(--gold-soft);
+    }
+
+    .info-box a {
+      text-decoration: none;
+      font-weight: 700;
+    }
+
+    .info-box a:hover {
+      text-decoration: underline;
+    }
+
+    .section-heading {
+      text-align: center;
+      margin-bottom: 22px;
+    }
+
+    .section-title {
+      font-size: clamp(1.8rem, 2.4vw, 2.7rem);
+      line-height: 1.15;
+    }
+
+    .section-text {
+      max-width: 800px;
+      margin: 12px auto 0;
+      color: var(--text-soft);
+      font-size: 1.02rem;
+    }
+
+    .steps-grid,
+    .support-grid {
+      display: grid;
+      gap: 18px;
+    }
+
+    .steps-grid {
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+    }
+
+    .support-grid {
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+
+    .step-card,
+    .support-card {
+      padding: 24px;
+      border-radius: var(--radius-lg);
+      background: rgba(255, 255, 255, 0.04);
+      border: 1px solid var(--border-soft);
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.22);
+      transition: transform var(--transition), border-color var(--transition), box-shadow var(--transition);
+    }
+
+    .step-card:hover,
+    .support-card:hover {
+      border-color: rgba(212, 175, 55, 0.22);
+      box-shadow:
+        0 14px 34px rgba(0, 0, 0, 0.26),
+        0 6px 18px rgba(212, 175, 55, 0.06);
+    }
+
+    .step-number {
+      display: inline-flex;
+      width: 36px;
+      height: 36px;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 12px;
+      border-radius: 50%;
+      background: rgba(212, 175, 55, 0.12);
+      border: 1px solid rgba(212, 175, 55, 0.24);
+      color: var(--gold-soft);
+      font-weight: 700;
+    }
+
+    .card-heading {
+      font-size: 1.12rem;
+      margin-bottom: 10px;
+      color: var(--gold-soft);
+    }
+
+    .card-copy {
+      color: var(--text-soft);
+      font-size: 0.98rem;
+    }
+
+    .footer-links {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 12px;
+      margin-top: 22px;
+      color: var(--text-muted);
+      font-size: 0.9rem;
+    }
+
+    .footer-links a {
+      text-decoration: none;
+      color: var(--text-muted);
+    }
+
+    .footer-links a:hover {
+      color: var(--gold-soft);
+    }
+
+    .update-note {
+      margin-top: 18px;
+      text-align: center;
+      color: var(--text-muted);
+      font-size: 0.88rem;
+    }
+
+    @media (max-width: 1080px) {
+      .site-header,
+      .hero-layout,
+      .steps-grid,
+      .support-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .site-header {
+        display: grid;
+        justify-items: start;
+      }
+    }
+
+    @media (max-width: 720px) {
+      .page-shell {
+        padding: 18px 14px 54px;
+      }
+
+      .section {
+        margin-top: 18px;
+      }
+
+      .section-inner {
+        padding: 26px 18px;
+      }
+
+      .panel {
+        border-radius: 22px;
+      }
+
+      .hero-title {
+        font-size: 2.15rem;
+      }
+
+      .hero-actions,
+      .header-nav {
+        flex-direction: column;
+        width: 100%;
+        align-items: stretch;
+      }
+
+      .button-primary,
+      .button-secondary {
+        width: 100%;
+      }
+    }
+  </style>
+</head>
+<body>
+  <main class="page-shell">
+    <div class="site-header">
+      <div class="brand-wrap">
+        <div class="brand-mark">
+          <img src="logo.png" alt="Logo Le Pivot d'Or" />
+        </div>
+        <div>
+          <div class="brand-name">Le Pivot d'Or</div>
+          <div class="brand-tagline">Bâtir une vie solide : Vision. Clarté. Discipline. Structure. Constance.</div>
+        </div>
+      </div>
+
+      <nav class="header-nav" aria-label="Navigation principale">
+        <a href="index.html">Accueil</a>
+        <a href="offre.html">Offre</a>
+        <a href="methode.html">Méthode</a>
+        <a href="faq.html">FAQ</a>
+        <a href="contact.html">Contact</a>
+      </nav>
+    </div>
+
+    <header class="section">
+      <section class="panel section-inner">
+        <div class="hero-layout">
+          <div>
+            <div class="eyebrow">Confirmation • Le Pivot d'Or</div>
+
+            <h1 class="hero-title">
+              Merci pour ta <span class="gold">confiance</span>.
+            </h1>
+
+            <p class="hero-subtitle">
+              Ton paiement est confirmé. Tu es maintenant dans la prochaine étape pour commencer ton accompagnement
+              avec Le Pivot d’Or.
+            </p>
+
+            <div class="hero-actions">
+              <a href="mailto:lepivotdor@gmail.com" class="button-primary">
+                Écrire à Le Pivot d'Or
+              </a>
+              <a href="index.html" class="button-secondary">
+                Retour à l’accueil
+              </a>
+            </div>
+
+            <div class="info-box">
+              <p><strong>Important :</strong> conserve ta confirmation de paiement Stripe.</p>
+              <p>Pour toute question, écris-moi à : <a href="mailto:lepivotdor@gmail.com">lepivotdor@gmail.com</a></p>
+            </div>
+          </div>
+
+          <aside class="confirmation-card" aria-label="Confirmation de paiement">
+            <div class="checkmark">✓</div>
+            <h2 class="confirmation-title">Paiement confirmé</h2>
+            <p class="confirmation-copy">
+              Les prochaines étapes te seront communiquées pour commencer ton accompagnement
+              <strong>Pilotage financier 12 mois</strong>.
+            </p>
+
+            <div class="info-box">
+              <p><strong>Programme :</strong> Pilotage financier 12 mois.</p>
+              <p><strong>Prochaine étape :</strong> surveille tes communications et prépare ta situation actuelle, tes objectifs et tes questions.</p>
+            </div>
+          </aside>
+        </div>
+      </section>
+    </header>
+
+    <section class="section">
+      <div class="panel section-inner">
+        <div class="section-heading">
+          <h2 class="section-title">Les prochaines <span class="gold">étapes</span></h2>
+          <p class="section-text">
+            Voici ce que tu peux faire maintenant pour commencer de façon claire et structurée.
+          </p>
+        </div>
+
+        <div class="steps-grid">
+          <article class="step-card">
+            <div class="step-number">1</div>
+            <h3 class="card-heading">Vérifie ta confirmation</h3>
+            <p class="card-copy">Garde ton reçu ou ta confirmation de paiement Stripe dans tes courriels.</p>
+          </article>
+
+          <article class="step-card">
+            <div class="step-number">2</div>
+            <h3 class="card-heading">Prépare ta situation</h3>
+            <p class="card-copy">Note ce qui est flou, ce qui te stresse et ce que tu veux mieux structurer.</p>
+          </article>
+
+          <article class="step-card">
+            <div class="step-number">3</div>
+            <h3 class="card-heading">Clarifie tes objectifs</h3>
+            <p class="card-copy">Écris tes priorités : clarté financière, organisation, discipline, décisions ou recentrage.</p>
+          </article>
+
+          <article class="step-card">
+            <div class="step-number">4</div>
+            <h3 class="card-heading">Attends les instructions</h3>
+            <p class="card-copy">Tu recevras les prochaines indications pour commencer ton accompagnement.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="panel section-inner">
+        <div class="section-heading">
+          <h2 class="section-title">Prépare ton <span class="gold">démarrage</span></h2>
+          <p class="section-text">
+            Plus tu arrives préparé, plus ton accompagnement peut commencer avec clarté.
+          </p>
+        </div>
+
+        <div class="support-grid">
+          <article class="support-card">
+            <h3 class="card-heading">Ta situation actuelle</h3>
+            <p class="card-copy">Rassemble les informations importantes sur ce que tu veux mieux comprendre ou améliorer.</p>
+          </article>
+
+          <article class="support-card">
+            <h3 class="card-heading">Tes blocages</h3>
+            <p class="card-copy">Note les endroits où tu sens que tu improvises, repousses ou perds de la clarté.</p>
+          </article>
+
+          <article class="support-card">
+            <h3 class="card-heading">Tes questions</h3>
+            <p class="card-copy">Écris les questions que tu veux poser pour partir sur une base solide.</p>
+          </article>
+        </div>
+
+        <div class="info-box">
+          <p><strong>Rappel :</strong> Le Pivot d’Or offre un accompagnement de clarté, de structure et d’éducation générale. Il ne remplace pas un conseiller financier autorisé.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="panel section-inner">
+        <div class="section-heading">
+          <h2 class="section-title">Besoin d’aide <span class="gold">maintenant</span> ?</h2>
+          <p class="section-text">
+            Si tu as une question ou si tu veux confirmer une information, tu peux écrire directement à Le Pivot d’Or.
+          </p>
+        </div>
+
+        <div class="hero-actions" style="justify-content: center;">
+          <a href="mailto:lepivotdor@gmail.com" class="button-primary">
+            Contacter Le Pivot d'Or
+          </a>
+          <a href="offre.html" class="button-secondary">
+            Revoir l’offre
+          </a>
+        </div>
+
+        <p class="update-note">Dernière mise à jour : avril 2026.</p>
+
+        <div class="footer-links">
+          <a href="index.html">Accueil</a>
+          <span>•</span>
+          <a href="offre.html">Offre</a>
+          <span>•</span>
+          <a href="methode.html">Méthode</a>
+          <span>•</span>
+          <a href="faq.html">FAQ</a>
+          <span>•</span>
+          <a href="contact.html">Contact</a>
+          <span>•</span>
+          <a href="conditions.html">Conditions</a>
+          <span>•</span>
+          <a href="confidentialite.html">Confidentialité</a>
+        </div>
+      </div>
+    </section>
+  </main>
+</body>
+</html>
 
