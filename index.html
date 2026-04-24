@@ -3,9 +3,21 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Le Pivot d'Or</title>
+    <meta name="description" content="Le Pivot d'Or t'aide à bâtir une vie plus solide avec plus de clarté, de discipline, de structure et de constance. Accède dès maintenant au programme.">
+    <title>Le Pivot d'Or | Clarté, discipline et structure</title>
 
     <style>
+        :root {
+            --bg-main: #050505;
+            --bg-secondary: #0d0d0d;
+            --gold: #d4af37;
+            --gold-light: #f1d77a;
+            --text: #ffffff;
+            --text-soft: #cfcfcf;
+            --border: rgba(212, 175, 55, 0.28);
+            --shadow: rgba(212, 175, 55, 0.14);
+        }
+
         * {
             box-sizing: border-box;
             margin: 0;
@@ -14,152 +26,135 @@
 
         body {
             font-family: Arial, sans-serif;
-            background: radial-gradient(circle at top, #1c1c1c, #050505);
-            color: white;
+            color: var(--text);
             min-height: 100vh;
+            background:
+                radial-gradient(circle at top, rgba(212, 175, 55, 0.16), transparent 35%),
+                linear-gradient(180deg, #111111 0%, var(--bg-main) 60%, #000000 100%);
             display: flex;
             align-items: center;
             justify-content: center;
+            padding: 40px 20px;
+        }
+
+        .page {
+            width: 100%;
+            max-width: 960px;
+        }
+
+        .hero-card {
+            background: linear-gradient(180deg, rgba(255,255,255,0.04), rgba(255,255,255,0.02));
+            border: 1px solid var(--border);
+            border-radius: 24px;
+            box-shadow: 0 24px 60px var(--shadow);
+            padding: 56px 34px;
             text-align: center;
-            padding: 30px;
+            backdrop-filter: blur(6px);
         }
 
-        .container {
-            max-width: 850px;
-            padding: 60px 35px;
-            border: 1px solid rgba(255, 215, 0, 0.35);
-            border-radius: 22px;
-            background: rgba(255, 255, 255, 0.03);
-            box-shadow: 0 0 40px rgba(255, 215, 0, 0.12);
-        }
-
-        .badge {
+        .brand {
             display: inline-block;
-            margin-bottom: 25px;
-            padding: 8px 18px;
-            border-radius: 100px;
-            background: rgba(255, 215, 0, 0.12);
-            color: gold;
-            font-size: 14px;
+            margin-bottom: 18px;
+            padding: 8px 16px;
+            border: 1px solid rgba(212, 175, 55, 0.30);
+            border-radius: 999px;
+            background: rgba(212, 175, 55, 0.08);
+            color: var(--gold-light);
+            font-size: 13px;
             font-weight: bold;
-            letter-spacing: 1px;
+            letter-spacing: 1.4px;
             text-transform: uppercase;
         }
 
         h1 {
-            font-size: 52px;
+            font-size: 46px;
             line-height: 1.1;
-            margin-bottom: 25px;
+            margin-bottom: 18px;
+            color: var(--text);
         }
 
-        h1 span {
-            color: gold;
+        h1 .gold {
+            color: var(--gold-light);
         }
 
-        p {
-            font-size: 21px;
-            line-height: 1.6;
-            color: #d0d0d0;
-            margin-bottom: 20px;
+        h2 {
+            font-size: 22px;
+            line-height: 1.5;
+            font-weight: normal;
+            color: var(--text-soft);
+            max-width: 760px;
+            margin: 0 auto 30px;
         }
 
-        .promise {
-            font-size: 24px;
-            color: white;
-            font-weight: bold;
-            margin-top: 15px;
-        }
-
-        .features {
-            margin: 35px auto;
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 15px;
-        }
-
-        .feature {
-            padding: 18px;
-            border-radius: 14px;
-            background: rgba(255, 255, 255, 0.06);
-            border: 1px solid rgba(255, 255, 255, 0.08);
-            color: #f5f5f5;
-            font-size: 16px;
-            font-weight: bold;
-        }
-
-        .btn {
+        .cta {
             display: inline-block;
-            margin-top: 20px;
-            padding: 18px 42px;
-            font-size: 20px;
+            margin-top: 10px;
+            padding: 16px 34px;
+            font-size: 18px;
             font-weight: bold;
-            color: black;
-            background: linear-gradient(135deg, gold, #ff9f1c);
+            color: #111111;
+            background: linear-gradient(135deg, var(--gold-light), var(--gold));
             border-radius: 12px;
             text-decoration: none;
-            transition: 0.3s;
-            box-shadow: 0 0 25px rgba(255, 215, 0, 0.35);
+            box-shadow: 0 10px 30px rgba(212, 175, 55, 0.24);
+            transition: transform 0.25s ease, box-shadow 0.25s ease;
         }
 
-        .btn:hover {
-            transform: scale(1.06);
-            box-shadow: 0 0 35px gold;
+        .cta:hover {
+            transform: translateY(-2px) scale(1.02);
+            box-shadow: 0 16px 36px rgba(212, 175, 55, 0.34);
         }
 
-        .secure {
+        .note {
             margin-top: 18px;
             font-size: 14px;
-            color: #aaa;
+            color: #a7a7a7;
         }
 
-        @media (max-width: 700px) {
-            h1 {
-                font-size: 36px;
+        @media (max-width: 768px) {
+            .hero-card {
+                padding: 42px 22px;
+                border-radius: 18px;
             }
 
-            p {
+            h1 {
+                font-size: 34px;
+            }
+
+            h2 {
                 font-size: 18px;
             }
 
-            .features {
-                grid-template-columns: 1fr;
-            }
-
-            .container {
-                padding: 40px 22px;
+            .cta {
+                width: 100%;
+                max-width: 340px;
             }
         }
     </style>
 </head>
-
 <body>
-    <main class="container">
-        <div class="badge">Le Pivot d'Or</div>
+    <main class="page">
+        <section class="hero-card">
+            <div class="brand">Le Pivot d'Or</div>
 
-        <h1>Bâtis une vie plus solide avec <span>clarté</span> et discipline</h1>
+            <h1>
+                Bâtir une vie solide avec plus de
+                <span class="gold">clarté</span>
+            </h1>
 
-        <p class="promise">
-            Ton accès au Pilotage financier commence ici.
-        </p>
+            <h2>
+                Découvre une approche plus structurée pour reprendre le contrôle,
+                avancer avec discipline et commencer ton accès au programme Le Pivot d'Or.
+            </h2>
 
-        <p>
-            Une approche structurée pour reprendre le contrôle de tes finances,
-            clarifier tes décisions et avancer avec plus de constance.
-        </p>
+            <a href="https://buy.stripe.com/3cI3cn6aA1fhcaWgRecbC00" class="cta">
+                Payer maintenant
+            </a>
 
-        <section class="features">
-            <div class="feature">Clarté financière</div>
-            <div class="feature">Structure simple</div>
-            <div class="feature">Discipline durable</div>
+            <p class="note">
+                Paiement sécurisé avec Stripe
+            </p>
         </section>
-
-        <a href="https://buy.stripe.com/3cI3cn6aA1fhcaWgRecbC00" class="btn">
-            Payer maintenant
-        </a>
-
-        <div class="secure">
-            Paiement sécurisé avec Stripe
-        </div>
     </main>
 </body>
 </html>
