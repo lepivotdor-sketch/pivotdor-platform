@@ -11,12 +11,14 @@
             --bg-main: #050505;
             --bg-soft: #101010;
             --bg-card: rgba(255, 255, 255, 0.04);
+            --bg-card-strong: rgba(255, 255, 255, 0.06);
             --gold: #d4af37;
             --gold-light: #f4dd8a;
             --text: #ffffff;
             --text-soft: #d0d0d0;
             --text-muted: #a7a7a7;
             --border: rgba(212, 175, 55, 0.22);
+            --border-soft: rgba(255, 255, 255, 0.08);
             --shadow: rgba(212, 175, 55, 0.16);
         }
 
@@ -39,17 +41,21 @@
             width: 100%;
             max-width: 1140px;
             margin: 0 auto;
-            padding: 40px 20px 70px;
+            padding: 40px 20px 80px;
         }
 
-        .hero-card {
+        .hero-card,
+        .panel {
             background: linear-gradient(180deg, rgba(255,255,255,0.04), rgba(255,255,255,0.02));
             border: 1px solid var(--border);
             border-radius: 24px;
             box-shadow: 0 24px 60px var(--shadow);
+            backdrop-filter: blur(6px);
+        }
+
+        .hero-card {
             padding: 60px 34px;
             text-align: center;
-            backdrop-filter: blur(6px);
         }
 
         .brand {
@@ -73,7 +79,8 @@
             letter-spacing: -0.5px;
         }
 
-        h1 .gold {
+        h1 .gold,
+        .gold {
             color: var(--gold-light);
         }
 
@@ -117,18 +124,25 @@
             color: var(--text-muted);
         }
 
+        .separator {
+            width: 120px;
+            height: 1px;
+            margin: 42px auto 0;
+            background: linear-gradient(90deg, transparent, rgba(244, 221, 138, 0.9), transparent);
+        }
+
         .section {
             margin-top: 42px;
+        }
+
+        .panel {
+            padding: 34px 26px;
         }
 
         .section-title {
             text-align: center;
             font-size: 34px;
             margin-bottom: 12px;
-        }
-
-        .section-title .gold {
-            color: var(--gold-light);
         }
 
         .section-intro {
@@ -145,12 +159,23 @@
             gap: 18px;
         }
 
+        .grid-2 {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 18px;
+        }
+
         .card {
             background: var(--bg-card);
-            border: 1px solid rgba(255, 255, 255, 0.08);
+            border: 1px solid var(--border-soft);
             border-radius: 18px;
             padding: 24px;
             box-shadow: 0 10px 30px rgba(0, 0, 0, 0.25);
+        }
+
+        .card.strong {
+            background: var(--bg-card-strong);
+            border: 1px solid rgba(212, 175, 55, 0.18);
         }
 
         .card h3 {
@@ -159,9 +184,45 @@
             color: var(--gold-light);
         }
 
-        .card p {
+        .card p,
+        .card li {
             font-size: 16px;
             color: var(--text-soft);
+        }
+
+        .list {
+            list-style: none;
+        }
+
+        .list li {
+            margin-bottom: 12px;
+            padding-left: 22px;
+            position: relative;
+        }
+
+        .list li::before {
+            content: "•";
+            position: absolute;
+            left: 0;
+            color: var(--gold-light);
+            font-weight: bold;
+        }
+
+        .credibility-bar {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 14px;
+            margin-top: 18px;
+        }
+
+        .credibility-item {
+            background: rgba(212, 175, 55, 0.08);
+            border: 1px solid rgba(212, 175, 55, 0.18);
+            border-radius: 14px;
+            padding: 16px;
+            text-align: center;
+            color: var(--text);
+            font-weight: bold;
         }
 
         @media (max-width: 900px) {
@@ -173,7 +234,9 @@
                 font-size: 20px;
             }
 
-            .grid {
+            .grid,
+            .grid-2,
+            .credibility-bar {
                 grid-template-columns: 1fr;
             }
         }
@@ -183,8 +246,9 @@
                 padding: 24px 16px 50px;
             }
 
-            .hero-card {
-                padding: 40px 22px;
+            .hero-card,
+            .panel {
+                padding: 28px 18px;
                 border-radius: 18px;
             }
 
@@ -234,8 +298,8 @@
             </p>
 
             <p class="value-line">
-                Tu n’achètes pas seulement un accès : tu entres dans une approche conçue pour t’aider
-                à bâtir une vie plus stable, plus claire et plus maîtrisée.
+                Tu entres dans une approche conçue pour t’aider à bâtir une vie plus stable,
+                plus claire et plus maîtrisée.
             </p>
 
             <a href="https://buy.stripe.com/3cI3cn6aA1fhcaWgRecbC00" class="cta">
@@ -243,11 +307,13 @@
             </a>
 
             <p class="reassurance">
-                Paiement sécurisé avec Stripe • Accès simple • Processus rapide
+                Paiement sécurisé avec Stripe • Accès simple • Processus rapide • Environnement clair et structuré
             </p>
+
+            <div class="separator"></div>
         </section>
 
-        <section class="section">
+        <section class="section panel">
             <h2 class="section-title">Ce que tu <span class="gold">obtiens</span></h2>
             <p class="section-intro">
                 Une base plus claire pour reprendre ton élan, mieux structurer tes finances
@@ -257,28 +323,22 @@
             <div class="grid">
                 <article class="card">
                     <h3>Plus de clarté</h3>
-                    <p>
-                        Tu comprends mieux où tu en es, ce qui bloque et ce que tu dois faire ensuite.
-                    </p>
+                    <p>Tu comprends mieux où tu en es, ce qui bloque et ce que tu dois faire ensuite.</p>
                 </article>
 
                 <article class="card">
                     <h3>Plus de structure</h3>
-                    <p>
-                        Tu avances avec une méthode plus simple, plus ordonnée et plus facile à suivre.
-                    </p>
+                    <p>Tu avances avec une méthode plus simple, plus ordonnée et plus facile à suivre.</p>
                 </article>
 
                 <article class="card">
                     <h3>Plus de discipline</h3>
-                    <p>
-                        Tu renforces ta capacité à tenir une ligne claire au lieu de repartir dans le chaos.
-                    </p>
+                    <p>Tu renforces ta capacité à tenir une ligne claire au lieu de repartir dans le chaos.</p>
                 </article>
             </div>
         </section>
 
-        <section class="section">
+        <section class="section panel">
             <h2 class="section-title">Les bénéfices <span class="gold">concrets</span></h2>
             <p class="section-intro">
                 Ce programme est pensé pour t’aider à obtenir des changements réels dans ton quotidien.
@@ -287,28 +347,22 @@
             <div class="grid">
                 <article class="card">
                     <h3>Décisions plus simples</h3>
-                    <p>
-                        Tu sais mieux quoi prioriser, quoi couper et quoi renforcer.
-                    </p>
+                    <p>Tu sais mieux quoi prioriser, quoi couper et quoi renforcer.</p>
                 </article>
 
                 <article class="card">
                     <h3>Finances plus lisibles</h3>
-                    <p>
-                        Tu avances avec plus de visibilité sur ton argent, tes choix et ta direction.
-                    </p>
+                    <p>Tu avances avec plus de visibilité sur ton argent, tes choix et ta direction.</p>
                 </article>
 
                 <article class="card">
                     <h3>Actions plus cohérentes</h3>
-                    <p>
-                        Tu réduis l’improvisation et tu passes plus facilement à l’action utile.
-                    </p>
+                    <p>Tu réduis l’improvisation et tu passes plus facilement à l’action utile.</p>
                 </article>
             </div>
         </section>
 
-        <section class="section">
+        <section class="section panel">
             <h2 class="section-title">La transformation <span class="gold">ressentie</span></h2>
             <p class="section-intro">
                 Au-delà des outils, l’objectif est aussi de changer la manière dont tu te sens dans ta vie.
@@ -317,23 +371,120 @@
             <div class="grid">
                 <article class="card">
                     <h3>Moins de flou</h3>
-                    <p>
-                        Tu te sens moins perdu et plus aligné avec ce que tu veux vraiment bâtir.
-                    </p>
+                    <p>Tu te sens moins perdu et plus aligné avec ce que tu veux vraiment bâtir.</p>
                 </article>
 
                 <article class="card">
                     <h3>Moins de stress</h3>
-                    <p>
-                        Tu retrouves une sensation de contrôle, de calme et de stabilité intérieure.
-                    </p>
+                    <p>Tu retrouves une sensation de contrôle, de calme et de stabilité intérieure.</p>
                 </article>
 
                 <article class="card">
                     <h3>Plus de confiance</h3>
-                    <p>
-                        Tu avances avec une posture plus solide, plus claire et plus constante.
-                    </p>
+                    <p>Tu avances avec une posture plus solide, plus claire et plus constante.</p>
+                </article>
+            </div>
+        </section>
+
+        <section class="section panel">
+            <h2 class="section-title">Ce programme est <span class="gold">pour toi si…</span></h2>
+            <p class="section-intro">
+                Cette approche vise les personnes qui veulent réellement se recentrer et reprendre une direction plus solide.
+            </p>
+
+            <div class="grid-2">
+                <article class="card strong">
+                    <h3>Tu veux reprendre le contrôle</h3>
+                    <ul class="list">
+                        <li>Tu veux sortir du flou et retrouver une direction claire.</li>
+                        <li>Tu veux mieux gérer tes priorités, ton énergie et tes décisions.</li>
+                        <li>Tu veux une structure simple plutôt qu’un système compliqué.</li>
+                    </ul>
+                </article>
+
+                <article class="card strong">
+                    <h3>Tu es prêt à agir</h3>
+                    <ul class="list">
+                        <li>Tu veux mettre en place plus de discipline et de constance.</li>
+                        <li>Tu veux construire quelque chose de stable dans la vraie vie.</li>
+                        <li>Tu veux arrêter de repartir toujours au même point.</li>
+                    </ul>
+                </article>
+            </div>
+        </section>
+
+        <section class="section panel">
+            <h2 class="section-title">Ce programme n’est <span class="gold">pas pour toi si…</span></h2>
+            <p class="section-intro">
+                Mieux vaut être clair dès le départ pour attirer les bonnes personnes.
+            </p>
+
+            <div class="grid-2">
+                <article class="card">
+                    <h3>Tu veux une solution magique</h3>
+                    <ul class="list">
+                        <li>Tu cherches un raccourci sans implication personnelle.</li>
+                        <li>Tu veux tout changer sans discipline ni régularité.</li>
+                        <li>Tu refuses de regarder honnêtement ce qui bloque.</li>
+                    </ul>
+                </article>
+
+                <article class="card">
+                    <h3>Tu ne veux pas te structurer</h3>
+                    <ul class="list">
+                        <li>Tu préfères rester dans l’improvisation permanente.</li>
+                        <li>Tu n’es pas prêt à clarifier tes décisions et tes habitudes.</li>
+                        <li>Tu veux seulement consommer du contenu sans passer à l’action.</li>
+                    </ul>
+                </article>
+            </div>
+        </section>
+
+        <section class="section panel">
+            <h2 class="section-title">Pourquoi cette approche <span class="gold">fonctionne</span></h2>
+            <p class="section-intro">
+                Elle ne repose pas sur le bruit. Elle repose sur la clarté, la structure et l’exécution.
+            </p>
+
+            <div class="grid">
+                <article class="card strong">
+                    <h3>Tu simplifies</h3>
+                    <p>Tu enlèves le flou pour voir clairement ce qui compte vraiment.</p>
+                </article>
+
+                <article class="card strong">
+                    <h3>Tu structures</h3>
+                    <p>Tu mets de l’ordre dans tes décisions, tes finances et ton quotidien.</p>
+                </article>
+
+                <article class="card strong">
+                    <h3>Tu avances</h3>
+                    <p>Tu renforces une constance réelle au lieu de dépendre de la motivation du moment.</p>
+                </article>
+            </div>
+        </section>
+
+        <section class="section panel">
+            <h2 class="section-title">Crédibilité et <span class="gold">réassurance</span></h2>
+            <p class="section-intro">
+                Tout est pensé pour te donner une expérience plus simple, plus claire et plus rassurante.
+            </p>
+
+            <div class="credibility-bar">
+                <div class="credibility-item">Paiement sécurisé Stripe</div>
+                <div class="credibility-item">Approche structurée et sobre</div>
+                <div class="credibility-item">Clarté • Discipline • Constance</div>
+            </div>
+
+            <div class="grid-2" style="margin-top: 18px;">
+                <article class="card">
+                    <h3>Processus simple</h3>
+                    <p>Tu accèdes à une page claire, à une offre compréhensible et à un paiement sécurisé sans confusion inutile.</p>
+                </article>
+
+                <article class="card">
+                    <h3>Positionnement solide</h3>
+                    <p>Le Pivot d’Or repose sur une logique de reconstruction concrète : plus de clarté, plus de structure, plus de maîtrise.</p>
                 </article>
             </div>
         </section>
