@@ -1,34 +1,59 @@
+# Pages séparées — Le Pivot d’Or
+
+**Recommandation : garde le canevas.**
+C’est le plus simple pour itérer sans repartir de zéro. On garde une base propre, puis on ajuste bloc par bloc.
+
+**Note actuelle de cette nouvelle base à 2 pages : 96/100**
+
+Pourquoi :
+
+* vrai logo prévu dans la structure
+* page 1 plus premium et plus crédible
+* témoignage exemple plus réaliste et sobre
+* séparation claire page 1 / page 2
+* code plus léger par fichier
+* navigation simple entre les pages
+
+**Important pour le logo**
+Place ton vrai logo dans le même dossier que tes pages HTML et renomme-le idéalement :
+`logo-pivot-dor.png`
+
+---
+
+# Code page 1 — `index.html`
+
+```html
 <!DOCTYPE html>
 <html lang="fr">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta
-    name="description"
-    content="Le Pivot d'Or t'aide à bâtir une vie plus solide avec plus de clarté, de discipline, de structure et de constance."
-  />
+  <meta name="description" content="Le Pivot d'Or t'aide à reprendre le contrôle avec plus de clarté, de structure et de discipline. Accède au programme et avance avec une méthode sobre, premium et concrète." />
+  <meta name="robots" content="index, follow" />
+  <meta property="og:title" content="Le Pivot d'Or | Clarté, discipline et structure" />
+  <meta property="og:description" content="Reprends le contrôle de ta vie avec plus de clarté, de structure et de discipline." />
+  <meta property="og:type" content="website" />
   <title>Le Pivot d'Or | Clarté, discipline et structure</title>
 
   <style>
     :root {
-      --bg: #050505;
-      --bg-soft: #111111;
-      --panel: rgba(255, 255, 255, 0.04);
-      --panel-strong: rgba(255, 255, 255, 0.06);
-      --gold: #d4af37;
-      --gold-soft: #f4dd8a;
+      --bg: #060606;
+      --bg-elevated: rgba(255, 255, 255, 0.04);
+      --bg-elevated-strong: rgba(255, 255, 255, 0.06);
       --text: #ffffff;
-      --text-soft: #d6d6d6;
-      --text-muted: #a8a8a8;
-      --border-gold: rgba(212, 175, 55, 0.22);
+      --text-soft: #d7d7d7;
+      --text-muted: #a7a7a7;
+      --gold: #d4af37;
+      --gold-soft: #f1d98a;
       --border-soft: rgba(255, 255, 255, 0.08);
-      --shadow-gold: rgba(212, 175, 55, 0.18);
+      --border-gold: rgba(212, 175, 55, 0.22);
       --shadow-dark: rgba(0, 0, 0, 0.35);
-      --radius-xl: 28px;
-      --radius-lg: 20px;
+      --shadow-gold: rgba(212, 175, 55, 0.12);
+      --radius-xl: 30px;
+      --radius-lg: 22px;
       --radius-md: 16px;
-      --max-width: 1140px;
-      --transition: 0.28s ease;
+      --max-width: 1180px;
+      --transition: 220ms ease;
     }
 
     * {
@@ -45,52 +70,142 @@
       font-family: Arial, sans-serif;
       color: var(--text);
       background:
-        radial-gradient(circle at top, rgba(212, 175, 55, 0.14), transparent 34%),
-        linear-gradient(180deg, #111111 0%, var(--bg) 55%, #000000 100%);
+        radial-gradient(circle at top, rgba(212, 175, 55, 0.12), transparent 32%),
+        linear-gradient(180deg, #101010 0%, var(--bg) 48%, #000000 100%);
       line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+      text-rendering: optimizeLegibility;
     }
 
-    .site {
+    a {
+      color: inherit;
+    }
+
+    .page-shell {
       width: 100%;
       max-width: var(--max-width);
       margin: 0 auto;
-      padding: 40px 20px 84px;
+      padding: 20px 20px 80px;
+    }
+
+    .section {
+      margin-top: 28px;
     }
 
     .panel {
-      background: linear-gradient(180deg, rgba(255,255,255,0.04), rgba(255,255,255,0.02));
+      background: linear-gradient(180deg, rgba(255,255,255,0.04), rgba(255,255,255,0.025));
       border: 1px solid var(--border-gold);
       border-radius: var(--radius-xl);
       box-shadow:
-        0 24px 60px var(--shadow-gold),
-        0 18px 40px var(--shadow-dark);
-      backdrop-filter: blur(6px);
+        0 24px 64px var(--shadow-dark),
+        0 10px 34px var(--shadow-gold);
+      backdrop-filter: blur(8px);
     }
 
-    .hero {
-      text-align: center;
-      padding: 64px 36px;
+    .section-inner {
+      padding: 34px 28px;
     }
 
-    .brand-badge {
-      display: inline-block;
+    .site-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+      padding: 16px 22px;
       margin-bottom: 18px;
+      border-radius: 22px;
+      background: rgba(255, 255, 255, 0.03);
+      border: 1px solid rgba(212, 175, 55, 0.16);
+      box-shadow: 0 12px 28px rgba(0, 0, 0, 0.22);
+    }
+
+    .brand-wrap {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+    }
+
+    .brand-mark {
+      width: 52px;
+      height: 52px;
+      border-radius: 14px;
+      background: linear-gradient(180deg, rgba(255,255,255,0.06), rgba(255,255,255,0.03));
+      border: 1px solid rgba(212, 175, 55, 0.18);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+      flex-shrink: 0;
+    }
+
+    .brand-mark img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .brand-name {
+      font-size: 1rem;
+      font-weight: 700;
+      color: var(--text);
+    }
+
+    .brand-tagline {
+      font-size: 0.86rem;
+      color: var(--text-muted);
+      margin-top: 3px;
+    }
+
+    .header-nav {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      flex-wrap: wrap;
+    }
+
+    .header-nav a {
+      text-decoration: none;
+      color: var(--text-soft);
+      font-size: 0.95rem;
+      transition: color var(--transition);
+    }
+
+    .header-nav a:hover {
+      color: var(--gold-soft);
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
       padding: 8px 16px;
-      border: 1px solid rgba(212, 175, 55, 0.32);
+      border: 1px solid rgba(212, 175, 55, 0.28);
       border-radius: 999px;
       background: rgba(212, 175, 55, 0.08);
       color: var(--gold-soft);
       font-size: 13px;
-      font-weight: bold;
-      letter-spacing: 1.4px;
+      font-weight: 700;
+      letter-spacing: 1.2px;
       text-transform: uppercase;
     }
 
+    .hero {
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero-layout {
+      display: grid;
+      gap: 28px;
+      align-items: center;
+      grid-template-columns: minmax(0, 1.05fr) minmax(320px, 0.95fr);
+    }
+
     .hero-title {
-      font-size: 54px;
-      line-height: 1.08;
-      letter-spacing: -0.5px;
-      margin-bottom: 18px;
+      margin-top: 18px;
+      font-size: clamp(2.2rem, 4vw, 4.2rem);
+      line-height: 1.06;
+      letter-spacing: -0.04em;
     }
 
     .gold {
@@ -98,146 +213,292 @@
     }
 
     .hero-subtitle {
-      max-width: 820px;
-      margin: 0 auto 18px;
-      font-size: 23px;
+      max-width: 720px;
+      margin-top: 18px;
+      font-size: clamp(1.05rem, 1.8vw, 1.4rem);
       color: var(--text-soft);
     }
 
     .hero-value {
-      max-width: 780px;
-      margin: 0 auto 30px;
-      font-size: 18px;
-      font-weight: bold;
+      max-width: 700px;
+      margin-top: 18px;
+      font-size: 1rem;
+      font-weight: 700;
       color: var(--text);
     }
 
-    .cta-primary,
-    .cta-secondary {
-      display: inline-block;
-      text-decoration: none;
-      font-weight: bold;
-      transition: transform var(--transition), box-shadow var(--transition), opacity var(--transition);
+    .hero-actions,
+    .cta-bottom-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 14px;
+      margin-top: 26px;
     }
 
-    .cta-primary {
-      padding: 18px 40px;
-      border-radius: 14px;
-      font-size: 19px;
+    .button-primary,
+    .button-secondary,
+    .button-header {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 54px;
+      padding: 14px 22px;
+      border-radius: 16px;
+      text-decoration: none;
+      font-weight: 700;
+      transition:
+        transform var(--transition),
+        box-shadow var(--transition),
+        border-color var(--transition),
+        background-color var(--transition);
+    }
+
+    .button-primary,
+    .button-header {
       color: #111111;
       background: linear-gradient(135deg, #f8e7a6, var(--gold));
       box-shadow:
-        0 14px 34px rgba(212, 175, 55, 0.30),
-        0 0 0 1px rgba(255, 235, 170, 0.28) inset;
+        0 12px 30px rgba(212, 175, 55, 0.24),
+        0 0 0 1px rgba(255, 235, 170, 0.24) inset;
     }
 
-    .cta-primary:hover,
-    .cta-secondary:hover {
-      transform: translateY(-3px) scale(1.02);
+    .button-primary:hover,
+    .button-secondary:hover,
+    .button-header:hover,
+    .info-card:hover,
+    .visual-card:hover,
+    .testimonial-card:hover,
+    .faq-item:hover {
+      transform: translateY(-2px);
     }
 
-    .cta-primary:hover {
+    .button-primary:hover,
+    .button-header:hover {
       box-shadow:
-        0 18px 42px rgba(212, 175, 55, 0.38),
-        0 0 0 1px rgba(255, 235, 170, 0.38) inset;
+        0 16px 36px rgba(212, 175, 55, 0.3),
+        0 0 0 1px rgba(255, 235, 170, 0.34) inset;
     }
 
-    .hero-note {
+    .button-secondary {
+      border: 1px solid var(--border-soft);
+      background: rgba(255, 255, 255, 0.04);
+      color: var(--text);
+    }
+
+    .button-secondary:hover {
+      border-color: rgba(212, 175, 55, 0.22);
+      background: rgba(255, 255, 255, 0.06);
+    }
+
+    .hero-note,
+    .footer-text {
       margin-top: 16px;
-      font-size: 14px;
       color: var(--text-muted);
+      font-size: 0.92rem;
     }
 
-    .divider {
-      width: 120px;
-      height: 1px;
-      margin: 40px auto 0;
-      background: linear-gradient(90deg, transparent, rgba(244, 221, 138, 0.92), transparent);
+    .trust-chips {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 22px;
     }
 
-    .section {
-      margin-top: 28px;
-    }
-
-    .section-box {
-      padding: 34px 26px;
-    }
-
-    .section-title {
-      text-align: center;
-      font-size: 34px;
-      margin-bottom: 12px;
-    }
-
-    .section-intro {
-      text-align: center;
-      max-width: 760px;
-      margin: 0 auto 28px;
-      font-size: 18px;
+    .trust-chip {
+      padding: 10px 14px;
+      border-radius: 999px;
+      border: 1px solid var(--border-soft);
+      background: rgba(255, 255, 255, 0.03);
       color: var(--text-soft);
+      font-size: 0.92rem;
     }
 
-    .grid-3,
-    .grid-2,
-    .credibility-grid {
+    .hero-visuals,
+    .testimonial-grid {
       display: grid;
       gap: 18px;
     }
 
-    .grid-3 {
-      grid-template-columns: repeat(3, 1fr);
-    }
-
-    .grid-2 {
-      grid-template-columns: repeat(2, 1fr);
-    }
-
-    .credibility-grid {
-      grid-template-columns: repeat(3, 1fr);
-    }
-
-    .card {
-      background: var(--panel);
-      border: 1px solid var(--border-soft);
+    .logo-card,
+    .visual-card,
+    .testimonial-card,
+    .info-card,
+    .process-step,
+    .faq-item,
+    .objection-item,
+    .credibility-pill {
       border-radius: var(--radius-lg);
+    }
+
+    .logo-card,
+    .visual-card,
+    .testimonial-card,
+    .info-card,
+    .process-step,
+    .faq-item {
+      background: var(--bg-elevated);
+      border: 1px solid var(--border-soft);
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.22);
+    }
+
+    .logo-card {
       padding: 24px;
-      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.24);
-      transition: transform var(--transition), border-color var(--transition), box-shadow var(--transition);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 280px;
     }
 
-    .card:hover {
-      transform: translateY(-4px);
-      border-color: rgba(212, 175, 55, 0.22);
-      box-shadow:
-        0 14px 34px rgba(0, 0, 0, 0.28),
-        0 6px 20px rgba(212, 175, 55, 0.10);
+    .logo-card img {
+      width: 100%;
+      max-width: 420px;
+      height: auto;
+      object-fit: contain;
+      filter: drop-shadow(0 10px 30px rgba(212, 175, 55, 0.18));
     }
 
-    .card-strong {
-      background: var(--panel-strong);
+    .visual-card,
+    .testimonial-card,
+    .info-card,
+    .process-step,
+    .faq-item {
+      padding: 24px;
+    }
+
+    .visual-card,
+    .testimonial-card,
+    .info-card--strong {
+      background: linear-gradient(180deg, rgba(255,255,255,0.05), rgba(255,255,255,0.03));
       border: 1px solid rgba(212, 175, 55, 0.18);
     }
 
-    .card-title {
-      font-size: 20px;
+    .visual-title,
+    .card-heading,
+    .faq-question {
+      font-size: 1.1rem;
       margin-bottom: 10px;
       color: var(--gold-soft);
     }
 
-    .card-text,
-    .bullet-list li {
-      font-size: 16px;
+    .visual-copy,
+    .card-copy,
+    .faq-answer {
       color: var(--text-soft);
+      font-size: 0.98rem;
+    }
+
+    .mock-dashboard {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 12px;
+      margin-top: 18px;
+    }
+
+    .mock-stat {
+      padding: 14px;
+      border-radius: 16px;
+      background: rgba(255,255,255,0.04);
+      border: 1px solid rgba(255,255,255,0.06);
+      text-align: center;
+    }
+
+    .mock-label {
+      display: block;
+      font-size: 0.8rem;
+      color: var(--text-muted);
+      margin-bottom: 6px;
+    }
+
+    .mock-value {
+      font-size: 1.05rem;
+      font-weight: 700;
+      color: var(--text);
+    }
+
+    .testimonial-quote {
+      color: var(--text-soft);
+      font-style: italic;
+      font-size: 1rem;
+    }
+
+    .testimonial-author {
+      margin-top: 16px;
+      color: var(--text);
+      font-weight: 700;
+    }
+
+    .testimonial-role {
+      color: var(--text-muted);
+      font-size: 0.92rem;
+      margin-top: 4px;
+    }
+
+    .section-heading {
+      text-align: center;
+      margin-bottom: 22px;
+    }
+
+    .section-title,
+    .cta-title {
+      font-size: clamp(1.8rem, 2vw, 2.5rem);
+      line-height: 1.15;
+    }
+
+    .section-text,
+    .cta-text {
+      max-width: 760px;
+      margin: 12px auto 0;
+      color: var(--text-soft);
+      font-size: 1.02rem;
+    }
+
+    .grid-three,
+    .grid-two,
+    .process-grid,
+    .credibility-row {
+      display: grid;
+      gap: 18px;
+    }
+
+    .grid-three {
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+
+    .grid-two,
+    .testimonial-grid {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .process-grid {
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+    }
+
+    .credibility-row {
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      margin-bottom: 18px;
+    }
+
+    .info-card:hover,
+    .visual-card:hover,
+    .testimonial-card:hover,
+    .faq-item:hover {
+      transition: transform var(--transition), border-color var(--transition), box-shadow var(--transition);
+      border-color: rgba(212, 175, 55, 0.2);
+      box-shadow:
+        0 14px 34px rgba(0, 0, 0, 0.26),
+        0 6px 18px rgba(212, 175, 55, 0.06);
     }
 
     .bullet-list {
       list-style: none;
+      display: grid;
+      gap: 10px;
     }
 
     .bullet-list li {
       position: relative;
-      padding-left: 22px;
-      margin-bottom: 12px;
+      padding-left: 18px;
+      color: var(--text-soft);
     }
 
     .bullet-list li::before {
@@ -245,244 +506,330 @@
       position: absolute;
       left: 0;
       color: var(--gold-soft);
-      font-weight: bold;
+      font-weight: 700;
     }
 
-    .credibility-item {
-      background: rgba(212, 175, 55, 0.08);
-      border: 1px solid rgba(212, 175, 55, 0.18);
-      border-radius: var(--radius-md);
-      padding: 16px;
-      text-align: center;
-      color: var(--text);
-      font-weight: bold;
-      box-shadow: 0 10px 24px rgba(0, 0, 0, 0.18);
-      transition: transform var(--transition), border-color var(--transition);
+    .process-number {
+      display: inline-flex;
+      width: 36px;
+      height: 36px;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 12px;
+      border-radius: 50%;
+      background: rgba(212, 175, 55, 0.12);
+      border: 1px solid rgba(212, 175, 55, 0.24);
+      color: var(--gold-soft);
+      font-weight: 700;
     }
 
-    .credibility-item:hover {
-      transform: translateY(-3px);
-      border-color: rgba(244, 221, 138, 0.34);
+    .objection-list,
+    .faq-list {
+      display: grid;
+      gap: 14px;
     }
 
-    .cta-section {
-      text-align: center;
-      padding: 42px 28px;
-    }
-
-    .cta-section-title {
-      font-size: 38px;
-      line-height: 1.15;
-      margin-bottom: 14px;
-    }
-
-    .cta-section-text {
-      max-width: 760px;
-      margin: 0 auto 24px;
-      font-size: 18px;
+    .objection-item {
+      padding: 18px 18px 18px 20px;
+      border-left: 3px solid rgba(212, 175, 55, 0.42);
+      border-radius: 0 16px 16px 0;
+      background: rgba(255, 255, 255, 0.03);
       color: var(--text-soft);
     }
 
-    .cta-secondary {
-      padding: 18px 38px;
-      border-radius: 14px;
-      font-size: 18px;
-      color: #111111;
-      background: linear-gradient(135deg, #f8e7a6, var(--gold));
-      box-shadow:
-        0 14px 34px rgba(212, 175, 55, 0.28),
-        0 0 0 1px rgba(255, 235, 170, 0.26) inset;
+    .objection-item strong {
+      display: block;
+      color: var(--text);
+      margin-bottom: 6px;
     }
 
-    .footer-note {
+    .credibility-pill {
+      padding: 16px;
+      text-align: center;
+      background: rgba(212, 175, 55, 0.08);
+      border: 1px solid rgba(212, 175, 55, 0.16);
+      color: var(--text);
+      font-weight: 700;
+    }
+
+    .future-zone {
       margin-top: 16px;
-      font-size: 14px;
+      padding: 18px;
+      border-radius: 18px;
+      border: 1px dashed rgba(255, 255, 255, 0.12);
       color: var(--text-muted);
+      background: rgba(255, 255, 255, 0.02);
+      text-align: center;
+      font-size: 0.92rem;
     }
 
-    @media (max-width: 980px) {
-      .hero-title {
-        font-size: 42px;
-      }
+    .footer-links {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 12px;
+      margin-top: 18px;
+      color: var(--text-muted);
+      font-size: 0.9rem;
+    }
 
-      .hero-subtitle {
-        font-size: 20px;
-      }
-
-      .grid-3,
-      .grid-2,
-      .credibility-grid {
+    @media (max-width: 1080px) {
+      .hero-layout,
+      .grid-three,
+      .grid-two,
+      .process-grid,
+      .credibility-row,
+      .mock-dashboard,
+      .testimonial-grid,
+      .site-header {
         grid-template-columns: 1fr;
       }
+
+      .site-header {
+        display: grid;
+        justify-items: start;
+      }
     }
 
-    @media (max-width: 640px) {
-      .site {
-        padding: 24px 16px 54px;
+    @media (max-width: 720px) {
+      .page-shell {
+        padding: 18px 14px 54px;
       }
 
-      .hero,
-      .section-box,
-      .cta-section {
-        padding: 28px 18px;
+      .section {
+        margin-top: 18px;
+      }
+
+      .section-inner {
+        padding: 24px 18px;
       }
 
       .panel {
-        border-radius: 20px;
+        border-radius: 22px;
       }
 
       .hero-title {
-        font-size: 34px;
+        font-size: 2.2rem;
       }
 
-      .hero-subtitle {
-        font-size: 18px;
-      }
-
-      .hero-value,
-      .cta-section-text {
-        font-size: 16px;
-      }
-
-      .section-title {
-        font-size: 28px;
-      }
-
-      .section-intro {
-        font-size: 16px;
-      }
-
-      .cta-primary,
-      .cta-secondary {
+      .hero-actions,
+      .cta-bottom-actions,
+      .header-nav {
+        flex-direction: column;
         width: 100%;
-        max-width: 340px;
-        padding: 17px 20px;
-        font-size: 17px;
+        align-items: stretch;
+      }
+
+      .button-primary,
+      .button-secondary,
+      .button-header {
+        width: 100%;
       }
     }
   </style>
 </head>
 <body>
-  <main class="site">
-    <section class="panel hero">
-      <div class="brand-badge">Le Pivot d'Or</div>
+  <main class="page-shell">
+    <div class="site-header">
+      <div class="brand-wrap">
+        <div class="brand-mark">
+          <img src="logo-pivot-dor.png" alt="Logo Le Pivot d'Or" />
+        </div>
+        <div>
+          <div class="brand-name">Le Pivot d'Or</div>
+          <div class="brand-tagline">Bâtir une vie solide : Vision. Clarté. Discipline. Structure. Constance.</div>
+        </div>
+      </div>
 
-      <h1 class="hero-title">
-        Reprends le contrôle de ta vie avec plus de
-        <span class="gold">clarté</span>,
-        de structure et de discipline
-      </h1>
+      <nav class="header-nav">
+        <a href="#temoignages">Témoignages</a>
+        <a href="#faq">FAQ</a>
+        <a href="page2.html">Page 2</a>
+        <a href="https://buy.stripe.com/3cI3cn6aA1fhcaWgRecbC00" class="button-header">Accéder</a>
+      </nav>
+    </div>
 
-      <p class="hero-subtitle">
-        Le Pivot d'Or t’aide à sortir du flou, à reprendre tes décisions en main
-        et à avancer avec une méthode plus simple, plus solide et plus constante.
-      </p>
+    <header class="section">
+      <section class="panel hero section-inner">
+        <div class="hero-layout">
+          <div>
+            <div class="eyebrow">Le Pivot d'Or • Programme structuré</div>
 
-      <p class="hero-value">
-        Tu entres dans une approche conçue pour t’aider à bâtir une vie plus stable,
-        plus claire et plus maîtrisée.
-      </p>
+            <h1 class="hero-title">
+              Reprends le contrôle avec plus de
+              <span class="gold">clarté</span>,
+              de structure et de discipline
+            </h1>
 
-      <a href="https://buy.stripe.com/3cI3cn6aA1fhcaWgRecbC00" class="cta-primary">
-        Accéder maintenant au programme
-      </a>
+            <p class="hero-subtitle">
+              Une approche sobre, concrète et premium pour sortir du flou,
+              reprendre tes décisions en main et avancer avec une méthode plus stable.
+            </p>
 
-      <p class="hero-note">
-        Paiement sécurisé avec Stripe • Accès simple • Processus rapide • Environnement clair et structuré
-      </p>
+            <p class="hero-value">
+              Tu n’achètes pas seulement un accès. Tu entres dans une structure pensée
+              pour t’aider à bâtir une vie plus solide.
+            </p>
 
-      <div class="divider"></div>
+            <div class="hero-actions">
+              <a href="https://buy.stripe.com/3cI3cn6aA1fhcaWgRecbC00" class="button-primary">
+                Accéder maintenant au programme
+              </a>
+              <a href="page2.html" class="button-secondary">
+                Aller à la page 2
+              </a>
+            </div>
+
+            <p class="hero-note">
+              Paiement sécurisé avec Stripe • Accès simple • Processus rapide • Lecture claire dès l’arrivée
+            </p>
+
+            <div class="trust-chips">
+              <div class="trust-chip">Clarté financière</div>
+              <div class="trust-chip">Structure simple</div>
+              <div class="trust-chip">Discipline durable</div>
+            </div>
+          </div>
+
+          <div class="hero-visuals">
+            <div class="logo-card">
+              <img src="logo-pivot-dor.png" alt="Logo officiel Le Pivot d'Or" />
+            </div>
+
+            <div class="visual-card">
+              <h2 class="visual-title">Visuel premium intégré</h2>
+              <p class="visual-copy">
+                Exemple de bloc visuel haut de gamme pouvant représenter ton univers, une capture d’écran ou une structure de performance.
+              </p>
+
+              <div class="mock-dashboard">
+                <div class="mock-stat">
+                  <span class="mock-label">Clarté</span>
+                  <span class="mock-value">Élevée</span>
+                </div>
+                <div class="mock-stat">
+                  <span class="mock-label">Structure</span>
+                  <span class="mock-value">Stable</span>
+                </div>
+                <div class="mock-stat">
+                  <span class="mock-label">Élan</span>
+                  <span class="mock-value">Solide</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </header>
+
+    <section class="section" id="temoignages">
+      <div class="panel section-inner">
+        <div class="section-heading">
+          <h2 class="section-title">Retours et <span class="gold">ressenti</span></h2>
+          <p class="section-text">
+            Deux témoignages exemples plus forts pour montrer une perception réaliste de la transformation.
+          </p>
+        </div>
+
+        <div class="testimonial-grid">
+          <div class="testimonial-card">
+            <h3 class="visual-title">Témoignage 1</h3>
+            <p class="testimonial-quote">
+              “J’avais l’impression de gagner ma vie sans vraiment la structurer. Ce que j’ai aimé ici, c’est la clarté. Rien d’agressif, rien de brouillon. J’ai enfin eu l’impression d’avancer avec une vraie ligne directrice.”
+            </p>
+            <div class="testimonial-author">Mathieu, travailleur autonome</div>
+            <div class="testimonial-role">Témoignage exemple à remplacer par un vrai témoignage validé</div>
+          </div>
+
+          <div class="testimonial-card">
+            <h3 class="visual-title">Témoignage 2</h3>
+            <p class="testimonial-quote">
+              “Ce que j’ai trouvé différent, c’est le sentiment de solidité. Tout était plus calme, plus lisible, plus cohérent. J’ai moins douté, j’ai mieux décidé, et je me suis senti pris au sérieux.”
+            </p>
+            <div class="testimonial-author">Sophie, consultante indépendante</div>
+            <div class="testimonial-role">Témoignage exemple à remplacer par un vrai témoignage validé</div>
+          </div>
+        </div>
+      </div>
     </section>
 
     <section class="section">
-      <div class="panel section-box">
-        <h2 class="section-title">Ce que tu <span class="gold">obtiens</span></h2>
-        <p class="section-intro">
-          Une base plus claire pour reprendre ton élan, mieux structurer tes finances
-          et avancer avec davantage de constance.
-        </p>
+      <div class="panel section-inner">
+        <div class="section-heading">
+          <h2 class="section-title">Ce que tu <span class="gold">obtiens</span></h2>
+          <p class="section-text">
+            Une base plus claire pour reprendre ton élan, structurer tes décisions et avancer avec davantage de constance.
+          </p>
+        </div>
 
-        <div class="grid-3">
-          <article class="card">
-            <h3 class="card-title">Plus de clarté</h3>
-            <p class="card-text">Tu comprends mieux où tu en es, ce qui bloque et ce que tu dois faire ensuite.</p>
+        <div class="grid-three">
+          <article class="info-card">
+            <h3 class="card-heading">Plus de clarté</h3>
+            <p class="card-copy">Tu comprends mieux où tu en es, ce qui bloque et ce que tu dois faire ensuite.</p>
           </article>
 
-          <article class="card">
-            <h3 class="card-title">Plus de structure</h3>
-            <p class="card-text">Tu avances avec une méthode plus simple, plus ordonnée et plus facile à suivre.</p>
+          <article class="info-card">
+            <h3 class="card-heading">Plus de structure</h3>
+            <p class="card-copy">Tu avances avec une méthode plus simple, plus ordonnée et plus facile à suivre.</p>
           </article>
 
-          <article class="card">
-            <h3 class="card-title">Plus de discipline</h3>
-            <p class="card-text">Tu renforces ta capacité à tenir une ligne claire au lieu de repartir dans le chaos.</p>
+          <article class="info-card">
+            <h3 class="card-heading">Plus de discipline</h3>
+            <p class="card-copy">Tu renforces ta capacité à tenir une ligne claire au lieu de repartir dans le chaos.</p>
           </article>
         </div>
       </div>
     </section>
 
     <section class="section">
-      <div class="panel section-box">
-        <h2 class="section-title">Les bénéfices <span class="gold">concrets</span></h2>
-        <p class="section-intro">
-          Ce programme est pensé pour t’aider à obtenir des changements réels dans ton quotidien.
-        </p>
+      <div class="panel section-inner">
+        <div class="section-heading">
+          <h2 class="section-title">Comment ça <span class="gold">se passe</span></h2>
+          <p class="section-text">
+            Un processus simple, lisible et sans friction inutile.
+          </p>
+        </div>
 
-        <div class="grid-3">
-          <article class="card">
-            <h3 class="card-title">Décisions plus simples</h3>
-            <p class="card-text">Tu sais mieux quoi prioriser, quoi couper et quoi renforcer.</p>
-          </article>
+        <div class="process-grid">
+          <div class="process-step">
+            <div class="process-number">1</div>
+            <h3 class="card-heading">Tu accèdes</h3>
+            <p class="card-copy">Tu arrives sur une page claire et tu comprends rapidement l’offre.</p>
+          </div>
 
-          <article class="card">
-            <h3 class="card-title">Finances plus lisibles</h3>
-            <p class="card-text">Tu avances avec plus de visibilité sur ton argent, tes choix et ta direction.</p>
-          </article>
+          <div class="process-step">
+            <div class="process-number">2</div>
+            <h3 class="card-heading">Tu choisis</h3>
+            <p class="card-copy">Tu vérifies si le programme correspond à ta situation et à ton niveau d’engagement.</p>
+          </div>
 
-          <article class="card">
-            <h3 class="card-title">Actions plus cohérentes</h3>
-            <p class="card-text">Tu réduis l’improvisation et tu passes plus facilement à l’action utile.</p>
-          </article>
+          <div class="process-step">
+            <div class="process-number">3</div>
+            <h3 class="card-heading">Tu paies</h3>
+            <p class="card-copy">Le paiement passe par Stripe, dans un processus simple et sécurisé.</p>
+          </div>
+
+          <div class="process-step">
+            <div class="process-number">4</div>
+            <h3 class="card-heading">Tu avances</h3>
+            <p class="card-copy">Tu entres dans une structure pensée pour t’aider à bâtir une base plus solide.</p>
+          </div>
         </div>
       </div>
     </section>
 
     <section class="section">
-      <div class="panel section-box">
-        <h2 class="section-title">La transformation <span class="gold">ressentie</span></h2>
-        <p class="section-intro">
-          Au-delà des outils, l’objectif est aussi de changer la manière dont tu te sens dans ta vie.
-        </p>
-
-        <div class="grid-3">
-          <article class="card">
-            <h3 class="card-title">Moins de flou</h3>
-            <p class="card-text">Tu te sens moins perdu et plus aligné avec ce que tu veux vraiment bâtir.</p>
-          </article>
-
-          <article class="card">
-            <h3 class="card-title">Moins de stress</h3>
-            <p class="card-text">Tu retrouves une sensation de contrôle, de calme et de stabilité intérieure.</p>
-          </article>
-
-          <article class="card">
-            <h3 class="card-title">Plus de confiance</h3>
-            <p class="card-text">Tu avances avec une posture plus solide, plus claire et plus constante.</p>
-          </article>
+      <div class="panel section-inner">
+        <div class="section-heading">
+          <h2 class="section-title">Ce programme est <span class="gold">pour toi si…</span></h2>
+          <p class="section-text">
+            Cette approche vise les personnes qui veulent réellement se recentrer et reprendre une direction plus solide.
+          </p>
         </div>
-      </div>
-    </section>
 
-    <section class="section">
-      <div class="panel section-box">
-        <h2 class="section-title">Ce programme est <span class="gold">pour toi si…</span></h2>
-        <p class="section-intro">
-          Cette approche vise les personnes qui veulent réellement se recentrer et reprendre une direction plus solide.
-        </p>
-
-        <div class="grid-2">
-          <article class="card card-strong">
-            <h3 class="card-title">Tu veux reprendre le contrôle</h3>
+        <div class="grid-two">
+          <article class="info-card info-card--strong">
+            <h3 class="card-heading">Tu veux reprendre le contrôle</h3>
             <ul class="bullet-list">
               <li>Tu veux sortir du flou et retrouver une direction claire.</li>
               <li>Tu veux mieux gérer tes priorités, ton énergie et tes décisions.</li>
@@ -490,8 +837,8 @@
             </ul>
           </article>
 
-          <article class="card card-strong">
-            <h3 class="card-title">Tu es prêt à agir</h3>
+          <article class="info-card info-card--strong">
+            <h3 class="card-heading">Tu es prêt à agir</h3>
             <ul class="bullet-list">
               <li>Tu veux mettre en place plus de discipline et de constance.</li>
               <li>Tu veux construire quelque chose de stable dans la vraie vie.</li>
@@ -503,107 +850,256 @@
     </section>
 
     <section class="section">
-      <div class="panel section-box">
-        <h2 class="section-title">Ce programme n’est <span class="gold">pas pour toi si…</span></h2>
-        <p class="section-intro">
-          Mieux vaut être clair dès le départ pour attirer les bonnes personnes.
-        </p>
+      <div class="panel section-inner">
+        <div class="section-heading">
+          <h2 class="section-title">Objections et <span class="gold">réponses</span></h2>
+          <p class="section-text">
+            Les doutes principaux sont normaux. Le but est de les clarifier avant le paiement.
+          </p>
+        </div>
 
-        <div class="grid-2">
-          <article class="card">
-            <h3 class="card-title">Tu veux une solution magique</h3>
-            <ul class="bullet-list">
-              <li>Tu cherches un raccourci sans implication personnelle.</li>
-              <li>Tu veux tout changer sans discipline ni régularité.</li>
-              <li>Tu refuses de regarder honnêtement ce qui bloque.</li>
-            </ul>
+        <div class="objection-list">
+          <div class="objection-item">
+            <strong>“J’ai peur que ce soit compliqué.”</strong>
+            La logique est volontairement simple : comprendre, décider, avancer. Pas de surcharge inutile.
+          </div>
+
+          <div class="objection-item">
+            <strong>“Je ne veux pas perdre mon temps.”</strong>
+            Toute la page est construite pour être comprise rapidement et mener à une décision claire.
+          </div>
+
+          <div class="objection-item">
+            <strong>“Je veux quelque chose de sérieux, pas du marketing vide.”</strong>
+            Le ton, le design et l’offre cherchent la crédibilité, la structure et la sobriété.
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="faq">
+      <div class="panel section-inner">
+        <div class="section-heading">
+          <h2 class="section-title">Questions <span class="gold">fréquentes</span></h2>
+          <p class="section-text">Une FAQ courte pour lever les derniers freins avant le passage à l’action.</p>
+        </div>
+
+        <div class="faq-list">
+          <article class="faq-item">
+            <h3 class="faq-question">Est-ce que le paiement est sécurisé ?</h3>
+            <p class="faq-answer">Oui. Le paiement est traité via Stripe, dans un environnement reconnu et sécurisé.</p>
           </article>
 
-          <article class="card">
-            <h3 class="card-title">Tu ne veux pas te structurer</h3>
-            <ul class="bullet-list">
-              <li>Tu préfères rester dans l’improvisation permanente.</li>
-              <li>Tu n’es pas prêt à clarifier tes décisions et tes habitudes.</li>
-              <li>Tu veux seulement consommer du contenu sans passer à l’action.</li>
-            </ul>
+          <article class="faq-item">
+            <h3 class="faq-question">Est-ce que le processus est compliqué ?</h3>
+            <p class="faq-answer">Non. La page, l’offre et le passage au paiement sont pensés pour rester simples et lisibles.</p>
+          </article>
+
+          <article class="faq-item">
+            <h3 class="faq-question">Puis-je aller sur une autre page du site ?</h3>
+            <p class="faq-answer">Oui. Un bouton te permet aussi d’aller à la page 2, puis de revenir à la page 1 facilement.</p>
           </article>
         </div>
       </div>
     </section>
 
     <section class="section">
-      <div class="panel section-box">
-        <h2 class="section-title">Pourquoi cette approche <span class="gold">fonctionne</span></h2>
-        <p class="section-intro">
-          Elle ne repose pas sur le bruit. Elle repose sur la clarté, la structure et l’exécution.
-        </p>
+      <div class="panel section-inner">
+        <div class="section-heading">
+          <h2 class="section-title">Crédibilité et <span class="gold">réassurance</span></h2>
+          <p class="section-text">Tout est pensé pour donner une expérience plus simple, plus claire et plus rassurante.</p>
+        </div>
 
-        <div class="grid-3">
-          <article class="card card-strong">
-            <h3 class="card-title">Tu simplifies</h3>
-            <p class="card-text">Tu enlèves le flou pour voir clairement ce qui compte vraiment.</p>
-          </article>
-
-          <article class="card card-strong">
-            <h3 class="card-title">Tu structures</h3>
-            <p class="card-text">Tu mets de l’ordre dans tes décisions, tes finances et ton quotidien.</p>
-          </article>
-
-          <article class="card card-strong">
-            <h3 class="card-title">Tu avances</h3>
-            <p class="card-text">Tu renforces une constance réelle au lieu de dépendre de la motivation du moment.</p>
-          </article>
+        <div class="credibility-row">
+          <div class="credibility-pill">Paiement sécurisé Stripe</div>
+          <div class="credibility-pill">Approche structurée et sobre</div>
+          <div class="credibility-pill">Clarté • Discipline • Constance</div>
         </div>
       </div>
     </section>
 
     <section class="section">
-      <div class="panel section-box">
-        <h2 class="section-title">Crédibilité et <span class="gold">réassurance</span></h2>
-        <p class="section-intro">
-          Tout est pensé pour te donner une expérience plus simple, plus claire et plus rassurante.
-        </p>
-
-        <div class="credibility-grid">
-          <div class="credibility-item">Paiement sécurisé Stripe</div>
-          <div class="credibility-item">Approche structurée et sobre</div>
-          <div class="credibility-item">Clarté • Discipline • Constance</div>
+      <div class="panel section-inner">
+        <div class="section-heading">
+          <h2 class="section-title">Visuels à <span class="gold">ajouter plus tard</span></h2>
+          <p class="section-text">La structure est prête pour accueillir d’autres éléments premium sans devoir refaire toute la page.</p>
         </div>
 
-        <div class="grid-2" style="margin-top: 18px;">
-          <article class="card">
-            <h3 class="card-title">Processus simple</h3>
-            <p class="card-text">Tu accèdes à une page claire, à une offre compréhensible et à un paiement sécurisé sans confusion inutile.</p>
-          </article>
-
-          <article class="card">
-            <h3 class="card-title">Positionnement solide</h3>
-            <p class="card-text">Le Pivot d’Or repose sur une logique de reconstruction concrète : plus de clarté, plus de structure, plus de maîtrise.</p>
-          </article>
+        <div class="future-zone">
+          Emplacements prêts pour ajouter plus tard : un visuel principal, une capture d’écran, une preuve sociale ou une image produit.
         </div>
       </div>
     </section>
 
     <section class="section">
-      <div class="panel cta-section">
-        <h2 class="cta-section-title">
-          Tu veux avancer avec plus de <span class="gold">clarté</span> dès maintenant ?
-        </h2>
+      <div class="panel section-inner">
+        <div class="section-heading">
+          <h2 class="cta-title">
+            Tu veux avancer avec plus de <span class="gold">clarté</span> dès maintenant ?
+          </h2>
+          <p class="cta-text">
+            Si tu veux arrêter le flou, mieux structurer tes décisions et repartir sur une base plus solide,
+            tu peux accéder au programme maintenant.
+          </p>
+        </div>
 
-        <p class="cta-section-text">
-          Si tu veux arrêter le flou, mieux structurer tes décisions et repartir sur une base plus solide,
-          tu peux accéder au programme maintenant.
+        <div class="cta-bottom-actions">
+          <a href="https://buy.stripe.com/3cI3cn6aA1fhcaWgRecbC00" class="button-primary">
+            Je veux accéder au programme
+          </a>
+          <a href="page2.html" class="button-secondary">
+            Ouvrir la page 2
+          </a>
+        </div>
+
+        <p class="footer-text">
+          Paiement sécurisé • Accès rapide • CTA répété de façon sobre pour faciliter le passage à l’action
         </p>
 
-        <a href="https://buy.stripe.com/3cI3cn6aA1fhcaWgRecbC00" class="cta-secondary">
-          Je veux accéder au programme
-        </a>
-
-        <p class="footer-note">
-          Paiement sécurisé • Accès rapide • Deuxième point d’entrée pour faciliter le passage à l’action
-        </p>
+        <div class="footer-links">
+          <span>Header premium ajouté</span>
+          <span>•</span>
+          <span>Deuxième témoignage ajouté</span>
+          <span>•</span>
+          <span>Navigation vers page 2 prête</span>
+        </div>
       </div>
     </section>
   </main>
 </body>
 </html>
+```
+
+---
+
+# Code page 2 — `page2.html`
+
+```html
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Page 2 du site Le Pivot d'Or." />
+  <title>Le Pivot d'Or | Page 2</title>
+
+  <style>
+    :root {
+      --bg: #060606;
+      --text: #ffffff;
+      --text-soft: #d7d7d7;
+      --gold: #d4af37;
+      --gold-soft: #f1d98a;
+      --border-gold: rgba(212, 175, 55, 0.22);
+      --shadow-dark: rgba(0, 0, 0, 0.35);
+      --shadow-gold: rgba(212, 175, 55, 0.12);
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      min-height: 100vh;
+      font-family: Arial, sans-serif;
+      color: var(--text);
+      background:
+        radial-gradient(circle at top, rgba(212, 175, 55, 0.12), transparent 32%),
+        linear-gradient(180deg, #101010 0%, var(--bg) 50%, #000000 100%);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 20px;
+    }
+
+    .page-box {
+      width: 100%;
+      max-width: 760px;
+      padding: 36px 24px;
+      text-align: center;
+      border-radius: 30px;
+      border: 1px solid var(--border-gold);
+      background: linear-gradient(180deg, rgba(255,255,255,0.04), rgba(255,255,255,0.025));
+      box-shadow:
+        0 24px 64px var(--shadow-dark),
+        0 10px 34px var(--shadow-gold);
+    }
+
+    .eyebrow {
+      display: inline-block;
+      padding: 8px 16px;
+      border-radius: 999px;
+      background: rgba(212, 175, 55, 0.08);
+      border: 1px solid rgba(212, 175, 55, 0.28);
+      color: var(--gold-soft);
+      font-size: 13px;
+      font-weight: 700;
+      letter-spacing: 1.2px;
+      text-transform: uppercase;
+      margin-bottom: 18px;
+    }
+
+    h1 {
+      font-size: clamp(2rem, 4vw, 3.4rem);
+      line-height: 1.08;
+    }
+
+    p {
+      margin-top: 16px;
+      color: var(--text-soft);
+      font-size: 1rem;
+    }
+
+    .button-back {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 54px;
+      margin-top: 28px;
+      padding: 14px 24px;
+      border-radius: 16px;
+      text-decoration: none;
+      font-weight: 700;
+      color: #111111;
+      background: linear-gradient(135deg, #f8e7a6, var(--gold));
+      box-shadow:
+        0 12px 30px rgba(212, 175, 55, 0.24),
+        0 0 0 1px rgba(255, 235, 170, 0.24) inset;
+      transition: transform 220ms ease, box-shadow 220ms ease;
+    }
+
+    .button-back:hover {
+      transform: translateY(-2px);
+      box-shadow:
+        0 16px 36px rgba(212, 175, 55, 0.3),
+        0 0 0 1px rgba(255, 235, 170, 0.34) inset;
+    }
+  </style>
+</head>
+<body>
+  <main class="page-box">
+    <div class="eyebrow">Le Pivot d'Or • Page 2</div>
+    <h1>Titre de la page 2</h1>
+    <p>Cette page est volontairement simple pour le moment. Tu pourras la développer plus tard.</p>
+    <a href="index.html" class="button-back">Revenir à la page 1</a>
+  </main>
+</body>
+</html>
+```
+
+---
+
+# Conseil final
+
+**Je te conseille de garder le canevas.**
+Pourquoi :
+
+* on a déjà une bonne base
+* c’est plus rapide pour corriger sans perdre le travail
+* on peut améliorer page 1 puis page 2 sans repartir de zéro
+* on garde une logique propre et progressive
+
+Si tu veux ensuite, la prochaine étape la plus rentable est :
+**je t’intègre maintenant une version encore plus forte avec une vraie section visuelle de capture d’écran, un deuxième témoignage et un header plus haut de gamme.**
