@@ -889,6 +889,23 @@
       color: var(--text-muted);
       font-size: 0.88rem;
     }
+    .pdf-frame-wrap {
+      margin-top: 22px;
+      border-radius: 22px;
+      overflow: hidden;
+      border: 1px solid rgba(212, 175, 55, 0.18);
+      background: rgba(255, 255, 255, 0.04);
+      box-shadow: 0 14px 34px rgba(0, 0, 0, 0.28);
+    }
+
+    .pdf-frame-wrap iframe {
+      width: 100%;
+      height: 780px;
+      border: 0;
+      display: block;
+      background: #ffffff;
+    }
+
 
     .sticky-mobile-cta {
       display: none;
@@ -993,6 +1010,12 @@
         font-weight: 800;
       }
     }
+    @media (max-width: 720px) {
+      .pdf-frame-wrap iframe {
+        height: 520px;
+      }
+    }
+
   </style>
   <script type="application/ld+json">
     {
@@ -1139,6 +1162,7 @@
         <nav class="internal-nav" aria-label="Navigation rapide de l'offre">
           <a href="#details-offre">Ce que tu obtiens</a>
           <a href="#parcours-12-mois">Parcours 12 mois</a>
+          <a href="#presentation-pdf">Présentation PDF</a>
           <a href="#preuve-sociale">Preuve sociale</a>
           <a href="#securite-paiement">Sécurité Stripe</a>
           <a href="#garantie">Garantie</a>
@@ -1536,6 +1560,52 @@
         </div>
       </div>
     </section>
+    <section class="section" id="presentation-pdf">
+      <div class="panel section-inner">
+        <div class="section-heading">
+          <h2 class="section-title">Présentation PDF des <span class="gold">offres Pivot d’Or</span></h2>
+          <p class="section-text">
+            Cette section ajoute la présentation PDF directement dans la page. Elle permet de consulter la vision,
+            les offres Pilotage recentrage, Pilotage financier, Pilotage Élite et la comparaison des trajectoires sans quitter le site.
+          </p>
+        </div>
+
+        <div class="grid-three">
+          <article class="card card-strong">
+            <h3 class="card-heading">Pilotage recentrage</h3>
+            <p class="card-copy">Offre de 2 mois à 400 $ pour sortir du flou, fixer les priorités et reprendre une trajectoire claire.</p>
+          </article>
+
+          <article class="card card-strong">
+            <h3 class="card-heading">Pilotage financier</h3>
+            <p class="card-copy">Offre de 12 mois à 3 600 $ pour bâtir une base financière saine, une structure claire et une discipline durable.</p>
+          </article>
+
+          <article class="card card-strong">
+            <h3 class="card-heading">Pilotage Élite</h3>
+            <p class="card-copy">Offre stratégique de 12 mois à 6 000 $ pour les entrepreneurs qui veulent des systèmes plus robustes et une croissance maîtrisée.</p>
+          </article>
+        </div>
+
+        <div class="pdf-frame-wrap" aria-label="Aperçu de la présentation PDF des offres Le Pivot d’Or">
+          <iframe src="offres-pivot-dor.pdf#view=FitH" title="Présentation PDF des offres Le Pivot d’Or" loading="lazy"></iframe>
+        </div>
+
+        <div class="cta-actions">
+          <a href="offres-pivot-dor.pdf" class="button-primary" target="_blank" rel="noopener">
+            Ouvrir le PDF
+          </a>
+          <a href="offres-pivot-dor.pdf" class="button-secondary" download>
+            Télécharger le PDF
+          </a>
+        </div>
+
+        <p class="visual-note">
+          Si l’aperçu PDF ne s’affiche pas sur certains téléphones ou navigateurs, utilise le bouton “Ouvrir le PDF”.
+        </p>
+      </div>
+    </section>
+
 
     <section class="section" id="preuve-sociale">
       <div class="panel section-inner">
