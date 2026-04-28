@@ -1,0 +1,1279 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Accès privé aux mini-formations Le Pivot d’Or : consulter tes achats, suivre ta progression et ouvrir tes ressources." />
+  <meta name="robots" content="noindex, nofollow" />
+  <title>Accès client | Le Pivot d’Or</title>
+
+  <style>
+    :root {
+      --noir: #050505;
+      --noir-2: #111111;
+      --noir-3: #191919;
+      --or: #d8aa3d;
+      --or-clair: #f4d98b;
+      --blanc: #ffffff;
+      --gris: #c9c9c9;
+      --gris-2: #8d8d8d;
+      --vert: #7ddc8a;
+      --rouge: #ff6b6b;
+      --bleu: #6ea8ff;
+      --mauve: #c9a7ff;
+      --ombre: 0 18px 60px rgba(0, 0, 0, 0.45);
+      --radius: 22px;
+      --max: 1180px;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: Aptos, Arial, sans-serif;
+      background:
+        radial-gradient(circle at top left, rgba(216, 170, 61, 0.18), transparent 34%),
+        linear-gradient(135deg, #030303 0%, #101010 48%, #060606 100%);
+      color: var(--blanc);
+      min-height: 100vh;
+      line-height: 1.6;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    .skip-link {
+      position: absolute;
+      left: -999px;
+      top: 10px;
+      background: var(--or);
+      color: #111;
+      padding: 10px 14px;
+      border-radius: 10px;
+      z-index: 1000;
+      font-weight: 800;
+    }
+
+    .skip-link:focus {
+      left: 10px;
+    }
+
+    .top-bar {
+      width: 100%;
+      border-bottom: 1px solid rgba(216, 170, 61, 0.22);
+      background: rgba(5, 5, 5, 0.82);
+      backdrop-filter: blur(14px);
+      position: sticky;
+      top: 0;
+      z-index: 20;
+    }
+
+    .nav {
+      max-width: var(--max);
+      margin: 0 auto;
+      padding: 16px 20px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      min-width: 0;
+    }
+
+    .brand-logo {
+      width: 44px;
+      height: 44px;
+      border-radius: 50%;
+      border: 1px solid rgba(216, 170, 61, 0.7);
+      background: radial-gradient(circle, var(--or-clair), var(--or) 42%, #4a350d 100%);
+      box-shadow: 0 0 28px rgba(216, 170, 61, 0.25);
+      flex: 0 0 auto;
+    }
+
+    .brand-text strong {
+      display: block;
+      color: var(--or-clair);
+      font-size: 1rem;
+      letter-spacing: 0.02em;
+    }
+
+    .brand-text span {
+      display: block;
+      color: var(--gris);
+      font-size: 0.84rem;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      max-width: 280px;
+    }
+
+    .nav-actions {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      flex-wrap: wrap;
+      justify-content: flex-end;
+    }
+
+    .nav-link,
+    .btn {
+      border: 1px solid rgba(216, 170, 61, 0.38);
+      color: var(--blanc);
+      border-radius: 999px;
+      padding: 10px 15px;
+      font-size: 0.92rem;
+      background: rgba(255, 255, 255, 0.04);
+      transition: transform 0.2s ease, border-color 0.2s ease, background 0.2s ease;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      font-weight: 700;
+    }
+
+    .nav-link:hover,
+    .btn:hover {
+      transform: translateY(-1px);
+      border-color: rgba(244, 217, 139, 0.9);
+      background: rgba(216, 170, 61, 0.12);
+    }
+
+    .btn-primary {
+      background: linear-gradient(135deg, var(--or-clair), var(--or));
+      color: #141006;
+      border-color: transparent;
+      box-shadow: 0 12px 32px rgba(216, 170, 61, 0.18);
+    }
+
+    .btn-primary:hover {
+      background: linear-gradient(135deg, #ffe7a5, var(--or));
+    }
+
+    .btn-danger {
+      border-color: rgba(255, 107, 107, 0.45);
+      color: #ffd0d0;
+    }
+
+    .btn-small {
+      padding: 8px 12px;
+      font-size: 0.84rem;
+    }
+
+    .page {
+      max-width: var(--max);
+      margin: 0 auto;
+      padding: 42px 20px 70px;
+    }
+
+    .hero {
+      display: grid;
+      grid-template-columns: 1.15fr 0.85fr;
+      gap: 24px;
+      align-items: stretch;
+      margin-bottom: 28px;
+    }
+
+    .panel {
+      background: linear-gradient(145deg, rgba(255, 255, 255, 0.072), rgba(255, 255, 255, 0.028));
+      border: 1px solid rgba(216, 170, 61, 0.22);
+      border-radius: var(--radius);
+      box-shadow: var(--ombre);
+      overflow: hidden;
+      position: relative;
+    }
+
+    .panel::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      pointer-events: none;
+      background: linear-gradient(135deg, rgba(216, 170, 61, 0.1), transparent 42%);
+    }
+
+    .hero-copy {
+      padding: 38px;
+      min-height: 390px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+
+    .eyebrow {
+      color: var(--or-clair);
+      font-weight: 900;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      font-size: 0.78rem;
+      margin-bottom: 14px;
+    }
+
+    h1 {
+      font-size: clamp(2.1rem, 4vw, 4.4rem);
+      line-height: 0.98;
+      letter-spacing: -0.05em;
+      margin-bottom: 18px;
+    }
+
+    .lead {
+      color: var(--gris);
+      font-size: 1.08rem;
+      max-width: 720px;
+      margin-bottom: 22px;
+    }
+
+    .hero-badges {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 6px;
+    }
+
+    .badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 7px;
+      border: 1px solid rgba(216, 170, 61, 0.25);
+      background: rgba(0, 0, 0, 0.25);
+      color: var(--gris);
+      border-radius: 999px;
+      padding: 8px 12px;
+      font-size: 0.86rem;
+    }
+
+    .badge strong {
+      color: var(--or-clair);
+    }
+
+    .access-card {
+      padding: 28px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+
+    .card-title {
+      color: var(--or-clair);
+      font-size: 1.35rem;
+      margin-bottom: 8px;
+      letter-spacing: -0.02em;
+    }
+
+    .muted {
+      color: var(--gris);
+      font-size: 0.96rem;
+    }
+
+    form {
+      margin-top: 18px;
+      display: grid;
+      gap: 14px;
+    }
+
+    label {
+      color: var(--or-clair);
+      font-size: 0.9rem;
+      font-weight: 800;
+    }
+
+    input,
+    select {
+      width: 100%;
+      border: 1px solid rgba(216, 170, 61, 0.24);
+      background: rgba(0, 0, 0, 0.34);
+      color: var(--blanc);
+      border-radius: 14px;
+      padding: 13px 14px;
+      font: inherit;
+      outline: none;
+    }
+
+    input:focus,
+    select:focus {
+      border-color: var(--or-clair);
+      box-shadow: 0 0 0 4px rgba(216, 170, 61, 0.12);
+    }
+
+    .help-text {
+      color: var(--gris-2);
+      font-size: 0.82rem;
+      margin-top: -7px;
+    }
+
+    .status-message {
+      display: none;
+      border-radius: 14px;
+      padding: 12px 14px;
+      font-weight: 800;
+      font-size: 0.92rem;
+      border: 1px solid transparent;
+    }
+
+    .status-message.success {
+      display: block;
+      color: #d7ffde;
+      background: rgba(125, 220, 138, 0.12);
+      border-color: rgba(125, 220, 138, 0.32);
+    }
+
+    .status-message.error {
+      display: block;
+      color: #ffd6d6;
+      background: rgba(255, 107, 107, 0.12);
+      border-color: rgba(255, 107, 107, 0.32);
+    }
+
+    .section {
+      margin-top: 24px;
+    }
+
+    .section-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-end;
+      gap: 16px;
+      margin-bottom: 14px;
+      flex-wrap: wrap;
+    }
+
+    .section-title {
+      font-size: clamp(1.45rem, 2vw, 2rem);
+      color: var(--or-clair);
+      letter-spacing: -0.03em;
+    }
+
+    .dashboard {
+      display: none;
+    }
+
+    .dashboard.visible {
+      display: block;
+      animation: fadeIn 0.32s ease both;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(8px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    .stats-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 14px;
+      margin-bottom: 22px;
+    }
+
+    .stat {
+      padding: 18px;
+      border-radius: 18px;
+      background: rgba(255, 255, 255, 0.045);
+      border: 1px solid rgba(216, 170, 61, 0.18);
+    }
+
+    .stat span {
+      display: block;
+      color: var(--gris);
+      font-size: 0.83rem;
+      margin-bottom: 5px;
+    }
+
+    .stat strong {
+      display: block;
+      color: var(--or-clair);
+      font-size: 1.55rem;
+      line-height: 1.1;
+    }
+
+    .filters {
+      display: grid;
+      grid-template-columns: 1.5fr 0.75fr 0.75fr;
+      gap: 12px;
+      margin-bottom: 18px;
+    }
+
+    .formations-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 16px;
+    }
+
+    .formation-card {
+      min-height: 100%;
+      border: 1px solid rgba(216, 170, 61, 0.2);
+      background: linear-gradient(160deg, rgba(255, 255, 255, 0.06), rgba(255, 255, 255, 0.025));
+      border-radius: 20px;
+      padding: 20px;
+      box-shadow: 0 16px 45px rgba(0, 0, 0, 0.23);
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+
+    .formation-top {
+      display: flex;
+      justify-content: space-between;
+      gap: 10px;
+      align-items: flex-start;
+    }
+
+    .formation-title {
+      color: var(--blanc);
+      font-size: 1.08rem;
+      line-height: 1.25;
+      letter-spacing: -0.02em;
+    }
+
+    .price-pill {
+      flex: 0 0 auto;
+      border-radius: 999px;
+      background: rgba(216, 170, 61, 0.13);
+      color: var(--or-clair);
+      border: 1px solid rgba(216, 170, 61, 0.26);
+      padding: 5px 9px;
+      font-size: 0.78rem;
+      font-weight: 900;
+    }
+
+    .formation-meta {
+      display: grid;
+      gap: 5px;
+      color: var(--gris);
+      font-size: 0.86rem;
+    }
+
+    .formation-meta strong {
+      color: var(--or-clair);
+    }
+
+    .progress-wrap {
+      margin-top: 4px;
+    }
+
+    .progress-label {
+      display: flex;
+      justify-content: space-between;
+      gap: 10px;
+      color: var(--gris);
+      font-size: 0.83rem;
+      margin-bottom: 8px;
+    }
+
+    .progress {
+      height: 10px;
+      border-radius: 999px;
+      overflow: hidden;
+      background: rgba(255, 255, 255, 0.1);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+    }
+
+    .progress > span {
+      display: block;
+      height: 100%;
+      border-radius: inherit;
+      background: linear-gradient(90deg, var(--or), var(--or-clair));
+      width: 0%;
+      transition: width 0.3s ease;
+    }
+
+    details {
+      border: 1px solid rgba(216, 170, 61, 0.14);
+      background: rgba(0, 0, 0, 0.18);
+      border-radius: 16px;
+      padding: 12px 13px;
+    }
+
+    summary {
+      cursor: pointer;
+      color: var(--or-clair);
+      font-weight: 900;
+    }
+
+    .resource-list {
+      margin-top: 10px;
+      display: grid;
+      gap: 8px;
+    }
+
+    .resource-list a,
+    .resource-list button {
+      width: 100%;
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      background: rgba(255, 255, 255, 0.045);
+      color: var(--blanc);
+      border-radius: 12px;
+      padding: 10px 11px;
+      font: inherit;
+      text-align: left;
+      cursor: pointer;
+    }
+
+    .resource-list a:hover,
+    .resource-list button:hover {
+      border-color: rgba(244, 217, 139, 0.55);
+    }
+
+    .card-actions {
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap;
+      margin-top: auto;
+    }
+
+    .locked-note {
+      margin-top: 14px;
+      padding: 16px;
+      border: 1px solid rgba(255, 107, 107, 0.24);
+      background: rgba(255, 107, 107, 0.08);
+      color: #ffe0e0;
+      border-radius: 16px;
+      font-size: 0.92rem;
+    }
+
+    .info-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 16px;
+      margin-top: 22px;
+    }
+
+    .info-card {
+      padding: 20px;
+      border-radius: 20px;
+      border: 1px solid rgba(216, 170, 61, 0.18);
+      background: rgba(255, 255, 255, 0.04);
+    }
+
+    .info-card h3 {
+      color: var(--or-clair);
+      margin-bottom: 8px;
+      font-size: 1.05rem;
+    }
+
+    .info-card p,
+    .info-card li {
+      color: var(--gris);
+      font-size: 0.92rem;
+    }
+
+    .info-card ul {
+      padding-left: 18px;
+      margin-top: 8px;
+    }
+
+    .footer {
+      max-width: var(--max);
+      margin: 0 auto;
+      padding: 24px 20px 44px;
+      color: var(--gris-2);
+      border-top: 1px solid rgba(216, 170, 61, 0.14);
+      font-size: 0.9rem;
+    }
+
+    .footer a {
+      color: var(--or-clair);
+    }
+
+    .modal-backdrop {
+      position: fixed;
+      inset: 0;
+      z-index: 99;
+      background: rgba(0, 0, 0, 0.72);
+      display: none;
+      align-items: center;
+      justify-content: center;
+      padding: 20px;
+    }
+
+    .modal-backdrop.visible {
+      display: flex;
+    }
+
+    .modal {
+      width: min(760px, 100%);
+      max-height: 84vh;
+      overflow: auto;
+      border-radius: 24px;
+      background: #101010;
+      border: 1px solid rgba(216, 170, 61, 0.32);
+      box-shadow: var(--ombre);
+      padding: 26px;
+    }
+
+    .modal-header {
+      display: flex;
+      align-items: flex-start;
+      justify-content: space-between;
+      gap: 14px;
+      margin-bottom: 16px;
+    }
+
+    .modal h2 {
+      color: var(--or-clair);
+      font-size: 1.45rem;
+    }
+
+    .modal p,
+    .modal li {
+      color: var(--gris);
+    }
+
+    .modal ul {
+      padding-left: 20px;
+      margin-top: 10px;
+    }
+
+    .close-modal {
+      border: 1px solid rgba(255, 255, 255, 0.14);
+      background: rgba(255, 255, 255, 0.06);
+      color: var(--blanc);
+      border-radius: 999px;
+      width: 40px;
+      height: 40px;
+      cursor: pointer;
+      font-weight: 900;
+    }
+
+    .empty-state {
+      display: none;
+      padding: 24px;
+      text-align: center;
+      border: 1px dashed rgba(216, 170, 61, 0.32);
+      border-radius: 18px;
+      color: var(--gris);
+      background: rgba(255, 255, 255, 0.035);
+    }
+
+    .empty-state.visible {
+      display: block;
+    }
+
+    @media (max-width: 980px) {
+      .hero,
+      .stats-grid,
+      .formations-grid,
+      .info-grid {
+        grid-template-columns: 1fr 1fr;
+      }
+
+      .hero-copy {
+        min-height: auto;
+      }
+    }
+
+    @media (max-width: 720px) {
+      .nav {
+        align-items: flex-start;
+        flex-direction: column;
+      }
+
+      .nav-actions {
+        width: 100%;
+        justify-content: flex-start;
+      }
+
+      .hero,
+      .stats-grid,
+      .formations-grid,
+      .info-grid,
+      .filters {
+        grid-template-columns: 1fr;
+      }
+
+      .hero-copy,
+      .access-card {
+        padding: 24px;
+      }
+
+      .brand-text span {
+        max-width: 230px;
+      }
+    }
+
+    @media print {
+      .top-bar,
+      .access-card,
+      .nav-actions,
+      .filters,
+      .card-actions,
+      .modal-backdrop {
+        display: none !important;
+      }
+
+      body {
+        background: #fff;
+        color: #000;
+      }
+
+      .panel,
+      .formation-card,
+      .info-card,
+      .stat {
+        box-shadow: none;
+        border-color: #999;
+        background: #fff;
+        color: #000;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <a class="skip-link" href="#contenu">Aller au contenu</a>
+
+  <header class="top-bar" aria-label="Navigation principale">
+    <nav class="nav">
+      <a class="brand" href="index.html" aria-label="Retour à l’accueil Le Pivot d’Or">
+        <span class="brand-logo" aria-hidden="true"></span>
+        <span class="brand-text">
+          <strong>Le Pivot d’Or</strong>
+          <span>Accès client · Mini-formations</span>
+        </span>
+      </a>
+
+      <div class="nav-actions">
+        <a class="nav-link" href="index.html">Accueil</a>
+        <a class="nav-link" href="formations.html">Catalogue</a>
+        <a class="nav-link" href="support.html">Support</a>
+        <button class="btn btn-danger btn-small" id="logoutBtn" type="button" hidden>Déconnexion</button>
+      </div>
+    </nav>
+  </header>
+
+  <main class="page" id="contenu">
+    <section class="hero" aria-labelledby="titre-page">
+      <div class="panel hero-copy">
+        <p class="eyebrow">Espace privé</p>
+        <h1 id="titre-page">Accède à tes mini-formations.</h1>
+        <p class="lead">
+          Entre ton courriel d’achat et ton code d’accès pour ouvrir tes formations, suivre ta progression
+          et retrouver rapidement les ressources associées à ton achat.
+        </p>
+
+        <div class="hero-badges" aria-label="Points importants">
+          <span class="badge"><strong>✓</strong> Accès privé</span>
+          <span class="badge"><strong>✓</strong> Progression locale</span>
+          <span class="badge"><strong>✓</strong> Mise à jour annuelle</span>
+          <span class="badge"><strong>✓</strong> Support accessible</span>
+        </div>
+      </div>
+
+      <aside class="panel access-card" aria-labelledby="connexion-title">
+        <h2 class="card-title" id="connexion-title">Connexion à ton accès</h2>
+        <p class="muted">
+          Cette version est prête pour GitHub Pages. Elle simule l’accès côté navigateur.
+          Pour une vraie protection, il faudra plus tard brancher Stripe + serveur + authentification.
+        </p>
+
+        <form id="accessForm" novalidate>
+          <div>
+            <label for="email">Courriel d’achat</label>
+            <input id="email" name="email" type="email" inputmode="email" autocomplete="email" placeholder="exemple@email.com" required />
+          </div>
+
+          <div>
+            <label for="accessCode">Code d’accès</label>
+            <input id="accessCode" name="accessCode" type="password" autocomplete="one-time-code" placeholder="Ex. PIVOT-IA-2026" required minlength="8" />
+          </div>
+
+          <p class="help-text">
+            Démo locale : essaie le code <strong>PIVOT-DEMO-2026</strong>. Ne mets jamais de vrais codes clients dans un site public.
+          </p>
+
+          <button class="btn btn-primary" type="submit">Ouvrir mon accès</button>
+          <div class="status-message" id="statusMessage" role="status" aria-live="polite"></div>
+        </form>
+      </aside>
+    </section>
+
+    <section class="dashboard" id="dashboard" aria-label="Tableau des formations accessibles">
+      <div class="section-header">
+        <div>
+          <p class="eyebrow">Tableau de bord client</p>
+          <h2 class="section-title">Tes formations disponibles</h2>
+          <p class="muted" id="welcomeText">Bienvenue dans ton espace.</p>
+        </div>
+        <button class="btn btn-small" type="button" onclick="window.print()">Imprimer le résumé</button>
+      </div>
+
+      <div class="stats-grid" aria-label="Résumé de ton accès">
+        <div class="stat">
+          <span>Formations accessibles</span>
+          <strong id="statTotal">0</strong>
+        </div>
+        <div class="stat">
+          <span>Progression moyenne</span>
+          <strong id="statProgress">0%</strong>
+        </div>
+        <div class="stat">
+          <span>Mises à jour à surveiller</span>
+          <strong id="statUpdates">0</strong>
+        </div>
+        <div class="stat">
+          <span>Dernier accès</span>
+          <strong id="statLastAccess">—</strong>
+        </div>
+      </div>
+
+      <div class="filters" aria-label="Filtres des formations">
+        <div>
+          <label for="searchInput">Recherche</label>
+          <input id="searchInput" type="search" placeholder="Rechercher une formation, catégorie, outil..." />
+        </div>
+        <div>
+          <label for="categoryFilter">Catégorie</label>
+          <select id="categoryFilter">
+            <option value="all">Toutes</option>
+          </select>
+        </div>
+        <div>
+          <label for="sortSelect">Tri</label>
+          <select id="sortSelect">
+            <option value="priority">Priorité</option>
+            <option value="progress">Progression</option>
+            <option value="update">Mise à jour</option>
+            <option value="price">Prix</option>
+          </select>
+        </div>
+      </div>
+
+      <div class="formations-grid" id="formationsGrid"></div>
+      <div class="empty-state" id="emptyState">Aucune formation ne correspond à ta recherche.</div>
+    </section>
+
+    <section class="section info-grid" aria-label="Informations importantes">
+      <article class="info-card">
+        <h3>Important pour la sécurité</h3>
+        <p>
+          Une page GitHub Pages ne protège pas réellement le contenu payé. Utilise cette page comme interface visuelle,
+          puis ajoute plus tard une vraie authentification côté serveur.
+        </p>
+      </article>
+
+      <article class="info-card">
+        <h3>Accès et support</h3>
+        <p>
+          Si ton accès ne fonctionne pas, garde ton reçu Stripe et contacte le support avec ton courriel d’achat.
+        </p>
+        <ul>
+          <li>Courriel d’achat</li>
+          <li>Nom de la formation</li>
+          <li>Capture du problème</li>
+        </ul>
+      </article>
+
+      <article class="info-card">
+        <h3>Progression</h3>
+        <p>
+          La progression de cette version est enregistrée sur ton navigateur. Elle peut être perdue si tu changes d’appareil
+          ou si tu supprimes les données du navigateur.
+        </p>
+      </article>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <p>
+      © <span id="year"></span> Le Pivot d’Or · <a href="conditions.html">Conditions</a> ·
+      <a href="confidentialite.html">Confidentialité</a> · <a href="support.html">Support</a>
+    </p>
+  </footer>
+
+  <div class="modal-backdrop" id="modalBackdrop" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+    <div class="modal">
+      <div class="modal-header">
+        <div>
+          <p class="eyebrow">Aperçu formation</p>
+          <h2 id="modalTitle">Formation</h2>
+        </div>
+        <button class="close-modal" type="button" id="closeModal" aria-label="Fermer">×</button>
+      </div>
+      <div id="modalBody"></div>
+    </div>
+  </div>
+
+  <script>
+    "use strict";
+
+    const DEMO_ACCESS_CODE = "PIVOT-DEMO-2026";
+    const STORAGE_KEY = "pivotdor_acces_client_v1";
+    const PROGRESS_KEY = "pivotdor_progression_v1";
+
+    const formations = [
+      {
+        id: "ia-001",
+        title: "Créer ton assistant IA personnel en 45 minutes",
+        category: "IA",
+        price: 25,
+        priority: 1,
+        version: "1.0",
+        createdAt: "2026-04-28",
+        updatedAt: "2026-04-28",
+        nextUpdate: "2027-04-28",
+        duration: "45 min",
+        quality: 92,
+        profitability: 89,
+        description: "Un mini-système simple pour transformer ChatGPT en assistant opérationnel avec contexte, règles et tâches répétables.",
+        resources: [
+          { label: "Ouvrir la formation", url: "formations/ia-assistant-personnel.html" },
+          { label: "Checklist d’implantation", url: "produits/ia-assistant-checklist.pdf" },
+          { label: "Gabarit de prompt", url: "produits/ia-assistant-prompt.html" }
+        ]
+      },
+      {
+        id: "prod-001",
+        title: "Planifier ta semaine sans te disperser",
+        category: "Productivité",
+        price: 15,
+        priority: 2,
+        version: "1.0",
+        createdAt: "2026-04-28",
+        updatedAt: "2026-04-28",
+        nextUpdate: "2027-04-28",
+        duration: "30 min",
+        quality: 90,
+        profitability: 84,
+        description: "Une structure courte pour choisir les bonnes priorités, réduire le bruit et finir ce qui compte vraiment.",
+        resources: [
+          { label: "Ouvrir la formation", url: "formations/planifier-semaine.html" },
+          { label: "Checklist hebdomadaire", url: "produits/checklist-semaine.pdf" }
+        ]
+      },
+      {
+        id: "bus-001",
+        title: "Créer une mini-offre vendable à 25 $",
+        category: "Business",
+        price: 25,
+        priority: 3,
+        version: "1.0",
+        createdAt: "2026-04-28",
+        updatedAt: "2026-04-28",
+        nextUpdate: "2027-04-28",
+        duration: "50 min",
+        quality: 88,
+        profitability: 94,
+        description: "La méthode pour transformer une compétence simple en produit digital clair, court et vendable.",
+        resources: [
+          { label: "Ouvrir la formation", url: "formations/mini-offre-25.html" },
+          { label: "Modèle de page de vente", url: "templates/page-vente-mini-offre.html" }
+        ]
+      },
+      {
+        id: "fin-001",
+        title: "Dire non pour libérer 100 $ par mois",
+        category: "Finances",
+        price: 15,
+        priority: 4,
+        version: "1.0",
+        createdAt: "2026-04-28",
+        updatedAt: "2026-04-28",
+        nextUpdate: "2027-04-28",
+        duration: "25 min",
+        quality: 87,
+        profitability: 82,
+        description: "Un mini-système de clarté financière pour réduire les dépenses inutiles sans te sentir privé.",
+        resources: [
+          { label: "Ouvrir la formation", url: "formations/dire-non-100.html" },
+          { label: "Tableau de décisions", url: "produits/tableau-dire-non.pdf" }
+        ]
+      }
+    ];
+
+    const accessForm = document.getElementById("accessForm");
+    const statusMessage = document.getElementById("statusMessage");
+    const dashboard = document.getElementById("dashboard");
+    const logoutBtn = document.getElementById("logoutBtn");
+    const formationsGrid = document.getElementById("formationsGrid");
+    const emptyState = document.getElementById("emptyState");
+    const searchInput = document.getElementById("searchInput");
+    const categoryFilter = document.getElementById("categoryFilter");
+    const sortSelect = document.getElementById("sortSelect");
+    const modalBackdrop = document.getElementById("modalBackdrop");
+    const modalTitle = document.getElementById("modalTitle");
+    const modalBody = document.getElementById("modalBody");
+    const closeModal = document.getElementById("closeModal");
+
+    document.getElementById("year").textContent = new Date().getFullYear();
+
+    function sanitizeText(value) {
+      return String(value)
+        .replace(/&/g, "&amp;")
+        .replace(/</g, "&lt;")
+        .replace(/>/g, "&gt;")
+        .replace(/"/g, "&quot;")
+        .replace(/'/g, "&#039;");
+    }
+
+    function getStoredSession() {
+      try {
+        return JSON.parse(localStorage.getItem(STORAGE_KEY)) || null;
+      } catch (error) {
+        localStorage.removeItem(STORAGE_KEY);
+        return null;
+      }
+    }
+
+    function saveSession(email) {
+      const session = {
+        email,
+        unlocked: true,
+        lastAccess: new Date().toISOString()
+      };
+      localStorage.setItem(STORAGE_KEY, JSON.stringify(session));
+      return session;
+    }
+
+    function clearSession() {
+      localStorage.removeItem(STORAGE_KEY);
+    }
+
+    function getProgress() {
+      try {
+        return JSON.parse(localStorage.getItem(PROGRESS_KEY)) || {};
+      } catch (error) {
+        localStorage.removeItem(PROGRESS_KEY);
+        return {};
+      }
+    }
+
+    function saveProgress(progress) {
+      localStorage.setItem(PROGRESS_KEY, JSON.stringify(progress));
+    }
+
+    function setStatus(type, message) {
+      statusMessage.className = `status-message ${type}`;
+      statusMessage.textContent = message;
+    }
+
+    function formatDate(dateString) {
+      const date = new Date(dateString);
+      if (Number.isNaN(date.getTime())) return "—";
+      return date.toLocaleDateString("fr-CA", { year: "numeric", month: "short", day: "numeric" });
+    }
+
+    function populateCategories() {
+      const categories = [...new Set(formations.map(item => item.category))].sort();
+      categories.forEach(category => {
+        const option = document.createElement("option");
+        option.value = category;
+        option.textContent = category;
+        categoryFilter.appendChild(option);
+      });
+    }
+
+    function getFilteredFormations() {
+      const query = searchInput.value.trim().toLowerCase();
+      const category = categoryFilter.value;
+      const sort = sortSelect.value;
+      const progress = getProgress();
+
+      const filtered = formations.filter(item => {
+        const searchable = `${item.title} ${item.category} ${item.description}`.toLowerCase();
+        const matchesQuery = !query || searchable.includes(query);
+        const matchesCategory = category === "all" || item.category === category;
+        return matchesQuery && matchesCategory;
+      });
+
+      return filtered.sort((a, b) => {
+        if (sort === "progress") return (progress[b.id] || 0) - (progress[a.id] || 0);
+        if (sort === "update") return new Date(a.nextUpdate) - new Date(b.nextUpdate);
+        if (sort === "price") return b.price - a.price;
+        return a.priority - b.priority;
+      });
+    }
+
+    function updateStats(session) {
+      const progress = getProgress();
+      const values = formations.map(item => Number(progress[item.id] || 0));
+      const average = values.length ? Math.round(values.reduce((sum, value) => sum + value, 0) / values.length) : 0;
+      const today = new Date();
+      const updateSoon = formations.filter(item => {
+        const nextUpdate = new Date(item.nextUpdate);
+        const days = (nextUpdate - today) / (1000 * 60 * 60 * 24);
+        return days <= 90;
+      }).length;
+
+      document.getElementById("statTotal").textContent = formations.length;
+      document.getElementById("statProgress").textContent = `${average}%`;
+      document.getElementById("statUpdates").textContent = updateSoon;
+      document.getElementById("statLastAccess").textContent = session ? formatDate(session.lastAccess) : "—";
+      document.getElementById("welcomeText").textContent = session ? `Bienvenue, accès ouvert pour ${session.email}.` : "Bienvenue dans ton espace.";
+    }
+
+    function renderFormations() {
+      const progress = getProgress();
+      const list = getFilteredFormations();
+      formationsGrid.innerHTML = "";
+      emptyState.classList.toggle("visible", list.length === 0);
+
+      list.forEach(item => {
+        const currentProgress = Number(progress[item.id] || 0);
+        const card = document.createElement("article");
+        card.className = "formation-card";
+        card.innerHTML = `
+          <div class="formation-top">
+            <h3 class="formation-title">${sanitizeText(item.title)}</h3>
+            <span class="price-pill">${item.price} $</span>
+          </div>
+
+          <p class="muted">${sanitizeText(item.description)}</p>
+
+          <div class="formation-meta">
+            <span><strong>Catégorie :</strong> ${sanitizeText(item.category)}</span>
+            <span><strong>Durée :</strong> ${sanitizeText(item.duration)}</span>
+            <span><strong>Version :</strong> ${sanitizeText(item.version)}</span>
+            <span><strong>Dernière mise à jour :</strong> ${formatDate(item.updatedAt)}</span>
+            <span><strong>Prochaine mise à jour :</strong> ${formatDate(item.nextUpdate)}</span>
+            <span><strong>Qualité :</strong> ${item.quality}/100 · <strong>Rentabilité :</strong> ${item.profitability}/100</span>
+          </div>
+
+          <div class="progress-wrap">
+            <div class="progress-label">
+              <span>Progression</span>
+              <strong>${currentProgress}%</strong>
+            </div>
+            <div class="progress" aria-label="Progression ${currentProgress}%">
+              <span style="width: ${currentProgress}%"></span>
+            </div>
+          </div>
+
+          <details>
+            <summary>Ressources disponibles</summary>
+            <div class="resource-list">
+              ${item.resources.map(resource => `<a href="${sanitizeText(resource.url)}" target="_blank" rel="noopener noreferrer">${sanitizeText(resource.label)}</a>`).join("")}
+            </div>
+          </details>
+
+          <div class="card-actions">
+            <button class="btn btn-primary btn-small" type="button" data-open="${sanitizeText(item.id)}">Voir l’aperçu</button>
+            <button class="btn btn-small" type="button" data-progress="${sanitizeText(item.id)}">Marquer +25%</button>
+            <button class="btn btn-small" type="button" data-reset="${sanitizeText(item.id)}">Réinitialiser</button>
+          </div>
+        `;
+        formationsGrid.appendChild(card);
+      });
+    }
+
+    function openFormationModal(id) {
+      const item = formations.find(formation => formation.id === id);
+      if (!item) return;
+
+      modalTitle.textContent = item.title;
+      modalBody.innerHTML = `
+        <p>${sanitizeText(item.description)}</p>
+        <ul>
+          <li>Catégorie : ${sanitizeText(item.category)}</li>
+          <li>Prix : ${item.price} $</li>
+          <li>Durée : ${sanitizeText(item.duration)}</li>
+          <li>Version : ${sanitizeText(item.version)}</li>
+          <li>Dernière mise à jour : ${formatDate(item.updatedAt)}</li>
+          <li>Prochaine mise à jour : ${formatDate(item.nextUpdate)}</li>
+        </ul>
+        <p class="locked-note">
+          Note : cette page affiche une structure d’accès. Les vrais fichiers payants doivent rester dans un espace protégé,
+          pas directement dans un dépôt GitHub public.
+        </p>
+      `;
+      modalBackdrop.classList.add("visible");
+      closeModal.focus();
+    }
+
+    function updateFormationProgress(id, mode) {
+      const progress = getProgress();
+      const current = Number(progress[id] || 0);
+      progress[id] = mode === "reset" ? 0 : Math.min(100, current + 25);
+      saveProgress(progress);
+      const session = getStoredSession();
+      updateStats(session);
+      renderFormations();
+    }
+
+    function unlockDashboard(session) {
+      dashboard.classList.add("visible");
+      logoutBtn.hidden = false;
+      updateStats(session);
+      renderFormations();
+      dashboard.scrollIntoView({ behavior: "smooth", block: "start" });
+    }
+
+    accessForm.addEventListener("submit", event => {
+      event.preventDefault();
+
+      const email = document.getElementById("email").value.trim().toLowerCase();
+      const code = document.getElementById("accessCode").value.trim();
+
+      if (!email || !email.includes("@")) {
+        setStatus("error", "Entre un courriel valide pour continuer.");
+        return;
+      }
+
+      if (code !== DEMO_ACCESS_CODE) {
+        setStatus("error", "Code invalide. Vérifie ton code d’accès ou contacte le support.");
+        return;
+      }
+
+      const session = saveSession(email);
+      setStatus("success", "Accès ouvert. Tes formations sont maintenant visibles plus bas.");
+      unlockDashboard(session);
+    });
+
+    logoutBtn.addEventListener("click", () => {
+      clearSession();
+      dashboard.classList.remove("visible");
+      logoutBtn.hidden = true;
+      setStatus("success", "Tu es déconnecté de cette session locale.");
+      window.scrollTo({ top: 0, behavior: "smooth" });
+    });
+
+    formationsGrid.addEventListener("click", event => {
+      const openId = event.target.getAttribute("data-open");
+      const progressId = event.target.getAttribute("data-progress");
+      const resetId = event.target.getAttribute("data-reset");
+
+      if (openId) openFormationModal(openId);
+      if (progressId) updateFormationProgress(progressId, "increase");
+      if (resetId) updateFormationProgress(resetId, "reset");
+    });
+
+    [searchInput, categoryFilter, sortSelect].forEach(element => {
+      element.addEventListener("input", renderFormations);
+      element.addEventListener("change", renderFormations);
+    });
+
+    closeModal.addEventListener("click", () => {
+      modalBackdrop.classList.remove("visible");
+    });
+
+    modalBackdrop.addEventListener("click", event => {
+      if (event.target === modalBackdrop) {
+        modalBackdrop.classList.remove("visible");
+      }
+    });
+
+    document.addEventListener("keydown", event => {
+      if (event.key === "Escape") modalBackdrop.classList.remove("visible");
+    });
+
+    populateCategories();
+
+    const existingSession = getStoredSession();
+    if (existingSession && existingSession.unlocked) {
+      unlockDashboard(existingSession);
+      setStatus("success", "Session locale retrouvée. Ton accès est déjà ouvert sur ce navigateur.");
+    }
+  </script>
+</body>
+</html>
