@@ -3,32 +3,30 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Le Pivot d'Or t'aide à reprendre le contrôle avec plus de clarté, de structure et de discipline. Accède au programme Pilotage financier 12 mois et avance avec une méthode sobre, premium et concrète." />
-  <meta name="robots" content="index, follow" />
-  <meta property="og:title" content="Le Pivot d'Or | Clarté, discipline et structure" />
-  <meta property="og:description" content="Reprends le contrôle de ta vie avec plus de clarté, de structure et de discipline." />
-  <meta property="og:type" content="website" />
-  <title>Le Pivot d'Or | Clarté, discipline et structure</title>
+  <title>Mini Mini Formation IA | Le Pivot d’Or</title>
+  <meta name="description" content="Mini Mini Formation par Le Pivot d’Or : mini-formations digitales simples, concrètes et structurées pour apprendre vite, appliquer rapidement et avancer avec l’IA." />
 
   <style>
     :root {
-      --bg: #060606;
-      --bg-elevated: rgba(255, 255, 255, 0.04);
-      --bg-elevated-strong: rgba(255, 255, 255, 0.06);
-      --text: #ffffff;
-      --text-soft: #d7d7d7;
-      --text-muted: #a7a7a7;
-      --gold: #d4af37;
-      --gold-soft: #f1d98a;
-      --border-soft: rgba(255, 255, 255, 0.08);
-      --border-gold: rgba(212, 175, 55, 0.22);
-      --shadow-dark: rgba(0, 0, 0, 0.35);
-      --shadow-gold: rgba(212, 175, 55, 0.12);
-      --radius-xl: 30px;
-      --radius-lg: 22px;
-      --radius-md: 16px;
-      --max-width: 1180px;
-      --transition: 220ms ease;
+      --fond: #d8c5a6;
+      --fond-2: #e4d4b9;
+      --fond-3: #c9b38e;
+      --carte: rgba(229, 214, 190, 0.94);
+      --carte-2: rgba(214, 195, 163, 0.88);
+      --texte: #21180f;
+      --texte-2: #4f4638;
+      --muted: #746957;
+      --or: #b9862f;
+      --or-2: #8a5f1d;
+      --or-3: #f0d18a;
+      --vert: #2f7d46;
+      --rouge: #b84242;
+      --bleu: #235f92;
+      --mauve: #73528a;
+      --ligne: rgba(137, 96, 31, 0.22);
+      --ombre: 0 24px 60px rgba(74, 51, 19, 0.16);
+      --ombre-douce: 0 16px 36px rgba(74, 51, 19, 0.11);
+      --radius: 28px;
     }
 
     * {
@@ -42,1225 +40,2444 @@
     }
 
     body {
-      font-family: Arial, sans-serif;
-      color: var(--text);
-      background:
-        radial-gradient(circle at top, rgba(212, 175, 55, 0.12), transparent 32%),
-        linear-gradient(180deg, #101010 0%, var(--bg) 48%, #000000 100%);
+      font-family: Aptos, Arial, sans-serif;
+      color: var(--texte);
       line-height: 1.6;
-      -webkit-font-smoothing: antialiased;
-      text-rendering: optimizeLegibility;
+      background:
+        radial-gradient(circle at top left, rgba(240, 209, 138, 0.34), transparent 31%),
+        radial-gradient(circle at 78% 8%, rgba(185, 134, 47, 0.16), transparent 28%),
+        linear-gradient(135deg, var(--fond-2) 0%, var(--fond) 52%, var(--fond-3) 100%);
+      min-height: 100vh;
     }
 
     a {
       color: inherit;
+      text-decoration: none;
     }
 
-    .page-shell {
-      width: 100%;
-      max-width: var(--max-width);
+    button, input, select {
+      font: inherit;
+    }
+
+    .page {
+      width: min(1200px, 92%);
       margin: 0 auto;
-      padding: 20px 20px 80px;
     }
 
-    .section {
-      margin-top: 28px;
+    .topbar {
+      font-size: 0.86rem;
+      color: var(--texte-2);
+      background: rgba(199, 178, 142, 0.78);
+      border-bottom: 1px solid var(--ligne);
+      padding: 9px 0;
     }
 
-    .panel {
-      background: linear-gradient(180deg, rgba(255,255,255,0.04), rgba(255,255,255,0.025));
-      border: 1px solid var(--border-gold);
-      border-radius: var(--radius-xl);
-      box-shadow:
-        0 24px 64px var(--shadow-dark),
-        0 10px 34px var(--shadow-gold);
-      backdrop-filter: blur(8px);
-    }
-
-    .section-inner {
-      padding: 34px 28px;
-    }
-
-    .site-header {
+    .topbar .page {
       display: flex;
-      align-items: center;
       justify-content: space-between;
-      gap: 20px;
-      padding: 16px 22px;
-      margin-bottom: 18px;
-      border-radius: 22px;
-      background: rgba(255, 255, 255, 0.03);
-      border: 1px solid rgba(212, 175, 55, 0.16);
-      box-shadow: 0 12px 28px rgba(0, 0, 0, 0.22);
+      gap: 14px;
+      flex-wrap: wrap;
+      align-items: center;
     }
 
-    .brand-wrap {
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 50;
+      background: rgba(224, 208, 180, 0.88);
+      backdrop-filter: blur(18px);
+      border-bottom: 1px solid var(--ligne);
+    }
+
+    .nav {
+      min-height: 78px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 24px;
+    }
+
+    .brand {
       display: flex;
       align-items: center;
       gap: 14px;
+      min-width: 235px;
     }
 
     .brand-mark {
-      width: 52px;
-      height: 52px;
-      border-radius: 14px;
-      background: linear-gradient(180deg, rgba(255,255,255,0.06), rgba(255,255,255,0.03));
-      border: 1px solid rgba(212, 175, 55, 0.18);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      overflow: hidden;
-      flex-shrink: 0;
+      width: 46px;
+      height: 46px;
+      border-radius: 16px;
+      display: grid;
+      place-items: center;
+      background: linear-gradient(135deg, var(--or), #8a5f1d);
+      color: #1b1207;
+      font-weight: 950;
+      box-shadow: 0 14px 30px rgba(113, 77, 24, 0.22);
+      border: 1px solid rgba(255,255,255,0.2);
     }
 
-    .brand-mark img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
+    .brand strong {
+      display: block;
+      color: var(--or-2);
+      font-size: 1.1rem;
+      letter-spacing: 0.2px;
     }
 
-    .brand-name {
-      font-size: 1rem;
-      font-weight: 700;
-      color: var(--text);
+    .brand span {
+      display: block;
+      color: var(--muted);
+      font-size: 0.8rem;
+      margin-top: 1px;
     }
 
-    .brand-tagline {
-      font-size: 0.86rem;
-      color: var(--text-muted);
-      margin-top: 3px;
-    }
-
-    .header-nav {
+    .nav-links {
       display: flex;
       align-items: center;
       gap: 14px;
       flex-wrap: wrap;
+      justify-content: flex-end;
     }
 
-    .header-nav a {
-      text-decoration: none;
-      color: var(--text-soft);
-      font-size: 0.95rem;
-      transition: color var(--transition);
+    .nav-links a:not(.btn) {
+      color: var(--texte-2);
+      font-size: 0.93rem;
+      font-weight: 700;
     }
 
-    .header-nav a:hover {
-      color: var(--gold-soft);
+    .nav-links a:not(.btn):hover {
+      color: var(--or-2);
     }
 
-    .eyebrow {
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      padding: 13px 20px;
+      border-radius: 999px;
+      background: linear-gradient(135deg, var(--or), #8d6021);
+      border: 1px solid rgba(80, 52, 15, 0.18);
+      color: #1d1308;
+      font-weight: 900;
+      text-align: center;
+      box-shadow: 0 15px 32px rgba(139, 95, 31, 0.18);
+      transition: transform 0.2s ease, box-shadow 0.2s ease, background 0.2s ease;
+      cursor: pointer;
+    }
+
+    .btn:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 20px 42px rgba(139, 95, 31, 0.24);
+    }
+
+    .btn.secondary {
+      background: rgba(221, 204, 174, 0.58);
+      color: var(--or-2);
+      border: 1px solid rgba(137, 96, 31, 0.28);
+      box-shadow: none;
+    }
+
+    .btn.ghost {
+      background: transparent;
+      color: var(--texte);
+      border: 1px solid var(--ligne);
+      box-shadow: none;
+    }
+
+    .btn.small {
+      padding: 9px 13px;
+      font-size: 0.88rem;
+    }
+
+    .badge {
       display: inline-flex;
       align-items: center;
       gap: 8px;
-      padding: 8px 16px;
-      border: 1px solid rgba(212, 175, 55, 0.28);
+      width: fit-content;
+      padding: 8px 13px;
       border-radius: 999px;
-      background: rgba(212, 175, 55, 0.08);
-      color: var(--gold-soft);
-      font-size: 13px;
-      font-weight: 700;
-      letter-spacing: 1.2px;
-      text-transform: uppercase;
-    }
-
-    .hero {
-      position: relative;
-      overflow: hidden;
-    }
-
-    .hero-layout {
-      display: grid;
-      gap: 28px;
-      align-items: center;
-      grid-template-columns: minmax(0, 1.05fr) minmax(320px, 0.95fr);
-    }
-
-    .hero-title {
-      margin-top: 18px;
-      font-size: clamp(2.2rem, 4vw, 4.2rem);
-      line-height: 1.06;
-      letter-spacing: -0.04em;
-    }
-
-    .gold {
-      color: var(--gold-soft);
-    }
-
-    .hero-subtitle {
-      max-width: 720px;
-      margin-top: 18px;
-      font-size: clamp(1.05rem, 1.8vw, 1.4rem);
-      color: var(--text-soft);
-    }
-
-    .hero-value {
-      max-width: 700px;
-      margin-top: 18px;
-      font-size: 1rem;
-      font-weight: 700;
-      color: var(--text);
-    }
-
-    .hero-actions,
-    .cta-bottom-actions {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 14px;
-      margin-top: 26px;
-    }
-
-    .button-primary,
-    .button-secondary,
-    .button-header {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      min-height: 54px;
-      padding: 14px 22px;
-      border-radius: 16px;
-      text-decoration: none;
-      font-weight: 700;
-      transition:
-        transform var(--transition),
-        box-shadow var(--transition),
-        border-color var(--transition),
-        background-color var(--transition);
-    }
-
-    .button-primary,
-    .button-header {
-      color: #111111;
-      background: linear-gradient(135deg, #f8e7a6, var(--gold));
-      box-shadow:
-        0 12px 30px rgba(212, 175, 55, 0.24),
-        0 0 0 1px rgba(255, 235, 170, 0.24) inset;
-    }
-
-    .button-primary:hover,
-    .button-secondary:hover,
-    .button-header:hover,
-    .info-card:hover,
-    .visual-card:hover,
-    .testimonial-card:hover,
-    .faq-item:hover {
-      transform: translateY(-2px);
-    }
-
-    .button-primary:hover,
-    .button-header:hover {
-      box-shadow:
-        0 16px 36px rgba(212, 175, 55, 0.3),
-        0 0 0 1px rgba(255, 235, 170, 0.34) inset;
-    }
-
-    .button-secondary {
-      border: 1px solid var(--border-soft);
-      background: rgba(255, 255, 255, 0.04);
-      color: var(--text);
-    }
-
-    .button-secondary:hover {
-      border-color: rgba(212, 175, 55, 0.22);
-      background: rgba(255, 255, 255, 0.06);
-    }
-
-    .hero-note,
-    .footer-text {
-      margin-top: 16px;
-      color: var(--text-muted);
-      font-size: 0.92rem;
-    }
-
-    .trust-chips {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 10px;
-      margin-top: 22px;
-    }
-
-    .trust-chip {
-      padding: 10px 14px;
-      border-radius: 999px;
-      border: 1px solid var(--border-soft);
-      background: rgba(255, 255, 255, 0.03);
-      color: var(--text-soft);
-      font-size: 0.92rem;
-    }
-
-    .hero-visuals,
-    .testimonial-grid {
-      display: grid;
-      gap: 18px;
-    }
-
-    .logo-card,
-    .visual-card,
-    .testimonial-card,
-    .info-card,
-    .process-step,
-    .faq-item,
-    .objection-item,
-    .credibility-pill {
-      border-radius: var(--radius-lg);
-    }
-
-    .logo-card,
-    .visual-card,
-    .testimonial-card,
-    .info-card,
-    .process-step,
-    .faq-item {
-      background: var(--bg-elevated);
-      border: 1px solid var(--border-soft);
-      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.22);
-    }
-
-    .logo-card {
-      padding: 24px;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      min-height: 280px;
-    }
-
-    .logo-card img {
-      width: 100%;
-      max-width: 420px;
-      height: auto;
-      object-fit: contain;
-      filter: drop-shadow(0 10px 30px rgba(212, 175, 55, 0.18));
-    }
-
-    .visual-card,
-    .testimonial-card,
-    .info-card,
-    .process-step,
-    .faq-item {
-      padding: 24px;
-    }
-
-    .visual-card,
-    .testimonial-card,
-    .info-card--strong {
-      background: linear-gradient(180deg, rgba(255,255,255,0.05), rgba(255,255,255,0.03));
-      border: 1px solid rgba(212, 175, 55, 0.18);
-    }
-
-    .visual-title,
-    .card-heading,
-    .faq-question {
-      font-size: 1.1rem;
-      margin-bottom: 10px;
-      color: var(--gold-soft);
-    }
-
-    .visual-copy,
-    .card-copy,
-    .faq-answer {
-      color: var(--text-soft);
-      font-size: 0.98rem;
-    }
-
-    .mock-dashboard {
-      display: grid;
-      grid-template-columns: repeat(3, minmax(0, 1fr));
-      gap: 12px;
-      margin-top: 18px;
-    }
-
-    .mock-stat {
-      padding: 14px;
-      border-radius: 16px;
-      background: rgba(255,255,255,0.04);
-      border: 1px solid rgba(255,255,255,0.06);
-      text-align: center;
-    }
-
-    .mock-label {
-      display: block;
-      font-size: 0.8rem;
-      color: var(--text-muted);
-      margin-bottom: 6px;
-    }
-
-    .mock-value {
-      font-size: 1.05rem;
-      font-weight: 700;
-      color: var(--text);
-    }
-
-    .testimonial-quote {
-      color: var(--text-soft);
-      font-style: italic;
-      font-size: 1rem;
-    }
-
-    .testimonial-author {
-      margin-top: 16px;
-      color: var(--text);
-      font-weight: 700;
-    }
-
-    .testimonial-role {
-      color: var(--text-muted);
-      font-size: 0.92rem;
-      margin-top: 4px;
-    }
-
-    .section-heading {
-      text-align: center;
-      margin-bottom: 22px;
-    }
-
-    .section-title,
-    .cta-title {
-      font-size: clamp(1.8rem, 2vw, 2.5rem);
-      line-height: 1.15;
-    }
-
-    .section-text,
-    .cta-text {
-      max-width: 760px;
-      margin: 12px auto 0;
-      color: var(--text-soft);
-      font-size: 1.02rem;
-    }
-
-    .grid-three,
-    .grid-two,
-    .process-grid,
-    .credibility-row {
-      display: grid;
-      gap: 18px;
-    }
-
-    .grid-three {
-      grid-template-columns: repeat(3, minmax(0, 1fr));
-    }
-
-    .grid-two,
-    .testimonial-grid {
-      grid-template-columns: repeat(2, minmax(0, 1fr));
-    }
-
-    .process-grid {
-      grid-template-columns: repeat(4, minmax(0, 1fr));
-    }
-
-    .credibility-row {
-      grid-template-columns: repeat(3, minmax(0, 1fr));
+      background: rgba(185, 134, 47, 0.12);
+      border: 1px solid rgba(137, 96, 31, 0.22);
+      color: var(--or-2);
+      font-weight: 900;
+      font-size: 0.86rem;
       margin-bottom: 18px;
     }
 
-    .info-card:hover,
-    .visual-card:hover,
-    .testimonial-card:hover,
-    .faq-item:hover {
-      transition: transform var(--transition), border-color var(--transition), box-shadow var(--transition);
-      border-color: rgba(212, 175, 55, 0.2);
-      box-shadow:
-        0 14px 34px rgba(0, 0, 0, 0.26),
-        0 6px 18px rgba(212, 175, 55, 0.06);
-    }
-
-    .bullet-list {
-      list-style: none;
+    .hero {
+      padding: 74px 0 54px;
       display: grid;
-      gap: 10px;
+      grid-template-columns: 1.12fr 0.88fr;
+      gap: 42px;
+      align-items: center;
     }
 
-    .bullet-list li {
-      position: relative;
-      padding-left: 18px;
-      color: var(--text-soft);
+    h1 {
+      font-size: clamp(2.65rem, 6.4vw, 5.65rem);
+      line-height: 0.96;
+      letter-spacing: -2.6px;
+      margin-bottom: 22px;
     }
 
-    .bullet-list li::before {
-      content: "•";
-      position: absolute;
-      left: 0;
-      color: var(--gold-soft);
+    h1 span, .gold {
+      color: var(--or-2);
+    }
+
+    .lead {
+      color: var(--texte-2);
+      font-size: 1.13rem;
+      max-width: 750px;
+      margin-bottom: 20px;
+    }
+
+    .hero-actions {
+      display: flex;
+      gap: 13px;
+      flex-wrap: wrap;
+      margin: 28px 0;
+    }
+
+    .proof-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 12px;
+      margin-top: 26px;
+    }
+
+    .proof {
+      padding: 17px;
+      border: 1px solid var(--ligne);
+      background: rgba(229, 214, 190, 0.68);
+      border-radius: 22px;
+      box-shadow: var(--ombre-douce);
+    }
+
+    .proof strong {
+      display: block;
+      color: var(--or-2);
+      font-size: 1.35rem;
+      line-height: 1;
+      margin-bottom: 8px;
+    }
+
+    .proof span {
+      color: var(--muted);
+      font-size: 0.88rem;
       font-weight: 700;
     }
 
-    .offer-price {
-      display: inline-block;
-      margin-top: 8px;
-      font-size: clamp(2rem, 4vw, 3.3rem);
-      line-height: 1;
-      font-weight: 800;
-      color: var(--gold-soft);
-      letter-spacing: -0.04em;
+    .director-panel {
+      position: relative;
+      padding: 26px;
+      min-height: 540px;
+      border: 1px solid var(--ligne);
+      border-radius: 34px;
+      background:
+        linear-gradient(180deg, rgba(234, 220, 196, 0.94), rgba(207, 187, 154, 0.86));
+      box-shadow: var(--ombre);
+      overflow: hidden;
     }
 
-    .offer-label {
-      margin-top: 12px;
-      color: var(--text-soft);
+    .director-panel::before {
+      content: "";
+      position: absolute;
+      width: 320px;
+      height: 320px;
+      border-radius: 50%;
+      right: -135px;
+      top: -135px;
+      background: rgba(185, 134, 47, 0.24);
+      filter: blur(16px);
+    }
+
+    .panel-head, .panel-body, .panel-footer {
+      position: relative;
+      z-index: 1;
+    }
+
+    .panel-head {
+      display: flex;
+      align-items: flex-start;
+      justify-content: space-between;
+      gap: 18px;
+      padding-bottom: 18px;
+      border-bottom: 1px solid var(--ligne);
+      margin-bottom: 18px;
+    }
+
+    .panel-head h2 {
+      font-size: 1.75rem;
+      color: var(--or-2);
+      line-height: 1.1;
+    }
+
+    .status-pill {
+      padding: 7px 10px;
+      border-radius: 999px;
+      background: rgba(47, 125, 70, 0.12);
+      color: var(--vert);
+      font-size: 0.8rem;
+      font-weight: 900;
+      white-space: nowrap;
+      border: 1px solid rgba(47, 125, 70, 0.18);
+    }
+
+    .panel-body {
+      display: grid;
+      gap: 12px;
+    }
+
+    .system-row {
+      display: grid;
+      grid-template-columns: 1fr auto;
+      gap: 14px;
+      align-items: center;
+      padding: 14px;
+      border-radius: 18px;
+      background: rgba(220, 203, 173, 0.82);
+      border: 1px solid rgba(137, 96, 31, 0.16);
+    }
+
+    .system-row strong {
+      display: block;
+      color: var(--texte);
+      font-size: 0.97rem;
+    }
+
+    .system-row span {
+      color: var(--muted);
+      font-size: 0.84rem;
+    }
+
+    .system-row small {
+      color: var(--vert);
+      font-weight: 950;
+      white-space: nowrap;
+    }
+
+    .panel-footer {
+      margin-top: 20px;
+      padding: 17px;
+      border-radius: 22px;
+      background: rgba(185, 134, 47, 0.11);
+      border: 1px solid rgba(137, 96, 31, 0.18);
+      color: var(--texte-2);
+      font-size: 0.93rem;
+    }
+
+    section {
+      padding: 60px 0;
+      scroll-margin-top: 190px;
+    }
+
+    #formation-vedette {
+      scroll-margin-top: 210px;
+    }
+
+    .section-title {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-end;
+      gap: 24px;
+      margin-bottom: 26px;
+    }
+
+    .section-title h2 {
+      font-size: clamp(2rem, 4vw, 3.35rem);
+      line-height: 1.03;
+      letter-spacing: -1.1px;
+      max-width: 760px;
+    }
+
+    .section-title p {
+      color: var(--texte-2);
+      max-width: 580px;
       font-size: 1rem;
     }
 
-    .offer-highlight {
-      margin-top: 18px;
-      padding: 16px;
-      border-radius: 16px;
-      background: rgba(212, 175, 55, 0.08);
-      border: 1px solid rgba(212, 175, 55, 0.16);
-      color: var(--text-soft);
+    .card {
+      border: 1px solid var(--ligne);
+      background: linear-gradient(180deg, var(--carte), var(--carte-2));
+      border-radius: var(--radius);
+      box-shadow: var(--ombre-douce);
     }
 
-    .payment-reassurance {
-      margin-top: 16px;
-      padding: 16px;
-      border-radius: 16px;
-      background: rgba(255, 255, 255, 0.035);
-      border: 1px solid rgba(212, 175, 55, 0.16);
-      color: var(--text-soft);
-      font-size: 0.94rem;
+    .grid-2 {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 18px;
     }
 
-    .payment-reassurance p + p {
-      margin-top: 8px;
+    .grid-3 {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 18px;
     }
 
-    .payment-reassurance strong {
-      color: var(--gold-soft);
+    .grid-4 {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 18px;
     }
 
-    .payment-reassurance a {
-      color: var(--gold-soft);
+    .category-card {
+      min-height: 255px;
+      padding: 22px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      gap: 18px;
+      transition: transform 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease;
+      cursor: pointer;
+    }
+
+    .category-card:hover {
+      transform: translateY(-3px);
+      border-color: rgba(137, 96, 31, 0.38);
+      box-shadow: var(--ombre);
+    }
+
+    .category-icon {
+      width: 50px;
+      height: 50px;
+      border-radius: 18px;
+      display: grid;
+      place-items: center;
+      color: var(--or-2);
+      background: rgba(185, 134, 47, 0.13);
+      border: 1px solid rgba(137, 96, 31, 0.20);
+      font-weight: 950;
+      font-size: 1.16rem;
+      margin-bottom: 14px;
+    }
+
+    .category-card h3, .mini-card h3, .formation-card h3, .agent-card h3, .quality-card h3, .faq-item h3 {
+      color: var(--or-2);
+      line-height: 1.18;
+      margin-bottom: 8px;
+    }
+
+    .formation-card h3 {
+      font-size: 1.28rem;
+      font-weight: 950;
+      letter-spacing: -0.2px;
+      color: #6f4818;
+    }
+
+    .category-card p, .mini-card p, .formation-card p, .agent-card p, .quality-card p, .faq-item p {
+      color: var(--texte-2);
+      font-size: 0.96rem;
+    }
+
+    .category-note {
+      padding-top: 12px;
+      border-top: 1px solid var(--ligne);
+      color: var(--muted);
+      font-size: 0.84rem;
       font-weight: 700;
-      text-decoration: none;
     }
 
-    .payment-reassurance a:hover {
-      text-decoration: underline;
+    .mini-card, .agent-card, .quality-card, .faq-item {
+      padding: 22px;
     }
 
-    .process-number {
+    .mini-card .number {
       display: inline-flex;
-      width: 36px;
-      height: 36px;
+      width: 34px;
+      height: 34px;
+      border-radius: 12px;
       align-items: center;
       justify-content: center;
+      background: rgba(185, 134, 47, 0.14);
+      color: var(--or-2);
+      font-weight: 950;
       margin-bottom: 12px;
-      border-radius: 50%;
-      background: rgba(212, 175, 55, 0.12);
-      border: 1px solid rgba(212, 175, 55, 0.24);
-      color: var(--gold-soft);
-      font-weight: 700;
     }
 
-    .objection-list,
-    .faq-list {
+    .featured {
+      display: grid;
+      grid-template-columns: 1fr 0.92fr;
+      gap: 18px;
+      align-items: stretch;
+    }
+
+    .featured-main {
+      padding: 30px;
+      border-radius: 34px;
+      background: linear-gradient(135deg, rgba(234, 220, 196, 0.98), rgba(204, 182, 145, 0.88));
+      border: 1px solid var(--ligne);
+      box-shadow: var(--ombre);
+    }
+
+    .featured-main h2 {
+      font-size: clamp(2rem, 4vw, 3.3rem);
+      line-height: 1.04;
+      margin-bottom: 14px;
+      color: var(--texte);
+    }
+
+    .featured-main .price-large {
+      display: inline-flex;
+      align-items: center;
+      margin: 18px 0;
+      padding: 10px 16px;
+      border-radius: 999px;
+      background: rgba(47, 125, 70, 0.12);
+      color: var(--vert);
+      font-weight: 950;
+      border: 1px solid rgba(47, 125, 70, 0.18);
+    }
+
+    .included-list {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 10px;
+      margin: 22px 0;
+    }
+
+    .included-list div {
+      padding: 12px;
+      border-radius: 16px;
+      background: rgba(221, 204, 174, 0.72);
+      border: 1px solid rgba(137, 96, 31, 0.14);
+      color: var(--texte-2);
+      font-weight: 750;
+    }
+
+    .featured-side {
+      padding: 24px;
+      border-radius: 34px;
+      border: 1px solid var(--ligne);
+      background: rgba(225, 209, 181, 0.8);
+      box-shadow: var(--ombre-douce);
+    }
+
+    .progress-block {
+      display: grid;
+      gap: 14px;
+      margin-top: 18px;
+    }
+
+    .progress-line {
+      display: grid;
+      gap: 7px;
+    }
+
+    .progress-label {
+      display: flex;
+      justify-content: space-between;
+      color: var(--texte-2);
+      font-size: 0.9rem;
+      font-weight: 800;
+    }
+
+    .bar {
+      height: 10px;
+      background: rgba(80, 60, 30, 0.11);
+      border-radius: 999px;
+      overflow: hidden;
+      border: 1px solid rgba(137, 96, 31, 0.10);
+    }
+
+    .bar span {
+      display: block;
+      height: 100%;
+      width: var(--w);
+      border-radius: 999px;
+      background: linear-gradient(90deg, var(--or), var(--or-2));
+    }
+
+    .catalogue-tools {
+      display: grid;
+      grid-template-columns: 1fr auto;
+      gap: 14px;
+      margin-bottom: 18px;
+      align-items: center;
+    }
+
+    .search-box {
+      width: 100%;
+      padding: 14px 16px;
+      border: 1px solid var(--ligne);
+      border-radius: 999px;
+      background: rgba(229, 214, 190, 0.75);
+      color: var(--texte);
+      outline: none;
+    }
+
+    .filters {
+      display: flex;
+      gap: 9px;
+      flex-wrap: wrap;
+      margin-bottom: 22px;
+    }
+
+    .filter-btn {
+      border: 1px solid rgba(137, 96, 31, 0.23);
+      background: rgba(229, 214, 190, 0.62);
+      color: var(--or-2);
+      padding: 9px 13px;
+      border-radius: 999px;
+      cursor: pointer;
+      font-weight: 900;
+      font-size: 0.88rem;
+    }
+
+    .filter-btn.active {
+      background: var(--or);
+      color: #1d1308;
+    }
+
+    .formation-card {
+      padding: 22px;
+      display: flex;
+      flex-direction: column;
+      gap: 13px;
+      min-height: 330px;
+    }
+
+    .formation-top {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .tag {
+      display: inline-flex;
+      width: fit-content;
+      color: var(--mauve);
+      background: rgba(115, 82, 138, 0.10);
+      border: 1px solid rgba(115, 82, 138, 0.20);
+      border-radius: 999px;
+      padding: 5px 9px;
+      font-size: 0.78rem;
+      font-weight: 950;
+    }
+
+    .price {
+      color: var(--or-2);
+      font-size: 1.35rem;
+      font-weight: 950;
+      white-space: nowrap;
+    }
+
+    .formation-meta {
+      display: grid;
+      gap: 7px;
+      color: var(--muted);
+      font-size: 0.88rem;
+      font-weight: 750;
+      margin-top: auto;
+    }
+
+    .legal-line {
+      color: var(--muted);
+      font-size: 0.78rem;
+      line-height: 1.35;
+      padding-top: 8px;
+      border-top: 1px solid var(--ligne);
+    }
+
+    .process {
+      counter-reset: step;
+    }
+
+    .process-card {
+      padding: 22px;
+      position: relative;
+      min-height: 215px;
+    }
+
+    .process-card::before {
+      counter-increment: step;
+      content: counter(step);
+      width: 38px;
+      height: 38px;
+      border-radius: 14px;
+      display: grid;
+      place-items: center;
+      background: rgba(185, 134, 47, 0.14);
+      color: var(--or-2);
+      font-weight: 950;
+      margin-bottom: 14px;
+      border: 1px solid rgba(137, 96, 31, 0.18);
+    }
+
+    .trust-box {
+      padding: 28px;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 18px;
+      align-items: start;
+    }
+
+    .trust-list {
+      display: grid;
+      gap: 10px;
+      margin-top: 16px;
+    }
+
+    .trust-list div {
+      padding: 12px 14px;
+      border-radius: 16px;
+      background: rgba(221, 204, 174, 0.65);
+      border: 1px solid rgba(137, 96, 31, 0.13);
+      color: var(--texte-2);
+      font-weight: 760;
+    }
+
+    .dashboard {
+      display: grid;
+      grid-template-columns: 0.85fr 1.15fr;
+      gap: 18px;
+    }
+
+    .dashboard-card {
+      padding: 22px;
+    }
+
+    .kpi-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 12px;
+      margin-top: 16px;
+    }
+
+    .kpi {
+      padding: 16px;
+      border-radius: 20px;
+      background: rgba(221, 204, 174, 0.64);
+      border: 1px solid rgba(137, 96, 31, 0.14);
+    }
+
+    .kpi strong {
+      display: block;
+      font-size: 1.55rem;
+      line-height: 1;
+      color: var(--or-2);
+      margin-bottom: 7px;
+    }
+
+    .kpi span {
+      color: var(--muted);
+      font-size: 0.84rem;
+      font-weight: 800;
+    }
+
+    .chart-list {
+      display: grid;
+      gap: 14px;
+      margin-top: 18px;
+    }
+
+    .chart-row {
+      display: grid;
+      grid-template-columns: 150px 1fr 42px;
+      gap: 12px;
+      align-items: center;
+      color: var(--texte-2);
+      font-size: 0.9rem;
+      font-weight: 800;
+    }
+
+    .chart-track {
+      height: 12px;
+      border-radius: 999px;
+      background: rgba(80, 60, 30, 0.10);
+      overflow: hidden;
+    }
+
+    .chart-track span {
+      display: block;
+      height: 100%;
+      width: var(--w);
+      background: linear-gradient(90deg, var(--or), var(--or-2));
+      border-radius: 999px;
+    }
+
+    .timeline {
       display: grid;
       gap: 14px;
     }
 
-    .objection-item {
-      padding: 18px 18px 18px 20px;
-      border-left: 3px solid rgba(212, 175, 55, 0.42);
-      border-radius: 0 16px 16px 0;
-      background: rgba(255, 255, 255, 0.03);
-      color: var(--text-soft);
-    }
-
-    .objection-item strong {
-      display: block;
-      color: var(--text);
-      margin-bottom: 6px;
-    }
-
-    .credibility-pill {
-      padding: 0;
-      background: rgba(212, 175, 55, 0.08);
-      border: 1px solid rgba(212, 175, 55, 0.16);
-      color: var(--text);
-      overflow: hidden;
-      transition: transform var(--transition), border-color var(--transition), box-shadow var(--transition);
-    }
-
-    .credibility-pill:hover {
-      transform: translateY(-2px);
-      border-color: rgba(212, 175, 55, 0.28);
-      box-shadow:
-        0 14px 34px rgba(0, 0, 0, 0.26),
-        0 6px 18px rgba(212, 175, 55, 0.08);
-    }
-
-    .credibility-pill summary {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 12px;
-      padding: 18px 18px;
-      list-style: none;
-      cursor: pointer;
-      font-weight: 700;
-      color: var(--text);
-    }
-
-    .credibility-pill summary::-webkit-details-marker {
-      display: none;
-    }
-
-    .credibility-label {
-      display: inline-flex;
-      align-items: center;
-      gap: 10px;
-    }
-
-    .credibility-icon {
-      display: inline-flex;
-      width: 34px;
-      height: 34px;
-      align-items: center;
-      justify-content: center;
-      border-radius: 50%;
-      background: rgba(212, 175, 55, 0.14);
-      border: 1px solid rgba(212, 175, 55, 0.22);
-      color: var(--gold-soft);
-      font-size: 1rem;
-      flex-shrink: 0;
-    }
-
-    .dropdown-arrow {
-      color: var(--gold-soft);
-      font-size: 1.1rem;
-      transition: transform var(--transition);
-    }
-
-    .credibility-pill[open] .dropdown-arrow {
-      transform: rotate(180deg);
-    }
-
-    .credibility-details {
-      padding: 0 18px 18px 62px;
-      color: var(--text-soft);
-      font-size: 0.94rem;
-    }
-
-    .credibility-details strong {
-      color: var(--gold-soft);
-    }
-
-    .future-zone {
-      margin-top: 16px;
+    .time-item {
       padding: 18px;
-      border-radius: 18px;
-      border: 1px dashed rgba(255, 255, 255, 0.12);
-      color: var(--text-muted);
-      background: rgba(255, 255, 255, 0.02);
+      display: grid;
+      grid-template-columns: 110px 1fr;
+      gap: 18px;
+      align-items: start;
+    }
+
+    .time-item strong {
+      color: var(--or-2);
+      font-size: 1.05rem;
+    }
+
+    .time-item p {
+      color: var(--texte-2);
+    }
+
+    details {
+      border: 1px solid var(--ligne);
+      background: linear-gradient(180deg, var(--carte), var(--carte-2));
+      border-radius: 22px;
+      padding: 18px 20px;
+      box-shadow: var(--ombre-douce);
+    }
+
+    summary {
+      cursor: pointer;
+      color: var(--or-2);
+      font-weight: 950;
+      font-size: 1.05rem;
+    }
+
+    details p {
+      color: var(--texte-2);
+      margin-top: 12px;
+    }
+
+    .cta-final {
       text-align: center;
+      padding: 70px 26px;
+      border-radius: 38px;
+      background: linear-gradient(135deg, rgba(232, 216, 189, 0.95), rgba(197, 174, 137, 0.82));
+      border: 1px solid var(--ligne);
+      box-shadow: var(--ombre);
+    }
+
+    .cta-final h2 {
+      font-size: clamp(2.1rem, 5vw, 4rem);
+      line-height: 1.04;
+      margin-bottom: 16px;
+    }
+
+    .cta-final p {
+      max-width: 780px;
+      margin: 0 auto 25px;
+      color: var(--texte-2);
+      font-size: 1.08rem;
+    }
+
+    footer {
+      padding: 34px 0 44px;
+      border-top: 1px solid var(--ligne);
+      color: var(--muted);
       font-size: 0.92rem;
+    }
+
+    .footer-grid {
+      display: flex;
+      justify-content: space-between;
+      gap: 22px;
+      flex-wrap: wrap;
+      align-items: flex-start;
     }
 
     .footer-links {
       display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
       gap: 12px;
-      margin-top: 18px;
-      color: var(--text-muted);
-      font-size: 0.9rem;
+      flex-wrap: wrap;
+      justify-content: flex-end;
     }
 
-    @media (max-width: 1080px) {
-      .hero-layout,
-      .grid-three,
-      .grid-two,
-      .process-grid,
-      .credibility-row,
-      .mock-dashboard,
-      .testimonial-grid,
-      .site-header {
+    .admin-link {
+      color: rgba(79, 70, 56, 0.44);
+    }
+
+
+    .quick-actions {
+      border-top: 1px solid rgba(137, 96, 31, 0.14);
+      background: rgba(214, 195, 163, 0.94);
+      box-shadow: 0 10px 26px rgba(74, 51, 19, 0.08);
+    }
+
+    .quick-actions-inner {
+      display: grid;
+      grid-template-columns: repeat(7, minmax(0, 1fr));
+      gap: 8px;
+      overflow: visible;
+      padding: 10px 0 12px;
+    }
+
+    .quick-actions-inner a {
+      min-height: 36px;
+      padding: 8px 9px;
+      border-radius: 999px;
+      border: 1.5px solid rgba(28, 22, 14, 0.38);
+      background: rgba(232, 216, 189, 0.78);
+      color: #21180f;
+      font-size: 0.78rem;
+      font-weight: 900;
+      white-space: normal;
+      line-height: 1.12;
+      text-align: center;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      transition: transform 0.15s ease, background 0.15s ease, border-color 0.15s ease;
+    }
+
+    .quick-actions-inner a:hover {
+      transform: translateY(-1px);
+      background: rgba(244, 229, 202, 0.96);
+      border-color: rgba(28, 22, 14, 0.68);
+    }
+
+    .cockpit-shell {
+      padding: 26px;
+      border: 2px solid rgba(28, 22, 14, 0.56);
+      border-radius: 36px;
+      background: linear-gradient(180deg, rgba(230, 214, 188, 0.96), rgba(203, 181, 145, 0.86));
+      box-shadow: var(--ombre);
+    }
+
+    .cockpit-toolbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 14px;
+      flex-wrap: wrap;
+      margin-bottom: 18px;
+      padding-bottom: 16px;
+      border-bottom: 1.5px solid rgba(28, 22, 14, 0.24);
+    }
+
+    .cockpit-toolbar h2 {
+      font-size: clamp(1.7rem, 3vw, 2.7rem);
+      line-height: 1.05;
+      letter-spacing: -0.8px;
+    }
+
+    .cockpit-actions {
+      display: flex;
+      gap: 8px;
+      flex-wrap: wrap;
+    }
+
+    .cockpit-grid {
+      display: grid;
+      grid-template-columns: 1.15fr 0.85fr;
+      gap: 16px;
+    }
+
+    .metric-board {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 10px;
+    }
+
+    .metric-tile {
+      padding: 14px;
+      border-radius: 20px;
+      border: 1.5px solid rgba(28, 22, 14, 0.33);
+      background: rgba(232, 216, 189, 0.82);
+      box-shadow: 0 10px 22px rgba(45, 32, 16, 0.09);
+    }
+
+    .metric-tile strong {
+      display: block;
+      color: var(--or-2);
+      font-size: 1.45rem;
+      line-height: 1;
+      margin-bottom: 7px;
+    }
+
+    .metric-tile span {
+      color: var(--texte-2);
+      font-size: 0.78rem;
+      font-weight: 850;
+    }
+
+    .operator-panel {
+      padding: 18px;
+      border-radius: 26px;
+      border: 1.5px solid rgba(28, 22, 14, 0.34);
+      background: rgba(221, 204, 174, 0.72);
+    }
+
+    .operator-panel h3 {
+      color: var(--or-2);
+      margin-bottom: 10px;
+      line-height: 1.1;
+    }
+
+    .status-grid {
+      display: grid;
+      gap: 8px;
+    }
+
+    .status-item {
+      display: grid;
+      grid-template-columns: 1fr auto;
+      gap: 10px;
+      align-items: center;
+      padding: 10px 12px;
+      border-radius: 16px;
+      border: 1px solid rgba(28, 22, 14, 0.20);
+      background: rgba(232, 216, 189, 0.74);
+      color: var(--texte-2);
+      font-size: 0.87rem;
+      font-weight: 800;
+    }
+
+    .dot {
+      display: inline-flex;
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      background: var(--vert);
+      box-shadow: 0 0 0 4px rgba(47, 125, 70, 0.10);
+    }
+
+    .dot.warn { background: #ba7b25; box-shadow: 0 0 0 4px rgba(186, 123, 37, 0.12); }
+    .dot.bad { background: var(--rouge); box-shadow: 0 0 0 4px rgba(184, 66, 66, 0.12); }
+
+    .data-table-wrap {
+      overflow-x: auto;
+      border-radius: 22px;
+      border: 1.5px solid rgba(28, 22, 14, 0.30);
+      background: rgba(232, 216, 189, 0.74);
+    }
+
+    .data-table {
+      width: 100%;
+      min-width: 780px;
+      border-collapse: collapse;
+      font-size: 0.86rem;
+    }
+
+    .data-table th,
+    .data-table td {
+      padding: 11px 12px;
+      text-align: left;
+      border-bottom: 1px solid rgba(28, 22, 14, 0.16);
+      color: var(--texte-2);
+      vertical-align: top;
+    }
+
+    .data-table th {
+      color: var(--texte);
+      background: rgba(185, 134, 47, 0.15);
+      font-size: 0.78rem;
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+    }
+
+    .data-table tr:last-child td {
+      border-bottom: 0;
+    }
+
+    .pill {
+      display: inline-flex;
+      padding: 5px 8px;
+      border-radius: 999px;
+      font-size: 0.74rem;
+      font-weight: 950;
+      border: 1px solid rgba(28, 22, 14, 0.18);
+      background: rgba(47, 125, 70, 0.12);
+      color: var(--vert);
+      white-space: nowrap;
+    }
+
+    .pill.warn { background: rgba(186, 123, 37, 0.13); color: #7a4f15; }
+    .pill.bad { background: rgba(184, 66, 66, 0.12); color: var(--rouge); }
+    .pill.neutral { background: rgba(35, 95, 146, 0.10); color: var(--bleu); }
+
+    .simple-panels {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 16px;
+    }
+
+    .audit-card {
+      padding: 20px;
+      border: 1.6px solid rgba(28, 22, 14, 0.36);
+      background: linear-gradient(180deg, rgba(232, 216, 189, 0.92), rgba(211, 191, 158, 0.84));
+      border-radius: 26px;
+      box-shadow: var(--ombre-douce);
+    }
+
+    .audit-card h3 {
+      color: var(--or-2);
+      margin-bottom: 8px;
+      line-height: 1.18;
+    }
+
+    .audit-card p {
+      color: var(--texte-2);
+      font-size: 0.94rem;
+    }
+
+    .micro-catalogue-panel {
+      padding: 24px;
+      border: 1px solid var(--ligne);
+      border-radius: 34px;
+      background: linear-gradient(180deg, rgba(229, 214, 190, 0.94), rgba(205, 184, 150, 0.84));
+      box-shadow: var(--ombre-douce);
+    }
+
+    .micro-catalogue-head {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 16px;
+      margin-bottom: 16px;
+      color: var(--texte-2);
+      font-size: 0.9rem;
+      font-weight: 800;
+    }
+
+    .micro-title-grid {
+      display: grid;
+      grid-template-columns: repeat(8, minmax(128px, 1fr));
+      gap: 12px;
+      max-height: 820px;
+      overflow: auto;
+      padding: 8px 4px 8px 0;
+    }
+
+    .micro-category-column {
+      min-width: 128px;
+      padding: 10px;
+      border: 2px solid rgba(28, 22, 14, 0.74);
+      border-radius: 22px;
+      background: linear-gradient(180deg, rgba(218, 199, 166, 0.96), rgba(195, 171, 132, 0.88));
+      box-shadow: 0 18px 34px rgba(45, 32, 16, 0.16);
+    }
+
+    .micro-category-column.hide {
+      display: none;
+    }
+
+    .micro-category-button {
+      width: 100%;
+      min-height: 54px;
+      margin-bottom: 10px;
+      padding: 10px 8px;
+      border-radius: 17px;
+      border: 2px solid rgba(28, 22, 14, 0.82);
+      background: linear-gradient(135deg, #2b2115, #5f431c 52%, #b9862f);
+      color: #f7ead0;
+      font-size: 0.8rem;
+      font-weight: 950;
+      line-height: 1.1;
+      text-align: center;
+      cursor: pointer;
+      box-shadow: 0 10px 22px rgba(45, 32, 16, 0.20);
+      transition: transform 0.16s ease, box-shadow 0.16s ease;
+    }
+
+    .micro-category-button:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 14px 28px rgba(45, 32, 16, 0.26);
+    }
+
+    .micro-counter {
+      display: block;
+      margin-top: 4px;
+      color: rgba(247, 234, 208, 0.78);
+      font-size: 0.62rem;
+      font-weight: 800;
+    }
+
+    .micro-column-list {
+      display: grid;
+      gap: 6px;
+    }
+
+    .micro-title-card {
+      min-height: 46px;
+      padding: 8px 7px;
+      border: 1.6px solid rgba(28, 22, 14, 0.62);
+      border-radius: 12px;
+      background: rgba(232, 216, 189, 0.92);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      color: #1f170d;
+      font-size: 0.66rem;
+      font-weight: 950;
+      line-height: 1.16;
+      letter-spacing: -0.08px;
+      box-shadow: inset 0 1px 0 rgba(255,255,255,0.22), 0 4px 10px rgba(45, 32, 16, 0.08);
+      transition: transform 0.15s ease, border-color 0.15s ease, background 0.15s ease, box-shadow 0.15s ease;
+    }
+
+    .micro-title-card:hover {
+      transform: translateY(-1px);
+      border-color: rgba(28, 22, 14, 0.92);
+      background: rgba(244, 229, 202, 0.98);
+      box-shadow: 0 8px 16px rgba(45, 32, 16, 0.13);
+    }
+
+    .micro-title-card.hide {
+      display: none;
+    }
+
+    @media (max-width: 980px) {
+      .quick-actions-inner {
+        grid-template-columns: repeat(4, minmax(0, 1fr));
+      }
+
+      .quick-actions-inner a {
+        font-size: 0.76rem;
+      }
+
+      .hero,
+      .featured,
+      .dashboard,
+      .cockpit-grid,
+      .trust-box {
         grid-template-columns: 1fr;
       }
 
-      .site-header {
-        display: grid;
-        justify-items: start;
+      .grid-4,
+      .grid-3,
+      .proof-grid,
+      .metric-board,
+      .simple-panels {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .micro-title-grid {
+        grid-template-columns: repeat(4, minmax(150px, 1fr));
+      }
+
+      .included-list {
+        grid-template-columns: 1fr;
+      }
+
+      .catalogue-tools {
+        grid-template-columns: 1fr;
+      }
+
+      .section-title {
+        flex-direction: column;
+        align-items: flex-start;
       }
     }
 
-    @media (max-width: 720px) {
-      .page-shell {
-        padding: 18px 14px 54px;
+    @media (max-width: 680px) {
+      .quick-actions-inner {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
       }
 
-      .section {
-        margin-top: 18px;
+      .quick-actions-inner a {
+        min-height: 40px;
+        font-size: 0.76rem;
       }
 
-      .section-inner {
-        padding: 24px 18px;
-      }
-
-      .panel {
-        border-radius: 22px;
-      }
-
-      .hero-title {
-        font-size: 2.2rem;
-      }
-
-      .hero-actions,
-      .cta-bottom-actions,
-      .header-nav {
+      .topbar .page,
+      .nav {
+        align-items: flex-start;
         flex-direction: column;
-        width: 100%;
-        align-items: stretch;
       }
 
-      .button-primary,
-      .button-secondary,
-      .button-header {
-        width: 100%;
+      .nav-links {
+        justify-content: flex-start;
+      }
+
+      .grid-4,
+      .grid-3,
+      .grid-2,
+      .proof-grid,
+      .kpi-grid,
+      .metric-board,
+      .simple-panels {
+        grid-template-columns: 1fr;
+      }
+
+      .micro-title-grid {
+        grid-template-columns: repeat(2, minmax(150px, 1fr));
+      }
+
+      .chart-row {
+        grid-template-columns: 1fr;
+      }
+
+      .time-item {
+        grid-template-columns: 1fr;
+      }
+
+      h1 {
+        letter-spacing: -1.5px;
       }
     }
   </style>
 </head>
-<body>
-  <main class="page-shell">
-    <div class="site-header">
-      <div class="brand-wrap">
-        <div class="brand-mark">
-          <img src="logo.png" alt="Logo Le Pivot d'Or" />
-        </div>
-        <div>
-          <div class="brand-name">Le Pivot d'Or</div>
-          <div class="brand-tagline">Bâtir une vie solide : Vision. Clarté. Discipline. Structure. Constance.</div>
-        </div>
-      </div>
 
-      <nav class="header-nav" aria-label="Navigation principale">
-        <a href="index.html">Accueil</a>
-        <a href="offre.html">Offre</a>
-        <a href="methode.html">Méthode</a>
-        <a href="faq.html">FAQ</a>
-        <a href="contact.html">Contact</a>
-        <a href="conditions.html">Conditions</a>
-        <a href="confidentialite.html">Confidentialité</a>
-        <a href="https://buy.stripe.com/3cI3cn6aA1fhcaWgRecbC00" class="button-header">Accéder</a>
+<body>
+  <div class="topbar">
+    <div class="page">
+      <span>Le Pivot d’Or • Mini Mini Formation IA • Futuriste accessible</span>
+      <span>Produits digitaux autonomes • Achat unique • Accès numérique privé</span>
+    </div>
+  </div>
+
+  <header>
+    <div class="page nav">
+      <a class="brand" href="#accueil" aria-label="Retour à l’accueil">
+        <div class="brand-mark">PO</div>
+        <div>
+          <strong>Le Pivot d’Or</strong>
+          <span>Vision. Clarté. Discipline. Structure. Constance.</span>
+        </div>
+      </a>
+
+      <nav class="nav-links" aria-label="Navigation principale">
+        <a href="#cockpit">Cockpit</a>
+        <a href="#kpi-crm">KPI / CRM</a>
+        <a href="#bases-site">Bases du site</a>
+        <a href="#catalogue">Catalogue</a>
+        <a href="#catalogue-400">400 titres</a>
+        <a href="#agents">Agents</a>
+        <a href="#failles">Failles</a>
+        <a class="btn small" href="#formation-vedette">Formation prioritaire</a>
       </nav>
     </div>
+    <div class="quick-actions" aria-label="Boutons rapides de pilotage">
+      <div class="page quick-actions-inner">
+        <a href="#accueil">Accueil</a>
+        <a href="#cockpit">Cockpit</a>
+        <a href="#kpi-crm">KPI / CRM</a>
+        <a href="#formation-vedette">Formation officielle</a>
+        <a href="#bases-site">Bases du site</a>
+        <a href="#catalogue">Catalogue vente</a>
+        <a href="#catalogue-400">400 titres</a>
+        <a href="#processus">Processus</a>
+        <a href="#support-confiance">Support</a>
+        <a href="#agents">Agents IA</a>
+        <a href="#direction">Direction</a>
+        <a href="#failles">Failles</a>
+        <a href="#qualite">Qualité</a>
+        <a href="#route">Route</a>
+        <a href="#faq">FAQ</a>
+      </div>
+    </div>
+  </header>
 
-    <header class="section">
-      <section class="panel hero section-inner">
-        <div class="hero-layout">
+  <main id="accueil">
+    <section class="page hero">
+      <div>
+        <span class="badge">Plateforme de mini-formations digitales</span>
+        <h1>Des mini-formations IA simples pour <span>gagner du temps</span> et passer à l’action.</h1>
+        <p class="lead">
+          Le Pivot d’Or crée des mini-formations courtes, concrètes et faciles à appliquer pour t’aider à régler un problème précis : mieux utiliser l’IA, t’organiser, créer une offre, clarifier tes finances ou bâtir une routine plus solide.
+        </p>
+        <p class="lead">
+          Tu choisis une formation, tu paies une seule fois, puis tu reçois un accès numérique privé avec une méthode simple, une checklist et une prochaine action claire.
+        </p>
+
+        <div class="hero-actions">
+          <a class="btn" href="#formation-vedette">Voir la première formation</a>
+          <a class="btn secondary" href="#catalogue">Parcourir le catalogue</a>
+          <a class="btn ghost" href="#support-confiance">Comprendre l’accès privé</a>
+        </div>
+
+        <div class="proof-grid" aria-label="Indicateurs principaux">
+          <div class="proof"><strong>1 achat</strong><span>paiement unique, sans abonnement</span></div>
+          <div class="proof"><strong>8 thèmes</strong><span>IA, productivité, business, finances et plus</span></div>
+          <div class="proof"><strong>5-50 $</strong><span>prix simples et accessibles</span></div>
+          <div class="proof"><strong>1 action</strong><span>chaque formation mène à un prochain pas clair</span></div>
+        </div>
+      </div>
+
+      <aside class="director-panel" aria-label="Tableau directeur résumé">
+        <div class="panel-head">
           <div>
-            <div class="eyebrow">Le Pivot d'Or • Programme structuré</div>
-
-            <h1 class="hero-title">
-              Reprends le contrôle avec plus de
-              <span class="gold">clarté</span>,
-              de structure et de discipline
-            </h1>
-
-            <p class="hero-subtitle">
-              Une approche sobre, concrète et premium pour sortir du flou,
-              reprendre tes décisions en main et avancer avec une méthode plus stable.
-            </p>
-
-            <p class="hero-value">
-              Tu n’achètes pas seulement un accès. Tu entres dans une structure pensée
-              pour t’aider à bâtir une vie plus solide.
-            </p>
-
-            <div class="hero-actions">
-              <a href="https://buy.stripe.com/3cI3cn6aA1fhcaWgRecbC00" class="button-primary">
-                Accéder maintenant au programme
-              </a>
-              <a href="offre.html" class="button-secondary">
-                Voir l’offre complète
-              </a>
-            </div>
-
-            <div class="payment-reassurance">
-              <p><strong>Paiement sécurisé par Stripe.</strong></p>
-              <p>Après ton paiement, tu recevras les prochaines étapes pour commencer ton accompagnement.</p>
-              <p>Question avant de commencer ? Écris-moi à : <a href="mailto:lepivotdor@gmail.com">lepivotdor@gmail.com</a></p>
-            </div>
-
-            <div class="trust-chips">
-              <div class="trust-chip">Clarté financière</div>
-              <div class="trust-chip">Structure simple</div>
-              <div class="trust-chip">Discipline durable</div>
-            </div>
+            <span class="badge">Mode directeur</span>
+            <h2>Vendre simple. Livrer propre. Mesurer. Améliorer.</h2>
           </div>
-
-          <div class="hero-visuals">
-            <div class="logo-card">
-              <img src="logo.png" alt="Logo officiel Le Pivot d'Or" />
-            </div>
-
-            <div class="visual-card">
-              <h2 class="visual-title">Visuel premium intégré</h2>
-              <p class="visual-copy">
-                Exemple de bloc visuel haut de gamme pouvant représenter ton univers, une capture d’écran ou une structure de performance.
-              </p>
-
-              <div class="mock-dashboard">
-                <div class="mock-stat">
-                  <span class="mock-label">Clarté</span>
-                  <span class="mock-value">Élevée</span>
-                </div>
-                <div class="mock-stat">
-                  <span class="mock-label">Structure</span>
-                  <span class="mock-value">Stable</span>
-                </div>
-                <div class="mock-stat">
-                  <span class="mock-label">Élan</span>
-                  <span class="mock-value">Solide</span>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-    </header>
-
-    <section class="section" id="temoignages">
-      <div class="panel section-inner">
-        <div class="section-heading">
-          <h2 class="section-title">Retours et <span class="gold">ressenti</span></h2>
-          <p class="section-text">
-            Deux témoignages exemples plus forts pour montrer une perception réaliste de la transformation.
-          </p>
+          <span class="status-pill">Système en lancement</span>
         </div>
 
-        <div class="testimonial-grid">
-          <div class="testimonial-card">
-            <h3 class="visual-title">Témoignage 1</h3>
-            <p class="testimonial-quote">
-              “J’avais l’impression de gagner ma vie sans vraiment la structurer. Ce que j’ai aimé ici, c’est la clarté. Rien d’agressif, rien de brouillon. J’ai enfin eu l’impression d’avancer avec une vraie ligne directrice.”
-            </p>
-            <div class="testimonial-author">Mathieu, travailleur autonome</div>
-            <div class="testimonial-role">Témoignage exemple à remplacer par un vrai témoignage validé</div>
+        <div class="panel-body">
+          <div class="system-row"><div><strong>Ce que c’est</strong><span>Une plateforme de mini-formations digitales simples et concrètes.</span></div><small>Clair</small></div>
+          <div class="system-row"><div><strong>Pour qui</strong><span>Personnes occupées qui veulent apprendre vite et appliquer sans se perdre.</span></div><small>Accessible</small></div>
+          <div class="system-row"><div><strong>Ce que tu achètes</strong><span>Une méthode, une checklist, des étapes et une prochaine action.</span></div><small>Simple</small></div>
+          <div class="system-row"><div><strong>Ce que tu ne reçois pas</strong><span>Aucun coaching, aucun abonnement, aucun fichier complet à télécharger.</span></div><small>Transparent</small></div>
+          <div class="system-row"><div><strong>Livraison</strong><span>Accès numérique privé après paiement, avec support en cas de problème.</span></div><small>Rassurant</small></div>
+          <div class="system-row"><div><strong>Première formation</strong><span>Utilise l’IA pour sauver 3 heures par semaine.</span></div><small>Officielle</small></div>
+        </div>
+
+        <div class="panel-footer">
+          Décision de direction : ne pas construire 400 formations maintenant. La première preuve doit être une formation complète, un lien Stripe, une redirection, un accès, une checklist, un support et un test réel.
+        </div>
+      </aside>
+    </section>
+
+    <section class="page" id="accueil-clair">
+      <div class="section-title">
+        <div>
+          <span class="badge">Page d’accueil claire</span>
+          <h2>En quelques secondes, le visiteur doit comprendre quoi acheter et pourquoi.</h2>
+        </div>
+        <p>Cette section clarifie la promesse avant de montrer le cockpit, les KPI ou les 400 titres. Elle sert d’entrée simple pour un vrai client.</p>
+      </div>
+
+      <div class="grid-4">
+        <article class="card mini-card"><span class="number">1</span><h3>Le problème</h3><p>Tu veux utiliser l’IA, mieux t’organiser ou avancer sur un projet, mais tu ne veux pas une grosse formation compliquée.</p></article>
+        <article class="card mini-card"><span class="number">2</span><h3>La solution</h3><p>Une mini-formation courte avec une méthode simple, un exemple, une checklist et une action à faire maintenant.</p></article>
+        <article class="card mini-card"><span class="number">3</span><h3>L’achat</h3><p>Tu paies une seule fois par Stripe. Pas d’abonnement. Pas de coaching obligatoire. Prix simples de 5 $ à 50 $.</p></article>
+        <article class="card mini-card"><span class="number">4</span><h3>La livraison</h3><p>Tu reçois un accès numérique privé. La formation principale est consultable en ligne et le support aide si l’accès bloque.</p></article>
+      </div>
+    </section>
+
+    <section class="page" id="cockpit">
+      <div class="cockpit-shell">
+        <div class="cockpit-toolbar">
+          <div>
+            <span class="badge">Cockpit de direction</span>
+            <h2>Piloter le site sans descendre partout.</h2>
+          </div>
+          <div class="cockpit-actions">
+            <a class="btn small" href="#kpi-crm">KPI / CRM</a>
+            <a class="btn small secondary" href="#catalogue-400">400 titres</a>
+            <a class="btn small secondary" href="#failles">Failles</a>
+            <a class="btn small ghost" href="#route">Prochaine action</a>
+          </div>
+        </div>
+
+        <div class="cockpit-grid">
+          <div>
+            <div class="metric-board" aria-label="KPI rapides">
+              <div class="metric-tile"><strong>400</strong><span>formations prévues</span></div>
+              <div class="metric-tile"><strong>8</strong><span>catégories pilotées</span></div>
+              <div class="metric-tile"><strong>6</strong><span>cartes de vente visibles</span></div>
+              <div class="metric-tile"><strong>1</strong><span>formation officielle choisie</span></div>
+              <div class="metric-tile"><strong>0 $</strong><span>revenu réel branché</span></div>
+              <div class="metric-tile"><strong>0</strong><span>clients CRM réels</span></div>
+              <div class="metric-tile"><strong>3</strong><span>blocages critiques</span></div>
+              <div class="metric-tile"><strong>72 h</strong><span>fenêtre d’exécution</span></div>
+            </div>
           </div>
 
-          <div class="testimonial-card">
-            <h3 class="visual-title">Témoignage 2</h3>
-            <p class="testimonial-quote">
-              “Ce que j’ai trouvé différent, c’est le sentiment de solidité. Tout était plus calme, plus lisible, plus cohérent. J’ai moins douté, j’ai mieux décidé, et je me suis senti pris au sérieux.”
-            </p>
-            <div class="testimonial-author">Sophie, consultante indépendante</div>
-            <div class="testimonial-role">Témoignage exemple à remplacer par un vrai témoignage validé</div>
-          </div>
+          <aside class="operator-panel">
+            <h3>État directeur actuel</h3>
+            <div class="status-grid">
+              <div class="status-item"><span>Page publique claire</span><i class="dot"></i></div>
+              <div class="status-item"><span>400 titres structurés</span><i class="dot"></i></div>
+              <div class="status-item"><span>Boutons de pilotage en haut</span><i class="dot"></i></div>
+              <div class="status-item"><span>Liens Stripe réels</span><i class="dot bad"></i></div>
+              <div class="status-item"><span>Accès client sécurisé</span><i class="dot bad"></i></div>
+              <div class="status-item"><span>Tracking réel connecté</span><i class="dot warn"></i></div>
+            </div>
+          </aside>
         </div>
       </div>
     </section>
 
-    <section class="section" id="obtenir">
-      <div class="panel section-inner">
-        <div class="section-heading">
-          <h2 class="section-title">Ce que tu vas <span class="gold">obtenir</span></h2>
-          <p class="section-text">
-            Une structure simple et concrète pour t’aider à reprendre le contrôle,
-            clarifier tes décisions et avancer avec plus de discipline.
-          </p>
+    <section class="page" id="kpi-crm">
+      <div class="section-title">
+        <div>
+          <span class="badge">KPI / CRM / Adrien</span>
+          <h2>Chaque formation devient une petite unité commerciale mesurable.</h2>
         </div>
+        <p>Le tableau ci-dessous garde le système simple : chaque élément a un responsable, un KPI, un statut et une prochaine décision.</p>
+      </div>
 
-        <div class="grid-three">
-          <article class="info-card">
-            <h3 class="card-heading">Clarté financière</h3>
-            <p class="card-copy">
-              Tu vois plus clairement où va ton argent, ce qui te ralentit et quelles décisions prioriser.
-            </p>
-          </article>
-
-          <article class="info-card">
-            <h3 class="card-heading">Meilleure organisation</h3>
-            <p class="card-copy">
-              Tu mets de l’ordre dans tes priorités, tes habitudes et ta façon de gérer ton quotidien financier.
-            </p>
-          </article>
-
-          <article class="info-card">
-            <h3 class="card-heading">Suivi structuré</h3>
-            <p class="card-copy">
-              Tu avances avec un cadre clair, au lieu de tout gérer dans ta tête ou dans l’urgence.
-            </p>
-          </article>
-
-          <article class="info-card">
-            <h3 class="card-heading">Plan d’action</h3>
-            <p class="card-copy">
-              Tu repars avec une direction concrète, des étapes simples et une meilleure vision de ce que tu dois faire.
-            </p>
-          </article>
-
-          <article class="info-card">
-            <h3 class="card-heading">Discipline</h3>
-            <p class="card-copy">
-              Tu renforces ta constance pour prendre de meilleures décisions et éviter de retomber dans le flou.
-            </p>
-          </article>
-
-          <article class="info-card">
-            <h3 class="card-heading">Recentrage</h3>
-            <p class="card-copy">
-              Tu reviens à l’essentiel : ta stabilité, ta clarté, tes choix et la construction d’une vie plus solide.
-            </p>
-          </article>
-        </div>
+      <div class="data-table-wrap">
+        <table class="data-table" aria-label="Tableau KPI CRM Mini Mini Formation">
+          <thead>
+            <tr>
+              <th>Bloc</th>
+              <th>Paramètre à suivre</th>
+              <th>KPI directeur</th>
+              <th>CRM / Donnée utile</th>
+              <th>Responsable</th>
+              <th>Statut</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr><td>Vente</td><td>Fiche claire + CTA Stripe</td><td>Clics Stripe</td><td>Source du prospect</td><td>Adrien + Cursor</td><td><span class="pill warn">À tester</span></td></tr>
+            <tr><td>Paiement</td><td>Produit Stripe, prix, redirection</td><td>Paiements commencés / achats</td><td>Achat confirmé</td><td>Adrien + Hubert</td><td><span class="pill bad">Non branché</span></td></tr>
+            <tr><td>Accès</td><td>Page après paiement + livraison</td><td>Accès activés</td><td>Statut accès client</td><td>Hubert</td><td><span class="pill warn">À sécuriser</span></td></tr>
+            <tr><td>CRM</td><td>Froid / tiède / chaud / client</td><td>Taux conversion prospect</td><td>Intérêt, maturité, achat, satisfaction</td><td>Adrien</td><td><span class="pill neutral">Simulé</span></td></tr>
+            <tr><td>Support</td><td>Accès non reçu, double paiement, plainte</td><td>Demandes support</td><td>Risque, problème, escalade</td><td>Hubert + Olivier</td><td><span class="pill warn">À cadrer</span></td></tr>
+            <tr><td>Qualité</td><td>Note qualité + note rentabilité</td><td>Score santé formation</td><td>Blocage + prochaine action</td><td>Adrien</td><td><span class="pill">Présent</span></td></tr>
+            <tr><td>Réachat</td><td>Formation suivante recommandée</td><td>Taux réachat 7/30/90</td><td>Formation complémentaire cliquée</td><td>Craig + CRM</td><td><span class="pill warn">À brancher</span></td></tr>
+            <tr><td>Marketing</td><td>Shorts, Reels, X, courriel, DM</td><td>Ventes par contenu</td><td>Canal d’entrée</td><td>Ludite + Adrien</td><td><span class="pill neutral">À produire</span></td></tr>
+            <tr><td>SEO</td><td>Mot-clé, question cible, FAQ, liens internes</td><td>Pages indexées / clics SEO</td><td>Intention de recherche</td><td>Ludite + Adrien</td><td><span class="pill warn">À enrichir</span></td></tr>
+            <tr><td>Sécurité</td><td>Aucune donnée sensible publique</td><td>Incidents ouverts</td><td>Logs non sensibles</td><td>Adrien + Olivier</td><td><span class="pill">Contrôle</span></td></tr>
+          </tbody>
+        </table>
       </div>
     </section>
 
-    <section class="section" id="offre">
-      <div class="panel section-inner">
-        <div class="section-heading">
-          <h2 class="section-title">Offre disponible <span class="gold">pour le moment</span></h2>
-          <p class="section-text">
-            Une seule offre claire pour avancer avec une structure complète sur 12 mois.
-          </p>
+    <section class="page" id="bases-site">
+      <div class="section-title">
+        <div>
+          <span class="badge">Bases du site avant la formation</span>
+          <h2>Avant de concevoir la formation, le site doit pouvoir vendre, livrer et rassurer.</h2>
         </div>
+        <p>La première formation officielle est choisie. Maintenant, la priorité est de terminer les fondations du site pour éviter de créer du contenu sans parcours d’achat solide.</p>
+      </div>
 
-        <div class="grid-two">
-          <article class="info-card info-card--strong">
-            <h3 class="card-heading">Pilotage financier 12 mois</h3>
-
-            <p class="card-copy">
-              Un accompagnement structuré pour t’aider à bâtir plus de clarté financière,
-              plus de discipline et une meilleure organisation sur une période complète de 12 mois.
-            </p>
-
-            <ul class="bullet-list" style="margin-top: 18px;">
-              <li>Programme structuré sur 12 mois.</li>
-              <li>Clarté financière et meilleure organisation.</li>
-              <li>Suivi structuré pour garder une direction claire.</li>
-              <li>Plan d’action concret et plus facile à suivre.</li>
-              <li>Discipline, recentrage et constance.</li>
-            </ul>
-          </article>
-
-          <article class="info-card info-card--strong">
-            <h3 class="card-heading">Investissement</h3>
-
-            <div class="offer-price">3 600 $</div>
-
-            <p class="offer-label">
-              Pour le programme complet <strong>Pilotage financier 12 mois</strong>.
-            </p>
-
-            <div class="offer-highlight">
-              Offre claire, sobre et directe : un seul programme disponible pour le moment afin d’éviter la confusion.
-            </div>
-
-            <div class="hero-actions">
-              <a href="https://buy.stripe.com/3cI3cn6aA1fhcaWgRecbC00" class="button-primary">
-                Commencer le Pilotage financier
-              </a>
-            </div>
-
-            <div class="payment-reassurance">
-              <p><strong>Paiement sécurisé par Stripe.</strong></p>
-              <p>Après ton paiement, tu recevras les prochaines étapes pour commencer ton accompagnement.</p>
-              <p>Question avant de commencer ? Écris-moi à : <a href="mailto:lepivotdor@gmail.com">lepivotdor@gmail.com</a></p>
-            </div>
-          </article>
-        </div>
+      <div class="grid-3">
+        <article class="card quality-card"><h3>1. Page d’accueil claire</h3><p>Promesse directe, première formation visible, fonctionnement expliqué en 4 blocs, boutons visibles, FAQ et conditions accessibles.</p></article>
+        <article class="card quality-card"><h3>2. Fiche de vente</h3><p>Créer une vraie fiche pour “Utilise l’IA pour sauver 3 heures par semaine” avec problème, résultat possible, inclusions, prix et limites.</p></article>
+        <article class="card quality-card"><h3>3. Paiement Stripe</h3><p>Remplacer les liens temporaires par le vrai lien Stripe, vérifier le prix, le nom du produit et la redirection après paiement.</p></article>
+        <article class="card quality-card"><h3>4. Page après paiement</h3><p>Prévoir une page de confirmation simple : reçu, prochaine étape, accès, support, délai et rappel vente finale.</p></article>
+        <article class="card quality-card"><h3>5. Support client</h3><p>Préparer les réponses Hubert pour accès non reçu, mauvais courriel, double paiement, problème technique et compensation.</p></article>
+        <article class="card quality-card"><h3>6. Pages de confiance</h3><p>Conditions, confidentialité, vente finale, avertissement éducatif, aucun coaching et accès numérique privé.</p></article>
+        <article class="card quality-card"><h3>7. Suivi minimal</h3><p>Mesurer au minimum vues, clics Stripe, achats, accès activés, problèmes d’accès et demandes support.</p></article>
+        <article class="card quality-card"><h3>8. Sécurité de départ</h3><p>Ne pas mettre le contenu complet payant, les emails clients, clés API, accès privés ou données Stripe sensibles dans GitHub public.</p></article>
+        <article class="card quality-card"><h3>9. Test complet</h3><p>Tester le chemin complet : accueil → fiche → Stripe → redirection → accès → support → prochaine formation recommandée.</p></article>
       </div>
     </section>
 
-    <section class="section" id="garantie">
-      <div class="panel section-inner">
-        <div class="section-heading">
-          <h2 class="section-title">Garantie satisfaction <span class="gold">30 jours</span></h2>
-          <p class="section-text">
-            Tu peux avancer avec plus de confiance. Si le programme ne correspond pas à tes attentes,
-            tu peux demander un remboursement selon les conditions prévues.
-          </p>
+    <section class="page" id="categories">
+      <div class="section-title">
+        <div>
+          <span class="badge">Architecture du catalogue</span>
+          <h2>8 catégories pour couvrir les besoins essentiels sans disperser la marque.</h2>
         </div>
+        <p>Chaque catégorie a un rôle clair. IA et Productivité lancent le système; Business et Finances créent la monétisation forte; les autres catégories élargissent l’écosystème.</p>
+      </div>
 
-        <div class="grid-two">
-          <article class="info-card info-card--strong">
-            <h3 class="card-heading">Une décision plus rassurante</h3>
-            <p class="card-copy">
-              Le but est simple : réduire le risque perçu et te permettre de commencer avec plus de sécurité.
-            </p>
-          </article>
-
-          <article class="info-card info-card--strong">
-            <h3 class="card-heading">Conditions prévues</h3>
-            <p class="card-copy">
-              La garantie s’applique pendant 30 jours, selon les conditions communiquées et le cadre prévu
-              pour le programme.
-            </p>
-          </article>
-        </div>
+      <div class="grid-4" aria-label="Catégories de mini-formations">
+        <article class="card category-card" data-category-link="IA">
+          <div><div class="category-icon">IA</div><h3>IA</h3><p>Utiliser l’intelligence artificielle pour gagner du temps, structurer les idées, automatiser et créer plus vite.</p></div>
+          <div class="category-note">Priorité lancement : très haute</div>
+        </article>
+        <article class="card category-card" data-category-link="Productivité">
+          <div><div class="category-icon">P</div><h3>Productivité</h3><p>Organiser les semaines, réduire la surcharge, clarifier les priorités et installer une discipline simple.</p></div>
+          <div class="category-note">Priorité lancement : très haute</div>
+        </article>
+        <article class="card category-card" data-category-link="Apprentissage">
+          <div><div class="category-icon">A</div><h3>Apprentissage</h3><p>Apprendre plus vite, retenir l’essentiel, transformer l’information en actions concrètes.</p></div>
+          <div class="category-note">Priorité expansion : utile</div>
+        </article>
+        <article class="card category-card" data-category-link="Business">
+          <div><div class="category-icon">B</div><h3>Business</h3><p>Créer une offre, vendre plus clairement, bâtir un mini-système et améliorer la rentabilité.</p></div>
+          <div class="category-note">Priorité monétisation : forte</div>
+        </article>
+        <article class="card category-card" data-category-link="Finances">
+          <div><div class="category-icon">$</div><h3>Finances</h3><p>Reprendre la clarté, structurer les décisions d’argent et dire non aux dépenses inutiles.</p></div>
+          <div class="category-note">Validation prudente recommandée</div>
+        </article>
+        <article class="card category-card" data-category-link="Relations">
+          <div><div class="category-icon">R</div><h3>Relations</h3><p>Poser des limites, mieux communiquer, protéger son énergie et créer des relations plus solides.</p></div>
+          <div class="category-note">Ton calme et éducatif</div>
+        </article>
+        <article class="card category-card" data-category-link="Bonheur">
+          <div><div class="category-icon">☀</div><h3>Bonheur</h3><p>Revenir à l’essentiel, ralentir, se comprendre et bâtir une vie plus simple et plus alignée.</p></div>
+          <div class="category-note">Style de vie et soutien</div>
+        </article>
+        <article class="card category-card" data-category-link="Santé">
+          <div><div class="category-icon">S</div><h3>Santé</h3><p>Installer de petites habitudes, soutenir l’énergie, structurer les routines et rester prudent.</p></div>
+          <div class="category-note">Validation humaine renforcée</div>
+        </article>
       </div>
     </section>
 
-    <section class="section">
-      <div class="panel section-inner">
-        <div class="section-heading">
-          <h2 class="section-title">Comment ça <span class="gold">se passe</span></h2>
-          <p class="section-text">
-            Un processus simple, lisible et sans friction inutile.
-          </p>
-        </div>
-
-        <div class="process-grid">
-          <div class="process-step">
-            <div class="process-number">1</div>
-            <h3 class="card-heading">Tu comprends</h3>
-            <p class="card-copy">Tu lis l’offre, les bénéfices, la garantie et le fonctionnement général.</p>
+    <section class="page" id="formation-vedette">
+      <div class="featured">
+        <article class="featured-main">
+          <span class="badge">Première formation officielle</span>
+          <h2>Utilise l’IA pour sauver 3 heures par semaine</h2>
+          <p class="lead">Une mini-formation simple pour apprendre à donner du contexte à l’IA, transformer tes tâches répétitives en mini-systèmes et récupérer du temps sans te perdre dans la technique.</p>
+          <span class="price-large">Prix recommandé : 15 $ • Accès numérique privé</span>
+          <div class="included-list">
+            <div>✓ Méthode courte et concrète</div>
+            <div>✓ Checklist d’action</div>
+            <div>✓ Exemples de prompts</div>
+            <div>✓ Plan d’application 24-48 h</div>
+            <div>✓ Erreurs à éviter</div>
+            <div>✓ Formation suivante recommandée</div>
           </div>
-
-          <div class="process-step">
-            <div class="process-number">2</div>
-            <h3 class="card-heading">Tu décides</h3>
-            <p class="card-copy">Tu vérifies si le programme correspond à ta situation et à ton niveau d’engagement.</p>
+          <div class="hero-actions">
+            <a class="btn" href="https://buy.stripe.com/REMPLACER-LIEN-STRIPE" target="_blank" rel="noopener">Acheter avec Stripe</a>
+            <a class="btn secondary" href="#support-confiance">Lire les conditions</a>
           </div>
+          <p class="legal-line">Produit digital autonome. Aucun coaching inclus. Accès numérique privé. Vente finale dès activation. Résultats variables. Formation éducative générale.</p>
+        </article>
 
-          <div class="process-step">
-            <div class="process-number">3</div>
-            <h3 class="card-heading">Tu paies</h3>
-            <p class="card-copy">Le paiement passe par Stripe, dans un processus simple et sécurisé.</p>
+        <aside class="featured-side">
+          <span class="badge">Contrôle publication</span>
+          <h3 class="gold">Feu de lancement</h3>
+          <p>Cette formation sera conçue aujourd’hui, mais seulement après avoir verrouillé les bases du site : structure, pages essentielles, accès, support, conditions et paiement.</p>
+          <div class="progress-block">
+            <div class="progress-line"><div class="progress-label"><span>Base du site</span><span>70%</span></div><div class="bar"><span style="--w:70%"></span></div></div>
+            <div class="progress-line"><div class="progress-label"><span>Fiche de vente</span><span>55%</span></div><div class="bar"><span style="--w:55%"></span></div></div>
+            <div class="progress-line"><div class="progress-label"><span>Contenu formation</span><span>10%</span></div><div class="bar"><span style="--w:10%"></span></div></div>
+            <div class="progress-line"><div class="progress-label"><span>Stripe testé</span><span>20%</span></div><div class="bar"><span style="--w:20%"></span></div></div>
+            <div class="progress-line"><div class="progress-label"><span>Accès après paiement</span><span>35%</span></div><div class="bar"><span style="--w:35%"></span></div></div>
+            <div class="progress-line"><div class="progress-label"><span>Support Hubert</span><span>60%</span></div><div class="bar"><span style="--w:60%"></span></div></div>
           </div>
+        </aside>
+      </div>
+    </section>
 
-          <div class="process-step">
-            <div class="process-number">4</div>
-            <h3 class="card-heading">Tu avances</h3>
-            <p class="card-copy">Tu entres dans une structure pensée pour t’aider à bâtir une base plus solide.</p>
-          </div>
+    <section class="page" id="catalogue">
+      <div class="section-title">
+        <div>
+          <span class="badge">Catalogue de lancement</span>
+          <h2>Des mini-formations visibles, filtrables et prêtes à évoluer vers 400 emplacements.</h2>
+        </div>
+        <p>Le site ne doit pas afficher 400 cartes au départ. Il doit guider le visiteur vers quelques formations fortes, avec recherche, filtres, prix clair et mentions visibles.</p>
+      </div>
+
+      <div class="catalogue-tools">
+        <input id="searchInput" class="search-box" type="search" placeholder="Rechercher une formation : IA, semaine, budget, offre, discipline..." />
+        <a class="btn secondary" href="#craig">Demander à Craig</a>
+      </div>
+
+      <div class="filters" aria-label="Filtres du catalogue">
+        <button class="filter-btn active" data-filter="all">Toutes</button>
+        <button class="filter-btn" data-filter="IA">IA</button>
+        <button class="filter-btn" data-filter="Productivité">Productivité</button>
+        <button class="filter-btn" data-filter="Business">Business</button>
+        <button class="filter-btn" data-filter="Finances">Finances</button>
+        <button class="filter-btn" data-filter="Apprentissage">Apprentissage</button>
+        <button class="filter-btn" data-filter="Relations">Relations</button>
+        <button class="filter-btn" data-filter="Bonheur">Bonheur</button>
+        <button class="filter-btn" data-filter="Santé">Santé</button>
+      </div>
+
+      <div class="grid-3" id="formationGrid">
+        <article class="card formation-card" data-category="IA" data-title="utilise ia sauver 3 heures semaine">
+          <div class="formation-top"><span class="tag">IA</span><span class="price">15 $</span></div>
+          <h3>Utilise l’IA pour sauver 3 heures par semaine</h3>
+          <p>Apprends à transformer tes tâches répétitives en mini-systèmes assistés par IA.</p>
+          <div class="formation-meta"><span>Format : accès en ligne + checklist</span><span>Version : v1.0 • Mise à jour annuelle</span><div class="bar"><span style="--w:92%"></span></div></div>
+          <a class="btn" href="https://buy.stripe.com/REMPLACER-LIEN-STRIPE" target="_blank" rel="noopener">Acheter</a>
+          <p class="legal-line">Accès numérique privé. Vente finale dès activation. Aucun coaching inclus.</p>
+        </article>
+
+        <article class="card formation-card" data-category="Productivité" data-title="organise semaine ia surcharge">
+          <div class="formation-top"><span class="tag">Productivité</span><span class="price">15 $</span></div>
+          <h3>Organise ta semaine avec l’IA</h3>
+          <p>Un cadre clair pour prioriser, planifier et réduire la surcharge mentale.</p>
+          <div class="formation-meta"><span>Format : mini-formation + checklist</span><span>Version : v1.0 • Mise à jour annuelle</span><div class="bar"><span style="--w:84%"></span></div></div>
+          <a class="btn" href="https://buy.stripe.com/REMPLACER-LIEN-STRIPE" target="_blank" rel="noopener">Acheter</a>
+          <p class="legal-line">Accès numérique privé. Vente finale dès activation. Aucun coaching inclus.</p>
+        </article>
+
+        <article class="card formation-card" data-category="IA" data-title="cree premier mini systeme ia">
+          <div class="formation-top"><span class="tag">IA</span><span class="price">25 $</span></div>
+          <h3>Crée ton premier mini-système avec l’IA</h3>
+          <p>Transforme une idée ou une tâche en système simple avec étapes, modèles et suivi.</p>
+          <div class="formation-meta"><span>Format : mini-formation + modèles</span><span>Version : v1.0 • Mise à jour 3-6 mois</span><div class="bar"><span style="--w:78%"></span></div></div>
+          <a class="btn" href="https://buy.stripe.com/REMPLACER-LIEN-STRIPE" target="_blank" rel="noopener">Acheter</a>
+          <p class="legal-line">Accès numérique privé. Vente finale dès activation. Aucun coaching inclus.</p>
+        </article>
+
+        <article class="card formation-card" data-category="Business" data-title="ecris page vente simple">
+          <div class="formation-top"><span class="tag">Business</span><span class="price">25 $</span></div>
+          <h3>Écris une page de vente simple</h3>
+          <p>Structure une page claire : problème, promesse réaliste, valeur, CTA et objections.</p>
+          <div class="formation-meta"><span>Format : mini-formation + gabarit</span><span>Version : v1.0 • Mise à jour annuelle</span><div class="bar"><span style="--w:72%"></span></div></div>
+          <a class="btn" href="https://buy.stripe.com/REMPLACER-LIEN-STRIPE" target="_blank" rel="noopener">Acheter</a>
+          <p class="legal-line">Accès numérique privé. Vente finale dès activation. Aucun coaching inclus.</p>
+        </article>
+
+        <article class="card formation-card" data-category="Business" data-title="trouve idee produit digital rentable">
+          <div class="formation-top"><span class="tag">Business</span><span class="price">15 $</span></div>
+          <h3>Trouve une idée de produit digital rentable</h3>
+          <p>Repère une douleur claire, un prix simple et une promesse réaliste à tester vite.</p>
+          <div class="formation-meta"><span>Format : guide court + checklist</span><span>Version : v1.0 • Mise à jour annuelle</span><div class="bar"><span style="--w:68%"></span></div></div>
+          <a class="btn" href="https://buy.stripe.com/REMPLACER-LIEN-STRIPE" target="_blank" rel="noopener">Acheter</a>
+          <p class="legal-line">Accès numérique privé. Vente finale dès activation. Aucun coaching inclus.</p>
+        </article>
+
+        <article class="card formation-card" data-category="Finances" data-title="structure budget simple">
+          <div class="formation-top"><span class="tag">Finances</span><span class="price">15 $</span></div>
+          <h3>Structure ton budget simple</h3>
+          <p>Une méthode éducative générale pour reprendre une vue claire sur ton argent.</p>
+          <div class="formation-meta"><span>Format : accès en ligne + checklist</span><span>Version : v1.0 • Validation prudente</span><div class="bar"><span style="--w:64%"></span></div></div>
+          <a class="btn" href="https://buy.stripe.com/REMPLACER-LIEN-STRIPE" target="_blank" rel="noopener">Acheter</a>
+          <p class="legal-line">Éducatif général. Aucun conseil financier personnalisé. Vente finale dès activation.</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="page" id="catalogue-400">
+      <div class="section-title">
+        <div>
+          <span class="badge">Catalogue directeur complet</span>
+          <h2>400 petits encadrés avec seulement le titre de chaque formation.</h2>
+        </div>
+        <p>Cette vue compacte sert à visualiser l’ampleur du catalogue sans afficher les prix, descriptions, boutons ou détails. Les filtres et la recherche du catalogue agissent aussi sur ces titres.</p>
+      </div>
+
+      <div class="micro-catalogue-panel">
+        <div class="micro-catalogue-head">
+          <span>Vue compacte — 8 colonnes définies</span>
+          <span>50 formations par colonne</span>
+        </div>
+        <div class="micro-title-grid" id="microFormationGrid" aria-label="Liste compacte des 400 titres de mini-formations"></div>
+      </div>
+    </section>
+
+    <section class="page" id="processus">
+      <div class="section-title">
+        <div>
+          <span class="badge">Parcours client complet</span>
+          <h2>Le client doit comprendre, acheter, recevoir l’accès, consommer et obtenir de l’aide.</h2>
+        </div>
+        <p>Ce parcours évite la confusion après paiement. Chaque étape doit être visible, testée et mesurable.</p>
+      </div>
+
+      <div class="grid-4 process">
+        <article class="card process-card"><h3>Découverte</h3><p>Le client voit un contenu court, une promesse réaliste et un problème précis.</p></article>
+        <article class="card process-card"><h3>Choix</h3><p>Il arrive sur le catalogue, filtre par catégorie ou demande une recommandation à Craig.</p></article>
+        <article class="card process-card"><h3>Fiche</h3><p>Il lit le prix, ce qui est inclus, ce qui n’est pas inclus et les conditions visibles.</p></article>
+        <article class="card process-card"><h3>Paiement</h3><p>Il clique sur Stripe, paie, reçoit son reçu et est redirigé vers la page d’accès.</p></article>
+        <article class="card process-card"><h3>Activation</h3><p>L’accès numérique privé est activé selon le processus choisi au lancement.</p></article>
+        <article class="card process-card"><h3>Formation</h3><p>Il consulte la formation en ligne. La formation principale n’est pas un PDF complet à télécharger.</p></article>
+        <article class="card process-card"><h3>Action</h3><p>Il suit la checklist, complète les étapes, fait son mini-bilan et passe à la prochaine action.</p></article>
+        <article class="card process-card"><h3>Support</h3><p>Hubert aide en cas d’accès non reçu, double paiement, problème technique ou demande sensible.</p></article>
+      </div>
+    </section>
+
+    <section class="page" id="support-confiance">
+      <div class="trust-box card">
+        <div>
+          <span class="badge">Confiance et protection</span>
+          <h2 class="gold">Des règles claires avant l’achat.</h2>
+          <p class="lead">Le site doit rester transparent : le client comprend ce qu’il achète, ce qu’il ne reçoit pas, comment l’accès fonctionne et dans quels cas le support intervient.</p>
+        </div>
+        <div class="trust-list">
+          <div>Accès numérique privé livré après paiement.</div>
+          <div>Formation principale consultable en ligne, pas en téléchargement complet.</div>
+          <div>Checklist, fiche ou modèle téléchargeable seulement si nécessaire.</div>
+          <div>Vente finale dès activation de l’accès, avec exceptions prudentes.</div>
+          <div>Exceptions : double paiement, erreur de facturation, problème technique non corrigé ou obligation légale applicable.</div>
+          <div>Compensation possible : formations gratuites si demande raisonnable et validée.</div>
         </div>
       </div>
     </section>
 
-    <section class="section">
-      <div class="panel section-inner">
-        <div class="section-heading">
-          <h2 class="section-title">Ce programme est <span class="gold">pour toi si…</span></h2>
-          <p class="section-text">
-            Cette approche vise les personnes qui veulent réellement se recentrer et reprendre une direction plus solide.
-          </p>
+    <section class="page" id="agents">
+      <div class="section-title">
+        <div>
+          <span class="badge">Agents opérationnels</span>
+          <h2>Chaque agent a une mission claire, une limite et un rôle dans le système.</h2>
         </div>
+        <p>L’IA accélère l’exécution, mais les décisions sensibles restent sous validation d’Olivier.</p>
+      </div>
 
-        <div class="grid-two">
-          <article class="info-card info-card--strong">
-            <h3 class="card-heading">Tu veux reprendre le contrôle</h3>
-            <ul class="bullet-list">
-              <li>Tu veux sortir du flou et retrouver une direction claire.</li>
-              <li>Tu veux mieux gérer tes priorités, ton énergie et tes décisions.</li>
-              <li>Tu veux une structure simple plutôt qu’un système compliqué.</li>
-            </ul>
-          </article>
-
-          <article class="info-card info-card--strong">
-            <h3 class="card-heading">Tu es prêt à agir</h3>
-            <ul class="bullet-list">
-              <li>Tu veux mettre en place plus de discipline et de constance.</li>
-              <li>Tu veux construire quelque chose de stable dans la vraie vie.</li>
-              <li>Tu veux arrêter de repartir toujours au même point.</li>
-            </ul>
-          </article>
-        </div>
+      <div class="grid-3">
+        <article class="card agent-card" id="craig"><h3>Craig — Conseiller formations</h3><p>Recommande la bonne formation selon le problème du visiteur, sans promettre de résultat garanti.</p></article>
+        <article class="card agent-card"><h3>Hubert — Support client</h3><p>Gère accès, paiement, compensation simple et transmet les cas sensibles à Olivier.</p></article>
+        <article class="card agent-card"><h3>Ludite — Contenu</h3><p>Crée Shorts, Reels, publications X, DM, emails courts, objections et angles de vente.</p></article>
+        <article class="card agent-card"><h3>Manus — Conception</h3><p>Structure l’expérience visuelle, les sections, les cartes, l’accès et l’UX.</p></article>
+        <article class="card agent-card"><h3>Cursor — Code</h3><p>Code et corrige HTML, CSS, JavaScript et JSON sans créer 400 pages manuelles.</p></article>
+        <article class="card agent-card"><h3>Adrien — Pilotage interne</h3><p>Suit KPI, alertes, CRM, seuils d’arrêt, priorités et rapports dans l’espace privé d’Olivier.</p></article>
       </div>
     </section>
 
-    <section class="section">
-      <div class="panel section-inner">
-        <div class="section-heading">
-          <h2 class="section-title">Objections et <span class="gold">réponses</span></h2>
-          <p class="section-text">
-            Les doutes principaux sont normaux. Le but est de les clarifier avant le paiement.
-          </p>
+    <section class="page" id="direction">
+      <div class="section-title">
+        <div>
+          <span class="badge">Zone direction non sensible</span>
+          <h2>Le tableau de bord doit piloter le système, pas exposer des données sensibles.</h2>
         </div>
+        <p>Cette zone est une représentation de gestion : statuts, scores, priorités, jumeau numérique, mises à jour et KPI agrégés. Les données clients réelles doivent rester hors GitHub public.</p>
+      </div>
 
-        <div class="objection-list">
-          <div class="objection-item">
-            <strong>“J’ai peur que ce soit compliqué.”</strong>
-            La logique est volontairement simple : comprendre, décider, avancer. Pas de surcharge inutile.
+      <div class="dashboard">
+        <article class="card dashboard-card">
+          <h3 class="gold">Indicateurs essentiels</h3>
+          <p>Vue rapide pour décider quoi construire, publier, améliorer ou arrêter.</p>
+          <div class="kpi-grid">
+            <div class="kpi"><strong>400</strong><span>formations prévues</span></div>
+            <div class="kpi"><strong>10</strong><span>formations phase 1</span></div>
+            <div class="kpi"><strong>3</strong><span>tests obligatoires restants</span></div>
+            <div class="kpi"><strong>0</strong><span>donnée client exposée</span></div>
           </div>
+        </article>
 
-          <div class="objection-item">
-            <strong>“Je ne veux pas perdre mon temps.”</strong>
-            Toute la page est construite pour être comprise rapidement et mener à une décision claire.
+        <article class="card dashboard-card">
+          <h3 class="gold">Jumeau numérique interne — exemple</h3>
+          <p>Chaque formation doit avoir un état global, un feu directeur, une prochaine action, une note qualité, une note rentabilité et une mise à jour prévue.</p>
+          <div class="chart-list">
+            <div class="chart-row"><span>IA</span><div class="chart-track"><span style="--w:82%"></span></div><span>82</span></div>
+            <div class="chart-row"><span>Productivité</span><div class="chart-track"><span style="--w:76%"></span></div><span>76</span></div>
+            <div class="chart-row"><span>Business</span><div class="chart-track"><span style="--w:64%"></span></div><span>64</span></div>
+            <div class="chart-row"><span>Finances</span><div class="chart-track"><span style="--w:58%"></span></div><span>58</span></div>
+            <div class="chart-row"><span>Autres</span><div class="chart-track"><span style="--w:24%"></span></div><span>24</span></div>
           </div>
-
-          <div class="objection-item">
-            <strong>“Je veux quelque chose de sérieux, pas du marketing vide.”</strong>
-            Le ton, le design et l’offre cherchent la crédibilité, la structure et la sobriété.
-          </div>
-        </div>
+        </article>
       </div>
     </section>
 
-    <section class="section" id="faq">
-      <div class="panel section-inner">
-        <div class="section-heading">
-          <h2 class="section-title">Questions <span class="gold">fréquentes</span></h2>
-          <p class="section-text">Une FAQ courte pour lever les derniers freins avant le passage à l’action.</p>
+    <section class="page" id="failles">
+      <div class="section-title">
+        <div>
+          <span class="badge">Audit des failles corrigées</span>
+          <h2>Le site devient plus clair, mais certaines limites doivent rester visibles.</h2>
         </div>
+        <p>Ce bloc évite de confondre une belle page publique avec un vrai système sécurisé, connecté et automatisé.</p>
+      </div>
 
-        <div class="faq-list">
-          <article class="faq-item">
-            <h3 class="faq-question">Est-ce que le paiement est sécurisé ?</h3>
-            <p class="faq-answer">Oui. Le paiement est traité via Stripe, dans un environnement reconnu et sécurisé.</p>
-          </article>
-
-          <article class="faq-item">
-            <h3 class="faq-question">Est-ce qu’il y a une garantie ?</h3>
-            <p class="faq-answer">
-              Oui. Le programme inclut une garantie satisfaction 30 jours. Si le programme ne correspond pas à tes attentes,
-              tu peux demander un remboursement selon les conditions prévues.
-            </p>
-          </article>
-
-          <article class="faq-item">
-            <h3 class="faq-question">Quelle offre est disponible pour le moment ?</h3>
-            <p class="faq-answer">
-              Pour le moment, seule l’offre Pilotage financier 12 mois est mise de l’avant au prix de 3 600 $.
-            </p>
-          </article>
-
-          <article class="faq-item">
-            <h3 class="faq-question">Est-ce que c’est du conseil financier personnalisé ?</h3>
-            <p class="faq-answer">
-              Non. Le Pivot d’Or offre un accompagnement de clarté, de structure et d’éducation générale. Il ne remplace pas un conseiller financier autorisé.
-            </p>
-          </article>
-
-          <article class="faq-item">
-            <h3 class="faq-question">Est-ce que le processus est compliqué ?</h3>
-            <p class="faq-answer">Non. La page, l’offre et le passage au paiement sont pensés pour rester simples et lisibles.</p>
-          </article>
-
-          <article class="faq-item">
-            <h3 class="faq-question">Que se passe-t-il après le paiement ?</h3>
-            <p class="faq-answer">
-              Après ton paiement, tu recevras les prochaines étapes pour commencer ton accompagnement.
-            </p>
-          </article>
-
-          <article class="faq-item">
-            <h3 class="faq-question">Puis-je poser une question avant de commencer ?</h3>
-            <p class="faq-answer">
-              Oui. Tu peux écrire à <a href="mailto:lepivotdor@gmail.com">lepivotdor@gmail.com</a> avant de prendre ta décision.
-            </p>
-          </article>
-
-          <article class="faq-item">
-            <h3 class="faq-question">Que reçois-je exactement après le paiement ?</h3>
-            <p class="faq-answer">
-              Tu reçois l'accès à la structure complète du programme, les étapes suivantes pour débuter, et toutes les ressources nécessaires pour avancer. Tu ne seras pas seul; tu auras un cadre clair pour progresser.
-            </p>
-          </article>
-        </div>
+      <div class="simple-panels">
+        <article class="audit-card"><h3>Faille 1 — Trop de contrôle en bas</h3><p>Correction : ajout d’une barre de boutons rapides et d’un cockpit en haut pour accéder à tout sans dérouler.</p></article>
+        <article class="audit-card"><h3>Faille 2 — KPI incomplets</h3><p>Correction : ajout d’un tableau KPI / CRM avec vente, paiement, accès, support, SEO, marketing, sécurité et réachat.</p></article>
+        <article class="audit-card"><h3>Faille 3 — CRM absent</h3><p>Correction : ajout des statuts froid, tiède, chaud, client, satisfaction, risque, réachat et source prospect.</p></article>
+        <article class="audit-card"><h3>Faille 4 — Stripe non réel</h3><p>Les liens Stripe sont encore des placeholders. Aucune publication sérieuse avant remplacement et test complet.</p></article>
+        <article class="audit-card"><h3>Faille 5 — Accès non sécurisé</h3><p>GitHub Pages reste public. Les données clients, clés API, contenus payants complets et liens sensibles ne doivent pas y être placés.</p></article>
+        <article class="audit-card"><h3>Faille 6 — Tracking simulé</h3><p>Les KPI affichés sont des repères visuels. Pour le temps réel, il faudra connecter analytics, Stripe, CRM et espace membre.</p></article>
+        <article class="audit-card"><h3>Faille 7 — Trop de formations possibles</h3><p>Correction : garder les 400 titres comme vue directeur, mais vendre d’abord 1 formation complète puis 10 formations solides.</p></article>
+        <article class="audit-card"><h3>Faille 8 — Risque légal</h3><p>Les textes sont une base de travail. Les pages légales, taxes et sujets sensibles devront être validés avant volume élevé.</p></article>
+        <article class="audit-card"><h3>Faille 9 — Code trop massif</h3><p>À moyen terme, déplacer les 400 titres dans un fichier JSON externe pour alléger index.html et rendre le site plus maintenable.</p></article>
       </div>
     </section>
 
-    <section class="section">
-      <div class="panel section-inner">
-        <div class="section-heading">
-          <h2 class="section-title">Crédibilité et <span class="gold">réassurance</span></h2>
-          <p class="section-text">
-            Clique sur chaque élément pour voir une brève explication avant de passer au paiement.
-          </p>
+    <section class="page" id="qualite">
+      <div class="section-title">
+        <div>
+          <span class="badge">Contrôle qualité</span>
+          <h2>Une formation ne se publie pas parce qu’elle est jolie. Elle se publie quand elle passe les tests.</h2>
         </div>
+        <p>Le contrôle qualité protège la marque, la rentabilité, la clarté et l’expérience client.</p>
+      </div>
 
-        <div class="credibility-row">
-          <details class="credibility-pill">
-            <summary>
-              <span class="credibility-label">
-                <span class="credibility-icon">🔒</span>
-                Paiement sécurisé Stripe
-              </span>
-              <span class="dropdown-arrow">⌄</span>
-            </summary>
-            <div class="credibility-details">
-              <strong>Ton paiement est traité par Stripe.</strong> Tu passes par une plateforme de paiement reconnue, sécurisée et utilisée par de nombreuses entreprises en ligne.
-            </div>
-          </details>
-
-          <details class="credibility-pill">
-            <summary>
-              <span class="credibility-label">
-                <span class="credibility-icon">✓</span>
-                Garantie satisfaction 30 jours
-              </span>
-              <span class="dropdown-arrow">⌄</span>
-            </summary>
-            <div class="credibility-details">
-              <strong>Tu peux commencer avec plus de confiance.</strong> Si le programme ne correspond pas à tes attentes, tu peux demander un remboursement selon les conditions prévues.
-            </div>
-          </details>
-
-          <details class="credibility-pill">
-            <summary>
-              <span class="credibility-label">
-                <span class="credibility-icon">◆</span>
-                Clarté • Discipline • Constance
-              </span>
-              <span class="dropdown-arrow">⌄</span>
-            </summary>
-            <div class="credibility-details">
-              <strong>La méthode reste simple et structurée.</strong> Le but est de t’aider à clarifier ta situation, installer une meilleure organisation et avancer avec plus de constance.
-            </div>
-          </details>
-        </div>
+      <div class="grid-3">
+        <article class="card quality-card"><h3>Test client</h3><p>Le client comprend rapidement ce qu’il achète, le prix, l’accès et les limites.</p></article>
+        <article class="card quality-card"><h3>Test action</h3><p>La formation fait faire quelque chose : checklist, étape, mini-bilan, prochaine action.</p></article>
+        <article class="card quality-card"><h3>Test paiement</h3><p>Le lien Stripe, le prix, le produit et la redirection après paiement sont vérifiés.</p></article>
+        <article class="card quality-card"><h3>Test accès</h3><p>L’accès après achat est clair, disponible et supporté en cas de problème.</p></article>
+        <article class="card quality-card"><h3>Test sécurité</h3><p>Aucun contenu payant complet, donnée client, clé API ou lien sensible n’est exposé publiquement.</p></article>
+        <article class="card quality-card"><h3>Test mobile</h3><p>La lecture, les boutons, les filtres, les cartes et les mentions légales restent clairs sur téléphone.</p></article>
       </div>
     </section>
 
-    <section class="section">
-      <div class="panel section-inner">
-        <div class="section-heading">
-          <h2 class="section-title">Visuels à <span class="gold">ajouter plus tard</span></h2>
-          <p class="section-text">La structure est prête pour accueillir d’autres éléments premium sans devoir refaire toute la page.</p>
+    <section class="page" id="prix">
+      <div class="section-title">
+        <div>
+          <span class="badge">Produits et prix</span>
+          <h2>Chaque prix doit respecter un niveau d’effort pour protéger la rentabilité.</h2>
         </div>
+        <p>Le système reste rentable seulement si les produits simples restent rapides à produire et que les produits plus chers contiennent plus d’outils, de modèles et de structure.</p>
+      </div>
 
-        <div class="future-zone">
-          Emplacements prêts pour ajouter plus tard : un visuel principal, une capture d’écran, une preuve sociale ou une image produit.
-        </div>
+      <div class="grid-4">
+        <article class="card mini-card"><span class="number">5 $</span><h3>Micro-ressource</h3><p>Fiche, checklist ou mini-guide très simple. Effort maximal : 30 à 60 minutes.</p></article>
+        <article class="card mini-card"><span class="number">15 $</span><h3>Mini-formation courte</h3><p>Une méthode claire pour résoudre un problème précis. Effort maximal : 1 à 3 heures.</p></article>
+        <article class="card mini-card"><span class="number">25 $</span><h3>Formation + outil</h3><p>Inclut un modèle, une checklist ou un système utile. Effort maximal : 3 à 6 heures.</p></article>
+        <article class="card mini-card"><span class="number">50 $</span><h3>Mini-système complet</h3><p>Plus complet, réutilisable, avec modèles et plan d’action. Effort maximal : 6 à 12 heures.</p></article>
       </div>
     </section>
 
-    <section class="section">
-      <div class="panel section-inner">
-        <div class="section-heading">
-          <h2 class="cta-title">
-            Tu veux avancer avec plus de <span class="gold">clarté</span> dès maintenant ?
-          </h2>
-          <p class="cta-text">
-            Si tu veux arrêter le flou, mieux structurer tes décisions et repartir sur une base plus solide,
-            tu peux accéder au programme Pilotage financier 12 mois maintenant.
-          </p>
+    <section class="page" id="route">
+      <div class="section-title">
+        <div>
+          <span class="badge">Feuille de route sans chaos</span>
+          <h2>La priorité n’est pas d’ajouter 400 fiches. La priorité est de prouver le parcours complet.</h2>
         </div>
+        <p>Chaque phase doit commencer seulement quand la précédente fonctionne vraiment.</p>
+      </div>
 
-        <div class="cta-bottom-actions">
-          <a href="https://buy.stripe.com/3cI3cn6aA1fhcaWgRecbC00" class="button-primary">
-            Je commence le Pilotage financier
-          </a>
-          <a href="methode.html" class="button-secondary">
-            Voir la méthode
-          </a>
+      <div class="timeline">
+        <article class="card time-item"><strong>72 heures</strong><p>Verrouiller les bases du site : accueil, fiche de vente, lien Stripe, page après paiement, support, conditions et test complet.</p></article>
+        <article class="card time-item"><strong>7 jours</strong><p>Concevoir et publier la première formation officielle : “Utilise l’IA pour sauver 3 heures par semaine”, puis créer 5 contenus courts.</p></article>
+        <article class="card time-item"><strong>14 jours</strong><p>Avoir 3 formations publiées ou presque prêtes, un catalogue simple, une page support et un dashboard minimal.</p></article>
+        <article class="card time-item"><strong>30 jours</strong><p>Avoir 10 formations solides, mesurer les premiers clics et identifier les sujets qui intéressent vraiment.</p></article>
+        <article class="card time-item"><strong>90 jours</strong><p>Automatiser progressivement rapports, alertes, segmentation, réachat, mises à jour et décisions mensuelles.</p></article>
+      </div>
+    </section>
+
+    <section class="page" id="faq">
+      <div class="section-title">
+        <div>
+          <span class="badge">FAQ et clarté commerciale</span>
+          <h2>Réduire les doutes avant l’achat.</h2>
         </div>
+        <p>La FAQ protège la conversion, le support et la confiance.</p>
+      </div>
 
-        <div class="payment-reassurance">
-          <p><strong>Paiement sécurisé par Stripe.</strong></p>
-          <p>Après ton paiement, tu recevras les prochaines étapes pour commencer ton accompagnement.</p>
-          <p>Question avant de commencer ? Écris-moi à : <a href="mailto:lepivotdor@gmail.com">lepivotdor@gmail.com</a></p>
-        </div>
+      <div class="grid-2">
+        <details open><summary>Est-ce que je télécharge toute la formation?</summary><p>Non. La formation principale est prévue pour être consultée dans un accès numérique privé. Certains documents courts, checklists ou modèles peuvent être téléchargeables si nécessaire.</p></details>
+        <details><summary>Est-ce qu’il y a un abonnement?</summary><p>Non. Les mini-formations sont vendues à achat unique. Tu paies une fois pour la formation choisie.</p></details>
+        <details><summary>Est-ce remboursable?</summary><p>La vente est finale dès activation de l’accès. Des exceptions peuvent s’appliquer en cas d’erreur de facturation, de double paiement, de problème technique non corrigé ou d’obligation légale applicable.</p></details>
+        <details><summary>Est-ce que les formations sont mises à jour?</summary><p>Oui. Chaque formation doit afficher une date de création, une dernière mise à jour, une prochaine mise à jour prévue, une version et un statut.</p></details>
+        <details><summary>Est-ce que c’est du coaching?</summary><p>Non. Les formations sont des produits digitaux autonomes. Aucun coaching personnalisé n’est inclus dans l’achat.</p></details>
+        <details><summary>Comment obtenir de l’aide?</summary><p>La page support doit couvrir les problèmes de paiement, accès non reçu, mauvais courriel, problème technique, compensation et escalade à Olivier si nécessaire.</p></details>
+      </div>
+    </section>
 
-        <div class="footer-links">
-          <a href="index.html">Accueil</a>
-          <span>•</span>
-          <a href="./offre.html">Offre</a>
-          <span>•</span>
-          <a href="methode.html">Méthode</a>
-          <span>•</span>
-          <a href="faq.html">FAQ</a>
-          <span>•</span>
-          <a href="contact.html">Contact</a>
-          <span>•</span>
-          <a href="conditions.html">Conditions</a>
-          <span>•</span>
-          <a href="confidentialite.html">Confidentialité</a>
+    <section class="page">
+      <div class="cta-final">
+        <span class="badge">Action officielle de lancement</span>
+        <h2>Termine les bases du site avant de rédiger toute la formation.</h2>
+        <p>La première vraie victoire : une base de site claire, un parcours d’achat testable, une page après paiement, un support simple, puis seulement ensuite la formation complète.</p>
+        <div class="hero-actions" style="justify-content:center;">
+          <a class="btn" href="#formation-vedette">Lancer la formation prioritaire</a>
+          <a class="btn secondary" href="#direction">Voir la zone direction</a>
         </div>
       </div>
     </section>
   </main>
+
+  <footer>
+    <div class="page footer-grid">
+      <div>
+        <strong class="gold">Le Pivot d’Or — Mini Mini Formation</strong><br />
+        Bâtir une vie solide : Vision. Clarté. Discipline. Structure. Constance.<br />
+        Base de travail commerciale et éducative. Les pages légales doivent être validées avant un lancement à grand volume.
+      </div>
+      <div class="footer-links">
+        <a href="conditions.html">Conditions</a>
+        <a href="vente-finale.html">Vente finale</a>
+        <a href="confidentialite.html">Confidentialité</a>
+        <a href="support.html">Support</a>
+        <a class="admin-link" href="dashboard.html">🔒 Admin</a>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    const microFormationTitles = [
+      { c: 'IA', t: 'Utilise l’IA pour sauver 3 heures par semaine' },
+      { c: 'IA', t: 'Organise ta journée avec l’IA' },
+      { c: 'IA', t: 'Crée ton premier assistant IA personnel' },
+      { c: 'IA', t: 'Écris un prompt clair en 5 minutes' },
+      { c: 'IA', t: 'Transforme tes notes en plan d’action' },
+      { c: 'IA', t: 'Crée un mini-système avec l’IA' },
+      { c: 'IA', t: 'Automatise une tâche répétitive simple' },
+      { c: 'IA', t: 'Résume un document sans te perdre' },
+      { c: 'IA', t: 'Crée une checklist avec l’IA' },
+      { c: 'IA', t: 'Prépare une décision avec l’IA' },
+      { c: 'IA', t: 'Crée un plan de contenu avec l’IA' },
+      { c: 'IA', t: 'Écris un email plus vite avec l’IA' },
+      { c: 'IA', t: 'Crée une fiche client avec l’IA' },
+      { c: 'IA', t: 'Transforme une idée floue en plan clair' },
+      { c: 'IA', t: 'Crée une routine IA du matin' },
+      { c: 'IA', t: 'Crée une routine IA du soir' },
+      { c: 'IA', t: 'Utilise l’IA pour clarifier tes priorités' },
+      { c: 'IA', t: 'Crée un script vidéo court avec l’IA' },
+      { c: 'IA', t: 'Prépare une réunion avec l’IA' },
+      { c: 'IA', t: 'Analyse une offre avec l’IA' },
+      { c: 'IA', t: 'Crée un tableau simple avec l’IA' },
+      { c: 'IA', t: 'Structure un projet avec l’IA' },
+      { c: 'IA', t: 'Crée une FAQ avec l’IA' },
+      { c: 'IA', t: 'Écris une page de vente avec l’IA' },
+      { c: 'IA', t: 'Crée un calendrier de contenu avec l’IA' },
+      { c: 'IA', t: 'Utilise l’IA pour mieux apprendre' },
+      { c: 'IA', t: 'Crée un plan d’action 7 jours avec l’IA' },
+      { c: 'IA', t: 'Transforme un problème en checklist' },
+      { c: 'IA', t: 'Crée une méthode simple avec l’IA' },
+      { c: 'IA', t: 'Utilise l’IA sans devenir dépendant' },
+      { c: 'IA', t: 'Crée ton premier agent IA utile' },
+      { c: 'IA', t: 'Rédige une description de produit avec l’IA' },
+      { c: 'IA', t: 'Crée un résumé exécutif avec l’IA' },
+      { c: 'IA', t: 'Prépare un lancement simple avec l’IA' },
+      { c: 'IA', t: 'Crée des idées de formation avec l’IA' },
+      { c: 'IA', t: 'Utilise l’IA pour simplifier tes décisions' },
+      { c: 'IA', t: 'Crée une bibliothèque de prompts utiles' },
+      { c: 'IA', t: 'Évite les erreurs fréquentes avec l’IA' },
+      { c: 'IA', t: 'Crée un système IA pour ton contenu' },
+      { c: 'IA', t: 'Utilise l’IA pour mieux déléguer' },
+      { c: 'IA', t: 'Crée un plan de prospection avec l’IA' },
+      { c: 'IA', t: 'Crée un mini-audit avec l’IA' },
+      { c: 'IA', t: 'Optimise une page web avec l’IA' },
+      { c: 'IA', t: 'Structure un dossier avec l’IA' },
+      { c: 'IA', t: 'Crée un assistant de support simple' },
+      { c: 'IA', t: 'Crée un assistant de vente simple' },
+      { c: 'IA', t: 'Crée un assistant d’organisation personnelle' },
+      { c: 'IA', t: 'Crée une méthode de travail avec l’IA' },
+      { c: 'IA', t: 'Utilise l’IA pour gagner en clarté' },
+      { c: 'IA', t: 'Construis ton premier système IA simple' },
+      { c: 'Productivité', t: 'Organise ta semaine sans surcharge' },
+      { c: 'Productivité', t: 'Planifie ta journée en 10 minutes' },
+      { c: 'Productivité', t: 'Choisis tes 3 priorités du jour' },
+      { c: 'Productivité', t: 'Crée une routine de travail stable' },
+      { c: 'Productivité', t: 'Nettoie ton agenda sans stress' },
+      { c: 'Productivité', t: 'Réduis les distractions visibles' },
+      { c: 'Productivité', t: 'Crée une méthode de focus simple' },
+      { c: 'Productivité', t: 'Termine ce que tu commences' },
+      { c: 'Productivité', t: 'Transforme tes idées en actions' },
+      { c: 'Productivité', t: 'Crée une liste de tâches utile' },
+      { c: 'Productivité', t: 'Arrête de tout commencer en même temps' },
+      { c: 'Productivité', t: 'Structure ton lundi matin' },
+      { c: 'Productivité', t: 'Prépare ta semaine le dimanche' },
+      { c: 'Productivité', t: 'Crée un système anti-procrastination' },
+      { c: 'Productivité', t: 'Réduis le bruit mental' },
+      { c: 'Productivité', t: 'Planifie tes blocs de concentration' },
+      { c: 'Productivité', t: 'Crée ton tableau de bord personnel' },
+      { c: 'Productivité', t: 'Choisis quoi faire maintenant' },
+      { c: 'Productivité', t: 'Classe tes tâches par énergie' },
+      { c: 'Productivité', t: 'Crée une routine de fermeture' },
+      { c: 'Productivité', t: 'Protège tes heures importantes' },
+      { c: 'Productivité', t: 'Prépare ta journée avant de dormir' },
+      { c: 'Productivité', t: 'Crée une méthode de décision rapide' },
+      { c: 'Productivité', t: 'Évite les fausses urgences' },
+      { c: 'Productivité', t: 'Réduis les tâches inutiles' },
+      { c: 'Productivité', t: 'Crée un système de suivi simple' },
+      { c: 'Productivité', t: 'Fais ton bilan hebdomadaire' },
+      { c: 'Productivité', t: 'Priorise avec la méthode 80/20' },
+      { c: 'Productivité', t: 'Crée une routine de 15 minutes' },
+      { c: 'Productivité', t: 'Reprends le contrôle de ton temps' },
+      { c: 'Productivité', t: 'Clarifie tes objectifs de la semaine' },
+      { c: 'Productivité', t: 'Crée un système de rappel utile' },
+      { c: 'Productivité', t: 'Allège ta charge mentale' },
+      { c: 'Productivité', t: 'Fais avancer un projet bloqué' },
+      { c: 'Productivité', t: 'Crée une méthode de tri rapide' },
+      { c: 'Productivité', t: 'Structure ton espace numérique' },
+      { c: 'Productivité', t: 'Réduis les notifications inutiles' },
+      { c: 'Productivité', t: 'Crée un rituel de concentration' },
+      { c: 'Productivité', t: 'Planifie sans te surcharger' },
+      { c: 'Productivité', t: 'Découpe un gros projet en étapes' },
+      { c: 'Productivité', t: 'Crée une checklist de fin de journée' },
+      { c: 'Productivité', t: 'Optimise tes matinées' },
+      { c: 'Productivité', t: 'Optimise tes soirées' },
+      { c: 'Productivité', t: 'Crée un système pour rester constant' },
+      { c: 'Productivité', t: 'Avance même quand tu n’es pas motivé' },
+      { c: 'Productivité', t: 'Évite le piège d’être occupé' },
+      { c: 'Productivité', t: 'Fais moins mais mieux' },
+      { c: 'Productivité', t: 'Reprends une semaine chaotique' },
+      { c: 'Productivité', t: 'Crée ta méthode de productivité personnelle' },
+      { c: 'Productivité', t: 'Installe une discipline simple' },
+      { c: 'Apprentissage', t: 'Apprends plus vite avec une méthode simple' },
+      { c: 'Apprentissage', t: 'Transforme un livre en plan d’action' },
+      { c: 'Apprentissage', t: 'Prends des notes qui servent vraiment' },
+      { c: 'Apprentissage', t: 'Mémorise l’essentiel sans surcharge' },
+      { c: 'Apprentissage', t: 'Crée une fiche de révision claire' },
+      { c: 'Apprentissage', t: 'Apprends une compétence en 7 jours' },
+      { c: 'Apprentissage', t: 'Décompose une compétence difficile' },
+      { c: 'Apprentissage', t: 'Crée ton plan d’apprentissage personnel' },
+      { c: 'Apprentissage', t: 'Évite l’apprentissage passif' },
+      { c: 'Apprentissage', t: 'Applique ce que tu apprends rapidement' },
+      { c: 'Apprentissage', t: 'Crée une routine d’étude légère' },
+      { c: 'Apprentissage', t: 'Résume une formation en actions' },
+      { c: 'Apprentissage', t: 'Pose de meilleures questions' },
+      { c: 'Apprentissage', t: 'Crée une carte mentale simple' },
+      { c: 'Apprentissage', t: 'Apprends avec des exemples concrets' },
+      { c: 'Apprentissage', t: 'Transforme une vidéo en checklist' },
+      { c: 'Apprentissage', t: 'Retiens mieux avec la répétition simple' },
+      { c: 'Apprentissage', t: 'Crée ton carnet de progression' },
+      { c: 'Apprentissage', t: 'Apprends sans te disperser' },
+      { c: 'Apprentissage', t: 'Choisis quoi apprendre maintenant' },
+      { c: 'Apprentissage', t: 'Crée un parcours débutant clair' },
+      { c: 'Apprentissage', t: 'Évalue ton niveau sans te mentir' },
+      { c: 'Apprentissage', t: 'Utilise l’IA pour mieux comprendre' },
+      { c: 'Apprentissage', t: 'Crée un glossaire personnel' },
+      { c: 'Apprentissage', t: 'Apprends à expliquer simplement' },
+      { c: 'Apprentissage', t: 'Transforme un sujet flou en structure' },
+      { c: 'Apprentissage', t: 'Révise en 15 minutes par jour' },
+      { c: 'Apprentissage', t: 'Crée une méthode de lecture active' },
+      { c: 'Apprentissage', t: 'Apprends en construisant un mini-projet' },
+      { c: 'Apprentissage', t: 'Crée un système de pratique' },
+      { c: 'Apprentissage', t: 'Apprends une notion complexe simplement' },
+      { c: 'Apprentissage', t: 'Prépare un test ou une évaluation' },
+      { c: 'Apprentissage', t: 'Crée une banque d’exemples' },
+      { c: 'Apprentissage', t: 'Apprends avec la méthode question-réponse' },
+      { c: 'Apprentissage', t: 'Évite la surcharge d’information' },
+      { c: 'Apprentissage', t: 'Crée un plan de 30 jours' },
+      { c: 'Apprentissage', t: 'Mesure tes progrès d’apprentissage' },
+      { c: 'Apprentissage', t: 'Apprends à partir de tes erreurs' },
+      { c: 'Apprentissage', t: 'Crée une routine de curiosité utile' },
+      { c: 'Apprentissage', t: 'Structure une compétence professionnelle' },
+      { c: 'Apprentissage', t: 'Apprends sans retourner à l’école longtemps' },
+      { c: 'Apprentissage', t: 'Crée un résumé exécutif d’un sujet' },
+      { c: 'Apprentissage', t: 'Apprends avec des mini-défis' },
+      { c: 'Apprentissage', t: 'Crée un système de validation rapide' },
+      { c: 'Apprentissage', t: 'Passe de comprendre à pratiquer' },
+      { c: 'Apprentissage', t: 'Apprends une compétence rentable' },
+      { c: 'Apprentissage', t: 'Crée ton tableau de compétences' },
+      { c: 'Apprentissage', t: 'Choisis les bonnes ressources' },
+      { c: 'Apprentissage', t: 'Évite d’accumuler des formations inutiles' },
+      { c: 'Apprentissage', t: 'Construis ton système d’apprentissage' },
+      { c: 'Business', t: 'Crée une offre claire en 60 minutes' },
+      { c: 'Business', t: 'Écris une page de vente simple' },
+      { c: 'Business', t: 'Trouve une idée de produit digital rentable' },
+      { c: 'Business', t: 'Crée une mini-formation vendable' },
+      { c: 'Business', t: 'Lance une offre à petit prix' },
+      { c: 'Business', t: 'Clarifie ton client idéal' },
+      { c: 'Business', t: 'Transforme une compétence en produit' },
+      { c: 'Business', t: 'Crée une promesse réaliste' },
+      { c: 'Business', t: 'Écris un message de vente calme' },
+      { c: 'Business', t: 'Crée ton premier tunnel simple' },
+      { c: 'Business', t: 'Structure une offre à 15 $' },
+      { c: 'Business', t: 'Structure une offre à 25 $' },
+      { c: 'Business', t: 'Structure une offre à 50 $' },
+      { c: 'Business', t: 'Crée un catalogue minimal rentable' },
+      { c: 'Business', t: 'Évite les offres trop compliquées' },
+      { c: 'Business', t: 'Prépare ton premier lancement' },
+      { c: 'Business', t: 'Crée une fiche produit claire' },
+      { c: 'Business', t: 'Écris une FAQ qui vend' },
+      { c: 'Business', t: 'Réponds aux objections simplement' },
+      { c: 'Business', t: 'Crée une séquence email courte' },
+      { c: 'Business', t: 'Crée une routine de contenu business' },
+      { c: 'Business', t: 'Trouve un angle de vente simple' },
+      { c: 'Business', t: 'Crée une offre sans coaching' },
+      { c: 'Business', t: 'Vends un produit digital autonome' },
+      { c: 'Business', t: 'Crée une preuve de méthode' },
+      { c: 'Business', t: 'Teste une idée avant de construire trop' },
+      { c: 'Business', t: 'Calcule l’effort rentable d’un produit' },
+      { c: 'Business', t: 'Crée un mini-kit marketing' },
+      { c: 'Business', t: 'Transforme un problème client en formation' },
+      { c: 'Business', t: 'Crée une page merci efficace' },
+      { c: 'Business', t: 'Crée une page support rassurante' },
+      { c: 'Business', t: 'Prépare un prix cohérent' },
+      { c: 'Business', t: 'Crée une stratégie de réachat' },
+      { c: 'Business', t: 'Crée une recommandation de formation suivante' },
+      { c: 'Business', t: 'Améliore une offre faible' },
+      { c: 'Business', t: 'Retire une offre non rentable' },
+      { c: 'Business', t: 'Analyse une catégorie rentable' },
+      { c: 'Business', t: 'Crée une promesse sans garantie excessive' },
+      { c: 'Business', t: 'Crée une offre avec l’IA' },
+      { c: 'Business', t: 'Structure ton système de vente simple' },
+      { c: 'Business', t: 'Crée une routine de prospection propre' },
+      { c: 'Business', t: 'Écris un DM professionnel' },
+      { c: 'Business', t: 'Crée une publication qui attire' },
+      { c: 'Business', t: 'Crée un script vidéo de vente doux' },
+      { c: 'Business', t: 'Prépare un mini-lancement 7 jours' },
+      { c: 'Business', t: 'Mesure clics et ventes simplement' },
+      { c: 'Business', t: 'Crée une stratégie de contenu evergreen' },
+      { c: 'Business', t: 'Construis une marque utile et claire' },
+      { c: 'Business', t: 'Crée un système de vente sobre' },
+      { c: 'Business', t: 'Passe d’idée à produit publié' },
+      { c: 'Finances', t: 'Structure ton budget simple' },
+      { c: 'Finances', t: 'Dis non pour libérer plus d’argent' },
+      { c: 'Finances', t: 'Clarifie tes dépenses essentielles' },
+      { c: 'Finances', t: 'Crée une routine financière hebdomadaire' },
+      { c: 'Finances', t: 'Comprends où part ton argent' },
+      { c: 'Finances', t: 'Réduis une dépense inutile' },
+      { c: 'Finances', t: 'Crée ton tableau de clarté financière' },
+      { c: 'Finances', t: 'Prépare une décision d’achat' },
+      { c: 'Finances', t: 'Évite les achats impulsifs' },
+      { c: 'Finances', t: 'Crée une règle d’argent simple' },
+      { c: 'Finances', t: 'Organise tes factures' },
+      { c: 'Finances', t: 'Crée une réserve de sécurité' },
+      { c: 'Finances', t: 'Comprends la différence besoin et désir' },
+      { c: 'Finances', t: 'Planifie un objectif financier réaliste' },
+      { c: 'Finances', t: 'Crée une méthode 50-30-20 simple' },
+      { c: 'Finances', t: 'Fais un bilan financier mensuel' },
+      { c: 'Finances', t: 'Identifie tes fuites d’argent' },
+      { c: 'Finances', t: 'Crée une liste anti-dépenses' },
+      { c: 'Finances', t: 'Prépare une conversation d’argent' },
+      { c: 'Finances', t: 'Évite la comparaison financière' },
+      { c: 'Finances', t: 'Crée une routine de paiement calme' },
+      { c: 'Finances', t: 'Classe tes dettes avec prudence' },
+      { c: 'Finances', t: 'Crée un plan de réduction de stress financier' },
+      { c: 'Finances', t: 'Comprends les bases d’un budget' },
+      { c: 'Finances', t: 'Évalue une dépense récurrente' },
+      { c: 'Finances', t: 'Crée un système de suivi des revenus' },
+      { c: 'Finances', t: 'Crée un système de suivi des dépenses' },
+      { c: 'Finances', t: 'Planifie un achat important' },
+      { c: 'Finances', t: 'Protège ton argent des décisions rapides' },
+      { c: 'Finances', t: 'Crée une règle de délai avant achat' },
+      { c: 'Finances', t: 'Développe une discipline financière simple' },
+      { c: 'Finances', t: 'Crée ton mini-bilan du dimanche' },
+      { c: 'Finances', t: 'Comprends les biais cognitifs de l’argent' },
+      { c: 'Finances', t: 'Réduis la pression sociale financière' },
+      { c: 'Finances', t: 'Crée une vision financière sur 12 mois' },
+      { c: 'Finances', t: 'Prépare une première discussion avec un professionnel' },
+      { c: 'Finances', t: 'Comprends ce qui est éducatif et non personnalisé' },
+      { c: 'Finances', t: 'Crée une checklist avant investissement' },
+      { c: 'Finances', t: 'Crée une checklist avant abonnement' },
+      { c: 'Finances', t: 'Analyse le coût réel d’un service' },
+      { c: 'Finances', t: 'Crée une méthode de priorisation financière' },
+      { c: 'Finances', t: 'Reprends ta clarté après une erreur' },
+      { c: 'Finances', t: 'Crée un plan anti-surconsommation' },
+      { c: 'Finances', t: 'Organise tes documents financiers' },
+      { c: 'Finances', t: 'Crée une routine d’épargne simple' },
+      { c: 'Finances', t: 'Comprends le coût de l’inaction' },
+      { c: 'Finances', t: 'Crée un plan de stabilité financière' },
+      { c: 'Finances', t: 'Réduis le stress avant le paiement des factures' },
+      { c: 'Finances', t: 'Clarifie ton prochain petit pas financier' },
+      { c: 'Finances', t: 'Bâtis une structure financière plus calme' },
+      { c: 'Relations', t: 'Pose une limite personnelle claire' },
+      { c: 'Relations', t: 'Prépare une conversation difficile' },
+      { c: 'Relations', t: 'Communique sans t’écraser' },
+      { c: 'Relations', t: 'Dis non sans culpabilité excessive' },
+      { c: 'Relations', t: 'Protège ton énergie relationnelle' },
+      { c: 'Relations', t: 'Reconnais une relation drainante' },
+      { c: 'Relations', t: 'Crée une routine de respect personnel' },
+      { c: 'Relations', t: 'Clarifie ce que tu veux dire' },
+      { c: 'Relations', t: 'Évite les réponses impulsives' },
+      { c: 'Relations', t: 'Écris un message calme' },
+      { c: 'Relations', t: 'Prépare une demande simple' },
+      { c: 'Relations', t: 'Crée une frontière saine' },
+      { c: 'Relations', t: 'Identifie tes besoins relationnels' },
+      { c: 'Relations', t: 'Évite le piège de plaire à tout le monde' },
+      { c: 'Relations', t: 'Reprends ton calme avant de répondre' },
+      { c: 'Relations', t: 'Crée un espace de discussion sain' },
+      { c: 'Relations', t: 'Comprends tes réactions automatiques' },
+      { c: 'Relations', t: 'Réduis les conflits inutiles' },
+      { c: 'Relations', t: 'Améliore ton écoute' },
+      { c: 'Relations', t: 'Exprime un désaccord avec respect' },
+      { c: 'Relations', t: 'Crée un système de communication simple' },
+      { c: 'Relations', t: 'Répare une petite tension' },
+      { c: 'Relations', t: 'Prépare une excuse responsable' },
+      { c: 'Relations', t: 'Clarifie une attente' },
+      { c: 'Relations', t: 'Évite les promesses floues' },
+      { c: 'Relations', t: 'Crée une règle de communication familiale' },
+      { c: 'Relations', t: 'Protège ton temps personnel' },
+      { c: 'Relations', t: 'Crée une routine de présence' },
+      { c: 'Relations', t: 'Évite les conversations au mauvais moment' },
+      { c: 'Relations', t: 'Dis ce que tu veux clairement' },
+      { c: 'Relations', t: 'Réduis la comparaison silencieuse' },
+      { c: 'Relations', t: 'Crée une liste de valeurs relationnelles' },
+      { c: 'Relations', t: 'Apprends à demander de l’aide' },
+      { c: 'Relations', t: 'Pose une limite au travail' },
+      { c: 'Relations', t: 'Pose une limite en famille' },
+      { c: 'Relations', t: 'Pose une limite en couple' },
+      { c: 'Relations', t: 'Reconnais tes signaux de fatigue sociale' },
+      { c: 'Relations', t: 'Crée une méthode de recul émotionnel' },
+      { c: 'Relations', t: 'Choisis tes relations prioritaires' },
+      { c: 'Relations', t: 'Évite les relations uniquement par obligation' },
+      { c: 'Relations', t: 'Clarifie une amitié confuse' },
+      { c: 'Relations', t: 'Prépare une conversation de vérité' },
+      { c: 'Relations', t: 'Crée un plan après un conflit' },
+      { c: 'Relations', t: 'Reviens à la simplicité dans tes relations' },
+      { c: 'Relations', t: 'Développe une posture plus calme' },
+      { c: 'Relations', t: 'Évite les malentendus numériques' },
+      { c: 'Relations', t: 'Crée une règle pour les messages difficiles' },
+      { c: 'Relations', t: 'Protège ta paix sans devenir froid' },
+      { c: 'Relations', t: 'Améliore ta confiance relationnelle' },
+      { c: 'Relations', t: 'Bâtis des relations plus solides' },
+      { c: 'Bonheur', t: 'Reviens à l’essentiel en 10 minutes' },
+      { c: 'Bonheur', t: 'Crée une routine de gratitude simple' },
+      { c: 'Bonheur', t: 'Ralentis pour accélérer' },
+      { c: 'Bonheur', t: 'Clarifie ce qui te fait du bien' },
+      { c: 'Bonheur', t: 'Crée un moment de silence quotidien' },
+      { c: 'Bonheur', t: 'Réduis la comparaison silencieuse' },
+      { c: 'Bonheur', t: 'Crée une liste de petites victoires' },
+      { c: 'Bonheur', t: 'Retrouve une direction simple' },
+      { c: 'Bonheur', t: 'Crée une routine de recentrage' },
+      { c: 'Bonheur', t: 'Respire avant de décider' },
+      { c: 'Bonheur', t: 'Écris ton mini-bilan du soir' },
+      { c: 'Bonheur', t: 'Crée une journée plus légère' },
+      { c: 'Bonheur', t: 'Choisis une joie simple' },
+      { c: 'Bonheur', t: 'Évite le piège du toujours plus' },
+      { c: 'Bonheur', t: 'Crée une pause sans écran' },
+      { c: 'Bonheur', t: 'Identifie ce qui t’alourdit' },
+      { c: 'Bonheur', t: 'Retrouve le goût d’avancer' },
+      { c: 'Bonheur', t: 'Crée un rituel de paix intérieure' },
+      { c: 'Bonheur', t: 'Clarifie tes valeurs de vie' },
+      { c: 'Bonheur', t: 'Fais de la place au calme' },
+      { c: 'Bonheur', t: 'Crée une prière ou intention simple' },
+      { c: 'Bonheur', t: 'Pratique le pardon sans te nier' },
+      { c: 'Bonheur', t: 'Crée une action de service simple' },
+      { c: 'Bonheur', t: 'Reviens à la vérité intérieure' },
+      { c: 'Bonheur', t: 'Structure une journée alignée' },
+      { c: 'Bonheur', t: 'Crée une routine anti-chaos' },
+      { c: 'Bonheur', t: 'Évite de remplir le vide par achat' },
+      { c: 'Bonheur', t: 'Crée une vision de vie plus solide' },
+      { c: 'Bonheur', t: 'Développe une gratitude de 1 minute' },
+      { c: 'Bonheur', t: 'Retrouve ton énergie après une semaine lourde' },
+      { c: 'Bonheur', t: 'Crée un espace personnel calme' },
+      { c: 'Bonheur', t: 'Écris 20 questions pour mieux te comprendre' },
+      { c: 'Bonheur', t: 'Crée un plan de bonheur réaliste' },
+      { c: 'Bonheur', t: 'Allège une décision de vie' },
+      { c: 'Bonheur', t: 'Réduis le bruit intérieur' },
+      { c: 'Bonheur', t: 'Crée une routine du dimanche soir' },
+      { c: 'Bonheur', t: 'Reprends confiance par petites actions' },
+      { c: 'Bonheur', t: 'Crée une liste de choses à arrêter' },
+      { c: 'Bonheur', t: 'Reviens à la simplicité volontaire' },
+      { c: 'Bonheur', t: 'Crée une journée de reconstruction' },
+      { c: 'Bonheur', t: 'Apprends à apprécier le progrès lent' },
+      { c: 'Bonheur', t: 'Crée ton tableau de clarté personnelle' },
+      { c: 'Bonheur', t: 'Évite la course à l’apparence' },
+      { c: 'Bonheur', t: 'Choisis être plutôt que paraître' },
+      { c: 'Bonheur', t: 'Crée un moment de vérité quotidien' },
+      { c: 'Bonheur', t: 'Reviens au corps et au calme' },
+      { c: 'Bonheur', t: 'Retrouve une petite motivation' },
+      { c: 'Bonheur', t: 'Crée une routine de stabilité émotionnelle' },
+      { c: 'Bonheur', t: 'Avance avec patience' },
+      { c: 'Bonheur', t: 'Bâtis une vie plus solide' },
+      { c: 'Santé', t: 'Crée une routine santé de 10 minutes' },
+      { c: 'Santé', t: 'Améliore ton sommeil avec une structure simple' },
+      { c: 'Santé', t: 'Prépare une marche quotidienne réaliste' },
+      { c: 'Santé', t: 'Crée une routine d’hydratation' },
+      { c: 'Santé', t: 'Planifie des repas simples' },
+      { c: 'Santé', t: 'Réduis la surcharge alimentaire' },
+      { c: 'Santé', t: 'Crée une liste d’épicerie efficace' },
+      { c: 'Santé', t: 'Installe une habitude d’entraînement légère' },
+      { c: 'Santé', t: 'Prépare ton environnement santé' },
+      { c: 'Santé', t: 'Crée une routine d’étirement simple' },
+      { c: 'Santé', t: 'Évite le tout ou rien en santé' },
+      { c: 'Santé', t: 'Reprends ton énergie par petites actions' },
+      { c: 'Santé', t: 'Crée une routine de respiration' },
+      { c: 'Santé', t: 'Planifie une semaine plus active' },
+      { c: 'Santé', t: 'Réduis les écrans avant le sommeil' },
+      { c: 'Santé', t: 'Crée une routine de récupération' },
+      { c: 'Santé', t: 'Organise tes repas de base' },
+      { c: 'Santé', t: 'Crée une checklist santé hebdomadaire' },
+      { c: 'Santé', t: 'Écoute tes signaux de fatigue' },
+      { c: 'Santé', t: 'Crée un plan de retour progressif' },
+      { c: 'Santé', t: 'Évite les objectifs irréalistes' },
+      { c: 'Santé', t: 'Crée une routine matinale douce' },
+      { c: 'Santé', t: 'Crée une routine du soir apaisante' },
+      { c: 'Santé', t: 'Prépare une journée plus stable' },
+      { c: 'Santé', t: 'Crée un suivi simple de ton énergie' },
+      { c: 'Santé', t: 'Installe une habitude de mouvement' },
+      { c: 'Santé', t: 'Prépare un repas simple et solide' },
+      { c: 'Santé', t: 'Réduis les décisions santé inutiles' },
+      { c: 'Santé', t: 'Crée une routine anti-surcharge' },
+      { c: 'Santé', t: 'Fais un mini-bilan de ton énergie' },
+      { c: 'Santé', t: 'Planifie une pause active' },
+      { c: 'Santé', t: 'Crée un rituel de récupération mentale' },
+      { c: 'Santé', t: 'Structure ton environnement de sommeil' },
+      { c: 'Santé', t: 'Évite la comparaison physique' },
+      { c: 'Santé', t: 'Crée une routine de marche consciente' },
+      { c: 'Santé', t: 'Prépare une semaine avec plus d’énergie' },
+      { c: 'Santé', t: 'Installe une règle simple de constance' },
+      { c: 'Santé', t: 'Crée une liste de repas faciles' },
+      { c: 'Santé', t: 'Réduis les obstacles à l’entraînement' },
+      { c: 'Santé', t: 'Crée un système de santé réaliste' },
+      { c: 'Santé', t: 'Améliore ton énergie sans extrême' },
+      { c: 'Santé', t: 'Crée une routine de respiration avant stress' },
+      { c: 'Santé', t: 'Planifie une habitude sur 7 jours' },
+      { c: 'Santé', t: 'Crée un suivi doux sans obsession' },
+      { c: 'Santé', t: 'Prépare un retour au calme' },
+      { c: 'Santé', t: 'Choisis une seule habitude santé' },
+      { c: 'Santé', t: 'Évite les promesses santé excessives' },
+      { c: 'Santé', t: 'Crée une routine sécuritaire et générale' },
+      { c: 'Santé', t: 'Respecte ton rythme sans abandonner' },
+      { c: 'Santé', t: 'Bâtis une base santé plus solide' }
+    ];
+
+    const microGrid = document.getElementById('microFormationGrid');
+
+    const categoryOrder = ['IA', 'Productivité', 'Apprentissage', 'Business', 'Finances', 'Relations', 'Bonheur', 'Santé'];
+
+    if (microGrid) {
+      categoryOrder.forEach(category => {
+        const column = document.createElement('section');
+        column.className = 'micro-category-column';
+        column.dataset.category = category;
+
+        const button = document.createElement('button');
+        button.className = 'micro-category-button';
+        button.type = 'button';
+        button.dataset.categoryFilter = category;
+        button.innerHTML = `${category}<span class="micro-counter">50 formations</span>`;
+
+        const list = document.createElement('div');
+        list.className = 'micro-column-list';
+
+        microFormationTitles
+          .filter(item => item.c === category)
+          .forEach(item => {
+            const tile = document.createElement('article');
+            tile.className = 'micro-title-card';
+            tile.dataset.category = item.c;
+            tile.dataset.title = item.t;
+            tile.textContent = item.t;
+            list.appendChild(tile);
+          });
+
+        column.appendChild(button);
+        column.appendChild(list);
+        microGrid.appendChild(column);
+      });
+    }
+
+    const filterButtons = document.querySelectorAll('.filter-btn');
+    const cards = document.querySelectorAll('.formation-card');
+    const microCards = document.querySelectorAll('.micro-title-card');
+    const microColumns = document.querySelectorAll('.micro-category-column');
+    const microCategoryButtons = document.querySelectorAll('.micro-category-button');
+    const searchInput = document.getElementById('searchInput');
+    const categoryCards = document.querySelectorAll('[data-category-link]');
+
+    let activeFilter = 'all';
+
+    function normalize(text) {
+      return text.toLowerCase().normalize('NFD').replace(/[̀-ͯ]/g, '');
+    }
+
+    function applyFilters() {
+      const query = normalize(searchInput ? searchInput.value : '');
+      cards.forEach(card => {
+        const category = card.dataset.category;
+        const title = normalize(card.dataset.title || card.textContent);
+        const matchesFilter = activeFilter === 'all' || category === activeFilter;
+        const matchesSearch = !query || title.includes(query) || normalize(category).includes(query);
+        card.style.display = matchesFilter && matchesSearch ? 'flex' : 'none';
+      });
+
+      microCards.forEach(card => {
+        const category = card.dataset.category;
+        const title = normalize(card.dataset.title || card.textContent);
+        const matchesFilter = activeFilter === 'all' || category === activeFilter;
+        const matchesSearch = !query || title.includes(query) || normalize(category).includes(query);
+        card.classList.toggle('hide', !(matchesFilter && matchesSearch));
+      });
+
+      microColumns.forEach(column => {
+        const category = column.dataset.category;
+        const matchesFilter = activeFilter === 'all' || category === activeFilter;
+        const visibleCards = column.querySelectorAll('.micro-title-card:not(.hide)').length;
+        const counter = column.querySelector('.micro-counter');
+
+        column.classList.toggle('hide', !(matchesFilter && visibleCards > 0));
+        if (counter) {
+          counter.textContent = activeFilter === 'all' && !query ? '50 formations' : `${visibleCards} visibles`;
+        }
+      });
+    }
+
+    filterButtons.forEach(button => {
+      button.addEventListener('click', () => {
+        activeFilter = button.dataset.filter;
+        filterButtons.forEach(btn => btn.classList.remove('active'));
+        button.classList.add('active');
+        applyFilters();
+      });
+    });
+
+    if (searchInput) {
+      searchInput.addEventListener('input', applyFilters);
+    }
+
+    microCategoryButtons.forEach(button => {
+      button.addEventListener('click', () => {
+        activeFilter = button.dataset.categoryFilter;
+        filterButtons.forEach(btn => {
+          btn.classList.toggle('active', btn.dataset.filter === activeFilter);
+        });
+        applyFilters();
+      });
+    });
+
+    categoryCards.forEach(card => {
+      card.addEventListener('click', () => {
+        activeFilter = card.dataset.categoryLink;
+        filterButtons.forEach(btn => {
+          btn.classList.toggle('active', btn.dataset.filter === activeFilter);
+        });
+        scrollToSection('catalogue-400');
+        applyFilters();
+      });
+    });
+
+    function scrollToSection(id) {
+      const target = document.getElementById(id);
+      if (!target) return;
+
+      const header = document.querySelector('header');
+      const headerHeight = header ? header.offsetHeight : 0;
+      const extraSpace = 18;
+      const targetPosition = target.getBoundingClientRect().top + window.pageYOffset - headerHeight - extraSpace;
+
+      window.scrollTo({
+        top: Math.max(targetPosition, 0),
+        behavior: 'smooth'
+      });
+    }
+
+    document.querySelectorAll('a[href^="#"]').forEach(link => {
+      link.addEventListener('click', event => {
+        const id = link.getAttribute('href').replace('#', '');
+        const target = document.getElementById(id);
+
+        if (!target) return;
+
+        event.preventDefault();
+        scrollToSection(id);
+        history.replaceState(null, '', `#${id}`);
+      });
+    });
+  </script>
 </body>
 </html>
