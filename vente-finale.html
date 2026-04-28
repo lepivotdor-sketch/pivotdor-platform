@@ -1,0 +1,891 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Vente finale | Mini Mini Formation IA | Le Pivot d’Or</title>
+  <meta name="description" content="Politique de vente finale Le Pivot d’Or pour les mini-formations IA : achat unique, accès numérique privé, exceptions, support client et compensation possible." />
+  <meta name="theme-color" content="#d8c5a6" />
+  <meta name="robots" content="index, follow" />
+  <meta property="og:title" content="Vente finale | Le Pivot d’Or" />
+  <meta property="og:description" content="Règles claires pour les achats numériques Le Pivot d’Or : accès privé, vente finale, support et exceptions possibles." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://lepivotdor-sketch.github.io/pivotdor-platform/vente-finale.html" />
+  <meta name="twitter:card" content="summary" />
+
+  <link rel="icon" href="assets/logo/logo.png" />
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="stylesheet" href="css/responsive.css" />
+  <link rel="preload" href="assets/sounds/click.mp3" as="audio" />
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebPage",
+    "name": "Vente finale | Le Pivot d’Or",
+    "description": "Politique de vente finale pour les produits digitaux autonomes Le Pivot d’Or.",
+    "url": "https://lepivotdor-sketch.github.io/pivotdor-platform/vente-finale.html",
+    "publisher": {
+      "@type": "Organization",
+      "name": "Le Pivot d’Or"
+    }
+  }
+  </script>
+
+  <style>
+    :root {
+      --fond: #d8c5a6;
+      --fond-2: #e4d4b9;
+      --fond-3: #c9b38e;
+      --carte: rgba(229, 214, 190, 0.95);
+      --carte-2: rgba(214, 195, 163, 0.9);
+      --texte: #21180f;
+      --texte-2: #4f4638;
+      --muted: #746957;
+      --or: #b9862f;
+      --or-2: #8a5f1d;
+      --vert: #2f7d46;
+      --rouge: #b84242;
+      --bleu: #235f92;
+      --mauve: #73528a;
+      --ligne: rgba(28, 22, 14, 0.34);
+      --ombre: 0 24px 60px rgba(74, 51, 19, 0.16);
+      --ombre-douce: 0 16px 36px rgba(74, 51, 19, 0.11);
+      --radius: 28px;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: Aptos, Arial, sans-serif;
+      color: var(--texte);
+      line-height: 1.6;
+      min-height: 100vh;
+      background:
+        radial-gradient(circle at top left, rgba(240, 209, 138, 0.34), transparent 31%),
+        radial-gradient(circle at 78% 8%, rgba(185, 134, 47, 0.16), transparent 28%),
+        linear-gradient(135deg, var(--fond-2) 0%, var(--fond) 52%, var(--fond-3) 100%);
+    }
+
+    a { color: inherit; text-decoration: none; }
+    button, input, textarea, select { font: inherit; }
+    button { cursor: pointer; }
+
+    .skip-link {
+      position: absolute;
+      left: -999px;
+      top: 12px;
+      z-index: 1000;
+      padding: 10px 14px;
+      border-radius: 999px;
+      background: #21180f;
+      color: #f7ead0;
+      font-weight: 950;
+    }
+
+    .skip-link:focus { left: 12px; }
+
+    .page { width: min(1120px, 92%); margin: 0 auto; }
+
+    .topbar {
+      font-size: 0.86rem;
+      color: var(--texte-2);
+      background: rgba(199, 178, 142, 0.78);
+      border-bottom: 1px solid var(--ligne);
+      padding: 9px 0;
+    }
+
+    .topbar .page {
+      display: flex;
+      justify-content: space-between;
+      gap: 14px;
+      flex-wrap: wrap;
+      align-items: center;
+    }
+
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 50;
+      background: rgba(224, 208, 180, 0.94);
+      backdrop-filter: blur(18px);
+      border-bottom: 1px solid var(--ligne);
+    }
+
+    .nav {
+      min-height: 78px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 24px;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      min-width: 245px;
+    }
+
+    .brand-mark {
+      width: 54px;
+      height: 54px;
+      border-radius: 16px;
+      display: grid;
+      place-items: center;
+      background: linear-gradient(135deg, #120c05, #2b2115 48%, #8a5f1d);
+      color: #f7ead0;
+      font-weight: 950;
+      box-shadow: 0 14px 30px rgba(113, 77, 24, 0.22);
+      border: 1.5px solid rgba(185, 134, 47, 0.44);
+      overflow: hidden;
+      flex: 0 0 auto;
+      position: relative;
+    }
+
+    .brand-mark::after {
+      content: "PO";
+      position: absolute;
+      inset: 0;
+      display: grid;
+      place-items: center;
+      color: #f7ead0;
+      font-weight: 950;
+      font-size: 0.9rem;
+      pointer-events: none;
+      opacity: 1;
+    }
+
+    .brand-mark.has-logo::after { opacity: 0; }
+
+    .brand-logo {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+      display: block;
+      padding: 4px;
+      border-radius: 14px;
+      position: relative;
+      z-index: 1;
+    }
+
+    .brand strong {
+      display: block;
+      color: var(--or-2);
+      font-size: 1.1rem;
+      letter-spacing: 0.2px;
+    }
+
+    .brand span {
+      display: block;
+      color: var(--muted);
+      font-size: 0.8rem;
+      margin-top: 1px;
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      flex-wrap: wrap;
+      justify-content: flex-end;
+    }
+
+    .nav-links a:not(.btn) {
+      color: var(--texte-2);
+      font-size: 0.92rem;
+      font-weight: 850;
+    }
+
+    .nav-links a:not(.btn):hover { color: var(--or-2); }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      min-height: 42px;
+      padding: 12px 18px;
+      border-radius: 999px;
+      border: 1.5px solid rgba(80, 52, 15, 0.22);
+      background: linear-gradient(135deg, var(--or), #8d6021);
+      color: #1d1308;
+      font-weight: 950;
+      text-align: center;
+      box-shadow: 0 15px 32px rgba(139, 95, 31, 0.18);
+      transition: transform 0.18s ease, box-shadow 0.18s ease;
+    }
+
+    .btn:hover, .btn:focus-visible {
+      transform: translateY(-2px);
+      box-shadow: 0 20px 42px rgba(139, 95, 31, 0.24);
+      outline: none;
+    }
+
+    .btn.secondary {
+      background: rgba(221, 204, 174, 0.64);
+      color: var(--or-2);
+      border: 1.5px solid rgba(28, 22, 14, 0.38);
+      box-shadow: none;
+    }
+
+    .btn.ghost {
+      background: transparent;
+      color: var(--texte);
+      border: 1.5px solid rgba(28, 22, 14, 0.38);
+      box-shadow: none;
+    }
+
+    .btn.small { min-height: 36px; padding: 8px 12px; font-size: 0.84rem; }
+
+    .quick-actions {
+      border-top: 1px solid rgba(137, 96, 31, 0.14);
+      background: rgba(214, 195, 163, 0.94);
+      box-shadow: 0 10px 26px rgba(74, 51, 19, 0.08);
+    }
+
+    .quick-actions-inner {
+      display: grid;
+      grid-template-columns: repeat(7, minmax(0, 1fr));
+      gap: 8px;
+      overflow: visible;
+      padding: 10px 0 12px;
+    }
+
+    .quick-actions-inner a, .quick-actions-inner button {
+      min-height: 38px;
+      padding: 8px 9px;
+      border-radius: 999px;
+      border: 1.5px solid rgba(28, 22, 14, 0.38);
+      background: rgba(232, 216, 189, 0.78);
+      color: #21180f;
+      font-size: 0.76rem;
+      font-weight: 950;
+      white-space: normal;
+      line-height: 1.12;
+      text-align: center;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .quick-actions-inner a:focus-visible, .quick-actions-inner button:focus-visible, .btn:focus-visible {
+      outline: 3px solid rgba(35, 95, 146, 0.55);
+      outline-offset: 2px;
+    }
+
+    .badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      width: fit-content;
+      padding: 8px 13px;
+      border-radius: 999px;
+      background: rgba(185, 134, 47, 0.12);
+      border: 1px solid rgba(137, 96, 31, 0.22);
+      color: var(--or-2);
+      font-weight: 950;
+      font-size: 0.86rem;
+      margin-bottom: 18px;
+    }
+
+    .hero {
+      padding: 72px 0 48px;
+      display: grid;
+      grid-template-columns: 1.08fr 0.92fr;
+      gap: 42px;
+      align-items: center;
+    }
+
+    h1 {
+      font-size: clamp(2.5rem, 6vw, 5.2rem);
+      line-height: 0.98;
+      letter-spacing: -2.2px;
+      margin-bottom: 22px;
+    }
+
+    h1 span, .gold { color: var(--or-2); }
+
+    .lead {
+      color: var(--texte-2);
+      font-size: 1.13rem;
+      max-width: 780px;
+      margin-bottom: 20px;
+    }
+
+    .hero-actions { display: flex; gap: 13px; flex-wrap: wrap; margin: 28px 0; }
+
+    section { padding: 58px 0; scroll-margin-top: 190px; }
+
+    .section-title {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-end;
+      gap: 24px;
+      margin-bottom: 26px;
+    }
+
+    .section-title h2 {
+      font-size: clamp(2rem, 4vw, 3.3rem);
+      line-height: 1.03;
+      letter-spacing: -1.1px;
+      max-width: 780px;
+    }
+
+    .section-title p { color: var(--texte-2); max-width: 590px; }
+
+    .card {
+      border: 1.7px solid var(--ligne);
+      background: linear-gradient(180deg, var(--carte), var(--carte-2));
+      border-radius: var(--radius);
+      box-shadow: var(--ombre-douce);
+    }
+
+    .grid-2 { display: grid; grid-template-columns: repeat(2, 1fr); gap: 18px; }
+    .grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; }
+    .grid-4 { display: grid; grid-template-columns: repeat(4, 1fr); gap: 18px; }
+
+    .policy-panel {
+      position: relative;
+      padding: 28px;
+      min-height: 535px;
+      overflow: hidden;
+      border: 1.7px solid var(--ligne);
+      border-radius: 34px;
+      background: linear-gradient(180deg, rgba(234, 220, 196, 0.96), rgba(207, 187, 154, 0.88));
+      box-shadow: var(--ombre);
+    }
+
+    .policy-panel::before {
+      content: "";
+      position: absolute;
+      width: 320px;
+      height: 320px;
+      border-radius: 50%;
+      right: -135px;
+      top: -135px;
+      background: rgba(185, 134, 47, 0.24);
+      filter: blur(16px);
+    }
+
+    .policy-panel > * { position: relative; z-index: 1; }
+
+    .policy-status {
+      display: grid;
+      gap: 12px;
+      margin-top: 20px;
+    }
+
+    .status-row {
+      display: grid;
+      grid-template-columns: 1fr auto;
+      gap: 12px;
+      align-items: center;
+      padding: 14px;
+      border-radius: 18px;
+      background: rgba(220, 203, 173, 0.84);
+      border: 1.4px solid rgba(28, 22, 14, 0.22);
+      color: var(--texte-2);
+      font-weight: 850;
+    }
+
+    .status-row strong { display: block; color: var(--texte); }
+
+    .mini-card, .rule-card, .exception-card, .faq-card, .quality-card { padding: 22px; }
+
+    .mini-card h3, .rule-card h3, .exception-card h3, .faq-card h3, .quality-card h3 {
+      color: var(--or-2);
+      line-height: 1.16;
+      margin-bottom: 9px;
+      font-weight: 950;
+    }
+
+    .mini-card p, .rule-card p, .exception-card p, .faq-card p, .quality-card p, .rule-card li, .exception-card li { color: var(--texte-2); }
+    .rule-card ul, .exception-card ul { margin-top: 10px; padding-left: 18px; display: grid; gap: 6px; }
+
+    .number {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 36px;
+      height: 36px;
+      border-radius: 13px;
+      background: rgba(185, 134, 47, 0.14);
+      color: var(--or-2);
+      font-weight: 950;
+      margin-bottom: 12px;
+    }
+
+    .pill {
+      display: inline-flex;
+      width: fit-content;
+      padding: 5px 8px;
+      border-radius: 999px;
+      font-size: 0.74rem;
+      font-weight: 950;
+      border: 1px solid rgba(28, 22, 14, 0.18);
+      background: rgba(47, 125, 70, 0.12);
+      color: var(--vert);
+      white-space: nowrap;
+    }
+
+    .pill.warn { background: rgba(186, 123, 37, 0.13); color: #7a4f15; }
+    .pill.bad { background: rgba(184, 66, 66, 0.12); color: var(--rouge); }
+    .pill.neutral { background: rgba(35, 95, 146, 0.10); color: var(--bleu); }
+
+    .notice, .green-notice, .blue-notice, .gold-note {
+      padding: 24px;
+      border-radius: 28px;
+      box-shadow: var(--ombre-douce);
+    }
+
+    .notice { border: 1.7px solid rgba(184, 66, 66, 0.28); background: rgba(184, 66, 66, 0.08); }
+    .green-notice { border: 1.7px solid rgba(47, 125, 70, 0.28); background: rgba(47, 125, 70, 0.09); }
+    .blue-notice { border: 1.7px solid rgba(35, 95, 146, 0.28); background: rgba(35, 95, 146, 0.08); }
+    .gold-note { border: 1.7px solid rgba(185, 134, 47, 0.32); background: rgba(185, 134, 47, 0.10); }
+    .notice strong { color: var(--rouge); }
+    .green-notice strong { color: var(--vert); }
+    .blue-notice strong { color: var(--bleu); }
+    .gold-note strong { color: var(--or-2); }
+
+    .checklist {
+      display: grid;
+      gap: 10px;
+      margin-top: 12px;
+    }
+
+    .check-item {
+      display: grid;
+      grid-template-columns: auto 1fr;
+      gap: 10px;
+      align-items: start;
+      padding: 12px 14px;
+      border-radius: 16px;
+      border: 1.4px solid rgba(28, 22, 14, 0.20);
+      background: rgba(232, 216, 189, 0.72);
+      color: var(--texte-2);
+      font-size: 0.94rem;
+      font-weight: 820;
+    }
+
+    .check-item span:first-child {
+      display: inline-grid;
+      place-items: center;
+      width: 24px;
+      height: 24px;
+      border-radius: 50%;
+      background: rgba(47, 125, 70, 0.12);
+      color: var(--vert);
+      font-weight: 950;
+    }
+
+    .flow {
+      display: grid;
+      gap: 14px;
+    }
+
+    .flow-item {
+      padding: 18px;
+      display: grid;
+      grid-template-columns: 120px 1fr;
+      gap: 18px;
+      align-items: start;
+    }
+
+    .flow-item strong { color: var(--or-2); font-size: 1.05rem; }
+    .flow-item p { color: var(--texte-2); }
+
+    details {
+      border: 1.7px solid var(--ligne);
+      background: linear-gradient(180deg, var(--carte), var(--carte-2));
+      border-radius: 22px;
+      padding: 18px 20px;
+      box-shadow: var(--ombre-douce);
+    }
+
+    summary { cursor: pointer; color: var(--or-2); font-weight: 950; font-size: 1.05rem; }
+    details p { color: var(--texte-2); margin-top: 12px; }
+
+    .contact-box {
+      padding: 34px;
+      text-align: center;
+      border-radius: 36px;
+      background: linear-gradient(135deg, rgba(232, 216, 189, 0.95), rgba(197, 174, 137, 0.82));
+      border: 1.7px solid var(--ligne);
+      box-shadow: var(--ombre);
+    }
+
+    .contact-box h2 {
+      font-size: clamp(2rem, 4vw, 3.4rem);
+      line-height: 1.05;
+      margin-bottom: 14px;
+    }
+
+    .contact-box p {
+      color: var(--texte-2);
+      max-width: 760px;
+      margin: 0 auto 22px;
+      font-size: 1.05rem;
+    }
+
+    footer { padding: 34px 0 44px; border-top: 1px solid var(--ligne); color: var(--muted); font-size: 0.92rem; }
+
+    .footer-grid {
+      display: flex;
+      justify-content: space-between;
+      gap: 22px;
+      flex-wrap: wrap;
+      align-items: flex-start;
+    }
+
+    .footer-links { display: flex; gap: 12px; flex-wrap: wrap; justify-content: flex-end; }
+
+    @media (prefers-reduced-motion: reduce) {
+      html { scroll-behavior: auto; }
+      *, *::before, *::after { transition: none !important; animation: none !important; }
+    }
+
+    @media (max-width: 980px) {
+      .quick-actions-inner { grid-template-columns: repeat(4, minmax(0, 1fr)); }
+      .hero, .grid-2 { grid-template-columns: 1fr; }
+      .grid-4, .grid-3 { grid-template-columns: repeat(2, 1fr); }
+      .section-title { flex-direction: column; align-items: flex-start; }
+    }
+
+    @media (max-width: 680px) {
+      .topbar .page, .nav { align-items: flex-start; flex-direction: column; }
+      .nav-links { justify-content: flex-start; }
+      .quick-actions-inner { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+      .grid-4, .grid-3, .grid-2 { grid-template-columns: 1fr; }
+      .flow-item { grid-template-columns: 1fr; }
+      h1 { letter-spacing: -1.4px; }
+    }
+  </style>
+</head>
+
+<body>
+  <a class="skip-link" href="#contenu">Aller directement au contenu</a>
+
+  <div class="topbar">
+    <div class="page">
+      <span>Le Pivot d’Or • Politique de vente finale</span>
+      <span>Produits digitaux autonomes • Achat unique • Accès numérique privé</span>
+    </div>
+  </div>
+
+  <header>
+    <div class="page nav">
+      <a class="brand" href="index.html" aria-label="Retour à l’accueil">
+        <div class="brand-mark" id="brandMark">
+          <img src="assets/logo/logo.png" data-fallback-src="logo.png" alt="Logo officiel Le Pivot d’Or" class="brand-logo" id="brandLogo" />
+        </div>
+        <div>
+          <strong>Le Pivot d’Or</strong>
+          <span>Vision. Clarté. Discipline. Structure. Constance.</span>
+        </div>
+      </a>
+
+      <nav class="nav-links" aria-label="Navigation principale">
+        <a href="index.html">Accueil</a>
+        <a href="formation.html">Formation</a>
+        <a href="support.html">Support</a>
+        <a href="conditions.html">Conditions</a>
+        <a href="confidentialite.html">Confidentialité</a>
+        <a class="btn small" href="#resume">Résumé</a>
+      </nav>
+    </div>
+
+    <div class="quick-actions" aria-label="Boutons rapides vente finale">
+      <div class="page quick-actions-inner">
+        <a href="#resume">Résumé</a>
+        <a href="#regle">Règle</a>
+        <a href="#exceptions">Exceptions</a>
+        <a href="#compensation">Compensation</a>
+        <a href="#avant-achat">Avant achat</a>
+        <a href="#parcours">Parcours</a>
+        <button type="button" id="soundToggle">Son : désactivé</button>
+      </div>
+    </div>
+  </header>
+
+  <main id="contenu" tabindex="-1">
+    <section class="page hero" id="resume">
+      <div>
+        <span class="badge">Politique de vente finale</span>
+        <h1>Achat clair. Accès clair. <span>Règles claires.</span></h1>
+        <p class="lead">
+          Les mini-formations Le Pivot d’Or sont des produits digitaux autonomes. Le client achète une formation précise, paie une seule fois et reçoit un accès numérique privé selon le processus prévu.
+        </p>
+        <p class="lead">
+          La vente devient finale dès l’activation ou la livraison de l’accès numérique, sauf exception raisonnable ou obligation applicable. Cette page explique les règles avant l’achat pour éviter toute confusion.
+        </p>
+
+        <div class="hero-actions">
+          <a class="btn" href="#regle">Comprendre la règle</a>
+          <a class="btn secondary" href="#exceptions">Voir les exceptions</a>
+          <a class="btn ghost" href="support.html">Contacter le support</a>
+        </div>
+      </div>
+
+      <aside class="policy-panel">
+        <span class="badge">Résumé rapide</span>
+        <h2 class="gold">Ce que le client doit comprendre</h2>
+        <div class="policy-status">
+          <div class="status-row"><div><strong>Achat unique</strong><span>Pas d’abonnement automatique pour cette formation.</span></div><span class="pill">Clair</span></div>
+          <div class="status-row"><div><strong>Accès numérique privé</strong><span>La formation est consultable en ligne après paiement.</span></div><span class="pill">Privé</span></div>
+          <div class="status-row"><div><strong>Vente finale</strong><span>La vente est finale dès activation ou livraison de l’accès.</span></div><span class="pill warn">Important</span></div>
+          <div class="status-row"><div><strong>Exceptions possibles</strong><span>Double paiement, erreur de facturation, problème technique non corrigé ou obligation applicable.</span></div><span class="pill neutral">À vérifier</span></div>
+          <div class="status-row"><div><strong>Support disponible</strong><span>Le support aide pour accès, paiement, courriel ou problème technique.</span></div><span class="pill">Support</span></div>
+        </div>
+      </aside>
+    </section>
+
+    <section class="page" id="regle">
+      <div class="section-title">
+        <div>
+          <span class="badge">Règle principale</span>
+          <h2>La vente est finale dès que l’accès numérique est activé ou livré.</h2>
+        </div>
+        <p>Cette règle protège le contenu digital, tout en gardant une porte ouverte aux cas raisonnables et vérifiables.</p>
+      </div>
+
+      <div class="grid-3">
+        <article class="card rule-card"><span class="number">1</span><h3>Produit digital autonome</h3><p>La formation n’est pas un service de coaching, ni un accompagnement individuel. C’est un contenu éducatif numérique.</p></article>
+        <article class="card rule-card"><span class="number">2</span><h3>Accès privé</h3><p>Le contenu principal est prévu pour être consulté en ligne dans un accès numérique privé. Le partage d’accès n’est pas autorisé.</p></article>
+        <article class="card rule-card"><span class="number">3</span><h3>Vente finale</h3><p>Une fois l’accès activé ou livré, le client est réputé avoir reçu le produit numérique acheté.</p></article>
+      </div>
+    </section>
+
+    <section class="page" id="exceptions">
+      <div class="section-title">
+        <div>
+          <span class="badge">Exceptions possibles</span>
+          <h2>Certains cas peuvent être étudiés avec sérieux.</h2>
+        </div>
+        <p>Une demande n’est pas automatiquement acceptée. Elle doit être claire, vérifiable et raisonnable.</p>
+      </div>
+
+      <div class="grid-4">
+        <article class="card exception-card"><span class="number">1</span><h3>Double paiement</h3><p>Si le client a payé deux fois le même produit, la situation peut être vérifiée avec les reçus correspondants.</p></article>
+        <article class="card exception-card"><span class="number">2</span><h3>Erreur de facturation</h3><p>Une erreur claire de montant, de produit ou de transaction peut être analysée par le support.</p></article>
+        <article class="card exception-card"><span class="number">3</span><h3>Problème technique non corrigé</h3><p>Si l’accès ne fonctionne pas malgré les vérifications et que le support ne peut pas corriger, le cas peut être révisé.</p></article>
+        <article class="card exception-card"><span class="number">4</span><h3>Obligation applicable</h3><p>Si une règle obligatoire s’applique à une situation précise, elle doit être respectée après validation.</p></article>
+      </div>
+    </section>
+
+    <section class="page" id="non-inclus">
+      <div class="section-title">
+        <div>
+          <span class="badge">Ce qui n’est pas inclus</span>
+          <h2>La transparence évite les mauvaises attentes.</h2>
+        </div>
+        <p>Ces limites doivent être connues avant l’achat.</p>
+      </div>
+
+      <div class="grid-3">
+        <article class="card rule-card"><h3>Aucun coaching personnalisé</h3><p>L’achat ne comprend pas d’appel, de suivi individuel, d’accompagnement privé ou d’analyse personnelle.</p></article>
+        <article class="card rule-card"><h3>Aucun résultat garanti</h3><p>Les résultats dépendent de l’application, du contexte, des efforts et de la situation du client.</p></article>
+        <article class="card rule-card"><h3>Aucun téléchargement complet obligatoire</h3><p>Le contenu principal est prévu pour être consulté en ligne. Certains documents courts peuvent être téléchargeables si nécessaire.</p></article>
+      </div>
+    </section>
+
+    <section class="page" id="compensation">
+      <div class="section-title">
+        <div>
+          <span class="badge">Compensation possible</span>
+          <h2>Une solution raisonnable peut être proposée sans promettre un remboursement automatique.</h2>
+        </div>
+        <p>La compensation sert à résoudre un problème réel tout en protégeant le modèle digital.</p>
+      </div>
+
+      <div class="grid-2">
+        <div class="green-notice">
+          <strong>Compensation possible</strong>
+          <p style="margin-top:10px; color:var(--texte-2);">En cas de problème raisonnable et validé, Le Pivot d’Or peut offrir une compensation, par exemple une ou deux mini-formations gratuites selon la situation.</p>
+        </div>
+        <div class="notice">
+          <strong>Pas automatique</strong>
+          <p style="margin-top:10px; color:var(--texte-2);">La compensation n’est pas un droit automatique. Elle dépend du contexte, des preuves disponibles, du comportement du client et de la possibilité réelle de corriger le problème.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="page" id="avant-achat">
+      <div class="section-title">
+        <div>
+          <span class="badge">Avant achat</span>
+          <h2>Le client doit vérifier ces points avant de payer.</h2>
+        </div>
+        <p>Cette checklist réduit les achats impulsifs et les demandes mal fondées.</p>
+      </div>
+
+      <div class="grid-2">
+        <div class="gold-note">
+          <strong>Checklist de clarté</strong>
+          <div class="checklist">
+            <div class="check-item"><span>✓</span><p>Je comprends que j’achète un produit digital autonome.</p></div>
+            <div class="check-item"><span>✓</span><p>Je comprends que l’accès est numérique et privé.</p></div>
+            <div class="check-item"><span>✓</span><p>Je comprends qu’aucun coaching personnalisé n’est inclus.</p></div>
+            <div class="check-item"><span>✓</span><p>Je comprends que la vente est finale dès activation ou livraison de l’accès.</p></div>
+          </div>
+        </div>
+
+        <div class="blue-notice">
+          <strong>À conserver après achat</strong>
+          <div class="checklist">
+            <div class="check-item"><span>✓</span><p>Adresse courriel utilisée au paiement.</p></div>
+            <div class="check-item"><span>✓</span><p>Reçu Stripe ou preuve de paiement.</p></div>
+            <div class="check-item"><span>✓</span><p>Nom exact de la formation achetée.</p></div>
+            <div class="check-item"><span>✓</span><p>Capture d’écran si un problème technique apparaît.</p></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="page" id="parcours">
+      <div class="section-title">
+        <div>
+          <span class="badge">Parcours après achat</span>
+          <h2>Ce qui se passe normalement après paiement.</h2>
+        </div>
+        <p>Le client doit comprendre le chemin prévu avant même de payer.</p>
+      </div>
+
+      <div class="flow">
+        <article class="card flow-item"><strong>Étape 1</strong><p>Le client choisit une formation précise et paie une seule fois via le lien prévu.</p></article>
+        <article class="card flow-item"><strong>Étape 2</strong><p>Le client est redirigé vers une page de confirmation ou reçoit les instructions d’accès selon le système en place.</p></article>
+        <article class="card flow-item"><strong>Étape 3</strong><p>Le client consulte la formation dans un accès numérique privé.</p></article>
+        <article class="card flow-item"><strong>Étape 4</strong><p>Si un problème apparaît, le client utilise la page support avec son courriel de paiement, son reçu et les détails du problème.</p></article>
+      </div>
+    </section>
+
+    <section class="page" id="faq">
+      <div class="section-title">
+        <div>
+          <span class="badge">FAQ vente finale</span>
+          <h2>Questions fréquentes.</h2>
+        </div>
+        <p>Réponses simples pour éviter les confusions.</p>
+      </div>
+
+      <div class="grid-2">
+        <details open><summary>Pourquoi la vente est-elle finale?</summary><p>Parce que le produit est numérique et que l’accès au contenu peut être activé ou livré rapidement après paiement.</p></details>
+        <details><summary>Est-ce que je peux demander de l’aide si je n’ai pas reçu mon accès?</summary><p>Oui. La page support sert justement à traiter les problèmes d’accès, mauvais courriel, paiement ou technique.</p></details>
+        <details><summary>Est-ce qu’un remboursement est impossible dans tous les cas?</summary><p>Non. Certains cas peuvent être étudiés : double paiement, erreur de facturation, problème technique non corrigé ou obligation applicable.</p></details>
+        <details><summary>Est-ce que je peux partager mon accès?</summary><p>Non. L’accès est personnel, limité et non transférable, sauf indication contraire écrite.</p></details>
+        <details><summary>Est-ce que c’est du coaching?</summary><p>Non. Les mini-formations sont des produits digitaux autonomes. Aucun coaching personnalisé n’est inclus.</p></details>
+        <details><summary>Est-ce que les résultats sont garantis?</summary><p>Non. Les résultats varient selon l’application, la situation, le temps disponible et les efforts du client.</p></details>
+      </div>
+    </section>
+
+    <section class="page" id="contact">
+      <div class="contact-box">
+        <span class="badge">Besoin d’aide?</span>
+        <h2>Utilise le support si tu as un problème réel.</h2>
+        <p>Prépare ton nom, ton courriel utilisé au paiement, la formation achetée, la date d’achat, ton reçu Stripe et une capture d’écran si nécessaire.</p>
+        <div class="hero-actions" style="justify-content:center;">
+          <a class="btn" href="support.html">Ouvrir le support</a>
+          <a class="btn secondary" href="contact.html">Page contact</a>
+          <a class="btn ghost" href="index.html">Retour accueil</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="page">
+      <div class="notice">
+        <strong>Note importante :</strong> cette page sert de base claire et professionnelle pour ton site. Avant un lancement à grand volume, fais valider les textes légaux, fiscaux et commerciaux par une personne qualifiée selon ta situation.
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="page footer-grid">
+      <div>
+        <strong class="gold">Le Pivot d’Or — Vente finale</strong><br />
+        Bâtir une vie solide : Vision. Clarté. Discipline. Structure. Constance.<br />
+        Politique liée aux produits digitaux autonomes et aux accès numériques privés.
+      </div>
+      <div class="footer-links">
+        <a href="index.html">Accueil</a>
+        <a href="formation.html">Formation</a>
+        <a href="support.html">Support</a>
+        <a href="conditions.html">Conditions</a>
+        <a href="confidentialite.html">Confidentialité</a>
+        <a href="contact.html">Contact</a>
+      </div>
+    </div>
+  </footer>
+
+  <audio id="clickSound" preload="auto" src="assets/sounds/click.mp3"></audio>
+
+  <script>
+    let soundEnabled = false;
+
+    function scrollToSection(id) {
+      const target = document.getElementById(id);
+      if (!target) return;
+      const header = document.querySelector('header');
+      const headerHeight = header ? header.offsetHeight : 0;
+      const targetPosition = target.getBoundingClientRect().top + window.pageYOffset - headerHeight - 18;
+      window.scrollTo({ top: Math.max(targetPosition, 0), behavior: 'smooth' });
+    }
+
+    function setupNavigation() {
+      document.querySelectorAll('a[href^="#"]').forEach(link => {
+        link.addEventListener('click', event => {
+          const id = link.getAttribute('href').replace('#', '');
+          if (!document.getElementById(id)) return;
+          event.preventDefault();
+          playClick();
+          scrollToSection(id);
+          history.replaceState(null, '', `#${id}`);
+        });
+      });
+    }
+
+    function setupLogoFallback() {
+      const logo = document.getElementById('brandLogo');
+      const mark = document.getElementById('brandMark');
+      if (!logo || !mark) return;
+
+      const showLogo = () => mark.classList.add('has-logo');
+      if (logo.complete && logo.naturalWidth > 0) showLogo();
+
+      logo.addEventListener('load', showLogo);
+      logo.addEventListener('error', () => {
+        const fallback = logo.dataset.fallbackSrc;
+        const current = logo.getAttribute('src') || '';
+        if (fallback && !current.includes(fallback)) {
+          logo.src = fallback;
+          return;
+        }
+        logo.style.display = 'none';
+        mark.classList.remove('has-logo');
+      });
+    }
+
+    function setupSound() {
+      const button = document.getElementById('soundToggle');
+      if (!button) return;
+      button.addEventListener('click', () => {
+        soundEnabled = !soundEnabled;
+        button.textContent = soundEnabled ? 'Son : activé' : 'Son : désactivé';
+        if (soundEnabled) playClick();
+      });
+    }
+
+    function playClick() {
+      if (!soundEnabled) return;
+      const audio = document.getElementById('clickSound');
+      if (!audio) return;
+      audio.currentTime = 0;
+      audio.play().catch(() => {});
+    }
+
+    setupNavigation();
+    setupLogoFallback();
+    setupSound();
+  </script>
+</body>
+</html>
