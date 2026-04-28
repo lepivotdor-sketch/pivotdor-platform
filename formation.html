@@ -1,0 +1,1146 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Utilise l’IA pour sauver 3 heures par semaine | Mini Mini Formation IA | Le Pivot d’Or</title>
+  <meta name="description" content="Mini-formation Le Pivot d’Or : utilise l’IA pour sauver 3 heures par semaine avec une méthode simple, des exemples de prompts, une checklist et un plan d’action." />
+  <meta property="og:title" content="Utilise l’IA pour sauver 3 heures par semaine | Le Pivot d’Or" />
+  <meta property="og:description" content="Mini-formation IA courte, concrète et orientée action pour transformer une tâche répétitive en mini-système simple." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://lepivotdor-sketch.github.io/pivotdor-platform/formation.html" />
+  <meta name="twitter:card" content="summary" />
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Course",
+    "name": "Utilise l’IA pour sauver 3 heures par semaine",
+    "description": "Mini-formation IA courte pour apprendre à mieux donner du contexte à l’IA, créer des prompts simples et transformer une tâche répétitive en mini-système.",
+    "provider": {
+      "@type": "Organization",
+      "name": "Le Pivot d’Or",
+      "url": "https://lepivotdor-sketch.github.io/pivotdor-platform/"
+    },
+    "offers": {
+      "@type": "Offer",
+      "price": "15.00",
+      "priceCurrency": "CAD",
+      "availability": "https://schema.org/PreOrder"
+    }
+  }
+  </script>
+
+  <link rel="icon" href="assets/logo/logo.png" />
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="stylesheet" href="css/responsive.css" />
+  <link rel="preload" href="assets/sounds/click.mp3" as="audio" />
+
+  <style>
+    :root {
+      --fond: #d8c5a6;
+      --fond-2: #e4d4b9;
+      --fond-3: #c9b38e;
+      --carte: rgba(229, 214, 190, 0.95);
+      --carte-2: rgba(214, 195, 163, 0.9);
+      --texte: #21180f;
+      --texte-2: #4f4638;
+      --muted: #746957;
+      --or: #b9862f;
+      --or-2: #8a5f1d;
+      --vert: #2f7d46;
+      --rouge: #b84242;
+      --bleu: #235f92;
+      --mauve: #73528a;
+      --ligne: rgba(28, 22, 14, 0.34);
+      --ombre: 0 24px 60px rgba(74, 51, 19, 0.16);
+      --ombre-douce: 0 16px 36px rgba(74, 51, 19, 0.11);
+      --radius: 28px;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+
+    .skip-link {
+      position: absolute;
+      left: -999px;
+      top: 12px;
+      z-index: 100;
+      padding: 10px 14px;
+      border-radius: 999px;
+      background: #21180f;
+      color: #f7ead0;
+      font-weight: 950;
+    }
+
+    .skip-link:focus {
+      left: 12px;
+    }
+
+    body {
+      font-family: Aptos, Arial, sans-serif;
+      color: var(--texte);
+      line-height: 1.6;
+      min-height: 100vh;
+      background:
+        radial-gradient(circle at top left, rgba(240, 209, 138, 0.34), transparent 31%),
+        radial-gradient(circle at 78% 8%, rgba(185, 134, 47, 0.16), transparent 28%),
+        linear-gradient(135deg, var(--fond-2) 0%, var(--fond) 52%, var(--fond-3) 100%);
+    }
+
+    a { color: inherit; text-decoration: none; }
+    button, input, select { font: inherit; }
+    .page { width: min(1160px, 92%); margin: 0 auto; }
+
+    .topbar {
+      font-size: 0.86rem;
+      color: var(--texte-2);
+      background: rgba(199, 178, 142, 0.78);
+      border-bottom: 1px solid var(--ligne);
+      padding: 9px 0;
+    }
+
+    .topbar .page {
+      display: flex;
+      justify-content: space-between;
+      gap: 14px;
+      flex-wrap: wrap;
+      align-items: center;
+    }
+
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 50;
+      background: rgba(224, 208, 180, 0.94);
+      backdrop-filter: blur(18px);
+      border-bottom: 1px solid var(--ligne);
+    }
+
+    .nav {
+      min-height: 78px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 24px;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      min-width: 245px;
+    }
+
+    .brand-mark {
+      width: 54px;
+      height: 54px;
+      border-radius: 16px;
+      display: grid;
+      place-items: center;
+      background: linear-gradient(135deg, #120c05, #2b2115 48%, #8a5f1d);
+      color: #f7ead0;
+      font-weight: 950;
+      box-shadow: 0 14px 30px rgba(113, 77, 24, 0.22);
+      border: 1.5px solid rgba(185, 134, 47, 0.44);
+      overflow: hidden;
+      flex: 0 0 auto;
+      position: relative;
+    }
+
+    .brand-mark::after {
+      content: "PO";
+      position: absolute;
+      inset: 0;
+      display: grid;
+      place-items: center;
+      color: #f7ead0;
+      font-weight: 950;
+      font-size: 0.9rem;
+      pointer-events: none;
+      opacity: 1;
+    }
+
+    .brand-mark.has-logo::after { opacity: 0; }
+
+    .brand-logo {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+      display: block;
+      padding: 4px;
+      border-radius: 14px;
+      position: relative;
+      z-index: 1;
+    }
+
+    .brand strong {
+      display: block;
+      color: var(--or-2);
+      font-size: 1.1rem;
+      letter-spacing: 0.2px;
+    }
+
+    .brand span {
+      display: block;
+      color: var(--muted);
+      font-size: 0.8rem;
+      margin-top: 1px;
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      flex-wrap: wrap;
+      justify-content: flex-end;
+    }
+
+    .nav-links a:not(.btn) {
+      color: var(--texte-2);
+      font-size: 0.92rem;
+      font-weight: 800;
+    }
+
+    .nav-links a:not(.btn):hover { color: var(--or-2); }
+
+    .quick-actions {
+      border-top: 1px solid rgba(137, 96, 31, 0.14);
+      background: rgba(214, 195, 163, 0.94);
+      box-shadow: 0 10px 26px rgba(74, 51, 19, 0.08);
+    }
+
+    .quick-actions-inner {
+      display: grid;
+      grid-template-columns: repeat(7, minmax(0, 1fr));
+      gap: 8px;
+      overflow: visible;
+      padding: 10px 0 12px;
+    }
+
+    .quick-actions-inner a, .quick-actions-inner button {
+      min-height: 38px;
+      padding: 8px 9px;
+      border-radius: 999px;
+      border: 1.5px solid rgba(28, 22, 14, 0.38);
+      background: rgba(232, 216, 189, 0.78);
+      color: #21180f;
+      font-size: 0.76rem;
+      font-weight: 950;
+      white-space: normal;
+      line-height: 1.12;
+      text-align: center;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      min-height: 42px;
+      padding: 12px 18px;
+      border-radius: 999px;
+      border: 1.5px solid rgba(80, 52, 15, 0.22);
+      background: linear-gradient(135deg, var(--or), #8d6021);
+      color: #1d1308;
+      font-weight: 950;
+      text-align: center;
+      box-shadow: 0 15px 32px rgba(139, 95, 31, 0.18);
+      cursor: pointer;
+      transition: transform 0.18s ease, box-shadow 0.18s ease, background 0.18s ease;
+    }
+
+    .btn:hover, .btn:focus-visible {
+      transform: translateY(-2px);
+      box-shadow: 0 20px 42px rgba(139, 95, 31, 0.24);
+      outline: none;
+    }
+
+    .btn.secondary {
+      background: rgba(221, 204, 174, 0.64);
+      color: var(--or-2);
+      border: 1.5px solid rgba(28, 22, 14, 0.38);
+      box-shadow: none;
+    }
+
+    .btn.ghost {
+      background: transparent;
+      color: var(--texte);
+      border: 1.5px solid rgba(28, 22, 14, 0.38);
+      box-shadow: none;
+    }
+
+    .btn.pending {
+      background: linear-gradient(135deg, rgba(186, 123, 37, 0.78), rgba(138, 95, 29, 0.84));
+      color: #21180f;
+      cursor: not-allowed;
+    }
+
+    .stripe-status {
+      margin-top: 10px;
+      min-height: 24px;
+      color: var(--rouge);
+      font-size: 0.9rem;
+      font-weight: 950;
+    }
+
+    .btn.small { min-height: 36px; padding: 8px 12px; font-size: 0.84rem; }
+
+    .badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      width: fit-content;
+      padding: 8px 13px;
+      border-radius: 999px;
+      background: rgba(185, 134, 47, 0.12);
+      border: 1px solid rgba(137, 96, 31, 0.22);
+      color: var(--or-2);
+      font-weight: 950;
+      font-size: 0.86rem;
+      margin-bottom: 18px;
+    }
+
+    .hero {
+      padding: 72px 0 48px;
+      display: grid;
+      grid-template-columns: 1.1fr 0.9fr;
+      gap: 42px;
+      align-items: center;
+    }
+
+    h1 {
+      font-size: clamp(2.5rem, 6vw, 5.2rem);
+      line-height: 0.98;
+      letter-spacing: -2.2px;
+      margin-bottom: 22px;
+    }
+
+    h1 span, .gold { color: var(--or-2); }
+
+    .lead {
+      color: var(--texte-2);
+      font-size: 1.13rem;
+      max-width: 780px;
+      margin-bottom: 20px;
+    }
+
+    .hero-actions { display: flex; gap: 13px; flex-wrap: wrap; margin: 28px 0; }
+
+    section { padding: 58px 0; scroll-margin-top: 190px; }
+
+    .section-title {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-end;
+      gap: 24px;
+      margin-bottom: 26px;
+    }
+
+    .section-title h2 {
+      font-size: clamp(2rem, 4vw, 3.35rem);
+      line-height: 1.03;
+      letter-spacing: -1.1px;
+      max-width: 780px;
+    }
+
+    .section-title p { color: var(--texte-2); max-width: 590px; }
+
+    .card {
+      border: 1.7px solid var(--ligne);
+      background: linear-gradient(180deg, var(--carte), var(--carte-2));
+      border-radius: var(--radius);
+      box-shadow: var(--ombre-douce);
+    }
+
+    .grid-2 { display: grid; grid-template-columns: repeat(2, 1fr); gap: 18px; }
+    .grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; }
+    .grid-4 { display: grid; grid-template-columns: repeat(4, 1fr); gap: 18px; }
+
+    .prompt-preview {
+      display: grid;
+      gap: 14px;
+    }
+
+    .prompt-card {
+      padding: 18px;
+      border-radius: 22px;
+      border: 1.5px solid rgba(28, 22, 14, 0.28);
+      background: rgba(232, 216, 189, 0.78);
+      color: var(--texte-2);
+    }
+
+    .prompt-card strong {
+      display: block;
+      color: var(--or-2);
+      margin-bottom: 8px;
+      font-size: 1rem;
+    }
+
+    .prompt-card code {
+      display: block;
+      white-space: normal;
+      margin-top: 8px;
+      padding: 12px;
+      border-radius: 16px;
+      background: rgba(28, 22, 14, 0.08);
+      border: 1px solid rgba(28, 22, 14, 0.14);
+      color: var(--texte);
+      font-family: Consolas, Monaco, monospace;
+      font-size: 0.88rem;
+      line-height: 1.45;
+    }
+
+    .clarity-strip {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 12px;
+      margin: 22px 0 0;
+    }
+
+    .clarity-item {
+      padding: 14px;
+      border-radius: 18px;
+      border: 1.4px solid rgba(28, 22, 14, 0.22);
+      background: rgba(232, 216, 189, 0.78);
+      color: var(--texte-2);
+      font-size: 0.92rem;
+      font-weight: 850;
+    }
+
+    .clarity-item strong {
+      display: block;
+      color: var(--or-2);
+      margin-bottom: 4px;
+      font-size: 0.95rem;
+    }
+
+    .sales-panel {
+      position: relative;
+      padding: 28px;
+      min-height: 545px;
+      overflow: hidden;
+      border: 1.7px solid var(--ligne);
+      border-radius: 34px;
+      background: linear-gradient(180deg, rgba(234, 220, 196, 0.96), rgba(207, 187, 154, 0.88));
+      box-shadow: var(--ombre);
+    }
+
+    .sales-panel::before {
+      content: "";
+      position: absolute;
+      width: 320px;
+      height: 320px;
+      border-radius: 50%;
+      right: -135px;
+      top: -135px;
+      background: rgba(185, 134, 47, 0.24);
+      filter: blur(16px);
+    }
+
+    .sales-panel > * { position: relative; z-index: 1; }
+
+    .price-box {
+      padding: 22px;
+      border-radius: 24px;
+      background: rgba(47, 125, 70, 0.10);
+      border: 1.7px solid rgba(47, 125, 70, 0.24);
+      margin: 18px 0;
+    }
+
+    .price-box strong {
+      display: block;
+      color: var(--vert);
+      font-size: 2.3rem;
+      line-height: 1;
+      margin-bottom: 8px;
+    }
+
+    .price-box span { color: var(--texte-2); font-weight: 850; }
+
+    .included-list { display: grid; gap: 10px; margin: 18px 0; }
+
+    .included-list div {
+      padding: 12px 14px;
+      border-radius: 16px;
+      background: rgba(221, 204, 174, 0.72);
+      border: 1.3px solid rgba(28, 22, 14, 0.18);
+      color: var(--texte-2);
+      font-weight: 800;
+    }
+
+    .proof-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 12px; margin-top: 26px; }
+
+    .proof {
+      padding: 17px;
+      border: 1.4px solid var(--ligne);
+      background: rgba(229, 214, 190, 0.72);
+      border-radius: 22px;
+      box-shadow: var(--ombre-douce);
+    }
+
+    .proof strong { display: block; color: var(--or-2); font-size: 1.35rem; line-height: 1; margin-bottom: 8px; }
+    .proof span { color: var(--muted); font-size: 0.88rem; font-weight: 800; }
+
+    .mini-card, .module-card, .quality-card, .faq-card, .audit-card { padding: 22px; }
+
+    .mini-card h3, .module-card h3, .quality-card h3, .faq-card h3, .audit-card h3 {
+      color: var(--or-2);
+      line-height: 1.16;
+      margin-bottom: 9px;
+      font-weight: 950;
+    }
+
+    .mini-card p, .module-card p, .quality-card p, .faq-card p, .audit-card p, .mini-card li, .module-card li { color: var(--texte-2); }
+    .mini-card ul, .module-card ul { margin-top: 10px; padding-left: 18px; display: grid; gap: 6px; }
+
+    .number {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 36px;
+      height: 36px;
+      border-radius: 13px;
+      background: rgba(185, 134, 47, 0.14);
+      color: var(--or-2);
+      font-weight: 950;
+      margin-bottom: 12px;
+    }
+
+    .path {
+      display: inline-flex;
+      width: fit-content;
+      padding: 5px 9px;
+      border-radius: 999px;
+      background: rgba(28, 22, 14, 0.08);
+      border: 1px solid rgba(28, 22, 14, 0.18);
+      color: var(--texte);
+      font-size: 0.78rem;
+      font-weight: 950;
+      font-family: Consolas, Monaco, monospace;
+      margin-bottom: 12px;
+    }
+
+    .pill {
+      display: inline-flex;
+      width: fit-content;
+      padding: 5px 8px;
+      border-radius: 999px;
+      font-size: 0.74rem;
+      font-weight: 950;
+      border: 1px solid rgba(28, 22, 14, 0.18);
+      background: rgba(47, 125, 70, 0.12);
+      color: var(--vert);
+      white-space: nowrap;
+    }
+
+    .pill.warn { background: rgba(186, 123, 37, 0.13); color: #7a4f15; }
+    .pill.bad { background: rgba(184, 66, 66, 0.12); color: var(--rouge); }
+    .pill.neutral { background: rgba(35, 95, 146, 0.10); color: var(--bleu); }
+
+    .bar { height: 10px; background: rgba(80, 60, 30, 0.11); border-radius: 999px; overflow: hidden; border: 1px solid rgba(137, 96, 31, 0.10); }
+    .bar span { display: block; height: 100%; width: var(--w); border-radius: 999px; background: linear-gradient(90deg, var(--or), var(--or-2)); }
+
+    .timeline { display: grid; gap: 14px; }
+
+    .time-item {
+      padding: 18px;
+      display: grid;
+      grid-template-columns: 120px 1fr;
+      gap: 18px;
+      align-items: start;
+    }
+
+    .time-item strong { color: var(--or-2); font-size: 1.08rem; }
+    .time-item p { color: var(--texte-2); }
+
+    .notice, .green-notice, .blue-notice, .premium-note {
+      padding: 24px;
+      border-radius: 28px;
+      box-shadow: var(--ombre-douce);
+    }
+
+    .notice { border: 1.7px solid rgba(184, 66, 66, 0.28); background: rgba(184, 66, 66, 0.08); }
+    .green-notice { border: 1.7px solid rgba(47, 125, 70, 0.28); background: rgba(47, 125, 70, 0.09); }
+    .blue-notice { border: 1.7px solid rgba(35, 95, 146, 0.28); background: rgba(35, 95, 146, 0.08); }
+    .premium-note { border: 1.7px solid rgba(185, 134, 47, 0.34); background: rgba(185, 134, 47, 0.10); }
+    .notice strong { color: var(--rouge); }
+    .green-notice strong { color: var(--vert); }
+    .blue-notice strong { color: var(--bleu); }
+    .premium-note strong { color: var(--or-2); }
+
+    .validation-list {
+      display: grid;
+      gap: 10px;
+      margin-top: 12px;
+    }
+
+    .validation-item {
+      display: grid;
+      grid-template-columns: 1fr auto;
+      gap: 12px;
+      align-items: center;
+      padding: 12px 14px;
+      border-radius: 16px;
+      border: 1.4px solid rgba(28, 22, 14, 0.20);
+      background: rgba(232, 216, 189, 0.72);
+      color: var(--texte-2);
+      font-size: 0.94rem;
+      font-weight: 800;
+    }
+
+    details {
+      border: 1.7px solid var(--ligne);
+      background: linear-gradient(180deg, var(--carte), var(--carte-2));
+      border-radius: 22px;
+      padding: 18px 20px;
+      box-shadow: var(--ombre-douce);
+    }
+
+    summary { cursor: pointer; color: var(--or-2); font-weight: 950; font-size: 1.05rem; }
+    details p { color: var(--texte-2); margin-top: 12px; }
+
+    footer { padding: 34px 0 44px; border-top: 1px solid var(--ligne); color: var(--muted); font-size: 0.92rem; }
+
+    .footer-grid {
+      display: flex;
+      justify-content: space-between;
+      gap: 22px;
+      flex-wrap: wrap;
+      align-items: flex-start;
+    }
+
+    .footer-links { display: flex; gap: 12px; flex-wrap: wrap; justify-content: flex-end; }
+
+    @media (max-width: 980px) {
+      .quick-actions-inner { grid-template-columns: repeat(4, minmax(0, 1fr)); }
+      .hero, .grid-2 { grid-template-columns: 1fr; }
+      .grid-4, .grid-3, .proof-grid, .clarity-strip { grid-template-columns: repeat(2, 1fr); }
+      .section-title { flex-direction: column; align-items: flex-start; }
+    }
+
+    @media (max-width: 680px) {
+      .topbar .page, .nav { align-items: flex-start; flex-direction: column; }
+      .nav-links { justify-content: flex-start; }
+      .quick-actions-inner { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+      .grid-4, .grid-3, .grid-2, .proof-grid, .clarity-strip { grid-template-columns: 1fr; }
+      .time-item { grid-template-columns: 1fr; }
+      h1 { letter-spacing: -1.4px; }
+    }
+  </style>
+</head>
+
+<body>
+  <a class="skip-link" href="#apercu">Aller directement au contenu</a>
+  <div class="topbar">
+    <div class="page">
+      <span>Le Pivot d’Or • Mini Mini Formation IA</span>
+      <span>Formation officielle • Achat unique • Accès numérique privé</span>
+    </div>
+  </div>
+
+  <header>
+    <div class="page nav">
+      <a class="brand" href="index.html" aria-label="Retour à l’accueil">
+        <div class="brand-mark" id="brandMark">
+          <img src="assets/logo/logo.png" data-fallback-src="logo.png" alt="Logo officiel Le Pivot d’Or" class="brand-logo" id="brandLogo" />
+        </div>
+        <div>
+          <strong>Le Pivot d’Or</strong>
+          <span>Vision. Clarté. Discipline. Structure. Constance.</span>
+        </div>
+      </a>
+
+      <nav class="nav-links" aria-label="Navigation principale">
+        <a href="index.html">Accueil</a>
+        <a href="index.html#catalogue">Catalogue</a>
+        <a href="support.html">Support</a>
+        <a href="conditions.html">Conditions</a>
+        <a href="vente-finale.html">Vente finale</a>
+        <a class="btn small" href="#acheter">Acheter</a>
+      </nav>
+    </div>
+
+    <div class="quick-actions" aria-label="Boutons rapides sans défilement horizontal">
+      <div class="page quick-actions-inner">
+        <a href="#apercu">Aperçu</a>
+        <a href="#prerequis">Pré-requis</a>
+        <a href="#pas-pour-toi">Pas pour toi</a>
+        <a href="#modules">Modules</a>
+        <a href="#inclus">Inclus</a>
+        <a href="#validation">Validation</a>
+        <a href="#apres-achat">Après achat</a>
+        <a href="#apercu-prompts">Prompts</a>
+        <a href="#checklist-achat">Checklist</a>
+        <a href="#plan-action">Plan 48 h</a>
+        <a href="#conditions">Conditions</a>
+        <a href="#faq">FAQ</a>
+        <button type="button" id="soundToggle">Son : désactivé</button>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <section class="page hero" id="apercu">
+      <div>
+        <span class="badge">Première formation officielle</span>
+        <h1>Utilise l’IA pour <span>sauver 3 heures</span> par semaine.</h1>
+        <p class="lead">
+          Une mini-formation simple pour apprendre à mieux donner du contexte à l’IA, transformer des tâches répétitives en mini-systèmes et récupérer du temps sans devenir technicien.
+        </p>
+        <p class="lead">
+          Objectif : te donner une méthode claire, des exemples de prompts, une checklist et un plan d’action de 48 heures pour appliquer immédiatement.
+        </p>
+
+        <div class="clarity-strip" aria-label="Résumé clair de la formation">
+          <div class="clarity-item"><strong>Niveau</strong>Débutant à intermédiaire. Pas besoin d’être expert en technologie.</div>
+          <div class="clarity-item"><strong>Promesse réaliste</strong>Gagner du temps dépend des tâches choisies et de ton application.</div>
+          <div class="clarity-item"><strong>Résultat attendu</strong>Créer au moins un mini-système IA réutilisable chaque semaine.</div>
+        </div>
+
+        <div class="hero-actions">
+          <a class="btn" href="#acheter">Acheter la formation</a>
+          <a class="btn secondary" href="#modules">Voir le contenu</a>
+          <a class="btn ghost" href="support.html">Besoin d’aide?</a>
+        </div>
+
+        <div class="proof-grid">
+          <div class="proof"><strong>15 $</strong><span>prix recommandé</span></div>
+          <div class="proof"><strong>48 h</strong><span>plan d’application</span></div>
+          <div class="proof"><strong>1 action</strong><span>prochaine étape claire</span></div>
+          <div class="proof"><strong>0 coaching</strong><span>produit autonome</span></div>
+        </div>
+      </div>
+
+      <aside class="sales-panel" id="acheter">
+        <span class="badge">Achat unique</span>
+        <h2 class="gold">Formation courte + checklist + prompts</h2>
+        <p class="lead">Tu achètes un accès numérique privé à la formation. Aucun abonnement. Aucun coaching inclus.</p>
+
+        <div class="price-box">
+          <strong>15 $</strong>
+          <span>Accès numérique privé • Vente finale dès activation</span>
+        </div>
+
+        <div class="included-list">
+          <div>✓ Méthode simple pour mieux utiliser l’IA</div>
+          <div>✓ Prompts prêts à adapter</div>
+          <div>✓ Checklist d’action</div>
+          <div>✓ Plan d’application 24-48 h</div>
+          <div>✓ Erreurs fréquentes à éviter</div>
+          <div>✓ Formation suivante recommandée</div>
+        </div>
+
+        <div class="hero-actions">
+          <a class="btn pending" href="https://buy.stripe.com/REMPLACER-LIEN-STRIPE" target="_blank" rel="noopener" data-stripe-checkout="true" aria-label="Acheter avec Stripe lorsque le lien réel sera configuré">Acheter avec Stripe</a>
+          <a class="btn secondary" href="vente-finale.html">Lire vente finale</a>
+          <a class="btn ghost" href="support.html">Support</a>
+        </div>
+
+        <div class="stripe-status" id="stripeStatus" aria-live="polite"></div>
+        <p class="legal-line">Important : le bouton Stripe reste bloqué tant que le lien réel n’a pas remplacé le lien temporaire.</p>
+      </aside>
+    </section>
+
+    <section class="page" id="prerequis">
+      <div class="section-title">
+        <div>
+          <span class="badge">Pré-requis</span>
+          <h2>Avant d’acheter, le client doit savoir s’il est au bon endroit.</h2>
+        </div>
+        <p>Cette section réduit les achats mal compris et les demandes de support inutiles.</p>
+      </div>
+
+      <div class="grid-3">
+        <article class="card mini-card"><span class="number">1</span><h3>Tu dois avoir accès à un outil IA</h3><p>ChatGPT, Claude, Gemini ou un autre assistant IA peuvent convenir. La formation reste générale et adaptable.</p></article>
+        <article class="card mini-card"><span class="number">2</span><h3>Tu dois choisir une vraie tâche</h3><p>Le gain de temps vient d’une tâche répétitive concrète : résumé, planification, rédaction, idées, classement ou préparation.</p></article>
+        <article class="card mini-card"><span class="number">3</span><h3>Tu dois appliquer, pas seulement regarder</h3><p>La formation est courte. La valeur vient surtout de la checklist et du test réel dans les 48 heures.</p></article>
+      </div>
+    </section>
+
+    <section class="page" id="pour-qui">
+      <div class="section-title">
+        <div>
+          <span class="badge">Clarté client</span>
+          <h2>Pour qui cette formation est utile?</h2>
+        </div>
+        <p>La promesse est volontairement simple : gagner du temps avec l’IA sans complexifier ta vie.</p>
+      </div>
+
+      <div class="grid-3">
+        <article class="card mini-card"><span class="number">1</span><h3>Personne occupée</h3><p>Tu veux utiliser l’IA pour mieux gérer tes tâches, mais tu n’as pas envie d’apprendre un système compliqué.</p></article>
+        <article class="card mini-card"><span class="number">2</span><h3>Entrepreneur débutant</h3><p>Tu veux créer plus vite : idées, messages, offres, contenus, plans, checklists ou réponses simples.</p></article>
+        <article class="card mini-card"><span class="number">3</span><h3>Travailleur autonome</h3><p>Tu veux gagner du temps sur la rédaction, l’organisation, le résumé de documents ou la préparation de décisions.</p></article>
+      </div>
+    </section>
+
+    <section class="page" id="pas-pour-toi">
+      <div class="section-title">
+        <div>
+          <span class="badge">Pas pour toi si...</span>
+          <h2>La page doit aussi filtrer les mauvaises attentes.</h2>
+        </div>
+        <p>Une bonne page de vente ne vend pas à tout le monde. Elle protège la satisfaction client.</p>
+      </div>
+
+      <div class="grid-3">
+        <article class="card mini-card"><span class="number">1</span><h3>Tu veux une formation avancée en automatisation</h3><p>Cette formation est simple. Elle ne remplace pas un cours complet sur les agents IA, les API ou les automatisations complexes.</p></article>
+        <article class="card mini-card"><span class="number">2</span><h3>Tu veux que l’IA fasse tout à ta place</h3><p>La formation t’aide à structurer et accélérer. Elle ne promet pas un résultat automatique sans action de ta part.</p></article>
+        <article class="card mini-card"><span class="number">3</span><h3>Tu veux du coaching personnalisé</h3><p>L’achat donne accès à un produit digital autonome. Aucun accompagnement individuel n’est inclus.</p></article>
+      </div>
+    </section>
+
+    <section class="page" id="modules">
+      <div class="section-title">
+        <div>
+          <span class="badge">Contenu de la formation</span>
+          <h2>Une structure courte, claire et orientée action.</h2>
+        </div>
+        <p>Le contenu doit rester court pour respecter la promesse Mini Mini Formation : apprendre vite, appliquer vite.</p>
+      </div>
+
+      <div class="grid-3">
+        <article class="card module-card">
+          <span class="path">Module 1</span>
+          <h3>Comprendre le vrai rôle de l’IA</h3>
+          <p>Voir l’IA comme un assistant de structure, pas comme une baguette magique.</p>
+          <ul><li>Ce que l’IA fait bien</li><li>Ce que l’IA ne doit pas décider seule</li><li>Comment éviter de perdre du temps</li></ul>
+        </article>
+        <article class="card module-card">
+          <span class="path">Module 2</span>
+          <h3>Donner le bon contexte</h3>
+          <p>La qualité de la réponse dépend souvent de la qualité du contexte donné.</p>
+          <ul><li>Objectif</li><li>Contexte</li><li>Contraintes</li><li>Résultat demandé</li></ul>
+        </article>
+        <article class="card module-card">
+          <span class="path">Module 3</span>
+          <h3>Créer un mini-système</h3>
+          <p>Transformer une tâche répétitive en processus simple que l’IA peut aider à répéter.</p>
+          <ul><li>Tâche</li><li>Étapes</li><li>Prompt</li><li>Résultat</li></ul>
+        </article>
+        <article class="card module-card">
+          <span class="path">Module 4</span>
+          <h3>Sauver du temps chaque semaine</h3>
+          <p>Choisir les 3 tâches où l’IA peut réellement réduire l’effort.</p>
+          <ul><li>Rédaction</li><li>Résumé</li><li>Planification</li><li>Clarification</li></ul>
+        </article>
+        <article class="card module-card">
+          <span class="path">Module 5</span>
+          <h3>Utiliser les prompts modèles</h3>
+          <p>Adapter des prompts simples sans perdre de temps à tout inventer.</p>
+          <ul><li>Prompt de résumé</li><li>Prompt de plan</li><li>Prompt de décision</li><li>Prompt de contenu</li></ul>
+        </article>
+        <article class="card module-card">
+          <span class="path">Module 6</span>
+          <h3>Passer à l’action en 48 heures</h3>
+          <p>Appliquer tout de suite avec une checklist courte et une première tâche concrète.</p>
+          <ul><li>Choisir une tâche</li><li>Créer le prompt</li><li>Tester</li><li>Améliorer</li></ul>
+        </article>
+      </div>
+    </section>
+
+    <section class="page" id="inclus">
+      <div class="section-title">
+        <div>
+          <span class="badge">Ce qui est inclus</span>
+          <h2>Le client doit savoir exactement ce qu’il reçoit.</h2>
+        </div>
+        <p>Cette section réduit les demandes de support et rend l’achat plus clair.</p>
+      </div>
+
+      <div class="grid-2">
+        <div class="green-notice">
+          <strong>Inclus dans l’achat</strong>
+          <ul style="margin-top:12px; padding-left:20px; color:var(--texte-2); display:grid; gap:8px;">
+            <li>Accès numérique privé à la formation.</li>
+            <li>Méthode courte et structurée.</li>
+            <li>Checklist d’action.</li>
+            <li>Exemples de prompts.</li>
+            <li>Plan d’application 24-48 h.</li>
+            <li>Support en cas de problème d’accès.</li>
+          </ul>
+        </div>
+        <div class="notice">
+          <strong>Non inclus</strong>
+          <ul style="margin-top:12px; padding-left:20px; color:var(--texte-2); display:grid; gap:8px;">
+            <li>Aucun coaching personnalisé.</li>
+            <li>Aucun accompagnement individuel.</li>
+            <li>Aucun résultat garanti.</li>
+            <li>Aucun téléchargement complet de la formation principale.</li>
+            <li>Aucun conseil financier, juridique, médical ou professionnel personnalisé.</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section class="page" id="validation">
+      <div class="section-title">
+        <div>
+          <span class="badge">Validation avant publication</span>
+          <h2>Cette fiche ne doit pas vendre tant que les bases ne sont pas prêtes.</h2>
+        </div>
+        <p>Cette section évite de publier une page qui attire des clients, mais qui ne livre pas encore correctement l’accès.</p>
+      </div>
+
+      <div class="grid-3">
+        <div class="premium-note">
+          <strong>À terminer avant vente</strong>
+          <div class="validation-list">
+            <div class="validation-item"><span>Vrai lien Stripe</span><span class="pill bad">Manquant</span></div>
+            <div class="validation-item"><span>Page après paiement</span><span class="pill warn">À vérifier</span></div>
+            <div class="validation-item"><span>Support client fonctionnel</span><span class="pill warn">À tester</span></div>
+          </div>
+        </div>
+        <div class="blue-notice">
+          <strong>À vérifier dans GitHub</strong>
+          <div class="validation-list">
+            <div class="validation-item"><span>formation.html</span><span class="pill">Présent</span></div>
+            <div class="validation-item"><span>support.html</span><span class="pill warn">À tester</span></div>
+            <div class="validation-item"><span>vente-finale.html</span><span class="pill warn">À créer</span></div>
+          </div>
+        </div>
+        <div class="notice">
+          <strong>Risque à éviter</strong>
+          <p>Ne jamais envoyer un client vers un paiement si la redirection, l’accès, le support et les conditions ne sont pas prêts.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="page" id="apres-achat">
+      <div class="section-title">
+        <div>
+          <span class="badge">Après achat</span>
+          <h2>Le parcours après paiement doit être clair avant même de cliquer.</h2>
+        </div>
+        <p>Même si les vraies pages ne sont pas encore connectées, le client doit comprendre la logique de livraison.</p>
+      </div>
+
+      <div class="grid-4">
+        <article class="card mini-card"><span class="number">1</span><h3>Paiement Stripe</h3><p>Le client paie une seule fois pour cette formation précise.</p></article>
+        <article class="card mini-card"><span class="number">2</span><h3>Confirmation</h3><p>Il arrive sur une page de confirmation ou reçoit les instructions d’accès.</p></article>
+        <article class="card mini-card"><span class="number">3</span><h3>Accès privé</h3><p>Il consulte la formation en ligne dans un accès numérique privé.</p></article>
+        <article class="card mini-card"><span class="number">4</span><h3>Support</h3><p>Si l’accès bloque, la page support explique quoi envoyer pour régler le problème.</p></article>
+      </div>
+    </section>
+
+    <section class="page" id="apercu-prompts">
+      <div class="section-title">
+        <div>
+          <span class="badge">Aperçu concret</span>
+          <h2>Le client voit le type de prompts qu’il apprendra à utiliser.</h2>
+        </div>
+        <p>Cette section rend la formation plus tangible sans donner tout le contenu payant.</p>
+      </div>
+
+      <div class="grid-3">
+        <article class="card prompt-card"><strong>Prompt de clarification</strong><p>Pour transformer une idée floue en prochaine action claire.</p><code>Agis comme un assistant de structure. Voici mon idée : [idée]. Clarifie l’objectif, les étapes et la première action simple.</code></article>
+        <article class="card prompt-card"><strong>Prompt de résumé utile</strong><p>Pour résumer un texte en actions au lieu d’un résumé trop vague.</p><code>Résume ce texte en 5 points utiles, puis transforme-le en checklist d’action simple : [texte].</code></article>
+        <article class="card prompt-card"><strong>Prompt de mini-système</strong><p>Pour convertir une tâche répétitive en méthode réutilisable.</p><code>Voici une tâche que je répète souvent : [tâche]. Crée une méthode en 5 étapes, un prompt réutilisable et une erreur à éviter.</code></article>
+      </div>
+    </section>
+
+    <section class="page" id="checklist-achat">
+      <div class="section-title">
+        <div>
+          <span class="badge">Checklist avant achat</span>
+          <h2>Une dernière vérification pour acheter avec clarté.</h2>
+        </div>
+        <p>Cette section réduit les achats impulsifs et les demandes de remboursement liées à une mauvaise compréhension.</p>
+      </div>
+
+      <div class="grid-2">
+        <div class="green-notice">
+          <strong>Tu es au bon endroit si...</strong>
+          <ul style="margin-top:12px; padding-left:20px; color:var(--texte-2); display:grid; gap:8px;">
+            <li>Tu veux une formation courte et concrète.</li>
+            <li>Tu as une tâche répétitive à améliorer.</li>
+            <li>Tu veux apprendre à mieux parler à l’IA.</li>
+            <li>Tu acceptes d’appliquer dans les 48 heures.</li>
+          </ul>
+        </div>
+        <div class="blue-notice">
+          <strong>Avant de payer, vérifie...</strong>
+          <ul style="margin-top:12px; padding-left:20px; color:var(--texte-2); display:grid; gap:8px;">
+            <li>Tu comprends que c’est un produit digital autonome.</li>
+            <li>Tu comprends qu’aucun coaching n’est inclus.</li>
+            <li>Tu comprends que le résultat dépend de ton application.</li>
+            <li>Tu as lu les conditions de vente finale.</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section class="page" id="plan-action">
+      <div class="section-title">
+        <div>
+          <span class="badge">Plan d’application</span>
+          <h2>Plan simple sur 48 heures.</h2>
+        </div>
+        <p>Le but est de créer une petite réussite rapide, pas une grosse transformation théorique.</p>
+      </div>
+
+      <div class="timeline">
+        <article class="card time-item"><strong>0-15 min</strong><p>Choisir une tâche répétitive qui te fait perdre du temps chaque semaine.</p></article>
+        <article class="card time-item"><strong>15-30 min</strong><p>Décrire ton objectif, ton contexte et le résultat voulu.</p></article>
+        <article class="card time-item"><strong>30-60 min</strong><p>Créer un premier prompt simple à partir du modèle fourni.</p></article>
+        <article class="card time-item"><strong>24 h</strong><p>Tester le prompt sur une vraie tâche et ajuster ce qui manque.</p></article>
+        <article class="card time-item"><strong>48 h</strong><p>Transformer le prompt en mini-système réutilisable chaque semaine.</p></article>
+      </div>
+    </section>
+
+    <section class="page" id="conditions">
+      <div class="section-title">
+        <div>
+          <span class="badge">Conditions essentielles</span>
+          <h2>Achat clair, accès clair, limites claires.</h2>
+        </div>
+        <p>Les règles doivent être visibles avant le paiement.</p>
+      </div>
+
+      <div class="grid-3">
+        <article class="card quality-card"><h3>Achat unique</h3><p>Le client paie une fois pour cette formation. Aucun abonnement n’est inclus.</p></article>
+        <article class="card quality-card"><h3>Accès numérique privé</h3><p>La formation principale est consultable en ligne. Certains documents courts peuvent être téléchargeables si nécessaire.</p></article>
+        <article class="card quality-card"><h3>Vente finale</h3><p>La vente est finale dès activation de l’accès, sauf exception applicable : double paiement, erreur de facturation, problème technique non corrigé ou obligation légale.</p></article>
+      </div>
+    </section>
+
+    <section class="page" id="faq">
+      <div class="section-title">
+        <div>
+          <span class="badge">FAQ</span>
+          <h2>Questions fréquentes avant l’achat.</h2>
+        </div>
+        <p>Réponses simples pour réduire les hésitations et les confusions.</p>
+      </div>
+
+      <div class="grid-2">
+        <details open><summary>Est-ce que cette formation est longue?</summary><p>Non. Elle est conçue pour être courte, simple et orientée action. L’objectif est d’appliquer rapidement.</p></details>
+        <details><summary>Est-ce que je dois être bon en technologie?</summary><p>Non. La formation vise une utilisation simple de l’IA avec des prompts, des étapes et une checklist.</p></details>
+        <details><summary>Est-ce que ça garantit vraiment 3 heures sauvées?</summary><p>Non. Le chiffre est un objectif réaliste selon les tâches répétitives choisies. Les résultats varient selon l’application.</p></details>
+        <details><summary>Est-ce que je peux télécharger toute la formation?</summary><p>Non. La formation principale est prévue pour être consultée en ligne avec accès numérique privé.</p></details>
+        <details><summary>Qu’est-ce qui arrive si je ne reçois pas mon accès?</summary><p>Va sur support.html et prépare ta demande avec ton courriel de paiement, le nom de la formation et ton reçu Stripe.</p></details>
+        <details><summary>Est-ce du coaching?</summary><p>Non. C’est un produit digital autonome. Aucun coaching personnalisé n’est inclus.</p></details>
+      </div>
+    </section>
+
+    <section class="page">
+      <div class="sales-panel" style="min-height:auto; text-align:center;">
+        <span class="badge">Action finale</span>
+        <h2 class="gold" style="font-size:clamp(2rem,4vw,3.4rem); line-height:1.05; margin-bottom:14px;">Prêt à gagner du temps avec l’IA?</h2>
+        <p class="lead" style="margin-left:auto; margin-right:auto;">Commence par une seule tâche répétitive. La formation te montre comment la transformer en mini-système simple.</p>
+        <div class="hero-actions" style="justify-content:center;">
+          <a class="btn pending" href="https://buy.stripe.com/REMPLACER-LIEN-STRIPE" target="_blank" rel="noopener" data-stripe-checkout="true" aria-label="Acheter avec Stripe lorsque le lien réel sera configuré">Acheter avec Stripe</a>
+          <a class="btn secondary" href="support.html">Support client</a>
+          <a class="btn ghost" href="index.html">Retour accueil</a>
+        </div>
+        <p class="legal-line">Produit digital autonome. Aucun coaching inclus. Accès numérique privé. Vente finale dès activation.</p>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="page footer-grid">
+      <div>
+        <strong class="gold">Le Pivot d’Or — Mini Mini Formation IA</strong><br />
+        Bâtir une vie solide : Vision. Clarté. Discipline. Structure. Constance.<br />
+        Formation : Utilise l’IA pour sauver 3 heures par semaine.
+      </div>
+      <div class="footer-links">
+        <a href="index.html">Accueil</a>
+        <a href="support.html">Support</a>
+        <a href="conditions.html">Conditions</a>
+        <a href="vente-finale.html">Vente finale</a>
+        <a href="confidentialite.html">Confidentialité</a>
+        <a href="contact.html">Contact</a>
+      </div>
+    </div>
+  </footer>
+
+  <audio id="clickSound" preload="auto" src="assets/sounds/click.mp3"></audio>
+
+  <script>
+    let soundEnabled = false;
+
+    function scrollToSection(id) {
+      const target = document.getElementById(id);
+      if (!target) return;
+      const header = document.querySelector('header');
+      const headerHeight = header ? header.offsetHeight : 0;
+      const targetPosition = target.getBoundingClientRect().top + window.pageYOffset - headerHeight - 18;
+      window.scrollTo({ top: Math.max(targetPosition, 0), behavior: 'smooth' });
+    }
+
+    function setupNavigation() {
+      document.querySelectorAll('a[data-stripe-checkout="true"]').forEach(link => {
+        link.addEventListener('click', event => {
+          const href = link.getAttribute('href') || '';
+          const status = document.getElementById('stripeStatus');
+          if (href.includes('REMPLACER-LIEN-STRIPE')) {
+            event.preventDefault();
+            if (status) {
+              status.textContent = 'Le paiement Stripe n’est pas encore configuré. Remplace le lien temporaire par le vrai lien Stripe avant de vendre.';
+              scrollToSection('acheter');
+            } else {
+              alert('Le paiement Stripe n’est pas encore configuré.');
+            }
+          }
+        });
+      });
+
+      document.querySelectorAll('a[href^="#"]').forEach(link => {
+        link.addEventListener('click', event => {
+          const id = link.getAttribute('href').replace('#', '');
+          if (!document.getElementById(id)) return;
+          event.preventDefault();
+          playClick();
+          scrollToSection(id);
+          history.replaceState(null, '', `#${id}`);
+        });
+      });
+    }
+
+    function setupLogoFallback() {
+      const logo = document.getElementById('brandLogo');
+      const mark = document.getElementById('brandMark');
+      if (!logo || !mark) return;
+
+      logo.addEventListener('load', () => mark.classList.add('has-logo'));
+      logo.addEventListener('error', () => {
+        const fallback = logo.dataset.fallbackSrc;
+        if (fallback && logo.src.indexOf(fallback) === -1) {
+          logo.src = fallback;
+          return;
+        }
+        logo.style.display = 'none';
+        mark.classList.remove('has-logo');
+      });
+    }
+
+    function setupSound() {
+      const button = document.getElementById('soundToggle');
+      if (!button) return;
+      button.addEventListener('click', () => {
+        soundEnabled = !soundEnabled;
+        button.textContent = soundEnabled ? 'Son : activé' : 'Son : désactivé';
+        if (soundEnabled) playClick();
+      });
+    }
+
+    function playClick() {
+      if (!soundEnabled) return;
+      const audio = document.getElementById('clickSound');
+      if (!audio) return;
+      audio.currentTime = 0;
+      audio.play().catch(() => {});
+    }
+
+    setupNavigation();
+    setupLogoFallback();
+    setupSound();
+  </script>
+</body>
+</html>
