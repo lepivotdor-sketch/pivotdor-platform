@@ -1,0 +1,1100 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Support client | Mini Mini Formation IA | Le Pivot d’Or</title>
+  <meta name="description" content="Support client Le Pivot d’Or pour Mini Mini Formation IA : accès non reçu, paiement, mauvais courriel, problème technique, double paiement, vente finale et compensation." />
+
+  <style>
+    :root {
+      --fond: #d8c5a6;
+      --fond-2: #e4d4b9;
+      --fond-3: #c9b38e;
+      --carte: rgba(229, 214, 190, 0.95);
+      --carte-2: rgba(214, 195, 163, 0.9);
+      --texte: #21180f;
+      --texte-2: #4f4638;
+      --muted: #746957;
+      --or: #b9862f;
+      --or-2: #8a5f1d;
+      --vert: #2f7d46;
+      --rouge: #b84242;
+      --bleu: #235f92;
+      --ligne: rgba(28, 22, 14, 0.34);
+      --ombre: 0 24px 60px rgba(74, 51, 19, 0.16);
+      --ombre-douce: 0 16px 36px rgba(74, 51, 19, 0.11);
+      --radius: 28px;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: Aptos, Arial, sans-serif;
+      color: var(--texte);
+      line-height: 1.6;
+      min-height: 100vh;
+      background:
+        radial-gradient(circle at top left, rgba(240, 209, 138, 0.34), transparent 31%),
+        radial-gradient(circle at 78% 8%, rgba(185, 134, 47, 0.16), transparent 28%),
+        linear-gradient(135deg, var(--fond-2) 0%, var(--fond) 52%, var(--fond-3) 100%);
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    button, input, textarea, select {
+      font: inherit;
+    }
+
+    .page {
+      width: min(1120px, 92%);
+      margin: 0 auto;
+    }
+
+    .topbar {
+      padding: 9px 0;
+      border-bottom: 1px solid var(--ligne);
+      background: rgba(199, 178, 142, 0.78);
+      color: var(--texte-2);
+      font-size: 0.86rem;
+    }
+
+    .topbar .page {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 14px;
+      flex-wrap: wrap;
+    }
+
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 50;
+      background: rgba(224, 208, 180, 0.93);
+      backdrop-filter: blur(18px);
+      border-bottom: 1px solid var(--ligne);
+    }
+
+    .nav {
+      min-height: 78px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 24px;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+    }
+
+    .brand-mark {
+      width: 52px;
+      height: 52px;
+      border-radius: 16px;
+      display: grid;
+      place-items: center;
+      background: linear-gradient(135deg, #120c05, #2b2115 48%, #8a5f1d);
+      color: #f7ead0;
+      font-weight: 950;
+      box-shadow: 0 14px 30px rgba(113, 77, 24, 0.22);
+      border: 1.5px solid rgba(185, 134, 47, 0.44);
+      overflow: hidden;
+      flex: 0 0 auto;
+      position: relative;
+    }
+
+    .brand-mark::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      display: grid;
+      place-items: center;
+      color: #f7ead0;
+      font-weight: 950;
+      font-size: 0.92rem;
+      pointer-events: none;
+    }
+
+    .brand-mark.logo-error::after {
+      content: "PO";
+    }
+
+    .brand-logo {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+      display: block;
+      padding: 4px;
+      border-radius: 14px;
+    }
+
+    .brand strong {
+      display: block;
+      color: var(--or-2);
+      font-size: 1.1rem;
+      letter-spacing: 0.2px;
+    }
+
+    .brand span {
+      display: block;
+      color: var(--muted);
+      font-size: 0.8rem;
+      margin-top: 1px;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 10px;
+      justify-content: flex-end;
+      flex-wrap: wrap;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      min-height: 42px;
+      padding: 11px 17px;
+      border-radius: 999px;
+      border: 1.5px solid rgba(80, 52, 15, 0.24);
+      background: linear-gradient(135deg, var(--or), #8d6021);
+      color: #1d1308;
+      font-weight: 950;
+      text-align: center;
+      box-shadow: 0 15px 32px rgba(139, 95, 31, 0.18);
+      cursor: pointer;
+      transition: transform 0.18s ease, box-shadow 0.18s ease, background 0.18s ease;
+    }
+
+    .btn:hover,
+    .btn:focus-visible {
+      transform: translateY(-2px);
+      box-shadow: 0 20px 42px rgba(139, 95, 31, 0.24);
+      outline: none;
+    }
+
+    .btn.secondary {
+      background: rgba(221, 204, 174, 0.64);
+      color: var(--or-2);
+      border: 1.5px solid rgba(28, 22, 14, 0.38);
+      box-shadow: none;
+    }
+
+    .btn.ghost {
+      background: transparent;
+      color: var(--texte);
+      border: 1.5px solid rgba(28, 22, 14, 0.38);
+      box-shadow: none;
+    }
+
+    .quick-actions {
+      border-top: 1px solid rgba(137, 96, 31, 0.14);
+      background: rgba(214, 195, 163, 0.94);
+      box-shadow: 0 10px 26px rgba(74, 51, 19, 0.08);
+    }
+
+    .quick-actions-inner {
+      display: grid;
+      grid-template-columns: repeat(6, minmax(0, 1fr));
+      gap: 8px;
+      padding: 10px 0 12px;
+    }
+
+    .quick-actions-inner a {
+      min-height: 38px;
+      padding: 8px 9px;
+      border-radius: 999px;
+      border: 1.5px solid rgba(28, 22, 14, 0.38);
+      background: rgba(232, 216, 189, 0.78);
+      color: #21180f;
+      font-size: 0.78rem;
+      font-weight: 950;
+      line-height: 1.12;
+      text-align: center;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .badge {
+      display: inline-flex;
+      align-items: center;
+      width: fit-content;
+      padding: 8px 13px;
+      border-radius: 999px;
+      background: rgba(185, 134, 47, 0.12);
+      border: 1px solid rgba(137, 96, 31, 0.24);
+      color: var(--or-2);
+      font-weight: 950;
+      font-size: 0.86rem;
+      margin-bottom: 18px;
+    }
+
+    .hero {
+      padding: 70px 0 42px;
+      display: grid;
+      grid-template-columns: 1.12fr 0.88fr;
+      gap: 34px;
+      align-items: center;
+    }
+
+    h1 {
+      font-size: clamp(2.45rem, 5.8vw, 5rem);
+      line-height: 0.98;
+      letter-spacing: -2px;
+      margin-bottom: 22px;
+    }
+
+    h1 span,
+    .gold {
+      color: var(--or-2);
+    }
+
+    .lead {
+      color: var(--texte-2);
+      font-size: 1.12rem;
+      max-width: 770px;
+      margin-bottom: 18px;
+    }
+
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-top: 26px;
+    }
+
+    .card {
+      border: 1.7px solid var(--ligne);
+      background: linear-gradient(180deg, var(--carte), var(--carte-2));
+      border-radius: var(--radius);
+      box-shadow: var(--ombre-douce);
+    }
+
+    .support-panel {
+      position: relative;
+      overflow: hidden;
+      min-height: 430px;
+      padding: 26px;
+    }
+
+    .support-panel::before {
+      content: "";
+      position: absolute;
+      width: 280px;
+      height: 280px;
+      border-radius: 50%;
+      right: -120px;
+      top: -120px;
+      background: rgba(185, 134, 47, 0.22);
+      filter: blur(18px);
+    }
+
+    .support-panel > * {
+      position: relative;
+      z-index: 1;
+    }
+
+    .status-list {
+      display: grid;
+      gap: 12px;
+      margin-top: 20px;
+    }
+
+    .status-row {
+      display: grid;
+      grid-template-columns: 1fr auto;
+      gap: 12px;
+      align-items: center;
+      padding: 14px;
+      border-radius: 18px;
+      background: rgba(220, 203, 173, 0.84);
+      border: 1.4px solid rgba(28, 22, 14, 0.24);
+    }
+
+    .status-row strong {
+      color: var(--texte);
+      font-size: 0.96rem;
+    }
+
+    .status-row span {
+      color: var(--muted);
+      font-size: 0.84rem;
+    }
+
+    .pill {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 6px 9px;
+      border-radius: 999px;
+      font-size: 0.72rem;
+      font-weight: 950;
+      border: 1px solid rgba(28, 22, 14, 0.18);
+      background: rgba(47, 125, 70, 0.12);
+      color: var(--vert);
+      white-space: nowrap;
+    }
+
+    .pill.warn {
+      background: rgba(186, 123, 37, 0.13);
+      color: #7a4f15;
+    }
+
+    .pill.bad {
+      background: rgba(184, 66, 66, 0.12);
+      color: var(--rouge);
+    }
+
+    .pill.neutral {
+      background: rgba(35, 95, 146, 0.10);
+      color: var(--bleu);
+    }
+
+    section {
+      padding: 54px 0;
+      scroll-margin-top: 180px;
+    }
+
+    .section-title {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-end;
+      gap: 22px;
+      margin-bottom: 24px;
+    }
+
+    .section-title h2 {
+      font-size: clamp(2rem, 4vw, 3.2rem);
+      line-height: 1.04;
+      letter-spacing: -1px;
+      max-width: 760px;
+    }
+
+    .section-title p {
+      color: var(--texte-2);
+      max-width: 560px;
+    }
+
+    .grid-2 {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 18px;
+    }
+
+    .grid-3 {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 18px;
+    }
+
+    .support-card {
+      padding: 22px;
+    }
+
+    .support-card h3 {
+      color: var(--or-2);
+      font-size: 1.25rem;
+      font-weight: 950;
+      line-height: 1.15;
+      margin-bottom: 10px;
+    }
+
+    .support-card p,
+    .support-card li {
+      color: var(--texte-2);
+      font-size: 0.96rem;
+    }
+
+    .support-card ul,
+    .support-card ol {
+      margin-top: 10px;
+      padding-left: 18px;
+      display: grid;
+      gap: 6px;
+    }
+
+    .step-card {
+      min-height: 220px;
+    }
+
+    .step-number {
+      width: 38px;
+      height: 38px;
+      border-radius: 14px;
+      display: grid;
+      place-items: center;
+      background: rgba(185, 134, 47, 0.14);
+      color: var(--or-2);
+      font-weight: 950;
+      margin-bottom: 14px;
+      border: 1px solid rgba(137, 96, 31, 0.22);
+    }
+
+    .notice,
+    .green-notice,
+    .blue-notice {
+      padding: 24px;
+      border-radius: 28px;
+      box-shadow: var(--ombre-douce);
+    }
+
+    .notice {
+      border: 1.7px solid rgba(184, 66, 66, 0.28);
+      background: rgba(184, 66, 66, 0.08);
+    }
+
+    .green-notice {
+      border: 1.7px solid rgba(47, 125, 70, 0.28);
+      background: rgba(47, 125, 70, 0.09);
+    }
+
+    .blue-notice {
+      border: 1.7px solid rgba(35, 95, 146, 0.28);
+      background: rgba(35, 95, 146, 0.08);
+    }
+
+    .notice strong { color: var(--rouge); }
+    .green-notice strong { color: var(--vert); }
+    .blue-notice strong { color: var(--bleu); }
+
+    .request-box {
+      padding: 26px;
+      border-radius: 32px;
+      border: 1.7px solid var(--ligne);
+      background: linear-gradient(180deg, rgba(229, 214, 190, 0.96), rgba(207, 187, 154, 0.88));
+      box-shadow: var(--ombre);
+    }
+
+    .request-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 14px;
+      margin-top: 18px;
+    }
+
+    .field {
+      display: grid;
+      gap: 6px;
+    }
+
+    .field.full {
+      grid-column: 1 / -1;
+    }
+
+    label {
+      font-size: 0.86rem;
+      color: var(--texte);
+      font-weight: 900;
+    }
+
+    input,
+    textarea,
+    select {
+      width: 100%;
+      border: 1.5px solid rgba(28, 22, 14, 0.34);
+      border-radius: 16px;
+      background: rgba(238, 224, 199, 0.82);
+      color: var(--texte);
+      padding: 12px 13px;
+      outline: none;
+    }
+
+    textarea {
+      min-height: 120px;
+      resize: vertical;
+    }
+
+    input:focus,
+    textarea:focus,
+    select:focus {
+      border-color: rgba(137, 96, 31, 0.8);
+      box-shadow: 0 0 0 4px rgba(185, 134, 47, 0.12);
+    }
+
+    .script-box {
+      margin-top: 16px;
+      padding: 16px;
+      border-radius: 20px;
+      background: rgba(220, 203, 173, 0.84);
+      border: 1.5px solid rgba(28, 22, 14, 0.26);
+      color: var(--texte-2);
+      font-size: 0.94rem;
+    }
+
+    .copy-status {
+      margin-top: 10px;
+      color: var(--vert);
+      font-weight: 900;
+      font-size: 0.9rem;
+      min-height: 22px;
+    }
+
+    details {
+      border: 1.7px solid var(--ligne);
+      background: linear-gradient(180deg, var(--carte), var(--carte-2));
+      border-radius: 22px;
+      padding: 18px 20px;
+      box-shadow: var(--ombre-douce);
+    }
+
+    summary {
+      cursor: pointer;
+      color: var(--or-2);
+      font-weight: 950;
+      font-size: 1.05rem;
+    }
+
+    details p {
+      color: var(--texte-2);
+      margin-top: 12px;
+    }
+
+    .contact-box {
+      padding: 34px;
+      text-align: center;
+      border-radius: 36px;
+      background: linear-gradient(135deg, rgba(232, 216, 189, 0.95), rgba(197, 174, 137, 0.82));
+      border: 1.7px solid var(--ligne);
+      box-shadow: var(--ombre);
+    }
+
+    .contact-box h2 {
+      font-size: clamp(2rem, 4vw, 3.4rem);
+      line-height: 1.05;
+      margin-bottom: 14px;
+    }
+
+    .contact-box p {
+      color: var(--texte-2);
+      max-width: 760px;
+      margin: 0 auto 22px;
+      font-size: 1.05rem;
+    }
+
+    footer {
+      padding: 34px 0 44px;
+      border-top: 1px solid var(--ligne);
+      color: var(--muted);
+      font-size: 0.92rem;
+    }
+
+    .footer-grid {
+      display: flex;
+      justify-content: space-between;
+      gap: 22px;
+      flex-wrap: wrap;
+      align-items: flex-start;
+    }
+
+    .footer-links {
+      display: flex;
+      gap: 12px;
+      flex-wrap: wrap;
+      justify-content: flex-end;
+    }
+
+    @media (max-width: 940px) {
+      .hero,
+      .grid-2,
+      .request-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .grid-3 {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .quick-actions-inner {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+      }
+
+      .section-title {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+    }
+
+    @media (max-width: 680px) {
+
+      .topbar .page,
+      .nav {
+        align-items: flex-start;
+        flex-direction: column;
+      }
+
+      .nav-links {
+        justify-content: flex-start;
+      }
+
+      .grid-3 {
+        grid-template-columns: 1fr;
+      }
+
+      .quick-actions-inner {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+
+      .quick-actions-inner a {
+        min-height: 42px;
+        font-size: 0.75rem;
+      }
+
+      h1 {
+        letter-spacing: -1.2px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <div class="topbar">
+    <div class="page">
+      <span>Le Pivot d’Or • Support Mini Mini Formation IA</span>
+      <span>Accès numérique privé • Achat unique • Aide client</span>
+    </div>
+  </div>
+
+  <header>
+    <div class="page nav">
+      <a class="brand" href="index.html" aria-label="Retour à l’accueil">
+        <div class="brand-mark">
+          <img src="logo.png" alt="Logo officiel Le Pivot d’Or" class="brand-logo" onerror="this.style.display='none'; this.parentElement.classList.add('logo-error');" />
+        </div>
+        <div>
+          <strong>Le Pivot d’Or</strong>
+          <span>Vision. Clarté. Discipline. Structure. Constance.</span>
+        </div>
+      </a>
+
+      <nav class="nav-links" aria-label="Navigation principale">
+        <a class="btn secondary" href="index.html">Accueil</a>
+        <a class="btn secondary" href="conditions.html">Conditions</a>
+        <a class="btn secondary" href="vente-finale.html">Vente finale</a>
+        <a class="btn" href="#preparer-demande">Préparer ma demande</a>
+      </nav>
+    </div>
+
+    <div class="quick-actions" aria-label="Boutons rapides support">
+      <div class="page quick-actions-inner">
+        <a href="#urgence">Priorités</a>
+        <a href="#acces">Accès non reçu</a>
+        <a href="#paiement">Paiement</a>
+        <a href="#technique">Technique</a>
+        <a href="#compensation">Compensation</a>
+        <a href="#faq">FAQ</a>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <section class="page hero">
+      <div>
+        <span class="badge">Support client</span>
+        <h1>On t’aide à régler ton problème <span>sans confusion.</span></h1>
+        <p class="lead">
+          Cette page sert à t’aider si tu as acheté une mini-formation Le Pivot d’Or et que tu rencontres un problème avec ton paiement, ton accès numérique privé, ton courriel ou la consultation de la formation.
+        </p>
+        <p class="lead">
+          L’objectif est simple : vérifier la situation, corriger ce qui bloque, protéger l’accès et donner une réponse claire.
+        </p>
+
+        <div class="hero-actions">
+          <a class="btn" href="#preparer-demande">Préparer ma demande</a>
+          <a class="btn secondary" href="#acces">Je n’ai pas reçu mon accès</a>
+          <a class="btn ghost" href="index.html">Retour au site</a>
+        </div>
+      </div>
+
+      <aside class="card support-panel">
+        <span class="badge">Avant d’écrire au support</span>
+        <h2 class="gold">3 vérifications rapides</h2>
+        <p class="lead">
+          La majorité des problèmes d’accès se règlent plus vite quand ces éléments sont vérifiés d’abord.
+        </p>
+
+        <div class="status-list">
+          <div class="status-row">
+            <div>
+              <strong>Vérifie ton courriel</strong><br />
+              <span>Utilise la même adresse que lors du paiement.</span>
+            </div>
+            <span class="pill">Étape 1</span>
+          </div>
+
+          <div class="status-row">
+            <div>
+              <strong>Vérifie les indésirables</strong><br />
+              <span>Le courriel d’accès peut parfois arriver dans les spams.</span>
+            </div>
+            <span class="pill">Étape 2</span>
+          </div>
+
+          <div class="status-row">
+            <div>
+              <strong>Prépare ta preuve</strong><br />
+              <span>Reçu Stripe, date d’achat ou adresse courriel utilisée.</span>
+            </div>
+            <span class="pill warn">Important</span>
+          </div>
+
+          <div class="status-row">
+            <div>
+              <strong>Ne partage pas ton accès</strong><br />
+              <span>L’accès est personnel, limité et non transférable.</span>
+            </div>
+            <span class="pill bad">Protection</span>
+          </div>
+        </div>
+      </aside>
+    </section>
+
+    <section class="page" id="urgence">
+      <div class="section-title">
+        <div>
+          <span class="badge">Priorités de traitement</span>
+          <h2>Le support classe les demandes selon le niveau d’urgence.</h2>
+        </div>
+        <p>Cette section rend le support plus professionnel et aide à éviter les réponses improvisées.</p>
+      </div>
+
+      <div class="grid-3">
+        <article class="card support-card">
+          <span class="pill bad">Priorité haute</span>
+          <h3>Accès non reçu ou double paiement</h3>
+          <p>À traiter en priorité, avec preuve d’achat, courriel utilisé et nom de la formation.</p>
+        </article>
+        <article class="card support-card">
+          <span class="pill warn">Priorité normale</span>
+          <h3>Problème technique ou mauvais courriel</h3>
+          <p>À traiter avec capture d’écran, appareil utilisé, navigateur et détails du blocage.</p>
+        </article>
+        <article class="card support-card">
+          <span class="pill neutral">Validation</span>
+          <h3>Compensation ou demande sensible</h3>
+          <p>La compensation n’est jamais automatique. Elle doit être raisonnable et validée.</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="page" id="acces">
+      <div class="section-title">
+        <div>
+          <span class="badge">Accès numérique privé</span>
+          <h2>Tu n’as pas reçu ton accès?</h2>
+        </div>
+        <p>Commence par ces étapes avant de demander de l’aide. Ça accélère le traitement.</p>
+      </div>
+
+      <div class="grid-3">
+        <article class="card support-card step-card">
+          <div class="step-number">1</div>
+          <h3>Vérifie le bon courriel</h3>
+          <p>Assure-toi de vérifier la boîte courriel utilisée au moment du paiement Stripe.</p>
+        </article>
+        <article class="card support-card step-card">
+          <div class="step-number">2</div>
+          <h3>Regarde les indésirables</h3>
+          <p>Vérifie tes dossiers spam, promotions, indésirables ou autres onglets de messagerie.</p>
+        </article>
+        <article class="card support-card step-card">
+          <div class="step-number">3</div>
+          <h3>Prépare les détails</h3>
+          <p>Garde sous la main la date d’achat, le nom de la formation et ton reçu de paiement.</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="page" id="paiement">
+      <div class="section-title">
+        <div>
+          <span class="badge">Paiement Stripe</span>
+          <h2>Problème de paiement, double paiement ou carte refusée.</h2>
+        </div>
+        <p>Stripe traite le paiement. Le support t’aide à comprendre quoi vérifier et quoi envoyer.</p>
+      </div>
+
+      <div class="grid-3">
+        <article class="card support-card">
+          <h3>Carte refusée</h3>
+          <p>Vérifie les informations de ta carte, ton plafond, l’adresse de facturation ou essaie un autre mode de paiement.</p>
+        </article>
+        <article class="card support-card">
+          <h3>Double paiement</h3>
+          <p>Si tu crois avoir payé deux fois, prépare les deux reçus ou captures de paiement pour vérification.</p>
+        </article>
+        <article class="card support-card">
+          <h3>Mauvais courriel</h3>
+          <p>Si tu as utilisé une mauvaise adresse, indique l’adresse utilisée et la bonne adresse à associer à ton achat.</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="page" id="technique">
+      <div class="section-title">
+        <div>
+          <span class="badge">Problème technique</span>
+          <h2>La formation ne s’ouvre pas ou l’accès bloque?</h2>
+        </div>
+        <p>Voici les vérifications simples à faire avant d’envoyer une demande.</p>
+      </div>
+
+      <div class="grid-2">
+        <article class="card support-card">
+          <h3>À vérifier d’abord</h3>
+          <ul>
+            <li>Rafraîchis la page.</li>
+            <li>Essaie dans un autre navigateur.</li>
+            <li>Essaie sur ordinateur si le téléphone bloque.</li>
+            <li>Vérifie ta connexion Internet.</li>
+            <li>Copie-colle le lien au lieu de cliquer directement.</li>
+          </ul>
+        </article>
+        <article class="card support-card">
+          <h3>À envoyer au support</h3>
+          <ul>
+            <li>Nom de la formation achetée.</li>
+            <li>Adresse courriel utilisée.</li>
+            <li>Capture d’écran du problème.</li>
+            <li>Message d’erreur visible.</li>
+            <li>Type d’appareil utilisé : téléphone, tablette ou ordinateur.</li>
+          </ul>
+        </article>
+      </div>
+    </section>
+
+    <section class="page" id="compensation">
+      <div class="section-title">
+        <div>
+          <span class="badge">Compensation</span>
+          <h2>Compensation ou situation particulière.</h2>
+        </div>
+        <p>La compensation n’est pas automatique. Elle peut être offerte si la demande est raisonnable, claire et validée.</p>
+      </div>
+
+      <div class="grid-3">
+        <div class="green-notice">
+          <strong>Compensation possible</strong>
+          <p>Une compensation peut être offerte sous forme de formations gratuites si la demande est raisonnable et validée.</p>
+        </div>
+        <div class="notice">
+          <strong>Vente finale</strong>
+          <p>La vente est finale dès l’activation de l’accès, sauf exception : double paiement, erreur de facturation, problème technique non corrigé ou obligation légale.</p>
+        </div>
+        <div class="blue-notice">
+          <strong>Validation humaine</strong>
+          <p>Les cas sensibles, plaintes agressives, demandes complexes ou risques de réputation doivent être transmis à Olivier.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="page" id="preparer-demande">
+      <div class="section-title">
+        <div>
+          <span class="badge">Préparer ma demande</span>
+          <h2>Remplis les informations utiles avant de contacter le support.</h2>
+        </div>
+        <p>Remplis seulement les champs importants, puis clique sur “Copier ma demande” ou “Envoyer par courriel”. Le message complet sera généré automatiquement, sans afficher un deuxième encadré inutile.</p>
+      </div>
+
+      <div class="request-box">
+        <div class="request-grid">
+          <div class="field">
+            <label for="supportName">Nom</label>
+            <input id="supportName" type="text" placeholder="Ton nom" />
+          </div>
+          <div class="field">
+            <label for="supportEmail">Courriel utilisé au paiement</label>
+            <input id="supportEmail" type="email" placeholder="exemple@email.com" />
+          </div>
+          <div class="field">
+            <label for="supportFormation">Formation achetée</label>
+            <input id="supportFormation" type="text" value="Utilise l’IA pour sauver 3 heures par semaine" />
+          </div>
+          <div class="field">
+            <label for="supportProblem">Type de problème</label>
+            <select id="supportProblem">
+              <option>Accès non reçu</option>
+              <option>Mauvais courriel</option>
+              <option>Double paiement</option>
+              <option>Carte refusée</option>
+              <option>Problème technique</option>
+              <option>Demande de compensation</option>
+              <option>Autre situation</option>
+            </select>
+          </div>
+          <div class="field full">
+            <label for="supportDetails">Détails importants</label>
+            <textarea id="supportDetails" placeholder="Ajoute la date d’achat, le message d’erreur, l’appareil utilisé ou toute information utile."></textarea>
+          </div>
+        </div>
+
+        <div class="hero-actions">
+          <button class="btn" type="button" id="copyRequest">Copier ma demande</button>
+          <button class="btn secondary" type="button" id="sendEmailRequest">Envoyer par courriel</button>
+          <a class="btn ghost" href="contact.html">Ouvrir la page contact</a>
+          <a class="btn ghost" href="merci.html">Retour page après paiement</a>
+        </div>
+
+        <div class="copy-status" id="copyStatus" aria-live="polite"></div>
+      </div>
+    </section>
+
+    <section class="page" id="faq">
+      <div class="section-title">
+        <div>
+          <span class="badge">FAQ support</span>
+          <h2>Questions fréquentes.</h2>
+        </div>
+        <p>Réponses simples pour éviter les pertes de temps.</p>
+      </div>
+
+      <div class="grid-2">
+        <details open>
+          <summary>Combien de temps avant de recevoir mon accès?</summary>
+          <p>L’accès devrait être livré après paiement selon le processus prévu. Si tu ne reçois rien, vérifie ton courriel et les indésirables, puis contacte le support.</p>
+        </details>
+        <details>
+          <summary>Est-ce que je peux télécharger toute la formation?</summary>
+          <p>Non. La formation principale est prévue pour être consultée en ligne dans un accès numérique privé. Certains documents courts peuvent être téléchargeables si nécessaire.</p>
+        </details>
+        <details>
+          <summary>Est-ce que je peux demander un remboursement?</summary>
+          <p>La vente est finale dès l’activation de l’accès. Des exceptions peuvent s’appliquer en cas de double paiement, d’erreur de facturation, de problème technique non corrigé ou d’obligation légale.</p>
+        </details>
+        <details>
+          <summary>Est-ce que le support donne du coaching?</summary>
+          <p>Non. Le support aide pour les accès, les problèmes techniques et les questions liées à l’achat. Aucun coaching personnalisé n’est inclus.</p>
+        </details>
+        <details>
+          <summary>Que faire si j’ai utilisé le mauvais courriel?</summary>
+          <p>Contacte le support avec l’adresse utilisée au paiement, la bonne adresse, la date d’achat et le nom de la formation.</p>
+        </details>
+        <details>
+          <summary>Est-ce que je peux partager mon accès?</summary>
+          <p>Non. L’accès est personnel, limité, non transférable et non exclusif. Le partage public ou la redistribution du contenu n’est pas autorisé.</p>
+        </details>
+      </div>
+    </section>
+
+    <section class="page" id="contact">
+      <div class="contact-box">
+        <span class="badge">Support Le Pivot d’Or</span>
+        <h2>Tu as encore besoin d’aide?</h2>
+        <p>Prépare ton nom, ton courriel utilisé au paiement, la formation achetée, la date d’achat et une capture d’écran si possible. Ensuite, utilise la page contact pour envoyer ta demande.</p>
+        <div class="hero-actions" style="justify-content: center;">
+          <a class="btn" href="contact.html">Ouvrir la page contact</a>
+          <a class="btn secondary" href="index.html">Retour accueil</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="page footer-grid">
+      <div>
+        <strong class="gold">Le Pivot d’Or — Support Mini Mini Formation IA</strong><br />
+        Bâtir une vie solide : Vision. Clarté. Discipline. Structure. Constance.<br />
+        Support lié aux accès numériques privés, paiements, problèmes techniques et demandes raisonnables.
+      </div>
+      <div class="footer-links">
+        <a href="index.html">Accueil</a>
+        <a href="conditions.html">Conditions</a>
+        <a href="vente-finale.html">Vente finale</a>
+        <a href="confidentialite.html">Confidentialité</a>
+        <a href="contact.html">Contact</a>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    function scrollToSection(id) {
+      const target = document.getElementById(id);
+      if (!target) return;
+
+      const header = document.querySelector('header');
+      const headerHeight = header ? header.offsetHeight : 0;
+      const extraSpace = 18;
+      const targetPosition = target.getBoundingClientRect().top + window.pageYOffset - headerHeight - extraSpace;
+
+      window.scrollTo({ top: Math.max(targetPosition, 0), behavior: 'smooth' });
+    }
+
+    document.querySelectorAll('a[href^="#"]').forEach(link => {
+      link.addEventListener('click', event => {
+        const id = link.getAttribute('href').replace('#', '');
+        if (!document.getElementById(id)) return;
+        event.preventDefault();
+        scrollToSection(id);
+        history.replaceState(null, '', `#${id}`);
+      });
+    });
+
+    const fields = {
+      name: document.getElementById('supportName'),
+      email: document.getElementById('supportEmail'),
+      formation: document.getElementById('supportFormation'),
+      problem: document.getElementById('supportProblem'),
+      details: document.getElementById('supportDetails')
+    };
+
+    const copyButton = document.getElementById('copyRequest');
+    const sendEmailButton = document.getElementById('sendEmailRequest');
+    const copyStatus = document.getElementById('copyStatus');
+    const supportEmail = 'remplacer-par-ton-email@exemple.com';
+
+    function buildSupportMessage() {
+      const name = fields.name.value.trim() || '[Nom à compléter]';
+      const email = fields.email.value.trim() || '[Courriel utilisé au paiement]';
+      const formation = fields.formation.value.trim() || '[Formation achetée]';
+      const problem = fields.problem.value.trim() || '[Type de problème]';
+      const details = fields.details.value.trim() || '[Détails, date d’achat, message d’erreur, appareil utilisé ou preuve disponible]';
+
+      return `Bonjour,\n\nJ’ai besoin d’aide pour une mini-formation Le Pivot d’Or.\n\nNom : ${name}\nCourriel utilisé au paiement : ${email}\nFormation achetée : ${formation}\nType de problème : ${problem}\nDétails : ${details}\n\nMerci.`;
+    }
+
+    Object.values(fields).forEach(field => {
+      if (field) field.addEventListener('input', () => {
+        if (copyStatus) copyStatus.textContent = '';
+      });
+    });
+
+    if (copyButton) {
+      copyButton.addEventListener('click', async () => {
+        const message = buildSupportMessage();
+        try {
+          await navigator.clipboard.writeText(message);
+          copyStatus.textContent = 'Demande copiée. Tu peux maintenant la coller dans un courriel ou dans la page contact.';
+        } catch (error) {
+          copyStatus.textContent = 'Copie impossible automatiquement. Sélectionne le texte du bloc et copie-le manuellement.';
+        }
+      });
+    }
+
+    if (sendEmailButton) {
+      sendEmailButton.addEventListener('click', () => {
+        const message = buildSupportMessage();
+        const subject = encodeURIComponent('Demande de support — Mini Mini Formation IA');
+        const body = encodeURIComponent(message);
+        window.location.href = `mailto:${supportEmail}?subject=${subject}&body=${body}`;
+        copyStatus.textContent = 'Ouverture de ton application courriel avec la demande déjà préparée.';
+      });
+    }
+  </script>
+</body>
+</html>
