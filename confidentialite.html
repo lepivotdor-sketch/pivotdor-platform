@@ -1,12 +1,952 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-  <meta charset="UTF-8">
-  <title>Confidentialité | Le Pivot d'Or</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Politique de confidentialité | Mini Mini Formation IA | Le Pivot d’Or</title>
+  <meta name="description" content="Politique de confidentialité Le Pivot d’Or pour Mini Mini Formation IA : données collectées, paiement Stripe, support, sécurité, conservation, droits et contact." />
+  <meta name="theme-color" content="#d8c5a6" />
+  <meta name="robots" content="index, follow" />
+  <meta property="og:title" content="Politique de confidentialité | Le Pivot d’Or" />
+  <meta property="og:description" content="Politique claire sur la protection des renseignements personnels liés au site et aux mini-formations numériques Le Pivot d’Or." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://lepivotdor-sketch.github.io/pivotdor-platform/confidentialite.html" />
+  <meta name="twitter:card" content="summary" />
+
+  <link rel="icon" href="assets/logo/logo.png" />
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="stylesheet" href="css/responsive.css" />
+  <link rel="preload" href="assets/sounds/click.mp3" as="audio" />
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebPage",
+    "name": "Politique de confidentialité | Le Pivot d’Or",
+    "description": "Politique de confidentialité pour le site Le Pivot d’Or et ses mini-formations numériques.",
+    "url": "https://lepivotdor-sketch.github.io/pivotdor-platform/confidentialite.html",
+    "publisher": {
+      "@type": "Organization",
+      "name": "Le Pivot d’Or"
+    }
+  }
+  </script>
+
+  <style>
+    :root {
+      --fond: #d8c5a6;
+      --fond-2: #e4d4b9;
+      --fond-3: #c9b38e;
+      --carte: rgba(229, 214, 190, 0.95);
+      --carte-2: rgba(214, 195, 163, 0.9);
+      --texte: #21180f;
+      --texte-2: #4f4638;
+      --muted: #746957;
+      --or: #b9862f;
+      --or-2: #8a5f1d;
+      --vert: #2f7d46;
+      --rouge: #b84242;
+      --bleu: #235f92;
+      --mauve: #73528a;
+      --ligne: rgba(28, 22, 14, 0.34);
+      --ombre: 0 24px 60px rgba(74, 51, 19, 0.16);
+      --ombre-douce: 0 16px 36px rgba(74, 51, 19, 0.11);
+      --radius: 28px;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: Aptos, Arial, sans-serif;
+      color: var(--texte);
+      line-height: 1.6;
+      min-height: 100vh;
+      background:
+        radial-gradient(circle at top left, rgba(240, 209, 138, 0.34), transparent 31%),
+        radial-gradient(circle at 78% 8%, rgba(185, 134, 47, 0.16), transparent 28%),
+        linear-gradient(135deg, var(--fond-2) 0%, var(--fond) 52%, var(--fond-3) 100%);
+    }
+
+    a { color: inherit; text-decoration: none; }
+    button, input, textarea, select { font: inherit; }
+    button { cursor: pointer; }
+
+    .skip-link {
+      position: absolute;
+      left: -999px;
+      top: 12px;
+      z-index: 1000;
+      padding: 10px 14px;
+      border-radius: 999px;
+      background: #21180f;
+      color: #f7ead0;
+      font-weight: 950;
+    }
+
+    .skip-link:focus { left: 12px; }
+
+    .page { width: min(1120px, 92%); margin: 0 auto; }
+
+    .topbar {
+      font-size: 0.86rem;
+      color: var(--texte-2);
+      background: rgba(199, 178, 142, 0.78);
+      border-bottom: 1px solid var(--ligne);
+      padding: 9px 0;
+    }
+
+    .topbar .page {
+      display: flex;
+      justify-content: space-between;
+      gap: 14px;
+      flex-wrap: wrap;
+      align-items: center;
+    }
+
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 50;
+      background: rgba(224, 208, 180, 0.94);
+      backdrop-filter: blur(18px);
+      border-bottom: 1px solid var(--ligne);
+    }
+
+    .nav {
+      min-height: 78px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 24px;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      min-width: 245px;
+    }
+
+    .brand-mark {
+      width: 54px;
+      height: 54px;
+      border-radius: 16px;
+      display: grid;
+      place-items: center;
+      background: linear-gradient(135deg, #120c05, #2b2115 48%, #8a5f1d);
+      color: #f7ead0;
+      font-weight: 950;
+      box-shadow: 0 14px 30px rgba(113, 77, 24, 0.22);
+      border: 1.5px solid rgba(185, 134, 47, 0.44);
+      overflow: hidden;
+      flex: 0 0 auto;
+      position: relative;
+    }
+
+    .brand-mark::after {
+      content: "PO";
+      position: absolute;
+      inset: 0;
+      display: grid;
+      place-items: center;
+      color: #f7ead0;
+      font-weight: 950;
+      font-size: 0.9rem;
+      pointer-events: none;
+      opacity: 1;
+    }
+
+    .brand-mark.has-logo::after { opacity: 0; }
+
+    .brand-logo {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+      display: block;
+      padding: 4px;
+      border-radius: 14px;
+      position: relative;
+      z-index: 1;
+    }
+
+    .brand strong {
+      display: block;
+      color: var(--or-2);
+      font-size: 1.1rem;
+      letter-spacing: 0.2px;
+    }
+
+    .brand span {
+      display: block;
+      color: var(--muted);
+      font-size: 0.8rem;
+      margin-top: 1px;
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      flex-wrap: wrap;
+      justify-content: flex-end;
+    }
+
+    .nav-links a:not(.btn) {
+      color: var(--texte-2);
+      font-size: 0.92rem;
+      font-weight: 850;
+    }
+
+    .nav-links a:not(.btn):hover { color: var(--or-2); }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      min-height: 42px;
+      padding: 12px 18px;
+      border-radius: 999px;
+      border: 1.5px solid rgba(80, 52, 15, 0.22);
+      background: linear-gradient(135deg, var(--or), #8d6021);
+      color: #1d1308;
+      font-weight: 950;
+      text-align: center;
+      box-shadow: 0 15px 32px rgba(139, 95, 31, 0.18);
+      transition: transform 0.18s ease, box-shadow 0.18s ease;
+    }
+
+    .btn:hover, .btn:focus-visible {
+      transform: translateY(-2px);
+      box-shadow: 0 20px 42px rgba(139, 95, 31, 0.24);
+      outline: none;
+    }
+
+    .btn.secondary {
+      background: rgba(221, 204, 174, 0.64);
+      color: var(--or-2);
+      border: 1.5px solid rgba(28, 22, 14, 0.38);
+      box-shadow: none;
+    }
+
+    .btn.ghost {
+      background: transparent;
+      color: var(--texte);
+      border: 1.5px solid rgba(28, 22, 14, 0.38);
+      box-shadow: none;
+    }
+
+    .btn.small { min-height: 36px; padding: 8px 12px; font-size: 0.84rem; }
+
+    .quick-actions {
+      border-top: 1px solid rgba(137, 96, 31, 0.14);
+      background: rgba(214, 195, 163, 0.94);
+      box-shadow: 0 10px 26px rgba(74, 51, 19, 0.08);
+    }
+
+    .quick-actions-inner {
+      display: grid;
+      grid-template-columns: repeat(7, minmax(0, 1fr));
+      gap: 8px;
+      overflow: visible;
+      padding: 10px 0 12px;
+    }
+
+    .quick-actions-inner a, .quick-actions-inner button {
+      min-height: 38px;
+      padding: 8px 9px;
+      border-radius: 999px;
+      border: 1.5px solid rgba(28, 22, 14, 0.38);
+      background: rgba(232, 216, 189, 0.78);
+      color: #21180f;
+      font-size: 0.76rem;
+      font-weight: 950;
+      white-space: normal;
+      line-height: 1.12;
+      text-align: center;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .quick-actions-inner a:focus-visible, .quick-actions-inner button:focus-visible, .btn:focus-visible {
+      outline: 3px solid rgba(35, 95, 146, 0.55);
+      outline-offset: 2px;
+    }
+
+    .badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      width: fit-content;
+      padding: 8px 13px;
+      border-radius: 999px;
+      background: rgba(185, 134, 47, 0.12);
+      border: 1px solid rgba(137, 96, 31, 0.22);
+      color: var(--or-2);
+      font-weight: 950;
+      font-size: 0.86rem;
+      margin-bottom: 18px;
+    }
+
+    .hero {
+      padding: 72px 0 48px;
+      display: grid;
+      grid-template-columns: 1.08fr 0.92fr;
+      gap: 42px;
+      align-items: center;
+    }
+
+    h1 {
+      font-size: clamp(2.5rem, 6vw, 5.2rem);
+      line-height: 0.98;
+      letter-spacing: -2.2px;
+      margin-bottom: 22px;
+    }
+
+    h1 span, .gold { color: var(--or-2); }
+
+    .lead {
+      color: var(--texte-2);
+      font-size: 1.13rem;
+      max-width: 780px;
+      margin-bottom: 20px;
+    }
+
+    .hero-actions { display: flex; gap: 13px; flex-wrap: wrap; margin: 28px 0; }
+
+    section { padding: 58px 0; scroll-margin-top: 190px; }
+
+    .section-title {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-end;
+      gap: 24px;
+      margin-bottom: 26px;
+    }
+
+    .section-title h2 {
+      font-size: clamp(2rem, 4vw, 3.3rem);
+      line-height: 1.03;
+      letter-spacing: -1.1px;
+      max-width: 780px;
+    }
+
+    .section-title p { color: var(--texte-2); max-width: 590px; }
+
+    .card {
+      border: 1.7px solid var(--ligne);
+      background: linear-gradient(180deg, var(--carte), var(--carte-2));
+      border-radius: var(--radius);
+      box-shadow: var(--ombre-douce);
+    }
+
+    .grid-2 { display: grid; grid-template-columns: repeat(2, 1fr); gap: 18px; }
+    .grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; }
+    .grid-4 { display: grid; grid-template-columns: repeat(4, 1fr); gap: 18px; }
+
+    .privacy-panel {
+      position: relative;
+      padding: 28px;
+      min-height: 540px;
+      overflow: hidden;
+      border: 1.7px solid var(--ligne);
+      border-radius: 34px;
+      background: linear-gradient(180deg, rgba(234, 220, 196, 0.96), rgba(207, 187, 154, 0.88));
+      box-shadow: var(--ombre);
+    }
+
+    .privacy-panel::before {
+      content: "";
+      position: absolute;
+      width: 320px;
+      height: 320px;
+      border-radius: 50%;
+      right: -135px;
+      top: -135px;
+      background: rgba(185, 134, 47, 0.24);
+      filter: blur(16px);
+    }
+
+    .privacy-panel > * { position: relative; z-index: 1; }
+
+    .privacy-status {
+      display: grid;
+      gap: 12px;
+      margin-top: 20px;
+    }
+
+    .status-row {
+      display: grid;
+      grid-template-columns: 1fr auto;
+      gap: 12px;
+      align-items: center;
+      padding: 14px;
+      border-radius: 18px;
+      background: rgba(220, 203, 173, 0.84);
+      border: 1.4px solid rgba(28, 22, 14, 0.22);
+      color: var(--texte-2);
+      font-weight: 850;
+    }
+
+    .status-row strong { display: block; color: var(--texte); }
+
+    .mini-card, .data-card, .rule-card, .faq-card, .quality-card { padding: 22px; }
+
+    .mini-card h3, .data-card h3, .rule-card h3, .faq-card h3, .quality-card h3 {
+      color: var(--or-2);
+      line-height: 1.16;
+      margin-bottom: 9px;
+      font-weight: 950;
+    }
+
+    .mini-card p, .data-card p, .rule-card p, .faq-card p, .quality-card p, .data-card li, .rule-card li { color: var(--texte-2); }
+    .data-card ul, .rule-card ul { margin-top: 10px; padding-left: 18px; display: grid; gap: 6px; }
+
+    .number {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 36px;
+      height: 36px;
+      border-radius: 13px;
+      background: rgba(185, 134, 47, 0.14);
+      color: var(--or-2);
+      font-weight: 950;
+      margin-bottom: 12px;
+    }
+
+    .pill {
+      display: inline-flex;
+      width: fit-content;
+      padding: 5px 8px;
+      border-radius: 999px;
+      font-size: 0.74rem;
+      font-weight: 950;
+      border: 1px solid rgba(28, 22, 14, 0.18);
+      background: rgba(47, 125, 70, 0.12);
+      color: var(--vert);
+      white-space: nowrap;
+    }
+
+    .pill.warn { background: rgba(186, 123, 37, 0.13); color: #7a4f15; }
+    .pill.bad { background: rgba(184, 66, 66, 0.12); color: var(--rouge); }
+    .pill.neutral { background: rgba(35, 95, 146, 0.10); color: var(--bleu); }
+
+    .notice, .green-notice, .blue-notice, .gold-note {
+      padding: 24px;
+      border-radius: 28px;
+      box-shadow: var(--ombre-douce);
+    }
+
+    .notice { border: 1.7px solid rgba(184, 66, 66, 0.28); background: rgba(184, 66, 66, 0.08); }
+    .green-notice { border: 1.7px solid rgba(47, 125, 70, 0.28); background: rgba(47, 125, 70, 0.09); }
+    .blue-notice { border: 1.7px solid rgba(35, 95, 146, 0.28); background: rgba(35, 95, 146, 0.08); }
+    .gold-note { border: 1.7px solid rgba(185, 134, 47, 0.32); background: rgba(185, 134, 47, 0.10); }
+    .notice strong { color: var(--rouge); }
+    .green-notice strong { color: var(--vert); }
+    .blue-notice strong { color: var(--bleu); }
+    .gold-note strong { color: var(--or-2); }
+
+    .checklist {
+      display: grid;
+      gap: 10px;
+      margin-top: 12px;
+    }
+
+    .check-item {
+      display: grid;
+      grid-template-columns: auto 1fr;
+      gap: 10px;
+      align-items: start;
+      padding: 12px 14px;
+      border-radius: 16px;
+      border: 1.4px solid rgba(28, 22, 14, 0.20);
+      background: rgba(232, 216, 189, 0.72);
+      color: var(--texte-2);
+      font-size: 0.94rem;
+      font-weight: 820;
+    }
+
+    .check-item span:first-child {
+      display: inline-grid;
+      place-items: center;
+      width: 24px;
+      height: 24px;
+      border-radius: 50%;
+      background: rgba(47, 125, 70, 0.12);
+      color: var(--vert);
+      font-weight: 950;
+    }
+
+    .flow {
+      display: grid;
+      gap: 14px;
+    }
+
+    .flow-item {
+      padding: 18px;
+      display: grid;
+      grid-template-columns: 130px 1fr;
+      gap: 18px;
+      align-items: start;
+    }
+
+    .flow-item strong { color: var(--or-2); font-size: 1.05rem; }
+    .flow-item p { color: var(--texte-2); }
+
+    details {
+      border: 1.7px solid var(--ligne);
+      background: linear-gradient(180deg, var(--carte), var(--carte-2));
+      border-radius: 22px;
+      padding: 18px 20px;
+      box-shadow: var(--ombre-douce);
+    }
+
+    summary { cursor: pointer; color: var(--or-2); font-weight: 950; font-size: 1.05rem; }
+    details p { color: var(--texte-2); margin-top: 12px; }
+
+    .contact-box {
+      padding: 34px;
+      text-align: center;
+      border-radius: 36px;
+      background: linear-gradient(135deg, rgba(232, 216, 189, 0.95), rgba(197, 174, 137, 0.82));
+      border: 1.7px solid var(--ligne);
+      box-shadow: var(--ombre);
+    }
+
+    .contact-box h2 {
+      font-size: clamp(2rem, 4vw, 3.4rem);
+      line-height: 1.05;
+      margin-bottom: 14px;
+    }
+
+    .contact-box p {
+      color: var(--texte-2);
+      max-width: 760px;
+      margin: 0 auto 22px;
+      font-size: 1.05rem;
+    }
+
+    footer { padding: 34px 0 44px; border-top: 1px solid var(--ligne); color: var(--muted); font-size: 0.92rem; }
+
+    .footer-grid {
+      display: flex;
+      justify-content: space-between;
+      gap: 22px;
+      flex-wrap: wrap;
+      align-items: flex-start;
+    }
+
+    .footer-links { display: flex; gap: 12px; flex-wrap: wrap; justify-content: flex-end; }
+
+    @media (prefers-reduced-motion: reduce) {
+      html { scroll-behavior: auto; }
+      *, *::before, *::after { transition: none !important; animation: none !important; }
+    }
+
+    @media (max-width: 980px) {
+      .quick-actions-inner { grid-template-columns: repeat(4, minmax(0, 1fr)); }
+      .hero, .grid-2 { grid-template-columns: 1fr; }
+      .grid-4, .grid-3 { grid-template-columns: repeat(2, 1fr); }
+      .section-title { flex-direction: column; align-items: flex-start; }
+    }
+
+    @media (max-width: 680px) {
+      .topbar .page, .nav { align-items: flex-start; flex-direction: column; }
+      .nav-links { justify-content: flex-start; }
+      .quick-actions-inner { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+      .grid-4, .grid-3, .grid-2 { grid-template-columns: 1fr; }
+      .flow-item { grid-template-columns: 1fr; }
+      h1 { letter-spacing: -1.4px; }
+    }
+  </style>
 </head>
+
 <body>
-  <h1>Politique de confidentialité</h1>
-  <p>Page qui expliquera comment les informations sont utilisées et protégées.</p>
-  <a href="index.html">Retour à l'accueil</a>
+  <a class="skip-link" href="#contenu">Aller directement au contenu</a>
+
+  <div class="topbar">
+    <div class="page">
+      <span>Le Pivot d’Or • Politique de confidentialité</span>
+      <span>Données minimales • Paiement Stripe • Support client • Accès numérique privé</span>
+    </div>
+  </div>
+
+  <header>
+    <div class="page nav">
+      <a class="brand" href="index.html" aria-label="Retour à l’accueil">
+        <div class="brand-mark" id="brandMark">
+          <img src="assets/logo/logo.png" data-fallback-src="logo.png" alt="Logo officiel Le Pivot d’Or" class="brand-logo" id="brandLogo" />
+        </div>
+        <div>
+          <strong>Le Pivot d’Or</strong>
+          <span>Vision. Clarté. Discipline. Structure. Constance.</span>
+        </div>
+      </a>
+
+      <nav class="nav-links" aria-label="Navigation principale">
+        <a href="index.html">Accueil</a>
+        <a href="formation.html">Formation</a>
+        <a href="support.html">Support</a>
+        <a href="conditions.html">Conditions</a>
+        <a href="vente-finale.html">Vente finale</a>
+        <a class="btn small" href="#resume">Résumé</a>
+      </nav>
+    </div>
+
+    <div class="quick-actions" aria-label="Boutons rapides confidentialité">
+      <div class="page quick-actions-inner">
+        <a href="#resume">Résumé</a>
+        <a href="#collecte">Collecte</a>
+        <a href="#utilisation">Utilisation</a>
+        <a href="#paiement">Paiement</a>
+        <a href="#partage">Partage</a>
+        <a href="#droits">Droits</a>
+        <button type="button" id="soundToggle">Son : désactivé</button>
+      </div>
+    </div>
+  </header>
+
+  <main id="contenu" tabindex="-1">
+    <section class="page hero" id="resume">
+      <div>
+        <span class="badge">Politique de confidentialité</span>
+        <h1>Des données limitées, utilisées avec <span>prudence.</span></h1>
+        <p class="lead">
+          Cette politique explique quelles informations peuvent être collectées lorsque tu consultes le site Le Pivot d’Or, achètes une mini-formation, demandes du support ou communiques avec l’entreprise.
+        </p>
+        <p class="lead">
+          Le principe de base est simple : collecter seulement les informations utiles au fonctionnement du site, à la livraison de l’accès, au paiement, au support et à l’amélioration du service.
+        </p>
+
+        <div class="hero-actions">
+          <a class="btn" href="#collecte">Voir les données collectées</a>
+          <a class="btn secondary" href="#droits">Voir tes droits</a>
+          <a class="btn ghost" href="support.html">Contacter le support</a>
+        </div>
+      </div>
+
+      <aside class="privacy-panel">
+        <span class="badge">Résumé rapide</span>
+        <h2 class="gold">Ce que tu dois comprendre</h2>
+        <div class="privacy-status">
+          <div class="status-row"><div><strong>Données minimales</strong><span>Nom, courriel, achat, demande de support ou informations nécessaires au service.</span></div><span class="pill">Limité</span></div>
+          <div class="status-row"><div><strong>Paiement externe</strong><span>Les paiements sont traités par Stripe ou un fournisseur de paiement. Le site ne doit pas stocker de numéro complet de carte.</span></div><span class="pill neutral">Stripe</span></div>
+          <div class="status-row"><div><strong>Support client</strong><span>Le support peut demander une preuve d’achat, une capture d’écran ou le courriel utilisé au paiement.</span></div><span class="pill">Support</span></div>
+          <div class="status-row"><div><strong>GitHub Pages public</strong><span>Aucune donnée client, clé privée ou information sensible ne doit être placée dans le dépôt public.</span></div><span class="pill warn">Important</span></div>
+          <div class="status-row"><div><strong>Contact possible</strong><span>Tu peux demander une correction, une clarification ou la suppression d’une information lorsque c’est applicable.</span></div><span class="pill">Droits</span></div>
+        </div>
+      </aside>
+    </section>
+
+    <section class="page" id="collecte">
+      <div class="section-title">
+        <div>
+          <span class="badge">Données collectées</span>
+          <h2>Les informations collectées doivent rester utiles et limitées.</h2>
+        </div>
+        <p>La collecte dépend de ce que tu fais sur le site : consultation, achat, support ou contact.</p>
+      </div>
+
+      <div class="grid-4">
+        <article class="card data-card"><span class="number">1</span><h3>Informations de contact</h3><p>Nom, courriel ou informations transmises volontairement dans une demande de contact ou de support.</p></article>
+        <article class="card data-card"><span class="number">2</span><h3>Informations d’achat</h3><p>Nom de la formation, date d’achat, statut de paiement, courriel utilisé et preuve utile au support.</p></article>
+        <article class="card data-card"><span class="number">3</span><h3>Informations techniques</h3><p>Navigateur, type d’appareil, page consultée, erreur affichée ou capture d’écran transmise volontairement.</p></article>
+        <article class="card data-card"><span class="number">4</span><h3>Messages de support</h3><p>Contenu de ta demande, problème rencontré, réponse donnée et suivi nécessaire pour régler la situation.</p></article>
+      </div>
+    </section>
+
+    <section class="page" id="non-collecte">
+      <div class="section-title">
+        <div>
+          <span class="badge">Ce qui ne doit pas être collecté inutilement</span>
+          <h2>Les données sensibles doivent être évitées.</h2>
+        </div>
+        <p>Pour protéger le client et l’entreprise, certaines informations ne doivent pas être demandées ou stockées dans GitHub public.</p>
+      </div>
+
+      <div class="grid-3">
+        <div class="notice"><strong>Ne transmets pas</strong><p style="margin-top:10px; color:var(--texte-2);">Mot de passe, numéro complet de carte, informations bancaires complètes, clés privées, accès personnels ou données très sensibles inutiles.</p></div>
+        <div class="gold-note"><strong>GitHub public</strong><p style="margin-top:10px; color:var(--texte-2);">Aucune donnée client, liste d’acheteurs, accès privé réel, clé Stripe secrète ou contenu confidentiel ne doit être placé dans ce dépôt public.</p></div>
+        <div class="blue-notice"><strong>Support prudent</strong><p style="margin-top:10px; color:var(--texte-2);">Le support doit demander seulement les informations nécessaires : courriel, preuve d’achat, formation, capture d’écran et description du problème.</p></div>
+      </div>
+    </section>
+
+    <section class="page" id="utilisation">
+      <div class="section-title">
+        <div>
+          <span class="badge">Utilisation des informations</span>
+          <h2>Les données servent à livrer, aider, vérifier et améliorer.</h2>
+        </div>
+        <p>Les informations ne doivent pas être utilisées au-delà de ce qui est raisonnablement nécessaire pour le service.</p>
+      </div>
+
+      <div class="grid-3">
+        <article class="card rule-card"><h3>Livrer l’accès</h3><p>Utiliser le courriel et les informations d’achat pour confirmer ou livrer l’accès numérique privé.</p></article>
+        <article class="card rule-card"><h3>Traiter le support</h3><p>Comprendre les problèmes d’accès, de paiement, de courriel ou de technique et proposer une solution.</p></article>
+        <article class="card rule-card"><h3>Vérifier une transaction</h3><p>Confirmer un paiement, un double paiement, une erreur de facturation ou une demande de compensation.</p></article>
+        <article class="card rule-card"><h3>Améliorer le site</h3><p>Identifier les pages qui causent de la confusion, les problèmes d’accès ou les erreurs fréquentes.</p></article>
+        <article class="card rule-card"><h3>Communiquer avec toi</h3><p>Répondre à une demande, envoyer une information d’accès ou transmettre une mise à jour importante.</p></article>
+        <article class="card rule-card"><h3>Respecter une obligation</h3><p>Conserver certaines informations lorsque cela est nécessaire pour une raison administrative, fiscale, comptable ou légale.</p></article>
+      </div>
+    </section>
+
+    <section class="page" id="paiement">
+      <div class="section-title">
+        <div>
+          <span class="badge">Paiement et Stripe</span>
+          <h2>Les paiements doivent être traités par un fournisseur sécurisé.</h2>
+        </div>
+        <p>Le site public ne doit jamais stocker de numéro complet de carte ni de clé secrète Stripe.</p>
+      </div>
+
+      <div class="grid-2">
+        <div class="green-notice">
+          <strong>Ce qui peut être utile</strong>
+          <div class="checklist">
+            <div class="check-item"><span>✓</span><p>Nom de la formation achetée.</p></div>
+            <div class="check-item"><span>✓</span><p>Date ou preuve de paiement.</p></div>
+            <div class="check-item"><span>✓</span><p>Courriel utilisé lors du paiement.</p></div>
+            <div class="check-item"><span>✓</span><p>Identifiant ou reçu fourni par le service de paiement, si disponible.</p></div>
+          </div>
+        </div>
+        <div class="notice">
+          <strong>Ce qui ne doit pas être demandé</strong>
+          <div class="checklist">
+            <div class="check-item"><span>!</span><p>Numéro complet de carte bancaire.</p></div>
+            <div class="check-item"><span>!</span><p>Code de sécurité de carte.</p></div>
+            <div class="check-item"><span>!</span><p>Mot de passe Stripe ou courriel.</p></div>
+            <div class="check-item"><span>!</span><p>Clé API, token privé ou donnée bancaire complète.</p></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="page" id="partage">
+      <div class="section-title">
+        <div>
+          <span class="badge">Partage avec des tiers</span>
+          <h2>Certaines informations peuvent passer par des outils nécessaires au service.</h2>
+        </div>
+        <p>Le partage doit rester limité à ce qui est nécessaire pour faire fonctionner le site, le paiement, la livraison et le support.</p>
+      </div>
+
+      <div class="grid-4">
+        <article class="card data-card"><span class="number">1</span><h3>Fournisseur de paiement</h3><p>Pour traiter les paiements, confirmations, reçus ou remboursements lorsque c’est applicable.</p></article>
+        <article class="card data-card"><span class="number">2</span><h3>Hébergement du site</h3><p>Pour afficher les pages publiques, fichiers et ressources du site.</p></article>
+        <article class="card data-card"><span class="number">3</span><h3>Outils de courriel</h3><p>Pour envoyer une confirmation, une réponse de support ou une information d’accès.</p></article>
+        <article class="card data-card"><span class="number">4</span><h3>Outils de support</h3><p>Pour traiter une demande, documenter un problème ou suivre une réponse.</p></article>
+      </div>
+    </section>
+
+    <section class="page" id="conservation">
+      <div class="section-title">
+        <div>
+          <span class="badge">Conservation</span>
+          <h2>Les informations ne doivent pas être gardées inutilement.</h2>
+        </div>
+        <p>La durée de conservation dépend du type de donnée, de l’utilité opérationnelle et des obligations applicables.</p>
+      </div>
+
+      <div class="flow">
+        <article class="card flow-item"><strong>Support</strong><p>Les messages de support peuvent être conservés le temps nécessaire pour résoudre le problème, documenter la réponse et éviter les abus.</p></article>
+        <article class="card flow-item"><strong>Achat</strong><p>Les informations liées à une transaction peuvent être conservées pour le suivi, la comptabilité, la preuve d’achat ou la gestion d’une demande.</p></article>
+        <article class="card flow-item"><strong>Données inutiles</strong><p>Les informations non nécessaires ou transmises par erreur devraient être supprimées ou ignorées lorsque possible.</p></article>
+        <article class="card flow-item"><strong>GitHub public</strong><p>Aucune donnée client réelle ne doit être conservée dans le dépôt public du site.</p></article>
+      </div>
+    </section>
+
+    <section class="page" id="securite">
+      <div class="section-title">
+        <div>
+          <span class="badge">Sécurité</span>
+          <h2>La sécurité repose sur la prudence et la séparation des données.</h2>
+        </div>
+        <p>Un site GitHub Pages est public. Il ne doit pas contenir de secrets ou d’accès clients réels.</p>
+      </div>
+
+      <div class="grid-2">
+        <div class="gold-note">
+          <strong>Bonnes pratiques</strong>
+          <div class="checklist">
+            <div class="check-item"><span>✓</span><p>Séparer les pages publiques des accès clients réels.</p></div>
+            <div class="check-item"><span>✓</span><p>Ne jamais publier de clé secrète dans GitHub.</p></div>
+            <div class="check-item"><span>✓</span><p>Utiliser Stripe ou un fournisseur fiable pour le paiement.</p></div>
+            <div class="check-item"><span>✓</span><p>Limiter les données demandées au strict nécessaire.</p></div>
+          </div>
+        </div>
+        <div class="notice">
+          <strong>Risque à éviter</strong>
+          <p style="margin-top:10px; color:var(--texte-2);">Une page cachée, un lien non affiché ou un fichier dans GitHub public ne constitue pas une vraie protection. Pour un vrai espace client, il faudra utiliser une authentification ou un système externe sécurisé.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="page" id="droits">
+      <div class="section-title">
+        <div>
+          <span class="badge">Droits et demandes</span>
+          <h2>Tu peux demander une clarification ou une correction.</h2>
+        </div>
+        <p>Les demandes doivent être raisonnables, identifiables et liées aux informations que Le Pivot d’Or détient réellement.</p>
+      </div>
+
+      <div class="grid-3">
+        <article class="card rule-card"><h3>Accès ou explication</h3><p>Tu peux demander quelles informations utiles ont été transmises ou utilisées pour traiter une demande.</p></article>
+        <article class="card rule-card"><h3>Correction</h3><p>Tu peux demander la correction d’un courriel, d’un nom ou d’une information inexacte liée à ton achat ou support.</p></article>
+        <article class="card rule-card"><h3>Suppression lorsque possible</h3><p>Tu peux demander la suppression d’informations inutiles, sous réserve des besoins administratifs, comptables, légaux ou de sécurité.</p></article>
+      </div>
+    </section>
+
+    <section class="page" id="mineurs">
+      <div class="section-title">
+        <div>
+          <span class="badge">Mineurs</span>
+          <h2>Les achats doivent être faits de façon responsable.</h2>
+        </div>
+        <p>Le site vise principalement des personnes capables de comprendre un achat numérique et ses conditions.</p>
+      </div>
+
+      <div class="grid-2">
+        <div class="blue-notice">
+          <strong>Responsabilité d’achat</strong>
+          <p style="margin-top:10px; color:var(--texte-2);">Une personne qui achète une formation doit être autorisée à utiliser le moyen de paiement et à accepter les conditions applicables.</p>
+        </div>
+        <div class="notice">
+          <strong>Prudence</strong>
+          <p style="margin-top:10px; color:var(--texte-2);">Si une situation implique un achat non autorisé, une erreur ou une personne mineure, le support peut demander des informations de vérification raisonnables.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="page" id="faq">
+      <div class="section-title">
+        <div>
+          <span class="badge">FAQ confidentialité</span>
+          <h2>Questions fréquentes.</h2>
+        </div>
+        <p>Réponses simples pour clarifier la gestion des informations.</p>
+      </div>
+
+      <div class="grid-2">
+        <details open><summary>Est-ce que Le Pivot d’Or stocke mon numéro de carte?</summary><p>Le site ne doit pas stocker de numéro complet de carte. Les paiements doivent être traités par un fournisseur de paiement comme Stripe ou un service équivalent.</p></details>
+        <details><summary>Quelles informations dois-je envoyer au support?</summary><p>Ton nom, ton courriel utilisé au paiement, la formation achetée, la date d’achat, une preuve de paiement et une capture d’écran si nécessaire.</p></details>
+        <details><summary>Est-ce que mes données peuvent être dans GitHub?</summary><p>Non. Les données clients réelles ne doivent pas être placées dans GitHub public.</p></details>
+        <details><summary>Est-ce que je peux demander une correction?</summary><p>Oui. Tu peux demander la correction d’une information inexacte liée à ton achat ou à une demande de support.</p></details>
+        <details><summary>Est-ce que des outils externes peuvent être utilisés?</summary><p>Oui, certains outils peuvent être nécessaires pour le paiement, l’hébergement, le courriel, la livraison ou le support.</p></details>
+        <details><summary>Est-ce que cette politique peut changer?</summary><p>Oui. Elle peut être mise à jour pour refléter les changements du site, des outils, des offres ou des pratiques internes.</p></details>
+      </div>
+    </section>
+
+    <section class="page" id="contact">
+      <div class="contact-box">
+        <span class="badge">Demande de confidentialité</span>
+        <h2>Tu veux demander une correction ou une clarification?</h2>
+        <p>Utilise la page contact ou support. Indique clairement ton nom, le courriel concerné, la formation liée et la nature exacte de ta demande.</p>
+        <div class="hero-actions" style="justify-content:center;">
+          <a class="btn" href="support.html">Ouvrir le support</a>
+          <a class="btn secondary" href="contact.html">Page contact</a>
+          <a class="btn ghost" href="conditions.html">Conditions</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="page">
+      <div class="notice">
+        <strong>Note importante :</strong> cette politique est une base de travail claire pour ton site. Avant un lancement à grand volume, fais valider les textes de confidentialité, commerciaux et légaux par une personne qualifiée selon ta situation.
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="page footer-grid">
+      <div>
+        <strong class="gold">Le Pivot d’Or — Politique de confidentialité</strong><br />
+        Bâtir une vie solide : Vision. Clarté. Discipline. Structure. Constance.<br />
+        Politique liée au site, aux mini-formations, aux paiements, au support et aux accès numériques privés.
+      </div>
+      <div class="footer-links">
+        <a href="index.html">Accueil</a>
+        <a href="formation.html">Formation</a>
+        <a href="support.html">Support</a>
+        <a href="conditions.html">Conditions</a>
+        <a href="vente-finale.html">Vente finale</a>
+        <a href="contact.html">Contact</a>
+      </div>
+    </div>
+  </footer>
+
+  <audio id="clickSound" preload="auto" src="assets/sounds/click.mp3"></audio>
+
+  <script>
+    let soundEnabled = false;
+
+    function scrollToSection(id) {
+      const target = document.getElementById(id);
+      if (!target) return;
+      const header = document.querySelector('header');
+      const headerHeight = header ? header.offsetHeight : 0;
+      const targetPosition = target.getBoundingClientRect().top + window.pageYOffset - headerHeight - 18;
+      window.scrollTo({ top: Math.max(targetPosition, 0), behavior: 'smooth' });
+    }
+
+    function setupNavigation() {
+      document.querySelectorAll('a[href^="#"]').forEach(link => {
+        link.addEventListener('click', event => {
+          const id = link.getAttribute('href').replace('#', '');
+          if (!document.getElementById(id)) return;
+          event.preventDefault();
+          playClick();
+          scrollToSection(id);
+          history.replaceState(null, '', `#${id}`);
+        });
+      });
+    }
+
+    function setupLogoFallback() {
+      const logo = document.getElementById('brandLogo');
+      const mark = document.getElementById('brandMark');
+      if (!logo || !mark) return;
+
+      const showLogo = () => mark.classList.add('has-logo');
+      if (logo.complete && logo.naturalWidth > 0) showLogo();
+
+      logo.addEventListener('load', showLogo);
+      logo.addEventListener('error', () => {
+        const fallback = logo.dataset.fallbackSrc;
+        const current = logo.getAttribute('src') || '';
+        if (fallback && !current.includes(fallback)) {
+          logo.src = fallback;
+          return;
+        }
+        logo.style.display = 'none';
+        mark.classList.remove('has-logo');
+      });
+    }
+
+    function setupSound() {
+      const button = document.getElementById('soundToggle');
+      if (!button) return;
+      button.addEventListener('click', () => {
+        soundEnabled = !soundEnabled;
+        button.textContent = soundEnabled ? 'Son : activé' : 'Son : désactivé';
+        if (soundEnabled) playClick();
+      });
+    }
+
+    function playClick() {
+      if (!soundEnabled) return;
+      const audio = document.getElementById('clickSound');
+      if (!audio) return;
+      audio.currentTime = 0;
+      audio.play().catch(() => {});
+    }
+
+    setupNavigation();
+    setupLogoFallback();
+    setupSound();
+  </script>
 </body>
 </html>
