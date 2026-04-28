@@ -5,12 +5,33 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Mini Mini Formation IA | Le Pivot d’Or</title>
   <meta name="description" content="Mini Mini Formation IA par Le Pivot d’Or : mini-formations digitales simples, concrètes et structurées avec IA, productivité, business, finances et accès numérique privé." />
+  <meta name="theme-color" content="#d8c5a6" />
+  <meta name="robots" content="index, follow" />
+  <meta property="og:title" content="Mini Mini Formation IA | Le Pivot d’Or" />
+  <meta property="og:description" content="Mini-formations digitales simples, concrètes et structurées pour apprendre vite, appliquer vite et avancer avec l’IA." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://lepivotdor-sketch.github.io/pivotdor-platform/" />
+  <meta property="og:image" content="https://lepivotdor-sketch.github.io/pivotdor-platform/logo.png" />
+  <meta name="twitter:card" content="summary" />
 
-  <!-- Fichiers externes prévus plus tard. Le site fonctionne même si ces fichiers n’existent pas encore. -->
   <link rel="icon" href="assets/logo/logo.png" />
   <link rel="stylesheet" href="css/style.css" />
   <link rel="stylesheet" href="css/responsive.css" />
   <link rel="preload" href="assets/sounds/click.mp3" as="audio" />
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    "name": "Le Pivot d’Or — Mini Mini Formation IA",
+    "url": "https://lepivotdor-sketch.github.io/pivotdor-platform/",
+    "description": "Plateforme de mini-formations digitales simples, concrètes et structurées.",
+    "publisher": {
+      "@type": "Organization",
+      "name": "Le Pivot d’Or"
+    }
+  }
+  </script>
 
   <style>
     :root {
@@ -50,6 +71,21 @@
 
     a { color: inherit; text-decoration: none; }
     button, input, select { font: inherit; }
+    button { cursor: pointer; }
+
+    .skip-link {
+      position: absolute;
+      left: -999px;
+      top: 12px;
+      z-index: 1000;
+      padding: 10px 14px;
+      border-radius: 999px;
+      background: #21180f;
+      color: #f7ead0;
+      font-weight: 950;
+    }
+
+    .skip-link:focus { left: 12px; }
 
     .page { width: min(1200px, 92%); margin: 0 auto; }
 
@@ -179,7 +215,6 @@
       font-weight: 950;
       text-align: center;
       box-shadow: 0 15px 32px rgba(139, 95, 31, 0.18);
-      cursor: pointer;
       transition: transform 0.18s ease, box-shadow 0.18s ease, background 0.18s ease;
     }
 
@@ -204,6 +239,7 @@
     }
 
     .btn.small { min-height: 36px; padding: 8px 12px; font-size: 0.84rem; }
+    .btn.disabled { opacity: 0.6; cursor: not-allowed; }
 
     .quick-actions {
       border-top: 1px solid rgba(137, 96, 31, 0.14);
@@ -234,7 +270,11 @@
       display: inline-flex;
       align-items: center;
       justify-content: center;
-      cursor: pointer;
+    }
+
+    .quick-actions-inner a:focus-visible, .quick-actions-inner button:focus-visible, .btn:focus-visible, input:focus-visible {
+      outline: 3px solid rgba(35, 95, 146, 0.55);
+      outline-offset: 2px;
     }
 
     .badge {
@@ -474,7 +514,6 @@
       color: var(--or-2);
       padding: 9px 13px;
       border-radius: 999px;
-      cursor: pointer;
       font-weight: 950;
       font-size: 0.88rem;
     }
@@ -483,6 +522,7 @@
 
     .formation-card { display: flex; flex-direction: column; gap: 13px; min-height: 330px; }
     .formation-card h3 { font-size: 1.28rem; color: #6f4818; }
+    .formation-card.hide { display: none !important; }
 
     .formation-top { display: flex; justify-content: space-between; gap: 12px; align-items: center; }
 
@@ -499,7 +539,6 @@
     }
 
     .price { color: var(--or-2); font-size: 1.35rem; font-weight: 950; white-space: nowrap; }
-
     .formation-meta { display: grid; gap: 7px; color: var(--muted); font-size: 0.88rem; font-weight: 800; margin-top: auto; }
 
     .bar { height: 10px; background: rgba(80, 60, 30, 0.11); border-radius: 999px; overflow: hidden; border: 1px solid rgba(137, 96, 31, 0.10); }
@@ -516,6 +555,15 @@
     }
 
     .notice strong { color: var(--rouge); }
+
+    .info-note {
+      padding: 20px;
+      border-radius: 24px;
+      border: 1.7px solid rgba(35, 95, 146, 0.26);
+      background: rgba(35, 95, 146, 0.08);
+      color: var(--texte-2);
+      box-shadow: var(--ombre-douce);
+    }
 
     .micro-catalogue-panel {
       padding: 24px;
@@ -569,7 +617,6 @@
       font-weight: 950;
       line-height: 1.1;
       text-align: center;
-      cursor: pointer;
       box-shadow: 0 10px 22px rgba(45, 32, 16, 0.20);
     }
 
@@ -594,6 +641,26 @@
 
     .micro-title-card.hide { display: none; }
 
+    .test-grid {
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
+      gap: 12px;
+    }
+
+    .test-card {
+      padding: 16px;
+      border-radius: 20px;
+      border: 1.5px solid rgba(28, 22, 14, 0.26);
+      background: rgba(232, 216, 189, 0.76);
+      color: var(--texte-2);
+      font-weight: 850;
+      min-height: 120px;
+    }
+
+    .test-card strong { display: block; color: var(--or-2); margin-bottom: 8px; }
+
+    footer { padding: 34px 0 44px; border-top: 1px solid var(--ligne); color: var(--muted); font-size: 0.92rem; }
+
     .footer-grid {
       display: flex;
       justify-content: space-between;
@@ -602,14 +669,19 @@
       align-items: flex-start;
     }
 
-    footer { padding: 34px 0 44px; border-top: 1px solid var(--ligne); color: var(--muted); font-size: 0.92rem; }
     .footer-links { display: flex; gap: 12px; flex-wrap: wrap; justify-content: flex-end; }
     .admin-link { color: rgba(79, 70, 56, 0.44); }
+    #routeMessage { margin-top: 16px; min-height: 24px; color: var(--rouge); font-weight: 950; }
+
+    @media (prefers-reduced-motion: reduce) {
+      html { scroll-behavior: auto; }
+      *, *::before, *::after { transition: none !important; animation: none !important; }
+    }
 
     @media (max-width: 1080px) {
       .quick-actions-inner { grid-template-columns: repeat(4, minmax(0, 1fr)); }
       .hero { grid-template-columns: 1fr; }
-      .grid-4, .grid-3, .proof-grid { grid-template-columns: repeat(2, 1fr); }
+      .grid-4, .grid-3, .proof-grid, .test-grid { grid-template-columns: repeat(2, 1fr); }
       .micro-title-grid { grid-template-columns: repeat(4, minmax(150px, 1fr)); }
       .section-title { flex-direction: column; align-items: flex-start; }
     }
@@ -618,7 +690,7 @@
       .topbar .page, .nav { align-items: flex-start; flex-direction: column; }
       .nav-links { justify-content: flex-start; }
       .quick-actions-inner { grid-template-columns: repeat(2, minmax(0, 1fr)); }
-      .grid-4, .grid-3, .grid-2, .proof-grid { grid-template-columns: 1fr; }
+      .grid-4, .grid-3, .grid-2, .proof-grid, .test-grid { grid-template-columns: 1fr; }
       .micro-title-grid { grid-template-columns: repeat(2, minmax(150px, 1fr)); }
       .catalogue-tools { grid-template-columns: 1fr; }
       h1 { letter-spacing: -1.4px; }
@@ -627,6 +699,8 @@
 </head>
 
 <body>
+  <a class="skip-link" href="#accueil">Aller directement au contenu</a>
+
   <div class="topbar">
     <div class="page">
       <span>Le Pivot d’Or • Mini Mini Formation IA • Futuriste accessible</span>
@@ -647,7 +721,6 @@
       </a>
 
       <nav class="nav-links" aria-label="Navigation principale">
-        <a href="index.html#cockpit">Cockpit</a>
         <a href="index.html#pages">Pages</a>
         <a href="index.html#dossiers">Dossiers</a>
         <a href="index.html#catalogue">Catalogue</a>
@@ -665,13 +738,13 @@
         <a href="#assets">Assets</a>
         <a href="#catalogue">Catalogue</a>
         <a href="#catalogue-400">400 titres</a>
-        <a href="#parcours">Parcours</a>
-        <button type="button" id="soundToggle">Son : activé</button>
+        <a href="#test-github">Tests</a>
+        <button type="button" id="soundToggle">Son : désactivé</button>
       </div>
     </div>
   </header>
 
-  <main id="accueil">
+  <main id="accueil" tabindex="-1">
     <section class="page hero">
       <div>
         <span class="badge">Index HTML connecté aux pages et dossiers GitHub</span>
@@ -690,7 +763,7 @@
 
         <div class="proof-grid">
           <div class="proof"><strong>12+</strong><span>pages prévues</span></div>
-          <div class="proof"><strong>10</strong><span>dossiers structurants</span></div>
+          <div class="proof"><strong>12</strong><span>dossiers structurants</span></div>
           <div class="proof"><strong>1</strong><span>logo avec fallback</span></div>
           <div class="proof"><strong>0</strong><span>donnée sensible dans GitHub</span></div>
         </div>
@@ -709,8 +782,8 @@
           <div class="system-row"><div><strong>Liens de page</strong><span>Tous les boutons utilisent des noms simples sans accent.</span></div><small>Corrigé</small></div>
           <div class="system-row"><div><strong>Logo</strong><span>Essaye assets/logo/logo.png, puis logo.png si le dossier n’existe pas.</span></div><small>Fallback</small></div>
           <div class="system-row"><div><strong>Styles</strong><span>Le site fonctionne avec CSS intégré, puis peut accueillir css/style.css.</span></div><small>Prévu</small></div>
-          <div class="system-row"><div><strong>Sons</strong><span>Les clics peuvent jouer assets/sounds/click.mp3 si le fichier existe.</span></div><small>Optionnel</small></div>
-          <div class="system-row"><div><strong>Données</strong><span>Le catalogue pourra être déplacé vers data/formations-index.json.</span></div><small>Évolution</small></div>
+          <div class="system-row"><div><strong>Sons</strong><span>Désactivés par défaut. Activables manuellement.</span></div><small>Prudent</small></div>
+          <div class="system-row"><div><strong>Pages manquantes</strong><span>Les boutons non prêts affichent un message au lieu de perdre le visiteur.</span></div><small>Protégé</small></div>
           <div class="system-row"><div><strong>Sécurité</strong><span>GitHub Pages reste public : rien de privé dans les fichiers.</span></div><small>Important</small></div>
         </div>
       </aside>
@@ -726,6 +799,7 @@
       </div>
 
       <div class="grid-4" id="pageGrid"></div>
+      <div id="routeMessage" aria-live="polite"></div>
     </section>
 
     <section class="page" id="dossiers">
@@ -750,36 +824,12 @@
       </div>
 
       <div class="grid-3">
-        <article class="card quality-card">
-          <span class="path">assets/logo/logo.png</span>
-          <h3>Logo officiel</h3>
-          <p>Chemin recommandé. Si ce fichier n’existe pas, le code tente automatiquement <strong>logo.png</strong>. Si les deux échouent, le carré affiche PO.</p>
-        </article>
-        <article class="card quality-card">
-          <span class="path">css/style.css</span>
-          <h3>Styles externes</h3>
-          <p>Le CSS est encore intégré dans l’index pour éviter les erreurs. Plus tard, tu pourras déplacer les styles dans ce fichier.</p>
-        </article>
-        <article class="card quality-card">
-          <span class="path">assets/sounds/click.mp3</span>
-          <h3>Son de clic optionnel</h3>
-          <p>Si le fichier audio existe, les boutons peuvent jouer un son discret. Sinon, aucun message d’erreur visible.</p>
-        </article>
-        <article class="card quality-card">
-          <span class="path">data/formations-index.json</span>
-          <h3>Données catalogue</h3>
-          <p>À moyen terme, les formations doivent sortir du HTML et aller dans un fichier JSON plus facile à gérer.</p>
-        </article>
-        <article class="card quality-card">
-          <span class="path">stripe/liens-produits.md</span>
-          <h3>Liens Stripe</h3>
-          <p>Garde ici la liste des vrais liens de paiement, sans clés secrètes et sans données sensibles.</p>
-        </article>
-        <article class="card quality-card">
-          <span class="path">dashboard/</span>
-          <h3>Dashboard non sensible</h3>
-          <p>Le dashboard GitHub doit contenir seulement des statuts, scores, priorités et données fictives ou agrégées.</p>
-        </article>
+        <article class="card quality-card"><span class="path">assets/logo/logo.png</span><h3>Logo officiel</h3><p>Chemin recommandé. Si ce fichier n’existe pas, le code tente automatiquement <strong>logo.png</strong>. Si les deux échouent, le carré affiche PO.</p></article>
+        <article class="card quality-card"><span class="path">css/style.css</span><h3>Styles externes</h3><p>Le CSS est encore intégré dans l’index pour éviter les erreurs. Plus tard, tu pourras déplacer les styles dans ce fichier.</p></article>
+        <article class="card quality-card"><span class="path">assets/sounds/click.mp3</span><h3>Son de clic optionnel</h3><p>Le son est désactivé par défaut. Il se joue seulement après activation manuelle.</p></article>
+        <article class="card quality-card"><span class="path">data/formations-index.json</span><h3>Données catalogue</h3><p>À moyen terme, les formations doivent sortir du HTML et aller dans un fichier JSON plus facile à gérer.</p></article>
+        <article class="card quality-card"><span class="path">stripe/liens-produits.md</span><h3>Liens Stripe</h3><p>Garde ici la liste des vrais liens de paiement, sans clés secrètes et sans données sensibles.</p></article>
+        <article class="card quality-card"><span class="path">dashboard/</span><h3>Dashboard non sensible</h3><p>Le dashboard GitHub doit contenir seulement des statuts, scores, priorités et données fictives ou agrégées.</p></article>
       </div>
     </section>
 
@@ -793,19 +843,25 @@
       </div>
 
       <div class="catalogue-tools">
-        <input id="searchInput" class="search-box" type="search" placeholder="Rechercher : IA, productivité, budget, offre, discipline..." />
+        <input id="searchInput" class="search-box" type="search" placeholder="Rechercher : IA, productivité, budget, offre, discipline..." aria-label="Rechercher une mini-formation" />
         <a class="btn secondary" href="formation.html">Voir la fiche formation</a>
       </div>
 
       <div class="filters" aria-label="Filtres du catalogue">
-        <button class="filter-btn active" data-filter="all">Toutes</button>
-        <button class="filter-btn" data-filter="IA">IA</button>
-        <button class="filter-btn" data-filter="Productivité">Productivité</button>
-        <button class="filter-btn" data-filter="Business">Business</button>
-        <button class="filter-btn" data-filter="Finances">Finances</button>
+        <button class="filter-btn active" data-filter="all" type="button">Toutes</button>
+        <button class="filter-btn" data-filter="IA" type="button">IA</button>
+        <button class="filter-btn" data-filter="Productivité" type="button">Productivité</button>
+        <button class="filter-btn" data-filter="Business" type="button">Business</button>
+        <button class="filter-btn" data-filter="Finances" type="button">Finances</button>
+        <button class="filter-btn" data-filter="Apprentissage" type="button">Apprentissage</button>
+        <button class="filter-btn" data-filter="Relations" type="button">Relations</button>
+        <button class="filter-btn" data-filter="Bonheur" type="button">Bonheur</button>
+        <button class="filter-btn" data-filter="Santé" type="button">Santé</button>
+        <button class="filter-btn" data-filter="reset" type="button">Réinitialiser</button>
       </div>
 
       <div class="grid-3" id="formationGrid"></div>
+      <div class="info-note" id="emptyResults" hidden>Aucune formation ne correspond à ta recherche pour l’instant.</div>
     </section>
 
     <section class="page" id="catalogue-400">
@@ -826,24 +882,24 @@
       </div>
     </section>
 
-    <section class="page" id="parcours">
+    <section class="page" id="test-github">
       <div class="section-title">
         <div>
-          <span class="badge">Parcours client relié</span>
-          <h2>Chaque bouton doit mener à une page claire, pas à une erreur.</h2>
+          <span class="badge">Tests GitHub avant publication</span>
+          <h2>Avant de partager le lien, teste ces cinq points.</h2>
         </div>
-        <p>Le parcours recommandé : accueil → formation → Stripe → accès → support → formation complémentaire.</p>
+        <p>Cette section réduit les erreurs 404, les mauvais noms de fichiers et les oublis de base.</p>
       </div>
 
-      <div class="grid-4">
-        <article class="card mini-card"><span class="number">1</span><h3>Accueil</h3><p>Le client comprend l’offre et clique vers une formation.</p></article>
-        <article class="card mini-card"><span class="number">2</span><h3>Formation</h3><p>La fiche explique le problème, la promesse, le prix et les limites.</p></article>
-        <article class="card mini-card"><span class="number">3</span><h3>Paiement</h3><p>Le lien Stripe mène vers le paiement, puis vers une page d’accès.</p></article>
-        <article class="card mini-card"><span class="number">4</span><h3>Support</h3><p>Hubert aide si l’accès, le paiement ou la technique bloque.</p></article>
+      <div class="test-grid">
+        <article class="test-card"><strong>1. Accueil</strong>Ouvre index.html et vérifie que les boutons rapides ne défilent pas horizontalement.</article>
+        <article class="test-card"><strong>2. Formation</strong>Teste formation.html depuis le bouton Formation prioritaire.</article>
+        <article class="test-card"><strong>3. Support</strong>Teste support.html depuis le menu et depuis le footer.</article>
+        <article class="test-card"><strong>4. Logo</strong>Vérifie assets/logo/logo.png ou logo.png à la racine.</article>
+        <article class="test-card"><strong>5. Sécurité</strong>Ne mets aucun contenu payant complet ou donnée client dans GitHub public.</article>
       </div>
     </section>
-
-    <section class="page" id="securite">
+<section class="page" id="securite">
       <div class="notice">
         <strong>Important :</strong> une page cachée sur GitHub Pages n’est pas une vraie protection. Ne mets jamais le contenu complet payant, des données clients, des clés API, des liens privés sensibles ou des informations Stripe confidentielles dans ce dépôt public.
       </div>
@@ -875,18 +931,18 @@
   <script>
     const SITE = {
       pages: [
-        { file: 'index.html', title: 'Accueil + catalogue public', status: 'Présent', type: 'Public' },
-        { file: 'formation.html', title: 'Fiche formation publique', status: 'À créer', type: 'Public' },
-        { file: 'acces.html', title: 'Page après paiement', status: 'À créer', type: 'Semi-privé' },
-        { file: 'espace-client.html', title: 'Espace client simple', status: 'Plus tard', type: 'Semi-privé' },
-        { file: 'formation-privee.html', title: 'Formation consultable en ligne', status: 'Plus tard', type: 'Semi-privé' },
-        { file: 'support.html', title: 'Support client', status: 'À créer / brancher', type: 'Public' },
-        { file: 'conditions.html', title: 'Conditions d’utilisation', status: 'Présent ou à corriger', type: 'Public' },
-        { file: 'confidentialite.html', title: 'Politique de confidentialité', status: 'À renommer si besoin', type: 'Public' },
-        { file: 'vente-finale.html', title: 'Politique de vente finale', status: 'À créer', type: 'Public' },
-        { file: 'contact.html', title: 'Page contact', status: 'Présent ou à corriger', type: 'Public' },
-        { file: 'merci.html', title: 'Merci / confirmation', status: 'Présent ou à corriger', type: 'Après paiement' },
-        { file: '404.html', title: 'Page erreur utile', status: 'À créer', type: 'Public' }
+        { file: 'index.html', title: 'Accueil + catalogue public', status: 'Présent', type: 'Public', ready: true },
+        { file: 'formation.html', title: 'Fiche formation publique', status: 'À créer / tester', type: 'Public', ready: true },
+        { file: 'acces.html', title: 'Page après paiement', status: 'À créer', type: 'Semi-privé', ready: false },
+        { file: 'espace-client.html', title: 'Espace client simple', status: 'Plus tard', type: 'Semi-privé', ready: false },
+        { file: 'formation-privee.html', title: 'Formation consultable en ligne', status: 'Plus tard', type: 'Semi-privé', ready: false },
+        { file: 'support.html', title: 'Support client', status: 'À créer / tester', type: 'Public', ready: true },
+        { file: 'conditions.html', title: 'Conditions d’utilisation', status: 'Présent ou à corriger', type: 'Public', ready: true },
+        { file: 'confidentialite.html', title: 'Politique de confidentialité', status: 'À renommer si besoin', type: 'Public', ready: false },
+        { file: 'vente-finale.html', title: 'Politique de vente finale', status: 'À créer', type: 'Public', ready: false },
+        { file: 'contact.html', title: 'Page contact', status: 'Présent ou à corriger', type: 'Public', ready: true },
+        { file: 'merci.html', title: 'Merci / confirmation', status: 'Présent ou à corriger', type: 'Après paiement', ready: true },
+        { file: '404.html', title: 'Page erreur utile', status: 'À créer', type: 'Public', ready: false }
       ],
       folders: [
         { path: 'css/', title: 'Styles du site', examples: 'style.css, responsive.css, catalogue.css' },
@@ -919,36 +975,57 @@
     const microFormationGrid = document.getElementById('microFormationGrid');
     const searchInput = document.getElementById('searchInput');
     const filterButtons = document.querySelectorAll('.filter-btn');
+    const routeMessage = document.getElementById('routeMessage');
+    const emptyResults = document.getElementById('emptyResults');
     let activeFilter = 'all';
-    let soundEnabled = true;
+    let soundEnabled = false;
 
     function normalize(text) {
       return String(text || '').toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g, '');
     }
 
+    function escapeHTML(value) {
+      return String(value || '')
+        .replace(/&/g, '&amp;')
+        .replace(/</g, '&lt;')
+        .replace(/>/g, '&gt;')
+        .replace(/"/g, '&quot;')
+        .replace(/'/g, '&#039;');
+    }
+
     function statusClass(status) {
       const value = normalize(status);
       if (value.includes('present')) return '';
-      if (value.includes('creer') || value.includes('corriger') || value.includes('renommer')) return 'warn';
+      if (value.includes('creer') || value.includes('corriger') || value.includes('renommer') || value.includes('tester')) return 'warn';
       if (value.includes('plus tard')) return 'neutral';
       return 'warn';
     }
 
     function renderPages() {
       if (!pageGrid) return;
-      pageGrid.innerHTML = SITE.pages.map(page => `
-        <article class="card page-card">
-          <div>
-            <span class="path">${page.file}</span>
-            <h3>${page.title}</h3>
-            <p>Type : ${page.type}</p>
-          </div>
-          <div class="hero-actions" style="margin:0;">
-            <a class="btn small secondary" href="${page.file}">Ouvrir</a>
-            <span class="pill ${statusClass(page.status)}">${page.status}</span>
-          </div>
-        </article>
-      `).join('');
+      pageGrid.innerHTML = SITE.pages.map(page => {
+        const title = escapeHTML(page.title);
+        const file = escapeHTML(page.file);
+        const status = escapeHTML(page.status);
+        const type = escapeHTML(page.type);
+        const link = page.ready
+          ? `<a class="btn small secondary" href="${file}">Ouvrir</a>`
+          : `<button class="btn small secondary disabled" type="button" data-missing-page="${file}">À créer</button>`;
+
+        return `
+          <article class="card page-card">
+            <div>
+              <span class="path">${file}</span>
+              <h3>${title}</h3>
+              <p>Type : ${type}</p>
+            </div>
+            <div class="hero-actions" style="margin:0;">
+              ${link}
+              <span class="pill ${statusClass(status)}">${status}</span>
+            </div>
+          </article>
+        `;
+      }).join('');
     }
 
     function renderFolders() {
@@ -956,9 +1033,9 @@
       folderGrid.innerHTML = SITE.folders.map(folder => `
         <article class="card folder-card">
           <div>
-            <span class="path">${folder.path}</span>
-            <h3>${folder.title}</h3>
-            <p>${folder.examples}</p>
+            <span class="path">${escapeHTML(folder.path)}</span>
+            <h3>${escapeHTML(folder.title)}</h3>
+            <p>${escapeHTML(folder.examples)}</p>
           </div>
           <span class="pill neutral">À créer dans GitHub</span>
         </article>
@@ -968,12 +1045,12 @@
     function renderFormations() {
       if (!formationGrid) return;
       formationGrid.innerHTML = SITE.publicFormations.map(item => `
-        <article class="card formation-card" data-category="${item.category}" data-title="${item.title}">
-          <div class="formation-top"><span class="tag">${item.category}</span><span class="price">${item.price}</span></div>
-          <h3>${item.title}</h3>
+        <article class="card formation-card" data-category="${escapeHTML(item.category)}" data-title="${escapeHTML(item.title)}">
+          <div class="formation-top"><span class="tag">${escapeHTML(item.category)}</span><span class="price">${escapeHTML(item.price)}</span></div>
+          <h3>${escapeHTML(item.title)}</h3>
           <p>Mini-formation digitale autonome avec accès numérique privé, méthode courte et prochaine action claire.</p>
-          <div class="formation-meta"><span>${item.status}</span><div class="bar"><span style="--w:${item.status.includes('officielle') ? '92%' : '55%'}"></span></div></div>
-          <a class="btn" href="${item.url}">Voir la fiche</a>
+          <div class="formation-meta"><span>${escapeHTML(item.status)}</span><div class="bar"><span style="--w:${item.status.includes('officielle') ? '92%' : '55%'}"></span></div></div>
+          <a class="btn" href="${escapeHTML(item.url)}">Voir la fiche</a>
           <p class="legal-line">Achat unique. Aucun coaching inclus. Vente finale dès activation de l’accès.</p>
         </article>
       `).join('');
@@ -1004,10 +1081,10 @@
     function renderInternalCatalogue() {
       if (!microFormationGrid) return;
       microFormationGrid.innerHTML = buildInternalTitles().map(group => `
-        <section class="micro-category-column" data-category="${group.category}">
-          <button type="button" class="micro-category-button" data-category-filter="${group.category}">${group.category}<span class="micro-counter">50 formations</span></button>
+        <section class="micro-category-column" data-category="${escapeHTML(group.category)}">
+          <button type="button" class="micro-category-button" data-category-filter="${escapeHTML(group.category)}">${escapeHTML(group.category)}<span class="micro-counter">50 formations</span></button>
           <div class="micro-column-list">
-            ${group.titles.map(title => `<article class="micro-title-card" data-category="${group.category}" data-title="${title}">${title}</article>`).join('')}
+            ${group.titles.map(title => `<article class="micro-title-card" data-category="${escapeHTML(group.category)}" data-title="${escapeHTML(title)}">${escapeHTML(title)}</article>`).join('')}
           </div>
         </section>
       `).join('');
@@ -1015,13 +1092,16 @@
 
     function applyFilters() {
       const query = normalize(searchInput ? searchInput.value : '');
+      let visiblePublicCards = 0;
+
       document.querySelectorAll('.formation-card, .micro-title-card').forEach(card => {
         const category = card.dataset.category || '';
         const title = normalize(card.dataset.title || card.textContent);
         const matchesFilter = activeFilter === 'all' || category === activeFilter;
         const matchesSearch = !query || title.includes(query) || normalize(category).includes(query);
-        card.classList.toggle('hide', !(matchesFilter && matchesSearch));
-        if (card.classList.contains('formation-card')) card.style.display = matchesFilter && matchesSearch ? 'flex' : 'none';
+        const isVisible = matchesFilter && matchesSearch;
+        card.classList.toggle('hide', !isVisible);
+        if (card.classList.contains('formation-card') && isVisible) visiblePublicCards += 1;
       });
 
       document.querySelectorAll('.micro-category-column').forEach(column => {
@@ -1032,6 +1112,8 @@
         column.classList.toggle('hide', !(matchesFilter && visibleCards > 0));
         if (counter) counter.textContent = activeFilter === 'all' && !query ? '50 formations' : `${visibleCards} visibles`;
       });
+
+      if (emptyResults) emptyResults.hidden = visiblePublicCards !== 0;
     }
 
     function scrollToSection(id) {
@@ -1057,9 +1139,11 @@
 
       filterButtons.forEach(button => {
         button.addEventListener('click', () => {
-          activeFilter = button.dataset.filter;
+          activeFilter = button.dataset.filter === 'reset' ? 'all' : button.dataset.filter;
+          if (searchInput && button.dataset.filter === 'reset') searchInput.value = '';
           filterButtons.forEach(btn => btn.classList.remove('active'));
-          button.classList.add('active');
+          const activeButton = Array.from(filterButtons).find(btn => btn.dataset.filter === activeFilter) || button;
+          activeButton.classList.add('active');
           playClick();
           applyFilters();
         });
@@ -1067,9 +1151,35 @@
 
       document.addEventListener('click', event => {
         const categoryButton = event.target.closest('[data-category-filter]');
+        const missingPage = event.target.closest('[data-missing-page]');
+        const internalPageLink = event.target.closest('a[href$=".html"]');
+
+        if (missingPage) {
+          const file = missingPage.dataset.missingPage;
+          if (routeMessage) routeMessage.textContent = `${file} n’est pas encore créé dans GitHub. Crée ce fichier avant de l’ouvrir.`;
+          playClick();
+          return;
+        }
+
+        if (internalPageLink) {
+          const href = internalPageLink.getAttribute('href') || '';
+          const cleanHref = href.split('#')[0];
+          const page = SITE.pages.find(item => item.file === cleanHref);
+          if (page && !page.ready) {
+            event.preventDefault();
+            if (routeMessage) routeMessage.textContent = `${cleanHref} n’est pas encore prêt. Crée ou valide cette page avant de l’ouvrir.`;
+            scrollToSection('pages');
+            playClick();
+            return;
+          }
+        }
+
         if (!categoryButton) return;
         activeFilter = categoryButton.dataset.categoryFilter;
         filterButtons.forEach(btn => btn.classList.toggle('active', btn.dataset.filter === activeFilter));
+        if (!Array.from(filterButtons).some(btn => btn.dataset.filter === activeFilter)) {
+          filterButtons.forEach(btn => btn.classList.toggle('active', btn.dataset.filter === 'all'));
+        }
         playClick();
         applyFilters();
       });
@@ -1082,10 +1192,13 @@
       const mark = document.getElementById('brandMark');
       if (!logo || !mark) return;
 
-      logo.addEventListener('load', () => mark.classList.add('has-logo'));
+      const showLogo = () => mark.classList.add('has-logo');
+      if (logo.complete && logo.naturalWidth > 0) showLogo();
+      logo.addEventListener('load', showLogo);
       logo.addEventListener('error', () => {
         const fallback = logo.dataset.fallbackSrc;
-        if (fallback && logo.src.indexOf(fallback) === -1) {
+        const current = logo.getAttribute('src') || '';
+        if (fallback && !current.includes(fallback)) {
           logo.src = fallback;
           return;
         }
@@ -1100,6 +1213,7 @@
       button.addEventListener('click', () => {
         soundEnabled = !soundEnabled;
         button.textContent = soundEnabled ? 'Son : activé' : 'Son : désactivé';
+        if (soundEnabled) playClick();
       });
     }
 
@@ -1122,4 +1236,3 @@
   </script>
 </body>
 </html>
-mise a jour teste
