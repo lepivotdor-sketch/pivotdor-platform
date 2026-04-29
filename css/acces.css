@@ -1,0 +1,869 @@
+/*
+  css/acces.css — Le Pivot d’Or / Mini Mini Formation
+  Version : 1.0
+  Rôle : styles spécialisés pour acces.html.
+
+  À ajouter dans le <head> de acces.html, après style.css :
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/acces.css">
+
+  Important :
+  - style.css garde les bases globales du site.
+  - acces.css garde seulement les styles propres à la page d’accès client.
+  - La page acces.html doit idéalement avoir : <body data-page="acces">
+*/
+
+:root {
+  --acces-fond: #d8c5a6;
+  --acces-fond-2: #e4d4b9;
+  --acces-fond-3: #c9b38e;
+  --acces-carte: rgba(229, 214, 190, 0.96);
+  --acces-carte-2: rgba(214, 195, 163, 0.9);
+  --acces-texte: #21180f;
+  --acces-texte-2: #4f4638;
+  --acces-muted: #746957;
+  --acces-or: #b9862f;
+  --acces-or-2: #8a5f1d;
+  --acces-vert: #2f7d46;
+  --acces-rouge: #b84242;
+  --acces-bleu: #235f92;
+  --acces-mauve: #73528a;
+  --acces-ligne: rgba(28, 22, 14, 0.34);
+  --acces-ombre: 0 24px 60px rgba(74, 51, 19, 0.16);
+  --acces-ombre-douce: 0 16px 36px rgba(74, 51, 19, 0.11);
+  --acces-radius: 28px;
+  --acces-radius-sm: 18px;
+  --acces-max: 1120px;
+}
+
+body[data-page="acces"] {
+  color: var(--acces-texte);
+  overflow-x: hidden;
+  background:
+    radial-gradient(circle at top left, rgba(240, 209, 138, 0.34), transparent 31%),
+    radial-gradient(circle at 78% 8%, rgba(185, 134, 47, 0.16), transparent 28%),
+    linear-gradient(135deg, var(--acces-fond-2) 0%, var(--acces-fond) 52%, var(--acces-fond-3) 100%);
+}
+
+body[data-page="acces"] .page {
+  width: min(var(--acces-max), 92%);
+  margin: 0 auto;
+}
+
+body[data-page="acces"] .skip-link {
+  position: absolute;
+  left: -999px;
+  top: 12px;
+  z-index: 9999;
+  padding: 10px 14px;
+  border-radius: 999px;
+  background: #21180f;
+  color: #f7ead0;
+  font-weight: 950;
+}
+
+body[data-page="acces"] .skip-link:focus {
+  left: 12px;
+}
+
+body[data-page="acces"] .topbar {
+  font-size: 0.86rem;
+  color: var(--acces-texte-2);
+  background: rgba(199, 178, 142, 0.78);
+  border-bottom: 1px solid var(--acces-ligne);
+  padding: 9px 0;
+}
+
+body[data-page="acces"] .topbar .page {
+  display: flex;
+  justify-content: space-between;
+  gap: 14px;
+  flex-wrap: wrap;
+  align-items: center;
+}
+
+body[data-page="acces"] header {
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  background: rgba(224, 208, 180, 0.94);
+  backdrop-filter: blur(18px);
+  -webkit-backdrop-filter: blur(18px);
+  border-bottom: 1px solid var(--acces-ligne);
+}
+
+body[data-page="acces"] .nav {
+  min-height: 78px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 24px;
+}
+
+body[data-page="acces"] .brand {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  min-width: 245px;
+}
+
+body[data-page="acces"] .brand-mark {
+  width: 54px;
+  height: 54px;
+  border-radius: 16px;
+  display: grid;
+  place-items: center;
+  background: linear-gradient(135deg, #120c05, #2b2115 48%, #8a5f1d);
+  color: #f7ead0;
+  font-weight: 950;
+  box-shadow: 0 14px 30px rgba(113, 77, 24, 0.22);
+  border: 1.5px solid rgba(185, 134, 47, 0.44);
+  overflow: hidden;
+  flex: 0 0 auto;
+  position: relative;
+}
+
+body[data-page="acces"] .brand-mark::after {
+  content: "PO";
+  position: absolute;
+  inset: 0;
+  display: grid;
+  place-items: center;
+  color: #f7ead0;
+  font-weight: 950;
+  font-size: 0.9rem;
+  pointer-events: none;
+  opacity: 1;
+}
+
+body[data-page="acces"] .brand-mark.has-logo::after {
+  opacity: 0;
+}
+
+body[data-page="acces"] .brand-logo {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  display: block;
+  padding: 4px;
+  border-radius: 14px;
+  position: relative;
+  z-index: 1;
+}
+
+body[data-page="acces"] .brand strong {
+  display: block;
+  color: var(--acces-or-2);
+  font-size: 1.1rem;
+  letter-spacing: 0.2px;
+}
+
+body[data-page="acces"] .brand span {
+  display: block;
+  color: var(--acces-muted);
+  font-size: 0.8rem;
+  margin-top: 1px;
+}
+
+body[data-page="acces"] .nav-links,
+body[data-page="acces"] .nav-actions {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+}
+
+body[data-page="acces"] .nav-links a:not(.btn),
+body[data-page="acces"] .nav-actions a:not(.btn) {
+  color: var(--acces-texte-2);
+  font-size: 0.92rem;
+  font-weight: 800;
+}
+
+body[data-page="acces"] .nav-links a:not(.btn):hover,
+body[data-page="acces"] .nav-actions a:not(.btn):hover,
+body[data-page="acces"] .nav-links a:not(.btn):focus-visible,
+body[data-page="acces"] .nav-actions a:not(.btn):focus-visible {
+  color: var(--acces-or-2);
+  text-decoration: underline;
+}
+
+body[data-page="acces"] .access-hero,
+body[data-page="acces"] .hero {
+  padding: 72px 0 48px;
+  display: grid;
+  grid-template-columns: minmax(0, 1.05fr) minmax(330px, 0.95fr);
+  gap: 42px;
+  align-items: center;
+}
+
+body[data-page="acces"] h1 {
+  font-size: clamp(2.35rem, 5.5vw, 5rem);
+  line-height: 0.98;
+  letter-spacing: -2px;
+  margin-bottom: 22px;
+}
+
+body[data-page="acces"] h1 span,
+body[data-page="acces"] .gold {
+  color: var(--acces-or-2);
+}
+
+body[data-page="acces"] .lead {
+  color: var(--acces-texte-2);
+  font-size: 1.12rem;
+  max-width: 780px;
+  margin-bottom: 20px;
+}
+
+body[data-page="acces"] .badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  width: fit-content;
+  padding: 8px 13px;
+  border-radius: 999px;
+  background: rgba(185, 134, 47, 0.12);
+  border: 1px solid rgba(137, 96, 31, 0.22);
+  color: var(--acces-or-2);
+  font-weight: 950;
+  font-size: 0.86rem;
+  margin-bottom: 18px;
+}
+
+body[data-page="acces"] .access-panel,
+body[data-page="acces"] .panel,
+body[data-page="acces"] .card {
+  border: 1.7px solid var(--acces-ligne);
+  background: linear-gradient(180deg, var(--acces-carte), var(--acces-carte-2));
+  border-radius: var(--acces-radius);
+  box-shadow: var(--acces-ombre-douce);
+  overflow: hidden;
+}
+
+body[data-page="acces"] .access-panel {
+  position: relative;
+  padding: 28px;
+  min-height: 520px;
+  box-shadow: var(--acces-ombre);
+}
+
+body[data-page="acces"] .access-panel::before {
+  content: "";
+  position: absolute;
+  width: 320px;
+  height: 320px;
+  border-radius: 50%;
+  right: -135px;
+  top: -135px;
+  background: rgba(185, 134, 47, 0.24);
+  filter: blur(16px);
+  pointer-events: none;
+}
+
+body[data-page="acces"] .access-panel > * {
+  position: relative;
+  z-index: 1;
+}
+
+body[data-page="acces"] .panel-content,
+body[data-page="acces"] .card-content {
+  padding: 24px;
+}
+
+body[data-page="acces"] .access-form,
+body[data-page="acces"] form {
+  display: grid;
+  gap: 14px;
+  margin-top: 18px;
+}
+
+body[data-page="acces"] .field {
+  display: grid;
+  gap: 7px;
+}
+
+body[data-page="acces"] label {
+  color: var(--acces-or-2);
+  font-size: 0.9rem;
+  font-weight: 950;
+}
+
+body[data-page="acces"] input,
+body[data-page="acces"] select,
+body[data-page="acces"] textarea {
+  width: 100%;
+  min-height: 48px;
+  border: 1.5px solid rgba(28, 22, 14, 0.32);
+  background: rgba(232, 216, 189, 0.78);
+  color: var(--acces-texte);
+  border-radius: 16px;
+  padding: 13px 14px;
+  outline: none;
+}
+
+body[data-page="acces"] textarea {
+  min-height: 120px;
+  resize: vertical;
+}
+
+body[data-page="acces"] input::placeholder,
+body[data-page="acces"] textarea::placeholder {
+  color: rgba(79, 70, 56, 0.62);
+}
+
+body[data-page="acces"] input:focus,
+body[data-page="acces"] select:focus,
+body[data-page="acces"] textarea:focus {
+  border-color: rgba(137, 96, 31, 0.72);
+  box-shadow: 0 0 0 4px rgba(185, 134, 47, 0.13);
+}
+
+body[data-page="acces"] input:invalid:not(:placeholder-shown),
+body[data-page="acces"] select:invalid:not(:placeholder-shown),
+body[data-page="acces"] textarea:invalid:not(:placeholder-shown) {
+  border-color: rgba(184, 66, 66, 0.62);
+  box-shadow: 0 0 0 4px rgba(184, 66, 66, 0.1);
+}
+
+body[data-page="acces"] input:valid:not(:placeholder-shown),
+body[data-page="acces"] select:valid:not(:placeholder-shown),
+body[data-page="acces"] textarea:valid:not(:placeholder-shown) {
+  border-color: rgba(47, 125, 70, 0.44);
+}
+
+body[data-page="acces"] .help-text {
+  color: var(--acces-muted);
+  font-size: 0.84rem;
+  line-height: 1.45;
+}
+
+body[data-page="acces"] .btn.pending,
+body[data-page="acces"] .btn[aria-disabled="true"],
+body[data-page="acces"] .btn:disabled,
+body[data-page="acces"] button:disabled {
+  opacity: 0.82;
+  cursor: not-allowed;
+  transform: none;
+}
+
+body[data-page="acces"] .btn.pending:hover,
+body[data-page="acces"] .btn[aria-disabled="true"]:hover,
+body[data-page="acces"] .btn:disabled:hover,
+body[data-page="acces"] button:disabled:hover {
+  transform: none;
+}
+
+body[data-page="acces"] .access-actions,
+body[data-page="acces"] .hero-actions,
+body[data-page="acces"] .card-actions {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+  align-items: center;
+  margin-top: 18px;
+}
+
+body[data-page="acces"] .access-actions .btn,
+body[data-page="acces"] .hero-actions .btn,
+body[data-page="acces"] .card-actions .btn {
+  flex: 1 1 auto;
+}
+
+body[data-page="acces"] .status,
+body[data-page="acces"] .access-status,
+body[data-page="acces"] .notice,
+body[data-page="acces"] .warning-box,
+body[data-page="acces"] .success-box,
+body[data-page="acces"] .info-box {
+  border-radius: 20px;
+  padding: 15px 16px;
+  font-weight: 850;
+  font-size: 0.92rem;
+  border: 1.5px solid rgba(28, 22, 14, 0.18);
+  background: rgba(232, 216, 189, 0.72);
+  color: var(--acces-texte-2);
+}
+
+body[data-page="acces"] .status {
+  display: none;
+}
+
+body[data-page="acces"] .status.visible,
+body[data-page="acces"] .status.success,
+body[data-page="acces"] .status.error {
+  display: block;
+}
+
+body[data-page="acces"] .status.success,
+body[data-page="acces"] .success-box {
+  border-color: rgba(47, 125, 70, 0.28);
+  background: rgba(47, 125, 70, 0.09);
+  color: var(--acces-vert);
+}
+
+body[data-page="acces"] .status.error,
+body[data-page="acces"] .warning-box {
+  border-color: rgba(184, 66, 66, 0.38);
+  background: rgba(184, 66, 66, 0.1);
+  color: var(--acces-rouge);
+  overflow-wrap: anywhere;
+}
+
+body[data-page="acces"] .status.error strong,
+body[data-page="acces"] .warning-box strong {
+  color: #8f2424;
+}
+
+body[data-page="acces"] .info-box {
+  border-color: rgba(35, 95, 146, 0.28);
+  background: rgba(35, 95, 146, 0.08);
+  color: var(--acces-bleu);
+}
+
+body[data-page="acces"] .access-summary,
+body[data-page="acces"] .profile-list,
+body[data-page="acces"] .security-list {
+  display: grid;
+  gap: 10px;
+  margin-top: 16px;
+}
+
+body[data-page="acces"] .summary-line,
+body[data-page="acces"] .profile-line,
+body[data-page="acces"] .security-line {
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+  align-items: center;
+  padding: 12px 14px;
+  border-radius: 16px;
+  background: rgba(221, 204, 174, 0.72);
+  border: 1.3px solid rgba(28, 22, 14, 0.18);
+  color: var(--acces-texte-2);
+  font-weight: 800;
+  min-width: 0;
+}
+
+body[data-page="acces"] .summary-line span,
+body[data-page="acces"] .profile-line span,
+body[data-page="acces"] .security-line span {
+  min-width: 0;
+  overflow-wrap: anywhere;
+}
+
+body[data-page="acces"] .summary-line strong,
+body[data-page="acces"] .profile-line strong,
+body[data-page="acces"] .security-line strong {
+  color: var(--acces-or-2);
+  text-align: right;
+  white-space: nowrap;
+  max-width: 100%;
+  overflow-wrap: anywhere;
+}
+
+body[data-page="acces"] .grid-2,
+body[data-page="acces"] .grid-3,
+body[data-page="acces"] .grid-4 {
+  display: grid;
+  gap: 18px;
+}
+
+body[data-page="acces"] .grid-2 {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+body[data-page="acces"] .grid-3 {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+body[data-page="acces"] .grid-4 {
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+}
+
+body[data-page="acces"] .grid-2 > *,
+body[data-page="acces"] .grid-3 > *,
+body[data-page="acces"] .grid-4 > *,
+body[data-page="acces"] .access-hero > *,
+body[data-page="acces"] .hero > * {
+  min-width: 0;
+}
+
+body[data-page="acces"] .step-card {
+  padding: 22px;
+}
+
+body[data-page="acces"] .step-number,
+body[data-page="acces"] .number {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  border-radius: 13px;
+  background: rgba(185, 134, 47, 0.14);
+  color: var(--acces-or-2);
+  font-weight: 950;
+  margin-bottom: 12px;
+}
+
+body[data-page="acces"] .step-card h3,
+body[data-page="acces"] .card h3 {
+  color: var(--acces-or-2);
+  line-height: 1.16;
+  margin-bottom: 9px;
+  font-weight: 950;
+}
+
+body[data-page="acces"] .step-card p,
+body[data-page="acces"] .card p,
+body[data-page="acces"] .card li {
+  color: var(--acces-texte-2);
+}
+
+body[data-page="acces"] .card ul,
+body[data-page="acces"] .card ol {
+  margin-top: 10px;
+  padding-left: 20px;
+  display: grid;
+  gap: 7px;
+}
+
+body[data-page="acces"] .pill {
+  display: inline-flex;
+  width: fit-content;
+  padding: 5px 8px;
+  border-radius: 999px;
+  font-size: 0.74rem;
+  font-weight: 950;
+  border: 1px solid rgba(28, 22, 14, 0.18);
+  background: rgba(47, 125, 70, 0.12);
+  color: var(--acces-vert);
+  white-space: nowrap;
+}
+
+body[data-page="acces"] .pill.warn {
+  background: rgba(186, 123, 37, 0.13);
+  color: #7a4f15;
+}
+
+body[data-page="acces"] .pill.bad {
+  background: rgba(184, 66, 66, 0.12);
+  color: var(--acces-rouge);
+}
+
+body[data-page="acces"] .pill.neutral {
+  background: rgba(35, 95, 146, 0.1);
+  color: var(--acces-bleu);
+}
+
+body[data-page="acces"] .locked-note,
+body[data-page="acces"] .expired-note,
+body[data-page="acces"] .access-expired {
+  margin-top: 16px;
+  border: 1.7px solid rgba(184, 66, 66, 0.34);
+  border-radius: 20px;
+  background: rgba(184, 66, 66, 0.09);
+  color: var(--acces-rouge);
+  padding: 15px 16px;
+  font-weight: 900;
+  overflow-wrap: anywhere;
+}
+
+body[data-page="acces"] .access-expired a,
+body[data-page="acces"] .expired-note a {
+  color: var(--acces-or-2);
+  text-decoration: underline;
+}
+
+body[data-page="acces"] .access-panel.unlocked {
+  display: none;
+}
+
+body[data-page="acces"] .access-opened,
+body[data-page="acces"] .client-area,
+body[data-page="acces"] .private-preview {
+  display: none;
+}
+
+body[data-page="acces"] .access-opened.visible,
+body[data-page="acces"] .client-area.visible,
+body[data-page="acces"] .private-preview.visible {
+  display: block;
+  animation: accesFadeIn 0.28s ease both;
+}
+
+@keyframes accesFadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+body[data-page="acces"] details {
+  border: 1.7px solid var(--acces-ligne);
+  background: linear-gradient(180deg, var(--acces-carte), var(--acces-carte-2));
+  border-radius: 22px;
+  padding: 18px 20px;
+  box-shadow: var(--acces-ombre-douce);
+}
+
+body[data-page="acces"] summary {
+  cursor: pointer;
+  color: var(--acces-or-2);
+  font-weight: 950;
+  font-size: 1.05rem;
+}
+
+body[data-page="acces"] summary:focus-visible {
+  outline: 3px solid rgba(35, 95, 146, 0.55);
+  outline-offset: 4px;
+  border-radius: 12px;
+}
+
+body[data-page="acces"] details p {
+  color: var(--acces-texte-2);
+  margin-top: 12px;
+}
+
+body[data-page="acces"] .btn:focus-visible,
+body[data-page="acces"] a:focus-visible,
+body[data-page="acces"] input:focus-visible,
+body[data-page="acces"] select:focus-visible,
+body[data-page="acces"] textarea:focus-visible,
+body[data-page="acces"] button:focus-visible {
+  outline: 3px solid rgba(35, 95, 146, 0.55);
+  outline-offset: 3px;
+}
+
+body[data-page="acces"] footer {
+  padding: 34px 0 44px;
+  border-top: 1px solid var(--acces-ligne);
+  color: var(--acces-muted);
+  font-size: 0.92rem;
+}
+
+body[data-page="acces"] .footer-grid {
+  display: flex;
+  justify-content: space-between;
+  gap: 22px;
+  flex-wrap: wrap;
+  align-items: flex-start;
+}
+
+body[data-page="acces"] .footer-links {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+}
+
+body[data-page="acces"] .footer-links a:hover,
+body[data-page="acces"] .footer-links a:focus-visible {
+  color: var(--acces-or-2);
+  text-decoration: underline;
+}
+
+body[data-page="acces"].is-loading,
+body[data-page="acces"] .is-loading {
+  cursor: wait;
+}
+
+body[data-page="acces"] .is-loading .btn,
+body[data-page="acces"] form.is-loading .btn,
+body[data-page="acces"] form.is-loading button {
+  opacity: 0.74;
+  pointer-events: none;
+}
+
+body[data-page="acces"] .loading-note {
+  display: none;
+  color: var(--acces-bleu);
+  font-weight: 900;
+  font-size: 0.9rem;
+}
+
+body[data-page="acces"] .is-loading .loading-note,
+body[data-page="acces"] form.is-loading .loading-note {
+  display: block;
+}
+
+@supports not ((backdrop-filter: blur(18px)) or (-webkit-backdrop-filter: blur(18px))) {
+  body[data-page="acces"] header {
+    background: rgba(224, 208, 180, 0.98);
+  }
+}
+
+@media (prefers-contrast: more) {
+  body[data-page="acces"] .card,
+  body[data-page="acces"] .access-panel,
+  body[data-page="acces"] .notice,
+  body[data-page="acces"] .warning-box,
+  body[data-page="acces"] .success-box,
+  body[data-page="acces"] .info-box {
+    border-width: 2.4px;
+  }
+
+  body[data-page="acces"] .btn,
+  body[data-page="acces"] input,
+  body[data-page="acces"] select,
+  body[data-page="acces"] textarea {
+    border-width: 2px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  body[data-page="acces"] *,
+  body[data-page="acces"] *::before,
+  body[data-page="acces"] *::after {
+    transition: none !important;
+    animation: none !important;
+  }
+}
+
+@media (max-width: 980px) {
+  body[data-page="acces"] .access-hero,
+  body[data-page="acces"] .hero,
+  body[data-page="acces"] .grid-2 {
+    grid-template-columns: 1fr;
+  }
+
+  body[data-page="acces"] .grid-4,
+  body[data-page="acces"] .grid-3 {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 860px) {
+  body[data-page="acces"] header {
+    position: relative;
+  }
+
+  body[data-page="acces"] section {
+    scroll-margin-top: 22px;
+  }
+}
+
+@media (max-width: 680px) {
+  body[data-page="acces"] .topbar .page,
+  body[data-page="acces"] .nav {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  body[data-page="acces"] .nav-links,
+  body[data-page="acces"] .nav-actions {
+    justify-content: flex-start;
+  }
+
+  body[data-page="acces"] .grid-4,
+  body[data-page="acces"] .grid-3,
+  body[data-page="acces"] .grid-2 {
+    grid-template-columns: 1fr;
+  }
+
+  body[data-page="acces"] h1 {
+    letter-spacing: -1.4px;
+  }
+
+  body[data-page="acces"] .brand {
+    min-width: 0;
+    width: 100%;
+  }
+
+  body[data-page="acces"] .brand span {
+    white-space: normal;
+  }
+
+  body[data-page="acces"] .brand-logo,
+  body[data-page="acces"] .brand-mark {
+    width: 48px;
+    height: 48px;
+  }
+
+  body[data-page="acces"] .summary-line,
+  body[data-page="acces"] .profile-line,
+  body[data-page="acces"] .security-line {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  body[data-page="acces"] .summary-line strong,
+  body[data-page="acces"] .profile-line strong,
+  body[data-page="acces"] .security-line strong {
+    text-align: left;
+    white-space: normal;
+  }
+
+  body[data-page="acces"] .access-actions,
+  body[data-page="acces"] .hero-actions,
+  body[data-page="acces"] .card-actions {
+    align-items: stretch;
+    flex-direction: column;
+  }
+
+  body[data-page="acces"] .access-actions .btn,
+  body[data-page="acces"] .hero-actions .btn,
+  body[data-page="acces"] .card-actions .btn {
+    width: 100%;
+  }
+}
+
+body[data-page="acces"] .sensitive-value,
+body[data-page="acces"] [data-sensitive="true"] {
+  overflow-wrap: anywhere;
+}
+
+@media print {
+  body[data-page="acces"] .topbar,
+  body[data-page="acces"] header,
+  body[data-page="acces"] .access-actions,
+  body[data-page="acces"] .hero-actions,
+  body[data-page="acces"] .card-actions,
+  body[data-page="acces"] form {
+    display: none !important;
+  }
+
+  body[data-page="acces"] {
+    background: #fff !important;
+    color: #000 !important;
+  }
+
+  body[data-page="acces"] .card,
+  body[data-page="acces"] .access-panel,
+  body[data-page="acces"] .notice,
+  body[data-page="acces"] .warning-box,
+  body[data-page="acces"] .success-box,
+  body[data-page="acces"] .info-box {
+    background: #fff !important;
+    color: #000 !important;
+    box-shadow: none !important;
+    border-color: #777 !important;
+    break-inside: avoid;
+  }
+
+  body[data-page="acces"] .access-panel::before {
+    display: none !important;
+  }
+
+  body[data-page="acces"] .sensitive-value,
+  body[data-page="acces"] [data-sensitive="true"] {
+    color: transparent !important;
+    position: relative;
+  }
+
+  body[data-page="acces"] .sensitive-value::after,
+  body[data-page="acces"] [data-sensitive="true"]::after {
+    content: "Information masquée à l’impression";
+    color: #000 !important;
+    position: absolute;
+    left: 0;
+    top: 0;
+  }
+}
