@@ -1,0 +1,1783 @@
+{
+  "schema_version": "1.1.0",
+  "project": "Le Pivot d’Or — Mini Mini Formation",
+  "file_role": "Source principale publique et non sensible du catalogue de formations",
+  "last_updated": "2026-04-29",
+  "language": "fr-CA",
+  "security_level": "public_non_sensible",
+  "public_repository_warning": "Ce fichier peut être public sur GitHub Pages. Ne jamais y mettre de données clients, clés secrètes Stripe, accès privés réels, reçus, courriels clients ou contenu payant complet.",
+  "source_of_truth": true,
+  "catalogue_capacity_target": 400,
+  "launch_target": {
+    "initial_public_formations_target": 10,
+    "initial_catalogue_seed_count": 11,
+    "weekly_publication_target_after_launch": "3 à 5 formations par semaine",
+    "priority_categories": ["IA", "Productivité", "Business", "Finances"],
+    "first_pilot_formation_id": "formation-0001"
+  },
+  "categories": [
+    {
+      "id": "ia",
+      "name": "IA",
+      "priority": 1,
+      "target_count": 50,
+      "status": "prioritaire"
+    },
+    {
+      "id": "productivite",
+      "name": "Productivité",
+      "priority": 2,
+      "target_count": 50,
+      "status": "prioritaire"
+    },
+    {
+      "id": "apprentissage",
+      "name": "Apprentissage",
+      "priority": 5,
+      "target_count": 50,
+      "status": "deploiement_progressif"
+    },
+    {
+      "id": "business",
+      "name": "Business",
+      "priority": 3,
+      "target_count": 50,
+      "status": "prioritaire"
+    },
+    {
+      "id": "finances",
+      "name": "Finances",
+      "priority": 4,
+      "target_count": 50,
+      "status": "prioritaire"
+    },
+    {
+      "id": "relations",
+      "name": "Relations",
+      "priority": 6,
+      "target_count": 50,
+      "status": "deploiement_progressif"
+    },
+    {
+      "id": "bonheur",
+      "name": "Bonheur",
+      "priority": 7,
+      "target_count": 50,
+      "status": "deploiement_progressif"
+    },
+    {
+      "id": "sante",
+      "name": "Santé",
+      "priority": 8,
+      "target_count": 50,
+      "status": "deploiement_progressif"
+    }
+  ],
+  "allowed_statuses": {
+    "content": ["idee", "a_creer", "en_cours", "a_relire", "prete", "publiee", "a_ameliorer", "archivee"],
+    "sales": ["pas_configuree", "stripe_a_creer", "stripe_pret", "paiement_teste", "vente_active", "vente_suspendue"],
+    "access": ["acces_non_pret", "acces_a_tester", "acces_pret", "acces_active_apres_paiement", "acces_suspendu"],
+    "update": ["a_jour", "mise_a_jour_prevue", "a_reviser", "en_revision", "mise_a_jour_completee", "archivee"]
+  },
+  "score_rules": {
+    "score_priorite": {
+      "90_100": "priorite_immediate",
+      "80_89": "priorite_haute",
+      "70_79": "a_creer_bientot",
+      "60_69": "a_ameliorer_avant_creation",
+      "0_59": "ne_pas_creer_maintenant"
+    },
+    "score_pret_a_vendre": {
+      "85_100": "vert",
+      "65_84": "jaune",
+      "0_64": "rouge"
+    },
+    "minimum_quality_to_publish": 80,
+    "recommended_quality_to_publish": 85,
+    "minimum_profitability_to_publish": 70,
+    "recommended_profitability_to_publish": 75
+  },
+  "public_rules": {
+    "coaching_inclus": false,
+    "vente_finale_apres_activation": true,
+    "telechargement_complet_recommande": false,
+    "checklist_telechargeable_autorisee": true,
+    "access_model": "acces_numerique_prive_apres_paiement",
+    "refund_model": "vente_finale_avec_compensation_possible_si_demande_raisonnable",
+    "compensation_example": "2 formations gratuites peuvent être offertes si une demande raisonnable est acceptée.",
+    "legal_note_default": "Produit digital autonome. Aucun coaching inclus. Accès numérique privé. Vente finale dès activation. Résultats variables. Formation éducative générale."
+  },
+  "dashboard_defaults": {
+    "views": 0,
+    "clicks": 0,
+    "stripe_clicks": 0,
+    "training_page_clicks": 0,
+    "comments": 0,
+    "backups": 0,
+    "attributed_sales": 0,
+    "conversion_rate": 0,
+    "crm_non_sensitive_signals": 0
+  },
+  "file_contract": {
+    "primary_consumers": ["index.html", "formations.html", "formation.html", "dashboard-cache.html"],
+    "required_fields_per_formation": [
+      "id",
+      "title",
+      "titre",
+      "category",
+      "categorie",
+      "price",
+      "prix",
+      "status",
+      "statut",
+      "url",
+      "stripe_link",
+      "description",
+      "description_courte",
+      "note_qualite",
+      "note_rentabilite",
+      "score_priorite",
+      "score_pret_a_vendre",
+      "mise_a_jour",
+      "jumeau_numerique",
+      "analytics",
+      "controle_publication",
+      "legal"
+    ],
+    "compatibility_aliases": {
+      "title": "titre",
+      "category": "categorie",
+      "price": "prix",
+      "url": "lien",
+      "score": "note_qualite",
+      "rentability": "note_rentabilite"
+    },
+    "maximum_public_records_before_split": 400,
+    "split_strategy_after_growth": "Conserver formations-index.json comme index léger et déplacer les détails lourds par catégorie."
+  },
+  "price_tiers": [
+    {
+      "price": 5,
+      "label": "Micro-guide ou checklist",
+      "best_for": "Résultat très court et entrée facile"
+    },
+    {
+      "price": 15,
+      "label": "Mini-formation courte",
+      "best_for": "Problème simple avec checklist"
+    },
+    {
+      "price": 25,
+      "label": "Mini-formation + outil",
+      "best_for": "Gabarit, modèle ou plan d’action"
+    },
+    {
+      "price": 50,
+      "label": "Mini-système complet",
+      "best_for": "Formation plus outil, modèles et plan d’exécution"
+    }
+  ],
+  "publication_gate": {
+    "publish_only_if_all_true": [
+      "publication_autorisee",
+      "visibilite_public",
+      "controle_publication.test_mobile",
+      "controle_publication.test_paiement",
+      "controle_publication.test_redirection",
+      "controle_publication.test_acces",
+      "controle_publication.test_mentions_legales",
+      "controle_publication.test_aucun_contenu_sensible"
+    ],
+    "minimum_scores": {
+      "note_qualite": 80,
+      "note_rentabilite": 70,
+      "score_pret_a_vendre": 85
+    },
+    "automatic_blockers": [
+      "stripe_link vide",
+      "url_acces_apres_paiement vide",
+      "checklist_prete false",
+      "acces_prive_pret false",
+      "test_paiement false",
+      "test_acces false",
+      "mention_legale vide"
+    ],
+    "green_light_message": "La formation peut être publiée seulement quand la vente test complète est validée."
+  },
+  "catalogue_health": {
+    "current_seed_count": 11,
+    "category_coverage_count": 8,
+    "category_coverage_status": "complete",
+    "ready_for_github_pages": true,
+    "ready_for_paid_traffic": false,
+    "ready_for_real_sales": false,
+    "health_score": 93,
+    "main_blocker": "Stripe, accès privé, checklist et vente test ne sont pas encore prouvés."
+  },
+  "bundle_candidates": [
+    {
+      "id": "bundle-ia-productivite",
+      "name": "Pack IA + Productivité",
+      "formations": ["formation-0001", "formation-0002", "formation-0005"],
+      "suggested_price": 35,
+      "goal": "Augmenter le panier moyen avec un pack temps + organisation."
+    },
+    {
+      "id": "bundle-business-demarrage",
+      "name": "Pack Business express",
+      "formations": ["formation-0003", "formation-0006", "formation-0008"],
+      "suggested_price": 59,
+      "goal": "Aider à passer d’une idée à une offre et une page de vente."
+    },
+    {
+      "id": "bundle-clarte-personnelle",
+      "name": "Pack Clarté personnelle",
+      "formations": ["formation-0002", "formation-0009", "formation-0010", "formation-0011"],
+      "suggested_price": 49,
+      "goal": "Relier productivité, limites, calme et santé simple."
+    }
+  ],
+  "ai_agents_roles": {
+    "Craig": "Recommande les formations selon le problème du visiteur sans promettre de résultat garanti.",
+    "Hubert": "Gère les scripts de support, accès, compensation et escalade non sensible.",
+    "Ludite": "Crée les angles de contenu, scripts courts, publications et objections/réponses.",
+    "Adrien": "Surveille les KPI non sensibles, les blocages, les feux de phase et la prochaine action rentable.",
+    "Manus": "Aide à concevoir les pages, structures, prototypes et améliorations terrain.",
+    "Cursor": "Aide à coder, corriger et maintenir les fichiers HTML, CSS, JS et JSON."
+  },
+  "data_integrity_rules": {
+    "unique_ids_required": true,
+    "official_categories_only": true,
+    "official_statuses_only": true,
+    "no_sensitive_data": true,
+    "no_paid_full_content": true,
+    "annual_update_required": true,
+    "snapshot_required_before_major_change": true,
+    "json_must_be_valid_before_commit": true,
+    "one_source_of_truth": "formations-index.json"
+  },
+  "validation_rules": {
+    "must_validate_before_commit": true,
+    "required_checks": [
+      "JSON valide",
+      "IDs uniques",
+      "catégories officielles seulement",
+      "statuts officiels seulement",
+      "aucune clé secrète",
+      "aucun email client",
+      "aucun contenu payant complet",
+      "aucun lien privé sensible",
+      "aucune formation publiée sans Stripe testé",
+      "aucune formation publiée sans accès testé"
+    ],
+    "automatic_fail_if": [
+      "stripe_link contient sk_",
+      "un champ contient un courriel client",
+      "publication_autorisee true mais test_paiement false",
+      "publication_autorisee true mais test_acces false",
+      "visibilite_public true mais mention_legale vide",
+      "score_pret_a_vendre inférieur à 85 avec vente_active"
+    ],
+    "manual_review_required_for": [
+      "Santé",
+      "Finances",
+      "Relations",
+      "toute promesse de résultat",
+      "toute mention de remboursement",
+      "toute formation pouvant être interprétée comme conseil personnalisé"
+    ]
+  },
+  "category_progress": {
+    "IA": {
+      "seed_count": 2,
+      "target_count": 50,
+      "coverage_status": "prioritaire"
+    },
+    "Productivité": {
+      "seed_count": 1,
+      "target_count": 50,
+      "coverage_status": "prioritaire"
+    },
+    "Apprentissage": {
+      "seed_count": 1,
+      "target_count": 50,
+      "coverage_status": "deploiement_progressif"
+    },
+    "Business": {
+      "seed_count": 3,
+      "target_count": 50,
+      "coverage_status": "prioritaire"
+    },
+    "Finances": {
+      "seed_count": 1,
+      "target_count": 50,
+      "coverage_status": "prioritaire_avec_prudence_legale"
+    },
+    "Relations": {
+      "seed_count": 1,
+      "target_count": 50,
+      "coverage_status": "deploiement_progressif"
+    },
+    "Bonheur": {
+      "seed_count": 1,
+      "target_count": 50,
+      "coverage_status": "deploiement_progressif"
+    },
+    "Santé": {
+      "seed_count": 1,
+      "target_count": 50,
+      "coverage_status": "deploiement_progressif_avec_prudence_legale"
+    }
+  },
+  "publication_blockers": {
+    "global_blockers_open": true,
+    "current_blockers": [
+      "Aucun lien Stripe public réel n’est encore testé.",
+      "Aucune redirection après paiement n’est encore prouvée.",
+      "Aucun accès privé réel n’est encore validé.",
+      "La checklist de la formation pilote n’est pas confirmée comme prête.",
+      "Le support client post-achat n’est pas encore testé.",
+      "Aucune vente test complète n’est encore documentée.",
+      "Aucun snapshot terrain post-test n’est encore exporté."
+    ],
+    "clear_blockers_order": [
+      "finaliser formation-0001",
+      "créer stripe_link public",
+      "tester paiement",
+      "tester merci.html",
+      "tester accès privé",
+      "tester support",
+      "exporter snapshot"
+    ]
+  },
+  "phase_gates": {
+    "phase_1_construction": {
+      "status": "active",
+      "goal": "Créer une première preuve complète sans multiplier les fichiers.",
+      "exit_criteria": ["formation-0001 complète", "checklist prête", "page publique claire"]
+    },
+    "phase_2_prevente_test": {
+      "status": "blocked",
+      "goal": "Tester le chemin fiche → Stripe → merci.html → accès → support.",
+      "exit_criteria": ["paiement testé", "redirection testée", "accès testé", "support testé"]
+    },
+    "phase_3_validation": {
+      "status": "blocked",
+      "goal": "Obtenir au moins une vente test et un retour non sensible.",
+      "exit_criteria": ["vente test", "snapshot", "amélioration documentée"]
+    },
+    "phase_4_expansion": {
+      "status": "blocked",
+      "goal": "Publier 3 à 5 formations par semaine seulement après preuve terrain.",
+      "exit_criteria": ["process répété", "KPI stables", "support maîtrisé"]
+    }
+  },
+  "seo_governance": {
+    "index_only_if_publication_authorized": true,
+    "noindex_if_status_not_published": true,
+    "slug_rules": ["minuscules", "sans accents", "tirets", "unique", "court"],
+    "minimum_seo_fields": ["slug", "title", "meta_description", "main_keyword", "secondary_keywords", "indexable"],
+    "avoid": [
+      "titres dupliqués",
+      "promesses exagérées",
+      "mots-clés sans rapport",
+      "SEO sur formations non prêtes",
+      "pages indexables sans offre claire"
+    ]
+  },
+  "legal_guardrails": {
+    "finance": "Contenu éducatif général seulement. Aucun conseil financier personnalisé.",
+    "health": "Contenu éducatif général seulement. Aucun conseil médical personnalisé.",
+    "relationships": "Contenu éducatif général seulement. Aucun conseil thérapeutique personnalisé.",
+    "business": "Résultats variables. Aucune promesse de revenu garanti.",
+    "ai": "Résultats variables selon l’outil, le contexte et l’application.",
+    "required_public_mentions": [
+      "produit digital autonome",
+      "aucun coaching inclus",
+      "accès numérique privé",
+      "vente finale dès activation",
+      "résultats variables",
+      "aucun conseil personnalisé lorsque pertinent"
+    ]
+  },
+  "support_and_compensation": {
+    "support_owner": "Hubert",
+    "support_page": "support.html",
+    "allowed_support_topics": [
+      "problème d’accès",
+      "lien non reçu",
+      "erreur de paiement signalée sans donnée privée",
+      "question générale sur la formation",
+      "demande raisonnable de compensation"
+    ],
+    "compensation_policy": {
+      "refund_default": "vente_finale_apres_activation",
+      "compensation_possible": true,
+      "example": "Offrir jusqu’à 2 formations gratuites si la demande est raisonnable et non abusive."
+    },
+    "escalate_to_olivier_if": [
+      "plainte agressive",
+      "double paiement",
+      "risque légal",
+      "donnée sensible exposée",
+      "demande de remboursement complexe",
+      "risque réputationnel"
+    ]
+  },
+  "maintenance_calendar": {
+    "daily_light_check": [
+      "vérifier JSON valide",
+      "vérifier prochaine action",
+      "ne modifier qu’un point majeur à la fois"
+    ],
+    "weekly_check": [
+      "vérifier statuts",
+      "vérifier formations prêtes",
+      "vérifier blocages de publication",
+      "exporter snapshot"
+    ],
+    "monthly_check": [
+      "réviser notes qualité",
+      "réviser notes rentabilité",
+      "réviser scores priorité",
+      "vérifier liens publics",
+      "nettoyer doublons"
+    ],
+    "annual_check": [
+      "mettre à jour chaque formation",
+      "réviser mentions légales",
+      "réviser SEO",
+      "archiver formations faibles"
+    ]
+  },
+  "versioning_and_change_control": {
+    "current_version": "1.1.0",
+    "change_policy": "Toute modification majeure doit être accompagnée d’un snapshot, d’une raison claire et d’un test après commit.",
+    "last_change_summary": "Ajout de gouvernance avancée : validation, risques, scoring, intégrations, accessibilité, rollback, QA et préparation multilingue.",
+    "semantic_versioning": {
+      "major": "Changement de structure incompatible",
+      "minor": "Ajout de champs compatibles",
+      "patch": "Correction sans changement de structure"
+    },
+    "change_log": [
+      {
+        "version": "1.0.0",
+        "date": "2026-04-29",
+        "summary": "Création du catalogue initial non sensible."
+      },
+      {
+        "version": "1.1.0",
+        "date": "2026-04-29",
+        "summary": "Ajout des règles de validation, gouvernance, intégrations, QA, rollback et préparation scaling."
+      }
+    ]
+  },
+  "id_registry": {
+    "format": "formation-0000",
+    "next_available_id": "formation-0012",
+    "reserved_ranges": [
+      {
+        "range": "formation-0001 à formation-0050",
+        "category": "lancement_et_priorites"
+      },
+      {
+        "range": "formation-0051 à formation-0100",
+        "category": "IA"
+      },
+      {
+        "range": "formation-0101 à formation-0150",
+        "category": "Productivité"
+      },
+      {
+        "range": "formation-0151 à formation-0200",
+        "category": "Apprentissage"
+      },
+      {
+        "range": "formation-0201 à formation-0250",
+        "category": "Business"
+      },
+      {
+        "range": "formation-0251 à formation-0300",
+        "category": "Finances"
+      },
+      {
+        "range": "formation-0301 à formation-0350",
+        "category": "Relations"
+      },
+      {
+        "range": "formation-0351 à formation-0400",
+        "category": "Bonheur"
+      },
+      {
+        "range": "formation-0401 à formation-0450",
+        "category": "Santé"
+      }
+    ],
+    "rules": [
+      "Ne jamais réutiliser un ID supprimé.",
+      "Ne jamais changer l’ID d’une formation déjà publiée.",
+      "Créer un nouvel ID si une formation change complètement de promesse.",
+      "Garder les anciens IDs dans les recommandations seulement s’ils existent encore."
+    ]
+  },
+  "scoring_formulas": {
+    "score_priorite_formula": "note_rentabilite*0.30 + demande_marche*0.20 + urgence_probleme*0.15 + potentiel_viral*0.15 + facilite_production*0.10 + simplicite_vente*0.05 + lien_prioritaire*0.05",
+    "score_pret_a_vendre_formula": "qualite + rentabilite + stripe_pret + acces_pret + checklist_prete + support_pret + mentions_legales + aucun_contenu_sensible",
+    "catalogue_health_formula": "couverture_categories + validite_json + absence_donnees_sensibles + formations_prioritaires + snapshots + tests_terrain",
+    "risk_score_formula": "blocages_publication + absence_vente_test + donnees_incompletes + absence_snapshot + promesses_sensibles",
+    "minimum_to_push_paid_traffic": {
+      "score_pret_a_vendre": 90,
+      "test_paiement": true,
+      "test_acces": true,
+      "support_pret": true,
+      "snapshot_exporte": true
+    }
+  },
+  "content_quality_rubric": {
+    "clarity": {
+      "weight": 20,
+      "description": "Le client comprend en moins de 10 secondes le problème, la promesse et le résultat possible."
+    },
+    "actionability": {
+      "weight": 20,
+      "description": "La formation donne une prochaine action claire, pas seulement de l’information."
+    },
+    "simplicity": {
+      "weight": 15,
+      "description": "La formation reste courte, concrète et facile à consommer."
+    },
+    "commercial_strength": {
+      "weight": 15,
+      "description": "Le prix, la promesse et la douleur client sont cohérents."
+    },
+    "legal_safety": {
+      "weight": 15,
+      "description": "Aucune promesse excessive ni conseil personnalisé dans les catégories sensibles."
+    },
+    "delivery_readiness": {
+      "weight": 15,
+      "description": "Checklist, accès, support et page après paiement sont prêts."
+    }
+  },
+  "integration_map": {
+    "index.html": {
+      "uses": ["formations", "categories", "catalogue_health", "bundle_candidates"],
+      "purpose": "Accueil, formations en avant, dashboard caché non sensible."
+    },
+    "formations.html": {
+      "uses": ["formations", "categories", "score_rules", "publication_gate"],
+      "purpose": "Catalogue public, filtres, recherche, tri et score prêt à vendre."
+    },
+    "formation.html": {
+      "uses": ["formations.id", "seo", "stripe_link", "legal", "url_acces_apres_paiement"],
+      "purpose": "Fiche formation dynamique ou semi-dynamique."
+    },
+    "merci.html": {
+      "uses": ["url_acces_apres_paiement", "support_and_compensation"],
+      "purpose": "Confirmation après paiement et prochaines étapes."
+    },
+    "support.html": {
+      "uses": ["support_and_compensation", "legal_guardrails"],
+      "purpose": "Support général sans données privées dans GitHub."
+    },
+    "dashboard-cache.html": {
+      "uses": ["catalogue_health", "publication_blockers", "phase_gates", "category_progress"],
+      "purpose": "Pilotage interne non sensible."
+    }
+  },
+  "rollback_plan": {
+    "when_to_rollback": [
+      "Le site ne charge plus le catalogue.",
+      "Le JSON devient invalide.",
+      "Une page publique affiche une erreur critique.",
+      "Un contenu sensible est accidentellement ajouté.",
+      "Le lien Stripe public pointe vers le mauvais produit."
+    ],
+    "steps": [
+      "Revenir au dernier snapshot valide.",
+      "Retirer immédiatement toute donnée sensible.",
+      "Tester index.html, formations.html et formation.html.",
+      "Vérifier le JSON avec un validateur.",
+      "Documenter la cause dans change_log."
+    ],
+    "emergency_rule": "Si une donnée sensible est exposée, supprimer le fichier ou le commit problématique immédiatement et changer les secrets concernés."
+  },
+  "accessibility_and_design_rules": {
+    "minimum_requirements": [
+      "Titre clair par formation.",
+      "Contraste lisible noir/or/blanc.",
+      "Texte alternatif pour images publiques.",
+      "Boutons avec libellés compréhensibles.",
+      "Navigation utilisable au clavier.",
+      "Prix lisible avant achat.",
+      "Mention aucun coaching visible.",
+      "Mention vente finale visible."
+    ],
+    "avoid": [
+      "Texte trop petit.",
+      "Promesse cachée.",
+      "Bouton d’achat trop bas sans répétition.",
+      "Page trop lourde sur mobile.",
+      "Trop de jargon IA ou business."
+    ]
+  },
+  "multilingual_readiness": {
+    "primary_language": "fr-CA",
+    "future_languages": ["fr-FR", "en-CA", "en-US"],
+    "rules": [
+      "Ne pas mélanger plusieurs langues dans un même champ public.",
+      "Préparer les slugs par langue plus tard.",
+      "Garder la source française comme base de vérité initiale.",
+      "Ne pas traduire les mentions légales sans révision."
+    ],
+    "future_fields": [
+      "translations",
+      "localized_slug",
+      "localized_seo",
+      "localized_price_display"
+    ]
+  },
+  "sensitive_category_review": {
+    "Finances": {
+      "manual_review_required": true,
+      "forbidden": ["recommandation personnalisée", "promesse de rendement", "conseil d’investissement individuel"],
+      "required_note": "Formation éducative générale. Aucun conseil financier personnalisé."
+    },
+    "Santé": {
+      "manual_review_required": true,
+      "forbidden": ["diagnostic", "traitement", "promesse médicale", "remplacement d’un professionnel"],
+      "required_note": "Formation éducative générale. Aucun conseil médical personnalisé."
+    },
+    "Relations": {
+      "manual_review_required": true,
+      "forbidden": ["thérapie personnalisée", "diagnostic psychologique", "promesse de résultat relationnel"],
+      "required_note": "Formation éducative générale. Aucun accompagnement thérapeutique personnalisé."
+    }
+  },
+  "business_operating_rules": {
+    "do_now": "Finaliser la formation pilote avant d’ajouter trop de nouvelles idées.",
+    "do_not_do_yet": [
+      "Créer 400 formations avant la première vente test.",
+      "Lancer de la publicité payante avant Stripe + accès + support.",
+      "Mettre du contenu payant complet dans GitHub.",
+      "Multiplier les fichiers JSON sans source unique claire."
+    ],
+    "scale_only_when": [
+      "Une formation est vendable.",
+      "Le paiement est testé.",
+      "L’accès est testé.",
+      "Le support est testé.",
+      "Les KPI non sensibles sont lisibles.",
+      "Un snapshot est exporté."
+    ]
+  },
+  "pilot_formation_definition": {
+    "pilot_id": "formation-0001",
+    "pilot_title": "Utilise l’IA pour sauver 3 heures par semaine",
+    "why_this_one": "C’est l’offre la plus simple à comprendre, la plus liée à la priorité IA, et la plus logique pour prouver le chemin complet avant expansion.",
+    "minimum_done_definition": [
+      "fiche publique claire",
+      "prix visible",
+      "lien Stripe public testé",
+      "page merci.html testée",
+      "accès privé testé hors GitHub public",
+      "checklist prête",
+      "support.html prêt",
+      "mentions légales visibles",
+      "snapshot exporté après test"
+    ],
+    "success_signal": "Une vente test complète sans données sensibles exposées."
+  },
+  "public_display_rules": {
+    "show_in_catalogue_if": [
+      "visibilite_public true",
+      "titre non vide",
+      "categorie officielle",
+      "description_courte non vide",
+      "prix public défini"
+    ],
+    "show_buy_button_if": [
+      "publication_autorisee true",
+      "stripe_link non vide",
+      "sales_status vente_active ou paiement_teste",
+      "score_pret_a_vendre supérieur ou égal à 85"
+    ],
+    "show_coming_soon_if": [
+      "visibilite_public true",
+      "publication_autorisee false",
+      "content_status en_cours ou a_creer"
+    ],
+    "never_show_publicly": [
+      "contenu complet payé",
+      "données clients",
+      "liens privés sensibles",
+      "clés API",
+      "reçus individuels"
+    ]
+  },
+  "metrics_confidence": {
+    "local_browser_metrics": {
+      "confidence": "faible_a_moyenne",
+      "use_for": "signaux de navigation non sensibles, pas pour décisions financières finales"
+    },
+    "manual_snapshots": {
+      "confidence": "moyenne",
+      "use_for": "suivi d’évolution et preuve de changement"
+    },
+    "stripe_dashboard": {
+      "confidence": "haute",
+      "use_for": "ventes réelles, paiements, remboursements, conversion finale"
+    },
+    "server_analytics_future": {
+      "confidence": "haute",
+      "use_for": "vues, sources de trafic, conversions fiables"
+    },
+    "warning": "Ne jamais confondre les KPI locaux du navigateur avec des ventes réelles ou des analytics serveur."
+  },
+  "data_retention_policy": {
+    "public_json": "Conserver seulement les données publiques ou non sensibles nécessaires au catalogue.",
+    "local_snapshots": "Garder les snapshots utiles, supprimer les versions inutiles ou obsolètes.",
+    "analytics_aggregates": "Conserver seulement des agrégats non identifiants.",
+    "remove_immediately_if_found": [
+      "email client",
+      "nom client",
+      "clé secrète",
+      "preuve de paiement individuelle",
+      "lien privé sensible",
+      "contenu payé complet"
+    ],
+    "snapshot_limit_recommendation": "Conserver les 20 derniers snapshots importants, puis archiver hors dépôt public si nécessaire."
+  },
+  "decision_matrix": {
+    "publish": "Publier seulement si score_pret_a_vendre >= 85, tests essentiels passés et aucune donnée sensible.",
+    "improve": "Améliorer si note_qualite < 85, note_rentabilite < 75 ou score_pret_a_vendre entre 65 et 84.",
+    "hold": "Garder en attente si score_pret_a_vendre < 65, Stripe absent ou accès non testé.",
+    "archive": "Archiver si la formation reste faible, non demandée ou trop risquée après révision.",
+    "bundle": "Proposer en bundle seulement si les formations sont complémentaires et compréhensibles ensemble."
+  },
+  "formations": [
+    {
+      "id": "formation-0001",
+      "title": "Utilise l’IA pour sauver 3 heures par semaine",
+      "titre": "Utilise l’IA pour sauver 3 heures par semaine",
+      "category": "IA",
+      "categorie": "IA",
+      "price": "15 $",
+      "prix": 15,
+      "currency": "CAD",
+      "level": "debutant",
+      "niveau": "debutant",
+      "estimated_duration": "30 minutes",
+      "duree_estimee": "30 minutes",
+      "format": ["Accès en ligne", "Checklist"],
+      "status": "Prête",
+      "statut": "prete",
+      "content_status": "prete",
+      "sales_status": "stripe_a_creer",
+      "access_status": "acces_a_tester",
+      "update_status": "a_jour",
+      "publication_autorisee": false,
+      "visibilite_public": true,
+      "url": "formation.html",
+      "lien": "formation.html",
+      "stripe_link": "",
+      "url_acces_apres_paiement": "merci.html",
+      "type_acces": "acces_numerique_prive",
+      "problem_solved": "Tu perds du temps avec des tâches répétitives et tu ne sais pas comment utiliser l’IA concrètement.",
+      "probleme_resolu": "Tu perds du temps avec des tâches répétitives et tu ne sais pas comment utiliser l’IA concrètement.",
+      "promise": "Tu repars avec une méthode simple pour transformer une tâche répétitive en mini-système IA.",
+      "promesse": "Tu repars avec une méthode simple pour transformer une tâche répétitive en mini-système IA.",
+      "description": "Une mini-formation pour apprendre à confier une tâche répétitive à l’IA, clarifier ton contexte, créer un prompt utile et gagner du temps chaque semaine.",
+      "description_courte": "Transforme une tâche répétitive en mini-système IA simple.",
+      "score": 92,
+      "note_qualite": 92,
+      "rentability": 90,
+      "note_rentabilite": 90,
+      "score_priorite": 96,
+      "score_pret_a_vendre": 76,
+      "ready_label": "jaune",
+      "tags": ["IA", "productivite", "temps", "prompt", "automatisation"],
+      "formations_recommandees": ["formation-0002", "formation-0005", "formation-0006"],
+      "seo": {
+        "slug": "utilise-ia-sauver-3-heures-par-semaine",
+        "title": "Utilise l’IA pour sauver 3 heures par semaine | Le Pivot d’Or",
+        "meta_description": "Mini-formation IA pour transformer une tâche répétitive en mini-système simple et gagner du temps.",
+        "main_keyword": "utiliser IA productivité",
+        "secondary_keywords": ["prompt IA", "automatisation simple", "gagner du temps", "mini formation IA"],
+        "indexable": false
+      },
+      "mise_a_jour": {
+        "date_creation": "2026-04-29",
+        "date_derniere_mise_a_jour": "2026-04-29",
+        "date_prochaine_mise_a_jour": "2027-04-29",
+        "frequence": "annuelle",
+        "version": "1.0",
+        "statut_mise_a_jour": "a_jour"
+      },
+      "jumeau_numerique": {
+        "actif": true,
+        "etat_global": "pret_a_tester",
+        "stripe_pret": false,
+        "acces_prive_pret": false,
+        "contenu_en_ligne": true,
+        "checklist_prete": false,
+        "mini_kit_marketing_pret": false,
+        "prochaine_action_interne": "Créer le lien Stripe public, finaliser la checklist et tester merci.html."
+      },
+      "analytics": {
+        "vues_page": 0,
+        "clics_stripe": 0,
+        "ventes_attribuees": 0,
+        "taux_conversion": 0,
+        "commentaires_agreges": 0,
+        "sauvegardes": 0
+      },
+      "controle_publication": {
+        "test_mobile": false,
+        "test_paiement": false,
+        "test_redirection": false,
+        "test_acces": false,
+        "test_seo": true,
+        "test_mentions_legales": true,
+        "test_aucun_contenu_sensible": true
+      },
+      "legal": "Produit digital autonome. Aucun coaching inclus. Accès numérique privé. Vente finale dès activation. Résultats variables. Formation éducative générale."
+    },
+    {
+      "id": "formation-0002",
+      "title": "Organise ta semaine en 30 minutes",
+      "titre": "Organise ta semaine en 30 minutes",
+      "category": "Productivité",
+      "categorie": "Productivité",
+      "price": "15 $",
+      "prix": 15,
+      "currency": "CAD",
+      "level": "debutant",
+      "niveau": "debutant",
+      "estimated_duration": "30 minutes",
+      "duree_estimee": "30 minutes",
+      "format": ["Accès en ligne", "Checklist"],
+      "status": "Bientôt disponible",
+      "statut": "en_cours",
+      "content_status": "en_cours",
+      "sales_status": "stripe_a_creer",
+      "access_status": "acces_non_pret",
+      "update_status": "a_jour",
+      "publication_autorisee": false,
+      "visibilite_public": true,
+      "url": "formations.html#catalogue",
+      "lien": "formations.html#catalogue",
+      "stripe_link": "",
+      "url_acces_apres_paiement": "merci.html",
+      "type_acces": "acces_numerique_prive",
+      "problem_solved": "Tu commences la semaine avec trop d’idées et pas assez de priorités claires.",
+      "probleme_resolu": "Tu commences la semaine avec trop d’idées et pas assez de priorités claires.",
+      "promise": "Tu crées une semaine simple avec trois priorités, des blocs de temps et une action claire.",
+      "promesse": "Tu crées une semaine simple avec trois priorités, des blocs de temps et une action claire.",
+      "description": "Une mini-formation pour réduire le chaos, choisir tes priorités et organiser ta semaine sans te surcharger.",
+      "description_courte": "Clarifie tes priorités et réduis le chaos de ta semaine.",
+      "score": 88,
+      "note_qualite": 88,
+      "rentability": 84,
+      "note_rentabilite": 84,
+      "score_priorite": 89,
+      "score_pret_a_vendre": 62,
+      "ready_label": "rouge",
+      "tags": ["productivite", "semaine", "priorites", "organisation"],
+      "formations_recommandees": ["formation-0001", "formation-0007"],
+      "seo": {
+        "slug": "organise-ta-semaine-en-30-minutes",
+        "title": "Organise ta semaine en 30 minutes | Le Pivot d’Or",
+        "meta_description": "Mini-formation pour organiser ta semaine, clarifier tes priorités et passer à l’action.",
+        "main_keyword": "organiser sa semaine",
+        "secondary_keywords": ["productivité", "priorités", "planification simple"],
+        "indexable": false
+      },
+      "mise_a_jour": {
+        "date_creation": "2026-04-29",
+        "date_derniere_mise_a_jour": "2026-04-29",
+        "date_prochaine_mise_a_jour": "2027-04-29",
+        "frequence": "annuelle",
+        "version": "0.8",
+        "statut_mise_a_jour": "mise_a_jour_prevue"
+      },
+      "jumeau_numerique": {
+        "actif": true,
+        "etat_global": "en_creation",
+        "stripe_pret": false,
+        "acces_prive_pret": false,
+        "contenu_en_ligne": false,
+        "checklist_prete": false,
+        "mini_kit_marketing_pret": false,
+        "prochaine_action_interne": "Finaliser le plan en 5 étapes et créer la checklist."
+      },
+      "analytics": {
+        "vues_page": 0,
+        "clics_stripe": 0,
+        "ventes_attribuees": 0,
+        "taux_conversion": 0,
+        "commentaires_agreges": 0,
+        "sauvegardes": 0
+      },
+      "controle_publication": {
+        "test_mobile": false,
+        "test_paiement": false,
+        "test_redirection": false,
+        "test_acces": false,
+        "test_seo": false,
+        "test_mentions_legales": true,
+        "test_aucun_contenu_sensible": true
+      },
+      "legal": "Produit digital autonome. Aucun coaching inclus. Accès numérique privé. Vente finale dès activation. Résultats variables. Formation éducative générale."
+    },
+    {
+      "id": "formation-0003",
+      "title": "Trouve une idée de produit digital rentable",
+      "titre": "Trouve une idée de produit digital rentable",
+      "category": "Business",
+      "categorie": "Business",
+      "price": "25 $",
+      "prix": 25,
+      "currency": "CAD",
+      "level": "debutant",
+      "niveau": "debutant",
+      "estimated_duration": "45 minutes",
+      "duree_estimee": "45 minutes",
+      "format": ["Accès en ligne", "Checklist", "Gabarit simple"],
+      "status": "Bientôt disponible",
+      "statut": "en_cours",
+      "content_status": "en_cours",
+      "sales_status": "stripe_a_creer",
+      "access_status": "acces_non_pret",
+      "update_status": "a_jour",
+      "publication_autorisee": false,
+      "visibilite_public": true,
+      "url": "formations.html#catalogue",
+      "lien": "formations.html#catalogue",
+      "stripe_link": "",
+      "url_acces_apres_paiement": "merci.html",
+      "type_acces": "acces_numerique_prive",
+      "problem_solved": "Tu veux vendre un produit digital, mais tu ne sais pas quelle idée choisir.",
+      "probleme_resolu": "Tu veux vendre un produit digital, mais tu ne sais pas quelle idée choisir.",
+      "promise": "Tu sélectionnes une idée simple selon le problème, la demande, le prix et la facilité de production.",
+      "promesse": "Tu sélectionnes une idée simple selon le problème, la demande, le prix et la facilité de production.",
+      "description": "Une méthode rapide pour passer d’une idée floue à une première offre digitale claire et vendable.",
+      "description_courte": "Clarifie un problème, une promesse, un prix et une première offre.",
+      "score": 86,
+      "note_qualite": 86,
+      "rentability": 92,
+      "note_rentabilite": 92,
+      "score_priorite": 93,
+      "score_pret_a_vendre": 61,
+      "ready_label": "rouge",
+      "tags": ["business", "produit digital", "idee", "offre"],
+      "formations_recommandees": ["formation-0006", "formation-0008"],
+      "seo": {
+        "slug": "trouve-idee-produit-digital-rentable",
+        "title": "Trouve une idée de produit digital rentable | Le Pivot d’Or",
+        "meta_description": "Mini-formation business pour choisir une idée simple de produit digital à vendre.",
+        "main_keyword": "idée produit digital rentable",
+        "secondary_keywords": ["business digital", "offre digitale", "mini formation business"],
+        "indexable": false
+      },
+      "mise_a_jour": {
+        "date_creation": "2026-04-29",
+        "date_derniere_mise_a_jour": "2026-04-29",
+        "date_prochaine_mise_a_jour": "2027-04-29",
+        "frequence": "annuelle",
+        "version": "0.8",
+        "statut_mise_a_jour": "mise_a_jour_prevue"
+      },
+      "jumeau_numerique": {
+        "actif": true,
+        "etat_global": "en_creation",
+        "stripe_pret": false,
+        "acces_prive_pret": false,
+        "contenu_en_ligne": false,
+        "checklist_prete": false,
+        "mini_kit_marketing_pret": false,
+        "prochaine_action_interne": "Créer le gabarit de validation d’idée et une fiche de vente courte."
+      },
+      "analytics": {
+        "vues_page": 0,
+        "clics_stripe": 0,
+        "ventes_attribuees": 0,
+        "taux_conversion": 0,
+        "commentaires_agreges": 0,
+        "sauvegardes": 0
+      },
+      "controle_publication": {
+        "test_mobile": false,
+        "test_paiement": false,
+        "test_redirection": false,
+        "test_acces": false,
+        "test_seo": false,
+        "test_mentions_legales": true,
+        "test_aucun_contenu_sensible": true
+      },
+      "legal": "Produit digital autonome. Aucun coaching inclus. Accès numérique privé. Vente finale dès activation. Résultats variables. Formation éducative générale."
+    },
+    {
+      "id": "formation-0004",
+      "title": "Structure ton budget simple",
+      "titre": "Structure ton budget simple",
+      "category": "Finances",
+      "categorie": "Finances",
+      "price": "15 $",
+      "prix": 15,
+      "currency": "CAD",
+      "level": "debutant",
+      "niveau": "debutant",
+      "estimated_duration": "35 minutes",
+      "duree_estimee": "35 minutes",
+      "format": ["Accès en ligne", "Checklist"],
+      "status": "Bientôt disponible",
+      "statut": "en_cours",
+      "content_status": "en_cours",
+      "sales_status": "stripe_a_creer",
+      "access_status": "acces_non_pret",
+      "update_status": "a_jour",
+      "publication_autorisee": false,
+      "visibilite_public": true,
+      "url": "formations.html#catalogue",
+      "lien": "formations.html#catalogue",
+      "stripe_link": "",
+      "url_acces_apres_paiement": "merci.html",
+      "type_acces": "acces_numerique_prive",
+      "problem_solved": "Tu ne vois pas clairement où va ton argent et quelles dépenses prioriser.",
+      "probleme_resolu": "Tu ne vois pas clairement où va ton argent et quelles dépenses prioriser.",
+      "promise": "Tu construis une vue simple de tes revenus, dépenses et décisions prioritaires.",
+      "promesse": "Tu construis une vue simple de tes revenus, dépenses et décisions prioritaires.",
+      "description": "Une formation éducative générale pour remettre de la clarté dans ton budget sans conseil financier personnalisé.",
+      "description_courte": "Vois tes revenus, dépenses et priorités avec plus de clarté.",
+      "score": 84,
+      "note_qualite": 84,
+      "rentability": 82,
+      "note_rentabilite": 82,
+      "score_priorite": 85,
+      "score_pret_a_vendre": 58,
+      "ready_label": "rouge",
+      "tags": ["finances", "budget", "clarté", "dépenses"],
+      "formations_recommandees": ["formation-0002", "formation-0010"],
+      "seo": {
+        "slug": "structure-ton-budget-simple",
+        "title": "Structure ton budget simple | Le Pivot d’Or",
+        "meta_description": "Mini-formation éducative pour mieux voir tes revenus, dépenses et priorités financières.",
+        "main_keyword": "budget simple",
+        "secondary_keywords": ["clarté financière", "dépenses", "organisation financière"],
+        "indexable": false
+      },
+      "mise_a_jour": {
+        "date_creation": "2026-04-29",
+        "date_derniere_mise_a_jour": "2026-04-29",
+        "date_prochaine_mise_a_jour": "2027-04-29",
+        "frequence": "annuelle",
+        "version": "0.7",
+        "statut_mise_a_jour": "mise_a_jour_prevue"
+      },
+      "jumeau_numerique": {
+        "actif": true,
+        "etat_global": "en_creation",
+        "stripe_pret": false,
+        "acces_prive_pret": false,
+        "contenu_en_ligne": false,
+        "checklist_prete": false,
+        "mini_kit_marketing_pret": false,
+        "prochaine_action_interne": "Ajouter les mentions éducatives et éviter toute recommandation financière personnalisée."
+      },
+      "analytics": {
+        "vues_page": 0,
+        "clics_stripe": 0,
+        "ventes_attribuees": 0,
+        "taux_conversion": 0,
+        "commentaires_agreges": 0,
+        "sauvegardes": 0
+      },
+      "controle_publication": {
+        "test_mobile": false,
+        "test_paiement": false,
+        "test_redirection": false,
+        "test_acces": false,
+        "test_seo": false,
+        "test_mentions_legales": true,
+        "test_aucun_contenu_sensible": true
+      },
+      "legal": "Formation éducative générale. Aucun conseil financier personnalisé. Aucun coaching inclus. Accès numérique privé. Vente finale dès activation. Résultats variables."
+    },
+    {
+      "id": "formation-0005",
+      "title": "Crée ton premier prompt vraiment utile",
+      "titre": "Crée ton premier prompt vraiment utile",
+      "category": "IA",
+      "categorie": "IA",
+      "price": "5 $",
+      "prix": 5,
+      "currency": "CAD",
+      "level": "debutant",
+      "niveau": "debutant",
+      "estimated_duration": "20 minutes",
+      "duree_estimee": "20 minutes",
+      "format": ["Micro-guide", "Checklist"],
+      "status": "À créer",
+      "statut": "a_creer",
+      "content_status": "a_creer",
+      "sales_status": "pas_configuree",
+      "access_status": "acces_non_pret",
+      "update_status": "mise_a_jour_prevue",
+      "publication_autorisee": false,
+      "visibilite_public": true,
+      "url": "formations.html#catalogue",
+      "lien": "formations.html#catalogue",
+      "stripe_link": "",
+      "url_acces_apres_paiement": "merci.html",
+      "type_acces": "acces_numerique_prive",
+      "problem_solved": "Tu poses des questions vagues à l’IA et tu obtiens des réponses moyennes.",
+      "probleme_resolu": "Tu poses des questions vagues à l’IA et tu obtiens des réponses moyennes.",
+      "promise": "Tu apprends une structure simple pour demander mieux et obtenir des réponses plus utiles.",
+      "promesse": "Tu apprends une structure simple pour demander mieux et obtenir des réponses plus utiles.",
+      "description": "Un micro-guide pour apprendre la base d’un prompt clair : contexte, rôle, objectif, contraintes et format attendu.",
+      "description_courte": "Un micro-guide pour mieux demander et obtenir de meilleures réponses.",
+      "score": 80,
+      "note_qualite": 80,
+      "rentability": 78,
+      "note_rentabilite": 78,
+      "score_priorite": 83,
+      "score_pret_a_vendre": 42,
+      "ready_label": "rouge",
+      "tags": ["IA", "prompt", "debutant", "micro-guide"],
+      "formations_recommandees": ["formation-0001", "formation-0007"],
+      "seo": {
+        "slug": "cree-ton-premier-prompt-vraiment-utile",
+        "title": "Crée ton premier prompt vraiment utile | Le Pivot d’Or",
+        "meta_description": "Micro-guide pour créer un prompt IA clair et obtenir de meilleures réponses.",
+        "main_keyword": "premier prompt IA",
+        "secondary_keywords": ["prompt débutant", "IA simple", "ChatGPT productivité"],
+        "indexable": false
+      },
+      "mise_a_jour": {
+        "date_creation": "2026-04-29",
+        "date_derniere_mise_a_jour": "2026-04-29",
+        "date_prochaine_mise_a_jour": "2027-04-29",
+        "frequence": "annuelle",
+        "version": "0.3",
+        "statut_mise_a_jour": "mise_a_jour_prevue"
+      },
+      "jumeau_numerique": {
+        "actif": true,
+        "etat_global": "idee_prioritaire",
+        "stripe_pret": false,
+        "acces_prive_pret": false,
+        "contenu_en_ligne": false,
+        "checklist_prete": false,
+        "mini_kit_marketing_pret": false,
+        "prochaine_action_interne": "Créer le micro-guide et le vendre comme entrée à 5 $."
+      },
+      "analytics": {
+        "vues_page": 0,
+        "clics_stripe": 0,
+        "ventes_attribuees": 0,
+        "taux_conversion": 0,
+        "commentaires_agreges": 0,
+        "sauvegardes": 0
+      },
+      "controle_publication": {
+        "test_mobile": false,
+        "test_paiement": false,
+        "test_redirection": false,
+        "test_acces": false,
+        "test_seo": false,
+        "test_mentions_legales": false,
+        "test_aucun_contenu_sensible": true
+      },
+      "legal": "Produit digital autonome. Aucun coaching inclus. Accès numérique privé. Vente finale dès activation. Résultats variables. Formation éducative générale."
+    },
+    {
+      "id": "formation-0006",
+      "title": "Écris une page de vente simple",
+      "titre": "Écris une page de vente simple",
+      "category": "Business",
+      "categorie": "Business",
+      "price": "25 $",
+      "prix": 25,
+      "currency": "CAD",
+      "level": "debutant",
+      "niveau": "debutant",
+      "estimated_duration": "45 minutes",
+      "duree_estimee": "45 minutes",
+      "format": ["Accès en ligne", "Gabarit", "Checklist"],
+      "status": "À créer",
+      "statut": "a_creer",
+      "content_status": "a_creer",
+      "sales_status": "pas_configuree",
+      "access_status": "acces_non_pret",
+      "update_status": "mise_a_jour_prevue",
+      "publication_autorisee": false,
+      "visibilite_public": true,
+      "url": "formations.html#catalogue",
+      "lien": "formations.html#catalogue",
+      "stripe_link": "",
+      "url_acces_apres_paiement": "merci.html",
+      "type_acces": "acces_numerique_prive",
+      "problem_solved": "Tu as une offre, mais tu ne sais pas comment la présenter clairement.",
+      "probleme_resolu": "Tu as une offre, mais tu ne sais pas comment la présenter clairement.",
+      "promise": "Tu structures une page simple avec problème, promesse, preuves, offre, FAQ et action.",
+      "promesse": "Tu structures une page simple avec problème, promesse, preuves, offre, FAQ et action.",
+      "description": "Une mini-formation business pour créer une page claire et lisible sans complexité marketing inutile.",
+      "description_courte": "Structure une page claire : problème, promesse, offre et action.",
+      "score": 82,
+      "note_qualite": 82,
+      "rentability": 88,
+      "note_rentabilite": 88,
+      "score_priorite": 87,
+      "score_pret_a_vendre": 43,
+      "ready_label": "rouge",
+      "tags": ["business", "page de vente", "conversion", "offre"],
+      "formations_recommandees": ["formation-0003", "formation-0008"],
+      "seo": {
+        "slug": "ecris-une-page-de-vente-simple",
+        "title": "Écris une page de vente simple | Le Pivot d’Or",
+        "meta_description": "Mini-formation pour structurer une page de vente claire et actionnable.",
+        "main_keyword": "page de vente simple",
+        "secondary_keywords": ["conversion", "offre digitale", "vente en ligne"],
+        "indexable": false
+      },
+      "mise_a_jour": {
+        "date_creation": "2026-04-29",
+        "date_derniere_mise_a_jour": "2026-04-29",
+        "date_prochaine_mise_a_jour": "2027-04-29",
+        "frequence": "annuelle",
+        "version": "0.3",
+        "statut_mise_a_jour": "mise_a_jour_prevue"
+      },
+      "jumeau_numerique": {
+        "actif": true,
+        "etat_global": "idee_prioritaire",
+        "stripe_pret": false,
+        "acces_prive_pret": false,
+        "contenu_en_ligne": false,
+        "checklist_prete": false,
+        "mini_kit_marketing_pret": false,
+        "prochaine_action_interne": "Créer le gabarit de page de vente et un exemple Le Pivot d’Or."
+      },
+      "analytics": {
+        "vues_page": 0,
+        "clics_stripe": 0,
+        "ventes_attribuees": 0,
+        "taux_conversion": 0,
+        "commentaires_agreges": 0,
+        "sauvegardes": 0
+      },
+      "controle_publication": {
+        "test_mobile": false,
+        "test_paiement": false,
+        "test_redirection": false,
+        "test_acces": false,
+        "test_seo": false,
+        "test_mentions_legales": false,
+        "test_aucun_contenu_sensible": true
+      },
+      "legal": "Produit digital autonome. Aucun coaching inclus. Accès numérique privé. Vente finale dès activation. Résultats variables. Formation éducative générale."
+    },
+    {
+      "id": "formation-0007",
+      "title": "Apprends plus vite avec une méthode simple",
+      "titre": "Apprends plus vite avec une méthode simple",
+      "category": "Apprentissage",
+      "categorie": "Apprentissage",
+      "price": "15 $",
+      "prix": 15,
+      "currency": "CAD",
+      "level": "debutant",
+      "niveau": "debutant",
+      "estimated_duration": "30 minutes",
+      "duree_estimee": "30 minutes",
+      "format": ["Accès en ligne", "Checklist"],
+      "status": "À créer",
+      "statut": "a_creer",
+      "content_status": "a_creer",
+      "sales_status": "pas_configuree",
+      "access_status": "acces_non_pret",
+      "update_status": "mise_a_jour_prevue",
+      "publication_autorisee": false,
+      "visibilite_public": true,
+      "url": "formations.html#catalogue",
+      "lien": "formations.html#catalogue",
+      "stripe_link": "",
+      "url_acces_apres_paiement": "merci.html",
+      "type_acces": "acces_numerique_prive",
+      "problem_solved": "Tu consommes beaucoup d’information, mais tu retiens peu et appliques peu.",
+      "probleme_resolu": "Tu consommes beaucoup d’information, mais tu retiens peu et appliques peu.",
+      "promise": "Tu apprends à transformer une information en résumé, action, répétition et résultat.",
+      "promesse": "Tu apprends à transformer une information en résumé, action, répétition et résultat.",
+      "description": "Une méthode courte pour apprendre plus vite sans accumuler inutilement du contenu.",
+      "description_courte": "Transforme une information en action claire et mémorisable.",
+      "score": 78,
+      "note_qualite": 78,
+      "rentability": 74,
+      "note_rentabilite": 74,
+      "score_priorite": 72,
+      "score_pret_a_vendre": 38,
+      "ready_label": "rouge",
+      "tags": ["apprentissage", "methode", "memoire", "action"],
+      "formations_recommandees": ["formation-0001", "formation-0005"],
+      "seo": {
+        "slug": "apprends-plus-vite-methode-simple",
+        "title": "Apprends plus vite avec une méthode simple | Le Pivot d’Or",
+        "meta_description": "Mini-formation pour apprendre plus vite, résumer mieux et passer à l’action.",
+        "main_keyword": "apprendre plus vite",
+        "secondary_keywords": ["méthode apprentissage", "mémorisation", "résumé efficace"],
+        "indexable": false
+      },
+      "mise_a_jour": {
+        "date_creation": "2026-04-29",
+        "date_derniere_mise_a_jour": "2026-04-29",
+        "date_prochaine_mise_a_jour": "2027-04-29",
+        "frequence": "annuelle",
+        "version": "0.2",
+        "statut_mise_a_jour": "mise_a_jour_prevue"
+      },
+      "jumeau_numerique": {
+        "actif": true,
+        "etat_global": "idee",
+        "stripe_pret": false,
+        "acces_prive_pret": false,
+        "contenu_en_ligne": false,
+        "checklist_prete": false,
+        "mini_kit_marketing_pret": false,
+        "prochaine_action_interne": "Créer le modèle apprendre-résumer-appliquer-répéter."
+      },
+      "analytics": {
+        "vues_page": 0,
+        "clics_stripe": 0,
+        "ventes_attribuees": 0,
+        "taux_conversion": 0,
+        "commentaires_agreges": 0,
+        "sauvegardes": 0
+      },
+      "controle_publication": {
+        "test_mobile": false,
+        "test_paiement": false,
+        "test_redirection": false,
+        "test_acces": false,
+        "test_seo": false,
+        "test_mentions_legales": false,
+        "test_aucun_contenu_sensible": true
+      },
+      "legal": "Produit digital autonome. Aucun coaching inclus. Accès numérique privé. Vente finale dès activation. Résultats variables. Formation éducative générale."
+    },
+    {
+      "id": "formation-0008",
+      "title": "Crée une offre simple à 15 $, 25 $ ou 50 $",
+      "titre": "Crée une offre simple à 15 $, 25 $ ou 50 $",
+      "category": "Business",
+      "categorie": "Business",
+      "price": "25 $",
+      "prix": 25,
+      "currency": "CAD",
+      "level": "debutant",
+      "niveau": "debutant",
+      "estimated_duration": "40 minutes",
+      "duree_estimee": "40 minutes",
+      "format": ["Accès en ligne", "Gabarit"],
+      "status": "À créer",
+      "statut": "a_creer",
+      "content_status": "a_creer",
+      "sales_status": "pas_configuree",
+      "access_status": "acces_non_pret",
+      "update_status": "mise_a_jour_prevue",
+      "publication_autorisee": false,
+      "visibilite_public": true,
+      "url": "formations.html#catalogue",
+      "lien": "formations.html#catalogue",
+      "stripe_link": "",
+      "url_acces_apres_paiement": "merci.html",
+      "type_acces": "acces_numerique_prive",
+      "problem_solved": "Tu ne sais pas comment transformer une idée en offre claire avec un bon prix.",
+      "probleme_resolu": "Tu ne sais pas comment transformer une idée en offre claire avec un bon prix.",
+      "promise": "Tu crées une offre simple avec un problème, une promesse, un prix et une action d’achat.",
+      "promesse": "Tu crées une offre simple avec un problème, une promesse, un prix et une action d’achat.",
+      "description": "Une mini-formation pour construire une offre digitale simple, petite et vendable sans abonnement ni coaching.",
+      "description_courte": "Transforme une idée en offre claire avec un prix simple.",
+      "score": 81,
+      "note_qualite": 81,
+      "rentability": 90,
+      "note_rentabilite": 90,
+      "score_priorite": 88,
+      "score_pret_a_vendre": 41,
+      "ready_label": "rouge",
+      "tags": ["business", "offre", "prix", "produit digital"],
+      "formations_recommandees": ["formation-0003", "formation-0006"],
+      "seo": {
+        "slug": "cree-une-offre-simple-15-25-50",
+        "title": "Crée une offre simple à 15 $, 25 $ ou 50 $ | Le Pivot d’Or",
+        "meta_description": "Mini-formation pour créer une offre digitale simple avec prix clair et promesse réaliste.",
+        "main_keyword": "créer une offre digitale",
+        "secondary_keywords": ["prix produit digital", "offre simple", "mini formation business"],
+        "indexable": false
+      },
+      "mise_a_jour": {
+        "date_creation": "2026-04-29",
+        "date_derniere_mise_a_jour": "2026-04-29",
+        "date_prochaine_mise_a_jour": "2027-04-29",
+        "frequence": "annuelle",
+        "version": "0.2",
+        "statut_mise_a_jour": "mise_a_jour_prevue"
+      },
+      "jumeau_numerique": {
+        "actif": true,
+        "etat_global": "idee",
+        "stripe_pret": false,
+        "acces_prive_pret": false,
+        "contenu_en_ligne": false,
+        "checklist_prete": false,
+        "mini_kit_marketing_pret": false,
+        "prochaine_action_interne": "Créer le gabarit problème-promesse-prix-action."
+      },
+      "analytics": {
+        "vues_page": 0,
+        "clics_stripe": 0,
+        "ventes_attribuees": 0,
+        "taux_conversion": 0,
+        "commentaires_agreges": 0,
+        "sauvegardes": 0
+      },
+      "controle_publication": {
+        "test_mobile": false,
+        "test_paiement": false,
+        "test_redirection": false,
+        "test_acces": false,
+        "test_seo": false,
+        "test_mentions_legales": false,
+        "test_aucun_contenu_sensible": true
+      },
+      "legal": "Produit digital autonome. Aucun coaching inclus. Accès numérique privé. Vente finale dès activation. Résultats variables. Formation éducative générale."
+    },
+    {
+      "id": "formation-0009",
+      "title": "Pose une limite personnelle sans culpabiliser",
+      "titre": "Pose une limite personnelle sans culpabiliser",
+      "category": "Relations",
+      "categorie": "Relations",
+      "price": "15 $",
+      "prix": 15,
+      "currency": "CAD",
+      "level": "debutant",
+      "niveau": "debutant",
+      "estimated_duration": "30 minutes",
+      "duree_estimee": "30 minutes",
+      "format": ["Accès en ligne", "Checklist"],
+      "status": "À créer",
+      "statut": "a_creer",
+      "content_status": "a_creer",
+      "sales_status": "pas_configuree",
+      "access_status": "acces_non_pret",
+      "update_status": "mise_a_jour_prevue",
+      "publication_autorisee": false,
+      "visibilite_public": true,
+      "url": "formations.html#catalogue",
+      "lien": "formations.html#catalogue",
+      "stripe_link": "",
+      "url_acces_apres_paiement": "merci.html",
+      "type_acces": "acces_numerique_prive",
+      "problem_solved": "Tu dis oui trop vite et tu finis par t’épuiser ou accumuler de la frustration.",
+      "probleme_resolu": "Tu dis oui trop vite et tu finis par t’épuiser ou accumuler de la frustration.",
+      "promise": "Tu prépares une phrase simple pour poser une limite avec calme et clarté.",
+      "promesse": "Tu prépares une phrase simple pour poser une limite avec calme et clarté.",
+      "description": "Une mini-formation éducative pour apprendre à poser une limite simple sans agressivité.",
+      "description_courte": "Prépare une limite claire avec une phrase simple et calme.",
+      "score": 76,
+      "note_qualite": 76,
+      "rentability": 70,
+      "note_rentabilite": 70,
+      "score_priorite": 68,
+      "score_pret_a_vendre": 34,
+      "ready_label": "rouge",
+      "tags": ["relations", "limites", "communication", "clarté"],
+      "formations_recommandees": ["formation-0010", "formation-0002"],
+      "seo": {
+        "slug": "pose-une-limite-personnelle-sans-culpabiliser",
+        "title": "Pose une limite personnelle sans culpabiliser | Le Pivot d’Or",
+        "meta_description": "Mini-formation pour apprendre à poser une limite personnelle avec calme et clarté.",
+        "main_keyword": "poser une limite personnelle",
+        "secondary_keywords": ["communication", "limites personnelles", "relations"],
+        "indexable": false
+      },
+      "mise_a_jour": {
+        "date_creation": "2026-04-29",
+        "date_derniere_mise_a_jour": "2026-04-29",
+        "date_prochaine_mise_a_jour": "2027-04-29",
+        "frequence": "annuelle",
+        "version": "0.1",
+        "statut_mise_a_jour": "mise_a_jour_prevue"
+      },
+      "jumeau_numerique": {
+        "actif": true,
+        "etat_global": "idee",
+        "stripe_pret": false,
+        "acces_prive_pret": false,
+        "contenu_en_ligne": false,
+        "checklist_prete": false,
+        "mini_kit_marketing_pret": false,
+        "prochaine_action_interne": "Créer la checklist phrase-limite-situation-réponse."
+      },
+      "analytics": {
+        "vues_page": 0,
+        "clics_stripe": 0,
+        "ventes_attribuees": 0,
+        "taux_conversion": 0,
+        "commentaires_agreges": 0,
+        "sauvegardes": 0
+      },
+      "controle_publication": {
+        "test_mobile": false,
+        "test_paiement": false,
+        "test_redirection": false,
+        "test_acces": false,
+        "test_seo": false,
+        "test_mentions_legales": false,
+        "test_aucun_contenu_sensible": true
+      },
+      "legal": "Produit digital autonome. Aucun coaching inclus. Accès numérique privé. Vente finale dès activation. Résultats variables. Formation éducative générale."
+    },
+    {
+      "id": "formation-0010",
+      "title": "Ralentis pour reprendre le contrôle",
+      "titre": "Ralentis pour reprendre le contrôle",
+      "category": "Bonheur",
+      "categorie": "Bonheur",
+      "price": "15 $",
+      "prix": 15,
+      "currency": "CAD",
+      "level": "debutant",
+      "niveau": "debutant",
+      "estimated_duration": "25 minutes",
+      "duree_estimee": "25 minutes",
+      "format": ["Accès en ligne", "Checklist"],
+      "status": "À créer",
+      "statut": "a_creer",
+      "content_status": "a_creer",
+      "sales_status": "pas_configuree",
+      "access_status": "acces_non_pret",
+      "update_status": "mise_a_jour_prevue",
+      "publication_autorisee": false,
+      "visibilite_public": true,
+      "url": "formations.html#catalogue",
+      "lien": "formations.html#catalogue",
+      "stripe_link": "",
+      "url_acces_apres_paiement": "merci.html",
+      "type_acces": "acces_numerique_prive",
+      "problem_solved": "Tu avances vite, mais tu te sens dispersé, fatigué ou trop réactif.",
+      "probleme_resolu": "Tu avances vite, mais tu te sens dispersé, fatigué ou trop réactif.",
+      "promise": "Tu installes une pause simple pour reprendre de la clarté avant d’agir.",
+      "promesse": "Tu installes une pause simple pour reprendre de la clarté avant d’agir.",
+      "description": "Une mini-formation courte pour ralentir, respirer, clarifier une priorité et reprendre le contrôle de ta journée.",
+      "description_courte": "Ralentis, clarifie une priorité et reprends le contrôle de ta journée.",
+      "score": 75,
+      "note_qualite": 75,
+      "rentability": 68,
+      "note_rentabilite": 68,
+      "score_priorite": 66,
+      "score_pret_a_vendre": 32,
+      "ready_label": "rouge",
+      "tags": ["bonheur", "ralentir", "clarté", "calme"],
+      "formations_recommandees": ["formation-0002", "formation-0009", "formation-0011"],
+      "seo": {
+        "slug": "ralentis-pour-reprendre-le-controle",
+        "title": "Ralentis pour reprendre le contrôle | Le Pivot d’Or",
+        "meta_description": "Mini-formation pour ralentir, retrouver de la clarté et reprendre le contrôle de ta journée.",
+        "main_keyword": "ralentir pour reprendre le contrôle",
+        "secondary_keywords": ["clarté", "calme", "priorité", "bien-être"],
+        "indexable": false
+      },
+      "mise_a_jour": {
+        "date_creation": "2026-04-29",
+        "date_derniere_mise_a_jour": "2026-04-29",
+        "date_prochaine_mise_a_jour": "2027-04-29",
+        "frequence": "annuelle",
+        "version": "0.1",
+        "statut_mise_a_jour": "mise_a_jour_prevue"
+      },
+      "jumeau_numerique": {
+        "actif": true,
+        "etat_global": "idee",
+        "stripe_pret": false,
+        "acces_prive_pret": false,
+        "contenu_en_ligne": false,
+        "checklist_prete": false,
+        "mini_kit_marketing_pret": false,
+        "prochaine_action_interne": "Créer l’exercice pause-clarté-action et la checklist."
+      },
+      "analytics": {
+        "vues_page": 0,
+        "clics_stripe": 0,
+        "ventes_attribuees": 0,
+        "taux_conversion": 0,
+        "commentaires_agreges": 0,
+        "sauvegardes": 0
+      },
+      "controle_publication": {
+        "test_mobile": false,
+        "test_paiement": false,
+        "test_redirection": false,
+        "test_acces": false,
+        "test_seo": false,
+        "test_mentions_legales": false,
+        "test_aucun_contenu_sensible": true
+      },
+      "legal": "Produit digital autonome. Aucun coaching inclus. Accès numérique privé. Vente finale dès activation. Résultats variables. Formation éducative générale."
+    },
+    {
+      "id": "formation-0011",
+      "title": "Crée une routine santé simple en 10 minutes",
+      "titre": "Crée une routine santé simple en 10 minutes",
+      "category": "Santé",
+      "categorie": "Santé",
+      "price": "15 $",
+      "prix": 15,
+      "currency": "CAD",
+      "level": "debutant",
+      "niveau": "debutant",
+      "estimated_duration": "25 minutes",
+      "duree_estimee": "25 minutes",
+      "format": ["Accès en ligne", "Checklist"],
+      "status": "À créer",
+      "statut": "a_creer",
+      "content_status": "a_creer",
+      "sales_status": "pas_configuree",
+      "access_status": "acces_non_pret",
+      "update_status": "mise_a_jour_prevue",
+      "publication_autorisee": false,
+      "visibilite_public": true,
+      "url": "formations.html#catalogue",
+      "lien": "formations.html#catalogue",
+      "stripe_link": "",
+      "url_acces_apres_paiement": "merci.html",
+      "type_acces": "acces_numerique_prive",
+      "problem_solved": "Tu veux prendre soin de toi, mais tu compliques trop tes habitudes de santé.",
+      "probleme_resolu": "Tu veux prendre soin de toi, mais tu compliques trop tes habitudes de santé.",
+      "promise": "Tu crées une routine santé très simple avec une action courte, réaliste et répétable.",
+      "promesse": "Tu crées une routine santé très simple avec une action courte, réaliste et répétable.",
+      "description": "Une mini-formation éducative pour construire une routine santé simple sans promesse médicale ni plan personnalisé.",
+      "description_courte": "Crée une routine santé courte, réaliste et facile à répéter.",
+      "score": 74,
+      "note_qualite": 74,
+      "rentability": 70,
+      "note_rentabilite": 70,
+      "score_priorite": 67,
+      "score_pret_a_vendre": 33,
+      "ready_label": "rouge",
+      "tags": ["sante", "routine", "habitude", "energie"],
+      "formations_recommandees": ["formation-0002", "formation-0010"],
+      "seo": {
+        "slug": "routine-sante-simple-10-minutes",
+        "title": "Crée une routine santé simple en 10 minutes | Le Pivot d’Or",
+        "meta_description": "Mini-formation éducative pour créer une routine santé simple, courte et réaliste.",
+        "main_keyword": "routine santé simple",
+        "secondary_keywords": ["habitude santé", "énergie", "routine quotidienne", "bien-être simple"],
+        "indexable": false
+      },
+      "mise_a_jour": {
+        "date_creation": "2026-04-29",
+        "date_derniere_mise_a_jour": "2026-04-29",
+        "date_prochaine_mise_a_jour": "2027-04-29",
+        "frequence": "annuelle",
+        "version": "0.1",
+        "statut_mise_a_jour": "mise_a_jour_prevue"
+      },
+      "jumeau_numerique": {
+        "actif": true,
+        "etat_global": "idee",
+        "stripe_pret": false,
+        "acces_prive_pret": false,
+        "contenu_en_ligne": false,
+        "checklist_prete": false,
+        "mini_kit_marketing_pret": false,
+        "prochaine_action_interne": "Créer une checklist santé éducative générale, sans conseil médical personnalisé."
+      },
+      "analytics": {
+        "vues_page": 0,
+        "clics_stripe": 0,
+        "ventes_attribuees": 0,
+        "taux_conversion": 0,
+        "commentaires_agreges": 0,
+        "sauvegardes": 0
+      },
+      "controle_publication": {
+        "test_mobile": false,
+        "test_paiement": false,
+        "test_redirection": false,
+        "test_acces": false,
+        "test_seo": false,
+        "test_mentions_legales": false,
+        "test_aucun_contenu_sensible": true
+      },
+      "legal": "Formation éducative générale. Aucun conseil médical personnalisé. Aucun coaching inclus. Accès numérique privé. Vente finale dès activation. Résultats variables."
+    }
+  ],
+  "next_actions": [
+    {
+      "priority": 1,
+      "action": "Finaliser formation-0001 avec checklist complète.",
+      "owner": "Olivier",
+      "status": "a_faire"
+    },
+    {
+      "priority": 2,
+      "action": "Créer le lien Stripe public de formation-0001.",
+      "owner": "Olivier",
+      "status": "a_faire"
+    },
+    {
+      "priority": 3,
+      "action": "Tester la redirection vers merci.html après paiement.",
+      "owner": "Olivier",
+      "status": "a_faire"
+    },
+    {
+      "priority": 4,
+      "action": "Tester l’accès numérique privé sans exposer de contenu payant dans GitHub public.",
+      "owner": "Olivier",
+      "status": "a_faire"
+    },
+    {
+      "priority": 5,
+      "action": "Exporter un snapshot avant toute modification majeure du catalogue.",
+      "owner": "Adrien",
+      "status": "a_faire"
+    }
+  ],
+  "validation_report": {
+    "last_static_review": "2026-04-29",
+    "review_type": "static_canvas_review",
+    "json_syntax_expected_valid": true,
+    "root_object_expected_valid": true,
+    "formations_array_present": true,
+    "formations_count_expected": 11,
+    "official_categories_covered": true,
+    "sensitive_data_detected": false,
+    "stripe_secret_detected": false,
+    "customer_data_detected": false,
+    "paid_full_content_detected": false,
+    "known_operational_blockers": [
+      "stripe_link réel non configuré",
+      "paiement test non validé",
+      "accès privé réel non validé",
+      "support post-achat non testé",
+      "vente test non documentée"
+    ],
+    "important_correction_applied": "seo.indexable de formation-0001 a été mis à false tant que publication_autorisee reste false."
+  },
+  "quality_gate": {
+    "catalogue_json_valid": true,
+    "no_sensitive_data": true,
+    "no_private_customer_data": true,
+    "no_secret_key": true,
+    "no_paid_full_content": true,
+    "categories_validated": true,
+    "statuses_validated": true,
+    "ready_for_github_pages": true,
+    "ready_for_real_sales": false,
+    "blocking_reason_for_sales": "Aucun lien Stripe public testé, aucun accès privé réel validé et aucune vente test complète.",
+    "next_best_action": "Finaliser formation-0001, créer le lien Stripe public, tester merci.html, valider l’accès et exporter un snapshot."
+  }
+}
