@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+
+  <!-- Sitemap officiel — Le Pivot d’Or / Mini Mini Formation -->
+  <!-- Emplacement recommandé : racine du dépôt GitHub Pages, à côté de index.html et robots.txt -->
+  <!-- Domaine actuel : https://lepivotdor-sketch.github.io/pivotdor-platform/ -->
+  <!-- Objectif : indexer uniquement les pages publiques utiles au SEO. -->
+  <!-- Important : ne pas ajouter ici les pages privées, après achat, client, dashboard ou fichiers internes. -->
+
+  <url>
+    <loc>https://lepivotdor-sketch.github.io/pivotdor-platform/</loc>
+    <lastmod>2026-04-28</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>1.00</priority>
+  </url>
+
+  <url>
+    <loc>https://lepivotdor-sketch.github.io/pivotdor-platform/formations.html</loc>
+    <lastmod>2026-04-28</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.90</priority>
+  </url>
+
+  <url>
+    <loc>https://lepivotdor-sketch.github.io/pivotdor-platform/support.html</loc>
+    <lastmod>2026-04-28</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.72</priority>
+  </url>
+
+  <url>
+    <loc>https://lepivotdor-sketch.github.io/pivotdor-platform/contact.html</loc>
+    <lastmod>2026-04-28</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.70</priority>
+  </url>
+
+  <url>
+    <loc>https://lepivotdor-sketch.github.io/pivotdor-platform/conditions.html</loc>
+    <lastmod>2026-04-28</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.65</priority>
+  </url>
+
+  <url>
+    <loc>https://lepivotdor-sketch.github.io/pivotdor-platform/confidentialite.html</loc>
+    <lastmod>2026-04-28</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.65</priority>
+  </url>
+
+  <url>
+    <loc>https://lepivotdor-sketch.github.io/pivotdor-platform/vente-finale.html</loc>
+    <lastmod>2026-04-28</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.62</priority>
+  </url>
+
+  <!-- Pages volontairement exclues du sitemap :
+       - index.html, car la racine / est déjà l’URL canonique de l’accueil
+       - acces.html
+       - espace-client.html
+       - formation-privee.html
+       - merci.html
+       - 404.html
+       - dashboard/
+       - agents/
+       - data/
+       - stripe/
+       - fichiers JSON, CSV, ZIP, DOCX, XLSX
+
+       Ces pages ou fichiers ne doivent pas être poussés au SEO parce qu’ils sont privés,
+       techniques, internes, après paiement, duplicatifs ou inutiles pour l’indexation publique.
+  -->
+
+</urlset>
