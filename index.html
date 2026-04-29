@@ -1043,13 +1043,35 @@
           <div class="vault-progress" aria-hidden="true"><span id="vaultSessionProgress"></span></div>
           <div class="source-line" id="vaultDashboardUpdated">Synchronisation en attente...</div>
           <div class="vault-data-source">
-            <strong>Source :</strong> données publiques, estimations locales non sensibles et interactions anonymes du navigateur. Aucun client, reçu, clé Stripe ou accès privé.
+            <strong>Source :</strong> KPI clients futurs seulement. Les ventes, vues, clics, demandes, accès et commentaires restent à 0 tant que Stripe, Analytics, CRM ou support ne sont pas connectés.
           </div>
-          <div class="vault-alert" id="vaultIntelligenceNote"><span class="vault-pulse"></span>Intelligence locale active : KPI synchronisés avec le catalogue, les clics publics et les snapshots.</div>
+          <div class="vault-alert warning" id="vaultIntelligenceNote">Mode clients futurs actif : les KPI affichés représentent uniquement des données clients réelles à connecter. Tes propres visites et clics ne sont plus comptés.</div>
 
           <div class="vault-one-action" id="vaultOneAction">
             <strong>Action rentable maintenant :</strong> terminer la formation pilote + tester Stripe + tester l’accès.
           </div>
+
+          <details class="vault-section" open id="vaultTruthSummarySection">
+            <summary>Résumé vérité — réel, local, catalogue</summary>
+            <div class="vault-grid" aria-label="Résumé vérité des KPI">
+              <div class="vault-kpi"><strong id="vaultTruthSales">0</strong><span>Ventes Stripe réelles connectées</span></div>
+              <div class="vault-kpi"><strong id="vaultTruthPublished">0</strong><span>Formations réellement publiées</span></div>
+              <div class="vault-kpi"><strong id="vaultTruthReadyNotPublished">0</strong><span>Prêtes mais non publiées</span></div>
+              <div class="vault-kpi"><strong id="vaultTruthConnectedSystems">0 / 4</strong><span>Systèmes réels connectés</span></div>
+            </div>
+            <div class="vault-check-grid" id="vaultTruthGrid"></div>
+          </details>
+
+          <details class="vault-section" open id="vaultProblemNavigatorSection">
+            <summary>Aller directement au problème</summary>
+            <div class="vault-actions">
+              <button class="btn btn-primary" type="button" data-vault-target="vaultTestBlockersSection">Blocages vente test</button>
+              <button class="btn" type="button" data-vault-target="vaultPublicationGateSection">Publication</button>
+              <button class="btn" type="button" data-vault-target="vaultFieldTestsSection">Tests terrain</button>
+              <button class="btn" type="button" data-vault-target="vaultTruthSummarySection">Résumé vérité</button>
+              <button class="btn" type="button" data-vault-target="vaultFormationTableSection">Tableau formations</button>
+            </div>
+          </details>
 
           <div class="vault-actions vault-mode-controls" aria-label="Mode du tableau de bord">
             <button class="btn btn-primary active" type="button" id="vaultSimpleMode" aria-pressed="true">Mode simple</button>
@@ -1062,48 +1084,59 @@
 
           <div class="vault-command-grid" aria-label="Top 5 indicateurs de commandement">
             <div class="vault-command-card"><strong id="vaultRevenue7d">0 $</strong><span>Ventes 7 jours / vente test</span></div>
-            <div class="vault-command-card"><strong id="vaultStripeClickRate">0 %</strong><span>Taux clic Stripe local</span></div>
+            <div class="vault-command-card"><strong id="vaultStripeClickRate">0</strong><span>Clics clients vers formation</span></div>
             <div class="vault-command-card"><strong id="vaultTopThree">Aucune</strong><span>Top 3 à pousser</span></div>
             <div class="vault-command-card"><strong id="vaultCriticalAlerts">0</strong><span>Alertes critiques ouvertes</span></div>
             <div class="vault-command-card"><strong id="vaultNextBestAction">Choisir la formation pilote</strong><span>Prochaine action rentable</span></div>
           </div>
 
-          <details class="vault-section" open>
+          <details class="vault-section" open id="vaultTestBlockersSection">
             <summary>Ce qui bloque la vente test</summary>
             <div class="vault-check-grid" id="vaultTestBlockers"></div>
           </details>
 
           <div class="vault-grid" aria-label="KPI principaux">
-            <div class="vault-kpi"><strong id="vaultSalesKpi">0 $</strong><span>Ventes attribuées publiques</span></div>
-            <div class="vault-kpi"><strong id="vaultFeaturedKpi">0</strong><span>Formations en avant</span></div>
-            <div class="vault-kpi"><strong id="vaultCategoriesKpi">0</strong><span>Catégories officielles</span></div>
-            <div class="vault-kpi"><strong id="vaultCapacityKpi">400</strong><span>Capacité catalogue</span></div>
+            <div class="vault-kpi"><strong id="vaultSalesKpi">0</strong><span>Ventes Stripe réelles connectées</span></div>
+            <div class="vault-kpi"><strong id="vaultFeaturedKpi">0</strong><span>Formations visibles actuellement</span></div>
           </div>
 
           <div class="vault-dense-grid" aria-label="KPI détaillés non sensibles">
-            <div class="vault-mini-kpi"><strong id="vaultPriorityKpi">0</strong><span>Score priorité moyen</span></div>
+            <div class="vault-mini-kpi"><strong id="vaultPriorityKpi">0</strong><span>Priorité contenu moyenne</span></div>
             <div class="vault-mini-kpi"><strong id="vaultIdeasKpi">0</strong><span>Idées de formations</span></div>
-            <div class="vault-mini-kpi"><strong id="vaultPublishedKpi">0</strong><span>Formations publiées</span></div>
-            <div class="vault-mini-kpi"><strong id="vaultCreateKpi">0</strong><span>Formations à créer</span></div>
+            <div class="vault-mini-kpi"><strong id="vaultPublishedKpi">0</strong><span>Formations réellement publiées</span></div>
+            <div class="vault-mini-kpi"><strong id="vaultReadyUnpublishedKpi">0</strong><span>Prêtes non publiées</span></div>
+            <div class="vault-mini-kpi"><strong id="vaultCreateKpi">0 / 400</strong><span>Formations restantes à créer</span></div>
             <div class="vault-mini-kpi"><strong id="vaultImproveKpi">0</strong><span>Formations à améliorer</span></div>
-            <div class="vault-mini-kpi"><strong id="vaultViewsKpi">0</strong><span>Vues estimées non sensibles</span></div>
-            <div class="vault-mini-kpi"><strong id="vaultClicksKpi">0</strong><span>Clics totaux</span></div>
-            <div class="vault-mini-kpi"><strong id="vaultTrainingClicksKpi">0</strong><span>Clics vers pages formation</span></div>
-            <div class="vault-mini-kpi"><strong id="vaultCommentsKpi">0</strong><span>Commentaires / signaux</span></div>
-            <div class="vault-mini-kpi"><strong id="vaultBackupsKpi">0</strong><span>Sauvegardes / snapshots</span></div>
-            <div class="vault-mini-kpi"><strong id="vaultDemandKpi">0</strong><span>Formations demandées</span></div>
-            <div class="vault-mini-kpi"><strong id="vaultCrmKpi">0</strong><span>Éléments CRM non sensibles</span></div>
-            <div class="vault-mini-kpi"><strong id="vaultClickRateKpi">0 %</strong><span>Taux clic / vue local</span></div>
-            <div class="vault-mini-kpi"><strong id="vaultTrainingRateKpi">0 %</strong><span>Taux clic formation</span></div>
-            <div class="vault-mini-kpi"><strong id="vaultDataHealthKpi">0 %</strong><span>Santé des données</span></div>
-            <div class="vault-mini-kpi"><strong id="vaultSnapshotCountKpi">0</strong><span>Snapshots locaux</span></div>
-            <div class="vault-mini-kpi"><strong id="vaultLastSignalKpi">Aucun</strong><span>Dernier signal local</span></div>
-            <div class="vault-mini-kpi"><strong id="vaultConversionScoreKpi">0 / 100</strong><span>Score conversion local</span></div>
-            <div class="vault-mini-kpi"><strong id="vaultOpportunityKpi">Aucune</strong><span>Meilleure opportunité</span></div>
-            <div class="vault-mini-kpi"><strong id="vaultTrackingKpi">Actif</strong><span>Suivi local</span></div>
-            <div class="vault-mini-kpi"><strong id="vaultRiskScoreKpi">0 / 100</strong><span>Score risque système</span></div>
+            <div class="vault-mini-kpi"><strong id="vaultViewsKpi">0</strong><span>Vues clients réelles</span></div>
+            <div class="vault-mini-kpi"><strong id="vaultClicksKpi">0</strong><span>Clics clients réels</span></div>
+            <div class="vault-mini-kpi"><strong id="vaultTrainingClicksKpi">0</strong><span>Clics clients vers formations</span></div>
+            <div class="vault-mini-kpi"><strong id="vaultCommentsKpi">0</strong><span>Commentaires clients réels</span></div>
+            <div class="vault-mini-kpi"><strong id="vaultBackupsKpi">0</strong><span>Tickets support clients</span></div>
+            <div class="vault-mini-kpi"><strong id="vaultDemandKpi">0</strong><span>Demandes clients réelles</span></div>
+            <div class="vault-mini-kpi"><strong id="vaultCrmKpi">0</strong><span>Contacts CRM clients</span></div>
+            <div class="vault-mini-kpi"><strong id="vaultClickRateKpi">0 %</strong><span>Taux clic client</span></div>
+            <div class="vault-mini-kpi"><strong id="vaultTrainingRateKpi">0 %</strong><span>Taux intérêt formation</span></div>
+            <div class="vault-mini-kpi"><strong id="vaultDataHealthKpi">0 / 100</strong><span>Connexion données clients</span></div>
+            <div class="vault-mini-kpi"><strong id="vaultSnapshotCountKpi">0</strong><span>Accès clients activés</span></div>
+            <div class="vault-mini-kpi"><strong id="vaultLastSignalKpi">Aucun</strong><span>Dernière donnée client</span></div>
+            <div class="vault-mini-kpi"><strong id="vaultConversionScoreKpi">Non prouvée</strong><span>Preuve de vente réelle</span></div>
+            <div class="vault-mini-kpi"><strong id="vaultOpportunityKpi">Aucune</strong><span>Meilleure opportunité client</span></div>
+            <div class="vault-mini-kpi"><strong id="vaultTrackingKpi">Non connecté</strong><span>Suivi client réel</span></div>
+            <div class="vault-mini-kpi"><strong id="vaultRiskScoreKpi">0</strong><span>Blocages critiques</span></div>
             <div class="vault-mini-kpi"><strong id="vaultMaturityKpi">Pré-lancement</strong><span>Maturité terrain</span></div>
           </div>
+
+          <details class="vault-section" open id="vaultKpiExplanationSection">
+            <summary>Comment lire les KPI clients sans se tromper</summary>
+            <ul class="vault-list">
+              <li><strong>Ventes Stripe réelles</strong> = ventes confirmées par Stripe. Tant que Stripe n’est pas connecté, ce chiffre reste à 0.</li>
+              <li><strong>Vues clients réelles</strong> = visites venant d’un vrai outil Analytics. Tes propres visites ne sont plus comptées.</li>
+              <li><strong>Clics clients réels</strong> = clics venant de futurs clients, pas tes tests personnels.</li>
+              <li><strong>Demandes clients / CRM / support</strong> = données réelles seulement quand un formulaire, un CRM ou un support est connecté.</li>
+              <li><strong>Connexion données clients</strong> = niveau de branchement des systèmes réels : Stripe, Analytics, CRM et support.</li>
+              <li><strong>Formations restantes à créer</strong> = objectif total 400 moins les formations déjà prêtes ou publiées.</li>
+            </ul>
+          </details>
 
           <details class="vault-section" open>
             <summary>Command Center — Boutons stratégiques</summary>
@@ -1121,8 +1154,6 @@
               <button class="btn" type="button" id="vaultCloseAllSections">Tout fermer</button>
               <button class="btn" type="button" id="vaultExportSnapshot">Exporter snapshot</button>
               <button class="btn" type="button" id="vaultClearSnapshots">Effacer snapshots</button>
-              <button class="btn" type="button" id="vaultToggleTracking">Désactiver suivi</button>
-              <button class="btn" type="button" id="vaultResetLocalKpis">Réinitialiser KPI locaux</button>
               <button class="btn" type="button" id="vaultLockAgain">Reverrouiller</button>
             </div>
             <div class="vault-chip-row" id="vaultSmartTags"></div>
@@ -1139,18 +1170,21 @@
           </details>
 
           <details class="vault-section advanced-only" open>
-            <summary>Graphiques simples — Progression globale</summary>
+            <summary>Progression réelle — étapes opérationnelles</summary>
+            <div class="vault-split-note">
+              Ces barres ne sont pas des performances clients. Elles montrent seulement ce qui est réellement prêt ou connecté : formation pilote, Stripe, accès, support, publication, systèmes clients et catalogue créé sur 400.
+            </div>
             <div class="vault-bars" id="vaultProgressGrid"></div>
           </details>
 
-          <details class="vault-section advanced-only" open>
+          <details class="vault-section advanced-only" open id="vaultCrmSection">
             <summary>CRM intelligent — Pipeline non sensible</summary>
             <div class="vault-bars" id="vaultCrmGrid"></div>
             <ul class="vault-list">
-              <li>Prospects : demandes contact/support sans données personnelles dans GitHub.</li>
+              <li>Prospects : 0 tant qu’un vrai formulaire/CRM n’est pas connecté.</li>
               <li>Clients : jamais de courriels ni reçus dans ce tableau public.</li>
-              <li>Demandes fortes : utiliser les clics, commentaires et demandes comme signaux non sensibles.</li>
-              <li>Priorité commerciale : améliorer ce qui reçoit des clics mais manque de qualité ou de statut prêt.</li>
+              <li>Demandes fortes : 0 tant qu’un vrai système de demandes n’est pas connecté.</li>
+              <li>Priorité commerciale : utiliser surtout les statuts du catalogue et les tests terrain tant que les outils réels ne sont pas branchés.</li>
             </ul>
           </details>
 
@@ -1160,7 +1194,7 @@
           </details>
 
           <details class="vault-section advanced-only">
-            <summary>Journal local non sensible</summary>
+            <summary>Journal client futur</summary>
             <ul class="vault-list" id="vaultActivityList"></ul>
           </details>
 
@@ -1175,12 +1209,12 @@
             <div class="vault-check-grid" id="vaultPhaseChecks"></div>
           </details>
 
-          <details class="vault-section" open>
+          <details class="vault-section" open id="vaultPublicationGateSection">
             <summary>Publication 100 % — critères bloquants</summary>
             <div class="vault-check-grid" id="vaultPublicationGate"></div>
           </details>
 
-          <details class="vault-section advanced-only">
+          <details class="vault-section advanced-only" id="vaultFieldTestsSection">
             <summary>Tests terrain — mobile, Stripe, accès, SEO</summary>
             <div class="vault-check-grid" id="vaultFieldTests"></div>
           </details>
@@ -1210,7 +1244,7 @@
             <ul class="vault-list" id="vaultAdrienList"></ul>
           </details>
 
-          <details class="vault-section advanced-only">
+          <details class="vault-section advanced-only" id="vaultFormationTableSection">
             <summary>Tableau intégral — formations, statuts et scores</summary>
             <div class="vault-scroll-table">
               <table class="vault-table" aria-label="Tableau interne des formations non sensible">
@@ -1221,7 +1255,7 @@
                     <th>Qualité</th>
                     <th>Rentabilité</th>
                     <th>Priorité</th>
-                    <th>Prêt</th>
+                    <th>Production</th>
                     <th>Vues</th>
                     <th>Clics</th>
                     <th>Ventes</th>
@@ -1241,9 +1275,9 @@
             <summary>Zones CRM + KPI autorisées</summary>
             <ul class="vault-list">
               <li>Priorités, statuts, notes qualité, notes rentabilité, score priorité.</li>
-              <li>Idées de formations, formations publiées, à créer, à améliorer.</li>
-              <li>Graphiques simples, vues, clics, commentaires, sauvegardes.</li>
-              <li>Clics vers page formation, ventes attribuées, formations les plus demandées.</li>
+              <li>Idées de formations, formations publiées, restantes à créer sur 400, visibles à créer, à améliorer.</li>
+              <li>Graphiques simples seulement si les données viennent de systèmes clients réels.</li>
+              <li>Vues clients, clics clients, ventes Stripe, demandes CRM et tickets support uniquement quand les outils sont connectés.</li>
               <li>Aucune donnée client, aucun reçu Stripe, aucune clé secrète, aucun contenu payé complet.</li>
             </ul>
           </details>
@@ -1294,9 +1328,7 @@
           </p>
 
           <div class="stat-grid">
-            <div class="stat"><strong>8</strong><span>catégories officielles</span></div>
             <div class="stat"><strong>5-50 $</strong><span>prix simples</span></div>
-            <div class="stat"><strong>400</strong><span>emplacements possibles</span></div>
             <div class="stat"><strong>0</strong><span>donnée sensible publique</span></div>
           </div>
 
@@ -1453,12 +1485,13 @@
 
     const VALID_CATEGORIES = categories.map(category => category.name);
     const VAULT_CODE = "19902010";
-    const VAULT_TTL_MS = 20 * 60 * 1000;
+    const VAULT_TTL_MS = 0;
     const MAX_VAULT_ATTEMPTS = 5;
     const LOCAL_METRICS_KEY = "pivotdorDashboardLocalMetrics";
     const LOCAL_BACKUPS_KEY = "pivotdorDashboardSnapshots";
     const LOCAL_ACTIVITY_KEY = "pivotdorDashboardActivity";
     const LOCAL_TRACKING_KEY = "pivotdorDashboardTrackingEnabled";
+    const CATALOGUE_TOTAL_TARGET = 400;
 
     let activeFilter = "all";
     let vaultExpiryTimer = null;
@@ -1470,7 +1503,7 @@
         title: "Utilise l’IA pour sauver 3 heures par semaine",
         category: "IA",
         price: "15 $",
-        status: "Prête",
+        status: "Prête non publiée",
         url: "formation.html",
         description: "Transforme une tâche répétitive en mini-système IA simple.",
         score: 92,
@@ -1564,13 +1597,15 @@
     };
 
     const vaultIds = [
-      "vaultSalesKpi", "vaultFeaturedKpi", "vaultCategoriesKpi", "vaultCapacityKpi",
+      "vaultSalesKpi", "vaultFeaturedKpi",
       "vaultPriorityKpi", "vaultIdeasKpi", "vaultPublishedKpi", "vaultCreateKpi",
       "vaultImproveKpi", "vaultViewsKpi", "vaultClicksKpi", "vaultTrainingClicksKpi",
       "vaultCommentsKpi", "vaultBackupsKpi", "vaultDemandKpi", "vaultCrmKpi",
       "vaultClickRateKpi", "vaultTrainingRateKpi", "vaultDataHealthKpi", "vaultSnapshotCountKpi",
       "vaultLastSignalKpi", "vaultConversionScoreKpi", "vaultOpportunityKpi", "vaultTrackingKpi",
       "vaultRiskScoreKpi", "vaultMaturityKpi", "vaultRevenue7d", "vaultStripeClickRate",
+      "vaultTruthSales", "vaultTruthPublished", "vaultTruthReadyNotPublished", "vaultTruthConnectedSystems",
+      "vaultTruthGrid", "vaultReadyUnpublishedKpi", "vaultKpiExplanationSection",
       "vaultTopThree", "vaultCriticalAlerts", "vaultNextBestAction", "vaultOneAction",
       "vaultIntelligenceNote", "vaultDashboardUpdated", "vaultSmartTags", "vaultTodayActions",
       "vaultRiskList", "vaultProgressGrid", "vaultCrmGrid", "vaultDemandList", "vaultActivityList",
@@ -1616,8 +1651,15 @@
     }
 
     function cleanLimitedText(value, fallback, maxLength) {
-      const clean = String(value || "").replace(/[<>]/g, "").trim();
+      const clean = String(value || "").replace(/[<>]/g, "").replace(/\s+/g, " ").trim();
       return (clean || fallback).slice(0, maxLength);
+    }
+
+    function normalizeSearchInputValue(value, maxLength = 80) {
+      return String(value || "")
+        .replace(/[<>]/g, "")
+        .replace(/\s+/g, " ")
+        .slice(0, maxLength);
     }
 
     function clampPercent(value) {
@@ -1633,10 +1675,22 @@
 
     function statusPriority(status) {
       const value = normalize(status);
-      if (value.includes("prete") || value.includes("publiee")) return 3;
-      if (value.includes("bientot") || value.includes("cours")) return 2;
-      if (value.includes("creer")) return 1;
+      if (value.includes("non publie")) return 3;
+      if (value.includes("publiee") || value.includes("publie")) return 4;
+      if (value.includes("prete")) return 3;
+      if (value.includes("bientot") || value.includes("cours") || value.includes("creer")) return 1;
       return 0;
+    }
+
+    function isRealPublishedStatus(status) {
+      const value = normalize(status);
+      if (value.includes("non publie")) return false;
+      return value.includes("publiee") || value.includes("publie");
+    }
+
+    function isReadyButNotPublishedStatus(status) {
+      const value = normalize(status);
+      return value.includes("prete") && !isRealPublishedStatus(status);
     }
 
     function statusClass(status) {
@@ -1701,6 +1755,11 @@
       if (cleanSearch) params.set("recherche", cleanSearch);
       const query = params.toString();
       return `formations.html${query ? `?${query}` : ""}#catalogue`;
+    }
+
+    function goToFullCatalogueSearch() {
+      updateFullCatalogueLink();
+      window.location.href = buildCatalogueUrl();
     }
 
     function updateFullCatalogueLink() {
@@ -1773,7 +1832,7 @@
 
     function applyFilters() {
       if (!elements.searchInput) return;
-      const cleanSearch = cleanLimitedText(elements.searchInput.value, "", 80);
+      const cleanSearch = normalizeSearchInputValue(elements.searchInput.value, 80);
       if (elements.searchInput.value !== cleanSearch) elements.searchInput.value = cleanSearch;
       const query = normalize(cleanSearch).trim();
       const tokens = query ? query.split(" ").filter(Boolean).slice(0, 8) : [];
@@ -1808,11 +1867,11 @@
     }
 
     function isLocalTrackingEnabled() {
-      return localStorage.getItem(LOCAL_TRACKING_KEY) !== "false";
+      return false;
     }
 
     function readLocalMetrics() {
-      return readJsonFromStorage(LOCAL_METRICS_KEY, {});
+      return {};
     }
 
     function writeLocalMetrics(metrics) {
@@ -1825,11 +1884,7 @@
     }
 
     function incrementLocalMetric(key, amount = 1) {
-      if (!isLocalTrackingEnabled()) return;
-      const metrics = readLocalMetrics();
-      metrics[key] = Number(metrics[key] || 0) + amount;
-      metrics.updatedAt = new Date().toISOString();
-      writeLocalMetrics(metrics);
+      return;
     }
 
     function readSnapshotCount() {
@@ -1838,25 +1893,14 @@
     }
 
     function readActivityLog() {
-      const log = readJsonFromStorage(LOCAL_ACTIVITY_KEY, []);
-      return Array.isArray(log) ? log : [];
+      return [];
     }
 
     function recordActivity(label) {
-      if (!isLocalTrackingEnabled()) return;
-      const log = readActivityLog().slice(-14);
-      log.push({ label: String(label || "Signal local").slice(0, 80), at: new Date().toISOString() });
-      writeJsonToStorage(LOCAL_ACTIVITY_KEY, log);
+      return;
     }
 
-    const dashboardSignals = [
-      { title: "Utilise l’IA pour sauver 3 heures par semaine", views: 420, clicks: 86, trainingClicks: 54, comments: 12, backups: 5, attributedSales: 0, demand: 92, crm: 18 },
-      { title: "Organise ta semaine en 30 minutes", views: 310, clicks: 58, trainingClicks: 33, comments: 9, backups: 4, attributedSales: 0, demand: 81, crm: 13 },
-      { title: "Trouve une idée de produit digital rentable", views: 280, clicks: 64, trainingClicks: 29, comments: 15, backups: 6, attributedSales: 0, demand: 88, crm: 16 },
-      { title: "Structure ton budget simple", views: 240, clicks: 41, trainingClicks: 22, comments: 7, backups: 3, attributedSales: 0, demand: 74, crm: 10 },
-      { title: "Crée ton premier prompt vraiment utile", views: 220, clicks: 39, trainingClicks: 18, comments: 6, backups: 3, attributedSales: 0, demand: 72, crm: 8 },
-      { title: "Écris une page de vente simple", views: 205, clicks: 46, trainingClicks: 21, comments: 8, backups: 4, attributedSales: 0, demand: 78, crm: 12 }
-    ];
+    const dashboardSignals = [];
 
     function getSignalForFormation(item, index) {
       const metrics = readLocalMetrics();
@@ -1864,32 +1908,33 @@
       const found = dashboardSignals.find(signal => normalize(signal.title) === normalizedTitle);
       const base = found || {
         title: item.title,
-        views: 120 + index * 17,
-        clicks: 20 + index * 5,
-        trainingClicks: 10 + index * 3,
-        comments: 2 + index,
-        backups: 1,
+        views: 0,
+        clicks: 0,
+        trainingClicks: 0,
+        comments: 0,
+        backups: 0,
         attributedSales: 0,
-        demand: Math.max(35, 70 - index * 4),
-        crm: 4 + index
+        demand: 0,
+        crm: 0
       };
 
       const titleKey = normalize(item.title).replace(/[^a-z0-9]+/g, "-").replace(/^-|-$/g, "");
       return {
         ...base,
-        views: Number(base.views || 0) + Number(metrics.homeViews || 0),
-        clicks: Number(base.clicks || 0) + Number(metrics.totalClicks || 0),
-        trainingClicks: Number(base.trainingClicks || 0) + Number(metrics.trainingClicks || 0) + Number(metrics[`formationClick_${titleKey}`] || 0),
-        comments: Number(base.comments || 0) + Number(metrics.contactClicks || 0),
-        backups: Number(base.backups || 0) + readSnapshotCount(),
+        views: Number(base.views || 0) + Number(metrics[`view_${titleKey}`] || 0),
+        clicks: Number(base.clicks || 0) + Number(metrics[`click_${titleKey}`] || 0),
+        trainingClicks: Number(base.trainingClicks || 0) + Number(metrics[`formationClick_${titleKey}`] || 0),
+        comments: Number(base.comments || 0),
+        backups: Number(base.backups || 0),
         demand: Math.min(100, Number(base.demand || 0) + Number(metrics[`demand_${titleKey}`] || 0))
       };
     }
 
     function getStatusLabel(status) {
       const value = normalize(status);
-      if (value.includes("prete") || value.includes("publiee")) return "Publié";
-      if (value.includes("bientot") || value.includes("cours")) return "À améliorer";
+      if (value.includes("non publie")) return "Prête non publiée";
+      if (value.includes("publiee") || value.includes("publie")) return "Publié";
+      if (value.includes("prete")) return "Prête non publiée";
       return "À créer";
     }
 
@@ -1979,37 +2024,74 @@
       return `<div class="vault-check-item ${normalized}"><span>${escapeHTML(label)}${note ? ` · ${escapeHTML(note)}` : ""}</span><strong>${text}</strong></div>`;
     }
 
+    function formatLocalRatio(numerator, denominator, numeratorLabel, denominatorLabel) {
+      const top = Math.max(0, Number(numerator || 0));
+      const bottom = Math.max(0, Number(denominator || 0));
+      if (bottom === 0) return `${top} ${numeratorLabel} / 0 ${denominatorLabel}`;
+      return `${top} ${numeratorLabel} / ${bottom} ${denominatorLabel}`;
+    }
+
+    function explainDataHealth(score) {
+      if (score >= 80) return "forte";
+      if (score >= 50) return "partielle";
+      if (score > 0) return "faible";
+      return "aucune";
+    }
+
+    function getConnectedSystemsState() {
+      return {
+        stripe: false,
+        analytics: false,
+        crm: false,
+        support: false
+      };
+    }
+
+    function countConnectedSystems(state) {
+      return Object.values(state || {}).filter(Boolean).length;
+    }
+
+    function openVaultProblem(targetId) {
+      const target = document.getElementById(targetId);
+      if (!target) return;
+      if (target.tagName.toLowerCase() === "details") target.open = true;
+      setVaultDashboardMode("advanced");
+      window.setTimeout(() => {
+        target.scrollIntoView({ behavior: "smooth", block: "start" });
+      }, 80);
+    }
+
     function getPhaseState(rows, totalClicks, totalSales, totalTrainingClicks) {
       const hasPublished = rows.some(row => row.status === "Publié");
+      const hasReadyNotPublished = rows.some(row => row.status === "Prête non publiée");
       const hasTraffic = totalClicks > 0 || totalTrainingClicks > 0;
       const hasSnapshot = readSnapshotCount() > 0;
       const hasSaleTest = totalSales > 0;
 
       if (hasPublished && hasTraffic && hasSnapshot && hasSaleTest) {
-        return { light: "green", label: "Feu vert — passer à la phase suivante", level: "ok" };
+        return { light: "green", label: "Feu vert — vraie publication + vente test prouvée", level: "ok" };
       }
-      if (hasPublished && hasTraffic && hasSnapshot) {
-        return { light: "yellow", label: "Feu jaune — presque prêt, vente test manquante", level: "warn" };
+      if (hasReadyNotPublished && hasSnapshot) {
+        return { light: "yellow", label: "Feu jaune — formation prête, mais pas encore publiée/testée", level: "warn" };
       }
       return { light: "red", label: "Feu rouge — prouver une formation complète d’abord", level: "no" };
     }
 
-    function getMaturityLabel(totalSales, published, totalClicks, snapshotCount) {
-      if (totalSales > 0 && published >= 3 && totalClicks > 50 && snapshotCount > 0) return "Validation";
-      if (published > 0 && totalClicks > 0 && snapshotCount > 0) return "Prévente test";
-      if (published > 0) return "Pré-lancement";
+    function getMaturityLabel(totalSales, published, totalClicks, snapshotCount, readyNotPublished = 0) {
+      if (totalSales > 0 && published > 0 && totalClicks > 0 && snapshotCount > 0) return "Validation";
+      if (published > 0 && snapshotCount > 0) return "Publié à tester";
+      if (readyNotPublished > 0) return "Prêt non publié";
       return "Construction";
     }
 
     function buildRiskItems({ published, totalSales, totalClicks, dataHealth, avgPriority, snapshotCount }) {
       const risks = [];
-      if (published === 0) risks.push("Aucune formation publiée : impossible de valider le modèle commercial.");
-      if (totalSales === 0) risks.push("Aucune vente test : Stripe → accès → support n’est pas encore prouvé.");
-      if (totalClicks === 0) risks.push("Aucun clic mesuré : le marché n’a pas encore donné de signal local.");
-      if (snapshotCount === 0) risks.push("Aucun snapshot : risque de perte de repère après modification.");
-      if (dataHealth < 50) risks.push("Santé des données faible : le dashboard peut donner une lecture incomplète.");
+      if (published === 0) risks.push("Aucune formation réellement publiée : impossible de valider le modèle commercial.");
+      if (totalSales === 0) risks.push("Aucune vente Stripe réelle : le chemin paiement → accès → support n’est pas encore prouvé.");
+      if (totalClicks === 0) risks.push("Aucun clic client réel : Analytics ou suivi client n’est pas encore connecté.");
+      if (dataHealth < 50) risks.push("Connexion des données clients faible : il manque Stripe, Analytics, CRM ou support.");
       if (avgPriority < 70) risks.push("Score priorité moyen faible : il faut renforcer la sélection des formations.");
-      return risks.length ? risks : ["Aucun risque critique local détecté pour le moment."];
+      return risks.length ? risks : ["Aucun risque critique client détecté pour le moment."];
     }
 
     function buildTodayActions({ totalSales, published, totalClicks, snapshotCount, opportunity }) {
@@ -2017,31 +2099,40 @@
       if (!opportunity) actions.push("Choisir la formation pilote : Utilise l’IA pour sauver 3 heures par semaine.");
       if (published === 0) actions.push("Finaliser une fiche formation publique avec promesse, prix, FAQ et mentions obligatoires.");
       if (totalSales === 0) actions.push("Tester le chemin complet : fiche publique → Stripe → merci.html → accès → support.");
-      if (totalClicks === 0) actions.push("Créer 5 contenus courts reliés à la formation pilote et mesurer les clics.");
-      if (snapshotCount === 0) actions.push("Exporter un snapshot avant la prochaine grosse modification.");
-      if (opportunity) actions.push(`Pousser la meilleure opportunité actuelle : ${opportunity.title}.`);
+      if (totalClicks === 0) actions.push("Connecter un vrai suivi client : Analytics, formulaire/CRM ou données Stripe.");
+      if (opportunity) actions.push(`Préparer l’opportunité commerciale : ${opportunity.title}.`);
       return actions.slice(0, 5);
     }
 
     function renderDashboardIntelligence(rows) {
       const published = rows.filter(row => row.status === "Publié").length;
-      const toCreate = rows.filter(row => row.status === "À créer").length;
+      const readyNotPublished = rows.filter(row => row.status === "Prête non publiée").length;
+      const visibleToCreate = rows.filter(row => row.status === "À créer").length;
+      const totalRemainingToCreate = Math.max(0, CATALOGUE_TOTAL_TARGET - published - readyNotPublished);
       const toImprove = rows.filter(row => row.status === "À améliorer").length;
-      const totalViews = sumRows(rows, "views");
-      const totalClicks = sumRows(rows, "clicks");
-      const totalTrainingClicks = sumRows(rows, "trainingClicks");
+      const metrics = readLocalMetrics();
+      const snapshotCount = 0;
+      const localViews = 0;
+      const localClicks = 0;
+      const localTrainingClicks = 0;
+      const totalViews = sumRows(rows, "views") + localViews;
+      const totalClicks = sumRows(rows, "clicks") + localClicks;
+      const totalTrainingClicks = sumRows(rows, "trainingClicks") + localTrainingClicks;
       const totalComments = sumRows(rows, "comments");
-      const totalBackups = sumRows(rows, "backups");
+      const totalBackups = sumRows(rows, "backups") + snapshotCount;
       const totalSales = sumRows(rows, "attributedSales");
       const totalDemand = rows.filter(row => row.demand >= 75).length;
       const totalCrm = sumRows(rows, "crm");
+      const connectedSystems = getConnectedSystemsState();
+      const connectedCount = countConnectedSystems(connectedSystems);
       const avgPriority = averageRows(rows, "priority");
       const averageReadyToSell = averageRows(rows, "readyToSell");
-      const snapshotCount = readSnapshotCount();
-      const clickRate = totalViews > 0 ? Math.round((totalClicks / totalViews) * 100) : 0;
-      const trainingRate = totalClicks > 0 ? Math.round((totalTrainingClicks / totalClicks) * 100) : 0;
-      const dataHealth = Math.round((published > 0 ? 25 : 0) + (rows.length > 0 ? 25 : 0) + (totalClicks > 0 ? 25 : 0) + (snapshotCount > 0 ? 25 : 0));
-      const conversionScore = Math.max(0, Math.min(100, Math.round((clickRate * 0.35) + (trainingRate * 0.35) + (avgPriority * 0.3))));
+      const rawClickRate = totalViews > 0 ? Math.round((totalClicks / totalViews) * 100) : 0;
+      const rawTrainingRate = totalClicks > 0 ? Math.round((totalTrainingClicks / totalClicks) * 100) : 0;
+      const clickRate = Math.max(0, Math.min(100, rawClickRate));
+      const trainingRate = Math.max(0, Math.min(100, rawTrainingRate));
+      const dataHealth = connectedCount * 25;
+      const conversionScore = totalSales > 0 ? Math.max(0, Math.min(100, Math.round((clickRate * 0.35) + (trainingRate * 0.35) + (avgPriority * 0.3)))) : 0;
       const rankedRows = [...rows].sort((a, b) => (b.priority + b.demand + b.clicks) - (a.priority + a.demand + a.clicks));
       const opportunity = rankedRows[0];
       const topThree = rankedRows.slice(0, 3);
@@ -2050,12 +2141,20 @@
       const criticalAlerts = [
         published === 0,
         totalSales === 0,
-        snapshotCount === 0,
+        connectedCount === 0,
         dataHealth < 50,
         rows.some(row => row.quality < 80 || row.rentability < 70)
       ].filter(Boolean).length;
       const riskScore = Math.max(0, Math.min(100, criticalAlerts * 18 + (dataHealth < 50 ? 10 : 0)));
-      const maturityLabel = getMaturityLabel(totalSales, published, totalClicks, snapshotCount);
+      const pilotReady = readyNotPublished > 0 || published > 0 ? 1 : 0;
+      const stripeReady = connectedSystems.stripe || totalSales > 0 ? 1 : 0;
+      const analyticsReady = connectedSystems.analytics ? 1 : 0;
+      const crmReady = connectedSystems.crm ? 1 : 0;
+      const supportReady = connectedSystems.support ? 1 : 0;
+      const accessReady = totalSales > 0 ? 1 : 0;
+      const publicationReady = published > 0 ? 1 : 0;
+      const catalogueCreatedCount = Math.max(0, published + readyNotPublished);
+      const maturityLabel = getMaturityLabel(totalSales, published, totalClicks, snapshotCount, readyNotPublished);
       const riskItems = buildRiskItems({ published, totalSales, totalClicks, dataHealth, avgPriority, snapshotCount });
       const todayActions = buildTodayActions({ totalSales, published, totalClicks, snapshotCount, opportunity });
       const activityLog = readActivityLog();
@@ -2063,12 +2162,11 @@
 
       setText("vaultSalesKpi", `${totalSales} vente${totalSales > 1 ? "s" : ""}`);
       setText("vaultFeaturedKpi", rows.length);
-      setText("vaultCategoriesKpi", categories.length);
-      setText("vaultCapacityKpi", "400");
       setText("vaultPriorityKpi", `${avgPriority} / 100`);
       setText("vaultIdeasKpi", rows.length);
       setText("vaultPublishedKpi", published);
-      setText("vaultCreateKpi", toCreate);
+      setText("vaultReadyUnpublishedKpi", readyNotPublished);
+      setText("vaultCreateKpi", `${totalRemainingToCreate} / ${CATALOGUE_TOTAL_TARGET}`);
       setText("vaultImproveKpi", toImprove);
       setText("vaultViewsKpi", totalViews);
       setText("vaultClicksKpi", totalClicks);
@@ -2079,52 +2177,72 @@
       setText("vaultCrmKpi", totalCrm);
       setText("vaultClickRateKpi", `${clickRate} %`);
       setText("vaultTrainingRateKpi", `${trainingRate} %`);
-      setText("vaultDataHealthKpi", `${dataHealth} %`);
-      setText("vaultSnapshotCountKpi", snapshotCount);
-      setText("vaultLastSignalKpi", lastActivity ? lastActivity.label : "Aucun");
-      setText("vaultConversionScoreKpi", `${conversionScore} / 100`);
-      setText("vaultOpportunityKpi", opportunity ? opportunity.title.slice(0, 28) : "Aucune");
-      setText("vaultTrackingKpi", isLocalTrackingEnabled() ? "Actif" : "Pause");
-      setText("vaultRiskScoreKpi", `${riskScore} / 100`);
+      setText("vaultDataHealthKpi", `${dataHealth} / 100 · ${connectedCount} / 4 systèmes`);
+      setText("vaultSnapshotCountKpi", 0);
+      setText("vaultLastSignalKpi", "Aucune donnée client connectée");
+      setText("vaultConversionScoreKpi", totalSales > 0 ? "Prouvée" : "Non prouvée");
+      setText("vaultOpportunityKpi", totalSales > 0 || totalClicks > 0 ? (opportunity ? opportunity.title.slice(0, 28) : "Aucune") : "À valider");
+      setText("vaultTrackingKpi", "Non connecté");
+      setText("vaultRiskScoreKpi", criticalAlerts);
       setText("vaultMaturityKpi", maturityLabel);
       setText("vaultRevenue7d", `${totalSales} vente${totalSales > 1 ? "s" : ""}`);
-      setText("vaultStripeClickRate", `${trainingRate} %`);
+      setText("vaultStripeClickRate", totalTrainingClicks);
+      setText("vaultTruthSales", totalSales);
+      setText("vaultTruthPublished", published);
+      setText("vaultTruthReadyNotPublished", readyNotPublished);
+      setText("vaultTruthConnectedSystems", `${connectedCount} / 4`);
       setText("vaultTopThree", topThree.length ? topThree.map(row => row.title.split(" ").slice(0, 3).join(" ")).join(" · ") : "Aucune");
       setText("vaultCriticalAlerts", criticalAlerts);
-      setText("vaultNextBestAction", totalSales > 0 ? "Doubler le gagnant" : "Vente test complète");
+      setText("vaultNextBestAction", totalSales > 0 ? "Doubler le gagnant" : readyNotPublished > 0 ? "Corriger blocages" : "Vente test complète");
 
-      setHTML("vaultOneAction", `<strong>Action rentable maintenant :</strong> ${totalSales > 0 ? "doubler la formation qui vend et créer un bundle simple." : "terminer la formation pilote + tester Stripe + tester l’accès + exporter une preuve."}`);
+      setHTML("vaultOneAction", `<strong>Action rentable maintenant :</strong> ${totalSales > 0 ? "doubler la formation qui vend et créer un bundle simple." : readyNotPublished > 0 ? "prendre la formation prête non publiée, puis corriger Stripe, accès, support et vente test." : "terminer la formation pilote + tester Stripe + tester l’accès + exporter une preuve."}`);
+
+      setHTML("vaultTruthGrid", [
+        renderCheckItem("Stripe réel connecté", connectedSystems.stripe ? "ok" : "no", connectedSystems.stripe ? "ventes fiables" : "non connecté"),
+        renderCheckItem("Analytics serveur connecté", connectedSystems.analytics ? "ok" : "no", connectedSystems.analytics ? "vues fiables" : "non connecté"),
+        renderCheckItem("CRM réel connecté", connectedSystems.crm ? "ok" : "no", connectedSystems.crm ? "demandes fiables" : "non connecté"),
+        renderCheckItem("Support réel connecté", connectedSystems.support ? "ok" : "no", connectedSystems.support ? "tickets fiables" : "non connecté"),
+        renderCheckItem("Catalogue JSON chargé", rows.length > 0 ? "ok" : "no", `${rows.length} formation(s) visibles dans cette page`),
+        renderCheckItem("Suivi des tests personnels", "ok", "désactivé dans ce dashboard"),
+        renderCheckItem("Données clients réelles", connectedCount > 0 ? "warn" : "no", connectedCount > 0 ? "partiellement connecté" : "non connecté")
+      ].join(""));
 
       const intelligence = elements.vaultIntelligenceNote;
       if (intelligence) {
         intelligence.classList.toggle("warning", dataHealth < 50);
         intelligence.innerHTML = dataHealth >= 50
-          ? '<span class="vault-pulse"></span>Intelligence locale active : KPI synchronisés avec le catalogue, les clics publics et les snapshots.'
-          : "Attention : santé des données faible. Exporte un snapshot et valide le catalogue JSON.";
+          ? '<span class="vault-pulse"></span>Mode clients futurs actif : seuls les systèmes connectés peuvent remplir les KPI clients.'
+          : "Mode clients futurs actif : aucune vraie vente, aucune vraie vue client et aucun CRM ne sont connectés.";
       }
 
       setHTML("vaultProgressGrid", [
-        renderVaultBar("Score risque système", riskScore, 100),
-        renderVaultBar("Score prêt à vendre moyen", averageReadyToSell, 100),
-        renderVaultBar("Score conversion local", conversionScore, 100),
-        renderVaultBar("Score priorité moyen", avgPriority, 100),
-        renderVaultBar("Formations publiées", published, Math.max(1, rows.length)),
-        renderVaultBar("Formations à créer", toCreate, Math.max(1, rows.length)),
-        renderVaultBar("Formations à améliorer", toImprove, Math.max(1, rows.length)),
-        renderVaultBar("Clics vers pages formation", totalTrainingClicks, Math.max(100, totalClicks)),
-        renderVaultBar("Demandes fortes", totalDemand, Math.max(1, rows.length))
+        renderVaultBar("Formation pilote prête", pilotReady, 1),
+        renderVaultBar("Publication réelle", publicationReady, 1),
+        renderVaultBar("Stripe connecté ou vente test", stripeReady, 1),
+        renderVaultBar("Accès après paiement validé", accessReady, 1),
+        renderVaultBar("Support client connecté", supportReady, 1),
+        renderVaultBar("Analytics client connecté", analyticsReady, 1),
+        renderVaultBar("CRM client connecté", crmReady, 1),
+        renderVaultBar("Systèmes clients connectés", connectedCount, 4),
+        renderVaultBar("Catalogue créé/prêt sur 400", catalogueCreatedCount, CATALOGUE_TOTAL_TARGET)
       ].join(""));
 
-      setHTML("vaultCrmGrid", [
-        renderVaultBar("Vues", totalViews, Math.max(500, totalViews)),
-        renderVaultBar("Clics", totalClicks, Math.max(100, totalClicks)),
-        renderVaultBar("Commentaires", totalComments, Math.max(30, totalComments)),
-        renderVaultBar("Sauvegardes", totalBackups, Math.max(20, totalBackups)),
-        renderVaultBar("Éléments CRM", totalCrm, Math.max(50, totalCrm)),
-        renderVaultBar("Ventes attribuées", totalSales, Math.max(5, totalSales))
-      ].join(""));
+      setHTML("vaultCrmGrid", connectedCount > 0
+        ? [
+            renderVaultBar("Vues clients réelles", totalViews, Math.max(500, totalViews)),
+            renderVaultBar("Clics clients réels", totalClicks, Math.max(100, totalClicks)),
+            renderVaultBar("Commentaires clients réels", totalComments, Math.max(1, totalComments)),
+            renderVaultBar("Tickets support clients", totalBackups, Math.max(1, totalBackups)),
+            renderVaultBar("Contacts CRM clients", totalCrm, Math.max(1, totalCrm)),
+            renderVaultBar("Ventes Stripe réelles", totalSales, Math.max(1, totalSales))
+          ].join("")
+        : '<div class="vault-alert warning">Aucun système client réel connecté. Les graphiques CRM restent volontairement vides pour ne pas afficher de faux chiffres.</div>'
+      );
 
-      setHTML("vaultDemandList", bestDemand.map(row => renderVaultBar(row.title, row.demand, 100)).join(""));
+      setHTML("vaultDemandList", totalDemand > 0
+        ? bestDemand.map(row => renderVaultBar(row.title, row.demand, 100)).join("")
+        : '<div class="vault-alert warning">Aucune demande client réelle connectée. Cette section restera vide tant qu’un formulaire, un CRM ou un système de demandes n’est pas branché.</div>'
+      );
 
       setHTML("vaultFormationTable", rows.map(row => `
         <tr>
@@ -2133,7 +2251,7 @@
           <td>${row.quality}</td>
           <td>${row.rentability}</td>
           <td><strong>${row.priority}</strong></td>
-          <td><strong>${row.readyLabel}</strong> · ${row.readyToSell}</td>
+          <td><strong>${row.readyLabel}</strong> · ${row.readyToSell} / 100 interne</td>
           <td>${row.views}</td>
           <td>${row.clicks}</td>
           <td>${row.attributedSales}</td>
@@ -2141,29 +2259,30 @@
       `).join(""));
 
       setHTML("vaultSmartTags", `
-        <span class="vault-chip"><strong>${published}</strong> publiée(s)</span>
-        <span class="vault-chip"><strong>${toCreate}</strong> à créer</span>
+        <span class="vault-chip"><strong>${published}</strong> publiée(s) réelles</span>
+        <span class="vault-chip"><strong>${readyNotPublished}</strong> prête(s) non publiée(s)</span>
+        <span class="vault-chip"><strong>${totalRemainingToCreate} / ${CATALOGUE_TOTAL_TARGET}</strong> restantes à créer</span>
+        <span class="vault-chip"><strong>${visibleToCreate}</strong> à créer visibles</span>
         <span class="vault-chip"><strong>${toImprove}</strong> à améliorer</span>
-        <span class="vault-chip"><strong>${totalTrainingClicks}</strong> clics formation</span>
-        <span class="vault-chip"><strong>${totalDemand}</strong> fortes demandes</span>
-        <span class="vault-chip"><strong>${clickRate} %</strong> clic / vue</span>
-        <span class="vault-chip"><strong>${dataHealth} %</strong> santé données</span>
+        <span class="vault-chip"><strong>${totalTrainingClicks}</strong> clics clients formation</span>
+        <span class="vault-chip"><strong>${totalDemand}</strong> demandes clients réelles</span>
+        <span class="vault-chip"><strong>${connectedCount} / 4</strong> systèmes connectés</span>
+        <span class="vault-chip"><strong>${dataHealth} / 100</strong> connexion données clients</span>
       `);
 
       setHTML("vaultTodayActions", todayActions.map(action => `<li>${escapeHTML(action)}</li>`).join(""));
       setHTML("vaultRiskList", riskItems.map(risk => `<li>${escapeHTML(risk)}</li>`).join(""));
-      setHTML("vaultActivityList", activityLog.length
-        ? activityLog.slice(-8).reverse().map(item => `<li>${escapeHTML(item.label)} · ${new Date(item.at).toLocaleString("fr-CA")}</li>`).join("")
-        : "<li>Aucun signal local enregistré pour l’instant.</li>"
-      );
+      setHTML("vaultActivityList", "<li>Aucune donnée client connectée pour le moment. Connecter Analytics, Stripe, CRM ou support pour alimenter ce journal.</li>");
 
       setHTML("vaultReportList", `
         <li>Opportunité principale : ${escapeHTML(opportunity ? opportunity.title : "aucune donnée suffisante")}.</li>
-        <li>Score conversion local : ${conversionScore} / 100.</li>
-        <li>Santé des données : ${dataHealth} %. ${dataHealth < 50 ? "Priorité : créer un snapshot et valider le JSON." : "La base est exploitable."}</li>
+        <li>Preuve de vente réelle : ${totalSales > 0 ? "prouvée" : "non prouvée"}. Sans vente Stripe connectée, cette preuve reste à non prouvée.</li>
+        <li>Connexion données clients : ${dataHealth} / 100. Ce score mesure seulement le branchement de Stripe, Analytics, CRM et support.</li>
+        <li>Vues clients réelles : ${totalViews}. Tes propres visites ne sont plus comptées.</li>
+        <li>Clics clients vers formation : ${totalTrainingClicks}. Tes propres clics ne sont plus comptés.</li>
         <li>Feu de phase : ${escapeHTML(phaseState.label)}.</li>
         <li>Prochaine action rentable : ${totalSales > 0 ? "doubler la formation qui vend" : "terminer une vente test complète fiche → Stripe → accès → checklist → support"}.</li>
-        <li>Risque principal : confondre KPI locaux et vraies données serveur. Les chiffres ici restent non sensibles et locaux.</li>
+        <li>Risque principal : aucun vrai système client n’est encore connecté. Le marché n’est donc pas encore mesuré.</li>
       `);
 
       const phaseClass = phaseState.light === "green" ? "green" : phaseState.light === "yellow" ? "yellow" : "";
@@ -2174,9 +2293,10 @@
       }
 
       setHTML("vaultPhaseChecks", [
-        renderCheckItem("1 formation publiée ou prête", published > 0 ? "ok" : "no"),
-        renderCheckItem("Premiers clics mesurés", totalClicks > 0 ? "ok" : "no"),
-        renderCheckItem("Snapshot exporté", snapshotCount > 0 ? "ok" : "warn"),
+        renderCheckItem("1 formation réellement publiée", published > 0 ? "ok" : "no"),
+        renderCheckItem("1 formation prête non publiée", readyNotPublished > 0 ? "warn" : "no"),
+        renderCheckItem("Premiers clics clients mesurés", totalClicks > 0 ? "ok" : "no"),
+        renderCheckItem("Système client connecté", connectedCount > 0 ? "warn" : "no", "Stripe, Analytics, CRM ou support"),
         renderCheckItem("Vente test réussie", totalSales > 0 ? "ok" : "no", "Stripe réel requis"),
         renderCheckItem("Accès après paiement validé", totalSales > 0 ? "warn" : "no", "à confirmer hors GitHub public")
       ].join(""));
@@ -2213,7 +2333,7 @@
         renderCheckItem("Base Formations / 400 jumeaux", "warn"),
         renderCheckItem("Base KPI", "warn"),
         renderCheckItem("Base Décisions", "warn"),
-        renderCheckItem("Base Preuves", snapshotCount > 0 ? "ok" : "warn")
+        renderCheckItem("Base Preuves", "warn", "à alimenter avec ventes, accès et retours clients réels")
       ].join(""));
 
       setHTML("vaultBundleGrid", [
@@ -2225,7 +2345,7 @@
 
       setHTML("vaultTwinGrid", [
         renderCheckItem("Identité formation", rows.length > 0 ? "ok" : "no", "titre, catégorie, prix"),
-        renderCheckItem("Production", published > 0 ? "warn" : "no", "checklist/page/mini-kit à confirmer"),
+        renderCheckItem("Production", readyNotPublished > 0 || published > 0 ? "warn" : "no", "checklist/page/mini-kit à confirmer"),
         renderCheckItem("Vente", totalSales > 0 ? "ok" : "no", "Stripe réel requis"),
         renderCheckItem("Accès", totalSales > 0 ? "warn" : "no", "solution sécurisée future"),
         renderCheckItem("Maintenance", "warn", "dates de mise à jour à ajouter au JSON")
@@ -2235,14 +2355,14 @@
         <li>Adrien surveille : ventes, clics Stripe, accès, support et prochaine action.</li>
         <li>Adrien alerte si : clics sans vente, formation rouge, accès non validé, santé données faible ou snapshot absent.</li>
         <li>Escalade Olivier : légal, santé, finances, plainte, remboursement complexe, double paiement ou risque réputationnel.</li>
-        <li>Action unique recommandée maintenant : ${escapeHTML(totalSales > 0 ? "doubler la formation qui vend" : "finir la preuve complète de la première formation")}</li>
+        <li>Action unique recommandée maintenant : ${escapeHTML(totalSales > 0 ? "doubler la formation qui vend" : readyNotPublished > 0 ? "corriger les blocages de la formation prête non publiée" : "finir la preuve complète de la première formation")}</li>
       `);
 
       setHTML("vaultStrategicList", `
         <li>Priorité 1 : finaliser ou améliorer “${escapeHTML(bestDemand[0] ? bestDemand[0].title : "formation prioritaire" )}”.</li>
-        <li>Priorité 2 : publier seulement ce qui est prêt, puis connecter Stripe et l’accès.</li>
-        <li>Priorité 3 : surveiller les formations avec beaucoup de clics mais une note qualité sous 85.</li>
-        <li>Priorité 4 : transformer les idées demandées en formations courtes à 5 $, 15 $, 25 $ ou 50 $.</li>
+        <li>Priorité 2 : ne publier réellement qu’après Stripe, accès, support et mentions testés.</li>
+        <li>Priorité 3 : connecter de vrais outils clients avant d’interpréter les vues, clics, demandes ou ventes.</li>
+        <li>Priorité 4 : bâtir progressivement les ${CATALOGUE_TOTAL_TARGET} formations prévues, sans confondre le total du projet avec les formations visibles dans ce tableau.</li>
         <li>Priorité 5 : exporter un snapshot après chaque grosse modification du site.</li>
       `);
 
@@ -2254,7 +2374,6 @@
         renderCheckItem("Aucune donnée sensible", "ok", "règle déjà appliquée")
       ].join(""));
 
-      const metrics = readLocalMetrics();
       const metricDate = metrics.updatedAt ? new Date(metrics.updatedAt).toLocaleString("fr-CA") : "aucune interaction locale";
       setText("vaultDashboardUpdated", `Synchronisé localement · ${new Date().toLocaleString("fr-CA")} · Dernier signal : ${metricDate}`);
     }
@@ -2267,7 +2386,7 @@
       const snapshot = {
         generatedAt: new Date().toISOString(),
         version: "index-dashboard-v3-fixed",
-        source: "GitHub Pages · données publiques et signaux locaux non sensibles",
+        source: "GitHub Pages · données publiques non sensibles · aucun suivi personnel local",
         totals: {
           formations: rows.length,
           categories: categories.length,
@@ -2275,7 +2394,7 @@
           clicks: sumRows(rows, "clicks"),
           trainingClicks: sumRows(rows, "trainingClicks"),
           comments: sumRows(rows, "comments"),
-          backups: readSnapshotCount() + 1,
+          backups: 0,
           attributedSales: sumRows(rows, "attributedSales")
         },
         rows
@@ -2287,7 +2406,6 @@
       writeJsonToStorage(LOCAL_BACKUPS_KEY, nextSnapshots);
 
       downloadTextFile(`pivotdor-dashboard-snapshot-${new Date().toISOString().slice(0, 10)}.json`, JSON.stringify(snapshot, null, 2), "application/json");
-      recordActivity("Snapshot exporté");
       updateVaultKpis();
     }
 
@@ -2390,6 +2508,10 @@
         if (isLocalTrackingEnabled()) recordActivity("KPI locaux réinitialisés");
         updateVaultKpis();
       });
+
+      document.querySelectorAll("[data-vault-target]").forEach(button => {
+        button.addEventListener("click", () => openVaultProblem(button.dataset.vaultTarget));
+      });
     }
 
     function setVaultDashboardMode(mode) {
@@ -2430,9 +2552,25 @@
     }
 
     function isVaultSessionValid() {
-      const unlocked = sessionStorage.getItem("pivotdorVaultUnlocked") === "true";
-      const unlockedAt = Number(sessionStorage.getItem("pivotdorVaultUnlockedAt") || "0");
-      return unlocked && unlockedAt > 0 && Date.now() - unlockedAt < VAULT_TTL_MS;
+      return false;
+    }
+
+    function requireVaultCodeAgain() {
+      if (!elements.vaultDashboard || !elements.vaultForm || !elements.vaultCode) return;
+      elements.vaultDashboard.classList.remove("unlocked");
+      elements.vaultForm.style.display = "grid";
+      elements.vaultForm.classList.remove("locked");
+      elements.vaultCode.disabled = false;
+      elements.vaultCode.value = "";
+      const submitButton = elements.vaultForm.querySelector('button[type="submit"]');
+      if (submitButton) submitButton.disabled = false;
+      if (elements.vaultStatus) elements.vaultStatus.textContent = "";
+      sessionStorage.removeItem("pivotdorVaultUnlocked");
+      sessionStorage.removeItem("pivotdorVaultUnlockedAt");
+      sessionStorage.removeItem("pivotdorVaultAttempts");
+      window.clearTimeout(vaultExpiryTimer);
+      window.clearInterval(vaultProgressTimer);
+      updateVaultSessionNote();
     }
 
     function getVaultRemainingMs() {
@@ -2442,33 +2580,21 @@
     }
 
     function updateVaultSessionNote() {
-      const remainingMs = getVaultRemainingMs();
-      const remainingMinutes = Math.ceil(remainingMs / 60000);
-      const percent = Math.max(0, Math.min(100, Math.round((remainingMs / VAULT_TTL_MS) * 100)));
+      const isUnlocked = Boolean(elements.vaultDashboard?.classList.contains("unlocked"));
 
       if (elements.vaultSessionNote) {
-        elements.vaultSessionNote.textContent = remainingMinutes > 0
-          ? `Session interne active · expiration dans environ ${remainingMinutes} min.`
-          : "Session interne verrouillée.";
+        elements.vaultSessionNote.textContent = isUnlocked
+          ? "Code validé pour cette ouverture seulement. Dès que tu fermes le cadenas, le code sera redemandé."
+          : "Session interne verrouillée. Code requis à chaque ouverture.";
       }
 
       if (elements.vaultSessionProgress) {
-        elements.vaultSessionProgress.style.setProperty("--vault-progress", `${percent}%`);
+        elements.vaultSessionProgress.style.setProperty("--vault-progress", isUnlocked ? "100%" : "0%");
       }
     }
 
     function scheduleVaultAutoLock() {
-      window.clearTimeout(vaultExpiryTimer);
-      window.clearInterval(vaultProgressTimer);
-      const remaining = getVaultRemainingMs();
       updateVaultSessionNote();
-      if (remaining <= 0) return;
-
-      vaultProgressTimer = window.setInterval(updateVaultSessionNote, 30000);
-      vaultExpiryTimer = window.setTimeout(() => {
-        lockVault();
-        if (elements.vaultStatus) elements.vaultStatus.textContent = "Session expirée. Entre le code à nouveau.";
-      }, remaining + 250);
     }
 
     function setVaultOpen(isOpen) {
@@ -2507,53 +2633,36 @@
       }
 
       sessionStorage.removeItem("pivotdorVaultAttempts");
-      sessionStorage.setItem("pivotdorVaultUnlocked", "true");
-      sessionStorage.setItem("pivotdorVaultUnlockedAt", String(Date.now()));
+      sessionStorage.removeItem("pivotdorVaultUnlocked");
+      sessionStorage.removeItem("pivotdorVaultUnlockedAt");
       elements.vaultDashboard.classList.add("unlocked");
       elements.vaultForm.style.display = "none";
       elements.vaultStatus.textContent = "";
-      scheduleVaultAutoLock();
+      updateVaultSessionNote();
       updateVaultKpis();
     }
 
     function lockVault() {
-      if (!elements.vaultDashboard || !elements.vaultForm || !elements.vaultCode) return;
-      elements.vaultDashboard.classList.remove("unlocked");
-      elements.vaultForm.style.display = "grid";
-      elements.vaultForm.classList.remove("locked");
-      elements.vaultCode.disabled = false;
-      elements.vaultCode.value = "";
-      if (elements.vaultStatus) elements.vaultStatus.textContent = "";
-      const submitButton = elements.vaultForm.querySelector('button[type="submit"]');
-      if (submitButton) submitButton.disabled = false;
-      sessionStorage.removeItem("pivotdorVaultUnlocked");
-      sessionStorage.removeItem("pivotdorVaultUnlockedAt");
-      sessionStorage.removeItem("pivotdorVaultAttempts");
-      window.clearTimeout(vaultExpiryTimer);
-      window.clearInterval(vaultProgressTimer);
-      updateVaultSessionNote();
+      requireVaultCodeAgain();
       setVaultOpen(false);
     }
 
     function setupVault() {
       updateVaultAttemptState();
 
-      if (isVaultSessionValid() && elements.vaultDashboard && elements.vaultForm) {
-        elements.vaultDashboard.classList.add("unlocked");
-        elements.vaultForm.style.display = "none";
-        scheduleVaultAutoLock();
-      } else {
-        sessionStorage.removeItem("pivotdorVaultUnlocked");
-        sessionStorage.removeItem("pivotdorVaultUnlockedAt");
-        updateVaultSessionNote();
-      }
+      requireVaultCodeAgain();
 
       elements.vaultToggle?.addEventListener("click", () => {
         const isOpen = elements.vaultPanel?.classList.contains("open");
-        setVaultOpen(!isOpen);
+        if (isOpen) {
+          lockVault();
+          return;
+        }
+        requireVaultCodeAgain();
+        setVaultOpen(true);
       });
 
-      elements.vaultClose?.addEventListener("click", () => setVaultOpen(false));
+      elements.vaultClose?.addEventListener("click", lockVault);
 
       elements.vaultForm?.addEventListener("submit", event => {
         event.preventDefault();
@@ -2564,14 +2673,14 @@
 
       document.addEventListener("keydown", event => {
         if (event.key === "Escape" && elements.vaultPanel?.classList.contains("open")) {
-          setVaultOpen(false);
+          lockVault();
         }
       });
 
       document.addEventListener("click", event => {
         if (!elements.vaultPanel?.classList.contains("open")) return;
         const lockWrapper = event.target.closest(".dashboard-lock");
-        if (!lockWrapper) setVaultOpen(false);
+        if (!lockWrapper) lockVault();
       });
 
       elements.vaultPanel?.addEventListener("keydown", event => {
@@ -2591,30 +2700,7 @@
     }
 
     function setupLocalMetricTracking() {
-      if (sessionStorage.getItem("pivotdorHomeViewTracked") !== "true") {
-        incrementLocalMetric("homeViews", 1);
-        recordActivity("Vue accueil enregistrée");
-        sessionStorage.setItem("pivotdorHomeViewTracked", "true");
-      }
-
-      document.addEventListener("click", event => {
-        if (event.target.closest(".dashboard-lock")) return;
-
-        const link = event.target.closest("a");
-        const button = event.target.closest("button");
-        if (link || button) {
-          incrementLocalMetric("totalClicks", 1);
-          recordActivity("Clic public enregistré");
-        }
-        if (link && /formation[s]?[.]html/.test(link.getAttribute("href") || "")) {
-          incrementLocalMetric("trainingClicks", 1);
-          recordActivity("Clic vers formation/catalogue");
-        }
-        if (link && /contact[.]html/.test(link.getAttribute("href") || "")) {
-          incrementLocalMetric("contactClicks", 1);
-          recordActivity("Clic vers contact");
-        }
-      }, { passive: true });
+      return;
     }
 
     function setupLogoFallback() {
@@ -2662,8 +2748,15 @@
       const debouncedApplyFilters = debounce(applyFilters, 180);
       elements.searchInput?.addEventListener("input", debouncedApplyFilters);
       elements.searchInput?.addEventListener("keydown", event => {
-        if (event.key !== "Escape") return;
-        resetHomeSearch();
+        if (event.key === "Escape") {
+          resetHomeSearch();
+          return;
+        }
+
+        if (event.key === "Enter") {
+          event.preventDefault();
+          goToFullCatalogueSearch();
+        }
       });
 
       elements.homeResetBtn?.addEventListener("click", resetHomeSearch);
