@@ -69,3 +69,4 @@ Crawl-delay: 5
 
 # Sitemap officiel du projet GitHub Pages
 Sitemap: https://lepivotdor-sketch.github.io/pivotdor-platform/sitemap.xml
+mise a jours teste
