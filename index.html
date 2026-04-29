@@ -27,7 +27,6 @@
   <link rel="icon" href="assets/logo/logo.png" />
   <link rel="apple-touch-icon" href="assets/logo/logo.png" />
 
-  <!-- CSS global puis CSS catalogue -->
   <link rel="stylesheet" href="css/style.css" />
   <link rel="stylesheet" href="css/catalogue.css" />
 
@@ -68,16 +67,8 @@
       --max: 1180px;
     }
 
-    * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-    }
-
-    html {
-      scroll-behavior: smooth;
-    }
-
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
     body {
       min-height: 100vh;
       font-family: Aptos, Arial, sans-serif;
@@ -92,26 +83,10 @@
       -webkit-font-smoothing: antialiased;
     }
 
-    a {
-      color: inherit;
-      text-decoration: none;
-    }
-
-    button,
-    input,
-    select {
-      font: inherit;
-    }
-
-    button {
-      cursor: pointer;
-    }
-
-    img {
-      max-width: 100%;
-      height: auto;
-      display: block;
-    }
+    a { color: inherit; text-decoration: none; }
+    button, input, select { font: inherit; }
+    button { cursor: pointer; }
+    img { max-width: 100%; height: auto; display: block; }
 
     :focus-visible {
       outline: 3px solid rgba(244, 217, 139, 0.82);
@@ -142,9 +117,7 @@
       font-weight: 900;
     }
 
-    .skip-link:focus {
-      left: 12px;
-    }
+    .skip-link:focus { left: 12px; }
 
     .topbar {
       position: sticky;
@@ -197,9 +170,7 @@
       font-size: 0.78rem;
     }
 
-    .brand-mark.has-logo::after {
-      opacity: 0;
-    }
+    .brand-mark.has-logo::after { opacity: 0; }
 
     .brand-logo {
       width: 100%;
@@ -229,7 +200,8 @@
 
     .nav-actions,
     .hero-actions,
-    .card-actions {
+    .card-actions,
+    .vault-actions {
       display: flex;
       align-items: center;
       justify-content: flex-end;
@@ -267,17 +239,15 @@
     }
 
     .btn-primary,
-    .filter-chip.active {
+    .filter-chip.active,
+    .vault-mode-controls .active {
       border-color: transparent;
       background: linear-gradient(135deg, var(--or-clair), var(--or));
       color: #151006;
       box-shadow: 0 14px 34px rgba(216, 170, 61, 0.18);
     }
 
-    .btn-small {
-      padding: 8px 12px;
-      font-size: 0.82rem;
-    }
+    .btn-small { padding: 8px 12px; font-size: 0.82rem; }
 
     .page {
       max-width: var(--max);
@@ -341,14 +311,10 @@
     h1 span,
     h2,
     h3,
-    .gold {
-      color: var(--or-clair);
-    }
+    .gold { color: var(--or-clair); }
 
     h2,
-    h3 {
-      letter-spacing: -0.03em;
-    }
+    h3 { letter-spacing: -0.03em; }
 
     .lead {
       color: var(--gris);
@@ -385,9 +351,7 @@
     }
 
     .badge strong,
-    .pill strong {
-      color: var(--or-clair);
-    }
+    .pill strong { color: var(--or-clair); }
 
     .stat-grid,
     .grid-2,
@@ -402,17 +366,9 @@
       margin-top: 18px;
     }
 
-    .grid-2 {
-      grid-template-columns: repeat(2, minmax(0, 1fr));
-    }
-
-    .grid-3 {
-      grid-template-columns: repeat(3, minmax(0, 1fr));
-    }
-
-    .grid-4 {
-      grid-template-columns: repeat(4, minmax(0, 1fr));
-    }
+    .grid-2 { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+    .grid-3 { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+    .grid-4 { grid-template-columns: repeat(4, minmax(0, 1fr)); }
 
     .stat {
       border: 1px solid rgba(216, 170, 61, 0.18);
@@ -469,10 +425,6 @@
       font-size: 0.93rem;
     }
 
-    .formation-card-home {
-      min-height: 100%;
-    }
-
     .formation-top {
       display: flex;
       align-items: center;
@@ -494,7 +446,8 @@
       margin-bottom: 14px;
     }
 
-    .search-box {
+    .search-box,
+    .vault-input {
       width: 100%;
       border: 1px solid rgba(216, 170, 61, 0.24);
       background: rgba(0, 0, 0, 0.34);
@@ -504,11 +457,15 @@
       outline: none;
     }
 
-    .search-box::placeholder {
+    .vault-input { border-radius: 14px; }
+
+    .search-box::placeholder,
+    .vault-input::placeholder {
       color: rgba(204, 204, 204, 0.58);
     }
 
-    .search-box:focus {
+    .search-box:focus,
+    .vault-input:focus {
       border-color: var(--or-clair);
       box-shadow: 0 0 0 4px rgba(216, 170, 61, 0.12);
     }
@@ -532,26 +489,14 @@
       color: #ffe0e0;
     }
 
-    .success-box {
-      border-color: rgba(128, 224, 141, 0.28);
-      background: rgba(128, 224, 141, 0.09);
-      color: #c9ffd1;
-    }
-
     .info-box {
       border-color: rgba(110, 168, 255, 0.28);
       background: rgba(110, 168, 255, 0.08);
       color: #d6e6ff;
     }
 
-    .empty-state {
-      display: none;
-      margin-top: 12px;
-    }
-
-    .empty-state.visible {
-      display: block;
-    }
+    .empty-state { display: none; margin-top: 12px; }
+    .empty-state.visible { display: block; }
 
     .clean-list {
       padding-left: 20px;
@@ -561,35 +506,20 @@
       color: var(--gris);
     }
 
-    .mt-16 {
-      margin-top: 16px;
-    }
+    .mt-16 { margin-top: 16px; }
 
-    .source-line {
+    .source-line,
+    .results-line {
       color: var(--gris-2);
       font-size: 0.86rem;
       font-weight: 850;
       margin-top: 8px;
     }
 
-    .source-line strong {
-      color: var(--or-clair);
-    }
+    .results-line { margin: 10px 0 0; }
 
-    .results-line {
-      color: var(--gris-2);
-      font-size: 0.86rem;
-      font-weight: 850;
-      margin: 10px 0 0;
-    }
-
-    .results-line strong {
-      color: var(--or-clair);
-    }
-
-    .empty-state .btn {
-      margin-top: 12px;
-    }
+    .source-line strong,
+    .results-line strong { color: var(--or-clair); }
 
     .category-link {
       color: inherit;
@@ -601,10 +531,6 @@
     .category-card:focus-within {
       border-color: rgba(244, 217, 139, 0.72);
       transform: translateY(-1px);
-    }
-
-    .formation-status {
-      border-color: rgba(216, 170, 61, 0.24);
     }
 
     .formation-status.ready {
@@ -630,7 +556,7 @@
       top: 82px;
       right: 16px;
       z-index: 80;
-      width: min(420px, calc(100vw - 32px));
+      width: min(520px, calc(100vw - 32px));
       pointer-events: none;
     }
 
@@ -658,11 +584,6 @@
       background: rgba(20, 20, 20, 0.92);
     }
 
-    .lock-button span {
-      font-size: 1rem;
-      line-height: 1;
-    }
-
     .vault-panel {
       pointer-events: auto;
       display: none;
@@ -671,19 +592,14 @@
       overflow: auto;
       border: 1px solid rgba(216, 170, 61, 0.28);
       border-radius: 22px;
-      background: rgba(5, 5, 5, 0.94);
+      background: rgba(5, 5, 5, 0.96);
       box-shadow: 0 24px 80px rgba(0, 0, 0, 0.62);
       backdrop-filter: blur(18px);
       -webkit-backdrop-filter: blur(18px);
     }
 
-    .vault-panel.open {
-      display: block;
-    }
-
-    .vault-inner {
-      padding: 18px;
-    }
+    .vault-panel.open { display: block; }
+    .vault-inner { padding: 18px; }
 
     .vault-head {
       display: flex;
@@ -721,21 +637,6 @@
       margin: 14px 0;
     }
 
-    .vault-input {
-      width: 100%;
-      border: 1px solid rgba(216, 170, 61, 0.28);
-      background: rgba(0, 0, 0, 0.36);
-      color: var(--blanc);
-      border-radius: 14px;
-      padding: 12px 13px;
-      outline: none;
-    }
-
-    .vault-input:focus {
-      border-color: var(--or-clair);
-      box-shadow: 0 0 0 4px rgba(216, 170, 61, 0.12);
-    }
-
     .vault-status {
       min-height: 22px;
       color: #ffe0e0;
@@ -743,73 +644,126 @@
       font-weight: 850;
     }
 
-    .vault-form.locked {
-      opacity: 0.72;
-    }
-
+    .vault-form.locked { opacity: 0.72; }
     .vault-input:disabled,
     .vault-form.locked button {
       cursor: not-allowed;
       opacity: 0.7;
     }
 
-    .vault-dashboard {
-      display: none;
-      margin-top: 14px;
-    }
+    .vault-dashboard { display: none; margin-top: 14px; }
+    .vault-dashboard.unlocked { display: block; }
 
-    .vault-dashboard.unlocked {
-      display: block;
-    }
+    .vault-dashboard.simple-mode .advanced-only { display: none !important; }
+    .vault-dashboard.advanced-mode .simple-only-note { display: none !important; }
 
-    .vault-warning {
-      margin-bottom: 14px;
-      border: 1px solid rgba(255, 112, 112, 0.34);
-      background: rgba(255, 112, 112, 0.08);
-      color: #ffe0e0;
+    .vault-warning,
+    .vault-alert,
+    .vault-data-source,
+    .vault-one-action {
+      margin-top: 10px;
       border-radius: 16px;
       padding: 12px;
       font-size: 0.82rem;
+      line-height: 1.35;
+    }
+
+    .vault-warning {
+      border: 1px solid rgba(255, 112, 112, 0.34);
+      background: rgba(255, 112, 112, 0.08);
+      color: #ffe0e0;
       font-weight: 800;
     }
 
-    .vault-grid {
-      display: grid;
-      grid-template-columns: repeat(2, minmax(0, 1fr));
-      gap: 10px;
-      margin-bottom: 14px;
+    .vault-alert {
+      border: 1px solid rgba(110, 168, 255, 0.28);
+      background: rgba(110, 168, 255, 0.08);
+      color: #d6e6ff;
+      font-weight: 850;
     }
 
-    .vault-kpi {
+    .vault-alert.warning {
+      border-color: rgba(255, 112, 112, 0.34);
+      background: rgba(255, 112, 112, 0.08);
+      color: #ffe0e0;
+    }
+
+    .vault-data-source {
+      color: var(--gris-2);
+      padding: 0;
+    }
+
+    .vault-one-action {
+      border: 1px solid rgba(244, 217, 139, 0.36);
+      background: linear-gradient(145deg, rgba(244, 217, 139, 0.15), rgba(255, 255, 255, 0.045));
+      color: var(--blanc);
+      font-weight: 900;
+    }
+
+    .vault-one-action strong,
+    .vault-data-source strong { color: var(--or-clair); }
+
+    .vault-progress {
+      height: 7px;
+      overflow: hidden;
+      border-radius: 999px;
+      background: rgba(255, 255, 255, 0.08);
       border: 1px solid rgba(216, 170, 61, 0.18);
-      background: rgba(255, 255, 255, 0.045);
+      margin: 10px 0 14px;
+    }
+
+    .vault-progress span {
+      display: block;
+      width: var(--vault-progress, 0%);
+      height: 100%;
+      border-radius: 999px;
+      background: linear-gradient(90deg, var(--or-clair), var(--or));
+      transition: width 0.25s ease;
+    }
+
+    .vault-grid,
+    .vault-dense-grid,
+    .vault-command-grid {
+      display: grid;
+      gap: 10px;
+      margin: 12px 0 14px;
+    }
+
+    .vault-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+    .vault-dense-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+    .vault-command-grid { grid-template-columns: repeat(5, minmax(0, 1fr)); }
+
+    .vault-kpi,
+    .vault-mini-kpi,
+    .vault-command-card,
+    .vault-section {
+      border: 1px solid rgba(216, 170, 61, 0.17);
+      background: rgba(255, 255, 255, 0.04);
       border-radius: 16px;
       padding: 12px;
       min-width: 0;
     }
 
-    .vault-kpi strong {
+    .vault-kpi strong,
+    .vault-mini-kpi strong,
+    .vault-command-card strong {
       display: block;
       color: var(--or-clair);
-      font-size: 1.18rem;
-      line-height: 1;
+      line-height: 1.1;
+      overflow-wrap: anywhere;
     }
 
-    .vault-kpi span {
+    .vault-kpi span,
+    .vault-mini-kpi span,
+    .vault-command-card span {
       display: block;
       color: var(--gris);
-      font-size: 0.78rem;
+      font-size: 0.76rem;
+      line-height: 1.25;
       margin-top: 6px;
     }
 
-    .vault-section {
-      border: 1px solid rgba(216, 170, 61, 0.17);
-      border-radius: 16px;
-      background: rgba(255, 255, 255, 0.035);
-      padding: 12px;
-      margin-top: 10px;
-    }
-
+    .vault-section { margin-top: 10px; }
     .vault-section summary {
       cursor: pointer;
       color: var(--or-clair);
@@ -825,71 +779,7 @@
       font-size: 0.84rem;
     }
 
-    .vault-actions {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 8px;
-      margin-top: 12px;
-    }
-
-    .vault-progress {
-      height: 7px;
-      overflow: hidden;
-      border-radius: 999px;
-      background: rgba(255, 255, 255, 0.08);
-      border: 1px solid rgba(216, 170, 61, 0.18);
-      margin: 10px 0 14px;
-    }
-
-    .vault-progress span {
-      display: block;
-      width: var(--vault-progress, 100%);
-      height: 100%;
-      border-radius: 999px;
-      background: linear-gradient(90deg, var(--or-clair), var(--or));
-      transition: width 0.25s ease;
-    }
-
-    .vault-dense-grid {
-      display: grid;
-      grid-template-columns: repeat(3, minmax(0, 1fr));
-      gap: 10px;
-      margin: 12px 0 14px;
-    }
-
-    .vault-mini-kpi {
-      min-width: 0;
-      border: 1px solid rgba(216, 170, 61, 0.16);
-      border-radius: 15px;
-      background: rgba(255, 255, 255, 0.04);
-      padding: 10px;
-    }
-
-    .vault-mini-kpi strong {
-      display: block;
-      color: var(--or-clair);
-      font-size: 1.05rem;
-      line-height: 1;
-    }
-
-    .vault-mini-kpi span {
-      display: block;
-      color: var(--gris);
-      font-size: 0.74rem;
-      margin-top: 6px;
-      line-height: 1.25;
-    }
-
-    .vault-bars {
-      display: grid;
-      gap: 10px;
-      margin-top: 12px;
-    }
-
-    .vault-bar-row {
-      display: grid;
-      gap: 6px;
-    }
+    .vault-bar-row { display: grid; gap: 6px; }
 
     .vault-bar-label {
       display: flex;
@@ -900,10 +790,7 @@
       font-weight: 850;
     }
 
-    .vault-bar-label strong {
-      color: var(--or-clair);
-      white-space: nowrap;
-    }
+    .vault-bar-label strong { color: var(--or-clair); white-space: nowrap; }
 
     .vault-bar {
       height: 9px;
@@ -921,33 +808,25 @@
       background: linear-gradient(90deg, #6ea8ff, var(--or-clair), var(--or));
     }
 
-    .vault-table {
-      width: 100%;
-      border-collapse: collapse;
-      margin-top: 10px;
-      font-size: 0.78rem;
+    .vault-check-grid { display: grid; gap: 8px; margin-top: 10px; }
+
+    .vault-check-item {
+      display: flex;
+      justify-content: space-between;
+      gap: 12px;
+      border: 1px solid rgba(216, 170, 61, 0.14);
+      background: rgba(255, 255, 255, 0.035);
+      border-radius: 12px;
+      padding: 9px 10px;
       color: var(--gris);
+      font-size: 0.8rem;
+      font-weight: 850;
     }
 
-    .vault-table th,
-    .vault-table td {
-      border-bottom: 1px solid rgba(216, 170, 61, 0.14);
-      padding: 8px 6px;
-      text-align: left;
-      vertical-align: top;
-    }
-
-    .vault-table th {
-      color: var(--or-clair);
-      font-size: 0.74rem;
-      text-transform: uppercase;
-      letter-spacing: 0.06em;
-    }
-
-    .vault-table td:last-child,
-    .vault-table th:last-child {
-      text-align: right;
-    }
+    .vault-check-item strong { color: var(--or-clair); white-space: nowrap; }
+    .vault-check-item.ok strong { color: #c9ffd1; }
+    .vault-check-item.warn strong { color: #fff0ba; }
+    .vault-check-item.no strong { color: #ffe0e0; }
 
     .vault-chip-row {
       display: flex;
@@ -966,130 +845,35 @@
       font-weight: 850;
     }
 
-    .vault-chip strong {
-      color: var(--or-clair);
-    }
+    .vault-chip strong { color: var(--or-clair); }
 
-    .vault-updated {
-      color: var(--gris-2);
-      font-size: 0.78rem;
-      font-weight: 850;
-      margin-top: 6px;
-    }
-
-    .vault-data-source {
-      margin-top: 8px;
-      color: var(--gris-2);
-      font-size: 0.76rem;
-      line-height: 1.35;
-    }
-
-    .vault-data-source strong {
-      color: var(--or-clair);
-    }
-
-    .vault-alert {
-      margin-top: 10px;
-      border: 1px solid rgba(110, 168, 255, 0.28);
-      background: rgba(110, 168, 255, 0.08);
-      color: #d6e6ff;
-      border-radius: 14px;
-      padding: 10px 12px;
-      font-size: 0.78rem;
-      font-weight: 850;
-      line-height: 1.35;
-    }
-
-    .vault-alert.warning {
-      border-color: rgba(255, 112, 112, 0.34);
-      background: rgba(255, 112, 112, 0.08);
-      color: #ffe0e0;
-    }
-
-    .vault-pulse {
-      display: inline-flex;
-      width: 8px;
-      height: 8px;
-      border-radius: 999px;
-      background: var(--vert);
-      box-shadow: 0 0 16px rgba(128, 224, 141, 0.65);
-      margin-right: 6px;
-      vertical-align: middle;
-    }
-
-    .vault-one-action {
-      border: 1px solid rgba(244, 217, 139, 0.36);
-      background: linear-gradient(145deg, rgba(244, 217, 139, 0.15), rgba(255, 255, 255, 0.045));
-      color: var(--blanc);
-      border-radius: 18px;
-      padding: 13px 14px;
-      margin-top: 12px;
-      font-size: 0.9rem;
-      font-weight: 900;
-      line-height: 1.35;
-    }
-
-    .vault-one-action strong {
-      color: var(--or-clair);
-    }
-
-    .vault-mode-controls {
-      margin: 12px 0 14px;
-      justify-content: flex-start;
-    }
-
-    .vault-mode-controls .active {
-      border-color: transparent;
-      background: linear-gradient(135deg, var(--or-clair), var(--or));
-      color: #151006;
-    }
-
-    .vault-dashboard.simple-mode .advanced-only {
-      display: none !important;
-    }
-
-    .vault-dashboard.advanced-mode .simple-only-note {
-      display: none !important;
-    }
-
-    .vault-split-note {
-      border-left: 3px solid var(--or-clair);
-      padding-left: 12px;
-      color: var(--gris);
-      font-size: 0.82rem;
-      line-height: 1.4;
+    .vault-scroll-table {
+      overflow-x: auto;
       margin-top: 10px;
     }
 
-    .vault-command-grid {
-      display: grid;
-      grid-template-columns: repeat(5, minmax(0, 1fr));
-      gap: 10px;
-      margin: 12px 0 14px;
-    }
-
-    .vault-command-card {
-      border: 1px solid rgba(244, 217, 139, 0.22);
-      background: linear-gradient(145deg, rgba(216, 170, 61, 0.11), rgba(255, 255, 255, 0.04));
-      border-radius: 16px;
-      padding: 11px;
-      min-width: 0;
-    }
-
-    .vault-command-card strong {
-      display: block;
-      color: var(--or-clair);
-      font-size: 0.96rem;
-      line-height: 1.15;
-      overflow-wrap: anywhere;
-    }
-
-    .vault-command-card span {
-      display: block;
+    .vault-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 10px;
+      font-size: 0.78rem;
       color: var(--gris);
-      font-size: 0.72rem;
-      line-height: 1.3;
-      margin-top: 6px;
+      min-width: 760px;
+    }
+
+    .vault-table th,
+    .vault-table td {
+      border-bottom: 1px solid rgba(216, 170, 61, 0.14);
+      padding: 8px 6px;
+      text-align: left;
+      vertical-align: top;
+    }
+
+    .vault-table th {
+      color: var(--or-clair);
+      font-size: 0.74rem;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
     }
 
     .vault-light {
@@ -1118,47 +902,27 @@
       box-shadow: 0 0 18px rgba(128, 224, 141, 0.6);
     }
 
-    .vault-check-grid {
-      display: grid;
-      gap: 8px;
-      margin-top: 10px;
+    .vault-pulse {
+      display: inline-flex;
+      width: 8px;
+      height: 8px;
+      border-radius: 999px;
+      background: var(--vert);
+      box-shadow: 0 0 16px rgba(128, 224, 141, 0.65);
+      margin-right: 6px;
+      vertical-align: middle;
     }
 
-    .vault-check-item {
-      display: flex;
-      justify-content: space-between;
-      gap: 12px;
-      border: 1px solid rgba(216, 170, 61, 0.14);
-      background: rgba(255, 255, 255, 0.035);
-      border-radius: 12px;
-      padding: 9px 10px;
+    .vault-split-note {
+      border-left: 3px solid var(--or-clair);
+      padding-left: 12px;
       color: var(--gris);
-      font-size: 0.8rem;
-      font-weight: 850;
-    }
-
-    .vault-check-item strong {
-      color: var(--or-clair);
-      white-space: nowrap;
-    }
-
-    .vault-check-item.ok strong {
-      color: #c9ffd1;
-    }
-
-    .vault-check-item.warn strong {
-      color: #fff0ba;
-    }
-
-    .vault-check-item.no strong {
-      color: #ffe0e0;
-    }
-
-    .vault-scroll-table {
-      overflow-x: auto;
+      font-size: 0.82rem;
+      line-height: 1.4;
       margin-top: 10px;
     }
 
+    .vault-actions { justify-content: flex-start; margin-top: 12px; }
     .vault-actions a,
     .vault-actions button {
       flex: 1 1 auto;
@@ -1176,149 +940,42 @@
       font-size: 0.9rem;
     }
 
-    .footer a {
-      color: var(--or-clair);
-    }
-
-    .footer a:hover,
-    .footer a:focus-visible {
-      text-decoration: underline;
-    }
-
-    @supports not ((backdrop-filter: blur(16px)) or (-webkit-backdrop-filter: blur(16px))) {
-      .topbar {
-        background: rgba(5, 5, 5, 0.96);
-      }
-    }
+    .footer a { color: var(--or-clair); }
 
     @media (prefers-reduced-motion: reduce) {
-      html {
-        scroll-behavior: auto;
-      }
-
-      *,
-      *::before,
-      *::after {
-        transition: none !important;
-        animation: none !important;
-      }
+      html { scroll-behavior: auto; }
+      *, *::before, *::after { transition: none !important; animation: none !important; }
     }
 
     @media (max-width: 980px) {
-      .hero,
-      .grid-4,
-      .grid-3 {
-        grid-template-columns: repeat(2, minmax(0, 1fr));
-      }
+      .hero, .grid-4, .grid-3 { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+      .vault-command-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
     }
 
     @media (max-width: 760px) {
-      .vault-command-grid {
-        grid-template-columns: 1fr;
-      }
-
-      .vault-dense-grid {
-        grid-template-columns: 1fr;
-      }
-
-      .vault-table {
-        min-width: 620px;
-      }
-
+      .topbar { position: relative; }
+      .nav { flex-direction: column; align-items: flex-start; }
+      .nav-actions { width: 100%; justify-content: flex-start; }
+      .hero, .grid-4, .grid-3, .grid-2, .stat-grid, .vault-grid, .vault-dense-grid, .vault-command-grid { grid-template-columns: 1fr; }
+      .page { padding: 26px 16px 64px; }
+      .panel-content, .card-content { padding: 22px; }
+      .brand span span { white-space: normal; max-width: 245px; }
+      .hero-actions, .card-actions { align-items: stretch; flex-direction: column; }
+      .hero-actions .btn, .card-actions .btn { width: 100%; }
+      .catalogue-tools-home { grid-template-columns: 1fr; }
       .dashboard-lock {
         top: 12px;
         right: 12px;
         width: min(390px, calc(100vw - 24px));
       }
-
-      .lock-button {
-        width: 38px;
-        height: 38px;
-      }
-
-      .vault-grid {
-        grid-template-columns: 1fr;
-      }
-
-      .vault-panel {
-        max-height: 82vh;
-      }
-
-      .topbar {
-        position: relative;
-      }
-
-      .nav {
-        flex-direction: column;
-        align-items: flex-start;
-      }
-
-      .nav-actions {
-        width: 100%;
-        justify-content: flex-start;
-      }
-
-      .hero,
-      .grid-4,
-      .grid-3,
-      .grid-2,
-      .stat-grid {
-        grid-template-columns: 1fr;
-      }
-
-      .page {
-        padding: 26px 16px 64px;
-      }
-
-      .panel-content,
-      .card-content {
-        padding: 22px;
-      }
-
-      .brand span span {
-        white-space: normal;
-        max-width: 245px;
-      }
-
-      .hero-actions,
-      .card-actions {
-        align-items: stretch;
-        flex-direction: column;
-      }
-
-      .hero-actions .btn,
-      .card-actions .btn {
-        width: 100%;
-      }
-
-      .catalogue-tools-home {
-        grid-template-columns: 1fr;
-      }
+      .lock-button { width: 38px; height: 38px; }
+      .vault-panel { max-height: 82vh; }
     }
 
     @media print {
-      .dashboard-lock,
-
-      .topbar,
-      .hero-actions,
-      .card-actions,
-      .catalogue-tools-home,
-      .filters,
-      .skip-link {
-        display: none !important;
-      }
-
-      body {
-        background: #fff !important;
-        color: #000 !important;
-      }
-
-      .panel,
-      .card,
-      .notice,
-      .warning-box,
-      .success-box,
-      .info-box {
+      .dashboard-lock, .topbar, .hero-actions, .card-actions, .catalogue-tools-home, .filters, .skip-link { display: none !important; }
+      body { background: #fff !important; color: #000 !important; }
+      .panel, .card, .notice, .warning-box, .success-box, .info-box {
         background: #fff !important;
         color: #000 !important;
         box-shadow: none !important;
@@ -1381,9 +1038,10 @@
           <div class="vault-warning">
             Ce menu est un verrou visuel côté navigateur. Sur GitHub Pages, ce n’est pas une vraie sécurité. Contenu autorisé ici : priorités, statuts, notes qualité, notes rentabilité, score priorité, idées, formations publiées, formations à créer/améliorer, graphiques simples et KPI non sensibles.
           </div>
-          <div class="source-line" id="vaultSessionNote" aria-live="polite">Session interne active temporairement.</div>
+
+          <div class="source-line" id="vaultSessionNote" aria-live="polite">Session interne verrouillée.</div>
           <div class="vault-progress" aria-hidden="true"><span id="vaultSessionProgress"></span></div>
-          <div class="vault-updated" id="vaultDashboardUpdated">Synchronisation en attente...</div>
+          <div class="source-line" id="vaultDashboardUpdated">Synchronisation en attente...</div>
           <div class="vault-data-source">
             <strong>Source :</strong> données publiques, estimations locales non sensibles et interactions anonymes du navigateur. Aucun client, reçu, clé Stripe ou accès privé.
           </div>
@@ -1394,8 +1052,8 @@
           </div>
 
           <div class="vault-actions vault-mode-controls" aria-label="Mode du tableau de bord">
-            <button class="btn btn-primary active" type="button" id="vaultSimpleMode">Mode simple</button>
-            <button class="btn" type="button" id="vaultAdvancedMode">Mode avancé</button>
+            <button class="btn btn-primary active" type="button" id="vaultSimpleMode" aria-pressed="true">Mode simple</button>
+            <button class="btn" type="button" id="vaultAdvancedMode" aria-pressed="false">Mode avancé</button>
           </div>
 
           <div class="simple-only-note vault-data-source">
@@ -1449,7 +1107,24 @@
 
           <details class="vault-section" open>
             <summary>Command Center — Boutons stratégiques</summary>
-            <div class="vault-actions" id="vaultActionButtons"></div>
+            <div class="vault-actions">
+              <a class="btn btn-primary" href="formation.html">Améliorer formation prioritaire</a>
+              <a class="btn" href="formations.html#catalogue">Voir catalogue</a>
+              <a class="btn" href="contact.html">Voir demandes</a>
+              <a class="btn" href="support.html">Support accès</a>
+              <a class="btn" href="conditions.html">Vente finale</a>
+              <a class="btn" href="data/formations-index.json">Ouvrir JSON</a>
+              <button class="btn" type="button" id="vaultPrintAudit">Imprimer audit</button>
+              <button class="btn" type="button" id="vaultCopyReport">Copier rapport</button>
+              <button class="btn" type="button" id="vaultExportCsv">Exporter CSV</button>
+              <button class="btn" type="button" id="vaultOpenAllSections">Tout ouvrir</button>
+              <button class="btn" type="button" id="vaultCloseAllSections">Tout fermer</button>
+              <button class="btn" type="button" id="vaultExportSnapshot">Exporter snapshot</button>
+              <button class="btn" type="button" id="vaultClearSnapshots">Effacer snapshots</button>
+              <button class="btn" type="button" id="vaultToggleTracking">Désactiver suivi</button>
+              <button class="btn" type="button" id="vaultResetLocalKpis">Réinitialiser KPI locaux</button>
+              <button class="btn" type="button" id="vaultLockAgain">Reverrouiller</button>
+            </div>
             <div class="vault-chip-row" id="vaultSmartTags"></div>
           </details>
 
@@ -1572,16 +1247,6 @@
               <li>Aucune donnée client, aucun reçu Stripe, aucune clé secrète, aucun contenu payé complet.</li>
             </ul>
           </details>
-
-          <div class="vault-actions">
-            <a class="btn" href="formations.html">Catalogue</a>
-            <a class="btn" href="formations.html#catalogue">KPI catalogue</a>
-            <a class="btn" href="contact.html">Contact</a>
-            <a class="btn" href="support.html">Support</a>
-            <a class="btn" href="dashboard-cache.html">Dashboard</a>
-            <a class="btn" href="data/formations-index.json">JSON</a>
-            <button class="btn" type="button" id="vaultLockAgain">Reverrouiller</button>
-          </div>
 
           <details class="vault-section advanced-only">
             <summary>Séparation future du code</summary>
@@ -1786,141 +1451,140 @@
       { name: "Santé", text: "Routines simples, sommeil, énergie, habitudes quotidiennes." }
     ];
 
+    const VALID_CATEGORIES = categories.map(category => category.name);
+    const VAULT_CODE = "19902010";
+    const VAULT_TTL_MS = 20 * 60 * 1000;
+    const MAX_VAULT_ATTEMPTS = 5;
+    const LOCAL_METRICS_KEY = "pivotdorDashboardLocalMetrics";
+    const LOCAL_BACKUPS_KEY = "pivotdorDashboardSnapshots";
+    const LOCAL_ACTIVITY_KEY = "pivotdorDashboardActivity";
+    const LOCAL_TRACKING_KEY = "pivotdorDashboardTrackingEnabled";
+
+    let activeFilter = "all";
+    let vaultExpiryTimer = null;
+    let vaultProgressTimer = null;
+
     let featuredFormations = [
       {
+        id: "formation-0001",
         title: "Utilise l’IA pour sauver 3 heures par semaine",
         category: "IA",
         price: "15 $",
         status: "Prête",
         url: "formation.html",
-        description: "Transforme une tâche répétitive en mini-système IA simple."
+        description: "Transforme une tâche répétitive en mini-système IA simple.",
+        score: 92,
+        rentability: 90
       },
       {
+        id: "formation-0002",
         title: "Organise ta semaine en 30 minutes",
         category: "Productivité",
         price: "15 $",
         status: "Bientôt disponible",
         url: "formations.html#catalogue",
-        description: "Clarifie tes priorités et réduis le chaos de ta semaine."
+        description: "Clarifie tes priorités et réduis le chaos de ta semaine.",
+        score: 88,
+        rentability: 84
       },
       {
+        id: "formation-0003",
         title: "Trouve une idée de produit digital rentable",
         category: "Business",
         price: "25 $",
         status: "Bientôt disponible",
         url: "formations.html#catalogue",
-        description: "Clarifie un problème, une promesse, un prix et une première offre."
+        description: "Clarifie un problème, une promesse, un prix et une première offre.",
+        score: 86,
+        rentability: 92
       },
       {
+        id: "formation-0004",
         title: "Structure ton budget simple",
         category: "Finances",
         price: "15 $",
         status: "Bientôt disponible",
         url: "formations.html#catalogue",
-        description: "Vois tes revenus, dépenses et priorités avec plus de clarté."
+        description: "Vois tes revenus, dépenses et priorités avec plus de clarté.",
+        score: 84,
+        rentability: 82
       },
       {
+        id: "formation-0005",
         title: "Crée ton premier prompt vraiment utile",
         category: "IA",
         price: "5 $",
         status: "À créer",
         url: "formations.html#catalogue",
-        description: "Un micro-guide pour mieux demander et obtenir de meilleures réponses."
+        description: "Un micro-guide pour mieux demander et obtenir de meilleures réponses.",
+        score: 80,
+        rentability: 78
       },
       {
+        id: "formation-0006",
         title: "Écris une page de vente simple",
         category: "Business",
         price: "25 $",
         status: "À créer",
         url: "formations.html#catalogue",
-        description: "Structure une page claire : problème, promesse, offre et action."
+        description: "Structure une page claire : problème, promesse, offre et action.",
+        score: 82,
+        rentability: 88
       }
     ];
 
-    const categoryGrid = document.getElementById("categoryGrid");
-    const featuredGrid = document.getElementById("featuredGrid");
-    const featuredSource = document.getElementById("featuredSource");
-    const homeResultCount = document.getElementById("homeResultCount");
-    const homeResetBtn = document.getElementById("homeResetBtn");
-    const searchInput = document.getElementById("homeSearch");
-    const fullCatalogueLink = document.getElementById("fullCatalogueLink");
-    const filterButtons = document.querySelectorAll(".filter-chip");
-    const emptyState = document.getElementById("emptyState");
-    const yearElement = document.getElementById("year");
-    const brandLogo = document.getElementById("brandLogo");
-    const brandMark = document.getElementById("brandMark");
-    const vaultSalesKpi = document.getElementById("vaultSalesKpi");
-    const vaultFeaturedKpi = document.getElementById("vaultFeaturedKpi");
-    const vaultCategoriesKpi = document.getElementById("vaultCategoriesKpi");
-    const vaultCapacityKpi = document.getElementById("vaultCapacityKpi");
-    const vaultPriorityKpi = document.getElementById("vaultPriorityKpi");
-    const vaultIdeasKpi = document.getElementById("vaultIdeasKpi");
-    const vaultPublishedKpi = document.getElementById("vaultPublishedKpi");
-    const vaultCreateKpi = document.getElementById("vaultCreateKpi");
-    const vaultImproveKpi = document.getElementById("vaultImproveKpi");
-    const vaultViewsKpi = document.getElementById("vaultViewsKpi");
-    const vaultClicksKpi = document.getElementById("vaultClicksKpi");
-    const vaultTrainingClicksKpi = document.getElementById("vaultTrainingClicksKpi");
-    const vaultCommentsKpi = document.getElementById("vaultCommentsKpi");
-    const vaultBackupsKpi = document.getElementById("vaultBackupsKpi");
-    const vaultDemandKpi = document.getElementById("vaultDemandKpi");
-    const vaultCrmKpi = document.getElementById("vaultCrmKpi");
-    const vaultClickRateKpi = document.getElementById("vaultClickRateKpi");
-    const vaultTrainingRateKpi = document.getElementById("vaultTrainingRateKpi");
-    const vaultDataHealthKpi = document.getElementById("vaultDataHealthKpi");
-    const vaultSnapshotCountKpi = document.getElementById("vaultSnapshotCountKpi");
-    const vaultLastSignalKpi = document.getElementById("vaultLastSignalKpi");
-    const vaultConversionScoreKpi = document.getElementById("vaultConversionScoreKpi");
-    const vaultOpportunityKpi = document.getElementById("vaultOpportunityKpi");
-    const vaultTrackingKpi = document.getElementById("vaultTrackingKpi");
-    const vaultRiskScoreKpi = document.getElementById("vaultRiskScoreKpi");
-    const vaultMaturityKpi = document.getElementById("vaultMaturityKpi");
-    const vaultIntelligenceNote = document.getElementById("vaultIntelligenceNote");
-    const vaultDashboardUpdated = document.getElementById("vaultDashboardUpdated");
-    const vaultOneAction = document.getElementById("vaultOneAction");
-    const vaultSimpleMode = document.getElementById("vaultSimpleMode");
-    const vaultAdvancedMode = document.getElementById("vaultAdvancedMode");
-    const vaultTestBlockers = document.getElementById("vaultTestBlockers");
-    const vaultRevenue7d = document.getElementById("vaultRevenue7d");
-    const vaultStripeClickRate = document.getElementById("vaultStripeClickRate");
-    const vaultTopThree = document.getElementById("vaultTopThree");
-    const vaultCriticalAlerts = document.getElementById("vaultCriticalAlerts");
-    const vaultNextBestAction = document.getElementById("vaultNextBestAction");
-    const vaultPhaseAlert = document.getElementById("vaultPhaseAlert");
-    const vaultPhaseChecks = document.getElementById("vaultPhaseChecks");
-    const vaultPublicationGate = document.getElementById("vaultPublicationGate");
-    const vaultFieldTests = document.getElementById("vaultFieldTests");
-    const vaultSplitCodeGrid = document.getElementById("vaultSplitCodeGrid");
-    const vaultNotionGrid = document.getElementById("vaultNotionGrid");
-    const vaultBundleGrid = document.getElementById("vaultBundleGrid");
-    const vaultTwinGrid = document.getElementById("vaultTwinGrid");
-    const vaultAdrienList = document.getElementById("vaultAdrienList");
-    const vaultActionButtons = document.getElementById("vaultActionButtons");
-    const vaultSmartTags = document.getElementById("vaultSmartTags");
-    const vaultTodayActions = document.getElementById("vaultTodayActions");
-    const vaultRiskList = document.getElementById("vaultRiskList");
-    const vaultProgressGrid = document.getElementById("vaultProgressGrid");
-    const vaultCrmGrid = document.getElementById("vaultCrmGrid");
-    const vaultDemandList = document.getElementById("vaultDemandList");
-    const vaultActivityList = document.getElementById("vaultActivityList");
-    const vaultReportList = document.getElementById("vaultReportList");
-    const vaultFormationTable = document.getElementById("vaultFormationTable");
-    const vaultStrategicList = document.getElementById("vaultStrategicList");
-    const vaultToggle = document.getElementById("vaultToggle");
-    const vaultPanel = document.getElementById("vaultPanel");
-    const vaultClose = document.getElementById("vaultClose");
-    const vaultForm = document.getElementById("vaultForm");
-    const vaultCode = document.getElementById("vaultCode");
-    const vaultStatus = document.getElementById("vaultStatus");
-    const vaultDashboard = document.getElementById("vaultDashboard");
-    const vaultSessionNote = document.getElementById("vaultSessionNote");
-    const vaultSessionProgress = document.getElementById("vaultSessionProgress");
-    const vaultLockAgain = document.getElementById("vaultLockAgain");
-    let activeFilter = "all";
-    const VALID_CATEGORIES = ["IA", "Productivité", "Apprentissage", "Business", "Finances", "Relations", "Bonheur", "Santé"];
+    const $ = selector => document.querySelector(selector);
+    const $$ = selector => Array.from(document.querySelectorAll(selector));
 
-    if (yearElement) {
-      yearElement.textContent = new Date().getFullYear();
+    const elements = {
+      categoryGrid: $("#categoryGrid"),
+      featuredGrid: $("#featuredGrid"),
+      featuredSource: $("#featuredSource"),
+      homeResultCount: $("#homeResultCount"),
+      homeResetBtn: $("#homeResetBtn"),
+      searchInput: $("#homeSearch"),
+      fullCatalogueLink: $("#fullCatalogueLink"),
+      filterButtons: $$(".filter-chip"),
+      emptyState: $("#emptyState"),
+      year: $("#year"),
+      brandLogo: $("#brandLogo"),
+      brandMark: $("#brandMark"),
+      vaultToggle: $("#vaultToggle"),
+      vaultPanel: $("#vaultPanel"),
+      vaultClose: $("#vaultClose"),
+      vaultForm: $("#vaultForm"),
+      vaultCode: $("#vaultCode"),
+      vaultStatus: $("#vaultStatus"),
+      vaultDashboard: $("#vaultDashboard"),
+      vaultSessionNote: $("#vaultSessionNote"),
+      vaultSessionProgress: $("#vaultSessionProgress"),
+      vaultSimpleMode: $("#vaultSimpleMode"),
+      vaultAdvancedMode: $("#vaultAdvancedMode"),
+      vaultLockAgain: $("#vaultLockAgain")
+    };
+
+    const vaultIds = [
+      "vaultSalesKpi", "vaultFeaturedKpi", "vaultCategoriesKpi", "vaultCapacityKpi",
+      "vaultPriorityKpi", "vaultIdeasKpi", "vaultPublishedKpi", "vaultCreateKpi",
+      "vaultImproveKpi", "vaultViewsKpi", "vaultClicksKpi", "vaultTrainingClicksKpi",
+      "vaultCommentsKpi", "vaultBackupsKpi", "vaultDemandKpi", "vaultCrmKpi",
+      "vaultClickRateKpi", "vaultTrainingRateKpi", "vaultDataHealthKpi", "vaultSnapshotCountKpi",
+      "vaultLastSignalKpi", "vaultConversionScoreKpi", "vaultOpportunityKpi", "vaultTrackingKpi",
+      "vaultRiskScoreKpi", "vaultMaturityKpi", "vaultRevenue7d", "vaultStripeClickRate",
+      "vaultTopThree", "vaultCriticalAlerts", "vaultNextBestAction", "vaultOneAction",
+      "vaultIntelligenceNote", "vaultDashboardUpdated", "vaultSmartTags", "vaultTodayActions",
+      "vaultRiskList", "vaultProgressGrid", "vaultCrmGrid", "vaultDemandList", "vaultActivityList",
+      "vaultReportList", "vaultPhaseAlert", "vaultPhaseChecks", "vaultTestBlockers",
+      "vaultPublicationGate", "vaultFieldTests", "vaultNotionGrid", "vaultBundleGrid",
+      "vaultTwinGrid", "vaultAdrienList", "vaultFormationTable", "vaultStrategicList", "vaultSplitCodeGrid"
+    ];
+
+    vaultIds.forEach(id => {
+      elements[id] = document.getElementById(id);
+    });
+
+    if (elements.year) {
+      elements.year.textContent = new Date().getFullYear();
     }
 
     function normalize(value) {
@@ -1952,32 +1616,8 @@
     }
 
     function cleanLimitedText(value, fallback, maxLength) {
-      const clean = String(value || "")
-        .replace(/[<>]/g, "")
-        .trim();
+      const clean = String(value || "").replace(/[<>]/g, "").trim();
       return (clean || fallback).slice(0, maxLength);
-    }
-
-    function statusClass(status) {
-      const value = normalize(status);
-      if (value.includes("prete")) return "ready";
-      if (value.includes("bientot")) return "soon";
-      if (value.includes("creer")) return "todo";
-      return "todo";
-    }
-
-    function buildCatalogueUrl() {
-      const params = new URLSearchParams();
-      const cleanSearch = cleanLimitedText(searchInput.value, "", 80);
-      if (activeFilter !== "all") params.set("categorie", activeFilter);
-      if (cleanSearch) params.set("recherche", cleanSearch);
-      const query = params.toString();
-      return `formations.html${query ? `?${query}` : ""}#catalogue`;
-    }
-
-    function updateFullCatalogueLink() {
-      if (!fullCatalogueLink) return;
-      fullCatalogueLink.href = buildCatalogueUrl();
     }
 
     function clampPercent(value) {
@@ -1993,24 +1633,41 @@
 
     function statusPriority(status) {
       const value = normalize(status);
-      if (value.includes("prete")) return 3;
-      if (value.includes("bientot")) return 2;
+      if (value.includes("prete") || value.includes("publiee")) return 3;
+      if (value.includes("bientot") || value.includes("cours")) return 2;
       if (value.includes("creer")) return 1;
       return 0;
     }
 
+    function statusClass(status) {
+      const value = normalize(status);
+      if (value.includes("prete") || value.includes("publiee")) return "ready";
+      if (value.includes("bientot") || value.includes("cours")) return "soon";
+      return "todo";
+    }
+
+    function debounce(callback, delay = 180) {
+      let timer;
+      return (...args) => {
+        window.clearTimeout(timer);
+        timer = window.setTimeout(() => callback(...args), delay);
+      };
+    }
+
     function normalizeFeaturedItem(item, index) {
       if (!item || typeof item !== "object") return null;
+      const priceValue = item.price || item.prix || "15 $";
+      const numericPrice = typeof priceValue === "number" ? `${priceValue} $` : String(priceValue);
       return {
         id: cleanLimitedText(item.id, `formation-${index + 1}`, 80),
         title: cleanLimitedText(item.title || item.titre, `Formation ${index + 1}`, 140),
         category: normalizeCategory(item.category || item.categorie || "IA"),
-        price: cleanLimitedText(item.price || item.prix, "15 $", 30),
+        price: cleanLimitedText(numericPrice, "15 $", 30),
         status: cleanLimitedText(item.status || item.statut, "À créer", 50),
         score: clampPercent(item.score || item.note_qualite || 0),
         rentability: clampPercent(item.rentability || item.note_rentabilite || 0),
         url: safeLocalUrl(item.url || item.lien || "formations.html#catalogue"),
-        description: cleanLimitedText(item.description, "Mini-formation Le Pivot d’Or en préparation.", 220)
+        description: cleanLimitedText(item.description || item.description_courte, "Mini-formation Le Pivot d’Or en préparation.", 220)
       };
     }
 
@@ -2037,16 +1694,23 @@
         .slice(0, 6);
     }
 
-    function debounce(callback, delay = 180) {
-      let timer;
-      return (...args) => {
-        window.clearTimeout(timer);
-        timer = window.setTimeout(() => callback(...args), delay);
-      };
+    function buildCatalogueUrl() {
+      const params = new URLSearchParams();
+      const cleanSearch = cleanLimitedText(elements.searchInput?.value || "", "", 80);
+      if (activeFilter !== "all") params.set("categorie", activeFilter);
+      if (cleanSearch) params.set("recherche", cleanSearch);
+      const query = params.toString();
+      return `formations.html${query ? `?${query}` : ""}#catalogue`;
+    }
+
+    function updateFullCatalogueLink() {
+      if (!elements.fullCatalogueLink) return;
+      elements.fullCatalogueLink.href = buildCatalogueUrl();
     }
 
     function renderCategories() {
-      categoryGrid.innerHTML = categories.map(category => {
+      if (!elements.categoryGrid) return;
+      elements.categoryGrid.innerHTML = categories.map(category => {
         const url = `formations.html?categorie=${encodeURIComponent(category.name)}#catalogue`;
         return `
           <article class="card category-card">
@@ -2063,9 +1727,10 @@
     }
 
     function renderFeatured(items) {
-      featuredGrid.setAttribute("aria-busy", "true");
-      featuredGrid.innerHTML = items.map(item => {
-        const isReady = normalize(item.status).includes("prete");
+      if (!elements.featuredGrid || !elements.emptyState) return;
+      elements.featuredGrid.setAttribute("aria-busy", "true");
+      elements.featuredGrid.innerHTML = items.map(item => {
+        const isReady = statusPriority(item.status) >= 3;
         const actionText = isReady ? "Voir la fiche" : "Voir le catalogue";
         const actionClass = isReady ? "btn btn-primary" : "btn";
 
@@ -2090,16 +1755,16 @@
       }).join("");
 
       const isEmpty = items.length === 0;
-      emptyState.classList.toggle("visible", isEmpty);
-      emptyState.setAttribute("aria-hidden", String(!isEmpty));
-      if (homeResultCount) {
-        homeResultCount.innerHTML = `<strong>${items.length}</strong> formation${items.length > 1 ? "s" : ""} affichée${items.length > 1 ? "s" : ""}`;
+      elements.emptyState.classList.toggle("visible", isEmpty);
+      elements.emptyState.setAttribute("aria-hidden", String(!isEmpty));
+      if (elements.homeResultCount) {
+        elements.homeResultCount.innerHTML = `<strong>${items.length}</strong> formation${items.length > 1 ? "s" : ""} affichée${items.length > 1 ? "s" : ""}`;
       }
-      featuredGrid.setAttribute("aria-busy", "false");
+      elements.featuredGrid.setAttribute("aria-busy", "false");
     }
 
     function updateFilterButtons() {
-      filterButtons.forEach(button => {
+      elements.filterButtons.forEach(button => {
         const isActive = button.dataset.filter === activeFilter;
         button.classList.toggle("active", isActive);
         button.setAttribute("aria-pressed", String(isActive));
@@ -2107,8 +1772,9 @@
     }
 
     function applyFilters() {
-      const cleanSearch = cleanLimitedText(searchInput.value, "", 80);
-      if (searchInput.value !== cleanSearch) searchInput.value = cleanSearch;
+      if (!elements.searchInput) return;
+      const cleanSearch = cleanLimitedText(elements.searchInput.value, "", 80);
+      if (elements.searchInput.value !== cleanSearch) elements.searchInput.value = cleanSearch;
       const query = normalize(cleanSearch).trim();
       const tokens = query ? query.split(" ").filter(Boolean).slice(0, 8) : [];
 
@@ -2121,234 +1787,32 @@
 
       renderFeatured(filtered);
       updateFullCatalogueLink();
+      updateVaultKpis();
     }
 
-    function setupVault() {
-      const VAULT_CODE_HASH = "b3f188b20f0b05d2df1c520d322cceceec0ccb81460ecce297e7ca7bca3a3a04";
-      const MAX_VAULT_ATTEMPTS = 5;
-      const VAULT_TTL_MS = 20 * 60 * 1000;
-      let vaultExpiryTimer = null;
-      let vaultProgressTimer = null;
-
-      async function sha256(value) {
-        if (!window.crypto || !window.crypto.subtle) return "";
-        const encoded = new TextEncoder().encode(value);
-        const buffer = await window.crypto.subtle.digest("SHA-256", encoded);
-        return Array.from(new Uint8Array(buffer))
-          .map(byte => byte.toString(16).padStart(2, "0"))
-          .join("");
-      }
-
-      function isVaultSessionValid() {
-        const unlocked = sessionStorage.getItem("pivotdorVaultUnlocked") === "true";
-        const unlockedAt = Number(sessionStorage.getItem("pivotdorVaultUnlockedAt") || "0");
-        return unlocked && unlockedAt > 0 && Date.now() - unlockedAt < VAULT_TTL_MS;
-      }
-
-      function getVaultRemainingMs() {
-        const unlockedAt = Number(sessionStorage.getItem("pivotdorVaultUnlockedAt") || "0");
-        if (!unlockedAt) return 0;
-        return Math.max(0, VAULT_TTL_MS - (Date.now() - unlockedAt));
-      }
-
-      function updateVaultSessionNote() {
-        const remainingMs = getVaultRemainingMs();
-        const remainingMinutes = Math.ceil(remainingMs / 60000);
-        const percent = Math.max(0, Math.min(100, Math.round((remainingMs / VAULT_TTL_MS) * 100)));
-
-        if (vaultSessionNote) {
-          vaultSessionNote.textContent = remainingMinutes > 0
-            ? `Session interne active · expiration dans environ ${remainingMinutes} min.`
-            : "Session interne expirée.";
-        }
-
-        if (vaultSessionProgress) {
-          vaultSessionProgress.style.setProperty("--vault-progress", `${percent}%`);
-        }
-      }
-
-      function scheduleVaultAutoLock() {
-        window.clearTimeout(vaultExpiryTimer);
-        window.clearInterval(vaultProgressTimer);
-        const remaining = getVaultRemainingMs();
-        updateVaultSessionNote();
-        if (remaining <= 0) return;
-
-        vaultProgressTimer = window.setInterval(updateVaultSessionNote, 30000);
-        vaultExpiryTimer = window.setTimeout(() => {
-          lockVault();
-          if (vaultStatus) vaultStatus.textContent = "Session expirée. Entre le code à nouveau.";
-        }, remaining + 250);
-      }
-
-      function setVaultOpen(isOpen) {
-        if (!vaultPanel || !vaultToggle) return;
-        vaultPanel.classList.toggle("open", isOpen);
-        vaultPanel.setAttribute("aria-hidden", String(!isOpen));
-        vaultToggle.setAttribute("aria-expanded", String(isOpen));
-
-        if (isOpen) {
-          vaultPanel.focus({ preventScroll: true });
-          if (vaultCode && !vaultDashboard.classList.contains("unlocked")) {
-            setTimeout(() => vaultCode.focus(), 50);
-          }
-        } else {
-          vaultToggle.focus({ preventScroll: true });
-        }
-      }
-
-      function getVaultAttempts() {
-        return Number(sessionStorage.getItem("pivotdorVaultAttempts") || "0");
-      }
-
-      function setVaultAttempts(value) {
-        sessionStorage.setItem("pivotdorVaultAttempts", String(value));
-      }
-
-      function updateVaultAttemptState() {
-        if (!vaultForm || !vaultCode) return;
-        const attempts = getVaultAttempts();
-        const isLocked = attempts >= MAX_VAULT_ATTEMPTS;
-        vaultForm.classList.toggle("locked", isLocked);
-        vaultCode.disabled = isLocked;
-        const submitButton = vaultForm.querySelector('button[type="submit"]');
-        if (submitButton) submitButton.disabled = isLocked;
-        if (isLocked && vaultStatus) {
-          vaultStatus.textContent = "Trop d’essais. Ferme l’onglet ou reverrouille pour recommencer.";
-        }
-      }
-
-      async function unlockVault() {
-        if (!vaultCode || !vaultDashboard || !vaultStatus) return;
-        updateVaultAttemptState();
-        if (vaultCode.disabled) return;
-
-        const enteredCode = vaultCode.value.trim();
-        const enteredHash = await sha256(enteredCode);
-
-        if (!enteredHash || enteredHash !== VAULT_CODE_HASH) {
-          const attempts = getVaultAttempts() + 1;
-          setVaultAttempts(attempts);
-          const remaining = Math.max(0, MAX_VAULT_ATTEMPTS - attempts);
-          vaultStatus.textContent = remaining > 0
-            ? `Code incorrect. ${remaining} essai${remaining > 1 ? "s" : ""} restant${remaining > 1 ? "s" : ""}.`
-            : "Trop d’essais. Accès verrouillé pour cette session.";
-          vaultCode.select();
-          updateVaultAttemptState();
-          return;
-        }
-
-        sessionStorage.removeItem("pivotdorVaultAttempts");
-        sessionStorage.setItem("pivotdorVaultUnlocked", "true");
-        sessionStorage.setItem("pivotdorVaultUnlockedAt", String(Date.now()));
-        vaultDashboard.classList.add("unlocked");
-        vaultForm.style.display = "none";
-        vaultStatus.textContent = "";
-        scheduleVaultAutoLock();
-      }
-
-      function lockVault() {
-        if (!vaultDashboard || !vaultForm || !vaultCode) return;
-        vaultDashboard.classList.remove("unlocked");
-        vaultForm.style.display = "grid";
-        vaultForm.classList.remove("locked");
-        vaultCode.disabled = false;
-        vaultCode.value = "";
-        if (vaultStatus) vaultStatus.textContent = "";
-        const submitButton = vaultForm.querySelector('button[type="submit"]');
-        if (submitButton) submitButton.disabled = false;
-        sessionStorage.removeItem("pivotdorVaultUnlocked");
-        sessionStorage.removeItem("pivotdorVaultUnlockedAt");
-        sessionStorage.removeItem("pivotdorVaultAttempts");
-        window.clearTimeout(vaultExpiryTimer);
-        window.clearInterval(vaultProgressTimer);
-        if (vaultSessionNote) vaultSessionNote.textContent = "Session interne verrouillée.";
-        if (vaultSessionProgress) vaultSessionProgress.style.setProperty("--vault-progress", "0%");
-        setVaultOpen(false);
-      }
-
-      if (isVaultSessionValid()) {
-        vaultDashboard.classList.add("unlocked");
-        vaultForm.style.display = "none";
-        scheduleVaultAutoLock();
-      } else {
-        sessionStorage.removeItem("pivotdorVaultUnlocked");
-        sessionStorage.removeItem("pivotdorVaultUnlockedAt");
-      }
-
-      updateVaultAttemptState();
-
-      if (vaultToggle) {
-        vaultToggle.addEventListener("click", () => {
-          const isOpen = vaultPanel.classList.contains("open");
-          if (!isOpen && vaultDashboard && vaultDashboard.classList.contains("unlocked") && !isVaultSessionValid()) {
-            lockVault();
-            setVaultOpen(true);
-            if (vaultStatus) vaultStatus.textContent = "Session expirée. Entre le code à nouveau.";
-            return;
-          }
-          setVaultOpen(!isOpen);
-        });
-      }
-
-      if (vaultClose) {
-        vaultClose.addEventListener("click", () => setVaultOpen(false));
-      }
-
-      if (vaultForm) {
-        vaultForm.addEventListener("submit", async event => {
-          event.preventDefault();
-          await unlockVault();
-        });
-      }
-
-      if (vaultLockAgain) {
-        vaultLockAgain.addEventListener("click", lockVault);
-      }
-
-      document.addEventListener("keydown", event => {
-        if (event.key === "Escape" && vaultPanel && vaultPanel.classList.contains("open")) {
-          setVaultOpen(false);
-        }
-      });
-
-      document.addEventListener("click", event => {
-        if (!vaultPanel || !vaultPanel.classList.contains("open")) return;
-        const lockWrapper = document.querySelector(".dashboard-lock");
-        if (lockWrapper && !lockWrapper.contains(event.target)) {
-          setVaultOpen(false);
-        }
-      });
-
-      if (vaultPanel) {
-        vaultPanel.addEventListener("keydown", event => {
-          if (event.key !== "Tab" || !vaultPanel.classList.contains("open")) return;
-          const focusable = Array.from(vaultPanel.querySelectorAll('a[href], button:not([disabled]), input:not([disabled]), summary, [tabindex]:not([tabindex="-1"])'));
-          if (focusable.length === 0) return;
-          const first = focusable[0];
-          const last = focusable[focusable.length - 1];
-          if (event.shiftKey && document.activeElement === first) {
-            event.preventDefault();
-            last.focus();
-          } else if (!event.shiftKey && document.activeElement === last) {
-            event.preventDefault();
-            first.focus();
-          }
-        });
+    function readJsonFromStorage(key, fallback) {
+      try {
+        const value = localStorage.getItem(key);
+        return value ? JSON.parse(value) : fallback;
+      } catch (error) {
+        return fallback;
       }
     }
 
-    const LOCAL_METRICS_KEY = "pivotdorDashboardLocalMetrics";
-    const LOCAL_BACKUPS_KEY = "pivotdorDashboardSnapshots";
-    const LOCAL_ACTIVITY_KEY = "pivotdorDashboardActivity";
-    const LOCAL_TRACKING_KEY = "pivotdorDashboardTrackingEnabled";
+    function writeJsonToStorage(key, value) {
+      try {
+        localStorage.setItem(key, JSON.stringify(value));
+      } catch (error) {
+        console.warn("Écriture locale impossible.", error);
+      }
+    }
+
+    function isLocalTrackingEnabled() {
+      return localStorage.getItem(LOCAL_TRACKING_KEY) !== "false";
+    }
 
     function readLocalMetrics() {
-      try {
-        return JSON.parse(localStorage.getItem(LOCAL_METRICS_KEY) || "{}");
-      } catch (error) {
-        return {};
-      }
+      return readJsonFromStorage(LOCAL_METRICS_KEY, {});
     }
 
     function writeLocalMetrics(metrics) {
@@ -2360,10 +1824,6 @@
       }
     }
 
-    function isLocalTrackingEnabled() {
-      return localStorage.getItem(LOCAL_TRACKING_KEY) !== "false";
-    }
-
     function incrementLocalMetric(key, amount = 1) {
       if (!isLocalTrackingEnabled()) return;
       const metrics = readLocalMetrics();
@@ -2373,40 +1833,29 @@
     }
 
     function readSnapshotCount() {
-      try {
-        const snapshots = JSON.parse(localStorage.getItem(LOCAL_BACKUPS_KEY) || "[]");
-        return Array.isArray(snapshots) ? snapshots.length : 0;
-      } catch (error) {
-        return 0;
-      }
+      const snapshots = readJsonFromStorage(LOCAL_BACKUPS_KEY, []);
+      return Array.isArray(snapshots) ? snapshots.length : 0;
     }
 
     function readActivityLog() {
-      try {
-        const log = JSON.parse(localStorage.getItem(LOCAL_ACTIVITY_KEY) || "[]");
-        return Array.isArray(log) ? log : [];
-      } catch (error) {
-        return [];
-      }
+      const log = readJsonFromStorage(LOCAL_ACTIVITY_KEY, []);
+      return Array.isArray(log) ? log : [];
     }
 
     function recordActivity(label) {
-      try {
-        const log = readActivityLog().slice(-14);
-        log.push({ label: String(label || "Signal local").slice(0, 80), at: new Date().toISOString() });
-        localStorage.setItem(LOCAL_ACTIVITY_KEY, JSON.stringify(log));
-      } catch (error) {
-        console.warn("Journal local non sauvegardé.", error);
-      }
+      if (!isLocalTrackingEnabled()) return;
+      const log = readActivityLog().slice(-14);
+      log.push({ label: String(label || "Signal local").slice(0, 80), at: new Date().toISOString() });
+      writeJsonToStorage(LOCAL_ACTIVITY_KEY, log);
     }
 
     const dashboardSignals = [
-      { title: "Utilise l’IA pour sauver 3 heures par semaine", views: 420, clicks: 86, trainingClicks: 54, comments: 12, backups: 5, attributedSales: 0, demand: 92, crm: 18, idea: true },
-      { title: "Organise ta semaine en 30 minutes", views: 310, clicks: 58, trainingClicks: 33, comments: 9, backups: 4, attributedSales: 0, demand: 81, crm: 13, idea: true },
-      { title: "Trouve une idée de produit digital rentable", views: 280, clicks: 64, trainingClicks: 29, comments: 15, backups: 6, attributedSales: 0, demand: 88, crm: 16, idea: true },
-      { title: "Structure ton budget simple", views: 240, clicks: 41, trainingClicks: 22, comments: 7, backups: 3, attributedSales: 0, demand: 74, crm: 10, idea: true },
-      { title: "Crée ton premier prompt vraiment utile", views: 220, clicks: 39, trainingClicks: 18, comments: 6, backups: 3, attributedSales: 0, demand: 72, crm: 8, idea: true },
-      { title: "Écris une page de vente simple", views: 205, clicks: 46, trainingClicks: 21, comments: 8, backups: 4, attributedSales: 0, demand: 78, crm: 12, idea: true }
+      { title: "Utilise l’IA pour sauver 3 heures par semaine", views: 420, clicks: 86, trainingClicks: 54, comments: 12, backups: 5, attributedSales: 0, demand: 92, crm: 18 },
+      { title: "Organise ta semaine en 30 minutes", views: 310, clicks: 58, trainingClicks: 33, comments: 9, backups: 4, attributedSales: 0, demand: 81, crm: 13 },
+      { title: "Trouve une idée de produit digital rentable", views: 280, clicks: 64, trainingClicks: 29, comments: 15, backups: 6, attributedSales: 0, demand: 88, crm: 16 },
+      { title: "Structure ton budget simple", views: 240, clicks: 41, trainingClicks: 22, comments: 7, backups: 3, attributedSales: 0, demand: 74, crm: 10 },
+      { title: "Crée ton premier prompt vraiment utile", views: 220, clicks: 39, trainingClicks: 18, comments: 6, backups: 3, attributedSales: 0, demand: 72, crm: 8 },
+      { title: "Écris une page de vente simple", views: 205, clicks: 46, trainingClicks: 21, comments: 8, backups: 4, attributedSales: 0, demand: 78, crm: 12 }
     ];
 
     function getSignalForFormation(item, index) {
@@ -2422,8 +1871,7 @@
         backups: 1,
         attributedSales: 0,
         demand: Math.max(35, 70 - index * 4),
-        crm: 4 + index,
-        idea: true
+        crm: 4 + index
       };
 
       const titleKey = normalize(item.title).replace(/[^a-z0-9]+/g, "-").replace(/^-|-$/g, "");
@@ -2440,8 +1888,8 @@
 
     function getStatusLabel(status) {
       const value = normalize(status);
-      if (value.includes("prete")) return "Publié";
-      if (value.includes("bientot")) return "À améliorer";
+      if (value.includes("prete") || value.includes("publiee")) return "Publié";
+      if (value.includes("bientot") || value.includes("cours")) return "À améliorer";
       return "À créer";
     }
 
@@ -2449,12 +1897,6 @@
       if (score >= 85) return "Vert";
       if (score >= 65) return "Jaune";
       return "Rouge";
-    }
-
-    function getReadyClass(score) {
-      if (score >= 85) return "ok";
-      if (score >= 65) return "warn";
-      return "no";
     }
 
     function buildDashboardRows() {
@@ -2468,8 +1910,7 @@
           (quality >= 85 ? 25 : quality * 0.22) +
           (rentability >= 75 ? 20 : rentability * 0.18) +
           (statusPriority(item.status) >= 3 ? 15 : statusPriority(item.status) * 4) +
-          (hasSaleProof ? 15 : 0) +
-          (hasSaleProof ? 10 : 0) +
+          (hasSaleProof ? 25 : 0) +
           15
         );
 
@@ -2483,7 +1924,6 @@
           priority,
           readyToSell,
           readyLabel: getReadyLabel(readyToSell),
-          readyClass: getReadyClass(readyToSell),
           views: signal.views,
           clicks: signal.clicks,
           trainingClicks: signal.trainingClicks,
@@ -2511,9 +1951,20 @@
       return Math.round(sumRows(rows, key) / rows.length);
     }
 
+    function setText(id, value) {
+      const el = elements[id] || document.getElementById(id);
+      if (el) el.textContent = String(value);
+    }
+
+    function setHTML(id, value) {
+      const el = elements[id] || document.getElementById(id);
+      if (el) el.innerHTML = value;
+    }
+
     function renderVaultBar(label, value, max = 100) {
       const safeValue = Math.max(0, Number(value || 0));
-      const percent = Math.max(0, Math.min(100, Math.round((safeValue / max) * 100)));
+      const safeMax = Math.max(1, Number(max || 100));
+      const percent = Math.max(0, Math.min(100, Math.round((safeValue / safeMax) * 100)));
       return `
         <div class="vault-bar-row">
           <div class="vault-bar-label"><span>${escapeHTML(label)}</span><strong>${safeValue}</strong></div>
@@ -2585,15 +2036,17 @@
       const totalDemand = rows.filter(row => row.demand >= 75).length;
       const totalCrm = sumRows(rows, "crm");
       const avgPriority = averageRows(rows, "priority");
+      const averageReadyToSell = averageRows(rows, "readyToSell");
+      const snapshotCount = readSnapshotCount();
       const clickRate = totalViews > 0 ? Math.round((totalClicks / totalViews) * 100) : 0;
       const trainingRate = totalClicks > 0 ? Math.round((totalTrainingClicks / totalClicks) * 100) : 0;
-      const dataHealth = Math.round(((published > 0 ? 25 : 0) + (rows.length > 0 ? 25 : 0) + (totalClicks > 0 ? 25 : 0) + (readSnapshotCount() > 0 ? 25 : 0)));
+      const dataHealth = Math.round((published > 0 ? 25 : 0) + (rows.length > 0 ? 25 : 0) + (totalClicks > 0 ? 25 : 0) + (snapshotCount > 0 ? 25 : 0));
       const conversionScore = Math.max(0, Math.min(100, Math.round((clickRate * 0.35) + (trainingRate * 0.35) + (avgPriority * 0.3))));
       const rankedRows = [...rows].sort((a, b) => (b.priority + b.demand + b.clicks) - (a.priority + a.demand + a.clicks));
       const opportunity = rankedRows[0];
       const topThree = rankedRows.slice(0, 3);
+      const bestDemand = [...rows].sort((a, b) => b.demand - a.demand).slice(0, 5);
       const phaseState = getPhaseState(rows, totalClicks, totalSales, totalTrainingClicks);
-      const snapshotCount = readSnapshotCount();
       const criticalAlerts = [
         published === 0,
         totalSales === 0,
@@ -2605,275 +2058,215 @@
       const maturityLabel = getMaturityLabel(totalSales, published, totalClicks, snapshotCount);
       const riskItems = buildRiskItems({ published, totalSales, totalClicks, dataHealth, avgPriority, snapshotCount });
       const todayActions = buildTodayActions({ totalSales, published, totalClicks, snapshotCount, opportunity });
-      const averageReadyToSell = averageRows(rows, "readyToSell");
       const activityLog = readActivityLog();
       const lastActivity = activityLog.length ? activityLog[activityLog.length - 1] : null;
-      const bestDemand = [...rows].sort((a, b) => b.demand - a.demand).slice(0, 5);
 
-      if (vaultSalesKpi) vaultSalesKpi.textContent = `${totalSales} vente${totalSales > 1 ? "s" : ""}`;
-      if (vaultFeaturedKpi) vaultFeaturedKpi.textContent = String(rows.length);
-      if (vaultCategoriesKpi) vaultCategoriesKpi.textContent = String(categories.length);
-      if (vaultCapacityKpi) vaultCapacityKpi.textContent = "400";
-      if (vaultPriorityKpi) vaultPriorityKpi.textContent = `${avgPriority} / 100`;
-      if (vaultIdeasKpi) vaultIdeasKpi.textContent = String(rows.length);
-      if (vaultPublishedKpi) vaultPublishedKpi.textContent = String(published);
-      if (vaultCreateKpi) vaultCreateKpi.textContent = String(toCreate);
-      if (vaultImproveKpi) vaultImproveKpi.textContent = String(toImprove);
-      if (vaultViewsKpi) vaultViewsKpi.textContent = String(totalViews);
-      if (vaultClicksKpi) vaultClicksKpi.textContent = String(totalClicks);
-      if (vaultTrainingClicksKpi) vaultTrainingClicksKpi.textContent = String(totalTrainingClicks);
-      if (vaultCommentsKpi) vaultCommentsKpi.textContent = String(totalComments);
-      if (vaultBackupsKpi) vaultBackupsKpi.textContent = String(totalBackups);
-      if (vaultDemandKpi) vaultDemandKpi.textContent = String(totalDemand);
-      if (vaultCrmKpi) vaultCrmKpi.textContent = String(totalCrm);
-      if (vaultClickRateKpi) vaultClickRateKpi.textContent = `${clickRate} %`;
-      if (vaultTrainingRateKpi) vaultTrainingRateKpi.textContent = `${trainingRate} %`;
-      if (vaultDataHealthKpi) vaultDataHealthKpi.textContent = `${dataHealth} %`;
-      if (vaultSnapshotCountKpi) vaultSnapshotCountKpi.textContent = String(readSnapshotCount());
-      if (vaultLastSignalKpi) vaultLastSignalKpi.textContent = lastActivity ? lastActivity.label : "Aucun";
-      if (vaultConversionScoreKpi) vaultConversionScoreKpi.textContent = `${conversionScore} / 100`;
-      if (vaultOpportunityKpi) vaultOpportunityKpi.textContent = opportunity ? opportunity.title.slice(0, 28) : "Aucune";
-      if (vaultTrackingKpi) vaultTrackingKpi.textContent = isLocalTrackingEnabled() ? "Actif" : "Pause";
-      if (vaultRiskScoreKpi) vaultRiskScoreKpi.textContent = `${riskScore} / 100`;
-      if (vaultMaturityKpi) vaultMaturityKpi.textContent = maturityLabel;
-      if (vaultRevenue7d) vaultRevenue7d.textContent = `${totalSales} vente${totalSales > 1 ? "s" : ""}`;
-      if (vaultStripeClickRate) vaultStripeClickRate.textContent = `${trainingRate} %`;
-      if (vaultTopThree) vaultTopThree.textContent = topThree.length ? topThree.map(row => row.title.split(" ").slice(0, 3).join(" ")).join(" · ") : "Aucune";
-      if (vaultCriticalAlerts) vaultCriticalAlerts.textContent = String(criticalAlerts);
-      if (vaultNextBestAction) vaultNextBestAction.textContent = totalSales > 0 ? "Doubler le gagnant" : "Vente test complète";
-      if (vaultOneAction) {
-        vaultOneAction.innerHTML = `<strong>Action rentable maintenant :</strong> ${totalSales > 0 ? "doubler la formation qui vend et créer un bundle simple." : "terminer la formation pilote + tester Stripe + tester l’accès + exporter une preuve."}`;
-      }
-      if (vaultIntelligenceNote) {
-        vaultIntelligenceNote.classList.toggle("warning", dataHealth < 50);
-        vaultIntelligenceNote.innerHTML = dataHealth >= 50
+      setText("vaultSalesKpi", `${totalSales} vente${totalSales > 1 ? "s" : ""}`);
+      setText("vaultFeaturedKpi", rows.length);
+      setText("vaultCategoriesKpi", categories.length);
+      setText("vaultCapacityKpi", "400");
+      setText("vaultPriorityKpi", `${avgPriority} / 100`);
+      setText("vaultIdeasKpi", rows.length);
+      setText("vaultPublishedKpi", published);
+      setText("vaultCreateKpi", toCreate);
+      setText("vaultImproveKpi", toImprove);
+      setText("vaultViewsKpi", totalViews);
+      setText("vaultClicksKpi", totalClicks);
+      setText("vaultTrainingClicksKpi", totalTrainingClicks);
+      setText("vaultCommentsKpi", totalComments);
+      setText("vaultBackupsKpi", totalBackups);
+      setText("vaultDemandKpi", totalDemand);
+      setText("vaultCrmKpi", totalCrm);
+      setText("vaultClickRateKpi", `${clickRate} %`);
+      setText("vaultTrainingRateKpi", `${trainingRate} %`);
+      setText("vaultDataHealthKpi", `${dataHealth} %`);
+      setText("vaultSnapshotCountKpi", snapshotCount);
+      setText("vaultLastSignalKpi", lastActivity ? lastActivity.label : "Aucun");
+      setText("vaultConversionScoreKpi", `${conversionScore} / 100`);
+      setText("vaultOpportunityKpi", opportunity ? opportunity.title.slice(0, 28) : "Aucune");
+      setText("vaultTrackingKpi", isLocalTrackingEnabled() ? "Actif" : "Pause");
+      setText("vaultRiskScoreKpi", `${riskScore} / 100`);
+      setText("vaultMaturityKpi", maturityLabel);
+      setText("vaultRevenue7d", `${totalSales} vente${totalSales > 1 ? "s" : ""}`);
+      setText("vaultStripeClickRate", `${trainingRate} %`);
+      setText("vaultTopThree", topThree.length ? topThree.map(row => row.title.split(" ").slice(0, 3).join(" ")).join(" · ") : "Aucune");
+      setText("vaultCriticalAlerts", criticalAlerts);
+      setText("vaultNextBestAction", totalSales > 0 ? "Doubler le gagnant" : "Vente test complète");
+
+      setHTML("vaultOneAction", `<strong>Action rentable maintenant :</strong> ${totalSales > 0 ? "doubler la formation qui vend et créer un bundle simple." : "terminer la formation pilote + tester Stripe + tester l’accès + exporter une preuve."}`);
+
+      const intelligence = elements.vaultIntelligenceNote;
+      if (intelligence) {
+        intelligence.classList.toggle("warning", dataHealth < 50);
+        intelligence.innerHTML = dataHealth >= 50
           ? '<span class="vault-pulse"></span>Intelligence locale active : KPI synchronisés avec le catalogue, les clics publics et les snapshots.'
-          : 'Attention : santé des données faible. Exporte un snapshot et valide le catalogue JSON.';
+          : "Attention : santé des données faible. Exporte un snapshot et valide le catalogue JSON.";
       }
 
-      if (vaultProgressGrid) {
-        vaultProgressGrid.innerHTML = [
-          renderVaultBar("Score risque système", riskScore, 100),
-          renderVaultBar("Score prêt à vendre moyen", averageReadyToSell, 100),
-          renderVaultBar("Score conversion local", conversionScore, 100),
-          renderVaultBar("Score priorité moyen", avgPriority, 100),
-          renderVaultBar("Formations publiées", published, Math.max(1, rows.length)),
-          renderVaultBar("Formations à créer", toCreate, Math.max(1, rows.length)),
-          renderVaultBar("Formations à améliorer", toImprove, Math.max(1, rows.length)),
-          renderVaultBar("Clics vers pages formation", totalTrainingClicks, Math.max(100, totalClicks)),
-          renderVaultBar("Demandes fortes", totalDemand, Math.max(1, rows.length))
-        ].join("");
+      setHTML("vaultProgressGrid", [
+        renderVaultBar("Score risque système", riskScore, 100),
+        renderVaultBar("Score prêt à vendre moyen", averageReadyToSell, 100),
+        renderVaultBar("Score conversion local", conversionScore, 100),
+        renderVaultBar("Score priorité moyen", avgPriority, 100),
+        renderVaultBar("Formations publiées", published, Math.max(1, rows.length)),
+        renderVaultBar("Formations à créer", toCreate, Math.max(1, rows.length)),
+        renderVaultBar("Formations à améliorer", toImprove, Math.max(1, rows.length)),
+        renderVaultBar("Clics vers pages formation", totalTrainingClicks, Math.max(100, totalClicks)),
+        renderVaultBar("Demandes fortes", totalDemand, Math.max(1, rows.length))
+      ].join(""));
+
+      setHTML("vaultCrmGrid", [
+        renderVaultBar("Vues", totalViews, Math.max(500, totalViews)),
+        renderVaultBar("Clics", totalClicks, Math.max(100, totalClicks)),
+        renderVaultBar("Commentaires", totalComments, Math.max(30, totalComments)),
+        renderVaultBar("Sauvegardes", totalBackups, Math.max(20, totalBackups)),
+        renderVaultBar("Éléments CRM", totalCrm, Math.max(50, totalCrm)),
+        renderVaultBar("Ventes attribuées", totalSales, Math.max(5, totalSales))
+      ].join(""));
+
+      setHTML("vaultDemandList", bestDemand.map(row => renderVaultBar(row.title, row.demand, 100)).join(""));
+
+      setHTML("vaultFormationTable", rows.map(row => `
+        <tr>
+          <td>${escapeHTML(row.title)}</td>
+          <td>${escapeHTML(row.status)}</td>
+          <td>${row.quality}</td>
+          <td>${row.rentability}</td>
+          <td><strong>${row.priority}</strong></td>
+          <td><strong>${row.readyLabel}</strong> · ${row.readyToSell}</td>
+          <td>${row.views}</td>
+          <td>${row.clicks}</td>
+          <td>${row.attributedSales}</td>
+        </tr>
+      `).join(""));
+
+      setHTML("vaultSmartTags", `
+        <span class="vault-chip"><strong>${published}</strong> publiée(s)</span>
+        <span class="vault-chip"><strong>${toCreate}</strong> à créer</span>
+        <span class="vault-chip"><strong>${toImprove}</strong> à améliorer</span>
+        <span class="vault-chip"><strong>${totalTrainingClicks}</strong> clics formation</span>
+        <span class="vault-chip"><strong>${totalDemand}</strong> fortes demandes</span>
+        <span class="vault-chip"><strong>${clickRate} %</strong> clic / vue</span>
+        <span class="vault-chip"><strong>${dataHealth} %</strong> santé données</span>
+      `);
+
+      setHTML("vaultTodayActions", todayActions.map(action => `<li>${escapeHTML(action)}</li>`).join(""));
+      setHTML("vaultRiskList", riskItems.map(risk => `<li>${escapeHTML(risk)}</li>`).join(""));
+      setHTML("vaultActivityList", activityLog.length
+        ? activityLog.slice(-8).reverse().map(item => `<li>${escapeHTML(item.label)} · ${new Date(item.at).toLocaleString("fr-CA")}</li>`).join("")
+        : "<li>Aucun signal local enregistré pour l’instant.</li>"
+      );
+
+      setHTML("vaultReportList", `
+        <li>Opportunité principale : ${escapeHTML(opportunity ? opportunity.title : "aucune donnée suffisante")}.</li>
+        <li>Score conversion local : ${conversionScore} / 100.</li>
+        <li>Santé des données : ${dataHealth} %. ${dataHealth < 50 ? "Priorité : créer un snapshot et valider le JSON." : "La base est exploitable."}</li>
+        <li>Feu de phase : ${escapeHTML(phaseState.label)}.</li>
+        <li>Prochaine action rentable : ${totalSales > 0 ? "doubler la formation qui vend" : "terminer une vente test complète fiche → Stripe → accès → checklist → support"}.</li>
+        <li>Risque principal : confondre KPI locaux et vraies données serveur. Les chiffres ici restent non sensibles et locaux.</li>
+      `);
+
+      const phaseClass = phaseState.light === "green" ? "green" : phaseState.light === "yellow" ? "yellow" : "";
+      const phaseAlert = elements.vaultPhaseAlert;
+      if (phaseAlert) {
+        phaseAlert.className = `vault-alert ${phaseState.level === "no" ? "warning" : ""}`;
+        phaseAlert.innerHTML = `<span class="vault-light ${phaseClass}">${escapeHTML(phaseState.label)}</span>`;
       }
 
-      if (vaultCrmGrid) {
-        vaultCrmGrid.innerHTML = [
-          renderVaultBar("Vues", totalViews, Math.max(500, totalViews)),
-          renderVaultBar("Clics", totalClicks, Math.max(100, totalClicks)),
-          renderVaultBar("Commentaires", totalComments, Math.max(30, totalComments)),
-          renderVaultBar("Sauvegardes", totalBackups, Math.max(20, totalBackups)),
-          renderVaultBar("Éléments CRM", totalCrm, Math.max(50, totalCrm)),
-          renderVaultBar("Ventes attribuées", totalSales, Math.max(5, totalSales))
-        ].join("");
-      }
+      setHTML("vaultPhaseChecks", [
+        renderCheckItem("1 formation publiée ou prête", published > 0 ? "ok" : "no"),
+        renderCheckItem("Premiers clics mesurés", totalClicks > 0 ? "ok" : "no"),
+        renderCheckItem("Snapshot exporté", snapshotCount > 0 ? "ok" : "warn"),
+        renderCheckItem("Vente test réussie", totalSales > 0 ? "ok" : "no", "Stripe réel requis"),
+        renderCheckItem("Accès après paiement validé", totalSales > 0 ? "warn" : "no", "à confirmer hors GitHub public")
+      ].join(""));
 
-      if (vaultDemandList) {
-        vaultDemandList.innerHTML = bestDemand.map(row => renderVaultBar(row.title, row.demand, 100)).join("");
-      }
+      setHTML("vaultTestBlockers", [
+        renderCheckItem("Lien Stripe absent ou non prouvé", totalSales > 0 ? "ok" : "no", "vente test requise"),
+        renderCheckItem("Page après paiement non testée", totalSales > 0 ? "warn" : "no", "merci.html + accès"),
+        renderCheckItem("Accès non validé", totalSales > 0 ? "warn" : "no", "hors GitHub public"),
+        renderCheckItem("Checklist absente ou non confirmée", rows.length > 0 ? "warn" : "no"),
+        renderCheckItem("Support non prêt ou non testé", "warn", "Hubert + support.html")
+      ].join(""));
 
-      if (vaultFormationTable) {
-        vaultFormationTable.innerHTML = rows.map(row => `
-          <tr>
-            <td>${escapeHTML(row.title)}</td>
-            <td>${escapeHTML(row.status)}</td>
-            <td>${row.quality}</td>
-            <td>${row.rentability}</td>
-            <td><strong>${row.priority}</strong></td>
-            <td><strong>${row.readyLabel}</strong> · ${row.readyToSell}</td>
-            <td>${row.views}</td>
-            <td>${row.clicks}</td>
-            <td>${row.attributedSales}</td>
-          </tr>
-        `).join("");
-      }
+      const best = opportunity || rows[0];
+      setHTML("vaultPublicationGate", [
+        renderCheckItem("Titre + problème précis", best ? "ok" : "no"),
+        renderCheckItem("Note qualité minimale 80 / recommandée 85", best && best.quality >= 85 ? "ok" : best && best.quality >= 80 ? "warn" : "no"),
+        renderCheckItem("Note rentabilité minimale 70 / recommandée 75", best && best.rentability >= 75 ? "ok" : best && best.rentability >= 70 ? "warn" : "no"),
+        renderCheckItem("Lien Stripe testé", totalSales > 0 ? "ok" : "no"),
+        renderCheckItem("Page après paiement + support", totalSales > 0 ? "warn" : "no"),
+        renderCheckItem("Aucun contenu sensible dans GitHub", "ok")
+      ].join(""));
 
-      if (vaultSmartTags) {
-        vaultSmartTags.innerHTML = `
-          <span class="vault-chip"><strong>${published}</strong> publiée(s)</span>
-          <span class="vault-chip"><strong>${toCreate}</strong> à créer</span>
-          <span class="vault-chip"><strong>${toImprove}</strong> à améliorer</span>
-          <span class="vault-chip"><strong>${totalTrainingClicks}</strong> clics formation</span>
-          <span class="vault-chip"><strong>${totalDemand}</strong> fortes demandes</span>
-          <span class="vault-chip"><strong>${clickRate} %</strong> clic / vue</span>
-          <span class="vault-chip"><strong>${dataHealth} %</strong> santé données</span>
-        `;
-      }
+      setHTML("vaultFieldTests", [
+        renderCheckItem("Test mobile", "warn", "à valider sur téléphone réel"),
+        renderCheckItem("Test Stripe", totalSales > 0 ? "ok" : "no", "vente test requise"),
+        renderCheckItem("Test redirection merci.html", totalSales > 0 ? "warn" : "no"),
+        renderCheckItem("Test accès privé", totalSales > 0 ? "warn" : "no", "hors GitHub public"),
+        renderCheckItem("Test SEO + sitemap", "warn", "à refaire après JSON réel"),
+        renderCheckItem("Test support Hubert", "warn", "script accès + compensation")
+      ].join(""));
 
-      if (vaultActionButtons) {
-        vaultActionButtons.innerHTML = `
-          <a class="btn btn-primary" href="formation.html">Améliorer formation prioritaire</a>
-          <a class="btn" href="formations.html#catalogue">Voir catalogue</a>
-          <a class="btn" href="contact.html">Voir demandes</a>
-          <a class="btn" href="support.html">Support accès</a>
-          <a class="btn" href="conditions.html">Vente finale</a>
-          <a class="btn" href="data/formations-index.json">Ouvrir JSON</a>
-          <button class="btn" type="button" id="vaultPrintAudit">Imprimer audit</button>
-          <button class="btn" type="button" id="vaultCopyReport">Copier rapport</button>
-          <button class="btn" type="button" id="vaultExportCsv">Exporter CSV</button>
-          <button class="btn" type="button" id="vaultOpenAllSections">Tout ouvrir</button>
-          <button class="btn" type="button" id="vaultCloseAllSections">Tout fermer</button>
-          <button class="btn" type="button" id="vaultExportSnapshot">Exporter snapshot</button>
-          <button class="btn" type="button" id="vaultClearSnapshots">Effacer snapshots</button>
-          <button class="btn" type="button" id="vaultToggleTracking">Désactiver suivi</button>
-          <button class="btn" type="button" id="vaultResetLocalKpis">Réinitialiser KPI locaux</button>
-        `;
-      }
+      setHTML("vaultNotionGrid", [
+        renderCheckItem("Base Tâches", "warn", "à créer dans Notion"),
+        renderCheckItem("Base Formations / 400 jumeaux", "warn"),
+        renderCheckItem("Base KPI", "warn"),
+        renderCheckItem("Base Décisions", "warn"),
+        renderCheckItem("Base Preuves", snapshotCount > 0 ? "ok" : "warn")
+      ].join(""));
 
-      if (vaultStrategicList) {
-        const top = bestDemand[0];
-        vaultStrategicList.innerHTML = `
-          <li>Priorité 1 : finaliser ou améliorer “${escapeHTML(top ? top.title : "formation prioritaire")}”.</li>
-          <li>Priorité 2 : publier seulement ce qui est prêt, puis connecter Stripe et l’accès.</li>
-          <li>Priorité 3 : surveiller les formations avec beaucoup de clics mais une note qualité sous 85.</li>
-          <li>Priorité 4 : transformer les idées demandées en formations courtes à 5 $, 15 $, 25 $ ou 50 $.</li>
-          <li>Priorité 5 : exporter un snapshot après chaque grosse modification du site.</li>
-        `;
-      }
+      setHTML("vaultBundleGrid", [
+        renderVaultBar("Pack IA + Productivité", rows.filter(row => ["IA", "Productivité"].includes(row.category)).length, Math.max(1, rows.length)),
+        renderVaultBar("Pack Business express", rows.filter(row => row.category === "Business").length, Math.max(1, rows.length)),
+        renderVaultBar("Pack Finances simples", rows.filter(row => row.category === "Finances").length, Math.max(1, rows.length)),
+        renderVaultBar("Potentiel bundle global", Math.min(100, rows.length * 12), 100)
+      ].join(""));
 
-      if (vaultActivityList) {
-        const recentLog = activityLog.slice(-8).reverse();
-        vaultActivityList.innerHTML = recentLog.length
-          ? recentLog.map(item => `<li>${escapeHTML(item.label)} · ${new Date(item.at).toLocaleString("fr-CA")}</li>`).join("")
-          : "<li>Aucun signal local enregistré pour l’instant.</li>";
-      }
+      setHTML("vaultTwinGrid", [
+        renderCheckItem("Identité formation", rows.length > 0 ? "ok" : "no", "titre, catégorie, prix"),
+        renderCheckItem("Production", published > 0 ? "warn" : "no", "checklist/page/mini-kit à confirmer"),
+        renderCheckItem("Vente", totalSales > 0 ? "ok" : "no", "Stripe réel requis"),
+        renderCheckItem("Accès", totalSales > 0 ? "warn" : "no", "solution sécurisée future"),
+        renderCheckItem("Maintenance", "warn", "dates de mise à jour à ajouter au JSON")
+      ].join(""));
 
-      if (vaultReportList) {
-        vaultReportList.innerHTML = `
-          <li>Opportunité principale : ${escapeHTML(opportunity ? opportunity.title : "aucune donnée suffisante")}.</li>
-          <li>Score conversion local : ${conversionScore} / 100.</li>
-          <li>Santé des données : ${dataHealth} %. ${dataHealth < 50 ? "Priorité : créer un snapshot et valider le JSON." : "La base est exploitable."}</li>
-          <li>Feu de phase : ${escapeHTML(phaseState.label)}.</li>
-          <li>Prochaine action rentable : ${totalSales > 0 ? "doubler la formation qui vend" : "terminer une vente test complète fiche → Stripe → accès → checklist → support"}.</li>
-          <li>Risque principal : confondre KPI locaux et vraies données serveur. Les chiffres ici restent non sensibles et locaux.</li>
-        `;
-      }
+      setHTML("vaultAdrienList", `
+        <li>Adrien surveille : ventes, clics Stripe, accès, support et prochaine action.</li>
+        <li>Adrien alerte si : clics sans vente, formation rouge, accès non validé, santé données faible ou snapshot absent.</li>
+        <li>Escalade Olivier : légal, santé, finances, plainte, remboursement complexe, double paiement ou risque réputationnel.</li>
+        <li>Action unique recommandée maintenant : ${escapeHTML(totalSales > 0 ? "doubler la formation qui vend" : "finir la preuve complète de la première formation")}</li>
+      `);
 
-      if (vaultTodayActions) {
-        vaultTodayActions.innerHTML = todayActions.map(action => `<li>${escapeHTML(action)}</li>`).join("");
-      }
+      setHTML("vaultStrategicList", `
+        <li>Priorité 1 : finaliser ou améliorer “${escapeHTML(bestDemand[0] ? bestDemand[0].title : "formation prioritaire" )}”.</li>
+        <li>Priorité 2 : publier seulement ce qui est prêt, puis connecter Stripe et l’accès.</li>
+        <li>Priorité 3 : surveiller les formations avec beaucoup de clics mais une note qualité sous 85.</li>
+        <li>Priorité 4 : transformer les idées demandées en formations courtes à 5 $, 15 $, 25 $ ou 50 $.</li>
+        <li>Priorité 5 : exporter un snapshot après chaque grosse modification du site.</li>
+      `);
 
-      if (vaultRiskList) {
-        vaultRiskList.innerHTML = riskItems.map(risk => `<li>${escapeHTML(risk)}</li>`).join("");
-      }
+      setHTML("vaultSplitCodeGrid", [
+        renderCheckItem("JS dashboard séparé", "warn", "js/dashboard-cache.js à créer plus tard"),
+        renderCheckItem("Données dashboard séparées", "warn", "data/dashboard-formations.json"),
+        renderCheckItem("CSS dashboard séparé", "warn", "css/dashboard-cache.css"),
+        renderCheckItem("index.html allégé", "warn", "après validation de la vente test"),
+        renderCheckItem("Aucune donnée sensible", "ok", "règle déjà appliquée")
+      ].join(""));
 
-      if (vaultPhaseAlert) {
-        vaultPhaseAlert.className = `vault-alert ${phaseState.level === "no" ? "warning" : ""}`;
-        vaultPhaseAlert.innerHTML = `<span class="vault-light ${phaseState.light === "green" ? "green" : phaseState.light === "yellow" ? "yellow" : ""}">${escapeHTML(phaseState.label)}</span>`;
-      }
+      const metrics = readLocalMetrics();
+      const metricDate = metrics.updatedAt ? new Date(metrics.updatedAt).toLocaleString("fr-CA") : "aucune interaction locale";
+      setText("vaultDashboardUpdated", `Synchronisé localement · ${new Date().toLocaleString("fr-CA")} · Dernier signal : ${metricDate}`);
+    }
 
-      if (vaultPhaseChecks) {
-        vaultPhaseChecks.innerHTML = [
-          renderCheckItem("1 formation publiée ou prête", published > 0 ? "ok" : "no"),
-          renderCheckItem("Premiers clics mesurés", totalClicks > 0 ? "ok" : "no"),
-          renderCheckItem("Snapshot exporté", readSnapshotCount() > 0 ? "ok" : "warn"),
-          renderCheckItem("Vente test réussie", totalSales > 0 ? "ok" : "no", "Stripe réel requis"),
-          renderCheckItem("Accès après paiement validé", totalSales > 0 ? "warn" : "no", "à confirmer hors GitHub public")
-        ].join("");
-      }
-
-      if (vaultTestBlockers) {
-        vaultTestBlockers.innerHTML = [
-          renderCheckItem("Lien Stripe absent ou non prouvé", totalSales > 0 ? "ok" : "no", "vente test requise"),
-          renderCheckItem("Page après paiement non testée", totalSales > 0 ? "warn" : "no", "merci.html + accès"),
-          renderCheckItem("Accès non validé", totalSales > 0 ? "warn" : "no", "hors GitHub public"),
-          renderCheckItem("Checklist absente ou non confirmée", rows.length > 0 ? "warn" : "no"),
-          renderCheckItem("Support non prêt ou non testé", "warn", "Hubert + support.html")
-        ].join("");
-      }
-
-      if (vaultPublicationGate) {
-        const best = opportunity || rows[0];
-        vaultPublicationGate.innerHTML = [
-          renderCheckItem("Titre + problème précis", best ? "ok" : "no"),
-          renderCheckItem("Note qualité minimale 80 / recommandée 85", best && best.quality >= 85 ? "ok" : best && best.quality >= 80 ? "warn" : "no"),
-          renderCheckItem("Note rentabilité minimale 70 / recommandée 75", best && best.rentability >= 75 ? "ok" : best && best.rentability >= 70 ? "warn" : "no"),
-          renderCheckItem("Lien Stripe testé", totalSales > 0 ? "ok" : "no"),
-          renderCheckItem("Page après paiement + support", totalSales > 0 ? "warn" : "no"),
-          renderCheckItem("Aucun contenu sensible dans GitHub", "ok")
-        ].join("");
-      }
-
-      if (vaultFieldTests) {
-        vaultFieldTests.innerHTML = [
-          renderCheckItem("Test mobile", "warn", "à valider sur téléphone réel"),
-          renderCheckItem("Test Stripe", totalSales > 0 ? "ok" : "no", "vente test requise"),
-          renderCheckItem("Test redirection merci.html", totalSales > 0 ? "warn" : "no"),
-          renderCheckItem("Test accès privé", totalSales > 0 ? "warn" : "no", "hors GitHub public"),
-          renderCheckItem("Test SEO + sitemap", "warn", "à refaire après JSON réel"),
-          renderCheckItem("Test support Hubert", "warn", "script accès + compensation")
-        ].join("");
-      }
-
-      if (vaultNotionGrid) {
-        vaultNotionGrid.innerHTML = [
-          renderCheckItem("Base Tâches", "warn", "à créer dans Notion"),
-          renderCheckItem("Base Formations / 400 jumeaux", "warn"),
-          renderCheckItem("Base KPI", "warn"),
-          renderCheckItem("Base Décisions", "warn"),
-          renderCheckItem("Base Preuves", readSnapshotCount() > 0 ? "ok" : "warn")
-        ].join("");
-      }
-
-      if (vaultBundleGrid) {
-        vaultBundleGrid.innerHTML = [
-          renderVaultBar("Pack IA + Productivité", rows.filter(row => ["IA", "Productivité"].includes(row.category)).length, Math.max(1, rows.length)),
-          renderVaultBar("Pack Business express", rows.filter(row => row.category === "Business").length, Math.max(1, rows.length)),
-          renderVaultBar("Pack Finances simples", rows.filter(row => row.category === "Finances").length, Math.max(1, rows.length)),
-          renderVaultBar("Potentiel bundle global", Math.min(100, rows.length * 12), 100)
-        ].join("");
-      }
-
-      if (vaultTwinGrid) {
-        vaultTwinGrid.innerHTML = [
-          renderCheckItem("Identité formation", rows.length > 0 ? "ok" : "no", "titre, catégorie, prix"),
-          renderCheckItem("Production", published > 0 ? "warn" : "no", "checklist/page/mini-kit à confirmer"),
-          renderCheckItem("Vente", totalSales > 0 ? "ok" : "no", "Stripe réel requis"),
-          renderCheckItem("Accès", totalSales > 0 ? "warn" : "no", "solution sécurisée future"),
-          renderCheckItem("Maintenance", "warn", "dates de mise à jour à ajouter au JSON")
-        ].join("");
-      }
-
-      if (vaultSplitCodeGrid) {
-        vaultSplitCodeGrid.innerHTML = [
-          renderCheckItem("JS dashboard séparé", "warn", "js/dashboard-cache.js à créer plus tard"),
-          renderCheckItem("Données dashboard séparées", "warn", "data/dashboard-formations.json"),
-          renderCheckItem("CSS dashboard séparé", "warn", "css/dashboard-cache.css"),
-          renderCheckItem("index.html allégé", "warn", "après validation de la vente test"),
-          renderCheckItem("Aucune donnée sensible", "ok", "règle déjà appliquée")
-        ].join("");
-      }
-
-      if (vaultAdrienList) {
-        vaultAdrienList.innerHTML = `
-          <li>Adrien surveille : ventes, clics Stripe, accès, support et prochaine action.</li>
-          <li>Adrien alerte si : clics sans vente, formation rouge, accès non validé, santé données faible ou snapshot absent.</li>
-          <li>Escalade Olivier : légal, santé, finances, plainte, remboursement complexe, double paiement ou risque réputationnel.</li>
-          <li>Action unique recommandée maintenant : ${escapeHTML(totalSales > 0 ? "doubler la formation qui vend" : "finir la preuve complète de la première formation")}</li>
-        `;
-      }
-
-      if (vaultDashboardUpdated) {
-        const metrics = readLocalMetrics();
-        const metricDate = metrics.updatedAt ? new Date(metrics.updatedAt).toLocaleString("fr-CA") : "aucune interaction locale";
-        vaultDashboardUpdated.textContent = `Synchronisé localement · ${new Date().toLocaleString("fr-CA")} · Dernier signal : ${metricDate}`;
-      }
-
-      bindVaultDashboardActions(rows);
+    function updateVaultKpis() {
+      renderDashboardIntelligence(buildDashboardRows());
     }
 
     function exportVaultSnapshot(rows) {
       const snapshot = {
         generatedAt: new Date().toISOString(),
-        version: "index-dashboard-v2",
+        version: "index-dashboard-v3-fixed",
         source: "GitHub Pages · données publiques et signaux locaux non sensibles",
         totals: {
           formations: rows.length,
@@ -2888,124 +2281,313 @@
         rows
       };
 
-      try {
-        const existing = JSON.parse(localStorage.getItem(LOCAL_BACKUPS_KEY) || "[]");
-        const snapshots = Array.isArray(existing) ? existing.slice(-19) : [];
-        snapshots.push({ generatedAt: snapshot.generatedAt, totals: snapshot.totals });
-        localStorage.setItem(LOCAL_BACKUPS_KEY, JSON.stringify(snapshots));
-      } catch (error) {
-        console.warn("Snapshot local non sauvegardé.", error);
-      }
+      const snapshots = readJsonFromStorage(LOCAL_BACKUPS_KEY, []);
+      const nextSnapshots = Array.isArray(snapshots) ? snapshots.slice(-19) : [];
+      nextSnapshots.push({ generatedAt: snapshot.generatedAt, totals: snapshot.totals });
+      writeJsonToStorage(LOCAL_BACKUPS_KEY, nextSnapshots);
 
-      const blob = new Blob([JSON.stringify(snapshot, null, 2)], { type: "application/json" });
-      const url = URL.createObjectURL(blob);
-      const link = document.createElement("a");
-      link.href = url;
-      link.download = `pivotdor-dashboard-snapshot-${new Date().toISOString().slice(0, 10)}.json`;
-      document.body.appendChild(link);
-      link.click();
-      link.remove();
-      URL.revokeObjectURL(url);
+      downloadTextFile(`pivotdor-dashboard-snapshot-${new Date().toISOString().slice(0, 10)}.json`, JSON.stringify(snapshot, null, 2), "application/json");
       recordActivity("Snapshot exporté");
       updateVaultKpis();
     }
 
-    function bindVaultDashboardActions(rows) {
-      const printButton = document.getElementById("vaultPrintAudit");
-      const exportButton = document.getElementById("vaultExportSnapshot");
-      const csvButton = document.getElementById("vaultExportCsv");
-      const openAllButton = document.getElementById("vaultOpenAllSections");
-      const closeAllButton = document.getElementById("vaultCloseAllSections");
-      const copyButton = document.getElementById("vaultCopyReport");
-      const clearSnapshotsButton = document.getElementById("vaultClearSnapshots");
-      const trackingButton = document.getElementById("vaultToggleTracking");
-      const resetButton = document.getElementById("vaultResetLocalKpis");
+    function downloadTextFile(filename, content, type) {
+      const blob = new Blob([content], { type });
+      const url = URL.createObjectURL(blob);
+      const link = document.createElement("a");
+      link.href = url;
+      link.download = filename;
+      document.body.appendChild(link);
+      link.click();
+      link.remove();
+      URL.revokeObjectURL(url);
+    }
 
-      if (printButton) printButton.onclick = () => window.print();
-      if (exportButton) exportButton.onclick = () => exportVaultSnapshot(rows);
-      if (csvButton) {
-        csvButton.onclick = () => {
-          const header = "formation,statut,qualite,rentabilite,priorite,pret_a_vendre,vues,clics,ventes";
-          const csv = [header, ...rows.map(row => [row.title, row.status, row.quality, row.rentability, row.priority, row.readyToSell, row.views, row.clicks, row.attributedSales].map(value => `"${String(value).replace(/"/g, '""')}"`).join(","))].join("
-");
-          const blob = new Blob([csv], { type: "text/csv;charset=utf-8" });
-          const url = URL.createObjectURL(blob);
-          const link = document.createElement("a");
-          link.href = url;
-          link.download = `pivotdor-dashboard-${new Date().toISOString().slice(0, 10)}.csv`;
-          document.body.appendChild(link);
-          link.click();
-          link.remove();
-          URL.revokeObjectURL(url);
-          recordActivity("CSV exporté");
-          updateVaultKpis();
-        };
+    function copyText(text) {
+      if (navigator.clipboard && window.isSecureContext) {
+        return navigator.clipboard.writeText(text);
       }
-      if (openAllButton) openAllButton.onclick = () => vaultDashboard.querySelectorAll("details").forEach(detail => detail.open = true);
-      if (closeAllButton) closeAllButton.onclick = () => vaultDashboard.querySelectorAll("details").forEach(detail => detail.open = false);
-      if (copyButton) {
-        copyButton.onclick = async () => {
-          const reportText = rows.map(row => `${row.title} | statut: ${row.status} | prêt: ${row.readyLabel} ${row.readyToSell}/100 | priorité: ${row.priority} | qualité: ${row.quality} | rentabilité: ${row.rentability}`).join("
-");
-          try {
-            await navigator.clipboard.writeText(reportText);
-            recordActivity("Rapport copié");
-          } catch (error) {
-            window.prompt("Copie le rapport :", reportText);
-          }
-          updateVaultKpis();
-        };
-      }
-      if (clearSnapshotsButton) {
-        clearSnapshotsButton.onclick = () => {
-          const confirmed = window.confirm("Effacer tous les snapshots locaux de ce navigateur?");
-          if (!confirmed) return;
-          localStorage.removeItem(LOCAL_BACKUPS_KEY);
-          recordActivity("Snapshots locaux effacés");
-          updateVaultKpis();
-        };
-      }
-      if (trackingButton) {
-        trackingButton.textContent = isLocalTrackingEnabled() ? "Désactiver suivi" : "Activer suivi";
-        trackingButton.onclick = () => {
-          const nextValue = !isLocalTrackingEnabled();
-          localStorage.setItem(LOCAL_TRACKING_KEY, String(nextValue));
-          recordActivity(nextValue ? "Suivi local activé" : "Suivi local désactivé");
-          updateVaultKpis();
-        };
-      }
-      if (resetButton) {
-        resetButton.onclick = () => {
-          const confirmed = window.confirm("Réinitialiser les KPI locaux non sensibles de ce navigateur?");
-          if (!confirmed) return;
-          localStorage.removeItem(LOCAL_METRICS_KEY);
-          localStorage.removeItem(LOCAL_ACTIVITY_KEY);
-          if (isLocalTrackingEnabled()) recordActivity("KPI locaux réinitialisés");
-          updateVaultKpis();
-        };
-      }
+      return Promise.reject(new Error("Clipboard API indisponible."));
+    }
+
+    function bindVaultDashboardActions() {
+      const rows = () => buildDashboardRows();
+
+      $("#vaultPrintAudit")?.addEventListener("click", () => window.print());
+
+      $("#vaultExportSnapshot")?.addEventListener("click", () => exportVaultSnapshot(rows()));
+
+      $("#vaultExportCsv")?.addEventListener("click", () => {
+        const currentRows = rows();
+        const header = "formation,statut,qualite,rentabilite,priorite,pret_a_vendre,vues,clics,ventes";
+        const csv = [
+          header,
+          ...currentRows.map(row => [
+            row.title,
+            row.status,
+            row.quality,
+            row.rentability,
+            row.priority,
+            row.readyToSell,
+            row.views,
+            row.clicks,
+            row.attributedSales
+          ].map(value => `"${String(value).replace(/"/g, '""')}"`).join(","))
+        ].join("\n");
+
+        downloadTextFile(`pivotdor-dashboard-${new Date().toISOString().slice(0, 10)}.csv`, csv, "text/csv;charset=utf-8");
+        recordActivity("CSV exporté");
+        updateVaultKpis();
+      });
+
+      $("#vaultCopyReport")?.addEventListener("click", async () => {
+        const reportText = rows()
+          .map(row => `${row.title} | statut: ${row.status} | prêt: ${row.readyLabel} ${row.readyToSell}/100 | priorité: ${row.priority} | qualité: ${row.quality} | rentabilité: ${row.rentability}`)
+          .join("\n");
+
+        try {
+          await copyText(reportText);
+          recordActivity("Rapport copié");
+          alert("Rapport copié.");
+        } catch (error) {
+          window.prompt("Copie le rapport :", reportText);
+        }
+
+        updateVaultKpis();
+      });
+
+      $("#vaultOpenAllSections")?.addEventListener("click", () => {
+        elements.vaultDashboard?.querySelectorAll("details").forEach(detail => {
+          detail.open = true;
+        });
+      });
+
+      $("#vaultCloseAllSections")?.addEventListener("click", () => {
+        elements.vaultDashboard?.querySelectorAll("details").forEach(detail => {
+          detail.open = false;
+        });
+      });
+
+      $("#vaultClearSnapshots")?.addEventListener("click", () => {
+        if (!window.confirm("Effacer tous les snapshots locaux de ce navigateur?")) return;
+        localStorage.removeItem(LOCAL_BACKUPS_KEY);
+        recordActivity("Snapshots locaux effacés");
+        updateVaultKpis();
+      });
+
+      $("#vaultToggleTracking")?.addEventListener("click", event => {
+        const nextValue = !isLocalTrackingEnabled();
+        localStorage.setItem(LOCAL_TRACKING_KEY, String(nextValue));
+        if (nextValue) recordActivity("Suivi local activé");
+        event.currentTarget.textContent = nextValue ? "Désactiver suivi" : "Activer suivi";
+        updateVaultKpis();
+      });
+
+      $("#vaultResetLocalKpis")?.addEventListener("click", () => {
+        if (!window.confirm("Réinitialiser les KPI locaux non sensibles de ce navigateur?")) return;
+        localStorage.removeItem(LOCAL_METRICS_KEY);
+        localStorage.removeItem(LOCAL_ACTIVITY_KEY);
+        if (isLocalTrackingEnabled()) recordActivity("KPI locaux réinitialisés");
+        updateVaultKpis();
+      });
     }
 
     function setVaultDashboardMode(mode) {
-      if (!vaultDashboard || !vaultSimpleMode || !vaultAdvancedMode) return;
+      if (!elements.vaultDashboard || !elements.vaultSimpleMode || !elements.vaultAdvancedMode) return;
       const isAdvanced = mode === "advanced";
-      vaultDashboard.classList.toggle("advanced-mode", isAdvanced);
-      vaultDashboard.classList.toggle("simple-mode", !isAdvanced);
-      vaultSimpleMode.classList.toggle("active", !isAdvanced);
-      vaultAdvancedMode.classList.toggle("active", isAdvanced);
-      vaultSimpleMode.classList.toggle("btn-primary", !isAdvanced);
-      vaultAdvancedMode.classList.toggle("btn-primary", isAdvanced);
-      vaultSimpleMode.setAttribute("aria-pressed", String(!isAdvanced));
-      vaultAdvancedMode.setAttribute("aria-pressed", String(isAdvanced));
+      elements.vaultDashboard.classList.toggle("advanced-mode", isAdvanced);
+      elements.vaultDashboard.classList.toggle("simple-mode", !isAdvanced);
+      elements.vaultSimpleMode.classList.toggle("active", !isAdvanced);
+      elements.vaultAdvancedMode.classList.toggle("active", isAdvanced);
+      elements.vaultSimpleMode.classList.toggle("btn-primary", !isAdvanced);
+      elements.vaultAdvancedMode.classList.toggle("btn-primary", isAdvanced);
+      elements.vaultSimpleMode.setAttribute("aria-pressed", String(!isAdvanced));
+      elements.vaultAdvancedMode.setAttribute("aria-pressed", String(isAdvanced));
       localStorage.setItem("pivotdorDashboardMode", isAdvanced ? "advanced" : "simple");
     }
 
     function setupVaultModeControls() {
-      if (!vaultDashboard || !vaultSimpleMode || !vaultAdvancedMode) return;
       const savedMode = localStorage.getItem("pivotdorDashboardMode") === "advanced" ? "advanced" : "simple";
       setVaultDashboardMode(savedMode);
-      vaultSimpleMode.addEventListener("click", () => setVaultDashboardMode("simple"));
-      vaultAdvancedMode.addEventListener("click", () => setVaultDashboardMode("advanced"));
+      elements.vaultSimpleMode?.addEventListener("click", () => setVaultDashboardMode("simple"));
+      elements.vaultAdvancedMode?.addEventListener("click", () => setVaultDashboardMode("advanced"));
+    }
+
+    function getVaultAttempts() {
+      return Number(sessionStorage.getItem("pivotdorVaultAttempts") || "0");
+    }
+
+    function updateVaultAttemptState() {
+      if (!elements.vaultForm || !elements.vaultCode) return;
+      const isLocked = getVaultAttempts() >= MAX_VAULT_ATTEMPTS;
+      elements.vaultForm.classList.toggle("locked", isLocked);
+      elements.vaultCode.disabled = isLocked;
+      const submitButton = elements.vaultForm.querySelector('button[type="submit"]');
+      if (submitButton) submitButton.disabled = isLocked;
+      if (isLocked && elements.vaultStatus) {
+        elements.vaultStatus.textContent = "Trop d’essais. Recharge la page pour recommencer.";
+      }
+    }
+
+    function isVaultSessionValid() {
+      const unlocked = sessionStorage.getItem("pivotdorVaultUnlocked") === "true";
+      const unlockedAt = Number(sessionStorage.getItem("pivotdorVaultUnlockedAt") || "0");
+      return unlocked && unlockedAt > 0 && Date.now() - unlockedAt < VAULT_TTL_MS;
+    }
+
+    function getVaultRemainingMs() {
+      const unlockedAt = Number(sessionStorage.getItem("pivotdorVaultUnlockedAt") || "0");
+      if (!unlockedAt) return 0;
+      return Math.max(0, VAULT_TTL_MS - (Date.now() - unlockedAt));
+    }
+
+    function updateVaultSessionNote() {
+      const remainingMs = getVaultRemainingMs();
+      const remainingMinutes = Math.ceil(remainingMs / 60000);
+      const percent = Math.max(0, Math.min(100, Math.round((remainingMs / VAULT_TTL_MS) * 100)));
+
+      if (elements.vaultSessionNote) {
+        elements.vaultSessionNote.textContent = remainingMinutes > 0
+          ? `Session interne active · expiration dans environ ${remainingMinutes} min.`
+          : "Session interne verrouillée.";
+      }
+
+      if (elements.vaultSessionProgress) {
+        elements.vaultSessionProgress.style.setProperty("--vault-progress", `${percent}%`);
+      }
+    }
+
+    function scheduleVaultAutoLock() {
+      window.clearTimeout(vaultExpiryTimer);
+      window.clearInterval(vaultProgressTimer);
+      const remaining = getVaultRemainingMs();
+      updateVaultSessionNote();
+      if (remaining <= 0) return;
+
+      vaultProgressTimer = window.setInterval(updateVaultSessionNote, 30000);
+      vaultExpiryTimer = window.setTimeout(() => {
+        lockVault();
+        if (elements.vaultStatus) elements.vaultStatus.textContent = "Session expirée. Entre le code à nouveau.";
+      }, remaining + 250);
+    }
+
+    function setVaultOpen(isOpen) {
+      if (!elements.vaultPanel || !elements.vaultToggle) return;
+      elements.vaultPanel.classList.toggle("open", isOpen);
+      elements.vaultPanel.setAttribute("aria-hidden", String(!isOpen));
+      elements.vaultToggle.setAttribute("aria-expanded", String(isOpen));
+
+      if (isOpen) {
+        elements.vaultPanel.focus({ preventScroll: true });
+        if (elements.vaultCode && !elements.vaultDashboard?.classList.contains("unlocked")) {
+          setTimeout(() => elements.vaultCode?.focus(), 50);
+        }
+      } else {
+        elements.vaultToggle.focus({ preventScroll: true });
+      }
+    }
+
+    function unlockVault() {
+      if (!elements.vaultCode || !elements.vaultDashboard || !elements.vaultForm || !elements.vaultStatus) return;
+      updateVaultAttemptState();
+      if (elements.vaultCode.disabled) return;
+
+      const enteredCode = elements.vaultCode.value.trim();
+
+      if (enteredCode !== VAULT_CODE) {
+        const attempts = getVaultAttempts() + 1;
+        sessionStorage.setItem("pivotdorVaultAttempts", String(attempts));
+        const remaining = Math.max(0, MAX_VAULT_ATTEMPTS - attempts);
+        elements.vaultStatus.textContent = remaining > 0
+          ? `Code incorrect. ${remaining} essai${remaining > 1 ? "s" : ""} restant${remaining > 1 ? "s" : ""}.`
+          : "Trop d’essais. Accès verrouillé pour cette session.";
+        elements.vaultCode.select();
+        updateVaultAttemptState();
+        return;
+      }
+
+      sessionStorage.removeItem("pivotdorVaultAttempts");
+      sessionStorage.setItem("pivotdorVaultUnlocked", "true");
+      sessionStorage.setItem("pivotdorVaultUnlockedAt", String(Date.now()));
+      elements.vaultDashboard.classList.add("unlocked");
+      elements.vaultForm.style.display = "none";
+      elements.vaultStatus.textContent = "";
+      scheduleVaultAutoLock();
+      updateVaultKpis();
+    }
+
+    function lockVault() {
+      if (!elements.vaultDashboard || !elements.vaultForm || !elements.vaultCode) return;
+      elements.vaultDashboard.classList.remove("unlocked");
+      elements.vaultForm.style.display = "grid";
+      elements.vaultForm.classList.remove("locked");
+      elements.vaultCode.disabled = false;
+      elements.vaultCode.value = "";
+      if (elements.vaultStatus) elements.vaultStatus.textContent = "";
+      const submitButton = elements.vaultForm.querySelector('button[type="submit"]');
+      if (submitButton) submitButton.disabled = false;
+      sessionStorage.removeItem("pivotdorVaultUnlocked");
+      sessionStorage.removeItem("pivotdorVaultUnlockedAt");
+      sessionStorage.removeItem("pivotdorVaultAttempts");
+      window.clearTimeout(vaultExpiryTimer);
+      window.clearInterval(vaultProgressTimer);
+      updateVaultSessionNote();
+      setVaultOpen(false);
+    }
+
+    function setupVault() {
+      updateVaultAttemptState();
+
+      if (isVaultSessionValid() && elements.vaultDashboard && elements.vaultForm) {
+        elements.vaultDashboard.classList.add("unlocked");
+        elements.vaultForm.style.display = "none";
+        scheduleVaultAutoLock();
+      } else {
+        sessionStorage.removeItem("pivotdorVaultUnlocked");
+        sessionStorage.removeItem("pivotdorVaultUnlockedAt");
+        updateVaultSessionNote();
+      }
+
+      elements.vaultToggle?.addEventListener("click", () => {
+        const isOpen = elements.vaultPanel?.classList.contains("open");
+        setVaultOpen(!isOpen);
+      });
+
+      elements.vaultClose?.addEventListener("click", () => setVaultOpen(false));
+
+      elements.vaultForm?.addEventListener("submit", event => {
+        event.preventDefault();
+        unlockVault();
+      });
+
+      elements.vaultLockAgain?.addEventListener("click", lockVault);
+
+      document.addEventListener("keydown", event => {
+        if (event.key === "Escape" && elements.vaultPanel?.classList.contains("open")) {
+          setVaultOpen(false);
+        }
+      });
+
+      document.addEventListener("click", event => {
+        if (!elements.vaultPanel?.classList.contains("open")) return;
+        const lockWrapper = event.target.closest(".dashboard-lock");
+        if (!lockWrapper) setVaultOpen(false);
+      });
+
+      elements.vaultPanel?.addEventListener("keydown", event => {
+        if (event.key !== "Tab" || !elements.vaultPanel?.classList.contains("open")) return;
+        const focusable = Array.from(elements.vaultPanel.querySelectorAll('a[href], button:not([disabled]), input:not([disabled]), summary, [tabindex]:not([tabindex="-1"])'));
+        if (!focusable.length) return;
+        const first = focusable[0];
+        const last = focusable[focusable.length - 1];
+        if (event.shiftKey && document.activeElement === first) {
+          event.preventDefault();
+          last.focus();
+        } else if (!event.shiftKey && document.activeElement === last) {
+          event.preventDefault();
+          first.focus();
+        }
+      });
     }
 
     function setupLocalMetricTracking() {
@@ -3016,8 +2598,7 @@
       }
 
       document.addEventListener("click", event => {
-        const lockWrapper = event.target.closest(".dashboard-lock");
-        if (lockWrapper) return;
+        if (event.target.closest(".dashboard-lock")) return;
 
         const link = event.target.closest("a");
         const button = event.target.closest("button");
@@ -3036,99 +2617,98 @@
       }, { passive: true });
     }
 
-    function updateVaultKpis() {
-      const rows = buildDashboardRows();
-      renderDashboardIntelligence(rows);
-    }
-
     function setupLogoFallback() {
-      if (!brandLogo || !brandMark) return;
+      if (!elements.brandLogo || !elements.brandMark) return;
 
-      if (brandLogo.complete && brandLogo.naturalWidth > 0) {
-        brandMark.classList.add("has-logo");
+      if (elements.brandLogo.complete && elements.brandLogo.naturalWidth > 0) {
+        elements.brandMark.classList.add("has-logo");
       }
 
-      brandLogo.addEventListener("load", () => {
-        brandMark.classList.add("has-logo");
+      elements.brandLogo.addEventListener("load", () => {
+        elements.brandMark.classList.add("has-logo");
       });
 
-      brandLogo.addEventListener("error", () => {
-        const fallback = brandLogo.dataset.fallbackSrc;
-        const current = brandLogo.getAttribute("src") || "";
+      elements.brandLogo.addEventListener("error", () => {
+        const fallback = elements.brandLogo.dataset.fallbackSrc;
+        const current = elements.brandLogo.getAttribute("src") || "";
         if (fallback && !current.includes(fallback)) {
-          brandLogo.src = fallback;
+          elements.brandLogo.src = fallback;
           return;
         }
-        brandLogo.style.display = "none";
-        brandMark.classList.remove("has-logo");
+        elements.brandLogo.style.display = "none";
+        elements.brandMark.classList.remove("has-logo");
       });
     }
 
-    filterButtons.forEach(button => {
-      button.addEventListener("click", () => {
-        const requestedFilter = button.dataset.filter || "all";
-        activeFilter = requestedFilter === "all" || VALID_CATEGORIES.includes(requestedFilter) ? requestedFilter : "all";
-        updateFilterButtons();
-        applyFilters();
-      });
-    });
-
-    const debouncedApplyFilters = debounce(applyFilters, 180);
-    searchInput.addEventListener("input", debouncedApplyFilters);
-
     function resetHomeSearch() {
-      searchInput.value = "";
+      if (!elements.searchInput) return;
+      elements.searchInput.value = "";
       activeFilter = "all";
       updateFilterButtons();
       applyFilters();
-      searchInput.focus();
+      elements.searchInput.focus();
     }
 
-    searchInput.addEventListener("keydown", event => {
-      if (event.key !== "Escape") return;
-      resetHomeSearch();
-    });
-
-    if (homeResetBtn) {
-      homeResetBtn.addEventListener("click", resetHomeSearch);
-    }
-
-    document.querySelectorAll('a[href^="#"]').forEach(link => {
-      link.addEventListener("click", event => {
-        const id = link.getAttribute("href").replace("#", "");
-        const target = document.getElementById(id);
-        if (!target) return;
-        event.preventDefault();
-        target.scrollIntoView({ behavior: "smooth", block: "start" });
-        history.replaceState(null, "", `#${id}`);
+    function setupPublicInteractions() {
+      elements.filterButtons.forEach(button => {
+        button.addEventListener("click", () => {
+          const requestedFilter = button.dataset.filter || "all";
+          activeFilter = requestedFilter === "all" || VALID_CATEGORIES.includes(requestedFilter) ? requestedFilter : "all";
+          updateFilterButtons();
+          applyFilters();
+        });
       });
-    });
+
+      const debouncedApplyFilters = debounce(applyFilters, 180);
+      elements.searchInput?.addEventListener("input", debouncedApplyFilters);
+      elements.searchInput?.addEventListener("keydown", event => {
+        if (event.key !== "Escape") return;
+        resetHomeSearch();
+      });
+
+      elements.homeResetBtn?.addEventListener("click", resetHomeSearch);
+
+      document.querySelectorAll('a[href^="#"]').forEach(link => {
+        link.addEventListener("click", event => {
+          const id = link.getAttribute("href").replace("#", "");
+          const target = document.getElementById(id);
+          if (!target) return;
+          event.preventDefault();
+          target.scrollIntoView({ behavior: "smooth", block: "start" });
+          history.replaceState(null, "", `#${id}`);
+        });
+      });
+    }
 
     async function loadFeaturedFromJson() {
       try {
-        if (featuredSource) featuredSource.textContent = "Chargement du catalogue d’accueil...";
+        if (elements.featuredSource) elements.featuredSource.textContent = "Chargement du catalogue d’accueil...";
         const controller = new AbortController();
         const timeoutId = window.setTimeout(() => controller.abort(), 2500);
         const response = await fetch("data/formations-index.json", { cache: "no-store", signal: controller.signal });
         window.clearTimeout(timeoutId);
+
         if (!response.ok) {
-          if (featuredSource) featuredSource.textContent = "Catalogue d’accueil intégré · JSON absent";
+          if (elements.featuredSource) elements.featuredSource.textContent = "Catalogue d’accueil intégré · JSON absent";
           return;
         }
+
         const payload = await response.json();
         const list = Array.isArray(payload) ? payload : Array.isArray(payload.formations) ? payload.formations : [];
         const cleaned = cleanFeaturedList(list);
+
         if (cleaned.length > 0) {
           featuredFormations = cleaned;
-          updateVaultKpis();
-          if (featuredSource) featuredSource.textContent = `Catalogue d’accueil chargé depuis JSON · ${cleaned.length} formation${cleaned.length > 1 ? "s" : ""}`;
-        } else if (featuredSource) {
-          featuredSource.textContent = "Catalogue d’accueil intégré · JSON vide";
+          if (elements.featuredSource) {
+            elements.featuredSource.textContent = `Catalogue d’accueil chargé depuis JSON · ${cleaned.length} formation${cleaned.length > 1 ? "s" : ""}`;
+          }
+        } else if (elements.featuredSource) {
+          elements.featuredSource.textContent = "Catalogue d’accueil intégré · JSON vide";
         }
       } catch (error) {
         console.warn("Catalogue d’accueil JSON non chargé. Utilisation du contenu intégré.", error);
-        if (featuredSource) {
-          featuredSource.textContent = error && error.name === "AbortError"
+        if (elements.featuredSource) {
+          elements.featuredSource.textContent = error && error.name === "AbortError"
             ? "Catalogue d’accueil intégré · JSON trop long à charger"
             : "Catalogue d’accueil intégré · JSON non chargé";
         }
@@ -3138,16 +2718,18 @@
     async function initHome() {
       setupLocalMetricTracking();
       renderCategories();
-      await loadFeaturedFromJson();
-      updateVaultKpis();
-      applyFilters();
+      setupPublicInteractions();
       setupLogoFallback();
       setupVaultModeControls();
       setupVault();
+      bindVaultDashboardActions();
+      await loadFeaturedFromJson();
+      updateFilterButtons();
+      applyFilters();
+      updateVaultKpis();
     }
 
     initHome();
   </script>
 </body>
 </html>
-
