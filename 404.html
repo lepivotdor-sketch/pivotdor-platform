@@ -1,0 +1,975 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Page introuvable — Le Pivot d’Or. Retourne vers l’accueil, le catalogue, l’espace client ou le support." />
+  <meta name="robots" content="noindex, nofollow" />
+  <meta name="referrer" content="strict-origin-when-cross-origin" />
+  <title>Page introuvable | Le Pivot d’Or</title>
+
+  <style>
+    :root {
+      --noir: #050505;
+      --noir-2: #101010;
+      --noir-3: #191919;
+      --or: #d8aa3d;
+      --or-clair: #f4d98b;
+      --or-pale: #ffe9ad;
+      --blanc: #ffffff;
+      --gris: #cccccc;
+      --gris-2: #8f8f8f;
+      --vert: #80e08d;
+      --vert-pale: #c9ffd1;
+      --rouge: #ff7070;
+      --bleu: #6ea8ff;
+      --mauve: #c9a7ff;
+      --jaune: #ffe066;
+      --ombre: 0 22px 70px rgba(0, 0, 0, 0.48);
+      --radius: 24px;
+      --max: 1180px;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      min-height: 100vh;
+      font-family: Aptos, Arial, sans-serif;
+      color: var(--blanc);
+      line-height: 1.6;
+      background:
+        radial-gradient(circle at 8% 5%, rgba(216, 170, 61, 0.2), transparent 30%),
+        radial-gradient(circle at 94% 12%, rgba(255, 112, 112, 0.08), transparent 26%),
+        linear-gradient(135deg, #030303 0%, #111111 52%, #050505 100%);
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    button,
+    input {
+      font: inherit;
+    }
+
+    .skip-link {
+      position: absolute;
+      left: -999px;
+      top: 12px;
+      z-index: 9999;
+      background: var(--or-clair);
+      color: #111;
+      padding: 10px 14px;
+      border-radius: 12px;
+      font-weight: 900;
+    }
+
+    .skip-link:focus {
+      left: 12px;
+    }
+
+    .topbar {
+      position: sticky;
+      top: 0;
+      z-index: 50;
+      background: rgba(5, 5, 5, 0.86);
+      border-bottom: 1px solid rgba(216, 170, 61, 0.2);
+      backdrop-filter: blur(16px);
+    }
+
+    .nav {
+      max-width: var(--max);
+      margin: 0 auto;
+      padding: 15px 20px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 18px;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      min-width: 0;
+    }
+
+    .brand-mark {
+      width: 46px;
+      height: 46px;
+      flex: 0 0 auto;
+      border-radius: 50%;
+      border: 1px solid rgba(244, 217, 139, 0.72);
+      background:
+        radial-gradient(circle at 35% 30%, #fff4c9 0%, var(--or-clair) 20%, var(--or) 52%, #4f3607 100%);
+      box-shadow: 0 0 32px rgba(216, 170, 61, 0.24);
+    }
+
+    .brand strong {
+      display: block;
+      color: var(--or-clair);
+      font-size: 1rem;
+      line-height: 1.1;
+    }
+
+    .brand span span {
+      display: block;
+      color: var(--gris);
+      font-size: 0.82rem;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      max-width: 370px;
+    }
+
+    .nav-actions,
+    .hero-actions,
+    .card-actions,
+    .suggestion-actions {
+      display: flex;
+      align-items: center;
+      justify-content: flex-end;
+      gap: 10px;
+      flex-wrap: wrap;
+    }
+
+    .btn,
+    .nav-link {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      border: 1px solid rgba(216, 170, 61, 0.34);
+      border-radius: 999px;
+      padding: 10px 15px;
+      background: rgba(255, 255, 255, 0.045);
+      color: var(--blanc);
+      cursor: pointer;
+      font-weight: 850;
+      font-size: 0.92rem;
+      transition: transform 0.18s ease, border-color 0.18s ease, background 0.18s ease;
+    }
+
+    .btn:hover,
+    .nav-link:hover,
+    .btn:focus-visible,
+    .nav-link:focus-visible {
+      transform: translateY(-1px);
+      border-color: rgba(244, 217, 139, 0.82);
+      background: rgba(216, 170, 61, 0.13);
+      outline: none;
+    }
+
+    .btn-primary {
+      border-color: transparent;
+      background: linear-gradient(135deg, var(--or-clair), var(--or));
+      color: #151006;
+      box-shadow: 0 14px 34px rgba(216, 170, 61, 0.18);
+    }
+
+    .btn-primary:hover,
+    .btn-primary:focus-visible {
+      background: linear-gradient(135deg, #ffedb7, var(--or));
+    }
+
+    .btn-danger {
+      border-color: rgba(255, 112, 112, 0.4);
+      color: #ffd9d9;
+    }
+
+    .btn-small {
+      padding: 8px 12px;
+      font-size: 0.82rem;
+    }
+
+    .page {
+      max-width: var(--max);
+      margin: 0 auto;
+      padding: 42px 20px 76px;
+    }
+
+    .hero {
+      display: grid;
+      grid-template-columns: minmax(0, 1.12fr) minmax(330px, 0.88fr);
+      gap: 22px;
+      align-items: stretch;
+      margin-bottom: 24px;
+    }
+
+    .panel,
+    .card,
+    .suggestion-card,
+    .diagnostic-card {
+      position: relative;
+      overflow: hidden;
+      border: 1px solid rgba(216, 170, 61, 0.2);
+      background: linear-gradient(145deg, rgba(255, 255, 255, 0.074), rgba(255, 255, 255, 0.026));
+      box-shadow: var(--ombre);
+      border-radius: var(--radius);
+    }
+
+    .panel::before,
+    .card::before,
+    .suggestion-card::before,
+    .diagnostic-card::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      pointer-events: none;
+      background:
+        linear-gradient(135deg, rgba(216, 170, 61, 0.1), transparent 38%),
+        radial-gradient(circle at bottom right, rgba(244, 217, 139, 0.06), transparent 32%);
+    }
+
+    .panel-content,
+    .card-content,
+    .suggestion-content,
+    .diagnostic-content {
+      position: relative;
+      z-index: 1;
+      padding: 30px;
+    }
+
+    .eyebrow {
+      color: var(--or-clair);
+      font-size: 0.78rem;
+      font-weight: 950;
+      letter-spacing: 0.13em;
+      text-transform: uppercase;
+      margin-bottom: 12px;
+    }
+
+    .error-code {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 999px;
+      border: 1px solid rgba(255, 112, 112, 0.34);
+      background: rgba(255, 112, 112, 0.1);
+      color: #ffd6d6;
+      padding: 8px 13px;
+      font-size: 0.86rem;
+      font-weight: 950;
+      margin-bottom: 14px;
+    }
+
+    h1 {
+      font-size: clamp(2.1rem, 4vw, 4.35rem);
+      line-height: 0.98;
+      letter-spacing: -0.055em;
+      margin-bottom: 17px;
+    }
+
+    h2,
+    h3 {
+      color: var(--or-clair);
+      letter-spacing: -0.03em;
+    }
+
+    .lead {
+      color: var(--gris);
+      font-size: 1.06rem;
+      max-width: 780px;
+      margin-bottom: 22px;
+    }
+
+    .muted {
+      color: var(--gris);
+      font-size: 0.95rem;
+    }
+
+    .badge-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 9px;
+      margin-top: 20px;
+    }
+
+    .badge,
+    .pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 7px;
+      padding: 8px 12px;
+      border-radius: 999px;
+      border: 1px solid rgba(216, 170, 61, 0.24);
+      background: rgba(0, 0, 0, 0.26);
+      color: var(--gris);
+      font-size: 0.86rem;
+      font-weight: 850;
+    }
+
+    .badge strong,
+    .pill strong {
+      color: var(--or-clair);
+    }
+
+    .search-box {
+      display: grid;
+      gap: 13px;
+      margin-top: 18px;
+    }
+
+    .field {
+      display: grid;
+      gap: 7px;
+    }
+
+    label {
+      color: var(--or-clair);
+      font-size: 0.9rem;
+      font-weight: 900;
+    }
+
+    input {
+      width: 100%;
+      border: 1px solid rgba(216, 170, 61, 0.24);
+      background: rgba(0, 0, 0, 0.34);
+      color: var(--blanc);
+      border-radius: 15px;
+      padding: 13px 14px;
+      outline: none;
+    }
+
+    input:focus {
+      border-color: var(--or-clair);
+      box-shadow: 0 0 0 4px rgba(216, 170, 61, 0.12);
+    }
+
+    .status {
+      display: none;
+      border-radius: 15px;
+      padding: 12px 14px;
+      font-weight: 850;
+      font-size: 0.92rem;
+      border: 1px solid transparent;
+    }
+
+    .status.visible {
+      display: block;
+    }
+
+    .status.success {
+      color: var(--vert-pale);
+      background: rgba(128, 224, 141, 0.12);
+      border-color: rgba(128, 224, 141, 0.3);
+    }
+
+    .status.error {
+      color: #ffd6d6;
+      background: rgba(255, 112, 112, 0.12);
+      border-color: rgba(255, 112, 112, 0.32);
+    }
+
+    .section {
+      margin-top: 24px;
+    }
+
+    .section-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-end;
+      gap: 16px;
+      flex-wrap: wrap;
+      margin-bottom: 14px;
+    }
+
+    .section-title {
+      font-size: clamp(1.35rem, 2vw, 2rem);
+    }
+
+    .suggestions-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 16px;
+    }
+
+    .suggestion-card {
+      box-shadow: 0 16px 44px rgba(0, 0, 0, 0.2);
+      border-radius: 20px;
+      min-height: 100%;
+    }
+
+    .suggestion-content {
+      padding: 20px;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      min-height: 100%;
+    }
+
+    .suggestion-content h3 {
+      font-size: 1.08rem;
+      line-height: 1.25;
+    }
+
+    .suggestion-content p {
+      color: var(--gris);
+      font-size: 0.92rem;
+      flex: 1;
+    }
+
+    .diagnostics-grid {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+      gap: 16px;
+    }
+
+    .diagnostic-card {
+      box-shadow: 0 16px 44px rgba(0, 0, 0, 0.2);
+      border-radius: 20px;
+    }
+
+    .diagnostic-content {
+      padding: 20px;
+    }
+
+    .diagnostic-content ul {
+      padding-left: 20px;
+      margin-top: 10px;
+      color: var(--gris);
+    }
+
+    .diagnostic-content li {
+      margin-bottom: 6px;
+    }
+
+    .diagnostic-line {
+      display: grid;
+      gap: 6px;
+      margin-top: 12px;
+      padding: 12px;
+      border-radius: 15px;
+      border: 1px solid rgba(216, 170, 61, 0.16);
+      background: rgba(0, 0, 0, 0.24);
+      color: var(--gris);
+      font-size: 0.92rem;
+      overflow-wrap: anywhere;
+    }
+
+    .diagnostic-line strong {
+      color: var(--or-clair);
+    }
+
+    .warning-box,
+    .success-box {
+      border-radius: 18px;
+      padding: 16px;
+      margin-top: 14px;
+      border: 1px solid rgba(255, 112, 112, 0.32);
+      background: rgba(255, 112, 112, 0.08);
+      color: #ffe0e0;
+    }
+
+    .success-box {
+      border-color: rgba(128, 224, 141, 0.28);
+      background: rgba(128, 224, 141, 0.09);
+      color: var(--vert-pale);
+    }
+
+    .footer {
+      max-width: var(--max);
+      margin: 0 auto;
+      padding: 24px 20px 44px;
+      color: var(--gris-2);
+      border-top: 1px solid rgba(216, 170, 61, 0.14);
+      font-size: 0.9rem;
+    }
+
+    .footer a {
+      color: var(--or-clair);
+    }
+
+    .sr-only {
+      position: absolute;
+      width: 1px;
+      height: 1px;
+      padding: 0;
+      margin: -1px;
+      overflow: hidden;
+      clip: rect(0, 0, 0, 0);
+      white-space: nowrap;
+      border: 0;
+    }
+
+    @media (max-width: 980px) {
+      .hero,
+      .suggestions-grid,
+      .diagnostics-grid {
+        grid-template-columns: 1fr 1fr;
+      }
+    }
+
+    @media (max-width: 720px) {
+      .nav {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+
+      .nav-actions {
+        width: 100%;
+        justify-content: flex-start;
+      }
+
+      .hero,
+      .suggestions-grid,
+      .diagnostics-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .panel-content,
+      .card-content,
+      .suggestion-content,
+      .diagnostic-content {
+        padding: 22px;
+      }
+
+      .brand span span {
+        max-width: 245px;
+      }
+    }
+
+    @media print {
+      .topbar,
+      .hero-actions,
+      .search-box,
+      .card-actions,
+      .suggestion-actions {
+        display: none !important;
+      }
+
+      body {
+        background: #fff;
+        color: #000;
+      }
+
+      .panel,
+      .card,
+      .suggestion-card,
+      .diagnostic-card {
+        background: #fff;
+        color: #000;
+        border-color: #777;
+        box-shadow: none;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <a class="skip-link" href="#contenu">Aller au contenu</a>
+
+  <header class="topbar" aria-label="Navigation principale">
+    <nav class="nav">
+      <a class="brand" href="index.html" aria-label="Retour à l’accueil Le Pivot d’Or">
+        <span class="brand-mark" aria-hidden="true"></span>
+        <span>
+          <strong>Le Pivot d’Or</strong>
+          <span>Erreur 404 · Page introuvable</span>
+        </span>
+      </a>
+
+      <div class="nav-actions">
+        <a class="nav-link" href="index.html">Accueil</a>
+        <a class="nav-link" href="formations.html">Catalogue</a>
+        <a class="nav-link" href="espace-client.html">Espace client</a>
+        <a class="nav-link" href="support.html">Support</a>
+      </div>
+    </nav>
+  </header>
+
+  <main class="page" id="contenu">
+    <section class="hero" aria-labelledby="titre-page">
+      <div class="panel">
+        <div class="panel-content">
+          <span class="error-code">Erreur 404</span>
+          <p class="eyebrow">Page introuvable</p>
+          <h1 id="titre-page">Le lien ne mène pas au bon endroit.</h1>
+          <p class="lead">
+            La page demandée n’existe pas, a changé de nom, n’a pas encore été publiée ou contient une erreur dans le nom du fichier.
+            Utilise les boutons ci-dessous pour reprendre le bon chemin.
+          </p>
+
+          <div class="hero-actions">
+            <a class="btn btn-primary" href="index.html">Retour à l’accueil</a>
+            <button class="btn" type="button" id="backBtn">Retour à la page précédente</button>
+            <a class="btn" href="support.html">Contacter le support</a>
+          </div>
+
+          <div class="badge-row" aria-label="Causes possibles">
+            <span class="badge"><strong>✓</strong> Nom de fichier sensible</span>
+            <span class="badge"><strong>✓</strong> Extension .html requise</span>
+            <span class="badge"><strong>✓</strong> Commit peut prendre un moment</span>
+            <span class="badge"><strong>✓</strong> Lien peut être mal écrit</span>
+          </div>
+        </div>
+      </div>
+
+      <aside class="panel" aria-labelledby="search-title">
+        <div class="panel-content">
+          <p class="eyebrow">Recherche rapide</p>
+          <h2 id="search-title">Trouver la bonne page</h2>
+          <p class="muted">
+            Écris un mot comme “conditions”, “client”, “formation”, “support”, “accès” ou “confidentialité”.
+          </p>
+
+          <div class="search-box">
+            <div class="field">
+              <label for="pageSearch">Mot-clé</label>
+              <input id="pageSearch" type="search" placeholder="Ex. conditions" autocomplete="off" />
+            </div>
+            <button class="btn btn-primary" type="button" id="searchBtn">Chercher</button>
+            <div class="status" id="searchStatus" role="status" aria-live="polite"></div>
+          </div>
+        </div>
+      </aside>
+    </section>
+
+    <section class="section" aria-labelledby="suggestions-title">
+      <div class="section-header">
+        <div>
+          <p class="eyebrow">Chemins recommandés</p>
+          <h2 class="section-title" id="suggestions-title">Pages utiles</h2>
+        </div>
+      </div>
+
+      <div class="suggestions-grid" id="suggestionsGrid"></div>
+    </section>
+
+    <section class="section diagnostics-grid" aria-label="Diagnostic de l’erreur">
+      <article class="diagnostic-card">
+        <div class="diagnostic-content">
+          <p class="eyebrow">Diagnostic</p>
+          <h2>Ce que le site a détecté</h2>
+          <div class="diagnostic-line">
+            <strong>URL demandée</strong>
+            <span id="requestedUrl">—</span>
+          </div>
+          <div class="diagnostic-line">
+            <strong>Nom de fichier détecté</strong>
+            <span id="detectedFile">—</span>
+          </div>
+          <div class="diagnostic-line">
+            <strong>Suggestion automatique</strong>
+            <span id="autoSuggestion">Analyse en cours...</span>
+          </div>
+          <div class="card-actions" style="margin-top: 14px; justify-content: flex-start;">
+            <button class="btn btn-small" type="button" id="copyReportBtn">Copier le rapport d’erreur</button>
+          </div>
+          <div class="status" id="copyStatus" role="status" aria-live="polite"></div>
+        </div>
+      </article>
+
+      <article class="diagnostic-card">
+        <div class="diagnostic-content">
+          <p class="eyebrow">Corrections fréquentes</p>
+          <h2>À vérifier dans GitHub</h2>
+          <ul>
+            <li>Le fichier existe vraiment à la racine du dépôt.</li>
+            <li>Le nom est exactement pareil : minuscules, tirets, accents, extension.</li>
+            <li>Le fichier se termine bien par <strong>.html</strong>.</li>
+            <li>Le commit a été fait dans la bonne branche publiée par GitHub Pages.</li>
+            <li>Le lien interne pointe vers le bon fichier.</li>
+            <li>Le dossier ou le fichier n’a pas été nommé avec un espace invisible.</li>
+          </ul>
+          <div class="warning-box">
+            Exemple classique : <strong>conditionalite.html</strong> ne mène pas à <strong>conditions.html</strong>.
+            Une seule lettre différente peut créer une erreur 404.
+          </div>
+        </div>
+      </article>
+    </section>
+
+    <section class="section">
+      <article class="card">
+        <div class="card-content">
+          <p class="eyebrow">Message client</p>
+          <h2>Tu n’es pas bloqué.</h2>
+          <p class="muted">
+            Cette page sert à ramener le visiteur vers les zones importantes du site au lieu de le perdre.
+            Elle protège ton image de marque, réduit la frustration et aide à repérer rapidement les erreurs de liens.
+          </p>
+          <div class="success-box">
+            Conseil : garde cette page à la racine du dépôt sous le nom exact <strong>404.html</strong>. GitHub Pages l’utilisera automatiquement quand une page est introuvable.
+          </div>
+        </div>
+      </article>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <p>
+      © <span id="year"></span> Le Pivot d’Or ·
+      <a href="index.html">Accueil</a> ·
+      <a href="conditions.html">Conditions</a> ·
+      <a href="confidentialite.html">Confidentialité</a> ·
+      <a href="support.html">Support</a>
+    </p>
+  </footer>
+
+  <script>
+    "use strict";
+
+    const pages = [
+      {
+        title: "Accueil",
+        url: "index.html",
+        keywords: ["accueil", "home", "départ", "site", "pivot", "le pivot d'or"],
+        description: "Retourne à la page principale du site."
+      },
+      {
+        title: "Catalogue des formations",
+        url: "formations.html",
+        keywords: ["catalogue", "formations", "formation", "produits", "mini formations", "mini-formation"],
+        description: "Consulte les mini-formations disponibles."
+      },
+      {
+        title: "Accès client",
+        url: "acces.html",
+        keywords: ["accès", "acces", "connexion", "login", "code", "achat"],
+        description: "Ouvre un accès client avec un courriel d’achat et un code."
+      },
+      {
+        title: "Espace client",
+        url: "espace-client.html",
+        keywords: ["client", "espace", "dashboard", "tableau de bord", "progression"],
+        description: "Retrouve les formations achetées, la progression et les ressources."
+      },
+      {
+        title: "Formation privée",
+        url: "formation-privee.html",
+        keywords: ["formation privée", "privee", "module", "leçon", "cours", "assistant ia"],
+        description: "Ouvre la page de formation privée avec modules et checklist."
+      },
+      {
+        title: "Conditions",
+        url: "conditions.html",
+        keywords: ["conditions", "condition", "conditionalite", "vente finale", "remboursement", "politique"],
+        description: "Consulte les conditions de vente et d’utilisation."
+      },
+      {
+        title: "Confidentialité",
+        url: "confidentialite.html",
+        keywords: ["confidentialité", "confidentialite", "privacy", "données", "donnees", "vie privée"],
+        description: "Consulte la politique de confidentialité."
+      },
+      {
+        title: "Support",
+        url: "support.html",
+        keywords: ["support", "aide", "contact", "problème", "probleme", "question"],
+        description: "Contacte le support en cas de problème."
+      },
+      {
+        title: "Merci",
+        url: "merci.html",
+        keywords: ["merci", "paiement", "stripe", "confirmation", "achat réussi", "achat reussi"],
+        description: "Page de confirmation après paiement."
+      },
+      {
+        title: "Vente finale",
+        url: "vente-finale.html",
+        keywords: ["vente finale", "remboursement", "aucun remboursement", "accès activé", "acces active"],
+        description: "Explique la logique de vente finale après activation d’accès."
+      }
+    ];
+
+    const commonMistakes = {
+      "conditionalite.html": "conditions.html",
+      "condition.html": "conditions.html",
+      "confidentialité.html": "confidentialite.html",
+      "confidentialité.html": "confidentialite.html",
+      "page2.html": "formations.html",
+      "client.html": "espace-client.html",
+      "espace.html": "espace-client.html",
+      "formation.html": "formations.html",
+      "formations-privee.html": "formation-privee.html",
+      "formation-prive.html": "formation-privee.html",
+      "accès.html": "acces.html",
+      "access.html": "acces.html"
+    };
+
+    const suggestionsGrid = document.getElementById("suggestionsGrid");
+    const searchInput = document.getElementById("pageSearch");
+    const searchStatus = document.getElementById("searchStatus");
+    const copyStatus = document.getElementById("copyStatus");
+    const requestedUrl = document.getElementById("requestedUrl");
+    const detectedFile = document.getElementById("detectedFile");
+    const autoSuggestion = document.getElementById("autoSuggestion");
+
+    document.getElementById("year").textContent = new Date().getFullYear();
+
+    function sanitizeText(value) {
+      return String(value)
+        .replace(/&/g, "&amp;")
+        .replace(/</g, "&lt;")
+        .replace(/>/g, "&gt;")
+        .replace(/"/g, "&quot;")
+        .replace(/'/g, "&#039;");
+    }
+
+    function normalize(value) {
+      return String(value)
+        .toLowerCase()
+        .normalize("NFD")
+        .replace(/[\u0300-\u036f]/g, "")
+        .replace(/[^a-z0-9 -]/g, " ")
+        .replace(/\s+/g, " ")
+        .trim();
+    }
+
+    function getDetectedFileName() {
+      const path = window.location.pathname || "";
+      const parts = path.split("/").filter(Boolean);
+      return parts.length ? decodeURIComponent(parts[parts.length - 1]) : "index.html";
+    }
+
+    function scorePage(page, query) {
+      const normalizedQuery = normalize(query);
+      if (!normalizedQuery) return 0;
+      const title = normalize(page.title);
+      const url = normalize(page.url);
+      const description = normalize(page.description);
+      const keywordText = normalize(page.keywords.join(" "));
+      let score = 0;
+      if (title.includes(normalizedQuery)) score += 8;
+      if (url.includes(normalizedQuery)) score += 8;
+      if (keywordText.includes(normalizedQuery)) score += 10;
+      if (description.includes(normalizedQuery)) score += 4;
+      normalizedQuery.split(" ").forEach(word => {
+        if (word.length > 2 && keywordText.includes(word)) score += 2;
+        if (word.length > 2 && title.includes(word)) score += 2;
+      });
+      return score;
+    }
+
+    function findBestMatches(query, limit = 6) {
+      const matches = pages
+        .map(page => ({ ...page, score: scorePage(page, query) }))
+        .filter(page => page.score > 0)
+        .sort((a, b) => b.score - a.score);
+      return matches.slice(0, limit);
+    }
+
+    function renderSuggestions(items) {
+      const list = items.length ? items : pages.slice(0, 6);
+      suggestionsGrid.innerHTML = list.map(page => `
+        <article class="suggestion-card">
+          <div class="suggestion-content">
+            <span class="pill"><strong>Page</strong></span>
+            <h3>${sanitizeText(page.title)}</h3>
+            <p>${sanitizeText(page.description)}</p>
+            <div class="suggestion-actions" style="justify-content: flex-start;">
+              <a class="btn btn-primary btn-small" href="${sanitizeText(page.url)}">Ouvrir</a>
+              <button class="btn btn-small" type="button" data-copy-link="${sanitizeText(page.url)}">Copier le lien</button>
+            </div>
+          </div>
+        </article>
+      `).join("");
+    }
+
+    function setStatus(element, type, message) {
+      element.className = `status visible ${type}`;
+      element.textContent = message;
+    }
+
+    function runSearch() {
+      const query = searchInput.value.trim();
+      if (!query) {
+        renderSuggestions(pages.slice(0, 6));
+        setStatus(searchStatus, "error", "Écris un mot-clé pour chercher une page.");
+        return;
+      }
+
+      const matches = findBestMatches(query);
+      renderSuggestions(matches);
+
+      if (matches.length) {
+        setStatus(searchStatus, "success", `${matches.length} page(s) probable(s) trouvée(s).`);
+      } else {
+        setStatus(searchStatus, "error", "Aucune page trouvée avec ce mot-clé. Essaie : conditions, client, support ou formation.");
+      }
+    }
+
+    function copyText(text, statusElement, successMessage) {
+      if (navigator.clipboard && window.isSecureContext) {
+        navigator.clipboard.writeText(text)
+          .then(() => setStatus(statusElement, "success", successMessage))
+          .catch(() => setStatus(statusElement, "error", "Copie automatique impossible. Sélectionne et copie manuellement."));
+      } else {
+        window.prompt("Copie ce texte :", text);
+        setStatus(statusElement, "success", "Le texte a été affiché pour copie manuelle.");
+      }
+    }
+
+    function updateDiagnostics() {
+      const fullUrl = window.location.href;
+      const fileName = getDetectedFileName();
+      const cleanFileName = fileName.toLowerCase();
+      const mistakeSuggestion = commonMistakes[cleanFileName];
+      const searchMatches = findBestMatches(fileName, 1);
+      const bestSuggestion = mistakeSuggestion || (searchMatches[0] ? searchMatches[0].url : "Aucune suggestion fiable.");
+
+      requestedUrl.textContent = fullUrl;
+      detectedFile.textContent = fileName;
+
+      if (mistakeSuggestion) {
+        autoSuggestion.innerHTML = `Lien probablement voulu : <a href="${sanitizeText(mistakeSuggestion)}">${sanitizeText(mistakeSuggestion)}</a>`;
+      } else if (searchMatches[0]) {
+        autoSuggestion.innerHTML = `Page possiblement liée : <a href="${sanitizeText(searchMatches[0].url)}">${sanitizeText(searchMatches[0].title)}</a>`;
+      } else {
+        autoSuggestion.textContent = bestSuggestion;
+      }
+
+      const initialMatches = mistakeSuggestion
+        ? pages.filter(page => page.url === mistakeSuggestion).concat(pages.slice(0, 5)).slice(0, 6)
+        : searchMatches.length
+          ? searchMatches.concat(pages.slice(0, 5)).slice(0, 6)
+          : pages.slice(0, 6);
+
+      renderSuggestions(initialMatches);
+    }
+
+    document.getElementById("searchBtn").addEventListener("click", runSearch);
+    searchInput.addEventListener("keydown", event => {
+      if (event.key === "Enter") runSearch();
+    });
+
+    document.getElementById("backBtn").addEventListener("click", () => {
+      if (window.history.length > 1) {
+        window.history.back();
+      } else {
+        window.location.href = "index.html";
+      }
+    });
+
+    suggestionsGrid.addEventListener("click", event => {
+      const link = event.target.getAttribute("data-copy-link");
+      if (!link) return;
+      copyText(link, searchStatus, "Lien copié.");
+    });
+
+    document.getElementById("copyReportBtn").addEventListener("click", () => {
+      const report = [
+        "Rapport erreur 404 — Le Pivot d’Or",
+        `URL demandée : ${window.location.href}`,
+        `Fichier détecté : ${getDetectedFileName()}`,
+        `Page précédente : ${document.referrer || "Aucune"}`,
+        `Date : ${new Date().toLocaleString("fr-CA")}`,
+        "Action recommandée : vérifier le nom exact du fichier, l’extension .html, le commit et le lien interne."
+      ].join("\n");
+      copyText(report, copyStatus, "Rapport d’erreur copié.");
+    });
+
+    updateDiagnostics();
+  </script>
+</body>
+</html>
