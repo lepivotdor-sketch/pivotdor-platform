@@ -545,3 +545,4 @@ Ce README doit être mis à jour chaque fois que :
 - le robots.txt change ;
 - la structure du dépôt change ;
 - le site passe d’une version statique à une version sécurisée avec serveur.
+mise a jours teste
