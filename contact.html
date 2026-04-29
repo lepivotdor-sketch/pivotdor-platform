@@ -1,14 +1,1229 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-  <meta charset="UTF-8">
-  <title>Contact | Le Pivot d'Or</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>Contact | Le Pivot d’Or</title>
+  <meta name="description" content="Contacte Le Pivot d’Or pour une question sur les mini-formations, l’accès numérique, le support client ou les conditions de vente." />
+  <meta name="theme-color" content="#050505" />
+  <meta name="robots" content="index, follow" />
+  <meta name="author" content="Le Pivot d’Or" />
+  <meta name="referrer" content="strict-origin-when-cross-origin" />
+  <meta name="format-detection" content="telephone=no" />
+  <link rel="canonical" href="https://lepivotdor-sketch.github.io/pivotdor-platform/contact.html" />
+
+  <meta property="og:locale" content="fr_CA" />
+  <meta property="og:title" content="Contact | Le Pivot d’Or" />
+  <meta property="og:description" content="Une question sur une mini-formation, un accès, un achat ou le support? Contacte Le Pivot d’Or." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://lepivotdor-sketch.github.io/pivotdor-platform/contact.html" />
+  <meta property="og:image" content="https://lepivotdor-sketch.github.io/pivotdor-platform/logo.png" />
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Contact | Le Pivot d’Or" />
+  <meta name="twitter:description" content="Contact et support pour les mini-formations Le Pivot d’Or." />
+  <meta name="twitter:image" content="https://lepivotdor-sketch.github.io/pivotdor-platform/logo.png" />
+
+  <link rel="icon" href="assets/logo/logo.png" />
+  <link rel="apple-touch-icon" href="assets/logo/logo.png" />
+
+  <!-- CSS principal obligatoire -->
+  <link rel="stylesheet" href="css/style.css" />
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "ContactPage",
+    "name": "Contact | Le Pivot d’Or",
+    "description": "Page de contact officielle pour les questions liées aux mini-formations, achats, accès numériques et support client.",
+    "url": "https://lepivotdor-sketch.github.io/pivotdor-platform/contact.html",
+    "publisher": {
+      "@type": "Organization",
+      "name": "Le Pivot d’Or",
+      "url": "https://lepivotdor-sketch.github.io/pivotdor-platform/"
+    }
+  }
+  </script>
+
+  <style>
+    :root {
+      --contact-noir: #050505;
+      --contact-noir-2: #101010;
+      --contact-or: #d8aa3d;
+      --contact-or-clair: #f4d98b;
+      --contact-blanc: #ffffff;
+      --contact-gris: #cccccc;
+      --contact-gris-2: #8f8f8f;
+      --contact-vert: #80e08d;
+      --contact-rouge: #ff7070;
+      --contact-bleu: #6ea8ff;
+      --contact-ombre: 0 22px 70px rgba(0, 0, 0, 0.48);
+      --contact-radius: 24px;
+      --contact-max: 1180px;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      min-height: 100vh;
+      font-family: Aptos, Arial, sans-serif;
+      color: var(--contact-blanc);
+      line-height: 1.6;
+      background:
+        radial-gradient(circle at 8% 5%, rgba(216, 170, 61, 0.18), transparent 30%),
+        radial-gradient(circle at 94% 12%, rgba(244, 217, 139, 0.08), transparent 26%),
+        linear-gradient(135deg, #030303 0%, #111111 52%, #050505 100%);
+      text-rendering: optimizeLegibility;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    button,
+    input,
+    textarea,
+    select {
+      font: inherit;
+    }
+
+    button {
+      cursor: pointer;
+    }
+
+    img {
+      max-width: 100%;
+      height: auto;
+      display: block;
+    }
+
+    :focus-visible {
+      outline: 3px solid rgba(244, 217, 139, 0.82);
+      outline-offset: 3px;
+    }
+
+    .skip-link {
+      position: absolute;
+      left: -999px;
+      top: 12px;
+      z-index: 9999;
+      background: var(--contact-or-clair);
+      color: #111;
+      padding: 10px 14px;
+      border-radius: 12px;
+      font-weight: 900;
+    }
+
+    .skip-link:focus {
+      left: 12px;
+    }
+
+    .topbar {
+      position: sticky;
+      top: 0;
+      z-index: 50;
+      background: rgba(5, 5, 5, 0.86);
+      border-bottom: 1px solid rgba(216, 170, 61, 0.2);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+    }
+
+    .nav {
+      max-width: var(--contact-max);
+      margin: 0 auto;
+      padding: 15px 20px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 18px;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      min-width: 0;
+    }
+
+    .brand-mark {
+      width: 46px;
+      height: 46px;
+      flex: 0 0 auto;
+      border-radius: 50%;
+      border: 1px solid rgba(244, 217, 139, 0.72);
+      background:
+        radial-gradient(circle at 35% 30%, #fff4c9 0%, var(--contact-or-clair) 20%, var(--contact-or) 52%, #4f3607 100%);
+      box-shadow: 0 0 32px rgba(216, 170, 61, 0.24);
+    }
+
+    .brand strong {
+      display: block;
+      color: var(--contact-or-clair);
+      font-size: 1rem;
+      line-height: 1.1;
+    }
+
+    .brand span span {
+      display: block;
+      color: var(--contact-gris);
+      font-size: 0.82rem;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      max-width: 370px;
+    }
+
+    .nav-actions,
+    .hero-actions,
+    .card-actions {
+      display: flex;
+      align-items: center;
+      justify-content: flex-end;
+      gap: 10px;
+      flex-wrap: wrap;
+    }
+
+    .btn,
+    .nav-link {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      border: 1px solid rgba(216, 170, 61, 0.34);
+      border-radius: 999px;
+      padding: 10px 15px;
+      background: rgba(255, 255, 255, 0.045);
+      color: var(--contact-blanc);
+      cursor: pointer;
+      font-weight: 850;
+      font-size: 0.92rem;
+      transition: transform 0.18s ease, border-color 0.18s ease, background 0.18s ease;
+    }
+
+    .btn:hover,
+    .nav-link:hover,
+    .btn:focus-visible,
+    .nav-link:focus-visible {
+      transform: translateY(-1px);
+      border-color: rgba(244, 217, 139, 0.82);
+      background: rgba(216, 170, 61, 0.13);
+    }
+
+    .btn-primary {
+      border-color: transparent;
+      background: linear-gradient(135deg, var(--contact-or-clair), var(--contact-or));
+      color: #151006;
+      box-shadow: 0 14px 34px rgba(216, 170, 61, 0.18);
+    }
+
+    .btn-primary:hover,
+    .btn-primary:focus-visible {
+      background: linear-gradient(135deg, #ffedb7, var(--contact-or));
+    }
+
+    .btn-small {
+      padding: 8px 12px;
+      font-size: 0.82rem;
+    }
+
+    .page {
+      max-width: var(--contact-max);
+      margin: 0 auto;
+      padding: 34px 20px 76px;
+    }
+
+    .hero {
+      display: grid;
+      grid-template-columns: minmax(0, 1.08fr) minmax(330px, 0.92fr);
+      gap: 22px;
+      align-items: stretch;
+      margin-bottom: 22px;
+    }
+
+    .panel,
+    .card {
+      position: relative;
+      overflow: hidden;
+      border: 1px solid rgba(216, 170, 61, 0.2);
+      background: linear-gradient(145deg, rgba(255, 255, 255, 0.074), rgba(255, 255, 255, 0.026));
+      box-shadow: var(--contact-ombre);
+      border-radius: var(--contact-radius);
+    }
+
+    .panel::before,
+    .card::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      pointer-events: none;
+      background:
+        linear-gradient(135deg, rgba(216, 170, 61, 0.1), transparent 38%),
+        radial-gradient(circle at bottom right, rgba(244, 217, 139, 0.06), transparent 32%);
+    }
+
+    .panel-content,
+    .card-content {
+      position: relative;
+      z-index: 1;
+      padding: 30px;
+    }
+
+    .eyebrow {
+      color: var(--contact-or-clair);
+      font-size: 0.78rem;
+      font-weight: 950;
+      letter-spacing: 0.13em;
+      text-transform: uppercase;
+      margin-bottom: 12px;
+    }
+
+    h1 {
+      font-size: clamp(2.1rem, 4vw, 4.35rem);
+      line-height: 0.98;
+      letter-spacing: -0.055em;
+      margin-bottom: 17px;
+    }
+
+    h2,
+    h3 {
+      color: var(--contact-or-clair);
+      letter-spacing: -0.03em;
+    }
+
+    .lead {
+      color: var(--contact-gris);
+      font-size: 1.06rem;
+      max-width: 780px;
+      margin-bottom: 22px;
+    }
+
+    .muted {
+      color: var(--contact-gris);
+      font-size: 0.95rem;
+    }
+
+    .badge-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 9px;
+      margin-top: 20px;
+    }
+
+    .badge,
+    .pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 7px;
+      padding: 8px 12px;
+      border-radius: 999px;
+      border: 1px solid rgba(216, 170, 61, 0.24);
+      background: rgba(0, 0, 0, 0.26);
+      color: var(--contact-gris);
+      font-size: 0.86rem;
+      font-weight: 850;
+    }
+
+    .badge strong,
+    .pill strong {
+      color: var(--contact-or-clair);
+    }
+
+    .pill.green {
+      color: #c9ffd1;
+      border-color: rgba(128, 224, 141, 0.32);
+      background: rgba(128, 224, 141, 0.1);
+    }
+
+    .pill.blue {
+      color: #d6e6ff;
+      border-color: rgba(110, 168, 255, 0.34);
+      background: rgba(110, 168, 255, 0.1);
+    }
+
+    .pill.red {
+      color: #ffd6d6;
+      border-color: rgba(255, 112, 112, 0.34);
+      background: rgba(255, 112, 112, 0.1);
+    }
+
+    .contact-form {
+      display: grid;
+      gap: 13px;
+      margin-top: 18px;
+    }
+
+    .field {
+      display: grid;
+      gap: 7px;
+    }
+
+    label {
+      color: var(--contact-or-clair);
+      font-size: 0.9rem;
+      font-weight: 900;
+    }
+
+    input,
+    textarea,
+    select {
+      width: 100%;
+      border: 1px solid rgba(216, 170, 61, 0.24);
+      background: rgba(0, 0, 0, 0.34);
+      color: var(--contact-blanc);
+      border-radius: 15px;
+      padding: 13px 14px;
+      outline: none;
+    }
+
+    textarea {
+      min-height: 142px;
+      resize: vertical;
+    }
+
+    input::placeholder,
+    textarea::placeholder {
+      color: rgba(204, 204, 204, 0.58);
+    }
+
+    input:focus,
+    textarea:focus,
+    select:focus {
+      border-color: var(--contact-or-clair);
+      box-shadow: 0 0 0 4px rgba(216, 170, 61, 0.12);
+    }
+
+    input:invalid:not(:placeholder-shown),
+    textarea:invalid:not(:placeholder-shown),
+    select:invalid:not(:placeholder-shown) {
+      border-color: rgba(255, 112, 112, 0.56);
+      box-shadow: 0 0 0 4px rgba(255, 112, 112, 0.1);
+    }
+
+    .help-text {
+      color: var(--contact-gris-2);
+      font-size: 0.82rem;
+      line-height: 1.45;
+    }
+
+    .status {
+      display: none;
+      border-radius: 15px;
+      padding: 12px 14px;
+      font-weight: 850;
+      font-size: 0.92rem;
+      border: 1px solid transparent;
+      overflow-wrap: anywhere;
+    }
+
+    .status.visible {
+      display: block;
+    }
+
+    .status.success {
+      color: #c9ffd1;
+      background: rgba(128, 224, 141, 0.12);
+      border-color: rgba(128, 224, 141, 0.3);
+    }
+
+    .status.error {
+      color: #ffd6d6;
+      background: rgba(255, 112, 112, 0.12);
+      border-color: rgba(255, 112, 112, 0.32);
+    }
+
+    .section {
+      margin-top: 24px;
+    }
+
+    .section-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-end;
+      gap: 16px;
+      flex-wrap: wrap;
+      margin-bottom: 14px;
+    }
+
+    .section-title {
+      font-size: clamp(1.35rem, 2vw, 2rem);
+    }
+
+    .grid-2,
+    .grid-3 {
+      display: grid;
+      gap: 16px;
+    }
+
+    .grid-2 {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .grid-3 {
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+
+    .contact-method {
+      min-height: 100%;
+    }
+
+    .contact-method h3 {
+      font-size: 1.08rem;
+      line-height: 1.25;
+      margin-bottom: 8px;
+    }
+
+    .contact-method p {
+      color: var(--contact-gris);
+      font-size: 0.93rem;
+      margin-bottom: 14px;
+    }
+
+    .info-list {
+      display: grid;
+      gap: 10px;
+      margin-top: 16px;
+    }
+
+    .info-line {
+      display: flex;
+      justify-content: space-between;
+      gap: 12px;
+      align-items: center;
+      padding: 12px 14px;
+      border-radius: 16px;
+      background: rgba(0, 0, 0, 0.24);
+      border: 1px solid rgba(216, 170, 61, 0.16);
+      color: var(--contact-gris);
+      font-size: 0.92rem;
+      min-width: 0;
+    }
+
+    .info-line span,
+    .info-line strong {
+      min-width: 0;
+      overflow-wrap: anywhere;
+    }
+
+    .info-line strong {
+      color: var(--contact-or-clair);
+      text-align: right;
+    }
+
+    .notice,
+    .warning-box,
+    .success-box,
+    .info-box {
+      border-radius: 18px;
+      padding: 16px;
+      border: 1px solid rgba(216, 170, 61, 0.24);
+      background: rgba(0, 0, 0, 0.26);
+      color: var(--contact-gris);
+      font-size: 0.92rem;
+      overflow-wrap: anywhere;
+    }
+
+    .warning-box {
+      border-color: rgba(255, 112, 112, 0.32);
+      background: rgba(255, 112, 112, 0.08);
+      color: #ffe0e0;
+    }
+
+    .success-box {
+      border-color: rgba(128, 224, 141, 0.28);
+      background: rgba(128, 224, 141, 0.09);
+      color: #c9ffd1;
+    }
+
+    .info-box {
+      border-color: rgba(110, 168, 255, 0.28);
+      background: rgba(110, 168, 255, 0.08);
+      color: #d6e6ff;
+    }
+
+    details {
+      border: 1px solid rgba(216, 170, 61, 0.2);
+      background: rgba(255, 255, 255, 0.04);
+      border-radius: 18px;
+      padding: 16px;
+    }
+
+    summary {
+      cursor: pointer;
+      color: var(--contact-or-clair);
+      font-weight: 900;
+    }
+
+    summary:focus-visible {
+      outline: 3px solid rgba(244, 217, 139, 0.82);
+      outline-offset: 4px;
+      border-radius: 12px;
+    }
+
+    details p {
+      color: var(--contact-gris);
+      margin-top: 10px;
+    }
+
+    .footer {
+      max-width: var(--contact-max);
+      margin: 0 auto;
+      padding: 24px 20px 44px;
+      color: var(--contact-gris-2);
+      border-top: 1px solid rgba(216, 170, 61, 0.14);
+      font-size: 0.9rem;
+    }
+
+    .footer a {
+      color: var(--contact-or-clair);
+    }
+
+    .footer a:hover,
+    .footer a:focus-visible {
+      text-decoration: underline;
+    }
+
+    .sensitive-note {
+      font-weight: 900;
+    }
+
+    .clean-list {
+      padding-left: 20px;
+      margin-top: 10px;
+      display: grid;
+      gap: 8px;
+      color: var(--contact-gris);
+    }
+
+    .message-tools {
+      display: flex;
+      justify-content: space-between;
+      gap: 12px;
+      flex-wrap: wrap;
+      align-items: center;
+      margin-top: 4px;
+    }
+
+    .char-counter {
+      color: var(--contact-gris-2);
+      font-size: 0.82rem;
+      font-weight: 850;
+    }
+
+    .char-counter.warning {
+      color: #ffe0e0;
+    }
+
+    .manual-contact-link {
+      color: var(--contact-or-clair);
+      font-weight: 900;
+      text-decoration: underline;
+      overflow-wrap: anywhere;
+    }
+
+    .honeypot {
+      position: absolute !important;
+      left: -9999px !important;
+      width: 1px !important;
+      height: 1px !important;
+      opacity: 0 !important;
+      pointer-events: none !important;
+    }
+
+    @supports not ((backdrop-filter: blur(16px)) or (-webkit-backdrop-filter: blur(16px))) {
+      .topbar {
+        background: rgba(5, 5, 5, 0.96);
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      html {
+        scroll-behavior: auto;
+      }
+
+      *,
+      *::before,
+      *::after {
+        transition: none !important;
+        animation: none !important;
+      }
+    }
+
+    @media (max-width: 980px) {
+      .hero,
+      .grid-3,
+      .grid-2 {
+        grid-template-columns: 1fr 1fr;
+      }
+    }
+
+    @media (max-width: 760px) {
+      .nav {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+
+      .nav-actions {
+        width: 100%;
+        justify-content: flex-start;
+      }
+
+      .hero,
+      .grid-3,
+      .grid-2 {
+        grid-template-columns: 1fr;
+      }
+
+      .page {
+        padding: 26px 16px 64px;
+      }
+
+      .panel-content,
+      .card-content {
+        padding: 22px;
+      }
+
+      .brand span span {
+        white-space: normal;
+        max-width: 245px;
+      }
+
+      .hero-actions,
+      .card-actions {
+        align-items: stretch;
+        flex-direction: column;
+      }
+
+      .hero-actions .btn,
+      .card-actions .btn,
+      .contact-form .btn {
+        width: 100%;
+      }
+
+      .info-line {
+        align-items: flex-start;
+        flex-direction: column;
+      }
+
+      .info-line strong {
+        text-align: left;
+      }
+    }
+
+    @media print {
+      .topbar,
+      .hero-actions,
+      .card-actions,
+      .contact-form,
+      .skip-link {
+        display: none !important;
+      }
+
+      body {
+        background: #fff !important;
+        color: #000 !important;
+      }
+
+      .panel,
+      .card,
+      .notice,
+      .warning-box,
+      .success-box,
+      .info-box {
+        background: #fff !important;
+        color: #000 !important;
+        box-shadow: none !important;
+        border-color: #777 !important;
+        break-inside: avoid;
+      }
+    }
+  </style>
 </head>
-<body>
-  <h1>Contact</h1>
-  <p>Question avant de commencer ? Écris-moi à : lepivotdor@gmail.com</p>
-  <a href="mailto:lepivotdor@gmail.com">Envoyer un courriel</a>
-  <br><br>
-  <a href="index.html">Retour à l'accueil</a>
+
+<body data-page="contact">
+  <a class="skip-link" href="#contenu">Aller directement au contenu</a>
+
+  <header class="topbar" aria-label="Navigation principale">
+    <nav class="nav">
+      <a class="brand" href="index.html" aria-label="Retour à l’accueil Le Pivot d’Or">
+        <span class="brand-mark" aria-hidden="true"></span>
+        <span>
+          <strong>Le Pivot d’Or</strong>
+          <span>Contact · Mini Mini Formation</span>
+        </span>
+      </a>
+
+      <div class="nav-actions">
+        <a class="nav-link" href="index.html">Accueil</a>
+        <a class="nav-link" href="formations.html">Catalogue</a>
+        <a class="nav-link" href="support.html">Support</a>
+        <a class="nav-link" href="conditions.html">Conditions</a>
+        <a class="btn btn-primary btn-small" href="#formulaire">Écrire</a>
+      </div>
+    </nav>
+  </header>
+
+  <main class="page" id="contenu">
+    <section class="hero" aria-labelledby="titre-page">
+      <div class="panel">
+        <div class="panel-content">
+          <p class="eyebrow">Contact officiel</p>
+          <h1 id="titre-page">Une question? Écris clairement, on garde ça simple.</h1>
+          <p class="lead">
+            Cette page sert à contacter Le Pivot d’Or pour une question sur une mini-formation,
+            un accès numérique, un achat, une condition de vente ou un problème technique.
+          </p>
+
+          <div class="hero-actions">
+            <a class="btn btn-primary" href="#formulaire">Envoyer une demande</a>
+            <a class="btn" href="support.html">Aller au support</a>
+            <a class="btn" href="index.html#catalogue">Voir le catalogue</a>
+          </div>
+
+          <div class="badge-row" aria-label="Types de demandes acceptées">
+            <span class="badge"><strong>✓</strong> Question avant achat</span>
+            <span class="badge"><strong>✓</strong> Problème d’accès</span>
+            <span class="badge"><strong>✓</strong> Support produit</span>
+            <span class="badge"><strong>✓</strong> Conditions</span>
+          </div>
+        </div>
+      </div>
+
+      <aside class="panel" aria-labelledby="resume-contact">
+        <div class="panel-content">
+          <p class="eyebrow">Avant d’écrire</p>
+          <h2 id="resume-contact">Prépare les bonnes informations</h2>
+
+          <div class="info-list">
+            <div class="info-line"><span>Pour un accès</span><strong>Courriel d’achat</strong></div>
+            <div class="info-line"><span>Pour une formation</span><strong>Nom du produit</strong></div>
+            <div class="info-line"><span>Pour Stripe</span><strong>Reçu ou date</strong></div>
+            <div class="info-line"><span>Pour support</span><strong>Description claire</strong></div>
+            <div class="info-line"><span>Courriel</span><strong><a class="manual-contact-link" href="mailto:contact@lepivotdor.ca">contact@lepivotdor.ca</a></strong></div>
+          </div>
+
+          <div class="warning-box" style="margin-top: 16px;">
+            <strong class="sensitive-note">Important :</strong> n’envoie jamais de mot de passe, de numéro complet de carte bancaire,
+            de clé API, de code privé permanent ou d’information ultra sensible dans un formulaire public.
+          </div>
+        </div>
+      </aside>
+    </section>
+
+    <section class="section" aria-labelledby="methodes-title">
+      <div class="section-header">
+        <div>
+          <p class="eyebrow">Méthodes de contact</p>
+          <h2 class="section-title" id="methodes-title">Choisis le bon chemin</h2>
+          <p class="muted">Le but est de t’aider rapidement sans multiplier les messages inutiles.</p>
+        </div>
+      </div>
+
+      <div class="grid-3">
+        <article class="card contact-method">
+          <div class="card-content">
+            <span class="pill green">Prioritaire</span>
+            <h3>Problème d’accès</h3>
+            <p>Utilise cette option si tu as payé, mais que l’accès à ta formation ne fonctionne pas.</p>
+            <a class="btn btn-primary btn-small" href="support.html">Ouvrir support</a>
+          </div>
+        </article>
+
+        <article class="card contact-method">
+          <div class="card-content">
+            <span class="pill blue">Avant achat</span>
+            <h3>Question sur une formation</h3>
+            <p>Utilise cette option si tu veux clarifier ce qui est inclus avant d’acheter.</p>
+            <a class="btn btn-small" href="#formulaire">Écrire une question</a>
+          </div>
+        </article>
+
+        <article class="card contact-method">
+          <div class="card-content">
+            <span class="pill red">Important</span>
+            <h3>Conditions ou vente finale</h3>
+            <p>Consulte d’abord les conditions pour éviter une demande mal orientée.</p>
+            <a class="btn btn-small" href="conditions.html">Lire conditions</a>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section class="section" id="formulaire" aria-labelledby="form-title">
+      <div class="panel">
+        <div class="panel-content">
+          <p class="eyebrow">Formulaire de contact</p>
+          <h2 class="section-title" id="form-title">Préparer ton message</h2>
+          <p class="muted">
+            Cette version GitHub Pages ne possède pas encore de serveur d’envoi. Le bouton prépare un courriel avec ton message.
+            Si ton application de courriel ne s’ouvre pas, copie le message et écris à
+            <a class="manual-contact-link" href="mailto:contact@lepivotdor.ca">contact@lepivotdor.ca</a>.
+          </p>
+
+          <form class="contact-form" id="contactForm" novalidate>
+            <div class="honeypot" aria-hidden="true">
+              <label for="website">Site web</label>
+              <input id="website" name="website" type="text" tabindex="-1" autocomplete="off" />
+            </div>
+            <div class="grid-2">
+              <div class="field">
+                <label for="name">Ton nom</label>
+                <input id="name" name="name" type="text" autocomplete="name" placeholder="Ex. Olivier" required minlength="2" maxlength="80" />
+              </div>
+
+              <div class="field">
+                <label for="email">Ton courriel</label>
+                <input id="email" name="email" type="email" autocomplete="email" placeholder="ton@email.com" required maxlength="120" />
+              </div>
+            </div>
+
+            <div class="grid-2">
+              <div class="field">
+                <label for="topic">Sujet</label>
+                <select id="topic" name="topic" required>
+                  <option value="">Choisir un sujet</option>
+                  <option value="Question avant achat">Question avant achat</option>
+                  <option value="Problème d’accès">Problème d’accès</option>
+                  <option value="Formation achetée">Formation achetée</option>
+                  <option value="Conditions ou vente finale">Conditions ou vente finale</option>
+                  <option value="Autre demande">Autre demande</option>
+                </select>
+              </div>
+
+              <div class="field">
+                <label for="product">Formation concernée</label>
+                <input id="product" name="product" type="text" placeholder="Ex. Utilise l’IA pour sauver 3 heures" maxlength="140" />
+              </div>
+            </div>
+
+            <div class="field">
+              <label for="message">Ton message</label>
+              <textarea id="message" name="message" placeholder="Explique clairement ta demande. Pour un accès, indique le courriel utilisé au paiement et le nom de la formation." required minlength="20" maxlength="1200" aria-describedby="messageHelp charCounter"></textarea>
+              <div class="message-tools">
+                <p class="help-text" id="messageHelp">Minimum 20 caractères. Ne mets pas de mot de passe, de numéro de carte bancaire ou de clé secrète.</p>
+                <span class="char-counter" id="charCounter" aria-live="polite" aria-label="Compteur de caractères du message">0 / 1200</span>
+              </div>
+            </div>
+
+            <div class="card-actions">
+              <button class="btn btn-primary" type="submit" id="submitBtn">Préparer le courriel</button>
+              <button class="btn" type="button" id="copyMessageBtn">Copier le message</button>
+              <button class="btn" type="reset">Effacer</button>
+            </div>
+
+            <div class="status" id="formStatus" role="status" aria-live="polite" tabindex="-1"></div>
+          </form>
+        </div>
+      </div>
+    </section>
+
+    <section class="section grid-2" aria-label="Informations importantes">
+      <article class="card">
+        <div class="card-content">
+          <p class="eyebrow">Réponse</p>
+          <h2>Pour recevoir une réponse utile</h2>
+          <ul class="clean-list">
+            <li>Écris avec le même courriel que celui utilisé pour l’achat.</li>
+            <li>Indique le nom exact de la formation.</li>
+            <li>Ajoute la date approximative du paiement si nécessaire.</li>
+            <li>Décris le problème en une phrase claire.</li>
+          </ul>
+        </div>
+      </article>
+
+      <article class="card">
+        <div class="card-content">
+          <p class="eyebrow">Sécurité</p>
+          <h2>Ce qu’il ne faut pas envoyer</h2>
+          <ul class="clean-list">
+            <li>Numéro complet de carte bancaire.</li>
+            <li>Mot de passe personnel.</li>
+            <li>Clé API ou clé Stripe secrète.</li>
+            <li>Informations très sensibles ou privées.</li>
+          </ul>
+        </div>
+      </article>
+    </section>
+
+    <section class="section" aria-labelledby="faq-title">
+      <div class="section-header">
+        <div>
+          <p class="eyebrow">FAQ contact</p>
+          <h2 class="section-title" id="faq-title">Questions fréquentes</h2>
+        </div>
+      </div>
+
+      <div class="grid-2">
+        <details open>
+          <summary>Est-ce que le formulaire envoie vraiment le message?</summary>
+          <p>Sur GitHub Pages, il n’y a pas de serveur d’envoi. Le formulaire prépare un courriel dans ton application de messagerie.</p>
+        </details>
+
+        <details>
+          <summary>Pourquoi ne pas mettre mon mot de passe dans le message?</summary>
+          <p>Parce qu’un mot de passe ou une information bancaire ne doit jamais être envoyé dans un formulaire de contact simple.</p>
+        </details>
+
+        <details>
+          <summary>Que faire si mon accès ne fonctionne pas?</summary>
+          <p>Va sur la page support et prépare ton courriel d’achat, le nom de la formation et le reçu Stripe si disponible.</p>
+        </details>
+
+        <details>
+          <summary>Est-ce que je peux demander un remboursement ici?</summary>
+          <p>Tu peux poser une question, mais les formations numériques sont encadrées par les conditions et la politique de vente finale.</p>
+        </details>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="success-box">
+        <strong>Résumé :</strong> cette page sert à préparer une demande claire. Pour les problèmes d’accès, utilise d’abord la page support.
+        Pour les questions légales ou commerciales, lis les conditions avant d’envoyer ta demande.
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <p>
+      © <span id="year"></span> Le Pivot d’Or ·
+      <a href="index.html">Accueil</a> ·
+      <a href="formations.html">Catalogue</a> ·
+      <a href="support.html">Support</a> ·
+      <a href="conditions.html">Conditions</a> ·
+      <a href="confidentialite.html">Confidentialité</a> ·
+      <a href="vente-finale.html">Vente finale</a>
+    </p>
+  </footer>
+
+  <script>
+    "use strict";
+
+    const CONTACT_EMAIL = "contact@lepivotdor.ca";
+    const form = document.getElementById("contactForm");
+    const formStatus = document.getElementById("formStatus");
+    const copyMessageBtn = document.getElementById("copyMessageBtn");
+    const submitBtn = document.getElementById("submitBtn");
+    const messageInput = document.getElementById("message");
+    const charCounter = document.getElementById("charCounter");
+    const yearElement = document.getElementById("year");
+
+    if (yearElement) {
+      yearElement.textContent = new Date().getFullYear();
+    }
+
+    function cleanPlainText(value, maxLength = 1800) {
+      return String(value || "")
+        .split(String.fromCharCode(10)).join(" ")
+        .split(String.fromCharCode(13)).join(" ")
+        .split(String.fromCharCode(9)).join(" ")
+        .replace(/  +/g, " ")
+        .trim()
+        .slice(0, maxLength);
+    }
+
+    function cleanMessage(value) {
+      return String(value || "").trim();
+    }
+
+    function isValidEmail(email) {
+      return /^[^ @]+@[^ @]+[.][^ @]{2,}$/.test(email);
+    }
+
+    function setStatus(type, message) {
+      formStatus.className = `status visible ${type}`;
+      formStatus.textContent = message;
+      if (type === "error") {
+        formStatus.focus({ preventScroll: true });
+      }
+    }
+
+    function setFieldValidity(fieldId, isValid) {
+      const field = document.getElementById(fieldId);
+      if (!field) return;
+      field.setAttribute("aria-invalid", String(!isValid));
+    }
+
+    function refreshFieldStates(data) {
+      setFieldValidity("name", data.name.length >= 2);
+      setFieldValidity("email", isValidEmail(data.email));
+      setFieldValidity("topic", Boolean(data.topic));
+      setFieldValidity("product", !(requiresProduct(data.topic) && data.product.length < 2));
+      setFieldValidity("message", data.message.length >= 20 && data.message.length <= 1200);
+    }
+
+    function requiresProduct(topic) {
+      return topic === "Problème d’accès" || topic === "Formation achetée";
+    }
+
+    function getFormData() {
+      return {
+        name: cleanPlainText(document.getElementById("name").value, 80),
+        email: cleanPlainText(document.getElementById("email").value, 120).toLowerCase(),
+        topic: cleanPlainText(document.getElementById("topic").value, 80),
+        product: cleanPlainText(document.getElementById("product").value, 140),
+        message: cleanMessage(document.getElementById("message").value, 1200)
+      };
+    }
+
+    function validateData(data) {
+      const honeypot = document.getElementById("website");
+      if (honeypot && honeypot.value.trim()) return "La demande n’a pas été envoyée. Recharge la page et réessaie.";
+      if (data.name.length < 2) return "Entre ton nom.";
+      if (!isValidEmail(data.email)) return "Entre un courriel valide.";
+      if (!data.topic) return "Choisis un sujet.";
+      if (requiresProduct(data.topic) && data.product.length < 2) return "Indique le nom de la formation concernée pour cette demande.";
+      if (data.message.length < 20) return "Écris un message d’au moins 20 caractères.";
+      if (data.message.length > 1200) return "Ton message est trop long. Résume-le en 1200 caractères maximum.";
+      const sensitiveText = `${data.name} ${data.email} ${data.topic} ${data.product} ${data.message}`;
+      if (/mot de passe|password|carte bancaire|numéro de carte|numero de carte|cvv|clé api|cle api|secret|api key|token privé|token prive/i.test(sensitiveText)) {
+        return "Retire les informations sensibles de ton message avant de l’envoyer.";
+      }
+      return "";
+    }
+
+    function buildMessage(data) {
+      return [
+        "Demande de contact — Le Pivot d’Or",
+        "",
+        `Nom : ${data.name}`,
+        `Courriel : ${data.email}`,
+        `Sujet : ${data.topic}`,
+        `Formation concernée : ${data.product || "Non précisée"}`,
+        "",
+        "Message :",
+        data.message,
+        "",
+        "Note : je n’ai pas inclus de mot de passe, de carte bancaire ou de clé secrète."
+      ].join("\n");
+    }
+
+    function buildMailtoUrl(data) {
+      const subject = encodeURIComponent(`Contact Le Pivot d’Or — ${data.topic}`);
+      const body = encodeURIComponent(buildMessage(data));
+      return `mailto:${CONTACT_EMAIL}?subject=${subject}&body=${body}`;
+    }
+
+    function openMailClient(data) {
+      const mailtoUrl = buildMailtoUrl(data);
+      if (mailtoUrl.length > 1900) {
+        return false;
+      }
+      window.location.href = mailtoUrl;
+      return true;
+    }
+
+    async function copyMessage() {
+      const data = getFormData();
+      const error = validateData(data);
+
+      refreshFieldStates(data);
+
+      if (error) {
+        setStatus("error", error);
+        return;
+      }
+
+      const text = buildMessage(data);
+
+      if (navigator.clipboard && window.isSecureContext) {
+        try {
+          await navigator.clipboard.writeText(text);
+          setStatus("success", "Message copié. Tu peux maintenant le coller dans ton courriel.");
+        } catch (error) {
+          window.prompt("Copie ce message :", text);
+          setStatus("success", "Message affiché pour copie manuelle.");
+        }
+      } else {
+        window.prompt("Copie ce message :", text);
+        setStatus("success", "Message affiché pour copie manuelle.");
+      }
+    }
+
+    form.addEventListener("submit", async event => {
+      event.preventDefault();
+      const data = getFormData();
+      const error = validateData(data);
+
+      refreshFieldStates(data);
+
+      if (error) {
+        setStatus("error", error);
+        return;
+      }
+
+      submitBtn.disabled = true;
+      submitBtn.textContent = "Préparation...";
+
+      const opened = openMailClient(data);
+      if (opened) {
+        setStatus("success", "Ton application de courriel devrait s’ouvrir avec le message préparé.");
+      } else {
+        await copyMessage();
+        setStatus("error", "Le message est trop long pour ouvrir automatiquement le courriel. Il a été copié ou affiché pour copie manuelle.");
+      }
+
+      setTimeout(() => {
+        submitBtn.disabled = false;
+        submitBtn.textContent = "Préparer le courriel";
+      }, 1200);
+    });
+
+    function updateCounter() {
+      if (!messageInput || !charCounter) return;
+      const length = messageInput.value.length;
+      charCounter.textContent = `${length} / 1200`;
+      charCounter.classList.toggle("warning", length > 1000);
+    }
+
+    copyMessageBtn.addEventListener("click", copyMessage);
+
+    if (messageInput) {
+      messageInput.addEventListener("input", () => {
+        updateCounter();
+        refreshFieldStates(getFormData());
+      });
+      updateCounter();
+    }
+
+    ["name", "email", "topic", "product"].forEach(fieldId => {
+      const field = document.getElementById(fieldId);
+      if (!field) return;
+      field.addEventListener("input", () => refreshFieldStates(getFormData()));
+      field.addEventListener("change", () => refreshFieldStates(getFormData()));
+    });
+
+    form.addEventListener("reset", () => {
+      setTimeout(() => {
+        updateCounter();
+        formStatus.className = "status";
+        formStatus.textContent = "";
+        ["name", "email", "topic", "product", "message"].forEach(fieldId => {
+          const field = document.getElementById(fieldId);
+          if (field) field.removeAttribute("aria-invalid");
+        });
+      }, 0);
+    });
+
+    document.querySelectorAll('a[href^="#"]').forEach(link => {
+      link.addEventListener("click", event => {
+        const id = link.getAttribute("href").replace("#", "");
+        const target = document.getElementById(id);
+        if (!target) return;
+        event.preventDefault();
+        target.scrollIntoView({ behavior: "smooth", block: "start" });
+        history.replaceState(null, "", `#${id}`);
+      });
+    });
+  </script>
 </body>
 </html>
