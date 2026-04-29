@@ -1,0 +1,1543 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Formation privée Le Pivot d’Or : accès client, modules, progression, checklist, notes personnelles et ressources sécurisées." />
+  <meta name="robots" content="noindex, nofollow, noarchive" />
+  <meta name="referrer" content="no-referrer" />
+  <title>Formation privée | Le Pivot d’Or</title>
+
+  <style>
+    :root {
+      --noir: #050505;
+      --noir-2: #101010;
+      --noir-3: #191919;
+      --or: #d8aa3d;
+      --or-clair: #f4d98b;
+      --or-pale: #ffe9ad;
+      --blanc: #ffffff;
+      --gris: #cccccc;
+      --gris-2: #8f8f8f;
+      --vert: #80e08d;
+      --vert-pale: #c9ffd1;
+      --rouge: #ff7070;
+      --bleu: #6ea8ff;
+      --mauve: #c9a7ff;
+      --jaune: #ffe066;
+      --ombre: 0 22px 70px rgba(0, 0, 0, 0.48);
+      --radius: 24px;
+      --max: 1220px;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      min-height: 100vh;
+      font-family: Aptos, Arial, sans-serif;
+      color: var(--blanc);
+      line-height: 1.6;
+      background:
+        radial-gradient(circle at 8% 5%, rgba(216, 170, 61, 0.18), transparent 30%),
+        radial-gradient(circle at 94% 12%, rgba(244, 217, 139, 0.1), transparent 26%),
+        linear-gradient(135deg, #030303 0%, #111111 52%, #050505 100%);
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    button,
+    input,
+    textarea,
+    select {
+      font: inherit;
+    }
+
+    .skip-link {
+      position: absolute;
+      left: -999px;
+      top: 12px;
+      z-index: 9999;
+      background: var(--or-clair);
+      color: #111;
+      padding: 10px 14px;
+      border-radius: 12px;
+      font-weight: 900;
+    }
+
+    .skip-link:focus {
+      left: 12px;
+    }
+
+    .topbar {
+      position: sticky;
+      top: 0;
+      z-index: 50;
+      background: rgba(5, 5, 5, 0.86);
+      border-bottom: 1px solid rgba(216, 170, 61, 0.2);
+      backdrop-filter: blur(16px);
+    }
+
+    .nav {
+      max-width: var(--max);
+      margin: 0 auto;
+      padding: 15px 20px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 18px;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      min-width: 0;
+    }
+
+    .brand-mark {
+      width: 46px;
+      height: 46px;
+      flex: 0 0 auto;
+      border-radius: 50%;
+      border: 1px solid rgba(244, 217, 139, 0.72);
+      background:
+        radial-gradient(circle at 35% 30%, #fff4c9 0%, var(--or-clair) 20%, var(--or) 52%, #4f3607 100%);
+      box-shadow: 0 0 32px rgba(216, 170, 61, 0.24);
+    }
+
+    .brand strong {
+      display: block;
+      color: var(--or-clair);
+      font-size: 1rem;
+      line-height: 1.1;
+    }
+
+    .brand span span {
+      display: block;
+      color: var(--gris);
+      font-size: 0.82rem;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      max-width: 360px;
+    }
+
+    .nav-actions,
+    .hero-actions,
+    .card-actions,
+    .lesson-actions {
+      display: flex;
+      align-items: center;
+      justify-content: flex-end;
+      gap: 10px;
+      flex-wrap: wrap;
+    }
+
+    .btn,
+    .nav-link {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      border: 1px solid rgba(216, 170, 61, 0.34);
+      border-radius: 999px;
+      padding: 10px 15px;
+      background: rgba(255, 255, 255, 0.045);
+      color: var(--blanc);
+      cursor: pointer;
+      font-weight: 850;
+      font-size: 0.92rem;
+      transition: transform 0.18s ease, border-color 0.18s ease, background 0.18s ease;
+    }
+
+    .btn:hover,
+    .nav-link:hover,
+    .btn:focus-visible,
+    .nav-link:focus-visible {
+      transform: translateY(-1px);
+      border-color: rgba(244, 217, 139, 0.82);
+      background: rgba(216, 170, 61, 0.13);
+      outline: none;
+    }
+
+    .btn-primary {
+      border-color: transparent;
+      background: linear-gradient(135deg, var(--or-clair), var(--or));
+      color: #151006;
+      box-shadow: 0 14px 34px rgba(216, 170, 61, 0.18);
+    }
+
+    .btn-primary:hover,
+    .btn-primary:focus-visible {
+      background: linear-gradient(135deg, #ffedb7, var(--or));
+    }
+
+    .btn-danger {
+      border-color: rgba(255, 112, 112, 0.4);
+      color: #ffd9d9;
+    }
+
+    .btn-small {
+      padding: 8px 12px;
+      font-size: 0.82rem;
+    }
+
+    .page {
+      max-width: var(--max);
+      margin: 0 auto;
+      padding: 34px 20px 76px;
+    }
+
+    .panel,
+    .card,
+    .lesson-card,
+    .stat-card {
+      position: relative;
+      overflow: hidden;
+      border: 1px solid rgba(216, 170, 61, 0.2);
+      background: linear-gradient(145deg, rgba(255, 255, 255, 0.074), rgba(255, 255, 255, 0.026));
+      box-shadow: var(--ombre);
+      border-radius: var(--radius);
+    }
+
+    .panel::before,
+    .card::before,
+    .lesson-card::before,
+    .stat-card::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      pointer-events: none;
+      background:
+        linear-gradient(135deg, rgba(216, 170, 61, 0.1), transparent 38%),
+        radial-gradient(circle at bottom right, rgba(244, 217, 139, 0.06), transparent 32%);
+    }
+
+    .panel-content,
+    .card-content,
+    .lesson-content,
+    .stat-content {
+      position: relative;
+      z-index: 1;
+      padding: 30px;
+    }
+
+    .hero {
+      display: grid;
+      grid-template-columns: minmax(0, 1.08fr) minmax(330px, 0.92fr);
+      gap: 22px;
+      align-items: stretch;
+      margin-bottom: 22px;
+    }
+
+    .eyebrow {
+      color: var(--or-clair);
+      font-size: 0.78rem;
+      font-weight: 950;
+      letter-spacing: 0.13em;
+      text-transform: uppercase;
+      margin-bottom: 12px;
+    }
+
+    h1 {
+      font-size: clamp(2.1rem, 4vw, 4.3rem);
+      line-height: 0.98;
+      letter-spacing: -0.055em;
+      margin-bottom: 17px;
+    }
+
+    h2,
+    h3 {
+      color: var(--or-clair);
+      letter-spacing: -0.03em;
+    }
+
+    .lead {
+      color: var(--gris);
+      font-size: 1.06rem;
+      max-width: 780px;
+      margin-bottom: 22px;
+    }
+
+    .muted {
+      color: var(--gris);
+      font-size: 0.95rem;
+    }
+
+    .badge-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 9px;
+      margin-top: 20px;
+    }
+
+    .badge,
+    .pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 7px;
+      padding: 8px 12px;
+      border-radius: 999px;
+      border: 1px solid rgba(216, 170, 61, 0.24);
+      background: rgba(0, 0, 0, 0.26);
+      color: var(--gris);
+      font-size: 0.86rem;
+      font-weight: 850;
+    }
+
+    .badge strong,
+    .pill strong {
+      color: var(--or-clair);
+    }
+
+    .pill.green {
+      color: var(--vert-pale);
+      border-color: rgba(128, 224, 141, 0.32);
+      background: rgba(128, 224, 141, 0.1);
+    }
+
+    .pill.red {
+      color: #ffd6d6;
+      border-color: rgba(255, 112, 112, 0.34);
+      background: rgba(255, 112, 112, 0.1);
+    }
+
+    form {
+      display: grid;
+      gap: 13px;
+      margin-top: 18px;
+    }
+
+    .field {
+      display: grid;
+      gap: 7px;
+    }
+
+    label {
+      color: var(--or-clair);
+      font-size: 0.9rem;
+      font-weight: 900;
+    }
+
+    input,
+    textarea,
+    select {
+      width: 100%;
+      border: 1px solid rgba(216, 170, 61, 0.24);
+      background: rgba(0, 0, 0, 0.34);
+      color: var(--blanc);
+      border-radius: 15px;
+      padding: 13px 14px;
+      outline: none;
+    }
+
+    textarea {
+      min-height: 122px;
+      resize: vertical;
+    }
+
+    input:focus,
+    textarea:focus,
+    select:focus {
+      border-color: var(--or-clair);
+      box-shadow: 0 0 0 4px rgba(216, 170, 61, 0.12);
+    }
+
+    .help-text {
+      color: var(--gris-2);
+      font-size: 0.82rem;
+    }
+
+    .status {
+      display: none;
+      border-radius: 15px;
+      padding: 12px 14px;
+      font-weight: 850;
+      font-size: 0.92rem;
+      border: 1px solid transparent;
+    }
+
+    .status.success {
+      display: block;
+      color: var(--vert-pale);
+      background: rgba(128, 224, 141, 0.12);
+      border-color: rgba(128, 224, 141, 0.3);
+    }
+
+    .status.error {
+      display: block;
+      color: #ffd6d6;
+      background: rgba(255, 112, 112, 0.12);
+      border-color: rgba(255, 112, 112, 0.32);
+    }
+
+    .access-panel.unlocked {
+      display: none;
+    }
+
+    .private-area {
+      display: none;
+    }
+
+    .private-area.visible {
+      display: block;
+      animation: fadeIn 0.32s ease both;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(8px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    .section {
+      margin-top: 24px;
+    }
+
+    .section-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-end;
+      gap: 16px;
+      flex-wrap: wrap;
+      margin-bottom: 14px;
+    }
+
+    .section-title {
+      font-size: clamp(1.35rem, 2vw, 2rem);
+    }
+
+    .stats-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 14px;
+      margin-bottom: 20px;
+    }
+
+    .stat-card {
+      box-shadow: 0 16px 44px rgba(0, 0, 0, 0.2);
+      border-radius: 20px;
+    }
+
+    .stat-content {
+      padding: 18px;
+    }
+
+    .stat-content span {
+      display: block;
+      color: var(--gris);
+      font-size: 0.83rem;
+      margin-bottom: 6px;
+    }
+
+    .stat-content strong {
+      display: block;
+      color: var(--or-clair);
+      font-size: 1.45rem;
+      line-height: 1.08;
+    }
+
+    .layout {
+      display: grid;
+      grid-template-columns: minmax(260px, 0.72fr) minmax(0, 1.28fr);
+      gap: 18px;
+      align-items: start;
+    }
+
+    .sidebar {
+      position: sticky;
+      top: 92px;
+    }
+
+    .module-list {
+      display: grid;
+      gap: 10px;
+      margin-top: 14px;
+    }
+
+    .module-btn {
+      width: 100%;
+      text-align: left;
+      border: 1px solid rgba(216, 170, 61, 0.18);
+      background: rgba(255, 255, 255, 0.04);
+      color: var(--blanc);
+      border-radius: 16px;
+      padding: 12px 13px;
+      cursor: pointer;
+      transition: border-color 0.18s ease, background 0.18s ease;
+    }
+
+    .module-btn:hover,
+    .module-btn.active {
+      border-color: rgba(244, 217, 139, 0.62);
+      background: rgba(216, 170, 61, 0.1);
+    }
+
+    .module-btn strong {
+      display: block;
+      color: var(--or-clair);
+      font-size: 0.94rem;
+      margin-bottom: 3px;
+    }
+
+    .module-btn span {
+      color: var(--gris);
+      font-size: 0.82rem;
+    }
+
+    .lesson-card {
+      border-radius: 22px;
+    }
+
+    .lesson-content h3 {
+      font-size: clamp(1.3rem, 2vw, 1.8rem);
+      margin-bottom: 10px;
+    }
+
+    .lesson-meta {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-bottom: 18px;
+    }
+
+    .lesson-body {
+      display: grid;
+      gap: 16px;
+      color: var(--gris);
+    }
+
+    .lesson-body p strong,
+    .lesson-body li strong {
+      color: var(--or-clair);
+    }
+
+    .lesson-body ul,
+    .lesson-body ol {
+      padding-left: 22px;
+    }
+
+    .premium-box,
+    .warning-box,
+    .success-box {
+      border-radius: 18px;
+      padding: 16px;
+      margin: 14px 0;
+      border: 1px solid rgba(216, 170, 61, 0.24);
+      background: rgba(0, 0, 0, 0.26);
+    }
+
+    .premium-box strong {
+      color: var(--jaune);
+    }
+
+    .warning-box {
+      border-color: rgba(255, 112, 112, 0.32);
+      background: rgba(255, 112, 112, 0.08);
+      color: #ffe0e0;
+    }
+
+    .success-box {
+      border-color: rgba(128, 224, 141, 0.28);
+      background: rgba(128, 224, 141, 0.09);
+      color: var(--vert-pale);
+    }
+
+    .progress-block {
+      margin: 16px 0 4px;
+    }
+
+    .progress-label {
+      display: flex;
+      justify-content: space-between;
+      gap: 10px;
+      color: var(--gris);
+      font-size: 0.84rem;
+      margin-bottom: 7px;
+    }
+
+    .progress-bar {
+      height: 11px;
+      overflow: hidden;
+      border-radius: 999px;
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      background: rgba(255, 255, 255, 0.1);
+    }
+
+    .progress-fill {
+      height: 100%;
+      width: 0%;
+      border-radius: inherit;
+      background: linear-gradient(90deg, var(--or), var(--or-clair));
+      transition: width 0.25s ease;
+    }
+
+    .two-columns {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+      gap: 18px;
+    }
+
+    .checklist {
+      display: grid;
+      gap: 10px;
+      margin-top: 12px;
+    }
+
+    .check-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+      padding: 11px 12px;
+      border-radius: 14px;
+      border: 1px solid rgba(216, 170, 61, 0.14);
+      background: rgba(255, 255, 255, 0.035);
+      color: var(--gris);
+    }
+
+    .check-item input {
+      width: auto;
+      margin-top: 5px;
+      accent-color: var(--or);
+    }
+
+    .resource-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 14px;
+    }
+
+    .resource-card {
+      border: 1px solid rgba(216, 170, 61, 0.16);
+      border-radius: 18px;
+      padding: 16px;
+      background: rgba(255, 255, 255, 0.04);
+    }
+
+    .resource-card h3 {
+      font-size: 1rem;
+      margin-bottom: 7px;
+    }
+
+    .resource-card p {
+      color: var(--gris);
+      font-size: 0.9rem;
+      margin-bottom: 12px;
+    }
+
+    .notes-tools {
+      display: grid;
+      gap: 12px;
+    }
+
+    .footer {
+      max-width: var(--max);
+      margin: 0 auto;
+      padding: 24px 20px 44px;
+      color: var(--gris-2);
+      border-top: 1px solid rgba(216, 170, 61, 0.14);
+      font-size: 0.9rem;
+    }
+
+    .footer a {
+      color: var(--or-clair);
+    }
+
+    .modal-backdrop {
+      position: fixed;
+      inset: 0;
+      z-index: 100;
+      display: none;
+      align-items: center;
+      justify-content: center;
+      padding: 20px;
+      background: rgba(0, 0, 0, 0.72);
+    }
+
+    .modal-backdrop.visible {
+      display: flex;
+    }
+
+    .modal {
+      width: min(780px, 100%);
+      max-height: 84vh;
+      overflow: auto;
+      border-radius: 24px;
+      border: 1px solid rgba(216, 170, 61, 0.32);
+      background: #101010;
+      box-shadow: var(--ombre);
+      padding: 26px;
+    }
+
+    .modal-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      gap: 14px;
+      margin-bottom: 16px;
+    }
+
+    .modal h2 {
+      color: var(--or-clair);
+      font-size: 1.42rem;
+    }
+
+    .modal p,
+    .modal li {
+      color: var(--gris);
+    }
+
+    .modal ul {
+      padding-left: 20px;
+      margin-top: 10px;
+    }
+
+    .close-modal {
+      width: 40px;
+      height: 40px;
+      border: 1px solid rgba(255, 255, 255, 0.14);
+      border-radius: 999px;
+      background: rgba(255, 255, 255, 0.06);
+      color: var(--blanc);
+      cursor: pointer;
+      font-weight: 950;
+      flex: 0 0 auto;
+    }
+
+    .sr-only {
+      position: absolute;
+      width: 1px;
+      height: 1px;
+      padding: 0;
+      margin: -1px;
+      overflow: hidden;
+      clip: rect(0, 0, 0, 0);
+      white-space: nowrap;
+      border: 0;
+    }
+
+    @media (max-width: 1040px) {
+      .hero,
+      .layout,
+      .stats-grid,
+      .resource-grid,
+      .two-columns {
+        grid-template-columns: 1fr 1fr;
+      }
+
+      .sidebar {
+        position: static;
+      }
+    }
+
+    @media (max-width: 760px) {
+      .nav {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+
+      .nav-actions {
+        width: 100%;
+        justify-content: flex-start;
+      }
+
+      .hero,
+      .layout,
+      .stats-grid,
+      .resource-grid,
+      .two-columns {
+        grid-template-columns: 1fr;
+      }
+
+      .panel-content,
+      .card-content,
+      .lesson-content {
+        padding: 22px;
+      }
+
+      .brand span span {
+        max-width: 245px;
+      }
+    }
+
+    @media print {
+      .topbar,
+      .access-panel,
+      .nav-actions,
+      .lesson-actions,
+      .card-actions,
+      .resource-grid,
+      .modal-backdrop,
+      .notes-tools {
+        display: none !important;
+      }
+
+      body {
+        background: #fff;
+        color: #000;
+      }
+
+      .panel,
+      .card,
+      .lesson-card,
+      .stat-card {
+        background: #fff;
+        color: #000;
+        border-color: #777;
+        box-shadow: none;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <a class="skip-link" href="#contenu">Aller au contenu</a>
+
+  <header class="topbar" aria-label="Navigation principale">
+    <nav class="nav">
+      <a class="brand" href="index.html" aria-label="Retour à l’accueil Le Pivot d’Or">
+        <span class="brand-mark" aria-hidden="true"></span>
+        <span>
+          <strong>Le Pivot d’Or</strong>
+          <span>Formation privée · Mini-système</span>
+        </span>
+      </a>
+
+      <div class="nav-actions">
+        <a class="nav-link" href="index.html">Accueil</a>
+        <a class="nav-link" href="espace-client.html">Espace client</a>
+        <a class="nav-link" href="support.html">Support</a>
+        <button class="btn btn-danger btn-small" type="button" id="logoutBtn" hidden>Déconnexion</button>
+      </div>
+    </nav>
+  </header>
+
+  <main class="page" id="contenu">
+    <section class="hero" aria-labelledby="titre-page">
+      <div class="panel">
+        <div class="panel-content">
+          <p class="eyebrow">Formation privée</p>
+          <h1 id="titre-page">Créer ton assistant IA personnel en 45 minutes.</h1>
+          <p class="lead">
+            Une formation courte pour bâtir un assistant IA simple, clair et réutilisable : contexte, règles,
+            tâches, checklist, progression et notes personnelles.
+          </p>
+
+          <div class="hero-actions">
+            <a class="btn btn-primary" href="#formation-content">Commencer la formation</a>
+            <a class="btn" href="#ressources-section">Voir les ressources</a>
+          </div>
+
+          <div class="badge-row" aria-label="Informations de la formation">
+            <span class="badge"><strong>Prix :</strong> 25 $</span>
+            <span class="badge"><strong>Durée :</strong> 45 min</span>
+            <span class="badge"><strong>Version :</strong> 1.0</span>
+            <span class="badge"><strong>Mise à jour :</strong> annuelle</span>
+          </div>
+        </div>
+      </div>
+
+      <aside class="panel access-panel" aria-labelledby="access-title">
+        <div class="panel-content">
+          <h2 id="access-title">Déverrouiller la formation</h2>
+          <p class="muted">
+            Cette version est une interface locale de démonstration pour GitHub Pages. Le contenu réellement payant ne doit jamais être placé complet dans le code source public.
+            La vraie version commerciale devra valider l’achat avec Stripe et un serveur avant d’afficher le contenu complet.
+          </p>
+
+          <form id="accessForm" novalidate>
+            <div class="field">
+              <label for="clientEmail">Courriel d’achat</label>
+              <input id="clientEmail" name="clientEmail" type="email" inputmode="email" autocomplete="email" placeholder="ton@email.com" required />
+            </div>
+
+            <div class="field">
+              <label for="clientCode">Code client</label>
+              <input id="clientCode" name="clientCode" type="password" autocomplete="one-time-code" placeholder="Ex. FORMATION-DEMO-2026" minlength="8" required />
+            </div>
+
+            <p class="help-text">
+              Démo locale : utilise le code <strong>FORMATION-DEMO-2026</strong>. Ne place jamais de vrais codes clients dans un dépôt public.
+            </p>
+
+            <button class="btn btn-primary" type="submit">Ouvrir la formation</button>
+            <div class="status" id="accessStatus" role="status" aria-live="polite"></div>
+          </form>
+        </div>
+      </aside>
+    </section>
+
+    <section class="private-area" id="privateArea" aria-label="Contenu privé de formation">
+      <div class="section-header">
+        <div>
+          <p class="eyebrow">Tableau de formation</p>
+          <h2 class="section-title">Ta progression</h2>
+          <p class="muted" id="welcomeText">Bienvenue dans la formation.</p>
+        </div>
+        <div class="card-actions">
+          <button class="btn btn-small" type="button" id="exportBtn">Exporter mon résumé</button>
+          <button class="btn btn-small" type="button" onclick="window.print()">Imprimer</button>
+          <button class="btn btn-danger btn-small" type="button" id="clearLocalDataBtn">Effacer mes données locales</button>
+        </div>
+      </div>
+
+      <div class="stats-grid" aria-label="Statistiques de formation">
+        <article class="stat-card">
+          <div class="stat-content">
+            <span>Progression totale</span>
+            <strong id="statProgress">0%</strong>
+          </div>
+        </article>
+        <article class="stat-card">
+          <div class="stat-content">
+            <span>Modules complétés</span>
+            <strong id="statCompleted">0/5</strong>
+          </div>
+        </article>
+        <article class="stat-card">
+          <div class="stat-content">
+            <span>Checklist terminée</span>
+            <strong id="statChecklist">0/6</strong>
+          </div>
+        </article>
+        <article class="stat-card">
+          <div class="stat-content">
+            <span>Session expire</span>
+            <strong id="statExpiration">—</strong>
+          </div>
+        </article>
+      </div>
+
+      <div class="progress-block" aria-label="Progression globale">
+        <div class="progress-label">
+          <span>Avancement global de la formation</span>
+          <strong id="progressText">0%</strong>
+        </div>
+        <div class="progress-bar" role="progressbar" aria-label="Progression globale de la formation" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0" id="globalProgressBar">
+          <div class="progress-fill" id="globalProgressFill"></div>
+        </div>
+      </div>
+
+      <section class="section layout" id="formation-content">
+        <aside class="card sidebar" aria-label="Navigation des modules">
+          <div class="card-content">
+            <p class="eyebrow">Modules</p>
+            <h2>Plan de formation</h2>
+            <p class="muted">Avance dans l’ordre. Chaque module peut être marqué comme terminé.</p>
+            <div class="module-list" id="moduleList"></div>
+          </div>
+        </aside>
+
+        <article class="lesson-card" aria-live="polite">
+          <div class="lesson-content">
+            <div id="lessonContainer"></div>
+          </div>
+        </article>
+      </section>
+
+      <section class="section two-columns" aria-label="Checklist et notes personnelles">
+        <article class="card">
+          <div class="card-content">
+            <p class="eyebrow">Exécution</p>
+            <h2>Checklist obligatoire</h2>
+            <p class="muted">Cette checklist transforme la formation en action concrète.</p>
+            <div class="checklist" id="checklist"></div>
+          </div>
+        </article>
+
+        <article class="card">
+          <div class="card-content">
+            <p class="eyebrow">Notes</p>
+            <h2>Mes notes personnelles</h2>
+            <div class="notes-tools">
+              <label for="personalNotes">Écris tes décisions, idées et prochaines actions.</label>
+              <p class="help-text">N’écris pas de données sensibles ici. Ces notes sont sauvegardées localement dans ton navigateur.</p>
+              <textarea id="personalNotes" placeholder="Ex. Mon assistant IA doit m’aider à créer mes scripts, mes pages et mes checklists..."></textarea>
+              <div class="card-actions">
+                <button class="btn btn-primary btn-small" type="button" id="saveNotesBtn">Sauvegarder mes notes</button>
+                <button class="btn btn-small" type="button" id="clearNotesBtn">Effacer mes notes</button>
+                <button class="btn btn-small" type="button" id="copyNotesBtn">Copier mes notes</button>
+              </div>
+              <div class="status" id="notesStatus" role="status" aria-live="polite"></div>
+            </div>
+          </div>
+        </article>
+      </section>
+
+      <section class="section" id="ressources-section" aria-label="Ressources de la formation">
+        <div class="section-header">
+          <div>
+            <p class="eyebrow">Ressources</p>
+            <h2 class="section-title">Ressources sécurisées</h2>
+            <p class="muted">Les vrais liens privés ne sont pas exposés dans le HTML public. Cette page doit rester une coquille d’accès; le contenu payant complet doit venir d’un système sécurisé.</p>
+          </div>
+        </div>
+
+        <div class="resource-grid">
+          <article class="resource-card">
+            <h3>Checklist PDF</h3>
+            <p>Checklist d’implantation pour créer ton assistant IA étape par étape.</p>
+            <button class="btn btn-primary btn-small" type="button" data-resource="Checklist PDF">Demander l’accès</button>
+          </article>
+          <article class="resource-card">
+            <h3>Gabarit de prompt</h3>
+            <p>Structure prête à copier pour configurer ton assistant IA.</p>
+            <button class="btn btn-primary btn-small" type="button" data-resource="Gabarit de prompt">Demander l’accès</button>
+          </article>
+          <article class="resource-card">
+            <h3>Plan d’action 7 jours</h3>
+            <p>Plan simple pour utiliser ton assistant sans te disperser.</p>
+            <button class="btn btn-primary btn-small" type="button" data-resource="Plan d’action 7 jours">Demander l’accès</button>
+          </article>
+        </div>
+
+        <div class="warning-box">
+          <strong>Protection importante :</strong> sur GitHub Pages, le code est public. Cette page doit servir d’interface.
+          La vraie protection doit venir d’un serveur qui vérifie l’achat Stripe et génère un lien temporaire sécurisé.
+        </div>
+      </section>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <p>
+      © <span id="year"></span> Le Pivot d’Or ·
+      <a href="conditions.html">Conditions</a> ·
+      <a href="confidentialite.html">Confidentialité</a> ·
+      <a href="support.html">Support</a>
+    </p>
+  </footer>
+
+  <div class="modal-backdrop" id="modalBackdrop" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+    <div class="modal">
+      <div class="modal-header">
+        <div>
+          <p class="eyebrow">Accès ressource</p>
+          <h2 id="modalTitle">Ressource</h2>
+        </div>
+        <button class="close-modal" type="button" id="closeModal" aria-label="Fermer la fenêtre">×</button>
+      </div>
+      <div id="modalBody"></div>
+    </div>
+  </div>
+
+  <script>
+    "use strict";
+
+    const DEMO_CODE = "FORMATION-DEMO-2026";
+    const SESSION_DURATION_DAYS = 7;
+    const MAX_FAILED_ATTEMPTS = 5;
+    const SESSION_KEY = "pivotdor_formation_privee_session_v1";
+    const ATTEMPT_KEY = "pivotdor_formation_privee_attempts_v1";
+    const MODULE_PROGRESS_KEY = "pivotdor_formation_privee_modules_v1";
+    const CHECKLIST_KEY = "pivotdor_formation_privee_checklist_v1";
+    const NOTES_KEY = "pivotdor_formation_privee_notes_v1";
+
+    const modules = [
+      {
+        id: "module-1",
+        title: "Clarifier le rôle de ton assistant",
+        duration: "7 min",
+        objective: "Définir exactement ce que ton assistant doit faire et ne pas faire.",
+        content: [
+          "Avant de créer un assistant IA, tu dois choisir son rôle. Un assistant trop vague produit des réponses vagues.",
+          "La première décision est simple : ton assistant doit aider sur une mission précise. Exemple : scripts vidéo, pages de vente, idées de formations, support client ou organisation.",
+          "Plus ton rôle est clair, plus ton assistant devient utile, rentable et répétable."
+        ],
+        action: "Écris une phrase : Mon assistant IA sert principalement à ________."
+      },
+      {
+        id: "module-2",
+        title: "Ajouter le contexte de ton entreprise",
+        duration: "10 min",
+        objective: "Donner à l’IA les informations minimales pour répondre dans ton style.",
+        content: [
+          "Le contexte est le carburant de l’IA. Sans contexte, elle devine. Avec contexte, elle exécute mieux.",
+          "Ajoute ton marché, tes offres, ton ton, tes règles, tes prix, tes clients et tes limites.",
+          "Pour Le Pivot d’Or, le style doit rester clair, structuré, premium, direct et orienté action."
+        ],
+        action: "Prépare un bloc de contexte de 10 lignes maximum sur ton entreprise."
+      },
+      {
+        id: "module-3",
+        title: "Créer les règles de réponse",
+        duration: "9 min",
+        objective: "Empêcher les réponses inutiles, vagues ou trop longues.",
+        content: [
+          "Un bon assistant a des règles. Les règles remplacent l’improvisation par une structure.",
+          "Exemples : parler au tu, répondre clairement, donner des étapes simples, éviter les promesses irréalistes, toujours proposer une prochaine action.",
+          "Ces règles rendent ton assistant plus stable et plus professionnel."
+        ],
+        action: "Écris 5 règles que ton assistant doit toujours respecter."
+      },
+      {
+        id: "module-4",
+        title: "Créer des tâches répétables",
+        duration: "11 min",
+        objective: "Transformer l’assistant en outil de production, pas juste en conversation.",
+        content: [
+          "Une tâche répétable est une commande que tu peux réutiliser chaque semaine.",
+          "Exemples : créer 10 idées de vidéos, auditer une page, corriger un texte, générer une checklist, préparer un courriel ou résumer une stratégie.",
+          "Ton assistant devient rentable quand il répète bien les tâches importantes."
+        ],
+        action: "Crée 3 commandes répétables que tu utiliseras souvent."
+      },
+      {
+        id: "module-5",
+        title: "Tester, corriger et améliorer",
+        duration: "8 min",
+        objective: "Élever la qualité de ton assistant avec une boucle simple.",
+        content: [
+          "Ne cherche pas la perfection au premier essai. Teste, corrige, améliore.",
+          "Demande toujours : qu’est-ce qui manque, qu’est-ce qui est flou, qu’est-ce qui peut être plus rentable ?",
+          "La puissance vient de la répétition intelligente : contexte, exécution, correction, amélioration."
+        ],
+        action: "Teste ton assistant sur une vraie tâche et note une amélioration à faire."
+      }
+    ];
+
+    const checklistItems = [
+      "J’ai choisi le rôle principal de mon assistant IA.",
+      "J’ai écrit le contexte de mon entreprise en 10 lignes maximum.",
+      "J’ai défini 5 règles de réponse.",
+      "J’ai créé 3 tâches répétables.",
+      "J’ai testé mon assistant sur une vraie demande.",
+      "J’ai noté une amélioration à intégrer dans la prochaine version."
+    ];
+
+    const accessForm = document.getElementById("accessForm");
+    const accessStatus = document.getElementById("accessStatus");
+    const privateArea = document.getElementById("privateArea");
+    const logoutBtn = document.getElementById("logoutBtn");
+    const moduleList = document.getElementById("moduleList");
+    const lessonContainer = document.getElementById("lessonContainer");
+    const checklist = document.getElementById("checklist");
+    const notesStatus = document.getElementById("notesStatus");
+    const modalBackdrop = document.getElementById("modalBackdrop");
+    const modalTitle = document.getElementById("modalTitle");
+    const modalBody = document.getElementById("modalBody");
+    const closeModal = document.getElementById("closeModal");
+
+    let activeModuleId = modules[0].id;
+
+    document.getElementById("year").textContent = new Date().getFullYear();
+
+    function sanitizeText(value) {
+      return String(value)
+        .replace(/&/g, "&amp;")
+        .replace(/</g, "&lt;")
+        .replace(/>/g, "&gt;")
+        .replace(/"/g, "&quot;")
+        .replace(/'/g, "&#039;");
+    }
+
+    function safeJsonRead(key, fallback) {
+      try {
+        return JSON.parse(localStorage.getItem(key)) || fallback;
+      } catch (error) {
+        localStorage.removeItem(key);
+        return fallback;
+      }
+    }
+
+    function isValidEmail(email) {
+      return /^[^ @]+@[^ @]+[.][^ @]{2,}$/.test(email);
+    }
+
+    function formatDate(dateString) {
+      const date = new Date(dateString);
+      if (Number.isNaN(date.getTime())) return "—";
+      return date.toLocaleDateString("fr-CA", { year: "numeric", month: "short", day: "numeric" });
+    }
+
+    function setStatus(element, type, message) {
+      element.className = `status ${type}`;
+      element.textContent = message;
+    }
+
+    function getAttemptState() {
+      return safeJsonRead(ATTEMPT_KEY, { count: 0, lockedUntil: null });
+    }
+
+    function saveAttemptState(state) {
+      localStorage.setItem(ATTEMPT_KEY, JSON.stringify(state));
+    }
+
+    function resetAttemptState() {
+      localStorage.removeItem(ATTEMPT_KEY);
+    }
+
+    function isTemporarilyLocked() {
+      const state = getAttemptState();
+      if (!state.lockedUntil) return false;
+      return new Date(state.lockedUntil).getTime() > Date.now();
+    }
+
+    function registerFailedAttempt() {
+      const state = getAttemptState();
+      const nextCount = Number(state.count || 0) + 1;
+      const lockedUntil = nextCount >= MAX_FAILED_ATTEMPTS
+        ? new Date(Date.now() + 15 * 60 * 1000).toISOString()
+        : null;
+      saveAttemptState({ count: nextCount, lockedUntil });
+      return { count: nextCount, lockedUntil };
+    }
+
+    function getSession() {
+      const session = safeJsonRead(SESSION_KEY, null);
+      if (!session) return null;
+      if (session.expiresAt && new Date(session.expiresAt).getTime() <= Date.now()) {
+        clearSession();
+        return null;
+      }
+      return session;
+    }
+
+    function saveSession(email) {
+      const now = new Date();
+      const expiresAt = new Date(now.getTime() + SESSION_DURATION_DAYS * 24 * 60 * 60 * 1000);
+      const session = {
+        email,
+        active: true,
+        product: "Créer ton assistant IA personnel en 45 minutes",
+        createdAt: now.toISOString(),
+        lastAccess: now.toISOString(),
+        expiresAt: expiresAt.toISOString()
+      };
+      localStorage.setItem(SESSION_KEY, JSON.stringify(session));
+      return session;
+    }
+
+    function clearSession() {
+      localStorage.removeItem(SESSION_KEY);
+    }
+
+    function getModuleProgress() {
+      return safeJsonRead(MODULE_PROGRESS_KEY, {});
+    }
+
+    function saveModuleProgress(progress) {
+      localStorage.setItem(MODULE_PROGRESS_KEY, JSON.stringify(progress));
+    }
+
+    function getChecklistProgress() {
+      return safeJsonRead(CHECKLIST_KEY, {});
+    }
+
+    function saveChecklistProgress(progress) {
+      localStorage.setItem(CHECKLIST_KEY, JSON.stringify(progress));
+    }
+
+    function calculateStats() {
+      const moduleProgress = getModuleProgress();
+      const checklistProgress = getChecklistProgress();
+      const completedModules = modules.filter(module => moduleProgress[module.id]).length;
+      const completedChecklist = checklistItems.filter((_, index) => checklistProgress[`check-${index}`]).length;
+      const moduleScore = Math.round((completedModules / modules.length) * 70);
+      const checklistScore = Math.round((completedChecklist / checklistItems.length) * 30);
+      const total = Math.min(100, moduleScore + checklistScore);
+      return { completedModules, completedChecklist, total };
+    }
+
+    function updateStats() {
+      const session = getSession();
+      const stats = calculateStats();
+      document.getElementById("statProgress").textContent = `${stats.total}%`;
+      document.getElementById("statCompleted").textContent = `${stats.completedModules}/${modules.length}`;
+      document.getElementById("statChecklist").textContent = `${stats.completedChecklist}/${checklistItems.length}`;
+      document.getElementById("statExpiration").textContent = session && session.expiresAt ? formatDate(session.expiresAt) : "—";
+      document.getElementById("progressText").textContent = `${stats.total}%`;
+      document.getElementById("globalProgressFill").style.width = `${stats.total}%`;
+      document.getElementById("globalProgressBar").setAttribute("aria-valuenow", String(stats.total));
+      document.getElementById("welcomeText").textContent = session ? `Accès ouvert pour ${session.email}.` : "Bienvenue dans la formation.";
+    }
+
+    function renderModuleList() {
+      const progress = getModuleProgress();
+      moduleList.innerHTML = modules.map(module => {
+        const completed = Boolean(progress[module.id]);
+        const active = module.id === activeModuleId;
+        return `
+          <button class="module-btn ${active ? "active" : ""}" type="button" data-module="${sanitizeText(module.id)}" aria-pressed="${active}">
+            <strong>${completed ? "✓ " : ""}${sanitizeText(module.title)}</strong>
+            <span>${sanitizeText(module.duration)} · ${completed ? "Terminé" : "À faire"}</span>
+          </button>
+        `;
+      }).join("");
+    }
+
+    function renderLesson() {
+      const module = modules.find(item => item.id === activeModuleId) || modules[0];
+      const progress = getModuleProgress();
+      const completed = Boolean(progress[module.id]);
+
+      lessonContainer.innerHTML = `
+        <p class="eyebrow">${completed ? "Module terminé" : "Module en cours"}</p>
+        <h3>${sanitizeText(module.title)}</h3>
+        <div class="lesson-meta">
+          <span class="pill"><strong>Durée :</strong> ${sanitizeText(module.duration)}</span>
+          <span class="pill"><strong>Objectif :</strong> ${sanitizeText(module.objective)}</span>
+          <span class="pill ${completed ? "green" : "red"}">${completed ? "Terminé" : "À compléter"}</span>
+        </div>
+
+        <div class="lesson-body">
+          ${module.content.map(paragraph => `<p>${sanitizeText(paragraph)}</p>`).join("")}
+          <div class="premium-box">
+            <strong>Action à faire :</strong> ${sanitizeText(module.action)}
+          </div>
+          <div class="success-box">
+            Le but n’est pas d’avoir un assistant parfait. Le but est d’avoir un assistant clair, utile et améliorable.
+          </div>
+        </div>
+
+        <div class="lesson-actions">
+          <button class="btn btn-primary" type="button" id="completeModuleBtn">${completed ? "Marquer non terminé" : "Marquer ce module terminé"}</button>
+          <button class="btn" type="button" id="nextModuleBtn">Module suivant</button>
+        </div>
+      `;
+
+      document.getElementById("completeModuleBtn").addEventListener("click", () => toggleModuleCompleted(module.id));
+      document.getElementById("nextModuleBtn").addEventListener("click", goToNextModule);
+    }
+
+    function toggleModuleCompleted(id) {
+      const progress = getModuleProgress();
+      progress[id] = !progress[id];
+      saveModuleProgress(progress);
+      renderModuleList();
+      renderLesson();
+      updateStats();
+    }
+
+    function goToNextModule() {
+      const currentIndex = modules.findIndex(module => module.id === activeModuleId);
+      const nextIndex = currentIndex >= modules.length - 1 ? 0 : currentIndex + 1;
+      activeModuleId = modules[nextIndex].id;
+      renderModuleList();
+      renderLesson();
+    }
+
+    function renderChecklist() {
+      const progress = getChecklistProgress();
+      checklist.innerHTML = checklistItems.map((item, index) => {
+        const id = `check-${index}`;
+        return `
+          <label class="check-item" for="${id}">
+            <input type="checkbox" id="${id}" data-check="${id}" ${progress[id] ? "checked" : ""} />
+            <span>${sanitizeText(item)}</span>
+          </label>
+        `;
+      }).join("");
+    }
+
+    function openPrivateArea(session) {
+      privateArea.classList.add("visible");
+      document.querySelector(".access-panel")?.classList.add("unlocked");
+      logoutBtn.hidden = false;
+      renderModuleList();
+      renderLesson();
+      renderChecklist();
+      updateStats();
+      document.getElementById("personalNotes").value = localStorage.getItem(NOTES_KEY) || "";
+      privateArea.scrollIntoView({ behavior: "smooth", block: "start" });
+    }
+
+    function exportSummary() {
+      const session = getSession();
+      const stats = calculateStats();
+      const notes = localStorage.getItem(NOTES_KEY) || "";
+      const completed = modules
+        .filter(module => getModuleProgress()[module.id])
+        .map(module => `- ${module.title}`)
+        .join("\n") || "Aucun module terminé.";
+
+      const summary = [
+        "Résumé formation privée — Le Pivot d’Or",
+        `Client : ${session ? session.email : "non connecté"}`,
+        `Formation : Créer ton assistant IA personnel en 45 minutes`,
+        `Progression : ${stats.total}%`,
+        `Modules terminés : ${stats.completedModules}/${modules.length}`,
+        `Checklist : ${stats.completedChecklist}/${checklistItems.length}`,
+        `Expiration session : ${session && session.expiresAt ? formatDate(session.expiresAt) : "—"}`,
+        "",
+        "Modules terminés :",
+        completed,
+        "",
+        "Notes :",
+        notes || "Aucune note enregistrée."
+      ].join("\n");
+
+      if (navigator.clipboard && window.isSecureContext) {
+        navigator.clipboard.writeText(summary)
+          .then(() => alert("Résumé copié dans le presse-papiers."))
+          .catch(() => alert(summary));
+      } else {
+        alert(summary);
+      }
+    }
+
+    function clearLocalData() {
+      const confirmed = confirm("Effacer la session, la progression, la checklist et les notes sur ce navigateur ?");
+      if (!confirmed) return;
+      localStorage.removeItem(SESSION_KEY);
+      localStorage.removeItem(ATTEMPT_KEY);
+      localStorage.removeItem(MODULE_PROGRESS_KEY);
+      localStorage.removeItem(CHECKLIST_KEY);
+      localStorage.removeItem(NOTES_KEY);
+      privateArea.classList.remove("visible");
+      document.querySelector(".access-panel")?.classList.remove("unlocked");
+      logoutBtn.hidden = true;
+      setStatus(accessStatus, "success", "Données locales effacées sur ce navigateur.");
+      window.scrollTo({ top: 0, behavior: "smooth" });
+    }
+
+    function openResourceModal(resourceName) {
+      modalTitle.textContent = resourceName;
+      modalBody.innerHTML = `
+        <p>Cette ressource fait partie de la formation privée.</p>
+        <div class="success-box">
+          Protection corrigée : aucun lien réel vers un fichier payant n’est exposé dans cette page publique.
+        </div>
+        <ul>
+          <li>Ressource demandée : ${sanitizeText(resourceName)}</li>
+          <li>Validation future : achat Stripe confirmé côté serveur</li>
+          <li>Accès futur : lien temporaire sécurisé</li>
+        </ul>
+      `;
+      modalBackdrop.classList.add("visible");
+      closeModal.focus();
+    }
+
+    accessForm.addEventListener("submit", event => {
+      event.preventDefault();
+      const email = document.getElementById("clientEmail").value.trim().toLowerCase();
+      const code = document.getElementById("clientCode").value.trim();
+
+      if (isTemporarilyLocked()) {
+        setStatus(accessStatus, "error", "Trop d’essais invalides. Réessaie dans environ 15 minutes ou contacte le support.");
+        return;
+      }
+
+      if (!isValidEmail(email)) {
+        setStatus(accessStatus, "error", "Entre un courriel d’achat valide.");
+        return;
+      }
+
+      if (code !== DEMO_CODE) {
+        const attempt = registerFailedAttempt();
+        const remaining = Math.max(0, MAX_FAILED_ATTEMPTS - attempt.count);
+        const message = attempt.lockedUntil
+          ? "Trop d’essais invalides. L’accès est temporairement bloqué pendant 15 minutes."
+          : `Code invalide. Il reste ${remaining} essai(s) avant le blocage temporaire.`;
+        setStatus(accessStatus, "error", message);
+        return;
+      }
+
+      resetAttemptState();
+      const session = saveSession(email);
+      setStatus(accessStatus, "success", "Formation ouverte. Tu peux commencer plus bas.");
+      openPrivateArea(session);
+    });
+
+    logoutBtn.addEventListener("click", () => {
+      clearSession();
+      privateArea.classList.remove("visible");
+      document.querySelector(".access-panel")?.classList.remove("unlocked");
+      logoutBtn.hidden = true;
+      setStatus(accessStatus, "success", "Tu es déconnecté de cette session locale.");
+      window.scrollTo({ top: 0, behavior: "smooth" });
+    });
+
+    moduleList.addEventListener("click", event => {
+      const id = event.target.closest("button")?.getAttribute("data-module");
+      if (!id) return;
+      activeModuleId = id;
+      renderModuleList();
+      renderLesson();
+    });
+
+    checklist.addEventListener("change", event => {
+      const id = event.target.getAttribute("data-check");
+      if (!id) return;
+      const progress = getChecklistProgress();
+      progress[id] = event.target.checked;
+      saveChecklistProgress(progress);
+      updateStats();
+    });
+
+    function saveNotesManually() {
+      const notes = document.getElementById("personalNotes").value.trim();
+      localStorage.setItem(NOTES_KEY, notes);
+      setStatus(notesStatus, "success", "Notes sauvegardées sur ce navigateur.");
+    }
+
+    let notesSaveTimer = null;
+    document.getElementById("personalNotes").addEventListener("input", () => {
+      clearTimeout(notesSaveTimer);
+      notesSaveTimer = setTimeout(() => {
+        const notes = document.getElementById("personalNotes").value.trim();
+        localStorage.setItem(NOTES_KEY, notes);
+        setStatus(notesStatus, "success", "Notes autosauvegardées localement.");
+      }, 700);
+    });
+
+    document.getElementById("saveNotesBtn").addEventListener("click", saveNotesManually);
+
+    document.getElementById("clearNotesBtn").addEventListener("click", () => {
+      const confirmed = confirm("Effacer seulement tes notes locales ?");
+      if (!confirmed) return;
+      localStorage.removeItem(NOTES_KEY);
+      document.getElementById("personalNotes").value = "";
+      setStatus(notesStatus, "success", "Notes locales effacées.");
+    });
+
+    document.getElementById("copyNotesBtn").addEventListener("click", () => {
+      const notes = document.getElementById("personalNotes").value.trim();
+      if (!notes) {
+        setStatus(notesStatus, "error", "Aucune note à copier.");
+        return;
+      }
+      if (navigator.clipboard && window.isSecureContext) {
+        navigator.clipboard.writeText(notes)
+          .then(() => setStatus(notesStatus, "success", "Notes copiées."))
+          .catch(() => setStatus(notesStatus, "error", "Copie impossible. Sélectionne les notes manuellement."));
+      } else {
+        setStatus(notesStatus, "error", "Copie automatique indisponible. Sélectionne les notes manuellement.");
+      }
+    });
+
+    document.getElementById("exportBtn").addEventListener("click", exportSummary);
+    document.getElementById("clearLocalDataBtn").addEventListener("click", clearLocalData);
+
+    document.querySelectorAll("[data-resource]").forEach(button => {
+      button.addEventListener("click", () => openResourceModal(button.getAttribute("data-resource")));
+    });
+
+    closeModal.addEventListener("click", () => modalBackdrop.classList.remove("visible"));
+    modalBackdrop.addEventListener("click", event => {
+      if (event.target === modalBackdrop) modalBackdrop.classList.remove("visible");
+    });
+    document.addEventListener("keydown", event => {
+      if (event.key === "Escape") modalBackdrop.classList.remove("visible");
+    });
+
+    const existingSession = getSession();
+    if (existingSession && existingSession.active) {
+      existingSession.lastAccess = new Date().toISOString();
+      localStorage.setItem(SESSION_KEY, JSON.stringify(existingSession));
+      setStatus(accessStatus, "success", "Session locale retrouvée. La formation est déjà ouverte.");
+      openPrivateArea(existingSession);
+    }
+  </script>
+</body>
+</html>
