@@ -1,0 +1,13 @@
+# .nojekyll
+# Ce fichier indique à GitHub Pages de publier le site tel quel,
+# sans traitement Jekyll.
+#
+# Emplacement obligatoire : racine du dépôt GitHub Pages.
+# Exemple : pivotdor-platform/.nojekyll
+#
+# Important :
+# - ne pas renommer en nojekyll.txt
+# - ne pas renommer en .nojekyll.html
+# - garder le point au début du nom
+# - ne pas placer dans un dossier css, js, docs ou assets
+# - laisser ce fichier très simple
