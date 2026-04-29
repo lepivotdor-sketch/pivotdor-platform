@@ -1,0 +1,71 @@
+# robots.txt — Le Pivot d’Or / Mini Mini Formation
+# Objectif : indexer les pages publiques utiles et protéger les zones internes ou après achat.
+# Emplacement recommandé : racine du dépôt GitHub Pages, à côté de index.html.
+
+User-agent: *
+
+# Autoriser les pages publiques importantes
+Allow: /
+Allow: /index.html
+Allow: /formations.html
+Allow: /conditions.html
+Allow: /confidentialite.html
+Allow: /support.html
+Allow: /vente-finale.html
+
+# Bloquer les pages privées, client, paiement ou après achat
+Disallow: /acces.html
+Disallow: /espace-client.html
+Disallow: /formation-privee.html
+Disallow: /merci.html
+Disallow: /dashboard/
+Disallow: /dashboard.html
+Disallow: /admin/
+Disallow: /private/
+Disallow: /prive/
+Disallow: /client/
+Disallow: /clients/
+Disallow: /compte/
+Disallow: /paiement/
+Disallow: /checkout/
+Disallow: /success/
+Disallow: /cancel/
+
+# Bloquer les dossiers internes du projet
+Disallow: /agents/
+Disallow: /data/
+Disallow: /docs/
+Disallow: /sauvegardes/
+Disallow: /stripe/
+Disallow: /legal/brouillons/
+Disallow: /templates/
+Disallow: /marketing/
+Disallow: /emails/
+Disallow: /assets/internes/
+Disallow: /assets/private/
+Disallow: /assets/prive/
+
+# Bloquer les fichiers ou exports sensibles potentiels
+Disallow: /*.json$
+Disallow: /*.csv$
+Disallow: /*.xlsx$
+Disallow: /*.docx$
+Disallow: /*.zip$
+Disallow: /*.backup$
+Disallow: /*.bak$
+Disallow: /*.old$
+Disallow: /*.tmp$
+Disallow: /*?token=
+Disallow: /*?session=
+Disallow: /*?client=
+Disallow: /*?email=
+Disallow: /*?stripe=
+
+# Ne pas indexer la page d’erreur
+Disallow: /404.html
+
+# Ralentissement léger pour robots agressifs qui respectent cette directive
+Crawl-delay: 5
+
+# Sitemap officiel du projet GitHub Pages
+Sitemap: https://lepivotdor-sketch.github.io/pivotdor-platform/sitemap.xml
