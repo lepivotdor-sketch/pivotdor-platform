@@ -1,0 +1,1241 @@
+<!DOCTYPE html>
+<html lang="fr-CA">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Mini-formation Le Pivot d’Or : utilise l’IA pour sauver 3 heures par semaine avec une méthode simple, un prompt prêt à copier, une checklist et un plan 24-48 h." />
+  <meta name="author" content="Le Pivot d’Or" />
+  <meta name="robots" content="index, follow" />
+  <meta name="theme-color" content="#050505" />
+
+  <meta property="og:title" content="Utilise l’IA pour sauver 3 heures par semaine | Le Pivot d’Or" />
+  <meta property="og:description" content="Une mini-formation simple pour déléguer les bonnes tâches à l’IA, alléger ta charge mentale et récupérer du temps." />
+  <meta property="og:type" content="website" />
+
+  <title>Utilise l’IA pour sauver 3 heures par semaine | Le Pivot d’Or</title>
+
+  <style>
+    :root {
+      --noir: #050505;
+      --noir-2: #111111;
+      --noir-3: #191919;
+      --or: #d6af36;
+      --or-clair: #f3d77a;
+      --blanc: #f8f6ef;
+      --gris: #b9b9b9;
+      --gris-2: #e9e3d0;
+      --vert: #a7f3b0;
+      --rouge: #ff8c8c;
+      --bleu: #9ec5ff;
+      --mauve: #d8b4fe;
+      --ombre: 0 22px 60px rgba(0, 0, 0, 0.42);
+      --radius: 22px;
+      --max: 1120px;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      margin: 0;
+      font-family: Aptos, Arial, Helvetica, sans-serif;
+      background:
+        radial-gradient(circle at top left, rgba(214, 175, 54, 0.18), transparent 34%),
+        radial-gradient(circle at bottom right, rgba(243, 215, 122, 0.08), transparent 40%),
+        var(--noir);
+      color: var(--blanc);
+      line-height: 1.65;
+    }
+
+    body::selection {
+      background: rgba(214, 175, 54, 0.35);
+      color: var(--blanc);
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    strong {
+      color: var(--or-clair);
+    }
+
+    .skip-link {
+      position: absolute;
+      top: -60px;
+      left: 16px;
+      background: var(--or-clair);
+      color: var(--noir);
+      padding: 10px 14px;
+      border-radius: 999px;
+      font-weight: 900;
+      z-index: 100;
+    }
+
+    .skip-link:focus {
+      top: 14px;
+    }
+
+    .topbar {
+      position: sticky;
+      top: 0;
+      z-index: 20;
+      backdrop-filter: blur(16px);
+      background: rgba(5, 5, 5, 0.78);
+      border-bottom: 1px solid rgba(214, 175, 54, 0.22);
+    }
+
+    .topbar-inner {
+      width: min(var(--max), calc(100% - 32px));
+      margin: 0 auto;
+      min-height: 72px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 18px;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      font-weight: 900;
+      letter-spacing: 0.02em;
+      white-space: nowrap;
+    }
+
+    .brand-mark {
+      width: 38px;
+      height: 38px;
+      border-radius: 50%;
+      display: grid;
+      place-items: center;
+      background: linear-gradient(145deg, var(--or), var(--or-clair));
+      color: var(--noir);
+      font-weight: 900;
+      box-shadow: 0 0 0 5px rgba(214, 175, 54, 0.12);
+    }
+
+    .nav {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      flex-wrap: wrap;
+      justify-content: flex-end;
+    }
+
+    .nav a {
+      color: var(--gris-2);
+      font-size: 0.92rem;
+      padding: 8px 10px;
+      border-radius: 999px;
+    }
+
+    .nav a:hover,
+    .nav a:focus {
+      outline: none;
+      background: rgba(214, 175, 54, 0.14);
+      color: var(--or-clair);
+    }
+
+    .hero {
+      width: min(var(--max), calc(100% - 32px));
+      margin: 0 auto;
+      padding: 78px 0 38px;
+      display: grid;
+      grid-template-columns: 1.08fr 0.92fr;
+      gap: 36px;
+      align-items: center;
+    }
+
+    .badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 9px;
+      border: 1px solid rgba(214, 175, 54, 0.44);
+      background: rgba(214, 175, 54, 0.12);
+      color: var(--or-clair);
+      padding: 8px 13px;
+      border-radius: 999px;
+      font-weight: 800;
+      font-size: 0.9rem;
+      margin-bottom: 18px;
+    }
+
+    h1,
+    h2,
+    h3 {
+      line-height: 1.12;
+      margin: 0;
+    }
+
+    h1 {
+      font-size: clamp(2.25rem, 5vw, 4.75rem);
+      letter-spacing: -0.055em;
+    }
+
+    h2 {
+      font-size: clamp(1.55rem, 3vw, 2.45rem);
+      letter-spacing: -0.035em;
+      margin-bottom: 16px;
+    }
+
+    h3 {
+      font-size: 1.22rem;
+      margin-bottom: 10px;
+    }
+
+    .gold {
+      color: var(--or-clair);
+    }
+
+    .lead {
+      color: var(--gris-2);
+      font-size: 1.16rem;
+      max-width: 720px;
+      margin: 20px 0 0;
+    }
+
+    .hero-actions {
+      display: flex;
+      gap: 12px;
+      flex-wrap: wrap;
+      margin-top: 28px;
+    }
+
+    .btn,
+    button.btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 48px;
+      padding: 12px 18px;
+      border-radius: 999px;
+      border: 1px solid rgba(214, 175, 54, 0.5);
+      font-weight: 900;
+      cursor: pointer;
+      transition: transform 0.18s ease, background 0.18s ease, border-color 0.18s ease;
+      font-family: inherit;
+      font-size: 0.98rem;
+    }
+
+    .btn:hover,
+    .btn:focus {
+      transform: translateY(-2px);
+      outline: none;
+    }
+
+    .btn-primary {
+      background: linear-gradient(145deg, var(--or), var(--or-clair));
+      color: var(--noir);
+      box-shadow: 0 14px 32px rgba(214, 175, 54, 0.18);
+    }
+
+    .btn-secondary {
+      background: rgba(255, 255, 255, 0.04);
+      color: var(--blanc);
+    }
+
+
+    .btn-next {
+      min-height: 56px;
+      padding: 15px 24px;
+      font-size: 1.03rem;
+      box-shadow: 0 18px 42px rgba(214, 175, 54, 0.24);
+    }
+
+    .btn-small {
+      min-height: 36px;
+      padding: 8px 12px;
+      font-size: 0.84rem;
+      font-weight: 800;
+      opacity: 0.82;
+    }
+
+    .hero-card,
+    .card,
+    .module,
+    .prompt-card,
+    .mini-card {
+      background: linear-gradient(180deg, rgba(255, 255, 255, 0.062), rgba(255, 255, 255, 0.026));
+      border: 1px solid rgba(214, 175, 54, 0.24);
+      border-radius: var(--radius);
+      box-shadow: var(--ombre);
+    }
+
+    .hero-card {
+      padding: 28px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero-card::before {
+      content: "";
+      position: absolute;
+      inset: -100px -80px auto auto;
+      width: 230px;
+      height: 230px;
+      border-radius: 50%;
+      background: rgba(214, 175, 54, 0.16);
+      filter: blur(5px);
+    }
+
+    .hero-card > * {
+      position: relative;
+    }
+
+    .stat-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 14px;
+      margin-top: 18px;
+    }
+
+    .stat {
+      padding: 17px;
+      border-radius: 18px;
+      background: rgba(5, 5, 5, 0.42);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+    }
+
+    .stat strong {
+      display: block;
+      font-size: 1.45rem;
+      color: var(--or-clair);
+    }
+
+    .stat span {
+      color: var(--gris);
+      font-size: 0.92rem;
+    }
+
+    .container {
+      width: min(var(--max), calc(100% - 32px));
+      margin: 0 auto;
+      padding: 26px 0;
+    }
+
+    .section {
+      padding: 34px 0;
+      scroll-margin-top: 90px;
+    }
+
+    .grid-2 {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 18px;
+    }
+
+    .grid-3 {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 18px;
+    }
+
+    .card,
+    .module,
+    .prompt-card,
+    .mini-card {
+      padding: 24px;
+    }
+
+    .card p,
+    .module p,
+    .prompt-card p,
+    .mini-card p {
+      color: var(--gris-2);
+      margin: 0;
+    }
+
+    .muted {
+      color: var(--gris);
+    }
+
+    .fine {
+      font-size: 0.93rem;
+      color: var(--gris);
+    }
+
+    .highlight-box,
+    .warning-box,
+    .success-box,
+    .blue-box,
+    .purple-box {
+      padding: 18px;
+      border-radius: 16px;
+      color: var(--gris-2);
+      margin: 18px 0;
+    }
+
+    .highlight-box {
+      border-left: 4px solid var(--or);
+      background: rgba(214, 175, 54, 0.09);
+    }
+
+    .warning-box {
+      border-left: 4px solid var(--rouge);
+      background: rgba(255, 140, 140, 0.08);
+    }
+
+    .success-box {
+      border-left: 4px solid var(--vert);
+      background: rgba(167, 243, 176, 0.08);
+    }
+
+    .blue-box {
+      border-left: 4px solid var(--bleu);
+      background: rgba(158, 197, 255, 0.08);
+    }
+
+    .purple-box {
+      border-left: 4px solid var(--mauve);
+      background: rgba(216, 180, 254, 0.08);
+    }
+
+    ol,
+    ul {
+      margin: 14px 0 0;
+      padding-left: 22px;
+      color: var(--gris-2);
+    }
+
+    li {
+      margin: 8px 0;
+    }
+
+    .module-number {
+      width: 42px;
+      height: 42px;
+      border-radius: 14px;
+      display: grid;
+      place-items: center;
+      background: rgba(214, 175, 54, 0.15);
+      color: var(--or-clair);
+      border: 1px solid rgba(214, 175, 54, 0.28);
+      font-weight: 900;
+      margin-bottom: 16px;
+    }
+
+    .progress-panel {
+      margin-top: 20px;
+      padding: 20px;
+      border: 1px solid rgba(214, 175, 54, 0.22);
+      border-radius: 20px;
+      background: rgba(0, 0, 0, 0.25);
+    }
+
+    .progress-top {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+      margin-bottom: 12px;
+      color: var(--gris-2);
+      font-weight: 800;
+    }
+
+    .progress-bar {
+      height: 13px;
+      background: rgba(255, 255, 255, 0.1);
+      border-radius: 999px;
+      overflow: hidden;
+    }
+
+    .progress-fill {
+      width: 0%;
+      height: 100%;
+      border-radius: 999px;
+      background: linear-gradient(90deg, var(--or), var(--or-clair));
+      transition: width 0.25s ease;
+    }
+
+    .checklist {
+      display: grid;
+      gap: 12px;
+      margin-top: 18px;
+    }
+
+    .check-item {
+      display: flex;
+      gap: 12px;
+      align-items: flex-start;
+      padding: 15px;
+      border-radius: 16px;
+      background: rgba(255, 255, 255, 0.045);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      color: var(--gris-2);
+    }
+
+    .check-item input {
+      margin-top: 5px;
+      transform: scale(1.22);
+      accent-color: var(--or);
+      cursor: pointer;
+    }
+
+    .prompt-card {
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+    }
+
+    .prompt-text {
+      white-space: pre-wrap;
+      color: var(--gris-2);
+      background: rgba(0, 0, 0, 0.36);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      border-radius: 16px;
+      padding: 15px;
+      font-family: "Courier New", monospace;
+      font-size: 0.93rem;
+      overflow-x: auto;
+    }
+
+    .copy-btn {
+      align-self: flex-start;
+      border: 1px solid rgba(214, 175, 54, 0.42);
+      border-radius: 999px;
+      background: rgba(214, 175, 54, 0.12);
+      color: var(--or-clair);
+      padding: 10px 14px;
+      font-weight: 900;
+      cursor: pointer;
+      font-family: inherit;
+    }
+
+    .copy-btn:hover,
+    .copy-btn:focus {
+      outline: none;
+      background: rgba(214, 175, 54, 0.2);
+    }
+
+    .timeline {
+      display: grid;
+      gap: 14px;
+      margin-top: 18px;
+    }
+
+    .timeline-step {
+      display: grid;
+      grid-template-columns: 86px 1fr;
+      gap: 16px;
+      align-items: start;
+      padding: 18px;
+      border-radius: 18px;
+      background: rgba(255, 255, 255, 0.045);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+    }
+
+    .time-pill {
+      display: inline-flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 38px;
+      border-radius: 999px;
+      background: rgba(214, 175, 54, 0.13);
+      color: var(--or-clair);
+      border: 1px solid rgba(214, 175, 54, 0.25);
+      font-weight: 900;
+      font-size: 0.88rem;
+      text-align: center;
+      padding: 0 8px;
+    }
+
+    .info-table {
+      display: grid;
+      gap: 10px;
+      margin-top: 16px;
+    }
+
+    .info-row {
+      display: grid;
+      grid-template-columns: 180px 1fr;
+      gap: 14px;
+      padding: 12px 0;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+    }
+
+    .info-row:last-child {
+      border-bottom: none;
+    }
+
+    .info-row span:first-child {
+      color: var(--gris);
+      font-weight: 700;
+    }
+
+    .info-row span:last-child {
+      color: var(--gris-2);
+    }
+
+    .cta {
+      text-align: center;
+      padding: 42px 24px;
+      border-radius: 28px;
+      background:
+        linear-gradient(145deg, rgba(214, 175, 54, 0.18), rgba(255, 255, 255, 0.035)),
+        rgba(255, 255, 255, 0.035);
+      border: 1px solid rgba(214, 175, 54, 0.32);
+      box-shadow: var(--ombre);
+    }
+
+    .cta p {
+      max-width: 720px;
+      margin: 14px auto 0;
+      color: var(--gris-2);
+    }
+
+    .footer {
+      border-top: 1px solid rgba(214, 175, 54, 0.18);
+      margin-top: 40px;
+      padding: 28px 0;
+      color: var(--gris);
+      font-size: 0.94rem;
+    }
+
+    @media (max-width: 860px) {
+      .hero,
+      .grid-2,
+      .grid-3 {
+        grid-template-columns: 1fr;
+      }
+
+      .topbar-inner {
+        align-items: flex-start;
+        flex-direction: column;
+        padding: 14px 0;
+      }
+
+      .nav {
+        justify-content: flex-start;
+      }
+
+      .hero {
+        padding-top: 42px;
+      }
+
+      .timeline-step,
+      .info-row {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    @media print {
+      .topbar,
+      .hero-actions,
+      .copy-btn,
+      .btn {
+        display: none !important;
+      }
+
+      body {
+        background: #ffffff;
+        color: #111111;
+      }
+
+      strong,
+      .gold {
+        color: #111111;
+      }
+
+      .card,
+      .module,
+      .prompt-card,
+      .hero-card,
+      .mini-card,
+      .cta {
+        box-shadow: none;
+        border: 1px solid #cccccc;
+      }
+
+      .prompt-text {
+        border: 1px solid #cccccc;
+        color: #111111;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <a class="skip-link" href="#contenu">Aller au contenu</a>
+
+  <header class="topbar" aria-label="Navigation principale">
+    <div class="topbar-inner">
+      <a class="brand" href="index.html" aria-label="Retour à l’accueil Le Pivot d’Or">
+        <span class="brand-mark" aria-hidden="true">P</span>
+        <span>Le Pivot d’Or</span>
+      </a>
+
+      <nav class="nav" aria-label="Sections de la formation">
+        <a href="#fiche">Fiche</a>
+        <a href="#methode">Méthode</a>
+        <a href="#outil">Outil</a>
+        <a href="#checklist">Checklist</a>
+        <a href="#plan">Plan</a>
+        <a href="#bilan">Bilan</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="contenu">
+    <section class="hero" id="haut">
+      <div>
+        <span class="badge">IA-001 • IA • Mini-formation 5 $</span>
+        <h1>Utilise l’IA pour sauver <span class="gold">3 heures par semaine</span></h1>
+        <p class="lead">
+          Une mini-formation simple pour apprendre à confier une partie de tes tâches répétitives à l’IA,
+          alléger ta charge mentale et récupérer du temps sans te perdre dans la technique.
+        </p>
+
+        <div class="hero-actions">
+          <a class="btn btn-primary" href="#outil">Copier l’outil principal</a>
+          <a class="btn btn-secondary" href="#checklist">Commencer la checklist</a>
+          <a class="btn btn-secondary" href="formation.html">Retour au catalogue</a>
+        </div>
+      </div>
+
+      <aside class="hero-card" aria-label="Résumé de la formation">
+        <h2>Objectif rapide</h2>
+        <p class="muted">
+          Créer une première routine IA simple pour gagner du temps sur une tâche répétitive dès cette semaine.
+        </p>
+
+        <div class="stat-grid">
+          <div class="stat">
+            <strong>5 $</strong>
+            <span>Prix de la formation</span>
+          </div>
+          <div class="stat">
+            <strong>20 min</strong>
+            <span>Durée estimée</span>
+          </div>
+          <div class="stat">
+            <strong>1</strong>
+            <span>Outil principal</span>
+          </div>
+          <div class="stat">
+            <strong>7</strong>
+            <span>Actions à cocher</span>
+          </div>
+        </div>
+
+        <div class="progress-panel" aria-label="Progression de la formation">
+          <div class="progress-top">
+            <span>Progression</span>
+            <span id="progressLabel">0 %</span>
+          </div>
+          <div class="progress-bar" aria-hidden="true">
+            <div class="progress-fill" id="progressFill"></div>
+          </div>
+        </div>
+      </aside>
+    </section>
+
+    <section class="container section" id="fiche">
+      <div class="grid-2">
+        <article class="card">
+          <h2>Fiche formation</h2>
+          <div class="info-table" aria-label="Fiche de la formation">
+            <div class="info-row"><span>Code</span><span>IA-001</span></div>
+            <div class="info-row"><span>Titre</span><span>Utilise l’IA pour sauver 3 heures par semaine</span></div>
+            <div class="info-row"><span>Catégorie</span><span>IA</span></div>
+            <div class="info-row"><span>Type</span><span>Micro-formation + checklist</span></div>
+            <div class="info-row"><span>Niveau</span><span>Débutant</span></div>
+            <div class="info-row"><span>Public cible</span><span>Entrepreneur débutant, travailleur autonome, créateur de contenu ou personne occupée</span></div>
+            <div class="info-row"><span>Version</span><span>1.0</span></div>
+            <div class="info-row"><span>Dernière mise à jour</span><span>2026-04-29</span></div>
+            <div class="info-row"><span>Prochaine mise à jour</span><span>2027-04-29</span></div>
+          </div>
+        </article>
+
+        <article class="card">
+          <h2>Promesse</h2>
+          <p>
+            En moins de 48 heures, tu peux choisir une tâche répétitive, la confier à l’IA avec un bon prompt
+            et créer une mini-routine simple pour récupérer du temps chaque semaine.
+          </p>
+
+          <div class="highlight-box">
+            <strong>Petite victoire :</strong> tu termines cette formation avec une tâche réelle simplifiée par l’IA
+            et une checklist claire pour répéter le processus.
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section class="container section" id="intro">
+      <div class="grid-2">
+        <article class="card">
+          <h2>Bienvenue</h2>
+          <p>
+            L’IA peut t’aider à sauver du temps, mais seulement si tu l’utilises avec une intention claire.
+            Le piège, c’est de tester des outils au hasard sans créer de routine. Ici, tu vas rester simple :
+            choisir une tâche répétitive, donner une consigne claire à l’IA, puis vérifier le résultat.
+            Le but n’est pas de tout automatiser. Le but est de récupérer un premier bloc de temps.
+          </p>
+        </article>
+
+        <article class="card">
+          <h2>Ce que tu reçois</h2>
+          <p>
+            Une explication simple, une méthode en 3 étapes, une checklist d’action, un plan 24-48 h,
+            un outil prêt à copier et un mini-bilan après 7 jours.
+          </p>
+          <div class="success-box">
+            Pour 5 $, tu reçois un petit système clair à appliquer rapidement.
+          </div>
+        </article>
+      </div>
+
+      <div class="warning-box">
+        <strong>Important :</strong> l’IA est un assistant, pas un remplaçant. Relis toujours le résultat,
+        vérifie les faits et ne partage jamais de mots de passe, données bancaires ou informations sensibles.
+      </div>
+    </section>
+
+    <section class="container section" id="probleme">
+      <h2>Le petit problème à régler</h2>
+      <div class="grid-3">
+        <article class="module">
+          <div class="module-number">1</div>
+          <h3>Le problème</h3>
+          <p>
+            Tu perds du temps sur des tâches répétitives : messages, résumés, idées, planification ou recherche simple.
+          </p>
+        </article>
+
+        <article class="module">
+          <div class="module-number">2</div>
+          <h3>Pourquoi il arrive</h3>
+          <p>
+            Tu fais tout à la main, ou tu utilises l’IA sans méthode claire. Résultat : tu testes beaucoup, mais tu gagnes peu.
+          </p>
+        </article>
+
+        <article class="module">
+          <div class="module-number">3</div>
+          <h3>Ce qu’on corrige</h3>
+          <p>
+            Tu vas choisir une seule tâche utile, utiliser un prompt structuré et créer une routine simple à répéter.
+          </p>
+        </article>
+      </div>
+    </section>
+
+    <section class="container section" id="methode">
+      <h2>Méthode en 3 étapes</h2>
+
+      <div class="timeline">
+        <div class="timeline-step">
+          <span class="time-pill">Étape 1</span>
+          <div>
+            <h3>Comprendre : choisis la bonne tâche</h3>
+            <p class="muted">
+              L’IA est utile quand la tâche est claire, répétitive et facile à vérifier.
+              Choisis une tâche simple : écrire un brouillon, résumer un texte, trouver des idées ou organiser une liste.
+            </p>
+            <div class="blue-box">
+              <strong>Action :</strong> note 3 tâches qui reviennent souvent dans ta semaine, puis choisis la plus simple.
+            </div>
+            <p class="fine">Résultat attendu : tu sais exactement quoi déléguer à l’IA.</p>
+          </div>
+        </div>
+
+        <div class="timeline-step">
+          <span class="time-pill">Étape 2</span>
+          <div>
+            <h3>Appliquer : donne une consigne claire</h3>
+            <p class="muted">
+              Un bon prompt donne du contexte, un objectif, un ton et un format. Plus ta demande est précise,
+              plus le résultat est facile à utiliser.
+            </p>
+            <div class="blue-box">
+              <strong>Action :</strong> copie le prompt principal de cette formation et remplace les crochets par ta situation.
+            </div>
+            <p class="fine">Résultat attendu : l’IA produit une première version utile au lieu d’une réponse vague.</p>
+          </div>
+        </div>
+
+        <div class="timeline-step">
+          <span class="time-pill">Étape 3</span>
+          <div>
+            <h3>Vérifier : garde ta touche humaine</h3>
+            <p class="muted">
+              Le résultat de l’IA doit être relu, corrigé et adapté. Ton rôle est de vérifier, simplifier et décider.
+            </p>
+            <div class="blue-box">
+              <strong>Action :</strong> corrige le résultat, retire ce qui est trop long et garde seulement ce qui t’aide vraiment.
+            </div>
+            <p class="fine">Résultat attendu : tu obtiens une version utilisable et plus rapide que si tu partais de zéro.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="container section" id="exemple">
+      <h2>Exemple concret</h2>
+      <div class="card">
+        <p>
+          Imagine que tu dois écrire un message de suivi après une conversation avec un client potentiel.
+          Sans IA, tu peux passer 15 à 20 minutes à chercher les bons mots. Avec l’IA, tu demandes un brouillon court,
+          clair et professionnel. Ensuite, tu ajustes le ton pour que le message sonne comme toi.
+          Si tu fais cela quelques fois par semaine pour tes messages, tes idées de contenu ou tes résumés,
+          tu peux récupérer plusieurs blocs de temps sans changer tout ton système de travail.
+        </p>
+      </div>
+    </section>
+
+    <section class="container section" id="outil">
+      <h2>Outil prêt à utiliser</h2>
+      <p class="muted">
+        Copie ce prompt, remplace les éléments entre crochets et utilise-le pour simplifier une tâche réelle.
+      </p>
+
+      <article class="prompt-card" style="margin-top:18px;">
+        <h3>Prompt principal — Sauver du temps avec l’IA</h3>
+        <div class="prompt-text" id="promptPrincipal">Agis comme mon assistant de productivité.
+
+Je veux sauver du temps sur cette tâche : [décris la tâche].
+
+Contexte :
+- Je suis : [ton rôle ou ta situation]
+- Le résultat doit servir à : [objectif simple]
+- Mon ton doit être : [clair, direct, professionnel, chaleureux, simple]
+- Le format attendu est : [courriel, liste, résumé, plan, idées, tableau, script]
+
+Ta mission :
+1. Crée une première version claire et courte.
+2. Simplifie ce qui peut être simplifié.
+3. Ajoute une section “À vérifier avant d’utiliser”.
+4. Termine avec une prochaine action concrète.
+
+Important :
+- Ne fais pas de promesse exagérée.
+- Reste simple.
+- Donne-moi une version que je peux relire et utiliser rapidement.</div>
+        <button class="copy-btn" type="button" data-copy="promptPrincipal">Copier le prompt principal</button>
+      </article>
+    </section>
+
+    <section class="container section" id="checklist">
+      <h2>Checklist d’action</h2>
+      <p class="muted">
+        Coche les actions au fur et à mesure. Ta progression est sauvegardée dans ton navigateur.
+      </p>
+
+      <div class="checklist" aria-label="Checklist d’action">
+        <label class="check-item">
+          <input type="checkbox" class="task-check" />
+          <span><strong>1. Choisis une tâche répétitive.</strong><br />Sélectionne une tâche qui revient souvent et qui te prend trop de temps.</span>
+        </label>
+
+        <label class="check-item">
+          <input type="checkbox" class="task-check" />
+          <span><strong>2. Décris le résultat souhaité.</strong><br />Note ce que tu veux obtenir : message, résumé, liste, plan ou idées.</span>
+        </label>
+
+        <label class="check-item">
+          <input type="checkbox" class="task-check" />
+          <span><strong>3. Copie le prompt principal.</strong><br />Remplace les crochets par ton vrai contexte.</span>
+        </label>
+
+        <label class="check-item">
+          <input type="checkbox" class="task-check" />
+          <span><strong>4. Teste une première fois.</strong><br />Utilise l’IA pour produire une première version.</span>
+        </label>
+
+        <label class="check-item">
+          <input type="checkbox" class="task-check" />
+          <span><strong>5. Vérifie le résultat.</strong><br />Relis, corrige les erreurs et enlève ce qui est trop vague.</span>
+        </label>
+
+        <label class="check-item">
+          <input type="checkbox" class="task-check" />
+          <span><strong>6. Note le temps gagné.</strong><br />Compare le temps utilisé avec ton ancienne façon de faire.</span>
+        </label>
+
+        <label class="check-item">
+          <input type="checkbox" class="task-check" />
+          <span><strong>7. Répète sur une deuxième tâche.</strong><br />Quand la première tâche devient facile, applique la même méthode ailleurs.</span>
+        </label>
+      </div>
+
+      <div class="success-box">
+        <strong>Objectif de la semaine :</strong> utiliser cette méthode sur au moins 5 petites tâches réelles.
+      </div>
+    </section>
+
+    <section class="container section" id="plan">
+      <h2>Plan 24-48 h</h2>
+
+      <div class="grid-3">
+        <article class="mini-card">
+          <div class="module-number">J1</div>
+          <h3>Aujourd’hui</h3>
+          <ul>
+            <li>Choisis une tâche répétitive simple.</li>
+            <li>Copie le prompt principal et adapte-le à ta situation.</li>
+          </ul>
+        </article>
+
+        <article class="mini-card">
+          <div class="module-number">J2</div>
+          <h3>Demain</h3>
+          <ul>
+            <li>Teste l’IA sur une vraie tâche.</li>
+            <li>Relis, corrige et garde la meilleure version.</li>
+          </ul>
+        </article>
+
+        <article class="mini-card">
+          <div class="module-number">48 h</div>
+          <h3>Dans 48 h</h3>
+          <ul>
+            <li>Répète la méthode sur une deuxième tâche.</li>
+            <li>Vérifie si tu as gagné du temps ou réduit ta charge mentale.</li>
+          </ul>
+        </article>
+      </div>
+    </section>
+
+    <section class="container section" id="erreurs">
+      <h2>Erreurs à éviter</h2>
+
+      <div class="grid-2">
+        <article class="card">
+          <h3>1. Vouloir tout automatiser</h3>
+          <p>
+            <strong>Risque :</strong> tu te disperses et tu perds du temps. 
+            <strong>Correction :</strong> commence avec une seule tâche simple.
+          </p>
+        </article>
+
+        <article class="card">
+          <h3>2. Donner une demande trop vague</h3>
+          <p>
+            <strong>Risque :</strong> l’IA répond de façon générale. 
+            <strong>Correction :</strong> ajoute le contexte, l’objectif, le ton et le format.
+          </p>
+        </article>
+
+        <article class="card">
+          <h3>3. Copier sans relire</h3>
+          <p>
+            <strong>Risque :</strong> tu peux publier une erreur ou un texte qui ne sonne pas comme toi.
+            <strong>Correction :</strong> relis toujours avant d’utiliser.
+          </p>
+        </article>
+
+        <article class="card">
+          <h3>4. Partager trop d’informations</h3>
+          <p>
+            <strong>Risque :</strong> tu exposes des données sensibles.
+            <strong>Correction :</strong> retire les mots de passe, données bancaires et informations privées.
+          </p>
+        </article>
+      </div>
+    </section>
+
+    <section class="container section" id="bilan">
+      <h2>Mini-bilan après 7 jours</h2>
+      <div class="grid-2">
+        <article class="card">
+          <h3>Questions à te poser</h3>
+          <ol>
+            <li>Quelle tâche as-tu simplifiée avec l’IA ?</li>
+            <li>Combien de minutes as-tu réellement gagnées ?</li>
+            <li>Quel résultat était le plus utile ?</li>
+            <li>Qu’est-ce que tu dois encore vérifier manuellement ?</li>
+            <li>Quelle deuxième tâche peux-tu simplifier maintenant ?</li>
+          </ol>
+        </article>
+
+        <article class="card">
+          <h3>Résultat recherché</h3>
+          <p>
+            Le but n’est pas de devenir expert en IA. Le but est de créer une première victoire :
+            une tâche plus rapide, une charge mentale plus légère et une méthode que tu peux répéter.
+          </p>
+        </article>
+      </div>
+    </section>
+
+    <section class="container section" id="suite">
+      <div class="cta">
+        <span class="badge">Suite logique • Formation à 15 $</span>
+        <h2>Formation suivante recommandée</h2>
+        <p>
+          La suite logique est : <strong>Crée 10 prompts simples pour ton entreprise</strong>.
+          Cette formation t’aide à transformer ta première routine IA en mini-bibliothèque de prompts utiles pour ton entreprise.
+        </p>
+        <div class="success-box" style="text-align:left; max-width:760px; margin:22px auto 0;">
+          <strong>Pourquoi passer à la suite maintenant :</strong><br />
+          tu as déjà appris à sauver du temps avec l’IA. La prochaine étape est de créer tes 10 prompts de base pour écrire, organiser, vendre, répondre aux clients et avancer plus vite sans repartir de zéro chaque fois.
+        </div>
+        <div class="hero-actions" style="justify-content:center; align-items:center;">
+          <a class="btn btn-primary btn-next" href="ia-002-cree-10-prompts-entreprise.html">Acheter la prochaine formation — 15 $</a>
+          <a class="btn btn-secondary btn-small" href="#haut">Revenir en haut</a>
+        </div>
+        <p class="muted" style="font-size:0.92rem; margin-top:14px;">
+          Bouton à brancher sur ton lien Stripe ou sur la page HTML de la prochaine formation quand elle sera prête.
+        </p>
+      </div>
+    </section>
+
+    <section class="container section" id="support">
+      <h2>Support et version</h2>
+      <div class="grid-2">
+        <article class="card">
+          <h3>Problème d’accès</h3>
+          <p>
+            Écris au support avec ton nom, ton courriel d’achat, le nom de la formation et une capture d’écran du problème.
+          </p>
+          <div class="highlight-box">
+            Courriel support à configurer : <strong>support@lepivotdor.ca</strong>
+          </div>
+        </article>
+
+        <article class="card">
+          <h3>Informations de fichier</h3>
+          <p>
+            Code : IA-001<br />
+            Fichier : ia-001-utiliser-ia-sauver-3-heures.html<br />
+            Slug : ia-001-utiliser-ia-sauver-3-heures<br />
+            Date création : 2026-04-29<br />
+            Dernière mise à jour : 2026-04-29<br />
+            Prochaine mise à jour : 2027-04-29
+          </p>
+        </article>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+      <strong>Le Pivot d’Or</strong><br />
+      Bâtir une vie solide : Vision. Clarté. Discipline. Structure. Constance.<br />
+      Cette formation est éducative. Elle ne garantit pas un résultat automatique. Les résultats dépendent de ton application réelle.
+    </div>
+  </footer>
+
+  <script id="catalogueData" type="application/json">
+{
+  "code": "IA-001",
+  "titre": "Utilise l’IA pour sauver 3 heures par semaine",
+  "slug": "ia-001-utiliser-ia-sauver-3-heures",
+  "categorie": "IA",
+  "prix_affiche": "5 $",
+  "prix_numerique": 5,
+  "type": "Micro-formation + checklist",
+  "niveau": "débutant",
+  "public_cible": "Entrepreneur débutant, travailleur autonome, créateur de contenu ou personne occupée",
+  "resume_court": "Une mini-formation simple pour apprendre à déléguer une tâche répétitive à l’IA et récupérer du temps chaque semaine.",
+  "promesse": "En moins de 48 heures, tu peux choisir une tâche répétitive, la confier à l’IA avec un bon prompt et créer une mini-routine simple.",
+  "petite_victoire": "Simplifier une première tâche réelle avec l’IA et noter le temps gagné.",
+  "resultat_attendu": "Une tâche répétitive plus rapide à exécuter grâce à un prompt clair et une checklist simple.",
+  "angle_vente": "Gagner du temps sans complexité technique avec une première routine IA facile à répéter.",
+  "duree_estimee": "10 à 20 minutes",
+  "statut": "publié",
+  "version": "1.0",
+  "date_creation": "2026-04-29",
+  "derniere_mise_a_jour": "2026-04-29",
+  "prochaine_mise_a_jour": "2027-04-29",
+  "fichier_html": "ia-001-utiliser-ia-sauver-3-heures.html",
+  "note_qualite": 94,
+  "note_rentabilite": 88,
+  "note_valeur_client": 92,
+  "priorite_catalogue": "haute",
+  "potentiel_vente": "élevé",
+  "formation_suivante": "Crée 10 prompts simples pour ton entreprise",
+  "tags": ["ia", "productivite", "gain de temps", "prompt", "organisation", "debutant"]
+}
+  </script>
+
+  <script>
+    (function () {
+      "use strict";
+
+      const STORAGE_KEY = "pivotdor_ia_001_progress_v1";
+      const checks = Array.from(document.querySelectorAll(".task-check"));
+      const progressFill = document.getElementById("progressFill");
+      const progressLabel = document.getElementById("progressLabel");
+
+      function loadProgress() {
+        try {
+          const saved = JSON.parse(localStorage.getItem(STORAGE_KEY) || "[]");
+          checks.forEach((check, index) => {
+            check.checked = Boolean(saved[index]);
+          });
+        } catch (error) {
+          console.warn("Progression non chargée", error);
+        }
+        updateProgress();
+      }
+
+      function saveProgress() {
+        const state = checks.map((check) => check.checked);
+        localStorage.setItem(STORAGE_KEY, JSON.stringify(state));
+        updateProgress();
+      }
+
+      function updateProgress() {
+        const total = checks.length || 1;
+        const completed = checks.filter((check) => check.checked).length;
+        const percent = Math.round((completed / total) * 100);
+        if (progressFill) {
+          progressFill.style.width = percent + "%";
+        }
+        if (progressLabel) {
+          progressLabel.textContent = percent + " %";
+        }
+      }
+
+      checks.forEach((check) => {
+        check.addEventListener("change", saveProgress);
+      });
+
+      document.querySelectorAll("[data-copy]").forEach((button) => {
+        button.addEventListener("click", async () => {
+          const targetId = button.getAttribute("data-copy");
+          const target = document.getElementById(targetId);
+          if (!target) return;
+
+          const text = target.innerText.trim();
+
+          try {
+            if (navigator.clipboard && window.isSecureContext) {
+              await navigator.clipboard.writeText(text);
+            } else {
+              const area = document.createElement("textarea");
+              area.value = text;
+              area.setAttribute("readonly", "");
+              area.style.position = "absolute";
+              area.style.left = "-9999px";
+              document.body.appendChild(area);
+              area.select();
+              document.execCommand("copy");
+              document.body.removeChild(area);
+            }
+
+            const original = button.textContent;
+            button.textContent = "Copié ✓";
+            setTimeout(() => {
+              button.textContent = original;
+            }, 1400);
+          } catch (error) {
+            alert("Copie impossible automatiquement. Sélectionne le texte et copie-le manuellement.");
+          }
+        });
+      });
+
+      loadProgress();
+    })();
+  </script>
+</body>
+</html>
