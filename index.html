@@ -1,30 +1,35 @@
 <!DOCTYPE html>
-<html lang="fr">
+<html lang="fr-CA">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-  <title>Mini Mini Formation IA | Le Pivot d’Or</title>
-  <meta name="description" content="Mini Mini Formation IA par Le Pivot d’Or : mini-formations digitales simples, concrètes et structurées avec IA, productivité, business, finances et accès numérique privé." />
-  <meta name="theme-color" content="#d8c5a6" />
+  <title>Le Pivot d’Or | Mini Mini Formation IA</title>
+  <meta name="description" content="Le Pivot d’Or — Mini Mini Formation IA : mini-formations digitales simples, concrètes et structurées pour apprendre vite, appliquer vite et avancer avec clarté." />
+  <meta name="theme-color" content="#050505" />
   <meta name="robots" content="index, follow" />
+  <meta name="author" content="Le Pivot d’Or" />
+  <meta name="referrer" content="strict-origin-when-cross-origin" />
+  <meta name="format-detection" content="telephone=no" />
+  <link rel="canonical" href="https://lepivotdor-sketch.github.io/pivotdor-platform/" />
 
-  <meta property="og:title" content="Mini Mini Formation IA | Le Pivot d’Or" />
-  <meta property="og:description" content="Mini-formations digitales simples, concrètes et structurées pour apprendre vite, appliquer vite et avancer avec l’IA." />
+  <meta property="og:locale" content="fr_CA" />
+  <meta property="og:title" content="Le Pivot d’Or | Mini Mini Formation IA" />
+  <meta property="og:description" content="Catalogue de mini-formations digitales à achat unique : IA, productivité, apprentissage, business, finances, relations, bonheur et santé." />
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://lepivotdor-sketch.github.io/pivotdor-platform/" />
   <meta property="og:image" content="https://lepivotdor-sketch.github.io/pivotdor-platform/logo.png" />
   <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Le Pivot d’Or | Mini Mini Formation IA" />
+  <meta name="twitter:description" content="Mini-formations digitales simples, structurées et orientées action." />
+  <meta name="twitter:image" content="https://lepivotdor-sketch.github.io/pivotdor-platform/logo.png" />
 
   <link rel="icon" href="assets/logo/logo.png" />
+  <link rel="apple-touch-icon" href="assets/logo/logo.png" />
 
-  <!-- CSS principal externe : le fichier doit exister dans /css/style.css -->
+  <!-- CSS global puis CSS catalogue -->
   <link rel="stylesheet" href="css/style.css" />
-
-  <!-- À réactiver seulement quand le fichier /css/responsive.css existera vraiment -->
-  <!-- <link rel="stylesheet" href="css/responsive.css" /> -->
-
-  <link rel="preload" href="assets/sounds/click.mp3" as="audio" />
+  <link rel="stylesheet" href="css/catalogue.css" />
 
   <script type="application/ld+json">
   {
@@ -35,126 +40,149 @@
     "description": "Plateforme de mini-formations digitales simples, concrètes et structurées.",
     "publisher": {
       "@type": "Organization",
-      "name": "Le Pivot d’Or"
+      "name": "Le Pivot d’Or",
+      "url": "https://lepivotdor-sketch.github.io/pivotdor-platform/"
+    },
+    "potentialAction": {
+      "@type": "SearchAction",
+      "target": "https://lepivotdor-sketch.github.io/pivotdor-platform/formations.html?recherche={search_term_string}#catalogue",
+      "query-input": "required name=search_term_string"
     }
   }
   </script>
 
-  <!--
-    CSS temporaire interne.
-    Important : ce bloc reste ici pour ne pas casser le design actuel.
-    Plus tard, tu pourras transférer progressivement ces styles dans css/style.css,
-    puis supprimer ce bloc <style> quand tout sera stable.
-  -->
   <style>
     :root {
-      --fond: #d8c5a6;
-      --fond-2: #e4d4b9;
-      --fond-3: #c9b38e;
-      --carte: rgba(229, 214, 190, 0.95);
-      --carte-2: rgba(214, 195, 163, 0.9);
-      --texte: #21180f;
-      --texte-2: #4f4638;
-      --muted: #746957;
-      --or: #b9862f;
-      --or-2: #8a5f1d;
-      --vert: #2f7d46;
-      --rouge: #b84242;
-      --bleu: #235f92;
-      --mauve: #73528a;
-      --ligne: rgba(28, 22, 14, 0.34);
-      --ombre: 0 24px 60px rgba(74, 51, 19, 0.16);
-      --ombre-douce: 0 16px 36px rgba(74, 51, 19, 0.11);
-      --radius: 28px;
+      --noir: #050505;
+      --noir-2: #101010;
+      --or: #d8aa3d;
+      --or-clair: #f4d98b;
+      --blanc: #ffffff;
+      --gris: #cccccc;
+      --gris-2: #8f8f8f;
+      --vert: #80e08d;
+      --rouge: #ff7070;
+      --bleu: #6ea8ff;
+      --ombre: 0 22px 70px rgba(0, 0, 0, 0.48);
+      --radius: 24px;
+      --max: 1180px;
     }
 
-    * { box-sizing: border-box; margin: 0; padding: 0; }
-    html { scroll-behavior: smooth; }
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
 
     body {
-      font-family: Aptos, Arial, sans-serif;
-      color: var(--texte);
-      line-height: 1.6;
       min-height: 100vh;
+      font-family: Aptos, Arial, sans-serif;
+      color: var(--blanc);
+      line-height: 1.6;
+      overflow-x: hidden;
       background:
-        radial-gradient(circle at top left, rgba(240, 209, 138, 0.34), transparent 31%),
-        radial-gradient(circle at 78% 8%, rgba(185, 134, 47, 0.16), transparent 28%),
-        linear-gradient(135deg, var(--fond-2) 0%, var(--fond) 52%, var(--fond-3) 100%);
+        radial-gradient(circle at 8% 5%, rgba(216, 170, 61, 0.18), transparent 30%),
+        radial-gradient(circle at 94% 12%, rgba(244, 217, 139, 0.08), transparent 26%),
+        linear-gradient(135deg, #030303 0%, #111111 52%, #050505 100%);
+      text-rendering: optimizeLegibility;
+      -webkit-font-smoothing: antialiased;
     }
 
-    a { color: inherit; text-decoration: none; }
-    button, input, select { font: inherit; }
-    button { cursor: pointer; }
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    button,
+    input,
+    select {
+      font: inherit;
+    }
+
+    button {
+      cursor: pointer;
+    }
+
+    img {
+      max-width: 100%;
+      height: auto;
+      display: block;
+    }
+
+    :focus-visible {
+      outline: 3px solid rgba(244, 217, 139, 0.82);
+      outline-offset: 3px;
+    }
+
+    .sr-only {
+      position: absolute;
+      width: 1px;
+      height: 1px;
+      padding: 0;
+      margin: -1px;
+      overflow: hidden;
+      clip: rect(0, 0, 0, 0);
+      white-space: nowrap;
+      border: 0;
+    }
 
     .skip-link {
       position: absolute;
       left: -999px;
       top: 12px;
-      z-index: 1000;
+      z-index: 9999;
+      background: var(--or-clair);
+      color: #111;
       padding: 10px 14px;
-      border-radius: 999px;
-      background: #21180f;
-      color: #f7ead0;
-      font-weight: 950;
+      border-radius: 12px;
+      font-weight: 900;
     }
 
-    .skip-link:focus { left: 12px; }
-
-    .page { width: min(1200px, 92%); margin: 0 auto; }
+    .skip-link:focus {
+      left: 12px;
+    }
 
     .topbar {
-      font-size: 0.86rem;
-      color: var(--texte-2);
-      background: rgba(199, 178, 142, 0.78);
-      border-bottom: 1px solid var(--ligne);
-      padding: 9px 0;
-    }
-
-    .topbar .page {
-      display: flex;
-      justify-content: space-between;
-      gap: 14px;
-      flex-wrap: wrap;
-      align-items: center;
-    }
-
-    header {
       position: sticky;
       top: 0;
       z-index: 50;
-      background: rgba(224, 208, 180, 0.93);
-      backdrop-filter: blur(18px);
-      border-bottom: 1px solid var(--ligne);
+      background: rgba(5, 5, 5, 0.88);
+      border-bottom: 1px solid rgba(216, 170, 61, 0.2);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
     }
 
     .nav {
-      min-height: 78px;
+      max-width: var(--max);
+      margin: 0 auto;
+      padding: 15px 20px;
       display: flex;
-      justify-content: space-between;
       align-items: center;
-      gap: 24px;
+      justify-content: space-between;
+      gap: 18px;
     }
 
     .brand {
       display: flex;
       align-items: center;
-      gap: 14px;
-      min-width: 245px;
+      gap: 12px;
+      min-width: 0;
     }
 
     .brand-mark {
-      width: 54px;
-      height: 54px;
-      border-radius: 16px;
-      display: grid;
-      place-items: center;
-      background: linear-gradient(135deg, #120c05, #2b2115 48%, #8a5f1d);
-      color: #f7ead0;
-      font-weight: 950;
-      box-shadow: 0 14px 30px rgba(113, 77, 24, 0.22);
-      border: 1.5px solid rgba(185, 134, 47, 0.44);
-      overflow: hidden;
+      width: 48px;
+      height: 48px;
       flex: 0 0 auto;
+      border-radius: 50%;
+      border: 1px solid rgba(244, 217, 139, 0.72);
+      background:
+        radial-gradient(circle at 35% 30%, #fff4c9 0%, var(--or-clair) 20%, var(--or) 52%, #4f3607 100%);
+      box-shadow: 0 0 32px rgba(216, 170, 61, 0.24);
+      overflow: hidden;
       position: relative;
     }
 
@@ -164,1160 +192,2961 @@
       inset: 0;
       display: grid;
       place-items: center;
-      color: #f7ead0;
+      color: #1b1305;
       font-weight: 950;
-      font-size: 0.9rem;
-      pointer-events: none;
-      opacity: 1;
+      font-size: 0.78rem;
     }
 
-    .brand-mark.has-logo::after { opacity: 0; }
+    .brand-mark.has-logo::after {
+      opacity: 0;
+    }
 
     .brand-logo {
       width: 100%;
       height: 100%;
       object-fit: contain;
-      display: block;
-      padding: 4px;
-      border-radius: 14px;
+      padding: 3px;
       position: relative;
       z-index: 1;
     }
 
     .brand strong {
       display: block;
-      color: var(--or-2);
-      font-size: 1.1rem;
-      letter-spacing: 0.2px;
+      color: var(--or-clair);
+      font-size: 1rem;
+      line-height: 1.1;
     }
 
-    .brand span {
+    .brand span span {
       display: block;
-      color: var(--muted);
-      font-size: 0.8rem;
-      margin-top: 1px;
+      color: var(--gris);
+      font-size: 0.82rem;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      max-width: 370px;
     }
 
-    .nav-links {
+    .nav-actions,
+    .hero-actions,
+    .card-actions {
       display: flex;
       align-items: center;
+      justify-content: flex-end;
       gap: 10px;
       flex-wrap: wrap;
-      justify-content: flex-end;
     }
 
-    .nav-links a:not(.btn) {
-      color: var(--texte-2);
+    .btn,
+    .nav-link,
+    .filter-chip {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      border: 1px solid rgba(216, 170, 61, 0.34);
+      border-radius: 999px;
+      padding: 10px 15px;
+      background: rgba(255, 255, 255, 0.045);
+      color: var(--blanc);
+      cursor: pointer;
+      font-weight: 850;
       font-size: 0.92rem;
-      font-weight: 800;
+      transition: transform 0.18s ease, border-color 0.18s ease, background 0.18s ease;
     }
 
-    .nav-links a:not(.btn):hover { color: var(--or-2); }
-
-    .btn {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      gap: 8px;
-      min-height: 42px;
-      padding: 11px 17px;
-      border-radius: 999px;
-      border: 1.5px solid rgba(80, 52, 15, 0.22);
-      background: linear-gradient(135deg, var(--or), #8d6021);
-      color: #1d1308;
-      font-weight: 950;
-      text-align: center;
-      box-shadow: 0 15px 32px rgba(139, 95, 31, 0.18);
-      transition: transform 0.18s ease, box-shadow 0.18s ease, background 0.18s ease;
-    }
-
-    .btn:hover, .btn:focus-visible {
-      transform: translateY(-2px);
-      box-shadow: 0 20px 42px rgba(139, 95, 31, 0.24);
-      outline: none;
-    }
-
-    .btn.secondary {
-      background: rgba(221, 204, 174, 0.64);
-      color: var(--or-2);
-      border: 1.5px solid rgba(28, 22, 14, 0.38);
-      box-shadow: none;
-    }
-
-    .btn.ghost {
-      background: transparent;
-      color: var(--texte);
-      border: 1.5px solid rgba(28, 22, 14, 0.38);
-      box-shadow: none;
-    }
-
-    .btn.small { min-height: 36px; padding: 8px 12px; font-size: 0.84rem; }
-    .btn.disabled { opacity: 0.6; cursor: not-allowed; }
-
-    .quick-actions {
-      border-top: 1px solid rgba(137, 96, 31, 0.14);
-      background: rgba(214, 195, 163, 0.94);
-      box-shadow: 0 10px 26px rgba(74, 51, 19, 0.08);
-    }
-
-    .quick-actions-inner {
-      display: grid;
-      grid-template-columns: repeat(8, minmax(0, 1fr));
-      gap: 8px;
-      overflow: visible;
-      padding: 10px 0 12px;
-    }
-
-    .quick-actions-inner a,
-    .quick-actions-inner button {
-      min-height: 38px;
-      padding: 8px 9px;
-      border-radius: 999px;
-      border: 1.5px solid rgba(28, 22, 14, 0.38);
-      background: rgba(232, 216, 189, 0.78);
-      color: #21180f;
-      font-size: 0.76rem;
-      font-weight: 950;
-      white-space: normal;
-      line-height: 1.12;
-      text-align: center;
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-    }
-
-    .quick-actions-inner a:focus-visible,
-    .quick-actions-inner button:focus-visible,
+    .btn:hover,
+    .nav-link:hover,
+    .filter-chip:hover,
     .btn:focus-visible,
-    input:focus-visible {
-      outline: 3px solid rgba(35, 95, 146, 0.55);
-      outline-offset: 2px;
+    .nav-link:focus-visible,
+    .filter-chip:focus-visible {
+      transform: translateY(-1px);
+      border-color: rgba(244, 217, 139, 0.82);
+      background: rgba(216, 170, 61, 0.13);
     }
 
-    .badge {
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-      width: fit-content;
-      padding: 8px 13px;
-      border-radius: 999px;
-      background: rgba(185, 134, 47, 0.12);
-      border: 1px solid rgba(137, 96, 31, 0.22);
-      color: var(--or-2);
-      font-weight: 950;
-      font-size: 0.86rem;
-      margin-bottom: 18px;
+    .btn-primary,
+    .filter-chip.active {
+      border-color: transparent;
+      background: linear-gradient(135deg, var(--or-clair), var(--or));
+      color: #151006;
+      box-shadow: 0 14px 34px rgba(216, 170, 61, 0.18);
+    }
+
+    .btn-small {
+      padding: 8px 12px;
+      font-size: 0.82rem;
+    }
+
+    .page {
+      max-width: var(--max);
+      margin: 0 auto;
+      padding: 34px 20px 76px;
     }
 
     .hero {
-      padding: 72px 0 48px;
       display: grid;
-      grid-template-columns: 1.12fr 0.88fr;
-      gap: 42px;
-      align-items: center;
-    }
-
-    h1 {
-      font-size: clamp(2.5rem, 6vw, 5.35rem);
-      line-height: 0.98;
-      letter-spacing: -2.2px;
+      grid-template-columns: minmax(0, 1.08fr) minmax(330px, 0.92fr);
+      gap: 22px;
+      align-items: stretch;
       margin-bottom: 22px;
     }
 
-    h1 span, .gold { color: var(--or-2); }
-
-    .lead {
-      color: var(--texte-2);
-      font-size: 1.13rem;
-      max-width: 780px;
-      margin-bottom: 20px;
-    }
-
-    .hero-actions { display: flex; gap: 13px; flex-wrap: wrap; margin: 28px 0; }
-
-    section { padding: 58px 0; scroll-margin-top: 190px; }
-
-    .section-title {
-      display: flex;
-      justify-content: space-between;
-      align-items: flex-end;
-      gap: 24px;
-      margin-bottom: 26px;
-    }
-
-    .section-title h2 {
-      font-size: clamp(2rem, 4vw, 3.35rem);
-      line-height: 1.03;
-      letter-spacing: -1.1px;
-      max-width: 780px;
-    }
-
-    .section-title p { color: var(--texte-2); max-width: 590px; }
-
+    .panel,
     .card {
-      border: 1.7px solid var(--ligne);
-      background: linear-gradient(180deg, var(--carte), var(--carte-2));
-      border-radius: var(--radius);
-      box-shadow: var(--ombre-douce);
-    }
-
-    .grid-2 { display: grid; grid-template-columns: repeat(2, 1fr); gap: 18px; }
-    .grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; }
-    .grid-4 { display: grid; grid-template-columns: repeat(4, 1fr); gap: 18px; }
-
-    .director-panel {
       position: relative;
-      padding: 26px;
-      min-height: 520px;
       overflow: hidden;
-      border: 1.7px solid var(--ligne);
-      border-radius: 34px;
-      background: linear-gradient(180deg, rgba(234, 220, 196, 0.94), rgba(207, 187, 154, 0.86));
+      border: 1px solid rgba(216, 170, 61, 0.2);
+      background: linear-gradient(145deg, rgba(255, 255, 255, 0.074), rgba(255, 255, 255, 0.026));
       box-shadow: var(--ombre);
+      border-radius: var(--radius);
+      min-width: 0;
     }
 
-    .director-panel::before {
+    .panel::before,
+    .card::before {
       content: "";
       position: absolute;
-      width: 320px;
-      height: 320px;
-      border-radius: 50%;
-      right: -135px;
-      top: -135px;
-      background: rgba(185, 134, 47, 0.24);
-      filter: blur(16px);
+      inset: 0;
+      pointer-events: none;
+      background:
+        linear-gradient(135deg, rgba(216, 170, 61, 0.1), transparent 38%),
+        radial-gradient(circle at bottom right, rgba(244, 217, 139, 0.06), transparent 32%);
     }
 
-    .director-panel > * { position: relative; z-index: 1; }
-
-    .panel-head {
-      display: flex;
-      justify-content: space-between;
-      gap: 18px;
-      padding-bottom: 18px;
-      border-bottom: 1.4px solid var(--ligne);
-      margin-bottom: 18px;
+    .panel-content,
+    .card-content {
+      position: relative;
+      z-index: 1;
+      padding: 30px;
     }
 
-    .panel-head h2 { color: var(--or-2); font-size: 1.75rem; line-height: 1.1; }
-
-    .status-pill {
-      padding: 7px 10px;
-      border-radius: 999px;
-      background: rgba(47, 125, 70, 0.12);
-      color: var(--vert);
-      font-size: 0.8rem;
+    .eyebrow {
+      color: var(--or-clair);
+      font-size: 0.78rem;
       font-weight: 950;
-      white-space: nowrap;
-      border: 1px solid rgba(47, 125, 70, 0.18);
-      height: fit-content;
-    }
-
-    .system-list { display: grid; gap: 12px; }
-
-    .system-row {
-      display: grid;
-      grid-template-columns: 1fr auto;
-      gap: 14px;
-      align-items: center;
-      padding: 14px;
-      border-radius: 18px;
-      background: rgba(220, 203, 173, 0.84);
-      border: 1.4px solid rgba(28, 22, 14, 0.22);
-    }
-
-    .system-row strong { display: block; color: var(--texte); font-size: 0.98rem; }
-    .system-row span { color: var(--muted); font-size: 0.85rem; }
-    .system-row small { color: var(--vert); font-weight: 950; white-space: nowrap; }
-
-    .proof-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 12px; margin-top: 26px; }
-
-    .proof {
-      padding: 17px;
-      border: 1.4px solid var(--ligne);
-      background: rgba(229, 214, 190, 0.72);
-      border-radius: 22px;
-      box-shadow: var(--ombre-douce);
-    }
-
-    .proof strong { display: block; color: var(--or-2); font-size: 1.35rem; line-height: 1; margin-bottom: 8px; }
-    .proof span { color: var(--muted); font-size: 0.88rem; font-weight: 800; }
-
-    .mini-card,
-    .agent-card,
-    .quality-card,
-    .page-card,
-    .folder-card,
-    .formation-card,
-    .audit-card { padding: 22px; }
-
-    .mini-card h3,
-    .agent-card h3,
-    .quality-card h3,
-    .page-card h3,
-    .folder-card h3,
-    .formation-card h3,
-    .audit-card h3 {
-      color: var(--or-2);
-      line-height: 1.16;
-      margin-bottom: 9px;
-      font-weight: 950;
-    }
-
-    .mini-card p,
-    .agent-card p,
-    .quality-card p,
-    .page-card p,
-    .folder-card p,
-    .formation-card p,
-    .audit-card p { color: var(--texte-2); }
-
-    .number {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      width: 34px;
-      height: 34px;
-      border-radius: 12px;
-      background: rgba(185, 134, 47, 0.14);
-      color: var(--or-2);
-      font-weight: 950;
+      letter-spacing: 0.13em;
+      text-transform: uppercase;
       margin-bottom: 12px;
     }
 
-    .page-card,
-    .folder-card {
-      min-height: 225px;
+    h1 {
+      font-size: clamp(2.35rem, 5.5vw, 5.6rem);
+      line-height: 0.96;
+      letter-spacing: -0.06em;
+      margin-bottom: 17px;
+    }
+
+    h1 span,
+    h2,
+    h3,
+    .gold {
+      color: var(--or-clair);
+    }
+
+    h2,
+    h3 {
+      letter-spacing: -0.03em;
+    }
+
+    .lead {
+      color: var(--gris);
+      font-size: 1.06rem;
+      max-width: 780px;
+      margin-bottom: 22px;
+    }
+
+    .muted {
+      color: var(--gris);
+      font-size: 0.95rem;
+    }
+
+    .badge-row,
+    .filters {
       display: flex;
-      flex-direction: column;
-      gap: 10px;
-      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 9px;
+      margin-top: 20px;
     }
 
-    .path {
-      display: inline-flex;
-      width: fit-content;
-      padding: 5px 9px;
-      border-radius: 999px;
-      background: rgba(28, 22, 14, 0.08);
-      border: 1px solid rgba(28, 22, 14, 0.18);
-      color: var(--texte);
-      font-size: 0.78rem;
-      font-weight: 950;
-      font-family: Consolas, Monaco, monospace;
-    }
-
+    .badge,
     .pill {
       display: inline-flex;
-      width: fit-content;
-      padding: 5px 8px;
+      align-items: center;
+      gap: 7px;
+      padding: 8px 12px;
       border-radius: 999px;
-      font-size: 0.74rem;
+      border: 1px solid rgba(216, 170, 61, 0.24);
+      background: rgba(0, 0, 0, 0.26);
+      color: var(--gris);
+      font-size: 0.86rem;
+      font-weight: 850;
+    }
+
+    .badge strong,
+    .pill strong {
+      color: var(--or-clair);
+    }
+
+    .stat-grid,
+    .grid-2,
+    .grid-3,
+    .grid-4 {
+      display: grid;
+      gap: 16px;
+    }
+
+    .stat-grid {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      margin-top: 18px;
+    }
+
+    .grid-2 {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .grid-3 {
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+
+    .grid-4 {
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+    }
+
+    .stat {
+      border: 1px solid rgba(216, 170, 61, 0.18);
+      border-radius: 18px;
+      background: rgba(0, 0, 0, 0.24);
+      padding: 14px;
+    }
+
+    .stat strong {
+      display: block;
+      color: var(--or-clair);
+      font-size: 1.55rem;
+      line-height: 1;
+    }
+
+    .stat span {
+      display: block;
+      color: var(--gris);
+      font-size: 0.85rem;
+      margin-top: 6px;
+    }
+
+    .section {
+      margin-top: 24px;
+      scroll-margin-top: 110px;
+    }
+
+    .section-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-end;
+      gap: 16px;
+      flex-wrap: wrap;
+      margin-bottom: 14px;
+    }
+
+    .section-title {
+      font-size: clamp(1.55rem, 2.8vw, 2.45rem);
+      line-height: 1.05;
+    }
+
+    .category-card h3,
+    .formation-card-home h3,
+    .step-card h3 {
+      font-size: 1.08rem;
+      line-height: 1.25;
+      margin-bottom: 8px;
+    }
+
+    .category-card p,
+    .formation-card-home p,
+    .step-card p {
+      color: var(--gris);
+      font-size: 0.93rem;
+    }
+
+    .formation-card-home {
+      min-height: 100%;
+    }
+
+    .formation-top {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 10px;
+      margin-bottom: 12px;
+    }
+
+    .price {
+      color: var(--or-clair);
       font-weight: 950;
-      border: 1px solid rgba(28, 22, 14, 0.18);
-      background: rgba(47, 125, 70, 0.12);
-      color: var(--vert);
       white-space: nowrap;
     }
 
-    .pill.warn { background: rgba(186, 123, 37, 0.13); color: #7a4f15; }
-    .pill.bad { background: rgba(184, 66, 66, 0.12); color: var(--rouge); }
-    .pill.neutral { background: rgba(35, 95, 146, 0.10); color: var(--bleu); }
-
-    .catalogue-tools {
+    .catalogue-tools-home {
       display: grid;
-      grid-template-columns: 1fr auto;
-      gap: 14px;
-      margin-bottom: 18px;
-      align-items: center;
+      grid-template-columns: minmax(0, 1fr) auto;
+      gap: 12px;
+      margin-bottom: 14px;
     }
 
     .search-box {
       width: 100%;
-      padding: 14px 16px;
-      border: 1.5px solid var(--ligne);
+      border: 1px solid rgba(216, 170, 61, 0.24);
+      background: rgba(0, 0, 0, 0.34);
+      color: var(--blanc);
       border-radius: 999px;
-      background: rgba(229, 214, 190, 0.75);
-      color: var(--texte);
+      padding: 13px 15px;
       outline: none;
     }
 
-    .filters { display: flex; gap: 9px; flex-wrap: wrap; margin-bottom: 22px; }
-
-    .filter-btn {
-      border: 1.5px solid rgba(137, 96, 31, 0.23);
-      background: rgba(229, 214, 190, 0.62);
-      color: var(--or-2);
-      padding: 9px 13px;
-      border-radius: 999px;
-      font-weight: 950;
-      font-size: 0.88rem;
+    .search-box::placeholder {
+      color: rgba(204, 204, 204, 0.58);
     }
 
-    .filter-btn.active { background: var(--or); color: #1d1308; }
-
-    .formation-card { display: flex; flex-direction: column; gap: 13px; min-height: 330px; }
-    .formation-card h3 { font-size: 1.28rem; color: #6f4818; }
-    .formation-card.hide { display: none !important; }
-
-    .formation-top { display: flex; justify-content: space-between; gap: 12px; align-items: center; }
-
-    .tag {
-      display: inline-flex;
-      width: fit-content;
-      color: var(--mauve);
-      background: rgba(115, 82, 138, 0.10);
-      border: 1px solid rgba(115, 82, 138, 0.20);
-      border-radius: 999px;
-      padding: 5px 9px;
-      font-size: 0.78rem;
-      font-weight: 950;
+    .search-box:focus {
+      border-color: var(--or-clair);
+      box-shadow: 0 0 0 4px rgba(216, 170, 61, 0.12);
     }
 
-    .price { color: var(--or-2); font-size: 1.35rem; font-weight: 950; white-space: nowrap; }
+    .notice,
+    .warning-box,
+    .success-box,
+    .info-box {
+      border-radius: 18px;
+      padding: 16px;
+      border: 1px solid rgba(216, 170, 61, 0.24);
+      background: rgba(0, 0, 0, 0.26);
+      color: var(--gris);
+      font-size: 0.92rem;
+      overflow-wrap: anywhere;
+    }
 
-    .formation-meta {
+    .warning-box {
+      border-color: rgba(255, 112, 112, 0.32);
+      background: rgba(255, 112, 112, 0.08);
+      color: #ffe0e0;
+    }
+
+    .success-box {
+      border-color: rgba(128, 224, 141, 0.28);
+      background: rgba(128, 224, 141, 0.09);
+      color: #c9ffd1;
+    }
+
+    .info-box {
+      border-color: rgba(110, 168, 255, 0.28);
+      background: rgba(110, 168, 255, 0.08);
+      color: #d6e6ff;
+    }
+
+    .empty-state {
+      display: none;
+      margin-top: 12px;
+    }
+
+    .empty-state.visible {
+      display: block;
+    }
+
+    .clean-list {
+      padding-left: 20px;
+      margin-top: 10px;
       display: grid;
-      gap: 7px;
-      color: var(--muted);
-      font-size: 0.88rem;
-      font-weight: 800;
-      margin-top: auto;
+      gap: 8px;
+      color: var(--gris);
     }
 
-    .bar {
-      height: 10px;
-      background: rgba(80, 60, 30, 0.11);
-      border-radius: 999px;
-      overflow: hidden;
-      border: 1px solid rgba(137, 96, 31, 0.10);
+    .mt-16 {
+      margin-top: 16px;
     }
 
-    .bar span {
+    .source-line {
+      color: var(--gris-2);
+      font-size: 0.86rem;
+      font-weight: 850;
+      margin-top: 8px;
+    }
+
+    .source-line strong {
+      color: var(--or-clair);
+    }
+
+    .results-line {
+      color: var(--gris-2);
+      font-size: 0.86rem;
+      font-weight: 850;
+      margin: 10px 0 0;
+    }
+
+    .results-line strong {
+      color: var(--or-clair);
+    }
+
+    .empty-state .btn {
+      margin-top: 12px;
+    }
+
+    .category-link {
+      color: inherit;
       display: block;
       height: 100%;
-      width: var(--w);
+    }
+
+    .category-card:hover,
+    .category-card:focus-within {
+      border-color: rgba(244, 217, 139, 0.72);
+      transform: translateY(-1px);
+    }
+
+    .formation-status {
+      border-color: rgba(216, 170, 61, 0.24);
+    }
+
+    .formation-status.ready {
+      color: #c9ffd1;
+      border-color: rgba(128, 224, 141, 0.32);
+      background: rgba(128, 224, 141, 0.1);
+    }
+
+    .formation-status.soon {
+      color: #fff0ba;
+      border-color: rgba(244, 217, 139, 0.34);
+      background: rgba(216, 170, 61, 0.11);
+    }
+
+    .formation-status.todo {
+      color: #d6e6ff;
+      border-color: rgba(110, 168, 255, 0.34);
+      background: rgba(110, 168, 255, 0.1);
+    }
+
+    .dashboard-lock {
+      position: fixed;
+      top: 82px;
+      right: 16px;
+      z-index: 80;
+      width: min(420px, calc(100vw - 32px));
+      pointer-events: none;
+    }
+
+    .lock-button {
+      pointer-events: auto;
+      width: 42px;
+      height: 42px;
+      margin-left: auto;
       border-radius: 999px;
-      background: linear-gradient(90deg, var(--or), var(--or-2));
+      border: 1px solid rgba(216, 170, 61, 0.36);
+      background: rgba(5, 5, 5, 0.72);
+      color: var(--or-clair);
+      display: grid;
+      place-items: center;
+      box-shadow: 0 14px 34px rgba(0, 0, 0, 0.35);
+      backdrop-filter: blur(14px);
+      -webkit-backdrop-filter: blur(14px);
+      transition: transform 0.18s ease, border-color 0.18s ease, background 0.18s ease;
     }
 
-    .legal-line {
-      color: var(--muted);
-      font-size: 0.78rem;
-      line-height: 1.35;
-      padding-top: 8px;
-      border-top: 1px solid var(--ligne);
+    .lock-button:hover,
+    .lock-button:focus-visible {
+      transform: translateY(-1px);
+      border-color: rgba(244, 217, 139, 0.82);
+      background: rgba(20, 20, 20, 0.92);
     }
 
-    .notice {
-      padding: 24px;
-      border-radius: 28px;
-      border: 1.7px solid rgba(184, 66, 66, 0.28);
-      background: rgba(184, 66, 66, 0.08);
-      box-shadow: var(--ombre-douce);
+    .lock-button span {
+      font-size: 1rem;
+      line-height: 1;
     }
 
-    .notice strong { color: var(--rouge); }
-
-    .info-note {
-      padding: 20px;
-      border-radius: 24px;
-      border: 1.7px solid rgba(35, 95, 146, 0.26);
-      background: rgba(35, 95, 146, 0.08);
-      color: var(--texte-2);
-      box-shadow: var(--ombre-douce);
+    .vault-panel {
+      pointer-events: auto;
+      display: none;
+      margin-top: 10px;
+      max-height: min(76vh, 720px);
+      overflow: auto;
+      border: 1px solid rgba(216, 170, 61, 0.28);
+      border-radius: 22px;
+      background: rgba(5, 5, 5, 0.94);
+      box-shadow: 0 24px 80px rgba(0, 0, 0, 0.62);
+      backdrop-filter: blur(18px);
+      -webkit-backdrop-filter: blur(18px);
     }
 
-    .micro-catalogue-panel {
-      padding: 24px;
-      border: 1.7px solid var(--ligne);
-      border-radius: 34px;
-      background: linear-gradient(180deg, rgba(229, 214, 190, 0.94), rgba(205, 184, 150, 0.84));
-      box-shadow: var(--ombre-douce);
+    .vault-panel.open {
+      display: block;
     }
 
-    .micro-catalogue-head {
+    .vault-inner {
+      padding: 18px;
+    }
+
+    .vault-head {
       display: flex;
       justify-content: space-between;
-      align-items: center;
-      gap: 16px;
-      margin-bottom: 16px;
-      color: var(--texte-2);
-      font-size: 0.9rem;
+      align-items: flex-start;
+      gap: 12px;
+      margin-bottom: 14px;
+    }
+
+    .vault-title {
+      color: var(--or-clair);
+      font-weight: 950;
+      font-size: 1rem;
+      line-height: 1.15;
+    }
+
+    .vault-subtitle {
+      color: var(--gris-2);
+      font-size: 0.82rem;
+      margin-top: 4px;
+    }
+
+    .vault-close {
+      border: 1px solid rgba(216, 170, 61, 0.24);
+      background: rgba(255, 255, 255, 0.06);
+      color: var(--gris);
+      border-radius: 999px;
+      padding: 6px 10px;
       font-weight: 900;
     }
 
-    .micro-title-grid {
+    .vault-form {
       display: grid;
-      grid-template-columns: repeat(8, minmax(128px, 1fr));
-      gap: 12px;
-      max-height: 820px;
-      overflow: auto;
-      padding: 8px 4px 8px 0;
+      gap: 10px;
+      margin: 14px 0;
     }
 
-    .micro-category-column {
-      min-width: 128px;
-      padding: 10px;
-      border: 2px solid rgba(28, 22, 14, 0.74);
-      border-radius: 22px;
-      background: linear-gradient(180deg, rgba(218, 199, 166, 0.96), rgba(195, 171, 132, 0.88));
-      box-shadow: 0 18px 34px rgba(45, 32, 16, 0.16);
-    }
-
-    .micro-category-column.hide { display: none; }
-
-    .micro-category-button {
+    .vault-input {
       width: 100%;
-      min-height: 54px;
-      margin-bottom: 10px;
-      padding: 10px 8px;
-      border-radius: 17px;
-      border: 2px solid rgba(28, 22, 14, 0.82);
-      background: linear-gradient(135deg, #2b2115, #5f431c 52%, #b9862f);
-      color: #f7ead0;
-      font-size: 0.8rem;
-      font-weight: 950;
-      line-height: 1.1;
-      text-align: center;
-      box-shadow: 0 10px 22px rgba(45, 32, 16, 0.20);
+      border: 1px solid rgba(216, 170, 61, 0.28);
+      background: rgba(0, 0, 0, 0.36);
+      color: var(--blanc);
+      border-radius: 14px;
+      padding: 12px 13px;
+      outline: none;
     }
 
-    .micro-counter {
+    .vault-input:focus {
+      border-color: var(--or-clair);
+      box-shadow: 0 0 0 4px rgba(216, 170, 61, 0.12);
+    }
+
+    .vault-status {
+      min-height: 22px;
+      color: #ffe0e0;
+      font-size: 0.84rem;
+      font-weight: 850;
+    }
+
+    .vault-form.locked {
+      opacity: 0.72;
+    }
+
+    .vault-input:disabled,
+    .vault-form.locked button {
+      cursor: not-allowed;
+      opacity: 0.7;
+    }
+
+    .vault-dashboard {
+      display: none;
+      margin-top: 14px;
+    }
+
+    .vault-dashboard.unlocked {
       display: block;
-      margin-top: 4px;
-      color: rgba(247, 234, 208, 0.78);
-      font-size: 0.62rem;
+    }
+
+    .vault-warning {
+      margin-bottom: 14px;
+      border: 1px solid rgba(255, 112, 112, 0.34);
+      background: rgba(255, 112, 112, 0.08);
+      color: #ffe0e0;
+      border-radius: 16px;
+      padding: 12px;
+      font-size: 0.82rem;
       font-weight: 800;
     }
 
-    .micro-column-list { display: grid; gap: 6px; }
-
-    .micro-title-card {
-      min-height: 46px;
-      padding: 8px 7px;
-      border: 1.6px solid rgba(28, 22, 14, 0.62);
-      border-radius: 12px;
-      background: rgba(232, 216, 189, 0.92);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      text-align: center;
-      color: #1f170d;
-      font-size: 0.66rem;
-      font-weight: 950;
-      line-height: 1.16;
-    }
-
-    .micro-title-card.hide { display: none; }
-
-    .test-grid {
+    .vault-grid {
       display: grid;
-      grid-template-columns: repeat(5, 1fr);
-      gap: 12px;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 10px;
+      margin-bottom: 14px;
     }
 
-    .test-card {
-      padding: 16px;
-      border-radius: 20px;
-      border: 1.5px solid rgba(28, 22, 14, 0.26);
-      background: rgba(232, 216, 189, 0.76);
-      color: var(--texte-2);
-      font-weight: 850;
-      min-height: 120px;
+    .vault-kpi {
+      border: 1px solid rgba(216, 170, 61, 0.18);
+      background: rgba(255, 255, 255, 0.045);
+      border-radius: 16px;
+      padding: 12px;
+      min-width: 0;
     }
 
-    .test-card strong { display: block; color: var(--or-2); margin-bottom: 8px; }
-
-    footer {
-      padding: 34px 0 44px;
-      border-top: 1px solid var(--ligne);
-      color: var(--muted);
-      font-size: 0.92rem;
+    .vault-kpi strong {
+      display: block;
+      color: var(--or-clair);
+      font-size: 1.18rem;
+      line-height: 1;
     }
 
-    .footer-grid {
+    .vault-kpi span {
+      display: block;
+      color: var(--gris);
+      font-size: 0.78rem;
+      margin-top: 6px;
+    }
+
+    .vault-section {
+      border: 1px solid rgba(216, 170, 61, 0.17);
+      border-radius: 16px;
+      background: rgba(255, 255, 255, 0.035);
+      padding: 12px;
+      margin-top: 10px;
+    }
+
+    .vault-section summary {
+      cursor: pointer;
+      color: var(--or-clair);
+      font-weight: 950;
+    }
+
+    .vault-list {
+      display: grid;
+      gap: 8px;
+      padding-left: 18px;
+      margin-top: 10px;
+      color: var(--gris);
+      font-size: 0.84rem;
+    }
+
+    .vault-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-top: 12px;
+    }
+
+    .vault-progress {
+      height: 7px;
+      overflow: hidden;
+      border-radius: 999px;
+      background: rgba(255, 255, 255, 0.08);
+      border: 1px solid rgba(216, 170, 61, 0.18);
+      margin: 10px 0 14px;
+    }
+
+    .vault-progress span {
+      display: block;
+      width: var(--vault-progress, 100%);
+      height: 100%;
+      border-radius: 999px;
+      background: linear-gradient(90deg, var(--or-clair), var(--or));
+      transition: width 0.25s ease;
+    }
+
+    .vault-dense-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 10px;
+      margin: 12px 0 14px;
+    }
+
+    .vault-mini-kpi {
+      min-width: 0;
+      border: 1px solid rgba(216, 170, 61, 0.16);
+      border-radius: 15px;
+      background: rgba(255, 255, 255, 0.04);
+      padding: 10px;
+    }
+
+    .vault-mini-kpi strong {
+      display: block;
+      color: var(--or-clair);
+      font-size: 1.05rem;
+      line-height: 1;
+    }
+
+    .vault-mini-kpi span {
+      display: block;
+      color: var(--gris);
+      font-size: 0.74rem;
+      margin-top: 6px;
+      line-height: 1.25;
+    }
+
+    .vault-bars {
+      display: grid;
+      gap: 10px;
+      margin-top: 12px;
+    }
+
+    .vault-bar-row {
+      display: grid;
+      gap: 6px;
+    }
+
+    .vault-bar-label {
       display: flex;
       justify-content: space-between;
-      gap: 22px;
-      flex-wrap: wrap;
-      align-items: flex-start;
+      gap: 10px;
+      color: var(--gris);
+      font-size: 0.8rem;
+      font-weight: 850;
     }
 
-    .footer-links { display: flex; gap: 12px; flex-wrap: wrap; justify-content: flex-end; }
-    .admin-link { color: rgba(79, 70, 56, 0.44); }
-    #routeMessage { margin-top: 16px; min-height: 24px; color: var(--rouge); font-weight: 950; }
+    .vault-bar-label strong {
+      color: var(--or-clair);
+      white-space: nowrap;
+    }
+
+    .vault-bar {
+      height: 9px;
+      border-radius: 999px;
+      overflow: hidden;
+      background: rgba(255, 255, 255, 0.08);
+      border: 1px solid rgba(216, 170, 61, 0.14);
+    }
+
+    .vault-bar span {
+      display: block;
+      width: var(--bar, 0%);
+      height: 100%;
+      border-radius: 999px;
+      background: linear-gradient(90deg, #6ea8ff, var(--or-clair), var(--or));
+    }
+
+    .vault-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 10px;
+      font-size: 0.78rem;
+      color: var(--gris);
+    }
+
+    .vault-table th,
+    .vault-table td {
+      border-bottom: 1px solid rgba(216, 170, 61, 0.14);
+      padding: 8px 6px;
+      text-align: left;
+      vertical-align: top;
+    }
+
+    .vault-table th {
+      color: var(--or-clair);
+      font-size: 0.74rem;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+    }
+
+    .vault-table td:last-child,
+    .vault-table th:last-child {
+      text-align: right;
+    }
+
+    .vault-chip-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-top: 10px;
+    }
+
+    .vault-chip {
+      border: 1px solid rgba(216, 170, 61, 0.22);
+      border-radius: 999px;
+      background: rgba(255, 255, 255, 0.05);
+      color: var(--gris);
+      padding: 7px 10px;
+      font-size: 0.78rem;
+      font-weight: 850;
+    }
+
+    .vault-chip strong {
+      color: var(--or-clair);
+    }
+
+    .vault-updated {
+      color: var(--gris-2);
+      font-size: 0.78rem;
+      font-weight: 850;
+      margin-top: 6px;
+    }
+
+    .vault-data-source {
+      margin-top: 8px;
+      color: var(--gris-2);
+      font-size: 0.76rem;
+      line-height: 1.35;
+    }
+
+    .vault-data-source strong {
+      color: var(--or-clair);
+    }
+
+    .vault-alert {
+      margin-top: 10px;
+      border: 1px solid rgba(110, 168, 255, 0.28);
+      background: rgba(110, 168, 255, 0.08);
+      color: #d6e6ff;
+      border-radius: 14px;
+      padding: 10px 12px;
+      font-size: 0.78rem;
+      font-weight: 850;
+      line-height: 1.35;
+    }
+
+    .vault-alert.warning {
+      border-color: rgba(255, 112, 112, 0.34);
+      background: rgba(255, 112, 112, 0.08);
+      color: #ffe0e0;
+    }
+
+    .vault-pulse {
+      display: inline-flex;
+      width: 8px;
+      height: 8px;
+      border-radius: 999px;
+      background: var(--vert);
+      box-shadow: 0 0 16px rgba(128, 224, 141, 0.65);
+      margin-right: 6px;
+      vertical-align: middle;
+    }
+
+    .vault-one-action {
+      border: 1px solid rgba(244, 217, 139, 0.36);
+      background: linear-gradient(145deg, rgba(244, 217, 139, 0.15), rgba(255, 255, 255, 0.045));
+      color: var(--blanc);
+      border-radius: 18px;
+      padding: 13px 14px;
+      margin-top: 12px;
+      font-size: 0.9rem;
+      font-weight: 900;
+      line-height: 1.35;
+    }
+
+    .vault-one-action strong {
+      color: var(--or-clair);
+    }
+
+    .vault-mode-controls {
+      margin: 12px 0 14px;
+      justify-content: flex-start;
+    }
+
+    .vault-mode-controls .active {
+      border-color: transparent;
+      background: linear-gradient(135deg, var(--or-clair), var(--or));
+      color: #151006;
+    }
+
+    .vault-dashboard.simple-mode .advanced-only {
+      display: none !important;
+    }
+
+    .vault-dashboard.advanced-mode .simple-only-note {
+      display: none !important;
+    }
+
+    .vault-split-note {
+      border-left: 3px solid var(--or-clair);
+      padding-left: 12px;
+      color: var(--gris);
+      font-size: 0.82rem;
+      line-height: 1.4;
+      margin-top: 10px;
+    }
+
+    .vault-command-grid {
+      display: grid;
+      grid-template-columns: repeat(5, minmax(0, 1fr));
+      gap: 10px;
+      margin: 12px 0 14px;
+    }
+
+    .vault-command-card {
+      border: 1px solid rgba(244, 217, 139, 0.22);
+      background: linear-gradient(145deg, rgba(216, 170, 61, 0.11), rgba(255, 255, 255, 0.04));
+      border-radius: 16px;
+      padding: 11px;
+      min-width: 0;
+    }
+
+    .vault-command-card strong {
+      display: block;
+      color: var(--or-clair);
+      font-size: 0.96rem;
+      line-height: 1.15;
+      overflow-wrap: anywhere;
+    }
+
+    .vault-command-card span {
+      display: block;
+      color: var(--gris);
+      font-size: 0.72rem;
+      line-height: 1.3;
+      margin-top: 6px;
+    }
+
+    .vault-light {
+      display: inline-flex;
+      align-items: center;
+      gap: 7px;
+      font-weight: 950;
+    }
+
+    .vault-light::before {
+      content: "";
+      width: 10px;
+      height: 10px;
+      border-radius: 999px;
+      background: var(--rouge);
+      box-shadow: 0 0 18px rgba(255, 112, 112, 0.6);
+    }
+
+    .vault-light.yellow::before {
+      background: var(--or-clair);
+      box-shadow: 0 0 18px rgba(244, 217, 139, 0.58);
+    }
+
+    .vault-light.green::before {
+      background: var(--vert);
+      box-shadow: 0 0 18px rgba(128, 224, 141, 0.6);
+    }
+
+    .vault-check-grid {
+      display: grid;
+      gap: 8px;
+      margin-top: 10px;
+    }
+
+    .vault-check-item {
+      display: flex;
+      justify-content: space-between;
+      gap: 12px;
+      border: 1px solid rgba(216, 170, 61, 0.14);
+      background: rgba(255, 255, 255, 0.035);
+      border-radius: 12px;
+      padding: 9px 10px;
+      color: var(--gris);
+      font-size: 0.8rem;
+      font-weight: 850;
+    }
+
+    .vault-check-item strong {
+      color: var(--or-clair);
+      white-space: nowrap;
+    }
+
+    .vault-check-item.ok strong {
+      color: #c9ffd1;
+    }
+
+    .vault-check-item.warn strong {
+      color: #fff0ba;
+    }
+
+    .vault-check-item.no strong {
+      color: #ffe0e0;
+    }
+
+    .vault-scroll-table {
+      overflow-x: auto;
+      margin-top: 10px;
+    }
+
+    .vault-actions a,
+    .vault-actions button {
+      flex: 1 1 auto;
+      min-height: 36px;
+      padding: 8px 10px;
+      font-size: 0.8rem;
+    }
+
+    .footer {
+      max-width: var(--max);
+      margin: 0 auto;
+      padding: 24px 20px 44px;
+      color: var(--gris-2);
+      border-top: 1px solid rgba(216, 170, 61, 0.14);
+      font-size: 0.9rem;
+    }
+
+    .footer a {
+      color: var(--or-clair);
+    }
+
+    .footer a:hover,
+    .footer a:focus-visible {
+      text-decoration: underline;
+    }
+
+    @supports not ((backdrop-filter: blur(16px)) or (-webkit-backdrop-filter: blur(16px))) {
+      .topbar {
+        background: rgba(5, 5, 5, 0.96);
+      }
+    }
 
     @media (prefers-reduced-motion: reduce) {
-      html { scroll-behavior: auto; }
-      *, *::before, *::after { transition: none !important; animation: none !important; }
+      html {
+        scroll-behavior: auto;
+      }
+
+      *,
+      *::before,
+      *::after {
+        transition: none !important;
+        animation: none !important;
+      }
     }
 
-    @media (max-width: 1080px) {
-      .quick-actions-inner { grid-template-columns: repeat(4, minmax(0, 1fr)); }
-      .hero { grid-template-columns: 1fr; }
+    @media (max-width: 980px) {
+      .hero,
       .grid-4,
-      .grid-3,
-      .proof-grid,
-      .test-grid { grid-template-columns: repeat(2, 1fr); }
-      .micro-title-grid { grid-template-columns: repeat(4, minmax(150px, 1fr)); }
-      .section-title { flex-direction: column; align-items: flex-start; }
+      .grid-3 {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
     }
 
-    @media (max-width: 680px) {
-      .topbar .page,
-      .nav { align-items: flex-start; flex-direction: column; }
-      .nav-links { justify-content: flex-start; }
-      .quick-actions-inner { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+    @media (max-width: 760px) {
+      .vault-command-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .vault-dense-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .vault-table {
+        min-width: 620px;
+      }
+
+      .dashboard-lock {
+        top: 12px;
+        right: 12px;
+        width: min(390px, calc(100vw - 24px));
+      }
+
+      .lock-button {
+        width: 38px;
+        height: 38px;
+      }
+
+      .vault-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .vault-panel {
+        max-height: 82vh;
+      }
+
+      .topbar {
+        position: relative;
+      }
+
+      .nav {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+
+      .nav-actions {
+        width: 100%;
+        justify-content: flex-start;
+      }
+
+      .hero,
       .grid-4,
       .grid-3,
       .grid-2,
-      .proof-grid,
-      .test-grid { grid-template-columns: 1fr; }
-      .micro-title-grid { grid-template-columns: repeat(2, minmax(150px, 1fr)); }
-      .catalogue-tools { grid-template-columns: 1fr; }
-      h1 { letter-spacing: -1.4px; }
+      .stat-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .page {
+        padding: 26px 16px 64px;
+      }
+
+      .panel-content,
+      .card-content {
+        padding: 22px;
+      }
+
+      .brand span span {
+        white-space: normal;
+        max-width: 245px;
+      }
+
+      .hero-actions,
+      .card-actions {
+        align-items: stretch;
+        flex-direction: column;
+      }
+
+      .hero-actions .btn,
+      .card-actions .btn {
+        width: 100%;
+      }
+
+      .catalogue-tools-home {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    @media print {
+      .dashboard-lock,
+
+      .topbar,
+      .hero-actions,
+      .card-actions,
+      .catalogue-tools-home,
+      .filters,
+      .skip-link {
+        display: none !important;
+      }
+
+      body {
+        background: #fff !important;
+        color: #000 !important;
+      }
+
+      .panel,
+      .card,
+      .notice,
+      .warning-box,
+      .success-box,
+      .info-box {
+        background: #fff !important;
+        color: #000 !important;
+        box-shadow: none !important;
+        border-color: #777 !important;
+        break-inside: avoid;
+      }
     }
   </style>
 </head>
 
-<body>
-  <a class="skip-link" href="#accueil">Aller directement au contenu</a>
+<body data-page="index">
+  <a class="skip-link" href="#contenu">Aller directement au contenu</a>
 
-  <div class="topbar">
-    <div class="page">
-      <span>Le Pivot d’Or • Mini Mini Formation IA • Futuriste accessible</span>
-      <span>Produits digitaux autonomes • Achat unique • Accès numérique privé</span>
-    </div>
-  </div>
-
-  <header>
-    <div class="page nav">
-      <a class="brand" href="index.html" aria-label="Retour à l’accueil">
-        <div class="brand-mark" id="brandMark">
-          <img src="assets/logo/logo.png" data-fallback-src="logo.png" alt="Logo officiel Le Pivot d’Or" class="brand-logo" id="brandLogo" />
-        </div>
-        <div>
+  <header class="topbar" aria-label="Navigation principale">
+    <nav class="nav">
+      <a class="brand" href="index.html" aria-label="Accueil Le Pivot d’Or">
+        <span class="brand-mark" id="brandMark" aria-hidden="true">
+          <img class="brand-logo" id="brandLogo" src="assets/logo/logo.png" data-fallback-src="logo.png" alt="" />
+        </span>
+        <span>
           <strong>Le Pivot d’Or</strong>
-          <span>Vision. Clarté. Discipline. Structure. Constance.</span>
-        </div>
+          <span>Mini Mini Formation IA</span>
+        </span>
       </a>
 
-      <nav class="nav-links" aria-label="Navigation principale">
-        <a href="index.html#pages">Pages</a>
-        <a href="index.html#dossiers">Dossiers</a>
-        <a href="index.html#catalogue">Catalogue</a>
-        <a href="support.html">Support</a>
-        <a href="conditions.html">Conditions</a>
-        <a class="btn small" href="formation.html">Formation prioritaire</a>
-      </nav>
-    </div>
-
-    <div class="quick-actions" aria-label="Boutons rapides sans défilement horizontal">
-      <div class="page quick-actions-inner">
-        <a href="#accueil">Accueil</a>
-        <a href="#pages">Pages</a>
-        <a href="#dossiers">Dossiers</a>
-        <a href="#assets">Assets</a>
-        <a href="#catalogue">Catalogue</a>
-        <a href="#catalogue-400">400 titres</a>
-        <a href="#test-github">Tests</a>
-        <button type="button" id="soundToggle">Son : désactivé</button>
+      <div class="nav-actions">
+        <a class="nav-link" href="formations.html">Catalogue</a>
+        <a class="nav-link" href="formation.html">Formation IA</a>
+        <a class="nav-link" href="contact.html">Contact</a>
+        <a class="nav-link" href="support.html">Support</a>
+        <a class="btn btn-primary btn-small" href="#formations">Commencer</a>
       </div>
-    </div>
+    </nav>
   </header>
 
-  <main id="accueil" tabindex="-1">
-    <section class="page hero">
-      <div>
-        <span class="badge">Index HTML connecté aux pages et dossiers GitHub</span>
-        <h1>Un site simple, structuré et prêt à <span>grandir proprement.</span></h1>
-        <p class="lead">
-          Cette version de l’index prépare les liens entre les pages, les dossiers GitHub, le logo, les styles, les données, les sons optionnels et le futur catalogue de formations.
-        </p>
-        <p class="lead">
-          Le site public reste sur GitHub Pages. Les contenus payants, données clients, clés Stripe, accès privés et informations sensibles ne doivent pas être placés dans le code public.
-        </p>
-        <div class="hero-actions">
-          <a class="btn" href="#pages">Vérifier les pages</a>
-          <a class="btn secondary" href="#dossiers">Voir les dossiers à créer</a>
-          <a class="btn ghost" href="support.html">Tester support.html</a>
+  <aside class="dashboard-lock" aria-label="Menu interne verrouillé">
+    <button class="lock-button" id="vaultToggle" type="button" aria-expanded="false" aria-controls="vaultPanel" title="Tableau de bord interne">
+      <span aria-hidden="true">🔒</span>
+      <span class="sr-only">Ouvrir le tableau de bord interne</span>
+    </button>
+
+    <div class="vault-panel" id="vaultPanel" role="dialog" aria-label="Tableau de bord caché" aria-modal="false" aria-hidden="true" tabindex="-1">
+      <div class="vault-inner">
+        <div class="vault-head">
+          <div>
+            <div class="vault-title">Tableau de bord interne</div>
+            <div class="vault-subtitle">CRM · KPI · Mini Mini Formation</div>
+          </div>
+          <button class="vault-close" id="vaultClose" type="button" aria-label="Fermer le tableau de bord">×</button>
         </div>
 
-        <div class="proof-grid">
-          <div class="proof"><strong>12+</strong><span>pages prévues</span></div>
-          <div class="proof"><strong>12</strong><span>dossiers structurants</span></div>
-          <div class="proof"><strong>1</strong><span>logo avec fallback</span></div>
-          <div class="proof"><strong>0</strong><span>donnée sensible dans GitHub</span></div>
+        <form class="vault-form" id="vaultForm">
+          <label class="sr-only" for="vaultCode">Code d’accès</label>
+          <input class="vault-input" id="vaultCode" type="password" inputmode="numeric" autocomplete="off" placeholder="Code d’accès" maxlength="12" />
+          <button class="btn btn-primary" type="submit">Déverrouiller</button>
+          <div class="vault-status" id="vaultStatus" role="status" aria-live="polite"></div>
+        </form>
+
+        <div class="vault-dashboard simple-mode" id="vaultDashboard">
+          <div class="vault-warning">
+            Ce menu est un verrou visuel côté navigateur. Sur GitHub Pages, ce n’est pas une vraie sécurité. Contenu autorisé ici : priorités, statuts, notes qualité, notes rentabilité, score priorité, idées, formations publiées, formations à créer/améliorer, graphiques simples et KPI non sensibles.
+          </div>
+          <div class="source-line" id="vaultSessionNote" aria-live="polite">Session interne active temporairement.</div>
+          <div class="vault-progress" aria-hidden="true"><span id="vaultSessionProgress"></span></div>
+          <div class="vault-updated" id="vaultDashboardUpdated">Synchronisation en attente...</div>
+          <div class="vault-data-source">
+            <strong>Source :</strong> données publiques, estimations locales non sensibles et interactions anonymes du navigateur. Aucun client, reçu, clé Stripe ou accès privé.
+          </div>
+          <div class="vault-alert" id="vaultIntelligenceNote"><span class="vault-pulse"></span>Intelligence locale active : KPI synchronisés avec le catalogue, les clics publics et les snapshots.</div>
+
+          <div class="vault-one-action" id="vaultOneAction">
+            <strong>Action rentable maintenant :</strong> terminer la formation pilote + tester Stripe + tester l’accès.
+          </div>
+
+          <div class="vault-actions vault-mode-controls" aria-label="Mode du tableau de bord">
+            <button class="btn btn-primary active" type="button" id="vaultSimpleMode">Mode simple</button>
+            <button class="btn" type="button" id="vaultAdvancedMode">Mode avancé</button>
+          </div>
+
+          <div class="simple-only-note vault-data-source">
+            Mode simple : 5 décisions essentielles. Passe en mode avancé pour voir CRM, graphiques, exports, risques, tableaux et jumeau numérique.
+          </div>
+
+          <div class="vault-command-grid" aria-label="Top 5 indicateurs de commandement">
+            <div class="vault-command-card"><strong id="vaultRevenue7d">0 $</strong><span>Ventes 7 jours / vente test</span></div>
+            <div class="vault-command-card"><strong id="vaultStripeClickRate">0 %</strong><span>Taux clic Stripe local</span></div>
+            <div class="vault-command-card"><strong id="vaultTopThree">Aucune</strong><span>Top 3 à pousser</span></div>
+            <div class="vault-command-card"><strong id="vaultCriticalAlerts">0</strong><span>Alertes critiques ouvertes</span></div>
+            <div class="vault-command-card"><strong id="vaultNextBestAction">Choisir la formation pilote</strong><span>Prochaine action rentable</span></div>
+          </div>
+
+          <details class="vault-section" open>
+            <summary>Ce qui bloque la vente test</summary>
+            <div class="vault-check-grid" id="vaultTestBlockers"></div>
+          </details>
+
+          <div class="vault-grid" aria-label="KPI principaux">
+            <div class="vault-kpi"><strong id="vaultSalesKpi">0 $</strong><span>Ventes attribuées publiques</span></div>
+            <div class="vault-kpi"><strong id="vaultFeaturedKpi">0</strong><span>Formations en avant</span></div>
+            <div class="vault-kpi"><strong id="vaultCategoriesKpi">0</strong><span>Catégories officielles</span></div>
+            <div class="vault-kpi"><strong id="vaultCapacityKpi">400</strong><span>Capacité catalogue</span></div>
+          </div>
+
+          <div class="vault-dense-grid" aria-label="KPI détaillés non sensibles">
+            <div class="vault-mini-kpi"><strong id="vaultPriorityKpi">0</strong><span>Score priorité moyen</span></div>
+            <div class="vault-mini-kpi"><strong id="vaultIdeasKpi">0</strong><span>Idées de formations</span></div>
+            <div class="vault-mini-kpi"><strong id="vaultPublishedKpi">0</strong><span>Formations publiées</span></div>
+            <div class="vault-mini-kpi"><strong id="vaultCreateKpi">0</strong><span>Formations à créer</span></div>
+            <div class="vault-mini-kpi"><strong id="vaultImproveKpi">0</strong><span>Formations à améliorer</span></div>
+            <div class="vault-mini-kpi"><strong id="vaultViewsKpi">0</strong><span>Vues estimées non sensibles</span></div>
+            <div class="vault-mini-kpi"><strong id="vaultClicksKpi">0</strong><span>Clics totaux</span></div>
+            <div class="vault-mini-kpi"><strong id="vaultTrainingClicksKpi">0</strong><span>Clics vers pages formation</span></div>
+            <div class="vault-mini-kpi"><strong id="vaultCommentsKpi">0</strong><span>Commentaires / signaux</span></div>
+            <div class="vault-mini-kpi"><strong id="vaultBackupsKpi">0</strong><span>Sauvegardes / snapshots</span></div>
+            <div class="vault-mini-kpi"><strong id="vaultDemandKpi">0</strong><span>Formations demandées</span></div>
+            <div class="vault-mini-kpi"><strong id="vaultCrmKpi">0</strong><span>Éléments CRM non sensibles</span></div>
+            <div class="vault-mini-kpi"><strong id="vaultClickRateKpi">0 %</strong><span>Taux clic / vue local</span></div>
+            <div class="vault-mini-kpi"><strong id="vaultTrainingRateKpi">0 %</strong><span>Taux clic formation</span></div>
+            <div class="vault-mini-kpi"><strong id="vaultDataHealthKpi">0 %</strong><span>Santé des données</span></div>
+            <div class="vault-mini-kpi"><strong id="vaultSnapshotCountKpi">0</strong><span>Snapshots locaux</span></div>
+            <div class="vault-mini-kpi"><strong id="vaultLastSignalKpi">Aucun</strong><span>Dernier signal local</span></div>
+            <div class="vault-mini-kpi"><strong id="vaultConversionScoreKpi">0 / 100</strong><span>Score conversion local</span></div>
+            <div class="vault-mini-kpi"><strong id="vaultOpportunityKpi">Aucune</strong><span>Meilleure opportunité</span></div>
+            <div class="vault-mini-kpi"><strong id="vaultTrackingKpi">Actif</strong><span>Suivi local</span></div>
+            <div class="vault-mini-kpi"><strong id="vaultRiskScoreKpi">0 / 100</strong><span>Score risque système</span></div>
+            <div class="vault-mini-kpi"><strong id="vaultMaturityKpi">Pré-lancement</strong><span>Maturité terrain</span></div>
+          </div>
+
+          <details class="vault-section" open>
+            <summary>Command Center — Boutons stratégiques</summary>
+            <div class="vault-actions" id="vaultActionButtons"></div>
+            <div class="vault-chip-row" id="vaultSmartTags"></div>
+          </details>
+
+          <details class="vault-section" open>
+            <summary>Actions du jour — exécution sans dispersion</summary>
+            <ul class="vault-list" id="vaultTodayActions"></ul>
+          </details>
+
+          <details class="vault-section" open>
+            <summary>Risques actifs — à surveiller avant expansion</summary>
+            <ul class="vault-list" id="vaultRiskList"></ul>
+          </details>
+
+          <details class="vault-section advanced-only" open>
+            <summary>Graphiques simples — Progression globale</summary>
+            <div class="vault-bars" id="vaultProgressGrid"></div>
+          </details>
+
+          <details class="vault-section advanced-only" open>
+            <summary>CRM intelligent — Pipeline non sensible</summary>
+            <div class="vault-bars" id="vaultCrmGrid"></div>
+            <ul class="vault-list">
+              <li>Prospects : demandes contact/support sans données personnelles dans GitHub.</li>
+              <li>Clients : jamais de courriels ni reçus dans ce tableau public.</li>
+              <li>Demandes fortes : utiliser les clics, commentaires et demandes comme signaux non sensibles.</li>
+              <li>Priorité commerciale : améliorer ce qui reçoit des clics mais manque de qualité ou de statut prêt.</li>
+            </ul>
+          </details>
+
+          <details class="vault-section advanced-only">
+            <summary>Formations les plus demandées</summary>
+            <div class="vault-bars" id="vaultDemandList"></div>
+          </details>
+
+          <details class="vault-section advanced-only">
+            <summary>Journal local non sensible</summary>
+            <ul class="vault-list" id="vaultActivityList"></ul>
+          </details>
+
+          <details class="vault-section" open>
+            <summary>Rapport stratégique instantané</summary>
+            <ul class="vault-list" id="vaultReportList"></ul>
+          </details>
+
+          <details class="vault-section" open>
+            <summary>Feux de phase — lancement sans chaos</summary>
+            <div class="vault-alert" id="vaultPhaseAlert">Analyse des conditions de passage...</div>
+            <div class="vault-check-grid" id="vaultPhaseChecks"></div>
+          </details>
+
+          <details class="vault-section" open>
+            <summary>Publication 100 % — critères bloquants</summary>
+            <div class="vault-check-grid" id="vaultPublicationGate"></div>
+          </details>
+
+          <details class="vault-section advanced-only">
+            <summary>Tests terrain — mobile, Stripe, accès, SEO</summary>
+            <div class="vault-check-grid" id="vaultFieldTests"></div>
+          </details>
+
+          <details class="vault-section advanced-only">
+            <summary>Notion — bureau de direction interne</summary>
+            <div class="vault-check-grid" id="vaultNotionGrid"></div>
+            <ul class="vault-list">
+              <li>Site public = vendre. GitHub = héberger le public et les fichiers non sensibles.</li>
+              <li>Notion = piloter les tâches, preuves, décisions, KPI, formations et routines.</li>
+              <li>Adrien = surveiller, classer, alerter et recommander une action rentable.</li>
+            </ul>
+          </details>
+
+          <details class="vault-section advanced-only">
+            <summary>Bundles simples — panier moyen</summary>
+            <div class="vault-bars" id="vaultBundleGrid"></div>
+          </details>
+
+          <details class="vault-section advanced-only">
+            <summary>Jumeau numérique — 400 formations</summary>
+            <div class="vault-check-grid" id="vaultTwinGrid"></div>
+          </details>
+
+          <details class="vault-section advanced-only">
+            <summary>Adrien — alertes et escalade Olivier</summary>
+            <ul class="vault-list" id="vaultAdrienList"></ul>
+          </details>
+
+          <details class="vault-section advanced-only">
+            <summary>Tableau intégral — formations, statuts et scores</summary>
+            <div class="vault-scroll-table">
+              <table class="vault-table" aria-label="Tableau interne des formations non sensible">
+                <thead>
+                  <tr>
+                    <th>Formation</th>
+                    <th>Statut</th>
+                    <th>Qualité</th>
+                    <th>Rentabilité</th>
+                    <th>Priorité</th>
+                    <th>Prêt</th>
+                    <th>Vues</th>
+                    <th>Clics</th>
+                    <th>Ventes</th>
+                  </tr>
+                </thead>
+                <tbody id="vaultFormationTable"></tbody>
+              </table>
+            </div>
+          </details>
+
+          <details class="vault-section">
+            <summary>Priorité stratégique — Action rentable maintenant</summary>
+            <ul class="vault-list" id="vaultStrategicList"></ul>
+          </details>
+
+          <details class="vault-section advanced-only">
+            <summary>Zones CRM + KPI autorisées</summary>
+            <ul class="vault-list">
+              <li>Priorités, statuts, notes qualité, notes rentabilité, score priorité.</li>
+              <li>Idées de formations, formations publiées, à créer, à améliorer.</li>
+              <li>Graphiques simples, vues, clics, commentaires, sauvegardes.</li>
+              <li>Clics vers page formation, ventes attribuées, formations les plus demandées.</li>
+              <li>Aucune donnée client, aucun reçu Stripe, aucune clé secrète, aucun contenu payé complet.</li>
+            </ul>
+          </details>
+
+          <div class="vault-actions">
+            <a class="btn" href="formations.html">Catalogue</a>
+            <a class="btn" href="formations.html#catalogue">KPI catalogue</a>
+            <a class="btn" href="contact.html">Contact</a>
+            <a class="btn" href="support.html">Support</a>
+            <a class="btn" href="dashboard-cache.html">Dashboard</a>
+            <a class="btn" href="data/formations-index.json">JSON</a>
+            <button class="btn" type="button" id="vaultLockAgain">Reverrouiller</button>
+          </div>
+
+          <details class="vault-section advanced-only">
+            <summary>Séparation future du code</summary>
+            <div class="vault-split-note">
+              Objectif futur : garder index.html léger. Déplacer la logique du dashboard dans <strong>js/dashboard-cache.js</strong>, les données dans <strong>data/dashboard-formations.json</strong>, et les styles dans <strong>css/dashboard-cache.css</strong>.
+            </div>
+            <div class="vault-check-grid" id="vaultSplitCodeGrid"></div>
+          </details>
+        </div>
+      </div>
+    </div>
+  </aside>
+
+  <main class="page" id="contenu">
+    <section class="hero" aria-labelledby="titre-page">
+      <div class="panel">
+        <div class="panel-content">
+          <p class="eyebrow">Mini Mini Formation IA</p>
+          <h1 id="titre-page">Apprends vite. Applique vite. Avance avec <span>clarté.</span></h1>
+          <p class="lead">
+            Le Pivot d’Or prépare un catalogue de mini-formations digitales simples, concrètes et structurées pour t’aider à avancer avec l’IA, la productivité, le business, les finances et les systèmes personnels.
+          </p>
+
+          <div class="hero-actions">
+            <a class="btn btn-primary" href="formations.html">Voir le catalogue</a>
+            <a class="btn" href="formation.html">Formation IA prioritaire</a>
+            <a class="btn" href="contact.html">Poser une question</a>
+          </div>
+
+          <div class="badge-row" aria-label="Points clés">
+            <span class="badge"><strong>✓</strong> Achat unique</span>
+            <span class="badge"><strong>✓</strong> Formations courtes</span>
+            <span class="badge"><strong>✓</strong> Aucun coaching inclus</span>
+            <span class="badge"><strong>✓</strong> Accès numérique</span>
+          </div>
         </div>
       </div>
 
-      <aside class="director-panel">
-        <div class="panel-head">
-          <div>
-            <span class="badge">Mode directeur</span>
-            <h2>Relier les pages sans confusion.</h2>
-          </div>
-          <span class="status-pill">Base GitHub</span>
-        </div>
+      <aside class="panel" aria-labelledby="resume-title">
+        <div class="panel-content">
+          <p class="eyebrow">Vision du site</p>
+          <h2 id="resume-title">Un catalogue simple qui grandit progressivement.</h2>
+          <p class="muted">
+            Le site commence avec quelques formations solides, puis peut évoluer vers un catalogue beaucoup plus grand, sans mettre de contenu privé dans GitHub public.
+          </p>
 
-        <div class="system-list">
-          <div class="system-row"><div><strong>Liens de page</strong><span>Tous les boutons utilisent des noms simples sans accent.</span></div><small>Corrigé</small></div>
-          <div class="system-row"><div><strong>Logo</strong><span>Essaye assets/logo/logo.png, puis logo.png si le dossier n’existe pas.</span></div><small>Fallback</small></div>
-          <div class="system-row"><div><strong>Styles</strong><span>Le site charge css/style.css et conserve le CSS intégré pour éviter de casser la page.</span></div><small>Connecté</small></div>
-          <div class="system-row"><div><strong>Sons</strong><span>Désactivés par défaut. Activables manuellement.</span></div><small>Prudent</small></div>
-          <div class="system-row"><div><strong>Pages manquantes</strong><span>Les boutons non prêts affichent un message au lieu de perdre le visiteur.</span></div><small>Protégé</small></div>
-          <div class="system-row"><div><strong>Sécurité</strong><span>GitHub Pages reste public : rien de privé dans les fichiers.</span></div><small>Important</small></div>
+          <div class="stat-grid">
+            <div class="stat"><strong>8</strong><span>catégories officielles</span></div>
+            <div class="stat"><strong>5-50 $</strong><span>prix simples</span></div>
+            <div class="stat"><strong>400</strong><span>emplacements possibles</span></div>
+            <div class="stat"><strong>0</strong><span>donnée sensible publique</span></div>
+          </div>
+
+          <div class="warning-box mt-16">
+            <strong>Important :</strong> GitHub Pages est public. Les contenus payants complets, données clients, clés Stripe et accès privés doivent rester hors du dépôt public.
+          </div>
         </div>
       </aside>
     </section>
 
-    <section class="page" id="pages">
-      <div class="section-title">
+    <section class="section" aria-labelledby="categories-title">
+      <div class="section-header">
         <div>
-          <span class="badge">Pages à connecter</span>
-          <h2>Toutes les pages principales doivent porter exactement ces noms.</h2>
+          <p class="eyebrow">Catégories officielles</p>
+          <h2 class="section-title" id="categories-title">Une structure claire pour bâtir sans chaos</h2>
+          <p class="muted">Les catégories gardent le catalogue simple, compréhensible et extensible.</p>
         </div>
-        <p>Sur GitHub Pages, le nom dans le bouton doit être identique au nom du fichier. Sans accent, sans espace, sans majuscule inutile.</p>
       </div>
 
-      <div class="grid-4" id="pageGrid"></div>
-      <div id="routeMessage" aria-live="polite"></div>
+      <div class="grid-4" id="categoryGrid" aria-live="polite"></div>
     </section>
 
-    <section class="page" id="dossiers">
-      <div class="section-title">
+    <section class="section" id="formations" aria-labelledby="formations-title">
+      <div class="section-header">
         <div>
-          <span class="badge">Dossiers GitHub à créer</span>
-          <h2>L’index est prêt à accueillir une vraie architecture de site.</h2>
+          <p class="eyebrow">Formations en avant</p>
+          <h2 class="section-title" id="formations-title">Commence par une petite réussite rapide</h2>
+          <p class="muted">Recherche une formation ou filtre par catégorie. Pour le catalogue complet, ouvre `formations.html`.</p>
+          <p class="source-line" id="featuredSource" aria-live="polite">Catalogue d’accueil intégré</p>
+          <p class="results-line" id="homeResultCount" aria-live="polite"><strong>0</strong> formation affichée</p>
         </div>
-        <p>Les dossiers ne sont pas créés automatiquement par le HTML. Tu dois les créer dans GitHub avec au moins un fichier à l’intérieur.</p>
+        <a class="btn btn-primary" href="formations.html">Catalogue complet</a>
       </div>
 
-      <div class="grid-4" id="folderGrid"></div>
+      <div class="catalogue-tools-home">
+        <label class="sr-only" for="homeSearch">Rechercher une formation</label>
+        <input class="search-box" id="homeSearch" type="search" placeholder="Rechercher : IA, productivité, budget, business..." autocomplete="off" maxlength="80" />
+        <a class="btn" id="fullCatalogueLink" href="formations.html#catalogue">Tout voir</a>
+      </div>
+
+      <div class="filters" aria-label="Filtres rapides">
+        <button class="filter-chip active" type="button" data-filter="all" aria-pressed="true">Toutes</button>
+        <button class="filter-chip" type="button" data-filter="IA" aria-pressed="false">IA</button>
+        <button class="filter-chip" type="button" data-filter="Productivité" aria-pressed="false">Productivité</button>
+        <button class="filter-chip" type="button" data-filter="Business" aria-pressed="false">Business</button>
+        <button class="filter-chip" type="button" data-filter="Finances" aria-pressed="false">Finances</button>
+        <button class="filter-chip" type="button" data-filter="Apprentissage" aria-pressed="false">Apprentissage</button>
+        <button class="filter-chip" type="button" data-filter="Relations" aria-pressed="false">Relations</button>
+        <button class="filter-chip" type="button" data-filter="Bonheur" aria-pressed="false">Bonheur</button>
+        <button class="filter-chip" type="button" data-filter="Santé" aria-pressed="false">Santé</button>
+      </div>
+
+      <div class="grid-3" id="featuredGrid" aria-live="polite" aria-busy="false"></div>
+      <div class="empty-state warning-box" id="emptyState" aria-hidden="true">
+        Aucune formation ne correspond à cette recherche.
+        <br />
+        <button class="btn" type="button" id="homeResetBtn">Réinitialiser la recherche</button>
+        <a class="btn" href="formations.html#catalogue">Voir le catalogue complet</a>
+      </div>
     </section>
 
-    <section class="page" id="assets">
-      <div class="section-title">
+    <section class="section" aria-labelledby="methode-title">
+      <div class="section-header">
         <div>
-          <span class="badge">Logo, styles, sons et données</span>
-          <h2>Les fichiers peuvent être ajoutés progressivement sans casser la page.</h2>
+          <p class="eyebrow">Méthode</p>
+          <h2 class="section-title" id="methode-title">Le fonctionnement recommandé</h2>
         </div>
-        <p>Le code prévoit des chemins propres. Si un fichier n’existe pas encore, la page continue de fonctionner.</p>
       </div>
 
       <div class="grid-3">
-        <article class="card quality-card"><span class="path">assets/logo/logo.png</span><h3>Logo officiel</h3><p>Chemin recommandé. Si ce fichier n’existe pas, le code tente automatiquement <strong>logo.png</strong>. Si les deux échouent, le carré affiche PO.</p></article>
-        <article class="card quality-card"><span class="path">css/style.css</span><h3>Styles externes</h3><p>Le fichier <strong>css/style.css</strong> est maintenant connecté dans le <strong>&lt;head&gt;</strong>. Le CSS intégré reste temporairement en sécurité.</p></article>
-        <article class="card quality-card"><span class="path">assets/sounds/click.mp3</span><h3>Son de clic optionnel</h3><p>Le son est désactivé par défaut. Il se joue seulement après activation manuelle.</p></article>
-        <article class="card quality-card"><span class="path">data/formations-index.json</span><h3>Données catalogue</h3><p>À moyen terme, les formations doivent sortir du HTML et aller dans un fichier JSON plus facile à gérer.</p></article>
-        <article class="card quality-card"><span class="path">stripe/liens-produits.md</span><h3>Liens Stripe</h3><p>Garde ici la liste des vrais liens de paiement, sans clés secrètes et sans données sensibles.</p></article>
-        <article class="card quality-card"><span class="path">dashboard/</span><h3>Dashboard non sensible</h3><p>Le dashboard GitHub doit contenir seulement des statuts, scores, priorités et données fictives ou agrégées.</p></article>
+        <article class="card step-card">
+          <div class="card-content">
+            <span class="pill"><strong>1</strong> Découvrir</span>
+            <h3>Choisis ton problème actuel</h3>
+            <p>Le client commence par une difficulté précise : gagner du temps, organiser sa semaine, clarifier une idée ou mieux décider.</p>
+          </div>
+        </article>
+
+        <article class="card step-card">
+          <div class="card-content">
+            <span class="pill"><strong>2</strong> Acheter</span>
+            <h3>Une formation courte</h3>
+            <p>Chaque formation doit rester simple : promesse claire, contenu court, checklist et prochaine action.</p>
+          </div>
+        </article>
+
+        <article class="card step-card">
+          <div class="card-content">
+            <span class="pill"><strong>3</strong> Appliquer</span>
+            <h3>Une petite réussite</h3>
+            <p>Le but n’est pas d’accumuler du contenu. Le but est d’obtenir un résultat simple et concret rapidement.</p>
+          </div>
+        </article>
       </div>
     </section>
 
-    <section class="page" id="catalogue">
-      <div class="section-title">
-        <div>
-          <span class="badge">Catalogue public</span>
-          <h2>Afficher peu de formations au départ, mais préparer la structure complète.</h2>
+    <section class="section grid-2" aria-label="Sécurité et prochaines étapes">
+      <article class="card">
+        <div class="card-content">
+          <p class="eyebrow">Sécurité</p>
+          <h2>Ce qui ne doit jamais être public</h2>
+          <ul class="clean-list">
+            <li>Contenu payé complet.</li>
+            <li>Courriels clients ou données personnelles.</li>
+            <li>Clés Stripe secrètes ou webhook secret.</li>
+            <li>Reçus, ventes réelles ou accès activés.</li>
+            <li>Liens privés permanents.</li>
+          </ul>
         </div>
-        <p>Le public ne doit pas recevoir un mur de 400 produits. Le catalogue public montre seulement les formations prêtes, prioritaires ou bientôt disponibles.</p>
-      </div>
+      </article>
 
-      <div class="catalogue-tools">
-        <input id="searchInput" class="search-box" type="search" placeholder="Rechercher : IA, productivité, budget, offre, discipline..." aria-label="Rechercher une mini-formation" />
-        <a class="btn secondary" href="formation.html">Voir la fiche formation</a>
-      </div>
-
-      <div class="filters" aria-label="Filtres du catalogue">
-        <button class="filter-btn active" data-filter="all" type="button">Toutes</button>
-        <button class="filter-btn" data-filter="IA" type="button">IA</button>
-        <button class="filter-btn" data-filter="Productivité" type="button">Productivité</button>
-        <button class="filter-btn" data-filter="Business" type="button">Business</button>
-        <button class="filter-btn" data-filter="Finances" type="button">Finances</button>
-        <button class="filter-btn" data-filter="Apprentissage" type="button">Apprentissage</button>
-        <button class="filter-btn" data-filter="Relations" type="button">Relations</button>
-        <button class="filter-btn" data-filter="Bonheur" type="button">Bonheur</button>
-        <button class="filter-btn" data-filter="Santé" type="button">Santé</button>
-        <button class="filter-btn" data-filter="reset" type="button">Réinitialiser</button>
-      </div>
-
-      <div class="grid-3" id="formationGrid"></div>
-      <div class="info-note" id="emptyResults" hidden>Aucune formation ne correspond à ta recherche pour l’instant.</div>
-    </section>
-
-    <section class="page" id="catalogue-400">
-      <div class="section-title">
-        <div>
-          <span class="badge">Catalogue interne compact</span>
-          <h2>400 emplacements en 8 colonnes, sans saturer la page de vente.</h2>
+      <article class="card">
+        <div class="card-content">
+          <p class="eyebrow">Prochaine étape</p>
+          <h2>Construire sans te disperser</h2>
+          <p class="muted">
+            Termine les pages essentielles avant les systèmes avancés : accueil, catalogue, fiche formation, contact, support, conditions, confidentialité, vente finale, 404, robots et sitemap.
+          </p>
+          <div class="card-actions mt-16">
+            <a class="btn btn-primary" href="formations.html">Continuer le catalogue</a>
+            <a class="btn" href="contact.html">Me contacter</a>
+          </div>
         </div>
-        <p>Cette vue sert au pilotage interne. Elle ne remplace pas le catalogue public de vente.</p>
-      </div>
-
-      <div class="micro-catalogue-panel">
-        <div class="micro-catalogue-head">
-          <span>Vue compacte — 8 colonnes</span>
-          <span>50 emplacements par catégorie</span>
-        </div>
-        <div class="micro-title-grid" id="microFormationGrid"></div>
-      </div>
-    </section>
-
-    <section class="page" id="test-github">
-      <div class="section-title">
-        <div>
-          <span class="badge">Tests GitHub avant publication</span>
-          <h2>Avant de partager le lien, teste ces cinq points.</h2>
-        </div>
-        <p>Cette section réduit les erreurs 404, les mauvais noms de fichiers et les oublis de base.</p>
-      </div>
-
-      <div class="test-grid">
-        <article class="test-card"><strong>1. Accueil</strong>Ouvre index.html et vérifie que les boutons rapides ne défilent pas horizontalement.</article>
-        <article class="test-card"><strong>2. Formation</strong>Teste formation.html depuis le bouton Formation prioritaire.</article>
-        <article class="test-card"><strong>3. Support</strong>Teste support.html depuis le menu et depuis le footer.</article>
-        <article class="test-card"><strong>4. Logo</strong>Vérifie assets/logo/logo.png ou logo.png à la racine.</article>
-        <article class="test-card"><strong>5. Sécurité</strong>Ne mets aucun contenu payant complet ou donnée client dans GitHub public.</article>
-      </div>
-    </section>
-
-    <section class="page" id="securite">
-      <div class="notice">
-        <strong>Important :</strong> une page cachée sur GitHub Pages n’est pas une vraie protection. Ne mets jamais le contenu complet payant, des données clients, des clés API, des liens privés sensibles ou des informations Stripe confidentielles dans ce dépôt public.
-      </div>
+      </article>
     </section>
   </main>
 
-  <footer>
-    <div class="page footer-grid">
-      <div>
-        <strong class="gold">Le Pivot d’Or — Mini Mini Formation IA</strong><br />
-        Bâtir une vie solide : Vision. Clarté. Discipline. Structure. Constance.<br />
-        Index connecté aux pages publiques, aux dossiers GitHub et aux bases du système.
-      </div>
-      <div class="footer-links">
-        <a href="index.html">Accueil</a>
-        <a href="formation.html">Formation</a>
-        <a href="support.html">Support</a>
-        <a href="conditions.html">Conditions</a>
-        <a href="vente-finale.html">Vente finale</a>
-        <a href="confidentialite.html">Confidentialité</a>
-        <a href="contact.html">Contact</a>
-        <a class="admin-link" href="dashboard-cache.html">🔒 Admin</a>
-      </div>
-    </div>
+  <footer class="footer">
+    <p>
+      © <span id="year"></span> Le Pivot d’Or ·
+      <a href="formations.html">Catalogue</a> ·
+      <a href="formation.html">Formation IA</a> ·
+      <a href="contact.html">Contact</a> ·
+      <a href="support.html">Support</a> ·
+      <a href="conditions.html">Conditions</a> ·
+      <a href="confidentialite.html">Confidentialité</a> ·
+      <a href="vente-finale.html">Vente finale</a>
+    </p>
   </footer>
 
-  <audio id="clickSound" preload="auto" src="assets/sounds/click.mp3"></audio>
-
   <script>
-    const SITE = {
-      pages: [
-        { file: 'index.html', title: 'Accueil + catalogue public', status: 'Présent', type: 'Public', ready: true },
-        { file: 'formation.html', title: 'Fiche formation publique', status: 'À créer / tester', type: 'Public', ready: true },
-        { file: 'acces.html', title: 'Page après paiement', status: 'À créer', type: 'Semi-privé', ready: false },
-        { file: 'espace-client.html', title: 'Espace client simple', status: 'Plus tard', type: 'Semi-privé', ready: false },
-        { file: 'formation-privee.html', title: 'Formation consultable en ligne', status: 'Plus tard', type: 'Semi-privé', ready: false },
-        { file: 'support.html', title: 'Support client', status: 'À créer / tester', type: 'Public', ready: true },
-        { file: 'conditions.html', title: 'Conditions d’utilisation', status: 'Présent ou à corriger', type: 'Public', ready: true },
-        { file: 'confidentialite.html', title: 'Politique de confidentialité', status: 'À renommer si besoin', type: 'Public', ready: false },
-        { file: 'vente-finale.html', title: 'Politique de vente finale', status: 'À créer', type: 'Public', ready: false },
-        { file: 'contact.html', title: 'Page contact', status: 'Présent ou à corriger', type: 'Public', ready: true },
-        { file: 'merci.html', title: 'Merci / confirmation', status: 'Présent ou à corriger', type: 'Après paiement', ready: true },
-        { file: '404.html', title: 'Page erreur utile', status: 'À créer', type: 'Public', ready: false }
-      ],
-      folders: [
-        { path: 'css/', title: 'Styles du site', examples: 'style.css, responsive.css, catalogue.css' },
-        { path: 'js/', title: 'Scripts du site', examples: 'main.js, catalogue.js, stripe-links.js' },
-        { path: 'data/', title: 'Données JSON', examples: 'formations-index.json, faq.json, seo.json' },
-        { path: 'assets/logo/', title: 'Logo officiel', examples: 'logo.png' },
-        { path: 'assets/images/', title: 'Images générales', examples: 'visuels, illustrations, couvertures' },
-        { path: 'assets/sounds/', title: 'Sons optionnels', examples: 'click.mp3, success.mp3' },
-        { path: 'templates/', title: 'Modèles réutilisables', examples: 'modele-page-vente.html, modele-checklist.md' },
-        { path: 'agents/', title: 'Agents IA', examples: 'craig/, hubert/, ludite/, manus/' },
-        { path: 'marketing/', title: 'Contenu et visibilité', examples: 'scripts-shorts.md, publications-x.md' },
-        { path: 'stripe/', title: 'Gestion Stripe non sensible', examples: 'liens-produits.md, redirections.md' },
-        { path: 'legal/', title: 'Textes légaux', examples: 'vente-finale.md, aucun-coaching.md' },
-        { path: 'dashboard/', title: 'Pilotage non sensible', examples: 'priorites.md, notes-qualite.md' }
-      ],
-      publicFormations: [
-        { category: 'IA', title: 'Utilise l’IA pour sauver 3 heures par semaine', price: '15 $', status: 'Formation officielle', url: 'formation.html' },
-        { category: 'Productivité', title: 'Organise ta semaine avec l’IA', price: '15 $', status: 'Bientôt disponible', url: 'formation.html' },
-        { category: 'IA', title: 'Crée ton premier mini-système avec l’IA', price: '25 $', status: 'Bientôt disponible', url: 'formation.html' },
-        { category: 'Business', title: 'Écris une page de vente simple', price: '25 $', status: 'Bientôt disponible', url: 'formation.html' },
-        { category: 'Business', title: 'Trouve une idée de produit digital rentable', price: '15 $', status: 'Bientôt disponible', url: 'formation.html' },
-        { category: 'Finances', title: 'Structure ton budget simple', price: '15 $', status: 'Éducatif général', url: 'formation.html' }
-      ],
-      categories: ['IA', 'Productivité', 'Apprentissage', 'Business', 'Finances', 'Relations', 'Bonheur', 'Santé']
-    };
+    "use strict";
 
-    const pageGrid = document.getElementById('pageGrid');
-    const folderGrid = document.getElementById('folderGrid');
-    const formationGrid = document.getElementById('formationGrid');
-    const microFormationGrid = document.getElementById('microFormationGrid');
-    const searchInput = document.getElementById('searchInput');
-    const filterButtons = document.querySelectorAll('.filter-btn');
-    const routeMessage = document.getElementById('routeMessage');
-    const emptyResults = document.getElementById('emptyResults');
-    let activeFilter = 'all';
-    let soundEnabled = false;
+    const categories = [
+      { name: "IA", text: "Prompts, systèmes, automatisation légère, assistants intelligents." },
+      { name: "Productivité", text: "Priorités, routines, organisation, clarté d’action." },
+      { name: "Apprentissage", text: "Apprendre plus vite, résumer, mémoriser, structurer." },
+      { name: "Business", text: "Offres, pages de vente, idées rentables, mini-systèmes." },
+      { name: "Finances", text: "Budget, dépenses, décisions simples, clarté financière." },
+      { name: "Relations", text: "Limites, communication, énergie, conversations difficiles." },
+      { name: "Bonheur", text: "Ralentir, gratitude, simplicité, mieux-être personnel." },
+      { name: "Santé", text: "Routines simples, sommeil, énergie, habitudes quotidiennes." }
+    ];
 
-    function normalize(text) {
-      return String(text || '').toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g, '');
+    let featuredFormations = [
+      {
+        title: "Utilise l’IA pour sauver 3 heures par semaine",
+        category: "IA",
+        price: "15 $",
+        status: "Prête",
+        url: "formation.html",
+        description: "Transforme une tâche répétitive en mini-système IA simple."
+      },
+      {
+        title: "Organise ta semaine en 30 minutes",
+        category: "Productivité",
+        price: "15 $",
+        status: "Bientôt disponible",
+        url: "formations.html#catalogue",
+        description: "Clarifie tes priorités et réduis le chaos de ta semaine."
+      },
+      {
+        title: "Trouve une idée de produit digital rentable",
+        category: "Business",
+        price: "25 $",
+        status: "Bientôt disponible",
+        url: "formations.html#catalogue",
+        description: "Clarifie un problème, une promesse, un prix et une première offre."
+      },
+      {
+        title: "Structure ton budget simple",
+        category: "Finances",
+        price: "15 $",
+        status: "Bientôt disponible",
+        url: "formations.html#catalogue",
+        description: "Vois tes revenus, dépenses et priorités avec plus de clarté."
+      },
+      {
+        title: "Crée ton premier prompt vraiment utile",
+        category: "IA",
+        price: "5 $",
+        status: "À créer",
+        url: "formations.html#catalogue",
+        description: "Un micro-guide pour mieux demander et obtenir de meilleures réponses."
+      },
+      {
+        title: "Écris une page de vente simple",
+        category: "Business",
+        price: "25 $",
+        status: "À créer",
+        url: "formations.html#catalogue",
+        description: "Structure une page claire : problème, promesse, offre et action."
+      }
+    ];
+
+    const categoryGrid = document.getElementById("categoryGrid");
+    const featuredGrid = document.getElementById("featuredGrid");
+    const featuredSource = document.getElementById("featuredSource");
+    const homeResultCount = document.getElementById("homeResultCount");
+    const homeResetBtn = document.getElementById("homeResetBtn");
+    const searchInput = document.getElementById("homeSearch");
+    const fullCatalogueLink = document.getElementById("fullCatalogueLink");
+    const filterButtons = document.querySelectorAll(".filter-chip");
+    const emptyState = document.getElementById("emptyState");
+    const yearElement = document.getElementById("year");
+    const brandLogo = document.getElementById("brandLogo");
+    const brandMark = document.getElementById("brandMark");
+    const vaultSalesKpi = document.getElementById("vaultSalesKpi");
+    const vaultFeaturedKpi = document.getElementById("vaultFeaturedKpi");
+    const vaultCategoriesKpi = document.getElementById("vaultCategoriesKpi");
+    const vaultCapacityKpi = document.getElementById("vaultCapacityKpi");
+    const vaultPriorityKpi = document.getElementById("vaultPriorityKpi");
+    const vaultIdeasKpi = document.getElementById("vaultIdeasKpi");
+    const vaultPublishedKpi = document.getElementById("vaultPublishedKpi");
+    const vaultCreateKpi = document.getElementById("vaultCreateKpi");
+    const vaultImproveKpi = document.getElementById("vaultImproveKpi");
+    const vaultViewsKpi = document.getElementById("vaultViewsKpi");
+    const vaultClicksKpi = document.getElementById("vaultClicksKpi");
+    const vaultTrainingClicksKpi = document.getElementById("vaultTrainingClicksKpi");
+    const vaultCommentsKpi = document.getElementById("vaultCommentsKpi");
+    const vaultBackupsKpi = document.getElementById("vaultBackupsKpi");
+    const vaultDemandKpi = document.getElementById("vaultDemandKpi");
+    const vaultCrmKpi = document.getElementById("vaultCrmKpi");
+    const vaultClickRateKpi = document.getElementById("vaultClickRateKpi");
+    const vaultTrainingRateKpi = document.getElementById("vaultTrainingRateKpi");
+    const vaultDataHealthKpi = document.getElementById("vaultDataHealthKpi");
+    const vaultSnapshotCountKpi = document.getElementById("vaultSnapshotCountKpi");
+    const vaultLastSignalKpi = document.getElementById("vaultLastSignalKpi");
+    const vaultConversionScoreKpi = document.getElementById("vaultConversionScoreKpi");
+    const vaultOpportunityKpi = document.getElementById("vaultOpportunityKpi");
+    const vaultTrackingKpi = document.getElementById("vaultTrackingKpi");
+    const vaultRiskScoreKpi = document.getElementById("vaultRiskScoreKpi");
+    const vaultMaturityKpi = document.getElementById("vaultMaturityKpi");
+    const vaultIntelligenceNote = document.getElementById("vaultIntelligenceNote");
+    const vaultDashboardUpdated = document.getElementById("vaultDashboardUpdated");
+    const vaultOneAction = document.getElementById("vaultOneAction");
+    const vaultSimpleMode = document.getElementById("vaultSimpleMode");
+    const vaultAdvancedMode = document.getElementById("vaultAdvancedMode");
+    const vaultTestBlockers = document.getElementById("vaultTestBlockers");
+    const vaultRevenue7d = document.getElementById("vaultRevenue7d");
+    const vaultStripeClickRate = document.getElementById("vaultStripeClickRate");
+    const vaultTopThree = document.getElementById("vaultTopThree");
+    const vaultCriticalAlerts = document.getElementById("vaultCriticalAlerts");
+    const vaultNextBestAction = document.getElementById("vaultNextBestAction");
+    const vaultPhaseAlert = document.getElementById("vaultPhaseAlert");
+    const vaultPhaseChecks = document.getElementById("vaultPhaseChecks");
+    const vaultPublicationGate = document.getElementById("vaultPublicationGate");
+    const vaultFieldTests = document.getElementById("vaultFieldTests");
+    const vaultSplitCodeGrid = document.getElementById("vaultSplitCodeGrid");
+    const vaultNotionGrid = document.getElementById("vaultNotionGrid");
+    const vaultBundleGrid = document.getElementById("vaultBundleGrid");
+    const vaultTwinGrid = document.getElementById("vaultTwinGrid");
+    const vaultAdrienList = document.getElementById("vaultAdrienList");
+    const vaultActionButtons = document.getElementById("vaultActionButtons");
+    const vaultSmartTags = document.getElementById("vaultSmartTags");
+    const vaultTodayActions = document.getElementById("vaultTodayActions");
+    const vaultRiskList = document.getElementById("vaultRiskList");
+    const vaultProgressGrid = document.getElementById("vaultProgressGrid");
+    const vaultCrmGrid = document.getElementById("vaultCrmGrid");
+    const vaultDemandList = document.getElementById("vaultDemandList");
+    const vaultActivityList = document.getElementById("vaultActivityList");
+    const vaultReportList = document.getElementById("vaultReportList");
+    const vaultFormationTable = document.getElementById("vaultFormationTable");
+    const vaultStrategicList = document.getElementById("vaultStrategicList");
+    const vaultToggle = document.getElementById("vaultToggle");
+    const vaultPanel = document.getElementById("vaultPanel");
+    const vaultClose = document.getElementById("vaultClose");
+    const vaultForm = document.getElementById("vaultForm");
+    const vaultCode = document.getElementById("vaultCode");
+    const vaultStatus = document.getElementById("vaultStatus");
+    const vaultDashboard = document.getElementById("vaultDashboard");
+    const vaultSessionNote = document.getElementById("vaultSessionNote");
+    const vaultSessionProgress = document.getElementById("vaultSessionProgress");
+    const vaultLockAgain = document.getElementById("vaultLockAgain");
+    let activeFilter = "all";
+    const VALID_CATEGORIES = ["IA", "Productivité", "Apprentissage", "Business", "Finances", "Relations", "Bonheur", "Santé"];
+
+    if (yearElement) {
+      yearElement.textContent = new Date().getFullYear();
+    }
+
+    function normalize(value) {
+      return String(value || "")
+        .toLowerCase()
+        .normalize("NFD")
+        .replace(/[\u0300-\u036f]/g, "");
     }
 
     function escapeHTML(value) {
-      return String(value || '')
-        .replace(/&/g, '&amp;')
-        .replace(/</g, '&lt;')
-        .replace(/>/g, '&gt;')
-        .replace(/"/g, '&quot;')
-        .replace(/'/g, '&#039;');
+      return String(value || "")
+        .replace(/&/g, "&amp;")
+        .replace(/</g, "&lt;")
+        .replace(/>/g, "&gt;")
+        .replace(/"/g, "&quot;")
+        .replace(/'/g, "&#039;");
+    }
+
+    function safeLocalUrl(url) {
+      const value = String(url || "formations.html").trim();
+      if (/^[a-z0-9-]+[.]html(?:#[a-z0-9_-]+)?$/i.test(value)) return value;
+      if (/^formations[.]html[?][a-z0-9=&%+_.-]+#catalogue$/i.test(value)) return value;
+      return "formations.html";
+    }
+
+    function normalizeCategory(category) {
+      const clean = String(category || "").trim();
+      return VALID_CATEGORIES.includes(clean) ? clean : "IA";
+    }
+
+    function cleanLimitedText(value, fallback, maxLength) {
+      const clean = String(value || "")
+        .replace(/[<>]/g, "")
+        .trim();
+      return (clean || fallback).slice(0, maxLength);
     }
 
     function statusClass(status) {
       const value = normalize(status);
-      if (value.includes('present')) return '';
-      if (value.includes('creer') || value.includes('corriger') || value.includes('renommer') || value.includes('tester')) return 'warn';
-      if (value.includes('plus tard')) return 'neutral';
-      return 'warn';
+      if (value.includes("prete")) return "ready";
+      if (value.includes("bientot")) return "soon";
+      if (value.includes("creer")) return "todo";
+      return "todo";
     }
 
-    function renderPages() {
-      if (!pageGrid) return;
-      pageGrid.innerHTML = SITE.pages.map(page => {
-        const title = escapeHTML(page.title);
-        const file = escapeHTML(page.file);
-        const status = escapeHTML(page.status);
-        const type = escapeHTML(page.type);
-        const link = page.ready
-          ? `<a class="btn small secondary" href="${file}">Ouvrir</a>`
-          : `<button class="btn small secondary disabled" type="button" data-missing-page="${file}">À créer</button>`;
+    function buildCatalogueUrl() {
+      const params = new URLSearchParams();
+      const cleanSearch = cleanLimitedText(searchInput.value, "", 80);
+      if (activeFilter !== "all") params.set("categorie", activeFilter);
+      if (cleanSearch) params.set("recherche", cleanSearch);
+      const query = params.toString();
+      return `formations.html${query ? `?${query}` : ""}#catalogue`;
+    }
+
+    function updateFullCatalogueLink() {
+      if (!fullCatalogueLink) return;
+      fullCatalogueLink.href = buildCatalogueUrl();
+    }
+
+    function clampPercent(value) {
+      const number = Number(value);
+      if (!Number.isFinite(number)) return 0;
+      return Math.max(0, Math.min(100, Math.round(number)));
+    }
+
+    function parsePrice(value) {
+      const number = Number(String(value || "").replace(/[^0-9.,]/g, "").replace(",", "."));
+      return Number.isFinite(number) ? number : 9999;
+    }
+
+    function statusPriority(status) {
+      const value = normalize(status);
+      if (value.includes("prete")) return 3;
+      if (value.includes("bientot")) return 2;
+      if (value.includes("creer")) return 1;
+      return 0;
+    }
+
+    function normalizeFeaturedItem(item, index) {
+      if (!item || typeof item !== "object") return null;
+      return {
+        id: cleanLimitedText(item.id, `formation-${index + 1}`, 80),
+        title: cleanLimitedText(item.title || item.titre, `Formation ${index + 1}`, 140),
+        category: normalizeCategory(item.category || item.categorie || "IA"),
+        price: cleanLimitedText(item.price || item.prix, "15 $", 30),
+        status: cleanLimitedText(item.status || item.statut, "À créer", 50),
+        score: clampPercent(item.score || item.note_qualite || 0),
+        rentability: clampPercent(item.rentability || item.note_rentabilite || 0),
+        url: safeLocalUrl(item.url || item.lien || "formations.html#catalogue"),
+        description: cleanLimitedText(item.description, "Mini-formation Le Pivot d’Or en préparation.", 220)
+      };
+    }
+
+    function cleanFeaturedList(list) {
+      const seen = new Set();
+      return list
+        .map(normalizeFeaturedItem)
+        .filter(Boolean)
+        .filter(item => {
+          const key = normalize(`${item.title}-${item.category}`);
+          if (!key || seen.has(key)) return false;
+          seen.add(key);
+          return true;
+        })
+        .sort((a, b) => {
+          const statusDiff = statusPriority(b.status) - statusPriority(a.status);
+          if (statusDiff !== 0) return statusDiff;
+          const rentabilityDiff = b.rentability - a.rentability;
+          if (rentabilityDiff !== 0) return rentabilityDiff;
+          const scoreDiff = b.score - a.score;
+          if (scoreDiff !== 0) return scoreDiff;
+          return parsePrice(a.price) - parsePrice(b.price);
+        })
+        .slice(0, 6);
+    }
+
+    function debounce(callback, delay = 180) {
+      let timer;
+      return (...args) => {
+        window.clearTimeout(timer);
+        timer = window.setTimeout(() => callback(...args), delay);
+      };
+    }
+
+    function renderCategories() {
+      categoryGrid.innerHTML = categories.map(category => {
+        const url = `formations.html?categorie=${encodeURIComponent(category.name)}#catalogue`;
+        return `
+          <article class="card category-card">
+            <a class="category-link" href="${url}" aria-label="Voir les formations de la catégorie ${escapeHTML(category.name)}">
+              <div class="card-content">
+                <span class="pill"><strong>${escapeHTML(category.name)}</strong></span>
+                <h3>${escapeHTML(category.name)}</h3>
+                <p>${escapeHTML(category.text)}</p>
+              </div>
+            </a>
+          </article>
+        `;
+      }).join("");
+    }
+
+    function renderFeatured(items) {
+      featuredGrid.setAttribute("aria-busy", "true");
+      featuredGrid.innerHTML = items.map(item => {
+        const isReady = normalize(item.status).includes("prete");
+        const actionText = isReady ? "Voir la fiche" : "Voir le catalogue";
+        const actionClass = isReady ? "btn btn-primary" : "btn";
 
         return `
-          <article class="card page-card">
-            <div>
-              <span class="path">${file}</span>
-              <h3>${title}</h3>
-              <p>Type : ${type}</p>
-            </div>
-            <div class="hero-actions" style="margin:0;">
-              ${link}
-              <span class="pill ${statusClass(status)}">${status}</span>
+          <article class="card formation-card-home" data-category="${escapeHTML(item.category)}" aria-label="Formation : ${escapeHTML(item.title)}">
+            <div class="card-content">
+              <div class="formation-top">
+                <span class="pill"><strong>${escapeHTML(item.category)}</strong></span>
+                <span class="price">${escapeHTML(item.price)}</span>
+              </div>
+              <h3>${escapeHTML(item.title)}</h3>
+              <p>${escapeHTML(item.description)}</p>
+              <div class="badge-row">
+                <span class="badge formation-status ${statusClass(item.status)}"><strong>Statut</strong> ${escapeHTML(item.status)}</span>
+              </div>
+              <div class="card-actions mt-16">
+                <a class="${actionClass}" href="${escapeHTML(safeLocalUrl(item.url))}">${actionText}</a>
+              </div>
             </div>
           </article>
         `;
-      }).join('');
+      }).join("");
+
+      const isEmpty = items.length === 0;
+      emptyState.classList.toggle("visible", isEmpty);
+      emptyState.setAttribute("aria-hidden", String(!isEmpty));
+      if (homeResultCount) {
+        homeResultCount.innerHTML = `<strong>${items.length}</strong> formation${items.length > 1 ? "s" : ""} affichée${items.length > 1 ? "s" : ""}`;
+      }
+      featuredGrid.setAttribute("aria-busy", "false");
     }
 
-    function renderFolders() {
-      if (!folderGrid) return;
-      folderGrid.innerHTML = SITE.folders.map(folder => `
-        <article class="card folder-card">
-          <div>
-            <span class="path">${escapeHTML(folder.path)}</span>
-            <h3>${escapeHTML(folder.title)}</h3>
-            <p>${escapeHTML(folder.examples)}</p>
-          </div>
-          <span class="pill neutral">À créer dans GitHub</span>
-        </article>
-      `).join('');
-    }
-
-    function renderFormations() {
-      if (!formationGrid) return;
-      formationGrid.innerHTML = SITE.publicFormations.map(item => `
-        <article class="card formation-card" data-category="${escapeHTML(item.category)}" data-title="${escapeHTML(item.title)}">
-          <div class="formation-top"><span class="tag">${escapeHTML(item.category)}</span><span class="price">${escapeHTML(item.price)}</span></div>
-          <h3>${escapeHTML(item.title)}</h3>
-          <p>Mini-formation digitale autonome avec accès numérique privé, méthode courte et prochaine action claire.</p>
-          <div class="formation-meta"><span>${escapeHTML(item.status)}</span><div class="bar"><span style="--w:${item.status.includes('officielle') ? '92%' : '55%'}"></span></div></div>
-          <a class="btn" href="${escapeHTML(item.url)}">Voir la fiche</a>
-          <p class="legal-line">Achat unique. Aucun coaching inclus. Vente finale dès activation de l’accès.</p>
-        </article>
-      `).join('');
-    }
-
-    function buildInternalTitles() {
-      const baseByCategory = {
-        'IA': ['Utilise l’IA pour sauver 3 heures par semaine', 'Organise ta journée avec l’IA', 'Crée ton assistant IA personnel', 'Écris un prompt clair', 'Transforme tes notes en plan'],
-        'Productivité': ['Organise ta semaine sans surcharge', 'Planifie ta journée en 10 minutes', 'Choisis tes 3 priorités', 'Réduis les distractions', 'Termine ce que tu commences'],
-        'Apprentissage': ['Apprends plus vite', 'Transforme un livre en plan', 'Prends des notes utiles', 'Mémorise l’essentiel', 'Crée une fiche de révision'],
-        'Business': ['Crée une offre claire', 'Écris une page de vente', 'Trouve une idée rentable', 'Crée une mini-formation', 'Lance une offre à petit prix'],
-        'Finances': ['Structure ton budget simple', 'Dis non pour libérer de l’argent', 'Clarifie tes dépenses', 'Crée une routine financière', 'Comprends où part ton argent'],
-        'Relations': ['Pose une limite claire', 'Prépare une conversation difficile', 'Communique sans t’écraser', 'Dis non sans culpabilité', 'Protège ton énergie'],
-        'Bonheur': ['Reviens à l’essentiel', 'Crée une gratitude simple', 'Ralentis pour accélérer', 'Clarifie ce qui te fait du bien', 'Crée un moment de silence'],
-        'Santé': ['Crée une routine santé', 'Améliore ton sommeil', 'Prépare une marche quotidienne', 'Crée une routine d’hydratation', 'Planifie des repas simples']
-      };
-
-      return SITE.categories.map(category => {
-        const titles = [];
-        for (let i = 0; i < 50; i++) {
-          const base = baseByCategory[category][i % baseByCategory[category].length];
-          titles.push(i < 5 ? base : `${base} — niveau ${String(i + 1).padStart(2, '0')}`);
-        }
-        return { category, titles };
+    function updateFilterButtons() {
+      filterButtons.forEach(button => {
+        const isActive = button.dataset.filter === activeFilter;
+        button.classList.toggle("active", isActive);
+        button.setAttribute("aria-pressed", String(isActive));
       });
-    }
-
-    function renderInternalCatalogue() {
-      if (!microFormationGrid) return;
-      microFormationGrid.innerHTML = buildInternalTitles().map(group => `
-        <section class="micro-category-column" data-category="${escapeHTML(group.category)}">
-          <button type="button" class="micro-category-button" data-category-filter="${escapeHTML(group.category)}">${escapeHTML(group.category)}<span class="micro-counter">50 formations</span></button>
-          <div class="micro-column-list">
-            ${group.titles.map(title => `<article class="micro-title-card" data-category="${escapeHTML(group.category)}" data-title="${escapeHTML(title)}">${escapeHTML(title)}</article>`).join('')}
-          </div>
-        </section>
-      `).join('');
     }
 
     function applyFilters() {
-      const query = normalize(searchInput ? searchInput.value : '');
-      let visiblePublicCards = 0;
+      const cleanSearch = cleanLimitedText(searchInput.value, "", 80);
+      if (searchInput.value !== cleanSearch) searchInput.value = cleanSearch;
+      const query = normalize(cleanSearch).trim();
+      const tokens = query ? query.split(" ").filter(Boolean).slice(0, 8) : [];
 
-      document.querySelectorAll('.formation-card, .micro-title-card').forEach(card => {
-        const category = card.dataset.category || '';
-        const title = normalize(card.dataset.title || card.textContent);
-        const matchesFilter = activeFilter === 'all' || category === activeFilter;
-        const matchesSearch = !query || title.includes(query) || normalize(category).includes(query);
-        const isVisible = matchesFilter && matchesSearch;
-        card.classList.toggle('hide', !isVisible);
-        if (card.classList.contains('formation-card') && isVisible) visiblePublicCards += 1;
+      const filtered = featuredFormations.filter(item => {
+        const matchesFilter = activeFilter === "all" || item.category === activeFilter;
+        const searchable = normalize(`${item.title} ${item.category} ${item.description} ${item.status} ${item.price}`);
+        const matchesSearch = tokens.length === 0 || tokens.every(token => searchable.includes(token));
+        return matchesFilter && matchesSearch;
       });
 
-      document.querySelectorAll('.micro-category-column').forEach(column => {
-        const category = column.dataset.category;
-        const matchesFilter = activeFilter === 'all' || category === activeFilter;
-        const visibleCards = column.querySelectorAll('.micro-title-card:not(.hide)').length;
-        const counter = column.querySelector('.micro-counter');
-        column.classList.toggle('hide', !(matchesFilter && visibleCards > 0));
-        if (counter) counter.textContent = activeFilter === 'all' && !query ? '50 formations' : `${visibleCards} visibles`;
-      });
-
-      if (emptyResults) emptyResults.hidden = visiblePublicCards !== 0;
+      renderFeatured(filtered);
+      updateFullCatalogueLink();
     }
 
-    function scrollToSection(id) {
-      const target = document.getElementById(id);
-      if (!target) return;
-      const header = document.querySelector('header');
-      const headerHeight = header ? header.offsetHeight : 0;
-      const targetPosition = target.getBoundingClientRect().top + window.pageYOffset - headerHeight - 18;
-      window.scrollTo({ top: Math.max(targetPosition, 0), behavior: 'smooth' });
-    }
+    function setupVault() {
+      const VAULT_CODE_HASH = "b3f188b20f0b05d2df1c520d322cceceec0ccb81460ecce297e7ca7bca3a3a04";
+      const MAX_VAULT_ATTEMPTS = 5;
+      const VAULT_TTL_MS = 20 * 60 * 1000;
+      let vaultExpiryTimer = null;
+      let vaultProgressTimer = null;
 
-    function setupNavigation() {
-      document.querySelectorAll('a[href^="#"]').forEach(link => {
-        link.addEventListener('click', event => {
-          const id = link.getAttribute('href').replace('#', '');
-          if (!document.getElementById(id)) return;
-          event.preventDefault();
-          playClick();
-          scrollToSection(id);
-          history.replaceState(null, '', `#${id}`);
-        });
-      });
+      async function sha256(value) {
+        if (!window.crypto || !window.crypto.subtle) return "";
+        const encoded = new TextEncoder().encode(value);
+        const buffer = await window.crypto.subtle.digest("SHA-256", encoded);
+        return Array.from(new Uint8Array(buffer))
+          .map(byte => byte.toString(16).padStart(2, "0"))
+          .join("");
+      }
 
-      filterButtons.forEach(button => {
-        button.addEventListener('click', () => {
-          activeFilter = button.dataset.filter === 'reset' ? 'all' : button.dataset.filter;
-          if (searchInput && button.dataset.filter === 'reset') searchInput.value = '';
-          filterButtons.forEach(btn => btn.classList.remove('active'));
-          const activeButton = Array.from(filterButtons).find(btn => btn.dataset.filter === activeFilter) || button;
-          activeButton.classList.add('active');
-          playClick();
-          applyFilters();
-        });
-      });
+      function isVaultSessionValid() {
+        const unlocked = sessionStorage.getItem("pivotdorVaultUnlocked") === "true";
+        const unlockedAt = Number(sessionStorage.getItem("pivotdorVaultUnlockedAt") || "0");
+        return unlocked && unlockedAt > 0 && Date.now() - unlockedAt < VAULT_TTL_MS;
+      }
 
-      document.addEventListener('click', event => {
-        const categoryButton = event.target.closest('[data-category-filter]');
-        const missingPage = event.target.closest('[data-missing-page]');
-        const internalPageLink = event.target.closest('a[href$=".html"]');
+      function getVaultRemainingMs() {
+        const unlockedAt = Number(sessionStorage.getItem("pivotdorVaultUnlockedAt") || "0");
+        if (!unlockedAt) return 0;
+        return Math.max(0, VAULT_TTL_MS - (Date.now() - unlockedAt));
+      }
 
-        if (missingPage) {
-          const file = missingPage.dataset.missingPage;
-          if (routeMessage) routeMessage.textContent = `${file} n’est pas encore créé dans GitHub. Crée ce fichier avant de l’ouvrir.`;
-          playClick();
+      function updateVaultSessionNote() {
+        const remainingMs = getVaultRemainingMs();
+        const remainingMinutes = Math.ceil(remainingMs / 60000);
+        const percent = Math.max(0, Math.min(100, Math.round((remainingMs / VAULT_TTL_MS) * 100)));
+
+        if (vaultSessionNote) {
+          vaultSessionNote.textContent = remainingMinutes > 0
+            ? `Session interne active · expiration dans environ ${remainingMinutes} min.`
+            : "Session interne expirée.";
+        }
+
+        if (vaultSessionProgress) {
+          vaultSessionProgress.style.setProperty("--vault-progress", `${percent}%`);
+        }
+      }
+
+      function scheduleVaultAutoLock() {
+        window.clearTimeout(vaultExpiryTimer);
+        window.clearInterval(vaultProgressTimer);
+        const remaining = getVaultRemainingMs();
+        updateVaultSessionNote();
+        if (remaining <= 0) return;
+
+        vaultProgressTimer = window.setInterval(updateVaultSessionNote, 30000);
+        vaultExpiryTimer = window.setTimeout(() => {
+          lockVault();
+          if (vaultStatus) vaultStatus.textContent = "Session expirée. Entre le code à nouveau.";
+        }, remaining + 250);
+      }
+
+      function setVaultOpen(isOpen) {
+        if (!vaultPanel || !vaultToggle) return;
+        vaultPanel.classList.toggle("open", isOpen);
+        vaultPanel.setAttribute("aria-hidden", String(!isOpen));
+        vaultToggle.setAttribute("aria-expanded", String(isOpen));
+
+        if (isOpen) {
+          vaultPanel.focus({ preventScroll: true });
+          if (vaultCode && !vaultDashboard.classList.contains("unlocked")) {
+            setTimeout(() => vaultCode.focus(), 50);
+          }
+        } else {
+          vaultToggle.focus({ preventScroll: true });
+        }
+      }
+
+      function getVaultAttempts() {
+        return Number(sessionStorage.getItem("pivotdorVaultAttempts") || "0");
+      }
+
+      function setVaultAttempts(value) {
+        sessionStorage.setItem("pivotdorVaultAttempts", String(value));
+      }
+
+      function updateVaultAttemptState() {
+        if (!vaultForm || !vaultCode) return;
+        const attempts = getVaultAttempts();
+        const isLocked = attempts >= MAX_VAULT_ATTEMPTS;
+        vaultForm.classList.toggle("locked", isLocked);
+        vaultCode.disabled = isLocked;
+        const submitButton = vaultForm.querySelector('button[type="submit"]');
+        if (submitButton) submitButton.disabled = isLocked;
+        if (isLocked && vaultStatus) {
+          vaultStatus.textContent = "Trop d’essais. Ferme l’onglet ou reverrouille pour recommencer.";
+        }
+      }
+
+      async function unlockVault() {
+        if (!vaultCode || !vaultDashboard || !vaultStatus) return;
+        updateVaultAttemptState();
+        if (vaultCode.disabled) return;
+
+        const enteredCode = vaultCode.value.trim();
+        const enteredHash = await sha256(enteredCode);
+
+        if (!enteredHash || enteredHash !== VAULT_CODE_HASH) {
+          const attempts = getVaultAttempts() + 1;
+          setVaultAttempts(attempts);
+          const remaining = Math.max(0, MAX_VAULT_ATTEMPTS - attempts);
+          vaultStatus.textContent = remaining > 0
+            ? `Code incorrect. ${remaining} essai${remaining > 1 ? "s" : ""} restant${remaining > 1 ? "s" : ""}.`
+            : "Trop d’essais. Accès verrouillé pour cette session.";
+          vaultCode.select();
+          updateVaultAttemptState();
           return;
         }
 
-        if (internalPageLink) {
-          const href = internalPageLink.getAttribute('href') || '';
-          const cleanHref = href.split('#')[0];
-          const page = SITE.pages.find(item => item.file === cleanHref);
-          if (page && !page.ready) {
-            event.preventDefault();
-            if (routeMessage) routeMessage.textContent = `${cleanHref} n’est pas encore prêt. Crée ou valide cette page avant de l’ouvrir.`;
-            scrollToSection('pages');
-            playClick();
+        sessionStorage.removeItem("pivotdorVaultAttempts");
+        sessionStorage.setItem("pivotdorVaultUnlocked", "true");
+        sessionStorage.setItem("pivotdorVaultUnlockedAt", String(Date.now()));
+        vaultDashboard.classList.add("unlocked");
+        vaultForm.style.display = "none";
+        vaultStatus.textContent = "";
+        scheduleVaultAutoLock();
+      }
+
+      function lockVault() {
+        if (!vaultDashboard || !vaultForm || !vaultCode) return;
+        vaultDashboard.classList.remove("unlocked");
+        vaultForm.style.display = "grid";
+        vaultForm.classList.remove("locked");
+        vaultCode.disabled = false;
+        vaultCode.value = "";
+        if (vaultStatus) vaultStatus.textContent = "";
+        const submitButton = vaultForm.querySelector('button[type="submit"]');
+        if (submitButton) submitButton.disabled = false;
+        sessionStorage.removeItem("pivotdorVaultUnlocked");
+        sessionStorage.removeItem("pivotdorVaultUnlockedAt");
+        sessionStorage.removeItem("pivotdorVaultAttempts");
+        window.clearTimeout(vaultExpiryTimer);
+        window.clearInterval(vaultProgressTimer);
+        if (vaultSessionNote) vaultSessionNote.textContent = "Session interne verrouillée.";
+        if (vaultSessionProgress) vaultSessionProgress.style.setProperty("--vault-progress", "0%");
+        setVaultOpen(false);
+      }
+
+      if (isVaultSessionValid()) {
+        vaultDashboard.classList.add("unlocked");
+        vaultForm.style.display = "none";
+        scheduleVaultAutoLock();
+      } else {
+        sessionStorage.removeItem("pivotdorVaultUnlocked");
+        sessionStorage.removeItem("pivotdorVaultUnlockedAt");
+      }
+
+      updateVaultAttemptState();
+
+      if (vaultToggle) {
+        vaultToggle.addEventListener("click", () => {
+          const isOpen = vaultPanel.classList.contains("open");
+          if (!isOpen && vaultDashboard && vaultDashboard.classList.contains("unlocked") && !isVaultSessionValid()) {
+            lockVault();
+            setVaultOpen(true);
+            if (vaultStatus) vaultStatus.textContent = "Session expirée. Entre le code à nouveau.";
             return;
           }
-        }
+          setVaultOpen(!isOpen);
+        });
+      }
 
-        if (!categoryButton) return;
-        activeFilter = categoryButton.dataset.categoryFilter;
-        filterButtons.forEach(btn => btn.classList.toggle('active', btn.dataset.filter === activeFilter));
-        if (!Array.from(filterButtons).some(btn => btn.dataset.filter === activeFilter)) {
-          filterButtons.forEach(btn => btn.classList.toggle('active', btn.dataset.filter === 'all'));
+      if (vaultClose) {
+        vaultClose.addEventListener("click", () => setVaultOpen(false));
+      }
+
+      if (vaultForm) {
+        vaultForm.addEventListener("submit", async event => {
+          event.preventDefault();
+          await unlockVault();
+        });
+      }
+
+      if (vaultLockAgain) {
+        vaultLockAgain.addEventListener("click", lockVault);
+      }
+
+      document.addEventListener("keydown", event => {
+        if (event.key === "Escape" && vaultPanel && vaultPanel.classList.contains("open")) {
+          setVaultOpen(false);
         }
-        playClick();
-        applyFilters();
       });
 
-      if (searchInput) searchInput.addEventListener('input', applyFilters);
+      document.addEventListener("click", event => {
+        if (!vaultPanel || !vaultPanel.classList.contains("open")) return;
+        const lockWrapper = document.querySelector(".dashboard-lock");
+        if (lockWrapper && !lockWrapper.contains(event.target)) {
+          setVaultOpen(false);
+        }
+      });
+
+      if (vaultPanel) {
+        vaultPanel.addEventListener("keydown", event => {
+          if (event.key !== "Tab" || !vaultPanel.classList.contains("open")) return;
+          const focusable = Array.from(vaultPanel.querySelectorAll('a[href], button:not([disabled]), input:not([disabled]), summary, [tabindex]:not([tabindex="-1"])'));
+          if (focusable.length === 0) return;
+          const first = focusable[0];
+          const last = focusable[focusable.length - 1];
+          if (event.shiftKey && document.activeElement === first) {
+            event.preventDefault();
+            last.focus();
+          } else if (!event.shiftKey && document.activeElement === last) {
+            event.preventDefault();
+            first.focus();
+          }
+        });
+      }
+    }
+
+    const LOCAL_METRICS_KEY = "pivotdorDashboardLocalMetrics";
+    const LOCAL_BACKUPS_KEY = "pivotdorDashboardSnapshots";
+    const LOCAL_ACTIVITY_KEY = "pivotdorDashboardActivity";
+    const LOCAL_TRACKING_KEY = "pivotdorDashboardTrackingEnabled";
+
+    function readLocalMetrics() {
+      try {
+        return JSON.parse(localStorage.getItem(LOCAL_METRICS_KEY) || "{}");
+      } catch (error) {
+        return {};
+      }
+    }
+
+    function writeLocalMetrics(metrics) {
+      try {
+        const safeMetrics = JSON.stringify(metrics).slice(0, 12000);
+        localStorage.setItem(LOCAL_METRICS_KEY, safeMetrics);
+      } catch (error) {
+        console.warn("KPI locaux non sauvegardés.", error);
+      }
+    }
+
+    function isLocalTrackingEnabled() {
+      return localStorage.getItem(LOCAL_TRACKING_KEY) !== "false";
+    }
+
+    function incrementLocalMetric(key, amount = 1) {
+      if (!isLocalTrackingEnabled()) return;
+      const metrics = readLocalMetrics();
+      metrics[key] = Number(metrics[key] || 0) + amount;
+      metrics.updatedAt = new Date().toISOString();
+      writeLocalMetrics(metrics);
+    }
+
+    function readSnapshotCount() {
+      try {
+        const snapshots = JSON.parse(localStorage.getItem(LOCAL_BACKUPS_KEY) || "[]");
+        return Array.isArray(snapshots) ? snapshots.length : 0;
+      } catch (error) {
+        return 0;
+      }
+    }
+
+    function readActivityLog() {
+      try {
+        const log = JSON.parse(localStorage.getItem(LOCAL_ACTIVITY_KEY) || "[]");
+        return Array.isArray(log) ? log : [];
+      } catch (error) {
+        return [];
+      }
+    }
+
+    function recordActivity(label) {
+      try {
+        const log = readActivityLog().slice(-14);
+        log.push({ label: String(label || "Signal local").slice(0, 80), at: new Date().toISOString() });
+        localStorage.setItem(LOCAL_ACTIVITY_KEY, JSON.stringify(log));
+      } catch (error) {
+        console.warn("Journal local non sauvegardé.", error);
+      }
+    }
+
+    const dashboardSignals = [
+      { title: "Utilise l’IA pour sauver 3 heures par semaine", views: 420, clicks: 86, trainingClicks: 54, comments: 12, backups: 5, attributedSales: 0, demand: 92, crm: 18, idea: true },
+      { title: "Organise ta semaine en 30 minutes", views: 310, clicks: 58, trainingClicks: 33, comments: 9, backups: 4, attributedSales: 0, demand: 81, crm: 13, idea: true },
+      { title: "Trouve une idée de produit digital rentable", views: 280, clicks: 64, trainingClicks: 29, comments: 15, backups: 6, attributedSales: 0, demand: 88, crm: 16, idea: true },
+      { title: "Structure ton budget simple", views: 240, clicks: 41, trainingClicks: 22, comments: 7, backups: 3, attributedSales: 0, demand: 74, crm: 10, idea: true },
+      { title: "Crée ton premier prompt vraiment utile", views: 220, clicks: 39, trainingClicks: 18, comments: 6, backups: 3, attributedSales: 0, demand: 72, crm: 8, idea: true },
+      { title: "Écris une page de vente simple", views: 205, clicks: 46, trainingClicks: 21, comments: 8, backups: 4, attributedSales: 0, demand: 78, crm: 12, idea: true }
+    ];
+
+    function getSignalForFormation(item, index) {
+      const metrics = readLocalMetrics();
+      const normalizedTitle = normalize(item.title);
+      const found = dashboardSignals.find(signal => normalize(signal.title) === normalizedTitle);
+      const base = found || {
+        title: item.title,
+        views: 120 + index * 17,
+        clicks: 20 + index * 5,
+        trainingClicks: 10 + index * 3,
+        comments: 2 + index,
+        backups: 1,
+        attributedSales: 0,
+        demand: Math.max(35, 70 - index * 4),
+        crm: 4 + index,
+        idea: true
+      };
+
+      const titleKey = normalize(item.title).replace(/[^a-z0-9]+/g, "-").replace(/^-|-$/g, "");
+      return {
+        ...base,
+        views: Number(base.views || 0) + Number(metrics.homeViews || 0),
+        clicks: Number(base.clicks || 0) + Number(metrics.totalClicks || 0),
+        trainingClicks: Number(base.trainingClicks || 0) + Number(metrics.trainingClicks || 0) + Number(metrics[`formationClick_${titleKey}`] || 0),
+        comments: Number(base.comments || 0) + Number(metrics.contactClicks || 0),
+        backups: Number(base.backups || 0) + readSnapshotCount(),
+        demand: Math.min(100, Number(base.demand || 0) + Number(metrics[`demand_${titleKey}`] || 0))
+      };
+    }
+
+    function getStatusLabel(status) {
+      const value = normalize(status);
+      if (value.includes("prete")) return "Publié";
+      if (value.includes("bientot")) return "À améliorer";
+      return "À créer";
+    }
+
+    function getReadyLabel(score) {
+      if (score >= 85) return "Vert";
+      if (score >= 65) return "Jaune";
+      return "Rouge";
+    }
+
+    function getReadyClass(score) {
+      if (score >= 85) return "ok";
+      if (score >= 65) return "warn";
+      return "no";
+    }
+
+    function buildDashboardRows() {
+      return featuredFormations.map((item, index) => {
+        const signal = getSignalForFormation(item, index);
+        const quality = clampPercent(item.score || (statusPriority(item.status) * 25 + 25));
+        const rentability = clampPercent(item.rentability || signal.demand);
+        const priority = clampPercent((quality * 0.28) + (rentability * 0.32) + (signal.demand * 0.25) + (statusPriority(item.status) * 5));
+        const hasSaleProof = Number(signal.attributedSales || 0) > 0;
+        const readyToSell = clampPercent(
+          (quality >= 85 ? 25 : quality * 0.22) +
+          (rentability >= 75 ? 20 : rentability * 0.18) +
+          (statusPriority(item.status) >= 3 ? 15 : statusPriority(item.status) * 4) +
+          (hasSaleProof ? 15 : 0) +
+          (hasSaleProof ? 10 : 0) +
+          15
+        );
+
+        return {
+          title: item.title,
+          category: item.category,
+          status: getStatusLabel(item.status),
+          rawStatus: item.status,
+          quality,
+          rentability,
+          priority,
+          readyToSell,
+          readyLabel: getReadyLabel(readyToSell),
+          readyClass: getReadyClass(readyToSell),
+          views: signal.views,
+          clicks: signal.clicks,
+          trainingClicks: signal.trainingClicks,
+          comments: signal.comments,
+          backups: signal.backups,
+          attributedSales: signal.attributedSales,
+          demand: signal.demand,
+          crm: signal.crm,
+          url: safeLocalUrl(item.url)
+        };
+      });
+    }
+
+    function safeNumber(value) {
+      const number = Number(value);
+      return Number.isFinite(number) ? number : 0;
+    }
+
+    function sumRows(rows, key) {
+      return rows.reduce((total, row) => total + safeNumber(row[key]), 0);
+    }
+
+    function averageRows(rows, key) {
+      if (!rows.length) return 0;
+      return Math.round(sumRows(rows, key) / rows.length);
+    }
+
+    function renderVaultBar(label, value, max = 100) {
+      const safeValue = Math.max(0, Number(value || 0));
+      const percent = Math.max(0, Math.min(100, Math.round((safeValue / max) * 100)));
+      return `
+        <div class="vault-bar-row">
+          <div class="vault-bar-label"><span>${escapeHTML(label)}</span><strong>${safeValue}</strong></div>
+          <div class="vault-bar"><span style="--bar:${percent}%"></span></div>
+        </div>
+      `;
+    }
+
+    function renderCheckItem(label, status, note) {
+      const normalized = status === "ok" ? "ok" : status === "warn" ? "warn" : "no";
+      const text = normalized === "ok" ? "OK" : normalized === "warn" ? "À valider" : "Bloquant";
+      return `<div class="vault-check-item ${normalized}"><span>${escapeHTML(label)}${note ? ` · ${escapeHTML(note)}` : ""}</span><strong>${text}</strong></div>`;
+    }
+
+    function getPhaseState(rows, totalClicks, totalSales, totalTrainingClicks) {
+      const hasPublished = rows.some(row => row.status === "Publié");
+      const hasTraffic = totalClicks > 0 || totalTrainingClicks > 0;
+      const hasSnapshot = readSnapshotCount() > 0;
+      const hasSaleTest = totalSales > 0;
+
+      if (hasPublished && hasTraffic && hasSnapshot && hasSaleTest) {
+        return { light: "green", label: "Feu vert — passer à la phase suivante", level: "ok" };
+      }
+      if (hasPublished && hasTraffic && hasSnapshot) {
+        return { light: "yellow", label: "Feu jaune — presque prêt, vente test manquante", level: "warn" };
+      }
+      return { light: "red", label: "Feu rouge — prouver une formation complète d’abord", level: "no" };
+    }
+
+    function getMaturityLabel(totalSales, published, totalClicks, snapshotCount) {
+      if (totalSales > 0 && published >= 3 && totalClicks > 50 && snapshotCount > 0) return "Validation";
+      if (published > 0 && totalClicks > 0 && snapshotCount > 0) return "Prévente test";
+      if (published > 0) return "Pré-lancement";
+      return "Construction";
+    }
+
+    function buildRiskItems({ published, totalSales, totalClicks, dataHealth, avgPriority, snapshotCount }) {
+      const risks = [];
+      if (published === 0) risks.push("Aucune formation publiée : impossible de valider le modèle commercial.");
+      if (totalSales === 0) risks.push("Aucune vente test : Stripe → accès → support n’est pas encore prouvé.");
+      if (totalClicks === 0) risks.push("Aucun clic mesuré : le marché n’a pas encore donné de signal local.");
+      if (snapshotCount === 0) risks.push("Aucun snapshot : risque de perte de repère après modification.");
+      if (dataHealth < 50) risks.push("Santé des données faible : le dashboard peut donner une lecture incomplète.");
+      if (avgPriority < 70) risks.push("Score priorité moyen faible : il faut renforcer la sélection des formations.");
+      return risks.length ? risks : ["Aucun risque critique local détecté pour le moment."];
+    }
+
+    function buildTodayActions({ totalSales, published, totalClicks, snapshotCount, opportunity }) {
+      const actions = [];
+      if (!opportunity) actions.push("Choisir la formation pilote : Utilise l’IA pour sauver 3 heures par semaine.");
+      if (published === 0) actions.push("Finaliser une fiche formation publique avec promesse, prix, FAQ et mentions obligatoires.");
+      if (totalSales === 0) actions.push("Tester le chemin complet : fiche publique → Stripe → merci.html → accès → support.");
+      if (totalClicks === 0) actions.push("Créer 5 contenus courts reliés à la formation pilote et mesurer les clics.");
+      if (snapshotCount === 0) actions.push("Exporter un snapshot avant la prochaine grosse modification.");
+      if (opportunity) actions.push(`Pousser la meilleure opportunité actuelle : ${opportunity.title}.`);
+      return actions.slice(0, 5);
+    }
+
+    function renderDashboardIntelligence(rows) {
+      const published = rows.filter(row => row.status === "Publié").length;
+      const toCreate = rows.filter(row => row.status === "À créer").length;
+      const toImprove = rows.filter(row => row.status === "À améliorer").length;
+      const totalViews = sumRows(rows, "views");
+      const totalClicks = sumRows(rows, "clicks");
+      const totalTrainingClicks = sumRows(rows, "trainingClicks");
+      const totalComments = sumRows(rows, "comments");
+      const totalBackups = sumRows(rows, "backups");
+      const totalSales = sumRows(rows, "attributedSales");
+      const totalDemand = rows.filter(row => row.demand >= 75).length;
+      const totalCrm = sumRows(rows, "crm");
+      const avgPriority = averageRows(rows, "priority");
+      const clickRate = totalViews > 0 ? Math.round((totalClicks / totalViews) * 100) : 0;
+      const trainingRate = totalClicks > 0 ? Math.round((totalTrainingClicks / totalClicks) * 100) : 0;
+      const dataHealth = Math.round(((published > 0 ? 25 : 0) + (rows.length > 0 ? 25 : 0) + (totalClicks > 0 ? 25 : 0) + (readSnapshotCount() > 0 ? 25 : 0)));
+      const conversionScore = Math.max(0, Math.min(100, Math.round((clickRate * 0.35) + (trainingRate * 0.35) + (avgPriority * 0.3))));
+      const rankedRows = [...rows].sort((a, b) => (b.priority + b.demand + b.clicks) - (a.priority + a.demand + a.clicks));
+      const opportunity = rankedRows[0];
+      const topThree = rankedRows.slice(0, 3);
+      const phaseState = getPhaseState(rows, totalClicks, totalSales, totalTrainingClicks);
+      const snapshotCount = readSnapshotCount();
+      const criticalAlerts = [
+        published === 0,
+        totalSales === 0,
+        snapshotCount === 0,
+        dataHealth < 50,
+        rows.some(row => row.quality < 80 || row.rentability < 70)
+      ].filter(Boolean).length;
+      const riskScore = Math.max(0, Math.min(100, criticalAlerts * 18 + (dataHealth < 50 ? 10 : 0)));
+      const maturityLabel = getMaturityLabel(totalSales, published, totalClicks, snapshotCount);
+      const riskItems = buildRiskItems({ published, totalSales, totalClicks, dataHealth, avgPriority, snapshotCount });
+      const todayActions = buildTodayActions({ totalSales, published, totalClicks, snapshotCount, opportunity });
+      const averageReadyToSell = averageRows(rows, "readyToSell");
+      const activityLog = readActivityLog();
+      const lastActivity = activityLog.length ? activityLog[activityLog.length - 1] : null;
+      const bestDemand = [...rows].sort((a, b) => b.demand - a.demand).slice(0, 5);
+
+      if (vaultSalesKpi) vaultSalesKpi.textContent = `${totalSales} vente${totalSales > 1 ? "s" : ""}`;
+      if (vaultFeaturedKpi) vaultFeaturedKpi.textContent = String(rows.length);
+      if (vaultCategoriesKpi) vaultCategoriesKpi.textContent = String(categories.length);
+      if (vaultCapacityKpi) vaultCapacityKpi.textContent = "400";
+      if (vaultPriorityKpi) vaultPriorityKpi.textContent = `${avgPriority} / 100`;
+      if (vaultIdeasKpi) vaultIdeasKpi.textContent = String(rows.length);
+      if (vaultPublishedKpi) vaultPublishedKpi.textContent = String(published);
+      if (vaultCreateKpi) vaultCreateKpi.textContent = String(toCreate);
+      if (vaultImproveKpi) vaultImproveKpi.textContent = String(toImprove);
+      if (vaultViewsKpi) vaultViewsKpi.textContent = String(totalViews);
+      if (vaultClicksKpi) vaultClicksKpi.textContent = String(totalClicks);
+      if (vaultTrainingClicksKpi) vaultTrainingClicksKpi.textContent = String(totalTrainingClicks);
+      if (vaultCommentsKpi) vaultCommentsKpi.textContent = String(totalComments);
+      if (vaultBackupsKpi) vaultBackupsKpi.textContent = String(totalBackups);
+      if (vaultDemandKpi) vaultDemandKpi.textContent = String(totalDemand);
+      if (vaultCrmKpi) vaultCrmKpi.textContent = String(totalCrm);
+      if (vaultClickRateKpi) vaultClickRateKpi.textContent = `${clickRate} %`;
+      if (vaultTrainingRateKpi) vaultTrainingRateKpi.textContent = `${trainingRate} %`;
+      if (vaultDataHealthKpi) vaultDataHealthKpi.textContent = `${dataHealth} %`;
+      if (vaultSnapshotCountKpi) vaultSnapshotCountKpi.textContent = String(readSnapshotCount());
+      if (vaultLastSignalKpi) vaultLastSignalKpi.textContent = lastActivity ? lastActivity.label : "Aucun";
+      if (vaultConversionScoreKpi) vaultConversionScoreKpi.textContent = `${conversionScore} / 100`;
+      if (vaultOpportunityKpi) vaultOpportunityKpi.textContent = opportunity ? opportunity.title.slice(0, 28) : "Aucune";
+      if (vaultTrackingKpi) vaultTrackingKpi.textContent = isLocalTrackingEnabled() ? "Actif" : "Pause";
+      if (vaultRiskScoreKpi) vaultRiskScoreKpi.textContent = `${riskScore} / 100`;
+      if (vaultMaturityKpi) vaultMaturityKpi.textContent = maturityLabel;
+      if (vaultRevenue7d) vaultRevenue7d.textContent = `${totalSales} vente${totalSales > 1 ? "s" : ""}`;
+      if (vaultStripeClickRate) vaultStripeClickRate.textContent = `${trainingRate} %`;
+      if (vaultTopThree) vaultTopThree.textContent = topThree.length ? topThree.map(row => row.title.split(" ").slice(0, 3).join(" ")).join(" · ") : "Aucune";
+      if (vaultCriticalAlerts) vaultCriticalAlerts.textContent = String(criticalAlerts);
+      if (vaultNextBestAction) vaultNextBestAction.textContent = totalSales > 0 ? "Doubler le gagnant" : "Vente test complète";
+      if (vaultOneAction) {
+        vaultOneAction.innerHTML = `<strong>Action rentable maintenant :</strong> ${totalSales > 0 ? "doubler la formation qui vend et créer un bundle simple." : "terminer la formation pilote + tester Stripe + tester l’accès + exporter une preuve."}`;
+      }
+      if (vaultIntelligenceNote) {
+        vaultIntelligenceNote.classList.toggle("warning", dataHealth < 50);
+        vaultIntelligenceNote.innerHTML = dataHealth >= 50
+          ? '<span class="vault-pulse"></span>Intelligence locale active : KPI synchronisés avec le catalogue, les clics publics et les snapshots.'
+          : 'Attention : santé des données faible. Exporte un snapshot et valide le catalogue JSON.';
+      }
+
+      if (vaultProgressGrid) {
+        vaultProgressGrid.innerHTML = [
+          renderVaultBar("Score risque système", riskScore, 100),
+          renderVaultBar("Score prêt à vendre moyen", averageReadyToSell, 100),
+          renderVaultBar("Score conversion local", conversionScore, 100),
+          renderVaultBar("Score priorité moyen", avgPriority, 100),
+          renderVaultBar("Formations publiées", published, Math.max(1, rows.length)),
+          renderVaultBar("Formations à créer", toCreate, Math.max(1, rows.length)),
+          renderVaultBar("Formations à améliorer", toImprove, Math.max(1, rows.length)),
+          renderVaultBar("Clics vers pages formation", totalTrainingClicks, Math.max(100, totalClicks)),
+          renderVaultBar("Demandes fortes", totalDemand, Math.max(1, rows.length))
+        ].join("");
+      }
+
+      if (vaultCrmGrid) {
+        vaultCrmGrid.innerHTML = [
+          renderVaultBar("Vues", totalViews, Math.max(500, totalViews)),
+          renderVaultBar("Clics", totalClicks, Math.max(100, totalClicks)),
+          renderVaultBar("Commentaires", totalComments, Math.max(30, totalComments)),
+          renderVaultBar("Sauvegardes", totalBackups, Math.max(20, totalBackups)),
+          renderVaultBar("Éléments CRM", totalCrm, Math.max(50, totalCrm)),
+          renderVaultBar("Ventes attribuées", totalSales, Math.max(5, totalSales))
+        ].join("");
+      }
+
+      if (vaultDemandList) {
+        vaultDemandList.innerHTML = bestDemand.map(row => renderVaultBar(row.title, row.demand, 100)).join("");
+      }
+
+      if (vaultFormationTable) {
+        vaultFormationTable.innerHTML = rows.map(row => `
+          <tr>
+            <td>${escapeHTML(row.title)}</td>
+            <td>${escapeHTML(row.status)}</td>
+            <td>${row.quality}</td>
+            <td>${row.rentability}</td>
+            <td><strong>${row.priority}</strong></td>
+            <td><strong>${row.readyLabel}</strong> · ${row.readyToSell}</td>
+            <td>${row.views}</td>
+            <td>${row.clicks}</td>
+            <td>${row.attributedSales}</td>
+          </tr>
+        `).join("");
+      }
+
+      if (vaultSmartTags) {
+        vaultSmartTags.innerHTML = `
+          <span class="vault-chip"><strong>${published}</strong> publiée(s)</span>
+          <span class="vault-chip"><strong>${toCreate}</strong> à créer</span>
+          <span class="vault-chip"><strong>${toImprove}</strong> à améliorer</span>
+          <span class="vault-chip"><strong>${totalTrainingClicks}</strong> clics formation</span>
+          <span class="vault-chip"><strong>${totalDemand}</strong> fortes demandes</span>
+          <span class="vault-chip"><strong>${clickRate} %</strong> clic / vue</span>
+          <span class="vault-chip"><strong>${dataHealth} %</strong> santé données</span>
+        `;
+      }
+
+      if (vaultActionButtons) {
+        vaultActionButtons.innerHTML = `
+          <a class="btn btn-primary" href="formation.html">Améliorer formation prioritaire</a>
+          <a class="btn" href="formations.html#catalogue">Voir catalogue</a>
+          <a class="btn" href="contact.html">Voir demandes</a>
+          <a class="btn" href="support.html">Support accès</a>
+          <a class="btn" href="conditions.html">Vente finale</a>
+          <a class="btn" href="data/formations-index.json">Ouvrir JSON</a>
+          <button class="btn" type="button" id="vaultPrintAudit">Imprimer audit</button>
+          <button class="btn" type="button" id="vaultCopyReport">Copier rapport</button>
+          <button class="btn" type="button" id="vaultExportCsv">Exporter CSV</button>
+          <button class="btn" type="button" id="vaultOpenAllSections">Tout ouvrir</button>
+          <button class="btn" type="button" id="vaultCloseAllSections">Tout fermer</button>
+          <button class="btn" type="button" id="vaultExportSnapshot">Exporter snapshot</button>
+          <button class="btn" type="button" id="vaultClearSnapshots">Effacer snapshots</button>
+          <button class="btn" type="button" id="vaultToggleTracking">Désactiver suivi</button>
+          <button class="btn" type="button" id="vaultResetLocalKpis">Réinitialiser KPI locaux</button>
+        `;
+      }
+
+      if (vaultStrategicList) {
+        const top = bestDemand[0];
+        vaultStrategicList.innerHTML = `
+          <li>Priorité 1 : finaliser ou améliorer “${escapeHTML(top ? top.title : "formation prioritaire")}”.</li>
+          <li>Priorité 2 : publier seulement ce qui est prêt, puis connecter Stripe et l’accès.</li>
+          <li>Priorité 3 : surveiller les formations avec beaucoup de clics mais une note qualité sous 85.</li>
+          <li>Priorité 4 : transformer les idées demandées en formations courtes à 5 $, 15 $, 25 $ ou 50 $.</li>
+          <li>Priorité 5 : exporter un snapshot après chaque grosse modification du site.</li>
+        `;
+      }
+
+      if (vaultActivityList) {
+        const recentLog = activityLog.slice(-8).reverse();
+        vaultActivityList.innerHTML = recentLog.length
+          ? recentLog.map(item => `<li>${escapeHTML(item.label)} · ${new Date(item.at).toLocaleString("fr-CA")}</li>`).join("")
+          : "<li>Aucun signal local enregistré pour l’instant.</li>";
+      }
+
+      if (vaultReportList) {
+        vaultReportList.innerHTML = `
+          <li>Opportunité principale : ${escapeHTML(opportunity ? opportunity.title : "aucune donnée suffisante")}.</li>
+          <li>Score conversion local : ${conversionScore} / 100.</li>
+          <li>Santé des données : ${dataHealth} %. ${dataHealth < 50 ? "Priorité : créer un snapshot et valider le JSON." : "La base est exploitable."}</li>
+          <li>Feu de phase : ${escapeHTML(phaseState.label)}.</li>
+          <li>Prochaine action rentable : ${totalSales > 0 ? "doubler la formation qui vend" : "terminer une vente test complète fiche → Stripe → accès → checklist → support"}.</li>
+          <li>Risque principal : confondre KPI locaux et vraies données serveur. Les chiffres ici restent non sensibles et locaux.</li>
+        `;
+      }
+
+      if (vaultTodayActions) {
+        vaultTodayActions.innerHTML = todayActions.map(action => `<li>${escapeHTML(action)}</li>`).join("");
+      }
+
+      if (vaultRiskList) {
+        vaultRiskList.innerHTML = riskItems.map(risk => `<li>${escapeHTML(risk)}</li>`).join("");
+      }
+
+      if (vaultPhaseAlert) {
+        vaultPhaseAlert.className = `vault-alert ${phaseState.level === "no" ? "warning" : ""}`;
+        vaultPhaseAlert.innerHTML = `<span class="vault-light ${phaseState.light === "green" ? "green" : phaseState.light === "yellow" ? "yellow" : ""}">${escapeHTML(phaseState.label)}</span>`;
+      }
+
+      if (vaultPhaseChecks) {
+        vaultPhaseChecks.innerHTML = [
+          renderCheckItem("1 formation publiée ou prête", published > 0 ? "ok" : "no"),
+          renderCheckItem("Premiers clics mesurés", totalClicks > 0 ? "ok" : "no"),
+          renderCheckItem("Snapshot exporté", readSnapshotCount() > 0 ? "ok" : "warn"),
+          renderCheckItem("Vente test réussie", totalSales > 0 ? "ok" : "no", "Stripe réel requis"),
+          renderCheckItem("Accès après paiement validé", totalSales > 0 ? "warn" : "no", "à confirmer hors GitHub public")
+        ].join("");
+      }
+
+      if (vaultTestBlockers) {
+        vaultTestBlockers.innerHTML = [
+          renderCheckItem("Lien Stripe absent ou non prouvé", totalSales > 0 ? "ok" : "no", "vente test requise"),
+          renderCheckItem("Page après paiement non testée", totalSales > 0 ? "warn" : "no", "merci.html + accès"),
+          renderCheckItem("Accès non validé", totalSales > 0 ? "warn" : "no", "hors GitHub public"),
+          renderCheckItem("Checklist absente ou non confirmée", rows.length > 0 ? "warn" : "no"),
+          renderCheckItem("Support non prêt ou non testé", "warn", "Hubert + support.html")
+        ].join("");
+      }
+
+      if (vaultPublicationGate) {
+        const best = opportunity || rows[0];
+        vaultPublicationGate.innerHTML = [
+          renderCheckItem("Titre + problème précis", best ? "ok" : "no"),
+          renderCheckItem("Note qualité minimale 80 / recommandée 85", best && best.quality >= 85 ? "ok" : best && best.quality >= 80 ? "warn" : "no"),
+          renderCheckItem("Note rentabilité minimale 70 / recommandée 75", best && best.rentability >= 75 ? "ok" : best && best.rentability >= 70 ? "warn" : "no"),
+          renderCheckItem("Lien Stripe testé", totalSales > 0 ? "ok" : "no"),
+          renderCheckItem("Page après paiement + support", totalSales > 0 ? "warn" : "no"),
+          renderCheckItem("Aucun contenu sensible dans GitHub", "ok")
+        ].join("");
+      }
+
+      if (vaultFieldTests) {
+        vaultFieldTests.innerHTML = [
+          renderCheckItem("Test mobile", "warn", "à valider sur téléphone réel"),
+          renderCheckItem("Test Stripe", totalSales > 0 ? "ok" : "no", "vente test requise"),
+          renderCheckItem("Test redirection merci.html", totalSales > 0 ? "warn" : "no"),
+          renderCheckItem("Test accès privé", totalSales > 0 ? "warn" : "no", "hors GitHub public"),
+          renderCheckItem("Test SEO + sitemap", "warn", "à refaire après JSON réel"),
+          renderCheckItem("Test support Hubert", "warn", "script accès + compensation")
+        ].join("");
+      }
+
+      if (vaultNotionGrid) {
+        vaultNotionGrid.innerHTML = [
+          renderCheckItem("Base Tâches", "warn", "à créer dans Notion"),
+          renderCheckItem("Base Formations / 400 jumeaux", "warn"),
+          renderCheckItem("Base KPI", "warn"),
+          renderCheckItem("Base Décisions", "warn"),
+          renderCheckItem("Base Preuves", readSnapshotCount() > 0 ? "ok" : "warn")
+        ].join("");
+      }
+
+      if (vaultBundleGrid) {
+        vaultBundleGrid.innerHTML = [
+          renderVaultBar("Pack IA + Productivité", rows.filter(row => ["IA", "Productivité"].includes(row.category)).length, Math.max(1, rows.length)),
+          renderVaultBar("Pack Business express", rows.filter(row => row.category === "Business").length, Math.max(1, rows.length)),
+          renderVaultBar("Pack Finances simples", rows.filter(row => row.category === "Finances").length, Math.max(1, rows.length)),
+          renderVaultBar("Potentiel bundle global", Math.min(100, rows.length * 12), 100)
+        ].join("");
+      }
+
+      if (vaultTwinGrid) {
+        vaultTwinGrid.innerHTML = [
+          renderCheckItem("Identité formation", rows.length > 0 ? "ok" : "no", "titre, catégorie, prix"),
+          renderCheckItem("Production", published > 0 ? "warn" : "no", "checklist/page/mini-kit à confirmer"),
+          renderCheckItem("Vente", totalSales > 0 ? "ok" : "no", "Stripe réel requis"),
+          renderCheckItem("Accès", totalSales > 0 ? "warn" : "no", "solution sécurisée future"),
+          renderCheckItem("Maintenance", "warn", "dates de mise à jour à ajouter au JSON")
+        ].join("");
+      }
+
+      if (vaultSplitCodeGrid) {
+        vaultSplitCodeGrid.innerHTML = [
+          renderCheckItem("JS dashboard séparé", "warn", "js/dashboard-cache.js à créer plus tard"),
+          renderCheckItem("Données dashboard séparées", "warn", "data/dashboard-formations.json"),
+          renderCheckItem("CSS dashboard séparé", "warn", "css/dashboard-cache.css"),
+          renderCheckItem("index.html allégé", "warn", "après validation de la vente test"),
+          renderCheckItem("Aucune donnée sensible", "ok", "règle déjà appliquée")
+        ].join("");
+      }
+
+      if (vaultAdrienList) {
+        vaultAdrienList.innerHTML = `
+          <li>Adrien surveille : ventes, clics Stripe, accès, support et prochaine action.</li>
+          <li>Adrien alerte si : clics sans vente, formation rouge, accès non validé, santé données faible ou snapshot absent.</li>
+          <li>Escalade Olivier : légal, santé, finances, plainte, remboursement complexe, double paiement ou risque réputationnel.</li>
+          <li>Action unique recommandée maintenant : ${escapeHTML(totalSales > 0 ? "doubler la formation qui vend" : "finir la preuve complète de la première formation")}</li>
+        `;
+      }
+
+      if (vaultDashboardUpdated) {
+        const metrics = readLocalMetrics();
+        const metricDate = metrics.updatedAt ? new Date(metrics.updatedAt).toLocaleString("fr-CA") : "aucune interaction locale";
+        vaultDashboardUpdated.textContent = `Synchronisé localement · ${new Date().toLocaleString("fr-CA")} · Dernier signal : ${metricDate}`;
+      }
+
+      bindVaultDashboardActions(rows);
+    }
+
+    function exportVaultSnapshot(rows) {
+      const snapshot = {
+        generatedAt: new Date().toISOString(),
+        version: "index-dashboard-v2",
+        source: "GitHub Pages · données publiques et signaux locaux non sensibles",
+        totals: {
+          formations: rows.length,
+          categories: categories.length,
+          views: sumRows(rows, "views"),
+          clicks: sumRows(rows, "clicks"),
+          trainingClicks: sumRows(rows, "trainingClicks"),
+          comments: sumRows(rows, "comments"),
+          backups: readSnapshotCount() + 1,
+          attributedSales: sumRows(rows, "attributedSales")
+        },
+        rows
+      };
+
+      try {
+        const existing = JSON.parse(localStorage.getItem(LOCAL_BACKUPS_KEY) || "[]");
+        const snapshots = Array.isArray(existing) ? existing.slice(-19) : [];
+        snapshots.push({ generatedAt: snapshot.generatedAt, totals: snapshot.totals });
+        localStorage.setItem(LOCAL_BACKUPS_KEY, JSON.stringify(snapshots));
+      } catch (error) {
+        console.warn("Snapshot local non sauvegardé.", error);
+      }
+
+      const blob = new Blob([JSON.stringify(snapshot, null, 2)], { type: "application/json" });
+      const url = URL.createObjectURL(blob);
+      const link = document.createElement("a");
+      link.href = url;
+      link.download = `pivotdor-dashboard-snapshot-${new Date().toISOString().slice(0, 10)}.json`;
+      document.body.appendChild(link);
+      link.click();
+      link.remove();
+      URL.revokeObjectURL(url);
+      recordActivity("Snapshot exporté");
+      updateVaultKpis();
+    }
+
+    function bindVaultDashboardActions(rows) {
+      const printButton = document.getElementById("vaultPrintAudit");
+      const exportButton = document.getElementById("vaultExportSnapshot");
+      const csvButton = document.getElementById("vaultExportCsv");
+      const openAllButton = document.getElementById("vaultOpenAllSections");
+      const closeAllButton = document.getElementById("vaultCloseAllSections");
+      const copyButton = document.getElementById("vaultCopyReport");
+      const clearSnapshotsButton = document.getElementById("vaultClearSnapshots");
+      const trackingButton = document.getElementById("vaultToggleTracking");
+      const resetButton = document.getElementById("vaultResetLocalKpis");
+
+      if (printButton) printButton.onclick = () => window.print();
+      if (exportButton) exportButton.onclick = () => exportVaultSnapshot(rows);
+      if (csvButton) {
+        csvButton.onclick = () => {
+          const header = "formation,statut,qualite,rentabilite,priorite,pret_a_vendre,vues,clics,ventes";
+          const csv = [header, ...rows.map(row => [row.title, row.status, row.quality, row.rentability, row.priority, row.readyToSell, row.views, row.clicks, row.attributedSales].map(value => `"${String(value).replace(/"/g, '""')}"`).join(","))].join("
+");
+          const blob = new Blob([csv], { type: "text/csv;charset=utf-8" });
+          const url = URL.createObjectURL(blob);
+          const link = document.createElement("a");
+          link.href = url;
+          link.download = `pivotdor-dashboard-${new Date().toISOString().slice(0, 10)}.csv`;
+          document.body.appendChild(link);
+          link.click();
+          link.remove();
+          URL.revokeObjectURL(url);
+          recordActivity("CSV exporté");
+          updateVaultKpis();
+        };
+      }
+      if (openAllButton) openAllButton.onclick = () => vaultDashboard.querySelectorAll("details").forEach(detail => detail.open = true);
+      if (closeAllButton) closeAllButton.onclick = () => vaultDashboard.querySelectorAll("details").forEach(detail => detail.open = false);
+      if (copyButton) {
+        copyButton.onclick = async () => {
+          const reportText = rows.map(row => `${row.title} | statut: ${row.status} | prêt: ${row.readyLabel} ${row.readyToSell}/100 | priorité: ${row.priority} | qualité: ${row.quality} | rentabilité: ${row.rentability}`).join("
+");
+          try {
+            await navigator.clipboard.writeText(reportText);
+            recordActivity("Rapport copié");
+          } catch (error) {
+            window.prompt("Copie le rapport :", reportText);
+          }
+          updateVaultKpis();
+        };
+      }
+      if (clearSnapshotsButton) {
+        clearSnapshotsButton.onclick = () => {
+          const confirmed = window.confirm("Effacer tous les snapshots locaux de ce navigateur?");
+          if (!confirmed) return;
+          localStorage.removeItem(LOCAL_BACKUPS_KEY);
+          recordActivity("Snapshots locaux effacés");
+          updateVaultKpis();
+        };
+      }
+      if (trackingButton) {
+        trackingButton.textContent = isLocalTrackingEnabled() ? "Désactiver suivi" : "Activer suivi";
+        trackingButton.onclick = () => {
+          const nextValue = !isLocalTrackingEnabled();
+          localStorage.setItem(LOCAL_TRACKING_KEY, String(nextValue));
+          recordActivity(nextValue ? "Suivi local activé" : "Suivi local désactivé");
+          updateVaultKpis();
+        };
+      }
+      if (resetButton) {
+        resetButton.onclick = () => {
+          const confirmed = window.confirm("Réinitialiser les KPI locaux non sensibles de ce navigateur?");
+          if (!confirmed) return;
+          localStorage.removeItem(LOCAL_METRICS_KEY);
+          localStorage.removeItem(LOCAL_ACTIVITY_KEY);
+          if (isLocalTrackingEnabled()) recordActivity("KPI locaux réinitialisés");
+          updateVaultKpis();
+        };
+      }
+    }
+
+    function setVaultDashboardMode(mode) {
+      if (!vaultDashboard || !vaultSimpleMode || !vaultAdvancedMode) return;
+      const isAdvanced = mode === "advanced";
+      vaultDashboard.classList.toggle("advanced-mode", isAdvanced);
+      vaultDashboard.classList.toggle("simple-mode", !isAdvanced);
+      vaultSimpleMode.classList.toggle("active", !isAdvanced);
+      vaultAdvancedMode.classList.toggle("active", isAdvanced);
+      vaultSimpleMode.classList.toggle("btn-primary", !isAdvanced);
+      vaultAdvancedMode.classList.toggle("btn-primary", isAdvanced);
+      vaultSimpleMode.setAttribute("aria-pressed", String(!isAdvanced));
+      vaultAdvancedMode.setAttribute("aria-pressed", String(isAdvanced));
+      localStorage.setItem("pivotdorDashboardMode", isAdvanced ? "advanced" : "simple");
+    }
+
+    function setupVaultModeControls() {
+      if (!vaultDashboard || !vaultSimpleMode || !vaultAdvancedMode) return;
+      const savedMode = localStorage.getItem("pivotdorDashboardMode") === "advanced" ? "advanced" : "simple";
+      setVaultDashboardMode(savedMode);
+      vaultSimpleMode.addEventListener("click", () => setVaultDashboardMode("simple"));
+      vaultAdvancedMode.addEventListener("click", () => setVaultDashboardMode("advanced"));
+    }
+
+    function setupLocalMetricTracking() {
+      if (sessionStorage.getItem("pivotdorHomeViewTracked") !== "true") {
+        incrementLocalMetric("homeViews", 1);
+        recordActivity("Vue accueil enregistrée");
+        sessionStorage.setItem("pivotdorHomeViewTracked", "true");
+      }
+
+      document.addEventListener("click", event => {
+        const lockWrapper = event.target.closest(".dashboard-lock");
+        if (lockWrapper) return;
+
+        const link = event.target.closest("a");
+        const button = event.target.closest("button");
+        if (link || button) {
+          incrementLocalMetric("totalClicks", 1);
+          recordActivity("Clic public enregistré");
+        }
+        if (link && /formation[s]?[.]html/.test(link.getAttribute("href") || "")) {
+          incrementLocalMetric("trainingClicks", 1);
+          recordActivity("Clic vers formation/catalogue");
+        }
+        if (link && /contact[.]html/.test(link.getAttribute("href") || "")) {
+          incrementLocalMetric("contactClicks", 1);
+          recordActivity("Clic vers contact");
+        }
+      }, { passive: true });
+    }
+
+    function updateVaultKpis() {
+      const rows = buildDashboardRows();
+      renderDashboardIntelligence(rows);
     }
 
     function setupLogoFallback() {
-      const logo = document.getElementById('brandLogo');
-      const mark = document.getElementById('brandMark');
-      if (!logo || !mark) return;
+      if (!brandLogo || !brandMark) return;
 
-      const showLogo = () => mark.classList.add('has-logo');
-      if (logo.complete && logo.naturalWidth > 0) showLogo();
-      logo.addEventListener('load', showLogo);
-      logo.addEventListener('error', () => {
-        const fallback = logo.dataset.fallbackSrc;
-        const current = logo.getAttribute('src') || '';
+      if (brandLogo.complete && brandLogo.naturalWidth > 0) {
+        brandMark.classList.add("has-logo");
+      }
+
+      brandLogo.addEventListener("load", () => {
+        brandMark.classList.add("has-logo");
+      });
+
+      brandLogo.addEventListener("error", () => {
+        const fallback = brandLogo.dataset.fallbackSrc;
+        const current = brandLogo.getAttribute("src") || "";
         if (fallback && !current.includes(fallback)) {
-          logo.src = fallback;
+          brandLogo.src = fallback;
           return;
         }
-        logo.style.display = 'none';
-        mark.classList.remove('has-logo');
+        brandLogo.style.display = "none";
+        brandMark.classList.remove("has-logo");
       });
     }
 
-    function setupSound() {
-      const button = document.getElementById('soundToggle');
-      if (!button) return;
-      button.addEventListener('click', () => {
-        soundEnabled = !soundEnabled;
-        button.textContent = soundEnabled ? 'Son : activé' : 'Son : désactivé';
-        if (soundEnabled) playClick();
+    filterButtons.forEach(button => {
+      button.addEventListener("click", () => {
+        const requestedFilter = button.dataset.filter || "all";
+        activeFilter = requestedFilter === "all" || VALID_CATEGORIES.includes(requestedFilter) ? requestedFilter : "all";
+        updateFilterButtons();
+        applyFilters();
       });
+    });
+
+    const debouncedApplyFilters = debounce(applyFilters, 180);
+    searchInput.addEventListener("input", debouncedApplyFilters);
+
+    function resetHomeSearch() {
+      searchInput.value = "";
+      activeFilter = "all";
+      updateFilterButtons();
+      applyFilters();
+      searchInput.focus();
     }
 
-    function playClick() {
-      if (!soundEnabled) return;
-      const audio = document.getElementById('clickSound');
-      if (!audio) return;
-      audio.currentTime = 0;
-      audio.play().catch(() => {});
+    searchInput.addEventListener("keydown", event => {
+      if (event.key !== "Escape") return;
+      resetHomeSearch();
+    });
+
+    if (homeResetBtn) {
+      homeResetBtn.addEventListener("click", resetHomeSearch);
     }
 
-    renderPages();
-    renderFolders();
-    renderFormations();
-    renderInternalCatalogue();
-    setupNavigation();
-    setupLogoFallback();
-    setupSound();
-    applyFilters();
+    document.querySelectorAll('a[href^="#"]').forEach(link => {
+      link.addEventListener("click", event => {
+        const id = link.getAttribute("href").replace("#", "");
+        const target = document.getElementById(id);
+        if (!target) return;
+        event.preventDefault();
+        target.scrollIntoView({ behavior: "smooth", block: "start" });
+        history.replaceState(null, "", `#${id}`);
+      });
+    });
+
+    async function loadFeaturedFromJson() {
+      try {
+        if (featuredSource) featuredSource.textContent = "Chargement du catalogue d’accueil...";
+        const controller = new AbortController();
+        const timeoutId = window.setTimeout(() => controller.abort(), 2500);
+        const response = await fetch("data/formations-index.json", { cache: "no-store", signal: controller.signal });
+        window.clearTimeout(timeoutId);
+        if (!response.ok) {
+          if (featuredSource) featuredSource.textContent = "Catalogue d’accueil intégré · JSON absent";
+          return;
+        }
+        const payload = await response.json();
+        const list = Array.isArray(payload) ? payload : Array.isArray(payload.formations) ? payload.formations : [];
+        const cleaned = cleanFeaturedList(list);
+        if (cleaned.length > 0) {
+          featuredFormations = cleaned;
+          updateVaultKpis();
+          if (featuredSource) featuredSource.textContent = `Catalogue d’accueil chargé depuis JSON · ${cleaned.length} formation${cleaned.length > 1 ? "s" : ""}`;
+        } else if (featuredSource) {
+          featuredSource.textContent = "Catalogue d’accueil intégré · JSON vide";
+        }
+      } catch (error) {
+        console.warn("Catalogue d’accueil JSON non chargé. Utilisation du contenu intégré.", error);
+        if (featuredSource) {
+          featuredSource.textContent = error && error.name === "AbortError"
+            ? "Catalogue d’accueil intégré · JSON trop long à charger"
+            : "Catalogue d’accueil intégré · JSON non chargé";
+        }
+      }
+    }
+
+    async function initHome() {
+      setupLocalMetricTracking();
+      renderCategories();
+      await loadFeaturedFromJson();
+      updateVaultKpis();
+      applyFilters();
+      setupLogoFallback();
+      setupVaultModeControls();
+      setupVault();
+    }
+
+    initHome();
   </script>
 </body>
 </html>
-
