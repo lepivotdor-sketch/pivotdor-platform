@@ -1,0 +1,1042 @@
+<!DOCTYPE html>
+<html lang="fr-CA">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Formation Le Pivot d’Or : crée 10 prompts simples pour ton entreprise avec une méthode claire, une mini-bibliothèque prête à utiliser, une checklist et un plan 24-48 h." />
+  <meta name="author" content="Le Pivot d’Or" />
+  <meta name="robots" content="index, follow" />
+  <meta name="theme-color" content="#050505" />
+
+  <meta property="og:title" content="Crée 10 prompts simples pour ton entreprise | Le Pivot d’Or" />
+  <meta property="og:description" content="Une formation pratique à 15 $ pour transformer tes tâches répétitives en 10 prompts simples, clairs et réutilisables." />
+  <meta property="og:type" content="website" />
+
+  <title>Crée 10 prompts simples pour ton entreprise | Le Pivot d’Or</title>
+
+  <style>
+    :root {
+      --noir: #050505;
+      --noir-2: #111111;
+      --noir-3: #191919;
+      --or: #d6af36;
+      --or-clair: #f3d77a;
+      --blanc: #f8f6ef;
+      --gris: #b9b9b9;
+      --gris-2: #e9e3d0;
+      --vert: #a7f3b0;
+      --rouge: #ff8c8c;
+      --bleu: #9ec5ff;
+      --mauve: #d8b4fe;
+      --ombre: 0 22px 60px rgba(0, 0, 0, 0.42);
+      --radius: 22px;
+      --max: 1120px;
+    }
+
+    * { box-sizing: border-box; }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      margin: 0;
+      font-family: Aptos, Arial, Helvetica, sans-serif;
+      background:
+        radial-gradient(circle at top left, rgba(214, 175, 54, 0.18), transparent 34%),
+        radial-gradient(circle at bottom right, rgba(243, 215, 122, 0.08), transparent 40%),
+        var(--noir);
+      color: var(--blanc);
+      line-height: 1.65;
+    }
+
+    a { color: inherit; text-decoration: none; }
+
+    .topbar {
+      position: sticky;
+      top: 0;
+      z-index: 20;
+      backdrop-filter: blur(16px);
+      background: rgba(5, 5, 5, 0.80);
+      border-bottom: 1px solid rgba(214, 175, 54, 0.22);
+    }
+
+    .topbar-inner {
+      width: min(var(--max), calc(100% - 32px));
+      margin: 0 auto;
+      min-height: 70px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 18px;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      font-weight: 900;
+      letter-spacing: 0.02em;
+    }
+
+    .brand-mark {
+      width: 38px;
+      height: 38px;
+      border-radius: 50%;
+      display: grid;
+      place-items: center;
+      background: linear-gradient(145deg, var(--or), var(--or-clair));
+      color: var(--noir);
+      font-weight: 900;
+      box-shadow: 0 0 0 5px rgba(214, 175, 54, 0.12);
+    }
+
+    .nav {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      flex-wrap: wrap;
+      justify-content: flex-end;
+    }
+
+    .nav a {
+      color: var(--gris-2);
+      font-size: 0.92rem;
+      padding: 8px 10px;
+      border-radius: 999px;
+    }
+
+    .nav a:hover,
+    .nav a:focus {
+      outline: none;
+      background: rgba(214, 175, 54, 0.14);
+      color: var(--or-clair);
+    }
+
+    .hero {
+      width: min(var(--max), calc(100% - 32px));
+      margin: 0 auto;
+      padding: 74px 0 36px;
+      display: grid;
+      grid-template-columns: 1.08fr 0.92fr;
+      gap: 36px;
+      align-items: center;
+    }
+
+    .badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 9px;
+      border: 1px solid rgba(214, 175, 54, 0.44);
+      background: rgba(214, 175, 54, 0.12);
+      color: var(--or-clair);
+      padding: 8px 13px;
+      border-radius: 999px;
+      font-weight: 800;
+      font-size: 0.9rem;
+      margin-bottom: 18px;
+    }
+
+    h1, h2, h3 { line-height: 1.12; margin: 0; }
+
+    h1 {
+      font-size: clamp(2.25rem, 5vw, 4.8rem);
+      letter-spacing: -0.055em;
+    }
+
+    h2 {
+      font-size: clamp(1.65rem, 3vw, 2.55rem);
+      letter-spacing: -0.035em;
+      margin-bottom: 16px;
+    }
+
+    h3 { font-size: 1.24rem; margin-bottom: 10px; }
+
+    .gold { color: var(--or-clair); }
+
+    .lead {
+      color: var(--gris-2);
+      font-size: 1.16rem;
+      max-width: 720px;
+      margin: 20px 0 0;
+    }
+
+    .hero-actions {
+      display: flex;
+      gap: 12px;
+      flex-wrap: wrap;
+      margin-top: 28px;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 48px;
+      padding: 12px 18px;
+      border-radius: 999px;
+      border: 1px solid rgba(214, 175, 54, 0.5);
+      font-weight: 900;
+      cursor: pointer;
+      transition: transform 0.18s ease, background 0.18s ease, border-color 0.18s ease, opacity 0.18s ease;
+    }
+
+    .btn:hover,
+    .btn:focus {
+      transform: translateY(-2px);
+      outline: none;
+    }
+
+    .btn-primary {
+      background: linear-gradient(145deg, var(--or), var(--or-clair));
+      color: var(--noir);
+      box-shadow: 0 14px 32px rgba(214, 175, 54, 0.18);
+    }
+
+    .btn-secondary {
+      background: rgba(255, 255, 255, 0.04);
+      color: var(--blanc);
+    }
+
+    .btn-small {
+      min-height: 38px;
+      padding: 8px 12px;
+      font-size: 0.86rem;
+      opacity: 0.78;
+    }
+
+    .hero-card,
+    .card,
+    .module,
+    .prompt-card,
+    .mini-card,
+    .json-card {
+      background: linear-gradient(180deg, rgba(255, 255, 255, 0.062), rgba(255, 255, 255, 0.026));
+      border: 1px solid rgba(214, 175, 54, 0.24);
+      border-radius: var(--radius);
+      box-shadow: var(--ombre);
+    }
+
+    .hero-card {
+      padding: 28px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero-card::before {
+      content: "";
+      position: absolute;
+      inset: -100px -80px auto auto;
+      width: 230px;
+      height: 230px;
+      border-radius: 50%;
+      background: rgba(214, 175, 54, 0.16);
+      filter: blur(5px);
+    }
+
+    .stat-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 14px;
+      margin-top: 18px;
+    }
+
+    .stat {
+      padding: 17px;
+      border-radius: 18px;
+      background: rgba(5, 5, 5, 0.42);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+    }
+
+    .stat strong {
+      display: block;
+      font-size: 1.45rem;
+      color: var(--or-clair);
+    }
+
+    .stat span {
+      color: var(--gris);
+      font-size: 0.92rem;
+    }
+
+    .container {
+      width: min(var(--max), calc(100% - 32px));
+      margin: 0 auto;
+      padding: 26px 0;
+    }
+
+    .section { padding: 34px 0; }
+
+    .grid-2 {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 18px;
+    }
+
+    .grid-3 {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 18px;
+    }
+
+    .card, .module, .prompt-card, .mini-card, .json-card { padding: 24px; }
+
+    .card p,
+    .module p,
+    .prompt-card p,
+    .mini-card p,
+    .json-card p {
+      color: var(--gris-2);
+      margin: 0;
+    }
+
+    .muted { color: var(--gris); }
+
+    .highlight-box,
+    .warning-box,
+    .success-box,
+    .blue-box,
+    .purple-box {
+      padding: 18px;
+      border-radius: 16px;
+      color: var(--gris-2);
+      margin: 18px 0;
+    }
+
+    .highlight-box { border-left: 4px solid var(--or); background: rgba(214, 175, 54, 0.09); }
+    .warning-box { border-left: 4px solid var(--rouge); background: rgba(255, 140, 140, 0.08); }
+    .success-box { border-left: 4px solid var(--vert); background: rgba(167, 243, 176, 0.08); }
+    .blue-box { border-left: 4px solid var(--bleu); background: rgba(158, 197, 255, 0.08); }
+    .purple-box { border-left: 4px solid var(--mauve); background: rgba(216, 180, 254, 0.08); }
+
+    ol, ul {
+      margin: 14px 0 0;
+      padding-left: 22px;
+      color: var(--gris-2);
+    }
+
+    li { margin: 8px 0; }
+
+    .module-number {
+      width: 42px;
+      height: 42px;
+      border-radius: 14px;
+      display: grid;
+      place-items: center;
+      background: rgba(214, 175, 54, 0.15);
+      color: var(--or-clair);
+      border: 1px solid rgba(214, 175, 54, 0.28);
+      font-weight: 900;
+      margin-bottom: 16px;
+    }
+
+    .progress-panel {
+      margin-top: 20px;
+      padding: 20px;
+      border: 1px solid rgba(214, 175, 54, 0.22);
+      border-radius: 20px;
+      background: rgba(0, 0, 0, 0.25);
+    }
+
+    .progress-top {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+      margin-bottom: 12px;
+      color: var(--gris-2);
+      font-weight: 800;
+    }
+
+    .progress-bar {
+      height: 13px;
+      background: rgba(255, 255, 255, 0.1);
+      border-radius: 999px;
+      overflow: hidden;
+    }
+
+    .progress-fill {
+      width: 0%;
+      height: 100%;
+      border-radius: 999px;
+      background: linear-gradient(90deg, var(--or), var(--or-clair));
+      transition: width 0.25s ease;
+    }
+
+    .checklist {
+      display: grid;
+      gap: 12px;
+      margin-top: 18px;
+    }
+
+    .check-item {
+      display: flex;
+      gap: 12px;
+      align-items: flex-start;
+      padding: 15px;
+      border-radius: 16px;
+      background: rgba(255, 255, 255, 0.045);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      color: var(--gris-2);
+    }
+
+    .check-item input {
+      margin-top: 5px;
+      transform: scale(1.22);
+      accent-color: var(--or);
+    }
+
+    .prompt-card {
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+    }
+
+    .prompt-text,
+    .json-text {
+      white-space: pre-wrap;
+      color: var(--gris-2);
+      background: rgba(0, 0, 0, 0.36);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      border-radius: 16px;
+      padding: 15px;
+      font-family: "Courier New", monospace;
+      font-size: 0.93rem;
+      overflow-x: auto;
+    }
+
+    .copy-btn {
+      align-self: flex-start;
+      border: 1px solid rgba(214, 175, 54, 0.42);
+      border-radius: 999px;
+      background: rgba(214, 175, 54, 0.12);
+      color: var(--or-clair);
+      padding: 10px 14px;
+      font-weight: 900;
+      cursor: pointer;
+    }
+
+    .copy-btn:hover,
+    .copy-btn:focus {
+      outline: none;
+      background: rgba(214, 175, 54, 0.2);
+    }
+
+    .timeline {
+      display: grid;
+      gap: 14px;
+      margin-top: 18px;
+    }
+
+    .timeline-step {
+      display: grid;
+      grid-template-columns: 72px 1fr;
+      gap: 16px;
+      align-items: start;
+      padding: 18px;
+      border-radius: 18px;
+      background: rgba(255, 255, 255, 0.045);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+    }
+
+    .time-pill {
+      display: inline-flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 38px;
+      border-radius: 999px;
+      background: rgba(214, 175, 54, 0.13);
+      color: var(--or-clair);
+      border: 1px solid rgba(214, 175, 54, 0.25);
+      font-weight: 900;
+      font-size: 0.92rem;
+    }
+
+    .cta {
+      text-align: center;
+      padding: 42px 24px;
+      border-radius: 28px;
+      background:
+        linear-gradient(145deg, rgba(214, 175, 54, 0.18), rgba(255, 255, 255, 0.035)),
+        rgba(255, 255, 255, 0.035);
+      border: 1px solid rgba(214, 175, 54, 0.32);
+      box-shadow: var(--ombre);
+    }
+
+    .cta p {
+      max-width: 760px;
+      margin: 14px auto 0;
+      color: var(--gris-2);
+    }
+
+    .price-pill {
+      display: inline-flex;
+      margin-top: 16px;
+      padding: 8px 14px;
+      border-radius: 999px;
+      color: var(--noir);
+      background: linear-gradient(145deg, var(--or), var(--or-clair));
+      font-weight: 1000;
+    }
+
+    .footer {
+      border-top: 1px solid rgba(214, 175, 54, 0.18);
+      margin-top: 40px;
+      padding: 28px 0;
+      color: var(--gris);
+      font-size: 0.94rem;
+    }
+
+    @media (max-width: 860px) {
+      .hero, .grid-2, .grid-3 { grid-template-columns: 1fr; }
+      .topbar-inner { align-items: flex-start; flex-direction: column; padding: 14px 0; }
+      .nav { justify-content: flex-start; }
+      .hero { padding-top: 42px; }
+      .timeline-step { grid-template-columns: 1fr; }
+    }
+
+    @media print {
+      .topbar, .hero-actions, .copy-btn, .btn, .json-catalogue { display: none !important; }
+      body { background: #ffffff; color: #111111; }
+      .card, .module, .prompt-card, .hero-card, .cta, .mini-card { box-shadow: none; border: 1px solid #cccccc; }
+      .prompt-text { color: #111111; background: #f5f5f5; }
+    }
+  </style>
+</head>
+
+<body>
+  <header class="topbar" aria-label="Navigation principale">
+    <div class="topbar-inner">
+      <a class="brand" href="index.html" aria-label="Retour à l’accueil Le Pivot d’Or">
+        <span class="brand-mark">P</span>
+        <span>Le Pivot d’Or</span>
+      </a>
+
+      <nav class="nav" aria-label="Sections de la formation">
+        <a href="#objectif">Objectif</a>
+        <a href="#methode">Méthode</a>
+        <a href="#prompts">10 prompts</a>
+        <a href="#checklist">Checklist</a>
+        <a href="#achat">Acheter</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero" id="haut">
+      <div>
+        <span class="badge">Formation IA-002 • IA • Productivité • 15 $</span>
+        <h1>Crée <span class="gold">10 prompts simples</span> pour ton entreprise</h1>
+        <p class="lead">
+          Une formation pratique pour transformer tes tâches répétitives en une mini-bibliothèque de prompts clairs,
+          utiles et réutilisables dans ton entreprise.
+        </p>
+
+        <div class="hero-actions">
+          <a class="btn btn-primary" href="#achat">Acheter cette formation — 15 $</a>
+          <a class="btn btn-secondary" href="#prompts">Voir les 10 prompts</a>
+          <a class="btn btn-secondary" href="ia-001-utiliser-ia-sauver-3-heures.html">Formation précédente</a>
+        </div>
+      </div>
+
+      <aside class="hero-card" aria-label="Résumé de la formation">
+        <h2>Plan rapide</h2>
+        <p class="muted">
+          Durée recommandée : 30 à 45 minutes. Objectif : repartir avec 10 prompts de base adaptés à tes besoins réels.
+        </p>
+
+        <div class="stat-grid">
+          <div class="stat">
+            <strong>15 $</strong>
+            <span>Achat unique</span>
+          </div>
+          <div class="stat">
+            <strong>10</strong>
+            <span>Prompts à créer</span>
+          </div>
+          <div class="stat">
+            <strong>3</strong>
+            <span>Étapes simples</span>
+          </div>
+          <div class="stat">
+            <strong>7</strong>
+            <span>Actions à cocher</span>
+          </div>
+        </div>
+
+        <div class="progress-panel" aria-label="Progression de la formation">
+          <div class="progress-top">
+            <span>Progression</span>
+            <span id="progressLabel">0 %</span>
+          </div>
+          <div class="progress-bar" aria-hidden="true">
+            <div class="progress-fill" id="progressFill"></div>
+          </div>
+        </div>
+      </aside>
+    </section>
+
+    <section class="container section" id="objectif">
+      <div class="grid-2">
+        <article class="card">
+          <h2>Bienvenue</h2>
+          <p>
+            Dans la première formation, tu as appris à utiliser l’IA pour sauver du temps. Ici, tu vas passer à l’étape suivante :
+            créer 10 prompts simples que tu peux réutiliser dans ton entreprise au lieu de repartir de zéro chaque fois.
+          </p>
+        </article>
+
+        <article class="card">
+          <h2>Pour qui ?</h2>
+          <p>
+            Cette formation est faite pour toi si tu es entrepreneur, travailleur autonome, créateur de contenu ou responsable
+            d’une petite entreprise, et que tu veux structurer tes demandes à l’IA sans te compliquer la vie.
+          </p>
+        </article>
+      </div>
+
+      <div class="highlight-box">
+        <strong>Promesse :</strong> en 24 à 48 heures, tu peux créer une première mini-bibliothèque de 10 prompts simples pour gagner du temps sur tes tâches répétitives.
+      </div>
+
+      <div class="warning-box">
+        <strong>Important :</strong> l’IA reste un assistant. Tu dois relire, vérifier et adapter chaque réponse avant de l’utiliser dans ton entreprise.
+      </div>
+    </section>
+
+    <section class="container section" id="probleme">
+      <h2>Le problème : demander à l’IA au hasard</h2>
+      <div class="grid-2">
+        <article class="card">
+          <h3>Tu perds du temps à reformuler</h3>
+          <p>
+            Quand tu écris une nouvelle demande à chaque fois, tu gaspilles de l’énergie. Tu dois réfléchir au contexte, au ton,
+            au format, au résultat attendu et aux détails importants.
+          </p>
+        </article>
+
+        <article class="card">
+          <h3>Tu obtiens des réponses inégales</h3>
+          <p>
+            Une demande vague donne souvent une réponse vague. Une demande structurée donne un résultat plus clair,
+            plus utile et plus facile à corriger.
+          </p>
+        </article>
+      </div>
+
+      <div class="success-box">
+        Ce qu’on va corriger : tu vas créer 10 prompts de base pour tes besoins fréquents, puis les garder comme mini-système réutilisable.
+      </div>
+    </section>
+
+    <section class="container section" id="methode">
+      <h2>Méthode en 3 étapes</h2>
+      <div class="timeline">
+        <div class="timeline-step">
+          <span class="time-pill">1</span>
+          <div>
+            <h3>Comprendre — Choisis tes 10 besoins</h3>
+            <p class="muted">
+              Note les tâches où l’IA peut t’aider souvent : courriel, résumé, idée de contenu, relance, plan d’action,
+              simplification, reformulation, FAQ, publication ou organisation.
+            </p>
+          </div>
+        </div>
+
+        <div class="timeline-step">
+          <span class="time-pill">2</span>
+          <div>
+            <h3>Appliquer — Remplis tes prompts</h3>
+            <p class="muted">
+              Pour chaque besoin, utilise la même structure : rôle, contexte, objectif, contraintes, format attendu et ton désiré.
+              C’est cette structure qui rend le résultat plus stable.
+            </p>
+          </div>
+        </div>
+
+        <div class="timeline-step">
+          <span class="time-pill">3</span>
+          <div>
+            <h3>Vérifier — Garde seulement les utiles</h3>
+            <p class="muted">
+              Teste les prompts sur de vraies tâches. Corrige ceux qui sont trop vagues. Garde seulement les prompts qui te font
+              réellement sauver du temps.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="container section" id="structure">
+      <h2>La structure simple d’un bon prompt</h2>
+      <div class="grid-3">
+        <article class="module">
+          <div class="module-number">R</div>
+          <h3>Rôle</h3>
+          <p>Dis à l’IA quel rôle jouer : assistant, rédacteur, stratège, coach d’organisation ou analyste.</p>
+        </article>
+        <article class="module">
+          <div class="module-number">C</div>
+          <h3>Contexte</h3>
+          <p>Explique la situation, le public, le problème ou le projet. Sans contexte, l’IA devine trop.</p>
+        </article>
+        <article class="module">
+          <div class="module-number">O</div>
+          <h3>Objectif</h3>
+          <p>Dis exactement ce que tu veux obtenir : un texte, une liste, un plan, une synthèse ou une réponse.</p>
+        </article>
+        <article class="module">
+          <div class="module-number">F</div>
+          <h3>Format</h3>
+          <p>Demande un format précis : tableau, bullets, courriel, script, étapes, checklist ou résumé.</p>
+        </article>
+        <article class="module">
+          <div class="module-number">T</div>
+          <h3>Ton</h3>
+          <p>Indique le style : clair, humain, direct, professionnel, chaleureux, simple ou persuasif.</p>
+        </article>
+        <article class="module">
+          <div class="module-number">✓</div>
+          <h3>Vérification</h3>
+          <p>Demande à l’IA de signaler ce qui manque, ce qui est flou ou ce qui doit être précisé.</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="container section" id="prompts">
+      <h2>Les 10 prompts simples pour ton entreprise</h2>
+      <p class="muted">
+        Copie les prompts, remplace les éléments entre crochets et garde les versions qui fonctionnent le mieux pour toi.
+      </p>
+
+      <div class="grid-2" style="margin-top:18px;">
+        <article class="prompt-card">
+          <h3>1. Courriel professionnel</h3>
+          <div class="prompt-text" id="prompt1">Agis comme un assistant de rédaction. Rédige un courriel clair et professionnel à [personne] au sujet de [sujet]. Mon objectif est de [objectif]. Utilise un ton [ton désiré]. Termine avec une prochaine étape simple.</div>
+          <button class="copy-btn" type="button" data-copy="prompt1">Copier ce prompt</button>
+        </article>
+
+        <article class="prompt-card">
+          <h3>2. Relance client</h3>
+          <div class="prompt-text" id="prompt2">Agis comme un assistant commercial calme et respectueux. Rédige une relance courte pour [type de client] qui n’a pas répondu depuis [délai]. Le contexte est : [contexte]. L’objectif est de relancer sans pression et de proposer une prochaine étape claire.</div>
+          <button class="copy-btn" type="button" data-copy="prompt2">Copier ce prompt</button>
+        </article>
+
+        <article class="prompt-card">
+          <h3>3. Idées de contenu</h3>
+          <div class="prompt-text" id="prompt3">Agis comme un créateur de contenu stratégique. Donne-moi 10 idées de contenu sur [thème] pour [public cible]. Pour chaque idée, donne un titre court, le problème traité, la petite solution et un appel à l’action simple.</div>
+          <button class="copy-btn" type="button" data-copy="prompt3">Copier ce prompt</button>
+        </article>
+
+        <article class="prompt-card">
+          <h3>4. Publication réseau social</h3>
+          <div class="prompt-text" id="prompt4">Agis comme un rédacteur de publication simple et humaine. Crée une publication courte pour [plateforme] sur [sujet]. Le message doit aider [public cible] à comprendre [idée principale]. Utilise un ton clair, direct et motivant.</div>
+          <button class="copy-btn" type="button" data-copy="prompt4">Copier ce prompt</button>
+        </article>
+
+        <article class="prompt-card">
+          <h3>5. Résumé de document</h3>
+          <div class="prompt-text" id="prompt5">Agis comme un assistant de synthèse. Résume le texte suivant en 5 points importants, puis ajoute une section “Actions à faire”. Garde seulement ce qui est utile pour [objectif]. Texte : [colle le texte ici].</div>
+          <button class="copy-btn" type="button" data-copy="prompt5">Copier ce prompt</button>
+        </article>
+
+        <article class="prompt-card">
+          <h3>6. Plan d’action 24-48 h</h3>
+          <div class="prompt-text" id="prompt6">Agis comme un assistant d’organisation. Crée un plan d’action simple sur 24 à 48 h pour accomplir [objectif]. Donne 2 actions aujourd’hui, 2 actions demain et une vérification finale. Garde le plan réaliste et facile à suivre.</div>
+          <button class="copy-btn" type="button" data-copy="prompt6">Copier ce prompt</button>
+        </article>
+
+        <article class="prompt-card">
+          <h3>7. FAQ client</h3>
+          <div class="prompt-text" id="prompt7">Agis comme un assistant service client. Crée une FAQ simple pour [produit ou service]. Donne 7 questions fréquentes, des réponses courtes, rassurantes et claires, puis ajoute une phrase de soutien à la fin.</div>
+          <button class="copy-btn" type="button" data-copy="prompt7">Copier ce prompt</button>
+        </article>
+
+        <article class="prompt-card">
+          <h3>8. Simplification d’un texte</h3>
+          <div class="prompt-text" id="prompt8">Agis comme un éditeur clair et direct. Simplifie le texte suivant sans perdre le sens. Réduis les phrases trop longues, enlève le jargon et garde un ton humain. Texte : [colle le texte ici].</div>
+          <button class="copy-btn" type="button" data-copy="prompt8">Copier ce prompt</button>
+        </article>
+
+        <article class="prompt-card">
+          <h3>9. Amélioration d’une offre</h3>
+          <div class="prompt-text" id="prompt9">Agis comme un stratège d’offre. Analyse cette offre : [décris l’offre]. Trouve 3 points forts, 3 points faibles et 3 améliorations simples. Garde les recommandations concrètes, réalistes et faciles à appliquer.</div>
+          <button class="copy-btn" type="button" data-copy="prompt9">Copier ce prompt</button>
+        </article>
+
+        <article class="prompt-card">
+          <h3>10. Vérification finale</h3>
+          <div class="prompt-text" id="prompt10">Agis comme un vérificateur de qualité. Relis ce contenu : [colle le contenu]. Vérifie la clarté, la cohérence, les fautes, les répétitions et les points flous. Propose une version corrigée plus simple et plus professionnelle.</div>
+          <button class="copy-btn" type="button" data-copy="prompt10">Copier ce prompt</button>
+        </article>
+      </div>
+    </section>
+
+    <section class="container section" id="exemple">
+      <h2>Exemple concret : bâtir ta mini-bibliothèque</h2>
+      <div class="card">
+        <p>
+          Imagine que tu écris souvent des courriels, des publications et des relances. Au lieu de demander à l’IA différemment chaque jour,
+          tu gardes 3 prompts de base dans un document : un pour les courriels, un pour les publications et un pour les relances.
+          Chaque fois, tu changes seulement le nom, le contexte, le sujet et l’objectif.
+        </p>
+        <div class="blue-box">
+          <strong>Petite victoire :</strong> tu n’as plus besoin de repartir de zéro. Tu ouvres ta mini-bibliothèque, tu copies le bon prompt,
+          tu ajoutes ton contexte et tu obtiens une première version plus rapidement.
+        </div>
+      </div>
+    </section>
+
+    <section class="container section" id="checklist">
+      <h2>Checklist d’action</h2>
+      <p class="muted">Coche les actions au fur et à mesure. Ta progression est sauvegardée dans ton navigateur.</p>
+
+      <div class="checklist" aria-label="Checklist d’action">
+        <label class="check-item">
+          <input type="checkbox" class="task-check" />
+          <span><strong>1. Choisis tes 3 tâches les plus fréquentes.</strong><br />Commence par les tâches qui reviennent souvent dans ton entreprise.</span>
+        </label>
+        <label class="check-item">
+          <input type="checkbox" class="task-check" />
+          <span><strong>2. Copie les 10 prompts dans un document.</strong><br />Crée un fichier simple dans Google Docs, Notion, Word ou ton espace de travail.</span>
+        </label>
+        <label class="check-item">
+          <input type="checkbox" class="task-check" />
+          <span><strong>3. Remplace les crochets par ton contexte.</strong><br />Adapte chaque prompt à ton entreprise, ton ton et ton objectif.</span>
+        </label>
+        <label class="check-item">
+          <input type="checkbox" class="task-check" />
+          <span><strong>4. Teste 3 prompts sur de vraies tâches.</strong><br />Utilise-les sur une vraie relance, une vraie publication ou un vrai courriel.</span>
+        </label>
+        <label class="check-item">
+          <input type="checkbox" class="task-check" />
+          <span><strong>5. Corrige les prompts trop vagues.</strong><br />Ajoute du contexte, un format plus clair ou un ton plus précis.</span>
+        </label>
+        <label class="check-item">
+          <input type="checkbox" class="task-check" />
+          <span><strong>6. Garde seulement les prompts utiles.</strong><br />Supprime ou simplifie ceux qui ne te font pas sauver de temps.</span>
+        </label>
+        <label class="check-item">
+          <input type="checkbox" class="task-check" />
+          <span><strong>7. Utilise ta bibliothèque pendant 7 jours.</strong><br />Note les prompts qui donnent les meilleurs résultats.</span>
+        </label>
+      </div>
+    </section>
+
+    <section class="container section" id="plan">
+      <h2>Plan 24-48 h</h2>
+      <div class="timeline">
+        <div class="timeline-step">
+          <span class="time-pill">Jour 1</span>
+          <div>
+            <h3>Aujourd’hui</h3>
+            <p class="muted">Copie les 10 prompts dans un document. Choisis ensuite les 3 prompts les plus utiles pour ton entreprise cette semaine.</p>
+          </div>
+        </div>
+        <div class="timeline-step">
+          <span class="time-pill">Jour 2</span>
+          <div>
+            <h3>Demain</h3>
+            <p class="muted">Teste 3 prompts sur de vraies tâches. Corrige les formulations trop vagues et ajoute ton ton personnel.</p>
+          </div>
+        </div>
+        <div class="timeline-step">
+          <span class="time-pill">48 h</span>
+          <div>
+            <h3>Dans 48 h</h3>
+            <p class="muted">Garde les 5 meilleurs prompts dans ta mini-bibliothèque. Vérifie lesquels t’ont vraiment fait sauver du temps.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="container section" id="erreurs">
+      <h2>Erreurs à éviter</h2>
+      <div class="grid-2">
+        <article class="card">
+          <h3>1. Copier sans adapter</h3>
+          <p>Risque : obtenir une réponse trop générique. Correction : ajoute ton contexte, ton public et ton objectif.</p>
+        </article>
+        <article class="card">
+          <h3>2. Demander trop de choses à la fois</h3>
+          <p>Risque : recevoir une réponse confuse. Correction : fais une demande claire par prompt.</p>
+        </article>
+        <article class="card">
+          <h3>3. Oublier le format attendu</h3>
+          <p>Risque : perdre du temps à réorganiser la réponse. Correction : demande un tableau, une liste, un courriel ou un plan.</p>
+        </article>
+        <article class="card">
+          <h3>4. Ne pas vérifier le résultat</h3>
+          <p>Risque : publier une erreur ou un texte qui ne te ressemble pas. Correction : relis, simplifie et adapte toujours.</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="container section" id="bilan">
+      <h2>Mini-bilan après 7 jours</h2>
+      <div class="grid-2">
+        <article class="card">
+          <h3>Questions à te poser</h3>
+          <ol>
+            <li>Quels prompts as-tu utilisés le plus souvent ?</li>
+            <li>Quel prompt t’a fait sauver le plus de temps ?</li>
+            <li>Quel prompt donne encore une réponse trop vague ?</li>
+            <li>Quelle tâche pourrais-tu ajouter à ta bibliothèque ?</li>
+            <li>Quel prompt mérite une version plus avancée ?</li>
+          </ol>
+        </article>
+        <article class="card">
+          <h3>Résultat attendu</h3>
+          <p>
+            Le but n’est pas d’avoir une bibliothèque parfaite. Le but est d’avoir une base claire de prompts utiles,
+            que tu peux améliorer chaque semaine avec tes vraies tâches.
+          </p>
+        </article>
+      </div>
+    </section>
+
+    <section class="container section" id="achat">
+      <div class="cta">
+        <h2>Acheter la formation complète</h2>
+        <p>
+          Crée ta mini-bibliothèque de 10 prompts simples et transforme ta première routine IA en système réutilisable pour ton entreprise.
+        </p>
+        <span class="price-pill">15 $ • Achat unique</span>
+        <div class="hero-actions" style="justify-content:center;">
+          <a class="btn btn-primary" href="https://buy.stripe.com/TON-LIEN-STRIPE-IA-002">Acheter cette formation — 15 $</a>
+          <a class="btn btn-secondary btn-small" href="#haut">Revenir en haut</a>
+        </div>
+        <p class="muted" style="font-size:0.92rem;">
+          Remplace le lien du bouton principal par ton vrai lien Stripe avant de publier la page en production.
+        </p>
+      </div>
+    </section>
+
+    <section class="container section" id="support">
+      <h2>Support et version</h2>
+      <div class="grid-2">
+        <article class="card">
+          <h3>Si tu as un problème d’accès</h3>
+          <p>
+            Écris au support avec ton nom, ton courriel d’achat, le nom de la formation et une capture d’écran du problème.
+          </p>
+          <div class="highlight-box">Courriel support à configurer : <strong>support@lepivotdor.ca</strong></div>
+        </article>
+
+        <article class="card">
+          <h3>Informations de version</h3>
+          <p>
+            Formation : IA-002 — Crée 10 prompts simples pour ton entreprise<br />
+            Prix : 15 $<br />
+            Version : 1.0<br />
+            Date de création : 2026-04-29<br />
+            Dernière mise à jour : 2026-04-29<br />
+            Prochaine mise à jour : 2027-04-29
+          </p>
+        </article>
+      </div>
+    </section>
+
+    <section class="container section json-catalogue" id="json">
+      <details class="json-card">
+        <summary><strong>JSON catalogue interne</strong></summary>
+        <div class="json-text" id="jsonCatalogue">{
+  "code": "IA-002",
+  "titre": "Crée 10 prompts simples pour ton entreprise",
+  "slug": "ia-002-cree-10-prompts-entreprise",
+  "categorie": "IA",
+  "prix_affiche": "15 $",
+  "prix_numerique": 15,
+  "type": "formation courte",
+  "niveau": "débutant",
+  "public_cible": "entrepreneur débutant, travailleur autonome, créateur de contenu ou propriétaire de petite entreprise",
+  "resume_court": "Une formation pratique pour créer une mini-bibliothèque de 10 prompts simples et réutilisables pour ton entreprise.",
+  "promesse": "Créer en 24 à 48 heures une première bibliothèque de prompts utiles pour gagner du temps sur tes tâches répétitives.",
+  "petite_victoire": "Avoir 10 prompts prêts à copier, tester et améliorer dans ton entreprise.",
+  "resultat_attendu": "Une base claire de prompts pour courriels, relances, contenus, synthèses, FAQ et organisation.",
+  "angle_vente": "Transformer une première routine IA en mini-système réutilisable.",
+  "duree_estimee": "30 à 45 minutes",
+  "statut": "prêt à publier",
+  "version": "1.0",
+  "date_creation": "2026-04-29",
+  "derniere_mise_a_jour": "2026-04-29",
+  "prochaine_mise_a_jour": "2027-04-29",
+  "fichier_html": "ia-002-cree-10-prompts-entreprise.html",
+  "note_qualite": 94,
+  "note_rentabilite": 91,
+  "note_valeur_client": 95,
+  "priorite_catalogue": "haute",
+  "potentiel_vente": "élevé",
+  "formation_suivante": "Structure ton premier mini-système IA pour ton entreprise",
+  "tags": ["ia", "prompts", "productivite", "entreprise", "chatgpt", "mini-systeme"]
+}</div>
+        <button class="copy-btn" type="button" data-copy="jsonCatalogue">Copier le JSON</button>
+      </details>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+      <strong>Le Pivot d’Or</strong><br />
+      Bâtir une vie solide : Vision. Clarté. Discipline. Structure. Constance.<br />
+      Cette formation est éducative. Elle ne garantit pas un résultat automatique. Les résultats dépendent de ton application réelle.
+    </div>
+  </footer>
+
+  <script>
+    const STORAGE_KEY = "pivotdor_ia_002_prompts_entreprise_progress_v1";
+    const checks = Array.from(document.querySelectorAll(".task-check"));
+    const progressFill = document.getElementById("progressFill");
+    const progressLabel = document.getElementById("progressLabel");
+
+    function loadProgress() {
+      try {
+        const saved = JSON.parse(localStorage.getItem(STORAGE_KEY) || "[]");
+        checks.forEach((check, index) => {
+          check.checked = Boolean(saved[index]);
+        });
+      } catch (error) {
+        console.warn("Progression non chargée", error);
+      }
+      updateProgress();
+    }
+
+    function saveProgress() {
+      const state = checks.map((check) => check.checked);
+      localStorage.setItem(STORAGE_KEY, JSON.stringify(state));
+      updateProgress();
+    }
+
+    function updateProgress() {
+      const total = checks.length || 1;
+      const completed = checks.filter((check) => check.checked).length;
+      const percent = Math.round((completed / total) * 100);
+      if (progressFill) progressFill.style.width = `${percent}%`;
+      if (progressLabel) progressLabel.textContent = `${percent} %`;
+    }
+
+    checks.forEach((check) => {
+      check.addEventListener("change", saveProgress);
+    });
+
+    document.querySelectorAll("[data-copy]").forEach((button) => {
+      button.addEventListener("click", async () => {
+        const targetId = button.getAttribute("data-copy");
+        const target = document.getElementById(targetId);
+        if (!target) return;
+
+        try {
+          await navigator.clipboard.writeText(target.innerText.trim());
+          const original = button.textContent;
+          button.textContent = "Copié ✓";
+          setTimeout(() => {
+            button.textContent = original;
+          }, 1400);
+        } catch (error) {
+          alert("Copie impossible automatiquement. Sélectionne le texte et copie-le manuellement.");
+        }
+      });
+    });
+
+    loadProgress();
+  </script>
+</body>
+</html>
